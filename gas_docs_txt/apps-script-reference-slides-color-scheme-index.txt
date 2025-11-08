@@ -1,0 +1,228 @@
+Source Path: gas_docs_html/apps-script/reference/slides/color-scheme/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A ColorScheme maps ThemeColorTypes to actual colors used for rendering.
+You can retrieve the concrete color associated with a ThemeColorType using
+getConcreteColor
+.
+The available ThemeColorTypes in a scheme can be listed using
+getThemeColors
+.
+You can set the concrete color for a ThemeColorType using
+setConcreteColor
+with a Color object, RGB values, or a hex string.
+Color
+Scheme
+A color scheme defines a mapping from members of
+Theme
+Color
+Type
+to the actual colors used
+to render them.
+Methods
+Method
+Return type
+Brief description
+get
+Concrete
+Color(theme)
+Color
+Returns the concrete
+Color
+associated with the
+Theme
+Color
+Type
+in this color
+scheme.
+get
+Theme
+Colors()
+Theme
+Color
+Type[]
+Returns a list of all possible theme color types in a color scheme.
+set
+Concrete
+Color(type, color)
+Color
+Scheme
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color.
+set
+Concrete
+Color(type, red, green, blue)
+Color
+Scheme
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color in RGB format.
+set
+Concrete
+Color(type, hexColor)
+Color
+Scheme
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color in HEX format.
+Detailed documentation
+get
+Concrete
+Color(theme)
+Returns the concrete
+Color
+associated with the
+Theme
+Color
+Type
+in this color
+scheme.
+The returned color is guaranteed to not be an instance of
+Theme
+Color
+.
+Parameters
+Name
+Type
+Description
+theme
+Theme
+Color
+Type
+The theme color to derive the concrete color from.
+Return
+Color
+— The concrete color corresponding the theme color type in this scheme.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Theme
+Colors()
+Returns a list of all possible theme color types in a color scheme.
+Return
+Theme
+Color
+Type[]
+— The possible theme color types in this scheme.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Concrete
+Color(type, color)
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color.
+Parameters
+Name
+Type
+Description
+type
+Theme
+Color
+Type
+The theme color type.
+color
+Color
+The color to set the theme color type to.
+Return
+Color
+Scheme
+— This color scheme, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Concrete
+Color(type, red, green, blue)
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color in RGB format.
+Parameters
+Name
+Type
+Description
+type
+Theme
+Color
+Type
+The theme color type.
+red
+Integer
+The red value of the color to set the theme color type to (between 0 and 255).
+green
+Integer
+The green value of the color to set the theme color type to (between 0 and 255).
+blue
+Integer
+The blue value of the color to set the theme color type to (between 0 and 255).
+Return
+Color
+Scheme
+— This color scheme, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Concrete
+Color(type, hexColor)
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color in HEX format.
+The hex string must be in the format '#RRGGBB'.
+Parameters
+Name
+Type
+Description
+type
+Theme
+Color
+Type
+The theme color type.
+hex
+Color
+String
+The hex color to set the theme color type to, such as '#F304a7'.
+Return
+Color
+Scheme
+— This color scheme, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

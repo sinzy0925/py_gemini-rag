@@ -1,0 +1,63 @@
+Source Path: gas_docs_html/apps-script/reference/lock/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Lock service in Apps Script prevents concurrent access to sections of code, useful for managing shared resources and preventing collisions.
+The LockService class provides methods to get different types of locks: document, script, and user.
+The Lock class represents a mutual-exclusion lock and includes methods to check if a lock is acquired, release a lock, and attempt to acquire a lock with or without timing out.
+Lock
+This service allows scripts to prevent concurrent access to sections of
+code. This can be useful when you have multiple users or processes modifying a
+shared resource and want to prevent collisions.
+Classes
+Name
+Brief description
+Lock
+A representation of a mutual-exclusion lock.
+Lock
+Service
+Prevents concurrent access to sections of code.
+Lock
+Methods
+Method
+Return type
+Brief description
+has
+Lock()
+Boolean
+Returns true if the lock was acquired.
+release
+Lock()
+void
+Releases the lock, allowing other processes waiting on the lock to continue.
+try
+Lock(timeoutInMillis)
+Boolean
+Attempts to acquire the lock, timing out after the provided number of milliseconds.
+wait
+Lock(timeoutInMillis)
+void
+Attempts to acquire the lock, timing out with an exception after the provided number of
+milliseconds.
+Lock
+Service
+Methods
+Method
+Return type
+Brief description
+get
+Document
+Lock()
+Lock
+Gets a lock that prevents any user of the current document from concurrently running a section
+of code.
+get
+Script
+Lock()
+Lock
+Gets a lock that prevents any user from concurrently running a section of code.
+get
+User
+Lock()
+Lock
+Gets a lock that prevents the current user from concurrently running a section of code.

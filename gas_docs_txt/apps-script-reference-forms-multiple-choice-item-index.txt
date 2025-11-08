@@ -1,0 +1,963 @@
+Source Path: gas_docs_html/apps-script/reference/forms/multiple-choice-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+MultipleChoiceItem is a question type in Google Forms allowing single selection from a list or an "other" field, and is autograded when used in a quiz.
+You can create or access MultipleChoiceItem objects from a Form object in Apps Script.
+Key methods include creating choices with or without correctness and page navigation, creating item responses, duplicating the item, and setting properties like title, help text, required status, and the "other" option.
+Methods are available to get information about the item, such as its choices, feedback for correct/incorrect answers, help text, ID, index, points, title, and type.
+Setting choices can be done using an array of strings or an array of Choice objects.
+Multiple
+Choice
+Item
+A question item that allows the respondent to select one choice from a list of radio buttons or
+an optional "other" field. Items can be accessed or created from a
+Form
+. When used in a
+quiz, these items are autograded.
+// Open a form by ID and add a new multiple choice item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addMultipleChoiceItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+)
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Cats'
+),
+item
+.
+createChoice
+(
+'Dogs'
+)])
+.
+showOtherOption
+(
+true
+);
+Methods
+Method
+Return type
+Brief description
+create
+Choice(value)
+Choice
+Creates a new choice.
+create
+Choice(value, isCorrect)
+Choice
+Creates a new choice.
+create
+Choice(value, navigationItem)
+Choice
+Creates a new choice with a page-navigation option that jumps to a given page-break item.
+create
+Choice(value, navigationType)
+Choice
+Creates a new choice with a page-navigation option.
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this multiple-choice item.
+duplicate()
+Multiple
+Choice
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Choices()
+Choice[]
+Gets all choices for an item.
+get
+Feedback
+For
+Correct()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond correctly to a question.
+get
+Feedback
+For
+Incorrect()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond incorrectly to a question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+has
+Other
+Option()
+Boolean
+Determines whether the item has an "other" option.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Choice
+Values(values)
+Multiple
+Choice
+Item
+Sets the choices for an item from an array of strings.
+set
+Choices(choices)
+Multiple
+Choice
+Item
+Sets an array of choices for an item.
+set
+Feedback
+For
+Correct(feedback)
+Multiple
+Choice
+Item
+Sets the feedback to be shown to respondents when they respond correctly to a question.
+set
+Feedback
+For
+Incorrect(feedback)
+Multiple
+Choice
+Item
+Sets the feedback to be shown to respondents when they respond incorrectly to a question.
+set
+Help
+Text(text)
+Multiple
+Choice
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Multiple
+Choice
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Multiple
+Choice
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Multiple
+Choice
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+show
+Other
+Option(enabled)
+Multiple
+Choice
+Item
+Sets whether the item has an "other" option.
+Detailed documentation
+create
+Choice(value)
+Creates a new choice.
+Parameters
+Name
+Type
+Description
+value
+String
+the choice's value, which respondents see as a label when viewing the form
+Return
+Choice
+— the new choice
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Choice(value, isCorrect)
+Creates a new choice.
+Parameters
+Name
+Type
+Description
+value
+String
+the choice's value, which respondents see as a label when viewing the form
+is
+Correct
+Boolean
+whether the choice is a correct answer
+Return
+Choice
+— the new choice
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Choice(value, navigationItem)
+Creates a new choice with a page-navigation option that jumps to a given page-break item. This
+is equivalent to
+create
+Choice(value, navigationType)
+with
+navigation
+Type
+set to
+Form
+App.PageNavigationType.GO_TO_PAGE
+. Choices that use page
+navigation cannot be combined in the same item with choices that do not use page navigation.
+The page navigation occurs after the respondent completes a page that contains the option,
+and only if the respondent chose that option. If the respondent chose multiple options with
+page-navigation instructions on the same page, only the last navigation option has any effect.
+Page navigation also has no effect on the last page of a form.
+Parameters
+Name
+Type
+Description
+value
+String
+the choice's value, which respondents see as a label when viewing the form
+navigation
+Item
+Page
+Break
+Item
+the item to navigate to
+Return
+Choice
+— the new choice
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Choice(value, navigationType)
+Creates a new choice with a page-navigation option. Choices that use page navigation cannot be
+combined in the same item with choices that do not use page navigation.
+The page navigation occurs after the respondent completes a page that contains the option,
+and only if the respondent chose that option. If the respondent chose multiple options with
+page-navigation instructions on the same page, only the last navigation option has any effect.
+Page navigation also has no effect on the last page of a form.
+Parameters
+Name
+Type
+Description
+value
+String
+the choice's value, which respondents see as a label when viewing the form
+navigation
+Type
+Page
+Navigation
+Type
+the choice's navigation type
+Return
+Choice
+— the new choice
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Response(response)
+Creates a new
+Item
+Response
+for this multiple-choice item. Throws an exception if the
+response
+argument does not match a valid choice for this item, unless
+show
+Other
+Option(enabled)
+is set to
+true
+.
+Parameters
+Name
+Type
+Description
+response
+String
+a valid answer for this multiple-choice item
+Return
+Item
+Response
+— the item response
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Multiple
+Choice
+Item
+— a duplicate of this
+Multiple
+Choice
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Choices()
+Gets all choices for an item.
+Return
+Choice[]
+— an array of choices
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Feedback
+For
+Correct()
+Returns the feedback that is shown to respondents when they respond correctly to a question.
+Return
+Quiz
+Feedback
+— the feedback, if any.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Feedback
+For
+Incorrect()
+Returns the feedback that is shown to respondents when they respond incorrectly to a question.
+Return
+Quiz
+Feedback
+— the feedback, if any.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Points()
+Returns the point value of a gradeable item.
+Return
+Integer
+— the number of points a question is worth.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+has
+Other
+Option()
+Determines whether the item has an "other" option.
+Return
+Boolean
+—
+true
+if the item has an "other" option;
+false
+if not
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Required()
+Determines whether the respondent must answer the question.
+Return
+Boolean
+— whether the respondent must answer the question
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Choice
+Values(values)
+Sets the choices for an item from an array of strings. Throws an exception if the given array
+is empty.
+// Open a form by ID and add a new list item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addListItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+item
+.
+setChoiceValues
+([
+'Dogs'
+,
+'Cats'
+]);
+Parameters
+Name
+Type
+Description
+values
+String[]
+the array of choice values, which respondents see as labels when viewing the form
+Return
+Multiple
+Choice
+Item
+— this
+Multiple
+Choice
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Choices(choices)
+Sets an array of choices for an item. Throws an exception if the given array is empty or
+contains a
+null
+element.
+// Open a form by ID and add a new list item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addListItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+item
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Cats'
+),
+item
+.
+createChoice
+(
+'Dogs'
+)]);
+Parameters
+Name
+Type
+Description
+choices
+Choice[]
+an array of choices
+Return
+Multiple
+Choice
+Item
+— this
+Multiple
+Choice
+Item
+, for chaining
+Throws
+Error
+— if the given array is
+null
+, empty, or contains a
+null
+element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Feedback
+For
+Correct(feedback)
+Sets the feedback to be shown to respondents when they respond correctly to a question.
+// Open a form by ID and add a new list item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addListItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+// Set "Dogs" as the correct answer to this question.
+item
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Dogs'
+,
+true
+),
+item
+.
+createChoice
+(
+'Cats'
+,
+false
+),
+]);
+// Add feedback which will be shown for correct responses; ie "Dogs".
+item
+.
+setFeedbackForCorrect
+(
+FormApp
+.
+createFeedback
+().
+setDisplayText
+(
+'Dogs rule, cats drool.'
+).
+build
+(),
+);
+Parameters
+Name
+Type
+Description
+feedback
+Quiz
+Feedback
+the new feedback. A null value will clear the feedback.
+Return
+Multiple
+Choice
+Item
+— this
+Multiple
+Choice
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Feedback
+For
+Incorrect(feedback)
+Sets the feedback to be shown to respondents when they respond incorrectly to a question.
+Parameters
+Name
+Type
+Description
+feedback
+Quiz
+Feedback
+the new feedback
+Return
+Multiple
+Choice
+Item
+— this
+Multiple
+Choice
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Multiple
+Choice
+Item
+— this
+Multiple
+Choice
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Points(points)
+Sets the number of points a gradeable item is worth. The default for new items is 0.
+Parameters
+Name
+Type
+Description
+points
+Integer
+the number of a points a question item is worth
+Return
+Multiple
+Choice
+Item
+— this
+Multiple
+Choice
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Required(enabled)
+Sets whether the respondent must answer the question.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+whether the respondent must answer the question
+Return
+Multiple
+Choice
+Item
+— the current item (for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Multiple
+Choice
+Item
+— this
+Multiple
+Choice
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+show
+Other
+Option(enabled)
+Sets whether the item has an "other" option. The default for a new
+Checkbox
+Item
+or
+Multiple
+Choice
+Item
+is
+false
+.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the item has an "other" option;
+false
+if not
+Return
+Multiple
+Choice
+Item
+— this
+Multiple
+Choice
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

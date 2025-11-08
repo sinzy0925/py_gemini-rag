@@ -1,0 +1,1680 @@
+Source Path: gas_docs_html/apps-script/reference/calendar/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Google Calendar service for Apps Script allows scripts to access and modify user calendars.
+Various classes like
+Calendar
+,
+CalendarApp
+,
+CalendarEvent
+, and
+CalendarEventSeries
+are available to manage calendars and events.
+Enums like
+Color
+,
+EventColor
+,
+EventType
+, and
+Visibility
+define properties and statuses for calendars and events.
+Methods are provided to create, retrieve, modify, and delete calendars and events, including handling guests and recurrences.
+Detailed methods are available for managing individual events and entire recurring event series.
+Calendar
+This service allows a script to access and modify the user's Google Calendar,
+including additional calendars that the user is subscribed to.
+Classes
+Name
+Brief description
+Calendar
+Represents a calendar that the user owns or is subscribed to.
+Calendar
+App
+Allows a script to read and update the user's Google Calendar.
+Calendar
+Event
+Represents a single calendar event.
+Calendar
+Event
+Series
+Represents a series of events (a recurring event).
+Color
+An enum representing the named colors available in the Calendar service.
+Event
+Color
+An enum representing the named event colors available in the Calendar service.
+Event
+Guest
+Represents a guest of an event.
+Event
+Recurrence
+Represents the recurrence settings for an event series.
+Event
+Transparency
+An enum representing the transparency of an event.
+Event
+Type
+An enum representing the type of an event.
+Guest
+Status
+An enum representing the statuses a guest can have for an event.
+Recurrence
+Rule
+Represents a recurrence rule for an event series.
+Visibility
+An enum representing the visibility of an event.
+Calendar
+Methods
+Method
+Return type
+Brief description
+create
+All
+Day
+Event(title, date)
+Calendar
+Event
+Creates a new all-day event.
+create
+All
+Day
+Event(title, startDate, endDate)
+Calendar
+Event
+Creates a new all-day event that can span multiple days.
+create
+All
+Day
+Event(title, startDate, endDate, options)
+Calendar
+Event
+Creates a new all-day event that can span multiple days.
+create
+All
+Day
+Event(title, date, options)
+Calendar
+Event
+Creates a new all-day event.
+create
+All
+Day
+Event
+Series(title, startDate, recurrence)
+Calendar
+Event
+Series
+Creates a new all-day event series.
+create
+All
+Day
+Event
+Series(title, startDate, recurrence, options)
+Calendar
+Event
+Series
+Creates a new all-day event series.
+create
+Event(title, startTime, endTime)
+Calendar
+Event
+Creates a new event.
+create
+Event(title, startTime, endTime, options)
+Calendar
+Event
+Creates a new event.
+create
+Event
+From
+Description(description)
+Calendar
+Event
+Creates an event from a free-form description.
+create
+Event
+Series(title, startTime, endTime, recurrence)
+Calendar
+Event
+Series
+Creates a new event series.
+create
+Event
+Series(title, startTime, endTime, recurrence, options)
+Calendar
+Event
+Series
+Creates a new event series.
+delete
+Calendar()
+void
+Deletes the calendar permanently.
+get
+Color()
+String
+Gets the color of the calendar.
+get
+Description()
+String
+Gets the description of the calendar.
+get
+Event
+By
+Id(iCalId)
+Calendar
+Event
+Gets the event with the given ID.
+get
+Event
+Series
+By
+Id(iCalId)
+Calendar
+Event
+Series
+Gets the event series with the given ID.
+get
+Events(startTime, endTime)
+Calendar
+Event[]
+Gets all events that occur within a given time range.
+get
+Events(startTime, endTime, options)
+Calendar
+Event[]
+Gets all events that occur within a given time range and meet the specified criteria.
+get
+Events
+For
+Day(date)
+Calendar
+Event[]
+Gets all events that occur on a given day.
+get
+Events
+For
+Day(date, options)
+Calendar
+Event[]
+Gets all events that occur on a given day and meet specified criteria.
+get
+Id()
+String
+Gets the ID of the calendar.
+get
+Name()
+String
+Gets the name of the calendar.
+get
+Time
+Zone()
+String
+Gets the time zone of the calendar.
+is
+Hidden()
+Boolean
+Determines whether the calendar is hidden in the user interface.
+is
+My
+Primary
+Calendar()
+Boolean
+Determines whether the calendar is the primary calendar for the effective user.
+is
+Owned
+By
+Me()
+Boolean
+Determines whether the calendar is owned by you.
+is
+Selected()
+Boolean
+Determines whether the calendar's events are displayed in the user interface.
+set
+Color(color)
+Calendar
+Sets the color of the calendar.
+set
+Description(description)
+Calendar
+Sets the description of a calendar.
+set
+Hidden(hidden)
+Calendar
+Sets whether the calendar is visible in the user interface.
+set
+Name(name)
+Calendar
+Sets the name of the calendar.
+set
+Selected(selected)
+Calendar
+Sets whether the calendar's events are displayed in the user interface.
+set
+Time
+Zone(timeZone)
+Calendar
+Sets the time zone of the calendar.
+unsubscribe
+From
+Calendar()
+void
+Unsubscribes the user from a calendar.
+Calendar
+App
+Properties
+Property
+Type
+Description
+Color
+Color
+An enum representing the named colors available in the Calendar service.
+Event
+Color
+Event
+Color
+An enum representing the named event colors available in the Calendar service.
+Event
+Transparency
+Event
+Transparency
+The
+Event
+Transparency
+enumeration.
+Event
+Type
+Event
+Type
+The
+Event
+Type
+enumeration.
+Guest
+Status
+Guest
+Status
+An enum representing the statuses a guest can have for an event.
+Month
+Month
+An enum representing the months of the year.
+Visibility
+Visibility
+An enum representing the visibility of an event.
+Weekday
+Weekday
+An enum representing the days of the week.
+Methods
+Method
+Return type
+Brief description
+create
+All
+Day
+Event(title, date)
+Calendar
+Event
+Creates a new all-day event.
+create
+All
+Day
+Event(title, startDate, endDate)
+Calendar
+Event
+Creates a new all-day event that can span multiple days.
+create
+All
+Day
+Event(title, startDate, endDate, options)
+Calendar
+Event
+Creates a new all-day event that can span multiple days.
+create
+All
+Day
+Event(title, date, options)
+Calendar
+Event
+Creates a new all-day event.
+create
+All
+Day
+Event
+Series(title, startDate, recurrence)
+Calendar
+Event
+Series
+Creates a new all-day event series.
+create
+All
+Day
+Event
+Series(title, startDate, recurrence, options)
+Calendar
+Event
+Series
+Creates a new all-day event series.
+create
+Calendar(name)
+Calendar
+Creates a new calendar, owned by the user.
+create
+Calendar(name, options)
+Calendar
+Creates a new calendar, owned by the user.
+create
+Event(title, startTime, endTime)
+Calendar
+Event
+Creates a new event.
+create
+Event(title, startTime, endTime, options)
+Calendar
+Event
+Creates a new event.
+create
+Event
+From
+Description(description)
+Calendar
+Event
+Creates an event from a free-form description.
+create
+Event
+Series(title, startTime, endTime, recurrence)
+Calendar
+Event
+Series
+Creates a new event series.
+create
+Event
+Series(title, startTime, endTime, recurrence, options)
+Calendar
+Event
+Series
+Creates a new event series.
+get
+All
+Calendars()
+Calendar[]
+Gets all calendars that the user owns or is subscribed to.
+get
+All
+Owned
+Calendars()
+Calendar[]
+Gets all calendars that the user owns.
+get
+Calendar
+By
+Id(id)
+Calendar
+Gets the calendar with the given ID.
+get
+Calendars
+By
+Name(name)
+Calendar[]
+Gets all calendars with a given name that the user owns or is subscribed to.
+get
+Color()
+String
+Gets the color of the calendar.
+get
+Default
+Calendar()
+Calendar
+Gets the user's default calendar.
+get
+Description()
+String
+Gets the description of the calendar.
+get
+Event
+By
+Id(iCalId)
+Calendar
+Event
+Gets the event with the given ID.
+get
+Event
+Series
+By
+Id(iCalId)
+Calendar
+Event
+Series
+Gets the event series with the given ID.
+get
+Events(startTime, endTime)
+Calendar
+Event[]
+Gets all events that occur within a given time range.
+get
+Events(startTime, endTime, options)
+Calendar
+Event[]
+Gets all events that occur within a given time range and meet the specified criteria.
+get
+Events
+For
+Day(date)
+Calendar
+Event[]
+Gets all events that occur on a given day.
+get
+Events
+For
+Day(date, options)
+Calendar
+Event[]
+Gets all events that occur on a given day and meet specified criteria.
+get
+Id()
+String
+Gets the ID of the calendar.
+get
+Name()
+String
+Gets the name of the calendar.
+get
+Owned
+Calendar
+By
+Id(id)
+Calendar
+Gets the calendar with the given ID, if the user owns it.
+get
+Owned
+Calendars
+By
+Name(name)
+Calendar[]
+Gets all calendars with a given name that the user owns.
+get
+Time
+Zone()
+String
+Gets the time zone of the calendar.
+is
+Hidden()
+Boolean
+Determines whether the calendar is hidden in the user interface.
+is
+My
+Primary
+Calendar()
+Boolean
+Determines whether the calendar is the primary calendar for the effective user.
+is
+Owned
+By
+Me()
+Boolean
+Determines whether the calendar is owned by you.
+is
+Selected()
+Boolean
+Determines whether the calendar's events are displayed in the user interface.
+new
+Recurrence()
+Event
+Recurrence
+Creates a new recurrence object, which can be used to create rules for event recurrence.
+set
+Color(color)
+Calendar
+Sets the color of the calendar.
+set
+Description(description)
+Calendar
+Sets the description of a calendar.
+set
+Hidden(hidden)
+Calendar
+Sets whether the calendar is visible in the user interface.
+set
+Name(name)
+Calendar
+Sets the name of the calendar.
+set
+Selected(selected)
+Calendar
+Sets whether the calendar's events are displayed in the user interface.
+set
+Time
+Zone(timeZone)
+Calendar
+Sets the time zone of the calendar.
+subscribe
+To
+Calendar(id)
+Calendar
+Subscribes the user to the calendar with the given ID, if the user is allowed to subscribe.
+subscribe
+To
+Calendar(id, options)
+Calendar
+Subscribes the user to the calendar with the given ID, if the user is allowed to subscribe.
+Calendar
+Event
+Methods
+Method
+Return type
+Brief description
+add
+Email
+Reminder(minutesBefore)
+Calendar
+Event
+Adds a new email reminder to the event.
+add
+Guest(email)
+Calendar
+Event
+Adds a guest to the event.
+add
+Popup
+Reminder(minutesBefore)
+Calendar
+Event
+Adds a new pop-up notification to the event.
+add
+Sms
+Reminder(minutesBefore)
+Calendar
+Event
+Adds a new SMS reminder to the event.
+anyone
+Can
+Add
+Self()
+Boolean
+Determines whether people can add themselves as guests to a Calendar event.
+delete
+Event()
+void
+Deletes a Calendar event.
+delete
+Tag(key)
+Calendar
+Event
+Deletes a key/value tag from the event.
+get
+All
+Day
+End
+Date()
+Date
+Gets the date on which this all-day calendar event ends.
+get
+All
+Day
+Start
+Date()
+Date
+Gets the date on which this all-day calendar event begins.
+get
+All
+Tag
+Keys()
+String[]
+Gets all keys for tags that have been set on the event.
+get
+Color()
+String
+Returns the color of the calendar event.
+get
+Creators()
+String[]
+Gets the creators of an event.
+get
+Date
+Created()
+Date
+Gets the date the event was created.
+get
+Description()
+String
+Gets the description of the event.
+get
+Email
+Reminders()
+Integer[]
+Gets the minute values for all email reminders for the event.
+get
+End
+Time()
+Date
+Gets the date and time at which this calendar event ends.
+get
+Event
+Series()
+Calendar
+Event
+Series
+Gets the series of recurring events that this event belongs to.
+get
+Event
+Type()
+Event
+Type
+Gets the
+Event
+Type
+of this event.
+get
+Guest
+By
+Email(email)
+Event
+Guest
+Gets a guest by email address.
+get
+Guest
+List()
+Event
+Guest[]
+Gets the guests for the event, not including the event owner.
+get
+Guest
+List(includeOwner)
+Event
+Guest[]
+Gets the guests for the event, potentially including the event owners.
+get
+Id()
+String
+Gets the unique iCalUID of the event.
+get
+Last
+Updated()
+Date
+Gets the date the event was last updated.
+get
+Location()
+String
+Gets the location of the event.
+get
+My
+Status()
+Guest
+Status
+Gets the event status (such as attending or invited) of the effective user.
+get
+Original
+Calendar
+Id()
+String
+Get the ID of the calendar where this event was originally created.
+get
+Popup
+Reminders()
+Integer[]
+Gets the minute values for all pop-up reminders for the event.
+get
+Sms
+Reminders()
+Integer[]
+Gets the minute values for all SMS reminders for the event.
+get
+Start
+Time()
+Date
+Gets the date and time at which this calendar event begins.
+get
+Tag(key)
+String
+Gets a tag value of the event.
+get
+Title()
+String
+Gets the title of the event.
+get
+Transparency()
+Event
+Transparency
+Gets the transparency of the event.
+get
+Visibility()
+Visibility
+Gets the visibility of the event.
+guests
+Can
+Invite
+Others()
+Boolean
+Determines whether guests can invite other guests.
+guests
+Can
+Modify()
+Boolean
+Determines whether guests can modify the event.
+guests
+Can
+See
+Guests()
+Boolean
+Determines whether guests can see other guests.
+is
+All
+Day
+Event()
+Boolean
+Determines whether this is an all-day event.
+is
+Owned
+By
+Me()
+Boolean
+Determines whether you're the owner of the event.
+is
+Recurring
+Event()
+Boolean
+Determines whether the event is part of an event series.
+remove
+All
+Reminders()
+Calendar
+Event
+Removes all reminders from the event.
+remove
+Guest(email)
+Calendar
+Event
+Removes a guest from the event.
+reset
+Reminders
+To
+Default()
+Calendar
+Event
+Resets the reminders using the calendar's default settings.
+set
+All
+Day
+Date(date)
+Calendar
+Event
+Sets the date of the event.
+set
+All
+Day
+Dates(startDate, endDate)
+Calendar
+Event
+Sets the dates of the event.
+set
+Anyone
+Can
+Add
+Self(anyoneCanAddSelf)
+Calendar
+Event
+Sets whether non-guests can add themselves to the event.
+set
+Color(color)
+Calendar
+Event
+Sets the color of the calendar event.
+set
+Description(description)
+Calendar
+Event
+Sets the description of the event.
+set
+Guests
+Can
+Invite
+Others(guestsCanInviteOthers)
+Calendar
+Event
+Sets whether guests can invite other guests.
+set
+Guests
+Can
+Modify(guestsCanModify)
+Calendar
+Event
+Sets whether guests can modify the event.
+set
+Guests
+Can
+See
+Guests(guestsCanSeeGuests)
+Calendar
+Event
+Sets whether guests can see other guests.
+set
+Location(location)
+Calendar
+Event
+Sets the location of the event.
+set
+My
+Status(status)
+Calendar
+Event
+Sets the event status (such as attending or invited) of the effective user.
+set
+Tag(key, value)
+Calendar
+Event
+Sets a key/value tag on the event, for storing custom metadata.
+set
+Time(startTime, endTime)
+Calendar
+Event
+Sets the dates and times for the start and end of the event.
+set
+Title(title)
+Calendar
+Event
+Sets the title of the event.
+set
+Transparency(transparency)
+Calendar
+Event
+Sets the transparency of the event.
+set
+Visibility(visibility)
+Calendar
+Event
+Sets the visibility of the event.
+Calendar
+Event
+Series
+Methods
+Method
+Return type
+Brief description
+add
+Email
+Reminder(minutesBefore)
+Calendar
+Event
+Series
+Adds a new email reminder to the event.
+add
+Guest(email)
+Calendar
+Event
+Series
+Adds a guest to the event.
+add
+Popup
+Reminder(minutesBefore)
+Calendar
+Event
+Series
+Adds a new pop-up notification to the event.
+add
+Sms
+Reminder(minutesBefore)
+Calendar
+Event
+Series
+Adds a new SMS reminder to the event.
+anyone
+Can
+Add
+Self()
+Boolean
+Determines whether people can add themselves as guests to a Calendar event.
+delete
+Event
+Series()
+void
+Deletes the event series.
+delete
+Tag(key)
+Calendar
+Event
+Series
+Deletes a key/value tag from the event.
+get
+All
+Tag
+Keys()
+String[]
+Gets all keys for tags that have been set on the event.
+get
+Color()
+String
+Returns the color of the calendar event.
+get
+Creators()
+String[]
+Gets the creators of an event.
+get
+Date
+Created()
+Date
+Gets the date the event was created.
+get
+Description()
+String
+Gets the description of the event.
+get
+Email
+Reminders()
+Integer[]
+Gets the minute values for all email reminders for the event.
+get
+Event
+Type()
+Event
+Type
+Gets the
+Event
+Type
+of this event.
+get
+Guest
+By
+Email(email)
+Event
+Guest
+Gets a guest by email address.
+get
+Guest
+List()
+Event
+Guest[]
+Gets the guests for the event, not including the event owner.
+get
+Guest
+List(includeOwner)
+Event
+Guest[]
+Gets the guests for the event, potentially including the event owners.
+get
+Id()
+String
+Gets the unique iCalUID of the event.
+get
+Last
+Updated()
+Date
+Gets the date the event was last updated.
+get
+Location()
+String
+Gets the location of the event.
+get
+My
+Status()
+Guest
+Status
+Gets the event status (such as attending or invited) of the effective user.
+get
+Original
+Calendar
+Id()
+String
+Get the ID of the calendar where this event was originally created.
+get
+Popup
+Reminders()
+Integer[]
+Gets the minute values for all pop-up reminders for the event.
+get
+Sms
+Reminders()
+Integer[]
+Gets the minute values for all SMS reminders for the event.
+get
+Tag(key)
+String
+Gets a tag value of the event.
+get
+Title()
+String
+Gets the title of the event.
+get
+Transparency()
+Event
+Transparency
+Gets the transparency of the event.
+get
+Visibility()
+Visibility
+Gets the visibility of the event.
+guests
+Can
+Invite
+Others()
+Boolean
+Determines whether guests can invite other guests.
+guests
+Can
+Modify()
+Boolean
+Determines whether guests can modify the event.
+guests
+Can
+See
+Guests()
+Boolean
+Determines whether guests can see other guests.
+is
+Owned
+By
+Me()
+Boolean
+Determines whether you're the owner of the event.
+remove
+All
+Reminders()
+Calendar
+Event
+Series
+Removes all reminders from the event.
+remove
+Guest(email)
+Calendar
+Event
+Series
+Removes a guest from the event.
+reset
+Reminders
+To
+Default()
+Calendar
+Event
+Series
+Resets the reminders using the calendar's default settings.
+set
+Anyone
+Can
+Add
+Self(anyoneCanAddSelf)
+Calendar
+Event
+Series
+Sets whether non-guests can add themselves to the event.
+set
+Color(color)
+Calendar
+Event
+Series
+Sets the color of the calendar event.
+set
+Description(description)
+Calendar
+Event
+Series
+Sets the description of the event.
+set
+Guests
+Can
+Invite
+Others(guestsCanInviteOthers)
+Calendar
+Event
+Series
+Sets whether guests can invite other guests.
+set
+Guests
+Can
+Modify(guestsCanModify)
+Calendar
+Event
+Series
+Sets whether guests can modify the event.
+set
+Guests
+Can
+See
+Guests(guestsCanSeeGuests)
+Calendar
+Event
+Series
+Sets whether guests can see other guests.
+set
+Location(location)
+Calendar
+Event
+Series
+Sets the location of the event.
+set
+My
+Status(status)
+Calendar
+Event
+Series
+Sets the event status (such as attending or invited) of the effective user.
+set
+Recurrence(recurrence, startDate)
+Calendar
+Event
+Series
+Sets the recurrence rules for an all-day event series.
+set
+Recurrence(recurrence, startTime, endTime)
+Calendar
+Event
+Series
+Sets the recurrence rules for this event series.
+set
+Tag(key, value)
+Calendar
+Event
+Series
+Sets a key/value tag on the event, for storing custom metadata.
+set
+Title(title)
+Calendar
+Event
+Series
+Sets the title of the event.
+set
+Transparency(transparency)
+Calendar
+Event
+Series
+Sets the transparency of the event.
+set
+Visibility(visibility)
+Calendar
+Event
+Series
+Sets the visibility of the event.
+Color
+Properties
+Property
+Type
+Description
+BLUE
+Enum
+Blue (
+#2952A3
+).
+BROWN
+Enum
+Brown (
+#8D6F47
+).
+CHARCOAL
+Enum
+Charcoal (
+#4E5D6C
+).
+CHESTNUT
+Enum
+Chestnut (
+#865A5A
+).
+GRAY
+Enum
+Gray (
+#5A6986
+).
+GREEN
+Enum
+Green (
+#0D7813
+).
+INDIGO
+Enum
+Indigo (
+#5229A3
+).
+LIME
+Enum
+Lime (
+#528800
+).
+MUSTARD
+Enum
+Mustard (
+#88880E
+).
+OLIVE
+Enum
+Olive (
+#6E6E41
+).
+ORANGE
+Enum
+Orange (
+#BE6D00
+).
+PINK
+Enum
+Pink (
+#B1365F
+).
+PLUM
+Enum
+Plum (
+#705770
+).
+PURPLE
+Enum
+Purple (
+#7A367A
+).
+RED
+Enum
+Red (
+#A32929
+).
+RED_ORANGE
+Enum
+Red-Orange (
+#B1440E
+).
+SEA_BLUE
+Enum
+Sea Blue (
+#29527A
+).
+SLATE
+Enum
+Slate (
+#4A716C
+).
+TEAL
+Enum
+Teal (
+#28754E
+).
+TURQOISE
+Enum
+Turquoise (
+#1B887A
+).
+YELLOW
+Enum
+Yellow (
+#AB8B00
+).
+Event
+Color
+Properties
+Property
+Type
+Description
+PALE_BLUE
+Enum
+Pale Blue (
+"1"
+), referred to as "Peacock" in th Calendar UI.
+PALE_GREEN
+Enum
+Pale Green (
+"2"
+), referred to as "Sage" in th Calendar UI.
+MAUVE
+Enum
+Mauve (
+"3"
+),, referred to as "Grape" in th Calendar UI.
+PALE_RED
+Enum
+Pale Red (
+"4"
+), referred to as "Flamingo" in th Calendar UI.
+YELLOW
+Enum
+Yellow (
+"5"
+), referred to as "Banana" in th Calendar UI.
+ORANGE
+Enum
+Orange (
+"6"
+), referred to as "Tangerine" in th Calendar UI.
+CYAN
+Enum
+Cyan (
+"7"
+), referred to as "Lavender" in th Calendar UI.
+GRAY
+Enum
+Gray (
+"8"
+), referred to as "Graphite" in th Calendar UI.
+BLUE
+Enum
+Blue (
+"9"
+), referred to as "Blueberry" in th Calendar UI.
+GREEN
+Enum
+Green (
+"10"
+), referred to as "Basil" in th Calendar UI.
+RED
+Enum
+Red (
+"11"
+), referred to as "Tomato" in th Calendar UI.
+Event
+Guest
+Methods
+Method
+Return type
+Brief description
+get
+Additional
+Guests()
+Integer
+Gets the number of additional people that this guest has said are attending.
+get
+Email()
+String
+Gets the email address of the guest.
+get
+Guest
+Status()
+Guest
+Status
+Gets the status of the guest for the event.
+get
+Name()
+String
+Gets the name of the guest.
+Event
+Recurrence
+Methods
+Method
+Return type
+Brief description
+add
+Daily
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a daily basis.
+add
+Daily
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a daily basis.
+add
+Date(date)
+Event
+Recurrence
+Adds a rule that causes the event to recur on a specific date.
+add
+Date
+Exclusion(date)
+Event
+Recurrence
+Adds a rule that excludes an occurrence for a specific date.
+add
+Monthly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a monthly basis.
+add
+Monthly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a monthly basis.
+add
+Weekly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a weekly basis.
+add
+Weekly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a weekly basis.
+add
+Yearly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a yearly basis.
+add
+Yearly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a yearly basis.
+set
+Time
+Zone(timeZone)
+Event
+Recurrence
+Sets the time zone for this recurrence.
+Event
+Transparency
+Properties
+Property
+Type
+Description
+OPAQUE
+Enum
+The event does block time on the calendar.
+TRANSPARENT
+Enum
+The event does not block time on the calendar.
+Event
+Type
+Properties
+Property
+Type
+Description
+DEFAULT
+Enum
+The event is a regular event.
+BIRTHDAY
+Enum
+The event is a special all-day event with an annual recurrence.
+FOCUS_TIME
+Enum
+The event is a focus-time event.
+FROM_GMAIL
+Enum
+The event is an event from Gmail.
+OUT_OF_OFFICE
+Enum
+The event is an out-of-office event.
+WORKING_LOCATION
+Enum
+The event is a working location event.
+Guest
+Status
+Properties
+Property
+Type
+Description
+INVITED
+Enum
+The guest has been invited, but has not indicated whether they are attending.
+MAYBE
+Enum
+The guest has indicated they might attend.
+NO
+Enum
+The guest has indicated they are not attending.
+OWNER
+Enum
+The guest is the owner of the event.
+YES
+Enum
+The guest has indicated they are attending.
+Recurrence
+Rule
+Methods
+Method
+Return type
+Brief description
+add
+Daily
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a daily basis.
+add
+Daily
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a daily basis.
+add
+Date(date)
+Event
+Recurrence
+Adds a rule that causes the event to recur on a specific date.
+add
+Date
+Exclusion(date)
+Event
+Recurrence
+Adds a rule that excludes an occurrence for a specific date.
+add
+Monthly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a monthly basis.
+add
+Monthly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a monthly basis.
+add
+Weekly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a weekly basis.
+add
+Weekly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a weekly basis.
+add
+Yearly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a yearly basis.
+add
+Yearly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a yearly basis.
+interval(interval)
+Recurrence
+Rule
+Configures the rule to only apply at this interval of the rule's time unit.
+only
+In
+Month(month)
+Recurrence
+Rule
+Configures the rule to only apply to a specific month.
+only
+In
+Months(months)
+Recurrence
+Rule
+Configures the rule to only apply to specific months.
+only
+On
+Month
+Day(day)
+Recurrence
+Rule
+Configures the rule to only apply to a specific day of the month.
+only
+On
+Month
+Days(days)
+Recurrence
+Rule
+Configures the rule to only apply to specific days of the month.
+only
+On
+Week(week)
+Recurrence
+Rule
+Configures the rule to only apply to a specific week of the year.
+only
+On
+Weekday(day)
+Recurrence
+Rule
+Configures the rule to only apply to a specific day of the week.
+only
+On
+Weekdays(days)
+Recurrence
+Rule
+Configures the rule to only apply to specific days of the week.
+only
+On
+Weeks(weeks)
+Recurrence
+Rule
+Configures the rule to only apply to specific weeks of the year.
+only
+On
+Year
+Day(day)
+Recurrence
+Rule
+Configures the rule to only apply to a specific day of the year.
+only
+On
+Year
+Days(days)
+Recurrence
+Rule
+Configures the rule to only apply to specific days of the year.
+set
+Time
+Zone(timeZone)
+Event
+Recurrence
+Sets the time zone for this recurrence.
+times(times)
+Recurrence
+Rule
+Configures the rule to end after a given number of occurrences.
+until(endDate)
+Recurrence
+Rule
+Configures the rule to end on a given date (inclusive).
+week
+Starts
+On(day)
+Recurrence
+Rule
+Configures which day a week starts on, for the purposes of applying the rule.
+Visibility
+Properties
+Property
+Type
+Description
+CONFIDENTIAL
+Enum
+The event is private.
+DEFAULT
+Enum
+Uses the default visibility for events on the calendar.
+PRIVATE
+Enum
+The event is private and only event attendees may view event details.
+PUBLIC
+Enum
+The event is public and event details are visible to all readers of the calendar.

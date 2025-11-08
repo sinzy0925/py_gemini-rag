@@ -1,0 +1,609 @@
+Source Path: gas_docs_html/apps-script/reference/slides/paragraph-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ParagraphStyle applies text styles to entire paragraphs.
+Reading methods for ParagraphStyle return null if the TextRange spans paragraphs with different styles.
+To avoid issues with reading styles across multiple paragraphs, query using the TextRange returned by Paragraph.getRange().
+Editing text fit within a shape deactivates any autofit settings on paragraph styles.
+ParagraphStyle provides methods to get and set indentation, line spacing, alignment, spacing above and below, spacing mode, and text direction.
+Paragraph
+Style
+The styles of text that apply to entire paragraphs.
+Read methods in this class return
+null
+if the corresponding
+Text
+Range
+spans
+multiple paragraphs, and those paragraphs have different values for the read method being called.
+To avoid this, query for paragraph styles using the
+Text
+Range
+returned by the
+Paragraph.getRange()
+method.
+If you use methods that edit how text fits within a shape, any autofit settings applied to the
+paragraph styles are deactivated.
+Methods
+Method
+Return type
+Brief description
+get
+Indent
+End()
+Number
+Returns the text end indentation for paragraphs in the
+Text
+Range
+in points, or
+null
+if there are multiple paragraph styles on the given text.
+get
+Indent
+First
+Line()
+Number
+Returns the indentation for the first line of paragraphs in the
+Text
+Range
+in points, or
+null
+if there are multiple paragraph styles on the given text.
+get
+Indent
+Start()
+Number
+Returns the text start indentation for paragraphs in the
+Text
+Range
+in points, or
+null
+if there are multiple paragraph styles on the given text.
+get
+Line
+Spacing()
+Number
+Returns the line spacing, or
+null
+if there are multiple paragraph styles on the given
+text.
+get
+Paragraph
+Alignment()
+Paragraph
+Alignment
+Returns the
+Paragraph
+Alignment
+of paragraphs in the
+Text
+Range
+, or
+null
+if there are multiple paragraph styles on the given text.
+get
+Space
+Above()
+Number
+Returns the extra space above paragraphs in the
+Text
+Range
+in points, or
+null
+if
+there are multiple paragraph styles on the given text.
+get
+Space
+Below()
+Number
+Returns the extra space below paragraphs in the
+Text
+Range
+in points, or
+null
+if
+there are multiple paragraph styles on the given text.
+get
+Spacing
+Mode()
+Spacing
+Mode
+Returns the
+Spacing
+Mode
+for paragraphs in the
+Text
+Range
+, or
+null
+if
+there are multiple paragraph styles on the given text.
+get
+Text
+Direction()
+Text
+Direction
+Returns the
+Text
+Direction
+for paragraphs in the
+Text
+Range
+, or
+null
+if
+there are multiple paragraph styles on the given text.
+set
+Indent
+End(indent)
+Paragraph
+Style
+Sets the text end indentation for paragraphs in the
+Text
+Range
+in points.
+set
+Indent
+First
+Line(indent)
+Paragraph
+Style
+Sets the indentation for the first line of paragraphs in the
+Text
+Range
+in points.
+set
+Indent
+Start(indent)
+Paragraph
+Style
+Sets the text start indentation for paragraphs in the
+Text
+Range
+in points.
+set
+Line
+Spacing(spacing)
+Paragraph
+Style
+Sets the line spacing.
+set
+Paragraph
+Alignment(alignment)
+Paragraph
+Style
+Sets the
+Paragraph
+Alignment
+of paragraphs in the
+Text
+Range
+.
+set
+Space
+Above(space)
+Paragraph
+Style
+Sets the extra space above paragraphs in the
+Text
+Range
+in points.
+set
+Space
+Below(space)
+Paragraph
+Style
+Sets the extra space below paragraphs in the
+Text
+Range
+in points.
+set
+Spacing
+Mode(mode)
+Paragraph
+Style
+Sets the
+Spacing
+Mode
+for paragraphs in the
+Text
+Range
+.
+set
+Text
+Direction(direction)
+Paragraph
+Style
+Sets the
+Text
+Direction
+for paragraphs in the
+Text
+Range
+.
+Detailed documentation
+get
+Indent
+End()
+Returns the text end indentation for paragraphs in the
+Text
+Range
+in points, or
+null
+if there are multiple paragraph styles on the given text.
+The side that corresponds to the end of the text is based on the current text direction.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Indent
+First
+Line()
+Returns the indentation for the first line of paragraphs in the
+Text
+Range
+in points, or
+null
+if there are multiple paragraph styles on the given text.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Indent
+Start()
+Returns the text start indentation for paragraphs in the
+Text
+Range
+in points, or
+null
+if there are multiple paragraph styles on the given text.
+The side that corresponds to the start of the text is based on the current text direction.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Line
+Spacing()
+Returns the line spacing, or
+null
+if there are multiple paragraph styles on the given
+text.
+This is a value that corresponds to the space between lines, as a percentage of normal.
+Normal is represented as 100.0.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Paragraph
+Alignment()
+Returns the
+Paragraph
+Alignment
+of paragraphs in the
+Text
+Range
+, or
+null
+if there are multiple paragraph styles on the given text.
+Return
+Paragraph
+Alignment
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Space
+Above()
+Returns the extra space above paragraphs in the
+Text
+Range
+in points, or
+null
+if
+there are multiple paragraph styles on the given text.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Space
+Below()
+Returns the extra space below paragraphs in the
+Text
+Range
+in points, or
+null
+if
+there are multiple paragraph styles on the given text.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Spacing
+Mode()
+Returns the
+Spacing
+Mode
+for paragraphs in the
+Text
+Range
+, or
+null
+if
+there are multiple paragraph styles on the given text.
+Return
+Spacing
+Mode
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Text
+Direction()
+Returns the
+Text
+Direction
+for paragraphs in the
+Text
+Range
+, or
+null
+if
+there are multiple paragraph styles on the given text.
+Return
+Text
+Direction
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Indent
+End(indent)
+Sets the text end indentation for paragraphs in the
+Text
+Range
+in points.
+The side that corresponds to the end of the text is based on the current text direction.
+Parameters
+Name
+Type
+Description
+indent
+Number
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Indent
+First
+Line(indent)
+Sets the indentation for the first line of paragraphs in the
+Text
+Range
+in points.
+Parameters
+Name
+Type
+Description
+indent
+Number
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Indent
+Start(indent)
+Sets the text start indentation for paragraphs in the
+Text
+Range
+in points.
+The side that corresponds to the start of the text is based on the current text direction.
+Parameters
+Name
+Type
+Description
+indent
+Number
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Line
+Spacing(spacing)
+Sets the line spacing.
+This is a value that corresponds to the space between lines, as a percentage of normal.
+Normal is represented as 100.0.
+Parameters
+Name
+Type
+Description
+spacing
+Number
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Paragraph
+Alignment(alignment)
+Sets the
+Paragraph
+Alignment
+of paragraphs in the
+Text
+Range
+.
+Parameters
+Name
+Type
+Description
+alignment
+Paragraph
+Alignment
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Space
+Above(space)
+Sets the extra space above paragraphs in the
+Text
+Range
+in points.
+Parameters
+Name
+Type
+Description
+space
+Number
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Space
+Below(space)
+Sets the extra space below paragraphs in the
+Text
+Range
+in points.
+Parameters
+Name
+Type
+Description
+space
+Number
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Spacing
+Mode(mode)
+Sets the
+Spacing
+Mode
+for paragraphs in the
+Text
+Range
+.
+Parameters
+Name
+Type
+Description
+mode
+Spacing
+Mode
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Text
+Direction(direction)
+Sets the
+Text
+Direction
+for paragraphs in the
+Text
+Range
+.
+Parameters
+Name
+Type
+Description
+direction
+Text
+Direction
+Return
+Paragraph
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

@@ -1,0 +1,117 @@
+Source Path: gas_docs_html/apps-script/reference/url-fetch/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The UrlFetch service allows scripts to fetch URLs and make HTTP/HTTPS requests and receive responses.
+Requests made using this service originate from a set pool of IP ranges that can be looked up for whitelisting.
+Using this service requires the
+https://www.googleapis.com/auth/script.external_request
+scope.
+The
+UrlFetchApp
+class is used to fetch resources and communicate with other hosts over the Internet.
+The
+HTTPResponse
+class allows users to access specific information about HTTP responses, such as headers, content, and response codes.
+URL Fetch
+This service allows scripts to access other resources on the web by fetching
+URLs. A script can use the UrlFetch service to issue HTTP and HTTPS requests and
+receive responses. The UrlFetch service uses Google's network infrastructure for
+efficiency and scaling purposes.
+Requests made using this service originate from a set pool of IP ranges. You can
+look up the full list of IP addresses
+if you need to whitelist or approve these requests.
+The default user agent string of UrlFetch service requests is
+Mozilla/5.0 (compatible; Google-Apps-Script; beanserver; +https://script.google.com; id:
+SCRIPT_ID
+)
+.
+This service requires the
+https://www.googleapis.com/auth/script.external_request
+scope. In most cases Apps Script automatically detects and includes scopes a script needs, but
+if you are
+setting your scopes explicitly
+you must manually add this scope to use
+Url
+Fetch
+App
+.
+See also
+HTTPResponse
+Setting explicit scopes
+Classes
+Name
+Brief description
+HTTPResponse
+This class allows users to access specific information on HTTP responses.
+Url
+Fetch
+App
+Fetch resources and communicate with other hosts over the Internet.
+HTTPResponse
+Methods
+Method
+Return type
+Brief description
+get
+All
+Headers()
+Object
+Returns an attribute/value map of headers for the HTTP response, with headers that have
+multiple values returned as arrays.
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Content()
+Byte[]
+Gets the raw binary content of an HTTP response.
+get
+Content
+Text()
+String
+Gets the content of an HTTP response encoded as a string.
+get
+Content
+Text(charset)
+String
+Returns the content of an HTTP response encoded as a string of the given charset.
+get
+Headers()
+Object
+Returns an attribute/value map of headers for the HTTP response.
+get
+Response
+Code()
+Integer
+Get the HTTP status code (200 for OK, etc.) of an HTTP response.
+Url
+Fetch
+App
+Methods
+Method
+Return type
+Brief description
+fetch(url)
+HTTPResponse
+Makes a request to fetch a URL.
+fetch(url, params)
+HTTPResponse
+Makes a request to fetch a URL using optional advanced parameters.
+fetch
+All(requests)
+HTTPResponse[]
+Makes multiple requests to fetch multiple URLs using optional advanced parameters.
+get
+Request(url)
+Object
+Returns the request that is made if the operation was invoked.
+get
+Request(url, params)
+Object
+Returns the request that is made if the operation were invoked.

@@ -1,0 +1,100 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/color/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Color object represents a color and can be converted to an RgbColor or a ThemeColor.
+You can get the type of the color using the
+getColorType()
+method.
+Converting to RgbColor or ThemeColor may throw an error if the color is not of that type.
+Using these methods requires specific spreadsheet authorization scopes.
+Color
+A representation for a color.
+Methods
+Method
+Return type
+Brief description
+as
+Rgb
+Color()
+Rgb
+Color
+Converts this color to an
+Rgb
+Color
+.
+as
+Theme
+Color()
+Theme
+Color
+Converts this color to a
+Theme
+Color
+.
+get
+Color
+Type()
+Color
+Type
+Get the type of this color.
+Detailed documentation
+as
+Rgb
+Color()
+Converts this color to an
+Rgb
+Color
+.
+Return
+Rgb
+Color
+— The RGB color.
+Throws
+Error
+— if the color is not an
+Rgb
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+as
+Theme
+Color()
+Converts this color to a
+Theme
+Color
+.
+Return
+Theme
+Color
+— The theme color.
+Throws
+Error
+— if the color is not a
+Theme
+Color
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Color
+Type()
+Get the type of this color.
+Return
+Color
+Type
+— The color type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

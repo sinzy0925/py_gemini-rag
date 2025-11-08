@@ -1,0 +1,175 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/time-picker/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TimePicker is an input field for users to input a time, available for Google Workspace add-ons and Google Chat apps.
+Key methods include setting the field name, title, default hours and minutes, and an action to perform when the input changes.
+The
+setFieldName
+method requires a unique name to identify the picker in UI interaction events.
+setHours
+and
+setMinutes
+allow setting prefilled time values, which are represented as strings in form callback parameters.
+setOnChangeAction
+allows associating a script action with changes made to the picker's input.
+Time
+Picker
+An input field that allows users to input a time.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+dateTimePicker
+=
+CardService
+.
+newTimePicker
+()
+.
+setTitle
+(
+'Enter the time.'
+)
+.
+setFieldName
+(
+'time_field'
+)
+// Set default value as 3:30 AM.
+.
+setHours
+(
+3
+)
+.
+setMinutes
+(
+30
+)
+.
+setOnChangeAction
+(
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'handleDateTimeChange'
+),
+);
+Methods
+Method
+Return type
+Brief description
+set
+Field
+Name(fieldName)
+Time
+Picker
+Sets the field name that identifies this picker in the event object that is generated when
+there is a UI interaction.
+set
+Hours(hours)
+Time
+Picker
+Sets the prefilled hours value to set in the input field.
+set
+Minutes(minutes)
+Time
+Picker
+Sets the prefilled minutes value to set in the input field.
+set
+On
+Change
+Action(action)
+Time
+Picker
+Sets an
+Action
+that the script performs whenever the picker input changes.
+set
+Title(title)
+Time
+Picker
+Sets the title displayed above the input field.
+Detailed documentation
+set
+Field
+Name(fieldName)
+Sets the field name that identifies this picker in the event object that is generated when
+there is a UI interaction. The field name is visible to the user. Required; the specified field
+name must be unique.
+Parameters
+Name
+Type
+Description
+field
+Name
+String
+The name to assign to this input.
+Return
+Time
+Picker
+— This picker, for chaining.
+set
+Hours(hours)
+Sets the prefilled hours value to set in the input field.
+Parameters
+Name
+Type
+Description
+hours
+Integer
+The default hour value placed in the input, range from 0 to 23. It is always
+    represented as a string in the form callback parameters.
+Return
+Time
+Picker
+— This picker, for chaining.
+set
+Minutes(minutes)
+Sets the prefilled minutes value to set in the input field.
+Parameters
+Name
+Type
+Description
+minutes
+Integer
+The default minutes value placed in the input, range from 0 to 59. It is always
+    represented as a string in the form callback parameters.
+Return
+Time
+Picker
+— This picker, for chaining.
+set
+On
+Change
+Action(action)
+Sets an
+Action
+that the script performs whenever the picker input changes.
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to take.
+Return
+Time
+Picker
+— This picker, for chaining.
+set
+Title(title)
+Sets the title displayed above the input field.
+Parameters
+Name
+Type
+Description
+title
+String
+The input field title.
+Return
+Time
+Picker
+— This picker, for chaining.

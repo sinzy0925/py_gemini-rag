@@ -1,0 +1,475 @@
+Source Path: gas_docs_html/apps-script/reference/slides/slides-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SlidesApp is used to create and open editable presentations.
+You can open a presentation using its ID or URL, or create a new one with a specified name.
+SlidesApp provides access to numerous properties defining elements and styles within presentations, such as alignment, colors, and shapes.
+Methods are available to get the active presentation, access the user interface, and build affine transformations.
+Slides
+App
+Creates and opens
+Presentations
+that can be edited.
+// Open a presentation by ID.
+let
+preso
+=
+SlidesApp
+.
+openById
+(
+'PRESENTATION_ID_GOES_HERE'
+);
+// Create and open a presentation.
+preso
+=
+SlidesApp
+.
+create
+(
+'Presentation Name'
+);
+Properties
+Property
+Type
+Description
+Alignment
+Position
+Alignment
+Position
+An enumeration of the types of alignment positions.
+Arrow
+Style
+Arrow
+Style
+An enumeration of the different arrow styles that a
+Line
+can have.
+Auto
+Text
+Type
+Auto
+Text
+Type
+An enumeration of the types of auto text.
+Autofit
+Type
+Autofit
+Type
+An enumeration of autofit types.
+Cell
+Merge
+State
+Cell
+Merge
+State
+An enumeration of the different merge states of a table cell.
+Color
+Type
+Color
+Type
+An enumeration of color types.
+Content
+Alignment
+Content
+Alignment
+An enumeration of values used to specify content alignment.
+Dash
+Style
+Dash
+Style
+An enumeration of the different dash styles that a
+Line
+can have.
+Fill
+Type
+Fill
+Type
+An enumeration of fill types.
+Line
+Category
+Line
+Category
+An enumeration of the categories of
+Line
+.
+Line
+Fill
+Type
+Line
+Fill
+Type
+An enumeration of the types of
+Line
+Fill
+.
+Line
+Type
+Line
+Type
+An enumeration of the types of
+Line
+.
+Link
+Type
+Link
+Type
+An enumeration of the types of links.
+List
+Preset
+List
+Preset
+An enumeration of the types of list presets.
+Page
+Background
+Type
+Page
+Background
+Type
+An enumeration of the types of page backgrounds.
+Page
+Element
+Type
+Page
+Element
+Type
+An enumeration of the types of page elements.
+Page
+Type
+Page
+Type
+An enumeration of the types of pages.
+Paragraph
+Alignment
+Paragraph
+Alignment
+An enumeration of the types of paragraph alignment.
+Placeholder
+Type
+Placeholder
+Type
+An enumeration of the types of placeholders.
+Predefined
+Layout
+Predefined
+Layout
+An enumeration of the predefined layouts.
+Selection
+Type
+Selection
+Type
+An enumeration of the types of selections.
+Shape
+Type
+Shape
+Type
+An enumeration of the types of shapes.
+Sheets
+Chart
+Embed
+Type
+Sheets
+Chart
+Embed
+Type
+An enumeration of Sheets chart embed types.
+Slide
+Linking
+Mode
+Slide
+Linking
+Mode
+An enumeration of the ways Slides can be linked.
+Slide
+Position
+Slide
+Position
+An enumeration of the types of slide positions.
+Spacing
+Mode
+Spacing
+Mode
+An enumeration of the types of spacing modes.
+Text
+Baseline
+Offset
+Text
+Baseline
+Offset
+An enumeration of the types of text baseline offset.
+Text
+Direction
+Text
+Direction
+An enumeration of the types of text directions.
+Theme
+Color
+Type
+Theme
+Color
+Type
+An enumeration of theme colors.
+Video
+Source
+Type
+Video
+Source
+Type
+An enumeration of the types of video source.
+Methods
+Method
+Return type
+Brief description
+create(name)
+Presentation
+Creates and opens a new
+Presentation
+.
+get
+Active
+Presentation()
+Presentation
+Returns the currently active presentation to which the script is
+container-bound
+, or
+null
+if there is no
+active presentation.
+get
+Ui()
+Ui
+Returns an instance of the presentation's user-interface environment that allows the script to
+add features like menus, dialogs, and sidebars.
+new
+Affine
+Transform
+Builder()
+Affine
+Transform
+Builder
+Returns a new
+Affine
+Transform
+Builder
+to build an
+Affine
+Transform
+.
+open
+By
+Id(id)
+Presentation
+Opens the
+Presentation
+with the given ID.
+open
+By
+Url(url)
+Presentation
+Opens the
+Presentation
+with the given URL.
+Detailed documentation
+create(name)
+Creates and opens a new
+Presentation
+.
+Parameters
+Name
+Type
+Description
+name
+String
+The name to be given to the created presentation.
+Return
+Presentation
+— the presentation with the given name.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations
+get
+Active
+Presentation()
+Returns the currently active presentation to which the script is
+container-bound
+, or
+null
+if there is no
+active presentation. To interact with a presentation to which the script is not
+container-bound, use
+open
+By
+Id(id)
+instead.
+// Get the current presentation to which this script is bound.
+const
+presentation
+=
+SlidesApp
+.
+getActivePresentation
+();
+If the presentation is already open, the same presentation instance is returned.
+Return
+Presentation
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Ui()
+Returns an instance of the presentation's user-interface environment that allows the script to
+add features like menus, dialogs, and sidebars. A script can only interact with the UI for the
+current instance of an open presentation, and only if the script is
+bound
+to the presentation. For more information, see
+the guides to
+menus
+and
+dialogs and sidebars
+.
+// Add a custom menu to the active presentation, including a separator and a
+// sub-menu.
+function
+onOpen
+(
+e
+)
+{
+SlidesApp
+.
+getUi
+()
+.
+createMenu
+(
+'My Menu'
+)
+.
+addItem
+(
+'My menu item'
+,
+'myFunction'
+)
+.
+addSeparator
+()
+.
+addSubMenu
+(
+SlidesApp
+.
+getUi
+()
+.
+createMenu
+(
+'My sub-menu'
+)
+.
+addItem
+(
+'One sub-menu item'
+,
+'mySecondFunction'
+)
+.
+addItem
+(
+'Another sub-menu item'
+,
+'myThirdFunction'
+),
+)
+.
+addToUi
+();
+}
+Return
+Ui
+new
+Affine
+Transform
+Builder()
+Returns a new
+Affine
+Transform
+Builder
+to build an
+Affine
+Transform
+. The builder
+is preset with the identity affine transform.
+Return
+Affine
+Transform
+Builder
+open
+By
+Id(id)
+Opens the
+Presentation
+with the given ID.
+// Open a presentation by ID.
+const
+presentation
+=
+SlidesApp
+.
+openById
+(
+'docId'
+);
+If the presentation is already open, the same presentation instance is returned.
+Parameters
+Name
+Type
+Description
+id
+String
+Return
+Presentation
+— the presentation with the given ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations
+open
+By
+Url(url)
+Opens the
+Presentation
+with the given URL.
+// Open a presentation by URL.
+const
+presentation
+=
+SlidesApp
+.
+openByUrl
+(
+'https://docs.google.com/presentation/d/docId/edit'
+,
+);
+If the presentation is already open, the same presentation instance is returned.
+Parameters
+Name
+Type
+Description
+url
+String
+Return
+Presentation
+— the presentation with the given URL
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations

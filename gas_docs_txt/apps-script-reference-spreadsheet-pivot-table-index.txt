@@ -1,0 +1,460 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/pivot-table/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Pivot tables can be accessed and modified using various methods.
+Methods are available to add calculated pivot values, column groups, filters, and pivot values.
+You can retrieve information about the pivot table's anchor cell, column groups, filters, pivot values, row groups, source data range, and values display orientation.
+Pivot tables can be deleted using the
+remove()
+method.
+The display orientation of pivot table values can be set using the
+setValuesDisplayOrientation()
+method.
+Pivot
+Table
+Access and modify pivot tables.
+Methods
+Method
+Return type
+Brief description
+add
+Calculated
+Pivot
+Value(name, formula)
+Pivot
+Value
+Creates a new pivot value in the pivot table calculated from the specified
+formula
+with
+the specified
+name
+.
+add
+Column
+Group(sourceDataColumn)
+Pivot
+Group
+Defines a new pivot column grouping in the pivot table.
+add
+Filter(sourceDataColumn, filterCriteria)
+Pivot
+Filter
+Creates a new pivot filter for the pivot table.
+add
+Pivot
+Value(sourceDataColumn, summarizeFunction)
+Pivot
+Value
+Defines a new pivot value in the pivot table with the specified
+summarize
+Function
+.
+add
+Row
+Group(sourceDataColumn)
+Pivot
+Group
+Defines a new pivot row grouping in the pivot table.
+as
+Data
+Source
+Pivot
+Table()
+Data
+Source
+Pivot
+Table
+Returns the pivot table as a data source pivot table if the pivot table is linked to a
+Data
+Source
+, or
+null
+otherwise.
+get
+Anchor
+Cell()
+Range
+Returns the
+Range
+representing the cell where this pivot table is anchored.
+get
+Column
+Groups()
+Pivot
+Group[]
+Returns an ordered list of the column groups in this pivot table.
+get
+Filters()
+Pivot
+Filter[]
+Returns an ordered list of the filters in this pivot table.
+get
+Pivot
+Values()
+Pivot
+Value[]
+Returns an ordered list of the pivot values in this pivot table.
+get
+Row
+Groups()
+Pivot
+Group[]
+Returns an ordered list of the row groups in this pivot table.
+get
+Source
+Data
+Range()
+Range
+Returns the source data range on which the pivot table is constructed.
+get
+Values
+Display
+Orientation()
+Dimension
+Returns whether values are displayed as rows or columns.
+remove()
+void
+Deletes this pivot table.
+set
+Values
+Display
+Orientation(dimension)
+Pivot
+Table
+Sets the layout of this pivot table to display values as columns or rows.
+Detailed documentation
+add
+Calculated
+Pivot
+Value(name, formula)
+Creates a new pivot value in the pivot table calculated from the specified
+formula
+with
+the specified
+name
+.
+Parameters
+Name
+Type
+Description
+name
+String
+The name for this calculated pivot value.
+formula
+String
+The formula used to calculate this value.
+Return
+Pivot
+Value
+— the newly created
+Pivot
+Value
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+add
+Column
+Group(sourceDataColumn)
+Defines a new pivot column grouping in the pivot table. The specified
+source
+Data
+Column
+indicates the column in the source data this grouping is based on.
+Parameters
+Name
+Type
+Description
+source
+Data
+Column
+Integer
+The number of the column this group summarizes. This index represents
+    the absolute number of the column in the spreadsheet;
+1
+representing column "A,"
+2
+representing column B, etc.
+Return
+Pivot
+Group
+— the newly created
+Pivot
+Group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+add
+Filter(sourceDataColumn, filterCriteria)
+Creates a new pivot filter for the pivot table. The specified
+source
+Data
+Column
+indicates the column in the source data this filter operates on.
+Parameters
+Name
+Type
+Description
+source
+Data
+Column
+Integer
+The number of the column this group summarizes. This index represents
+    the absolute number of the column in the spreadsheet;
+1
+representing column "A,"
+2
+representing column B, etc.
+filter
+Criteria
+Filter
+Criteria
+The filter criteria used to perform the filtering.
+Return
+Pivot
+Filter
+— the newly created
+Pivot
+Filter
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+add
+Pivot
+Value(sourceDataColumn, summarizeFunction)
+Defines a new pivot value in the pivot table with the specified
+summarize
+Function
+. The
+specified
+source
+Data
+Column
+indicates the column in the source data this value is based
+on.
+Parameters
+Name
+Type
+Description
+source
+Data
+Column
+Integer
+The number of the column this group summarizes. This index represents
+    the absolute number of the column in the spreadsheet;
+1
+representing column "A,"
+2
+representing column B, etc.
+summarize
+Function
+Pivot
+Table
+Summarize
+Function
+Return
+Pivot
+Value
+— the newly created
+Pivot
+Value
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+add
+Row
+Group(sourceDataColumn)
+Defines a new pivot row grouping in the pivot table. The specified
+source
+Data
+Column
+indicates the column in the source data this grouping is based on.
+Parameters
+Name
+Type
+Description
+source
+Data
+Column
+Integer
+The number of the column this group summarizes. This index represents
+    the absolute number of the column in the spreadsheet;
+1
+representing column "A,"
+2
+representing column B, etc.
+Return
+Pivot
+Group
+— the newly created
+Pivot
+Group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+as
+Data
+Source
+Pivot
+Table()
+Returns the pivot table as a data source pivot table if the pivot table is linked to a
+Data
+Source
+, or
+null
+otherwise.
+Return
+Data
+Source
+Pivot
+Table
+— A data source pivot table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Anchor
+Cell()
+Returns the
+Range
+representing the cell where this pivot table is anchored.
+Return
+Range
+— this pivot table's anchor cell
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Column
+Groups()
+Returns an ordered list of the column groups in this pivot table.
+Return
+Pivot
+Group[]
+— the column groups in this pivot table
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Filters()
+Returns an ordered list of the filters in this pivot table.
+Return
+Pivot
+Filter[]
+— the filters in this pivot table
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Pivot
+Values()
+Returns an ordered list of the pivot values in this pivot table.
+Return
+Pivot
+Value[]
+— the pivot values in this pivot table
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Row
+Groups()
+Returns an ordered list of the row groups in this pivot table.
+Return
+Pivot
+Group[]
+— the row groups in this pivot table
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Source
+Data
+Range()
+Returns the source data range on which the pivot table is constructed.
+Return
+Range
+— The source data range of this pivot table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Values
+Display
+Orientation()
+Returns whether values are displayed as rows or columns.
+Return
+Dimension
+— whether values are displayed as rows or columns
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Deletes this pivot table. Further operations on this pivot table results in an error.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Values
+Display
+Orientation(dimension)
+Sets the layout of this pivot table to display values as columns or rows.
+Parameters
+Name
+Type
+Description
+dimension
+Dimension
+The dimension indicating how to display pivot values.
+Return
+Pivot
+Table
+— the pivot table for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

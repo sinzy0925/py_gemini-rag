@@ -1,0 +1,612 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/grid/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Grid is an organized grid used to display a collection of grid items.
+The Grid is available for Google Workspace add-ons and Google Chat apps.
+Grids support methods to add items, set authorization, border, compose, click, and open link actions, define the number of columns, and set a title.
+A UI object can only have one click or action method set at a time.
+Grid
+An organized grid to display a collection of grid items.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+grid
+=
+CardService
+.
+newGrid
+().
+setTitle
+(
+'My Grid'
+).
+setNumColumns
+(
+2
+).
+addItem
+(
+CardService
+.
+newGridItem
+().
+setTitle
+(
+'My item'
+));
+Methods
+Method
+Return type
+Brief description
+add
+Item(gridItem)
+Grid
+Adds a new grid item to the grid.
+set
+Authorization
+Action(action)
+Grid
+Sets an authorization action that opens a URL to the authorization flow when the object is
+clicked.
+set
+Border
+Style(borderStyle)
+Grid
+Sets the border style applied to each grid item.
+set
+Compose
+Action(action, composedEmailType)
+Grid
+Sets an action that composes a draft email when the object is clicked.
+set
+Num
+Columns(numColumns)
+Grid
+The number of columns to display in the grid.
+set
+On
+Click
+Action(action)
+Grid
+Sets an action that executes when the object is clicked.
+set
+On
+Click
+Open
+Link
+Action(action)
+Grid
+Sets an action that opens a URL in a tab when the object is clicked.
+set
+Open
+Link(openLink)
+Grid
+Sets a URL to be opened when the object is clicked.
+set
+Title(title)
+Grid
+Sets the title text of the grid.
+Detailed documentation
+add
+Item(gridItem)
+Adds a new grid item to the grid.
+Parameters
+Name
+Type
+Description
+grid
+Item
+Grid
+Item
+The grid item to add.
+Return
+Grid
+— This object, for chaining.
+set
+Authorization
+Action(action)
+Sets an authorization action that opens a URL to the authorization flow when the object is
+clicked. This opens the URL in a new window. When the user finishes the authorization flow and
+returns to the application, the add-on reloads.
+A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+// ...
+const
+action
+=
+CardService
+.
+newAuthorizationAction
+().
+setAuthorizationUrl
+(
+'url'
+);
+CardService
+.
+newTextButton
+().
+setText
+(
+'Authorize'
+).
+setAuthorizationAction
+(
+action
+);
+Parameters
+Name
+Type
+Description
+action
+Authorization
+Action
+The object that specifies the authorization action to take when this element is
+    clicked.
+Return
+Grid
+— This object, for chaining.
+set
+Border
+Style(borderStyle)
+Sets the border style applied to each grid item. Default is NO_BORDER.
+Parameters
+Name
+Type
+Description
+border
+Style
+Border
+Style
+The border style to apply.
+Return
+Grid
+— This object, for chaining.
+set
+Compose
+Action(action, composedEmailType)
+Sets an action that composes a draft email when the object is clicked. A UI object can only
+have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Compose
+Action
+Response
+object configured using
+Compose
+Action
+Response
+Builder.setGmailDraft(draft)
+.
+Note
+: This method doesn't set a
+compose action
+that is
+used to
+extend the compose UI
+.
+Rather, this method connects this UI element to an
+Action
+that
+composes draft messages
+in Apps Script that are
+opened in Gmail when the action completes.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'composeEmailCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Compose Email'
+)
+.
+setComposeAction
+(
+action
+,
+CardService
+.
+ComposedEmailType
+.
+REPLY_AS_DRAFT
+);
+// ...
+function
+composeEmailCallback
+(
+e
+)
+{
+const
+thread
+=
+GmailApp
+.
+getThreadById
+(
+e
+.
+threadId
+);
+const
+draft
+=
+thread
+.
+createDraftReply
+(
+'This is a reply'
+);
+return
+CardService
+.
+newComposeActionResponseBuilder
+()
+.
+setGmailDraft
+(
+draft
+)
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The object that specifies the compose action to take when this element is
+    clicked.
+composed
+Email
+Type
+Composed
+Email
+Type
+An enum value that specifies whether the composed draft is a
+    standalone or reply draft.
+Return
+Grid
+— This object, for chaining.
+set
+Num
+Columns(numColumns)
+The number of columns to display in the grid. If shown in the right side panel, you can display
+1-2 columns and the default value is 1. If shown in a dialog, you can display 2-3 columns and
+the default value is 2.
+Parameters
+Name
+Type
+Description
+num
+Columns
+Integer
+The number of columns.
+Return
+Grid
+— This object, for chaining.
+set
+On
+Click
+Action(action)
+Sets an action that executes when the object is clicked. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Action
+Response
+object.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'notificationCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Create notification'
+)
+.
+setOnClickAction
+(
+action
+);
+// ...
+function
+notificationCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setNotification
+(
+CardService
+.
+newNotification
+().
+setText
+(
+'Some info to display to user'
+),
+)
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to take when this element is clicked.
+Return
+Grid
+— This object, for chaining.
+set
+On
+Click
+Open
+Link
+Action(action)
+Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
+URL needs to be built or when you need to take other actions in addition to creating the
+Open
+Link
+object. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Action
+Response
+object configured using
+Action
+Response
+Builder.setOpenLink(openLink)
+.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'openLinkCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Open Link'
+)
+.
+setOnClickOpenLinkAction
+(
+action
+);
+// ...
+function
+openLinkCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setOpenLink
+(
+CardService
+.
+newOpenLink
+().
+setUrl
+(
+'https://www.google.com'
+))
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The object that specifies the open link action to take when this element is
+    clicked.
+Return
+Grid
+— This object, for chaining.
+set
+Open
+Link(openLink)
+Sets a URL to be opened when the object is clicked. Use this function when the URL is already
+known and only needs to be opened. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+,
+or
+set
+Compose
+Action(action, composedEmailType)
+set.
+Parameters
+Name
+Type
+Description
+open
+Link
+Open
+Link
+An
+Open
+Link
+object describing the URL to open.
+Return
+Grid
+— This object, for chaining.
+set
+Title(title)
+Sets the title text of the grid. The text must be a plain string with no formatting.
+Parameters
+Name
+Type
+Description
+title
+String
+The title text.
+Return
+Grid
+— This object, for chaining.

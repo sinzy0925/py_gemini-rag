@@ -1,0 +1,218 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/attribute/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+An Attribute object represents an XML attribute and is used in conjunction with XmlService.
+Attributes have methods to get and set their name, namespace, and value.
+The provided example demonstrates how to parse XML, retrieve attributes, and add a new attribute with a combined value.
+Attribute
+A representation of an XML attribute.
+// Reads the first and last name of each person and adds a new attribute with
+// the full name.
+let
+xml
+=
+'<roster>'
++
+'<person first="John" last="Doe"/>'
++
+'<person first="Mary" last="Smith"/>'
++
+'</roster>'
+;
+const
+document
+=
+XmlService
+.
+parse
+(
+xml
+);
+const
+people
+=
+document
+.
+getRootElement
+().
+getChildren
+(
+'person'
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+people
+.
+length
+;
+i
+++
+)
+{
+const
+person
+=
+people
+[
+i
+];
+const
+firstName
+=
+person
+.
+getAttribute
+(
+'first'
+).
+getValue
+();
+const
+lastName
+=
+person
+.
+getAttribute
+(
+'last'
+).
+getValue
+();
+person
+.
+setAttribute
+(
+'full'
+,
+`
+${
+firstName
+}
+${
+lastName
+}
+`
+);
+}
+xml
+=
+XmlService
+.
+getPrettyFormat
+().
+format
+(
+document
+);
+Logger
+.
+log
+(
+xml
+);
+Methods
+Method
+Return type
+Brief description
+get
+Name()
+String
+Gets the local name of the attribute.
+get
+Namespace()
+Namespace
+Gets the namespace for the attribute.
+get
+Value()
+String
+Gets the value of the attribute.
+set
+Name(name)
+Attribute
+Sets the local name of the attribute.
+set
+Namespace(namespace)
+Attribute
+Sets the namespace for the attribute.
+set
+Value(value)
+Attribute
+Sets the value of the attribute.
+Detailed documentation
+get
+Name()
+Gets the local name of the attribute. If the attribute has a namespace prefix, use
+get
+Namespace()
+.
+get
+Prefix()
+to get the prefix.
+Return
+String
+— the local name of the attribute
+get
+Namespace()
+Gets the namespace for the attribute.
+Return
+Namespace
+— the namespace for the attribute
+get
+Value()
+Gets the value of the attribute.
+Return
+String
+— the value of the attribute
+set
+Name(name)
+Sets the local name of the attribute. To set a namespace prefix for the attribute, use
+set
+Namespace(namespace)
+in conjunction with
+Xml
+Service.getNamespace(prefix, uri)
+.
+Parameters
+Name
+Type
+Description
+name
+String
+the local name to set
+Return
+Attribute
+— the attribute, for chaining
+set
+Namespace(namespace)
+Sets the namespace for the attribute. The namespace must have a prefix.
+Parameters
+Name
+Type
+Description
+namespace
+Namespace
+the namespace to set
+Return
+Attribute
+— the attribute, for chaining
+set
+Value(value)
+Sets the value of the attribute.
+Parameters
+Name
+Type
+Description
+value
+String
+the value to set
+Return
+Attribute
+— the attribute, for chaining

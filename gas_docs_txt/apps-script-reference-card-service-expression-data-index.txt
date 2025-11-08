@@ -1,0 +1,101 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/expression-data/index.html
+
+Expression
+Data
+The expression data that is used to evaluate an expression
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+expressionData
+=
+CardService
+.
+newExpressionData
+();
+Methods
+Method
+Return type
+Brief description
+add
+Condition(condition)
+Expression
+Data
+Adds a condition to the current expression data.
+add
+Event
+Action(eventAction)
+Expression
+Data
+Adds an event action to the current expression data.
+set
+Expression(expression)
+Expression
+Data
+Sets the expression data value.
+set
+Id(id)
+Expression
+Data
+Sets the expression data id.
+Detailed documentation
+add
+Condition(condition)
+Adds a condition to the current expression data.
+Parameters
+Name
+Type
+Description
+condition
+Condition
+The Condition to add.
+Return
+Expression
+Data
+— This ExpressionData, for chaining.
+add
+Event
+Action(eventAction)
+Adds an event action to the current expression data.
+Parameters
+Name
+Type
+Description
+event
+Action
+Event
+Action
+The EventAction to add.
+Return
+Expression
+Data
+— This ExpressionData, for chaining.
+set
+Expression(expression)
+Sets the expression data value.
+Parameters
+Name
+Type
+Description
+expression
+String
+The uncompiled CEL expression.
+Return
+Expression
+Data
+— This ExpressionData, for chaining.
+set
+Id(id)
+Sets the expression data id.
+Parameters
+Name
+Type
+Description
+id
+String
+The unique identifier of the ExpressionData.
+Return
+Expression
+Data
+— This ExpressionData, for chaining.

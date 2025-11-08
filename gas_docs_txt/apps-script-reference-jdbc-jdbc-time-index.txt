@@ -1,0 +1,220 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-time/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcTime represents a JDBC
+Time
+object.
+It provides methods for comparing time objects (
+after
+,
+before
+) and getting/setting hours, minutes, seconds, and the time in milliseconds.
+Most methods of JdbcTime correspond to methods in the
+java.sql.Date
+or
+java.sql.Time
+classes in Java.
+Jdbc
+Time
+A JDBC
+Time
+. For documentation of this class, see
+java.sql.Time
+.
+Methods
+Method
+Return type
+Brief description
+after(when)
+Boolean
+For documentation of this method, see
+java.sql.Date#after(Date)
+.
+before(when)
+Boolean
+For documentation of this method, see
+java.sql.Date#before(Date)
+.
+get
+Hours()
+Integer
+For documentation of this method, see
+java.sql.Date#getHours()
+.
+get
+Minutes()
+Integer
+For documentation of this method, see
+java.sql.Date#getMinutes()
+.
+get
+Seconds()
+Integer
+For documentation of this method, see
+java.sql.Date#getSeconds()
+.
+get
+Time()
+Integer
+For documentation of this method, see
+java.sql.Date#getTime()
+.
+set
+Hours(hours)
+void
+For documentation of this method, see
+java.sql.Date#setHours(int)
+.
+set
+Minutes(minutes)
+void
+For documentation of this method, see
+java.sql.Date#setMinutes(int)
+.
+set
+Seconds(seconds)
+void
+For documentation of this method, see
+java.sql.Date#setSeconds(int)
+.
+set
+Time(milliseconds)
+void
+For documentation of this method, see
+java.sql.Time#setTime(long)
+.
+Detailed documentation
+after(when)
+For documentation of this method, see
+java.sql.Date#after(Date)
+.
+Parameters
+Name
+Type
+Description
+when
+Jdbc
+Time
+A time to compare to.
+Return
+Boolean
+—
+true
+if and only if this time is strictly later than the time specified as a
+    parameter;
+false
+otherwise.
+before(when)
+For documentation of this method, see
+java.sql.Date#before(Date)
+.
+Parameters
+Name
+Type
+Description
+when
+Jdbc
+Time
+A time to compare to.
+Return
+Boolean
+—
+true
+if and only if this time is strictly earlier than the time specified as a
+    parameter;
+false
+otherwise.
+get
+Hours()
+For documentation of this method, see
+java.sql.Date#getHours()
+.
+Return
+Integer
+— The hour represented by this object; the value is a number (0 through 23) representing
+    the hour within the day that contains or begins with the instant in time represented by
+    this object, as interpreted in the local time zone.
+get
+Minutes()
+For documentation of this method, see
+java.sql.Date#getMinutes()
+.
+Return
+Integer
+— The minutes past the hour represented by this object, as interpreted in the local time
+    zone. The value is a number between 0 through 59 inclusive.
+get
+Seconds()
+For documentation of this method, see
+java.sql.Date#getSeconds()
+.
+Return
+Integer
+— The seconds past the minute represented by this object, as interpreted in the local
+    time zone. The value is a number between 0 through 61 inclusive, whiere 60 and 61 are only
+    possible for machines that take leap seconds into account.
+get
+Time()
+For documentation of this method, see
+java.sql.Date#getTime()
+.
+Return
+Integer
+— The number of milliseconds since January 1, 1970, 00:00:00 GMT represented by this time
+    object.
+set
+Hours(hours)
+For documentation of this method, see
+java.sql.Date#setHours(int)
+.
+Parameters
+Name
+Type
+Description
+hours
+Integer
+The hour to set; this object is updated to represent a point in time within the
+    specified hour of the day, with the year, month, date, minute, and second the same as
+    before, as interpreted in the local time zone.
+set
+Minutes(minutes)
+For documentation of this method, see
+java.sql.Date#setMinutes(int)
+.
+Parameters
+Name
+Type
+Description
+minutes
+Integer
+The minutes to set; this object is updated to represent a point in time within
+    the specified minute of the hour, with the year, month, date, hour, and second the same as
+    before, as interpreted in the local time zone.
+set
+Seconds(seconds)
+For documentation of this method, see
+java.sql.Date#setSeconds(int)
+.
+Parameters
+Name
+Type
+Description
+seconds
+Integer
+The seconds to set; this object is updated to represent a point in time within
+    the specified second of the minute, with the year, month, date, hour, and minute the same
+    as before, as interpreted in the local time zone.
+set
+Time(milliseconds)
+For documentation of this method, see
+java.sql.Time#setTime(long)
+.
+Parameters
+Name
+Type
+Description
+milliseconds
+Integer
+The time value to set. The value is milliseconds since January 1, 1970,
+    00:00:00 GMT, while a negative number is milliseconds before that time.

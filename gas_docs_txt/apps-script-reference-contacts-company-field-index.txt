@@ -1,0 +1,393 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/company-field/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+CompanyField
+functionality is deprecated and should not be used in new scripts.
+The People API advanced service is recommended as a replacement for
+CompanyField
+.
+Deprecated methods for
+CompanyField
+include deleting, getting, and setting company name and job title, as well as managing the primary company.
+Company
+Field
+Deprecated.
+Instead, use the
+People API advanced
+    service
+Company field in a Contact.
+Deprecated methods
+Method
+Return type
+Brief description
+delete
+Company
+Field()
+void
+Deletes this company field.
+get
+Company
+Name()
+String
+Gets the company name.
+get
+Job
+Title()
+String
+Gets the job title.
+is
+Primary()
+Boolean
+Gets whether this is the primary company.
+set
+As
+Primary()
+Company
+Field
+Sets this company as the primary company, and unsets whatever company was previously primary.
+set
+Company
+Name(company)
+Company
+Field
+Sets the company name.
+set
+Job
+Title(title)
+Company
+Field
+Sets the job title.
+Deprecated methods
+delete
+Company
+Field()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes this company field.
+// Deletes the first company associated with contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+company
+=
+contacts
+[
+0
+].
+getCompanies
+()[
+0
+];
+company
+.
+deleteCompanyField
+();
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Company
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the company name.
+// Logs company name for all companies associated with contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+companies
+=
+contacts
+[
+0
+].
+getCompanies
+();
+for
+(
+const
+i
+in
+companies
+)
+{
+Logger
+.
+log
+(
+companies
+[
+i
+].
+getCompanyName
+());
+}
+Return
+String
+— the name of the company
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Job
+Title()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the job title.
+// Logs job title for all companies associated with contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+companies
+=
+contacts
+[
+0
+].
+getCompanies
+();
+for
+(
+const
+i
+in
+companies
+)
+{
+Logger
+.
+log
+(
+companies
+[
+i
+].
+getJobTitle
+());
+}
+Return
+String
+— the job title
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+is
+Primary()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets whether this is the primary company.
+// Logs true or false depending on whether each company is the primary
+// company for contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+companies
+=
+contacts
+[
+0
+].
+getCompanies
+();
+for
+(
+const
+i
+in
+companies
+)
+{
+Logger
+.
+log
+(
+companies
+[
+i
+].
+isPrimary
+());
+}
+Return
+Boolean
+— whether this is primary
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+As
+Primary()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets this company as the primary company, and unsets whatever company was previously primary.
+// Sets the first company associated with contact 'John Doe' as primary
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+company
+=
+contacts
+[
+0
+].
+getCompanies
+()[
+0
+];
+company
+.
+setAsPrimary
+();
+Return
+Company
+Field
+— this company field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Company
+Name(company)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the company name.
+// Sets the company name for the first company associated with contact 'John
+// Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+company
+=
+contacts
+[
+0
+].
+getCompanies
+()[
+0
+];
+company
+.
+setCompanyName
+(
+'ACME Corp'
+);
+Parameters
+Name
+Type
+Description
+company
+String
+the new name for the company
+Return
+Company
+Field
+— this company field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Job
+Title(title)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the job title.
+// Sets the job title for the first company associated with contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+company
+=
+contacts
+[
+0
+].
+getCompanies
+()[
+0
+];
+company
+.
+setJobTitle
+(
+'Manager'
+);
+Parameters
+Name
+Type
+Description
+title
+String
+the new job title for the contact at this company
+Return
+Company
+Field
+— this company field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds

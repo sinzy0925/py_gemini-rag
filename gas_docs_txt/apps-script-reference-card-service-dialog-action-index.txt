@@ -1,0 +1,196 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/dialog-action/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DialogAction is a builder for DialogAction objects and is only available for Google Chat apps, not Google Workspace add-ons.
+The
+setActionStatus()
+method sets the action status of a DialogAction.
+The
+setDialog()
+method sets the dialog of a DialogAction.
+Dialog
+Action
+A builder for
+Dialog
+Action
+objects.
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'Card title'
+))
+.
+build
+();
+const
+dialog
+=
+CardService
+.
+newDialog
+().
+setBody
+(
+card
+);
+const
+dialogAction
+=
+CardService
+.
+newDialogAction
+().
+setDialog
+(
+dialog
+);
+Methods
+Method
+Return type
+Brief description
+set
+Action
+Status(actionStatus)
+Dialog
+Action
+Sets the action status of
+Dialog
+Action
+.
+set
+Dialog(dialog)
+Dialog
+Action
+Sets the dialog of the
+Dialog
+Action
+.
+Detailed documentation
+set
+Action
+Status(actionStatus)
+Sets the action status of
+Dialog
+Action
+.
+const
+actionStatus
+=
+CardService
+.
+newActionStatus
+().
+setStatusCode
+(
+CardService
+.
+Status
+.
+OK
+,
+);
+const
+dialogAction
+=
+CardService
+.
+newDialogAction
+().
+setActionStatus
+(
+actionStatus
+);
+Parameters
+Name
+Type
+Description
+action
+Status
+Action
+Status
+The
+Action
+Status
+to use.
+Return
+Dialog
+Action
+— This object, for chaining.
+set
+Dialog(dialog)
+Sets the dialog of the
+Dialog
+Action
+.
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'card title'
+))
+.
+build
+();
+// Sets the card of the dialog.
+const
+dialog
+=
+CardService
+.
+newDialog
+().
+setBody
+(
+card
+);
+const
+dialogAction
+=
+CardService
+.
+newDialogAction
+().
+setDialog
+(
+dialog
+);
+Parameters
+Name
+Type
+Description
+dialog
+Dialog
+The
+Dialog
+to use.
+Return
+Dialog
+Action
+— This object, for chaining.

@@ -1,0 +1,20 @@
+Source Path: gas_docs_html/apps-script/reference/slides/video-source-type/index.html
+
+Video
+Source
+Type
+The video source types.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.VideoSourceType.YOUTUBE
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A video source type that is not supported.
+YOUTUBE
+Enum
+You
+Tube video.

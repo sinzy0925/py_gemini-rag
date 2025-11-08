@@ -1,0 +1,1126 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/banding/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Banding refers to the color patterns applied to rows or columns of a range within a spreadsheet.
+Each banding is defined by a range and specific colors for its rows, columns, headers, and footers.
+You can access and modify various color properties of a banding for the first and second alternating rows/columns, as well as header and footer rows/columns.
+Banding provides methods to copy, remove, and set the range for the banding.
+Some methods for getting color properties by returning a String color code are deprecated and replaced by methods that return a Color object.
+Banding
+Access and modify bandings, the color patterns applied to rows or columns of a range. Each
+banding consists of a range and a set of colors for rows, columns, headers, and footers.
+Methods
+Method
+Return type
+Brief description
+copy
+To(range)
+Banding
+Copies this banding to another range.
+get
+First
+Column
+Color
+Object()
+Color
+Returns the first alternating column color in the banding, or
+null
+if no color is set.
+get
+First
+Row
+Color
+Object()
+Color
+Returns the first alternating row color, or
+null
+if no color is set.
+get
+Footer
+Column
+Color
+Object()
+Color
+Returns the color of the last column in the banding, or
+null
+if no color is set.
+get
+Footer
+Row
+Color
+Object()
+Color
+Returns the last row color in the banding, or
+null
+if no color is set.
+get
+Header
+Column
+Color
+Object()
+Color
+Returns the color of the first column in the banding, or
+null
+if no color is set.
+get
+Header
+Row
+Color
+Object()
+Color
+Returns the color of the header row or
+null
+if no color is set.
+get
+Range()
+Range
+Returns the range for this banding.
+get
+Second
+Column
+Color
+Object()
+Color
+Returns the second alternating column color in the banding, or
+null
+if no color is set.
+get
+Second
+Row
+Color
+Object()
+Color
+Returns the second alternating row color, or
+null
+if no color is set.
+remove()
+void
+Removes this banding.
+set
+First
+Column
+Color(color)
+Banding
+Sets the first column color that is alternating.
+set
+First
+Column
+Color
+Object(color)
+Banding
+Sets the first alternating column color in the banding.
+set
+First
+Row
+Color(color)
+Banding
+Sets the first row color that is alternating.
+set
+First
+Row
+Color
+Object(color)
+Banding
+Sets the first alternating row color in the banding.
+set
+Footer
+Column
+Color(color)
+Banding
+Sets the color of the last column.
+set
+Footer
+Column
+Color
+Object(color)
+Banding
+Sets the color of the last column in the banding.
+set
+Footer
+Row
+Color(color)
+Banding
+Sets the color of the last row.
+set
+Footer
+Row
+Color
+Object(color)
+Banding
+Sets the color of the footer row in the banding.
+set
+Header
+Column
+Color(color)
+Banding
+Sets the color of the header column.
+set
+Header
+Column
+Color
+Object(color)
+Banding
+Sets the color of the header column.
+set
+Header
+Row
+Color(color)
+Banding
+Sets the color of the header row.
+set
+Header
+Row
+Color
+Object(color)
+Banding
+Sets the color of the header row.
+set
+Range(range)
+Banding
+Sets the range for this banding.
+set
+Second
+Column
+Color(color)
+Banding
+Sets the second column color that is alternating.
+set
+Second
+Column
+Color
+Object(color)
+Banding
+Sets the second alternating column color in the banding.
+set
+Second
+Row
+Color(color)
+Banding
+Sets the second row color that is alternating.
+set
+Second
+Row
+Color
+Object(color)
+Banding
+Sets the second alternating color in the banding.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+First
+Column
+Color()
+String
+Returns the first column color that is alternating, or
+null
+if no color is set.
+get
+First
+Row
+Color()
+String
+Returns the first row color that is alternating or
+null
+if no color is set.
+get
+Footer
+Column
+Color()
+String
+Returns the color of the last column, or
+null
+if no color is set.
+get
+Footer
+Row
+Color()
+String
+Returns the color of the last row, or
+null
+if no color is set.
+get
+Header
+Column
+Color()
+String
+Returns the color of the header column, or
+null
+if no color is set.
+get
+Header
+Row
+Color()
+String
+Returns the color of the header row or
+null
+if no color is set.
+get
+Second
+Column
+Color()
+String
+Returns the second column color that is alternating, or
+null
+if no color is set.
+get
+Second
+Row
+Color()
+String
+Returns the second row color that is alternating or
+null
+if no color is set.
+Detailed documentation
+copy
+To(range)
+Copies this banding to another range.
+Parameters
+Name
+Type
+Description
+range
+Range
+The range to copy this banding to.
+Return
+Banding
+— The new banding.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+First
+Column
+Color
+Object()
+Returns the first alternating column color in the banding, or
+null
+if no color is set.
+Return
+Color
+— The first alternating column color in the banding, or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+First
+Row
+Color
+Object()
+Returns the first alternating row color, or
+null
+if no color is set.
+Return
+Color
+— The first alternating row color in the banding, or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Footer
+Column
+Color
+Object()
+Returns the color of the last column in the banding, or
+null
+if no color is set.
+Return
+Color
+— The last column color in the banding, or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Footer
+Row
+Color
+Object()
+Returns the last row color in the banding, or
+null
+if no color is set.
+Return
+Color
+— The footer row color in the banding, or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Header
+Column
+Color
+Object()
+Returns the color of the first column in the banding, or
+null
+if no color is set.
+Return
+Color
+— The first column color in the banding, or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Header
+Row
+Color
+Object()
+Returns the color of the header row or
+null
+if no color is set.
+Return
+Color
+— The color of the header row; returns
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Range()
+Returns the range for this banding.
+Return
+Range
+— The range for this banding.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Second
+Column
+Color
+Object()
+Returns the second alternating column color in the banding, or
+null
+if no color is set.
+Return
+Color
+— The second alternating column color in the banding, or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Second
+Row
+Color
+Object()
+Returns the second alternating row color, or
+null
+if no color is set.
+Return
+Color
+— The second alternating row color in the banding, or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Removes this banding.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+First
+Column
+Color(color)
+Sets the first column color that is alternating.
+Parameters
+Name
+Type
+Description
+color
+String
+The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+to clear the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+First
+Column
+Color
+Object(color)
+Sets the first alternating column color in the banding.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new first alternating column color in the banding; setting to
+null
+clears the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+First
+Row
+Color(color)
+Sets the first row color that is alternating.
+Parameters
+Name
+Type
+Description
+color
+String
+The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+to clear the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+First
+Row
+Color
+Object(color)
+Sets the first alternating row color in the banding.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new first alternating color in the banding; setting to
+null
+clears the
+    color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Footer
+Column
+Color(color)
+Sets the color of the last column.
+Parameters
+Name
+Type
+Description
+color
+String
+The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+to clear the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Footer
+Column
+Color
+Object(color)
+Sets the color of the last column in the banding.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new color of the last column in the banding; setting to
+null
+clears
+    the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Footer
+Row
+Color(color)
+Sets the color of the last row.
+Parameters
+Name
+Type
+Description
+color
+String
+The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+to clear the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Footer
+Row
+Color
+Object(color)
+Sets the color of the footer row in the banding.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new footer row color; setting to
+null
+clears the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Header
+Column
+Color(color)
+Sets the color of the header column.
+Parameters
+Name
+Type
+Description
+color
+String
+The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+to clear the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Header
+Column
+Color
+Object(color)
+Sets the color of the header column.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new header column color; setting to
+null
+clears the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Header
+Row
+Color(color)
+Sets the color of the header row.
+Parameters
+Name
+Type
+Description
+color
+String
+The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+to clear the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Header
+Row
+Color
+Object(color)
+Sets the color of the header row.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new header row color; setting to
+null
+clears the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Range(range)
+Sets the range for this banding.
+Parameters
+Name
+Type
+Description
+range
+Range
+The new range for this banding.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Second
+Column
+Color(color)
+Sets the second column color that is alternating.
+Parameters
+Name
+Type
+Description
+color
+String
+The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+to clear the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Second
+Column
+Color
+Object(color)
+Sets the second alternating column color in the banding.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new second alternating column color in the banding; setting to
+null
+clears the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Second
+Row
+Color(color)
+Sets the second row color that is alternating.
+Parameters
+Name
+Type
+Description
+color
+String
+The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+to clear the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Second
+Row
+Color
+Object(color)
+Sets the second alternating color in the banding.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new second alternating color in the banding; setting to
+null
+clears
+    the color.
+Return
+Banding
+— This banding, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+Deprecated methods
+get
+First
+Column
+Color()
+Deprecated.
+Replaced by
+get
+First
+Column
+Color
+Object()
+Returns the first column color that is alternating, or
+null
+if no color is set.
+Return
+String
+— The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+First
+Row
+Color()
+Deprecated.
+Replaced by
+get
+First
+Row
+Color
+Object()
+Returns the first row color that is alternating or
+null
+if no color is set.
+Return
+String
+— The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Footer
+Column
+Color()
+Deprecated.
+Replaced by
+get
+Footer
+Column
+Color
+Object()
+Returns the color of the last column, or
+null
+if no color is set.
+Return
+String
+— The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Footer
+Row
+Color()
+Deprecated.
+Replaced by
+get
+Footer
+Row
+Color
+Object()
+Returns the color of the last row, or
+null
+if no color is set.
+Return
+String
+— The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Header
+Column
+Color()
+Deprecated.
+Replaced by
+get
+Header
+Column
+Color
+Object()
+Returns the color of the header column, or
+null
+if no color is set.
+Return
+String
+— The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Header
+Row
+Color()
+Deprecated.
+Replaced by
+get
+Header
+Row
+Color
+Object()
+Returns the color of the header row or
+null
+if no color is set.
+Return
+String
+— The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Second
+Column
+Color()
+Deprecated.
+Replaced by
+get
+Second
+Column
+Color
+Object()
+Returns the second column color that is alternating, or
+null
+if no color is set.
+Return
+String
+— The HEX color or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Second
+Row
+Color()
+Deprecated.
+Replaced by
+get
+Second
+Row
+Color
+Object()
+Returns the second row color that is alternating or
+null
+if no color is set.
+Return
+String
+— The color code in CSS notation (such as
+'#ffffff'
+or
+'white'
+), or
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

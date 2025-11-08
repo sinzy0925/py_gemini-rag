@@ -1,0 +1,146 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/action-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ActionResponseBuilder is used to build ActionResponse objects.
+The
+build()
+method constructs and validates the ActionResponse.
+Methods like
+setNavigation
+,
+setNotification
+,
+setOpenLink
+, and
+setStateChanged
+configure the behavior of the action response.
+Action
+Response
+Builder
+A builder for
+Action
+Response
+objects.
+Methods
+Method
+Return type
+Brief description
+build()
+Action
+Response
+Builds the current action response and validates it.
+set
+Navigation(navigation)
+Action
+Response
+Builder
+Sets the response to a
+Navigation
+action.
+set
+Notification(notification)
+Action
+Response
+Builder
+Sets the notification to display when the action is activated.
+set
+Open
+Link(openLink)
+Action
+Response
+Builder
+Sets the URL to navigate to when the action is activated.
+set
+State
+Changed(stateChanged)
+Action
+Response
+Builder
+Sets a flag to indicate that this action changed the existing data state.
+Detailed documentation
+build()
+Builds the current action response and validates it.
+Return
+Action
+Response
+— A validated ActionResponse.
+Throws
+Error
+— if the constructed action response isn't valid.
+set
+Navigation(navigation)
+Sets the response to a
+Navigation
+action.
+Parameters
+Name
+Type
+Description
+navigation
+Navigation
+The
+Navigation
+to use.
+Return
+Action
+Response
+Builder
+— This object, for chaining.
+set
+Notification(notification)
+Sets the notification to display when the action is activated.
+Parameters
+Name
+Type
+Description
+notification
+Notification
+The
+Notification
+to use.
+Return
+Action
+Response
+Builder
+— This object, for chaining.
+set
+Open
+Link(openLink)
+Sets the URL to navigate to when the action is activated.
+Parameters
+Name
+Type
+Description
+open
+Link
+Open
+Link
+The
+Open
+Link
+to use.
+Return
+Action
+Response
+Builder
+— This object, for chaining.
+set
+State
+Changed(stateChanged)
+Sets a flag to indicate that this action changed the existing data state. For example, if the
+action created a task or updated contact information. When this flag is set to true, services
+such as Gmail can attempt to clear any cached state data associated with this action.
+Parameters
+Name
+Type
+Description
+state
+Changed
+Boolean
+Whether this action has changed the existing state data. Defaults to false.
+Return
+Action
+Response
+Builder
+— This object, for chaining.

@@ -1,0 +1,149 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/checkbox/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Checkbox contains configuration information determining how it's displayed in Data Studio.
+Methods available for Checkbox include setting allow override, help text, ID, dynamic status, and name.
+Each method returns the Checkbox builder for chaining.
+Checkbox
+Contains checkbox information for the config. Its properties determine how the checkbox is
+displayed in Data Studio.
+const
+config
+=
+DataStudioApp
+.
+createCommunityConnector
+().
+getConfig
+();
+const
+checkbox
+=
+config
+.
+newCheckbox
+()
+.
+setId
+(
+'use_https'
+)
+.
+setName
+(
+'Use Https?'
+)
+.
+setHelpText
+(
+'Whether or not https should be used.'
+)
+.
+setAllowOverride
+(
+true
+);
+Methods
+Method
+Return type
+Brief description
+set
+Allow
+Override(allowOverride)
+Checkbox
+Enables overriding for this config entry.
+set
+Help
+Text(helpText)
+Checkbox
+Sets the help text for this configuration entry.
+set
+Id(id)
+Checkbox
+Sets the unique ID for this configuration entry.
+set
+Is
+Dynamic(isDynamic)
+Checkbox
+Sets the dynamic status for this configuration entry.
+set
+Name(name)
+Checkbox
+Sets the display name for this configuration entry.
+Detailed documentation
+set
+Allow
+Override(allowOverride)
+Enables overriding for this config entry. If set to
+true
+, data source creators have the
+option to enable this for report editors.
+Parameters
+Name
+Type
+Description
+allow
+Override
+Boolean
+Whether or not this config entry can be overridden in reports.
+Return
+Checkbox
+— This builder, for chaining.
+set
+Help
+Text(helpText)
+Sets the help text for this configuration entry.
+Parameters
+Name
+Type
+Description
+help
+Text
+String
+The helpText to set.
+Return
+Checkbox
+— This builder, for chaining.
+set
+Id(id)
+Sets the unique ID for this configuration entry.
+Parameters
+Name
+Type
+Description
+id
+String
+The ID to set.
+Return
+Checkbox
+— This builder, for chaining.
+set
+Is
+Dynamic(isDynamic)
+Sets the dynamic status for this configuration entry.
+If a dynamic configuration entry is modified, subsequent configuration entries are cleared.
+Parameters
+Name
+Type
+Description
+is
+Dynamic
+Boolean
+The dynamic status to set.
+Return
+Checkbox
+— This builder, for chaining.
+set
+Name(name)
+Sets the display name for this configuration entry.
+Parameters
+Name
+Type
+Description
+name
+String
+The name to set.
+Return
+Checkbox
+— This builder, for chaining.

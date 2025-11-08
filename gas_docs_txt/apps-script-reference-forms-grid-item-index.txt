@@ -1,0 +1,513 @@
+Source Path: gas_docs_html/apps-script/reference/forms/grid-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+GridItem is a question item in a form presented as a grid, allowing one choice per row from radio buttons.
+GridItems can be accessed or created from a Form.
+Key methods include setting and getting columns and rows, setting and getting the title and help text, setting and getting the required status, and clearing or setting validation.
+Additional methods allow creating a response for the grid item and duplicating the item.
+Grid
+Item
+A question item, presented as a grid of columns and rows, that allows the respondent to select
+one choice per row from a sequence of radio buttons. Items can be accessed or created from a
+Form
+.
+// Open a form by ID and add a new grid item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addGridItem
+();
+item
+.
+setTitle
+(
+'Rate your interests'
+)
+.
+setRows
+([
+'Cars'
+,
+'Computers'
+,
+'Celebrities'
+])
+.
+setColumns
+([
+'Boring'
+,
+'So-so'
+,
+'Interesting'
+]);
+Methods
+Method
+Return type
+Brief description
+clear
+Validation()
+Grid
+Item
+Removes any data validation for this grid item.
+create
+Response(responses)
+Item
+Response
+Creates a new
+Item
+Response
+for this grid item.
+duplicate()
+Grid
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Columns()
+String[]
+Gets the values for every column in the grid.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Rows()
+String[]
+Gets the values for every row in the grid.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Columns(columns)
+Grid
+Item
+Sets the columns of the grid based on an array of values.
+set
+Help
+Text(text)
+Grid
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Required(enabled)
+Grid
+Item
+Sets whether the respondent must answer the question.
+set
+Rows(rows)
+Grid
+Item
+Sets the rows of the grid based on an array of values.
+set
+Title(title)
+Grid
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Validation(validation)
+Grid
+Item
+Sets the data validation for this grid item.
+Detailed documentation
+clear
+Validation()
+Removes any data validation for this grid item.
+Return
+Grid
+Item
+— this item, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Response(responses)
+Creates a new
+Item
+Response
+for this grid item. The argument
+responses
+must be a
+String[]
+array containing as many values as the number of rows in the grid. A
+null
+element for a non-required grid question indicates no response to that row. Throws an
+exception if any of the values does not match a valid choice.
+Parameters
+Name
+Type
+Description
+responses
+String[]
+an array of valid answers for this grid item
+Return
+Item
+Response
+— the item response
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Grid
+Item
+— a duplicate of this
+Grid
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Columns()
+Gets the values for every column in the grid.
+Return
+String[]
+— an array of column values, which respondents see as labels when viewing the form
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Rows()
+Gets the values for every row in the grid.
+Return
+String[]
+— an array of row values, which respondents see as labels when viewing the form
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Required()
+Determines whether the respondent must answer the question.
+Return
+Boolean
+— whether the respondent must answer the question
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Columns(columns)
+Sets the columns of the grid based on an array of values. Throws an exception if the given
+array is empty.
+Parameters
+Name
+Type
+Description
+columns
+String[]
+an array of column values, which respondents see as labels when viewing the form
+Return
+Grid
+Item
+— this item, for chaining
+Throws
+Error
+— if the given array is
+null
+or empty
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Grid
+Item
+— this
+Grid
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Required(enabled)
+Sets whether the respondent must answer the question.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+whether the respondent must answer the question
+Return
+Grid
+Item
+— the current item (for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Rows(rows)
+Sets the rows of the grid based on an array of values. Throws an exception if the given array
+is empty.
+Parameters
+Name
+Type
+Description
+rows
+String[]
+an array of row values, which respondents see as labels when viewing the form
+Return
+Grid
+Item
+— this item, for chaining
+Throws
+Error
+— if the given array is
+null
+or empty
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Grid
+Item
+— this
+Grid
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Validation(validation)
+Sets the data validation for this grid item. Passing in
+null
+or a
+Grid
+Validation
+instance on which no require functions have been called removes any prior
+validation.
+Parameters
+Name
+Type
+Description
+validation
+Grid
+Validation
+a GridValidation to apply to this item.
+Return
+Grid
+Item
+— this
+Grid
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

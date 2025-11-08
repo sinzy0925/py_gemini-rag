@@ -1,0 +1,74 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-table-column/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DataSourceTableColumn
+allows you to access and modify existing columns in a
+DataSourceTable
+.
+This class should only be used with data connected to a database.
+You can get the associated data source column or remove the column from the table using the available methods.
+Using the methods of this class requires specific authorization scopes for spreadsheets.
+Data
+Source
+Table
+Column
+Access and modify an existing column in a
+Data
+Source
+Table
+. To add columns to a data
+source table, use
+Data
+Source
+Table.addColumns(columnNames)
+.
+Only use this class with data that's connected to a database.
+Methods
+Method
+Return type
+Brief description
+get
+Data
+Source
+Column()
+Data
+Source
+Column
+Gets the data source column.
+remove()
+void
+Removes the column from the
+Data
+Source
+Table
+.
+Detailed documentation
+get
+Data
+Source
+Column()
+Gets the data source column.
+Return
+Data
+Source
+Column
+— The data source column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Removes the column from the
+Data
+Source
+Table
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

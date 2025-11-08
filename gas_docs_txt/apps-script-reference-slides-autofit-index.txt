@@ -1,0 +1,151 @@
+Source Path: gas_docs_html/apps-script/reference/slides/autofit/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Autofit describes the settings for how text fits within a shape's bounding box.
+When a change might affect text fitting, autofit is deactivated, and font scale and line spacing reduction are reset to default values.
+Methods are available to disable autofit, get the autofit type, font scale, and line spacing reduction of a shape.
+The
+disableAutofit()
+method sets the autofit type to
+NONE
+.
+The
+getAutofitType()
+,
+getFontScale()
+, and
+getLineSpacingReduction()
+methods provide information about the shape's autofit settings.
+Autofit
+Describes the autofit settings of a shape. If a change is made that might affect text fitting
+within its bounding text box:
+Autofit is deactivated and set to
+Autofit
+Type.NONE
+.
+The font scale is reset to the default value and applied to the font size.
+The line spacing reduction is reset to the default value and applied to the line spacing.
+Methods
+Method
+Return type
+Brief description
+disable
+Autofit()
+Autofit
+Sets the
+Autofit
+Type
+of a shape to
+Autofit
+Type.NONE
+.
+get
+Autofit
+Type()
+Autofit
+Type
+Gets the
+Autofit
+Type
+of the shape.
+get
+Font
+Scale()
+Number
+Gets the font scale applied to the shape.
+get
+Line
+Spacing
+Reduction()
+Number
+Gets the line spacing reduction applied to the shape.
+Detailed documentation
+disable
+Autofit()
+Sets the
+Autofit
+Type
+of a shape to
+Autofit
+Type.NONE
+.
+Return
+Autofit
+— The autofit, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Autofit
+Type()
+Gets the
+Autofit
+Type
+of the shape.
+Return
+Autofit
+Type
+— The autofit type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Font
+Scale()
+Gets the font scale applied to the shape. For shapes with
+Autofit
+Type
+Autofit
+Type.NONE
+or
+Autofit
+Type.SHAPE_AUTOFIT
+, this value is the default value of 1.
+For
+Autofit
+Type.TEXT_AUTOFIT
+, the value returned is what the original font size is
+multiplied by to fit within the shape.
+Return
+Number
+— The font scale.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Line
+Spacing
+Reduction()
+Gets the line spacing reduction applied to the shape. For shapes with
+Autofit
+Type
+Autofit
+Type.NONE
+or
+Autofit
+Type.SHAPE_AUTOFIT
+, this value is the default value
+of 0. For
+Autofit
+Type.TEXT_AUTOFIT
+, the returned value is the amount of spacing
+subtracted from the original spacing to make the text fit within the shape.
+Return
+Number
+— The line spacing.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

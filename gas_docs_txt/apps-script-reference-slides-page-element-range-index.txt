@@ -1,0 +1,48 @@
+Source Path: gas_docs_html/apps-script/reference/slides/page-element-range/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PageElementRange is a collection of one or more PageElement instances.
+The
+getPageElements()
+method returns a list of PageElement instances.
+The
+getPageElements()
+method requires specific authorization scopes to be used.
+Page
+Element
+Range
+A collection of one or more
+Page
+Element
+instances.
+Methods
+Method
+Return type
+Brief description
+get
+Page
+Elements()
+Page
+Element[]
+Returns the list of
+Page
+Element
+instances.
+Detailed documentation
+get
+Page
+Elements()
+Returns the list of
+Page
+Element
+instances.
+Return
+Page
+Element[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

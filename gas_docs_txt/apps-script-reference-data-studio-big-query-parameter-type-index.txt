@@ -1,0 +1,26 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/big-query-parameter-type/index.html
+
+Big
+Query
+Parameter
+Type
+An enum that defines the BigQuery parameter types that you can set.
+To call an enum, you call its parent class, name, and property. For example,
+DataStudioApp.BigQueryParameterType.STRING
+.
+Properties
+Property
+Type
+Description
+STRING
+Enum
+String.
+INT64
+Enum
+64-bit integer.
+BOOL
+Enum
+Boolean.
+FLOAT64
+Enum
+64-bit floating point number.

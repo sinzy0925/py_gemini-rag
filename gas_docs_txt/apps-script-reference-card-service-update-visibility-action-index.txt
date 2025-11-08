@@ -1,0 +1,52 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-visibility-action/index.html
+
+Update
+Visibility
+Action
+Updates the visibility of a card widget to make it display or to hide it.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+updateVisibilityAction
+=
+CardService
+.
+newUpdateVisibilityAction
+()
+.
+setVisibility
+(
+CardService
+.
+Visibility
+.
+VISIBLE
+);
+Methods
+Method
+Return type
+Brief description
+set
+Visibility(visibility)
+Update
+Visibility
+Action
+Sets the visibility of widgets to visible or hidden.
+Detailed documentation
+set
+Visibility(visibility)
+Sets the visibility of widgets to visible or hidden.
+Parameters
+Name
+Type
+Description
+visibility
+Visibility
+The visibility of the widgets.
+Return
+Update
+Visibility
+Action
+— The UpdateVisibilityAction, for chaining.

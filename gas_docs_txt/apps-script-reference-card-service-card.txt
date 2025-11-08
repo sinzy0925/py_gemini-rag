@@ -1,0 +1,66 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/card.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Card is a UI view in the Gmail add-ons context.
+Cards are built using the CardService.newCardBuilder() method.
+Cards can have sections added to them using addSection().
+The printJson() method is available for debugging the JSON representation of the Card object.
+Card
+A context
+card
+that represents a single view in the
+UI.
+const
+cardSection
+=
+CardService
+.
+newCardSection
+();
+// Finish building the card section ...
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setName
+(
+'Card name'
+)
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'Card title'
+))
+.
+addSection
+(
+cardSection
+)
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String

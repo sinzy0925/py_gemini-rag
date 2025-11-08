@@ -1,0 +1,220 @@
+Source Path: gas_docs_html/apps-script/reference/document/element-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ElementType is an enumeration listing all possible element types in a document.
+You access ElementType enum values using the parent class, name, and property like
+DocumentApp.ElementType.BODY_SECTION
+.
+ElementType can be used to check the type of a specific element in a document, as shown in the provided code example.
+The table lists various ElementType properties and their corresponding document elements.
+Element
+Type
+An enumeration of all the element types.
+To call an enum, you call its parent class, name, and property. For example,
+DocumentApp.ElementType.BODY_SECTION
+.
+Use the
+Element
+Type
+enumeration to check the type of a given element, for instance:
+const
+documentTab
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+();
+const
+firstChild
+=
+documentTab
+.
+getBody
+().
+getChild
+(
+0
+);
+if
+(
+firstChild
+.
+getType
+()
+===
+DocumentApp
+.
+ElementType
+.
+PARAGRAPH
+)
+{
+// It's a paragraph, apply a paragraph heading.
+firstChild
+.
+asParagraph
+().
+setHeading
+(
+DocumentApp
+.
+ParagraphHeading
+.
+HEADING1
+);
+}
+Properties
+Property
+Type
+Description
+BODY_SECTION
+Enum
+The type corresponding to the
+Body
+element.
+COMMENT_SECTION
+Enum
+The type corresponding to the
+Comment
+Section
+element.
+DATE
+Enum
+The type corresponding to the
+Date
+element.
+EQUATION
+Enum
+The type corresponding to the
+Equation
+element.
+EQUATION_FUNCTION
+Enum
+The type corresponding to the
+Equation
+Function
+element.
+EQUATION_FUNCTION_ARGUMENT_SEPARATOR
+Enum
+The type corresponding to the
+Equation
+Function
+Argument
+Separator
+element.
+EQUATION_SYMBOL
+Enum
+The type corresponding to the
+Equation
+Symbol
+element.
+RICH_LINK
+Enum
+The type corresponding to the
+Rich
+Link
+element.
+FOOTER_SECTION
+Enum
+The type corresponding to the
+Footer
+Section
+element.
+FOOTNOTE
+Enum
+The type corresponding to the
+Footnote
+element.
+FOOTNOTE_SECTION
+Enum
+The type corresponding to the
+Footnote
+Section
+element.
+HEADER_SECTION
+Enum
+The type corresponding to the
+Header
+Section
+element.
+HORIZONTAL_RULE
+Enum
+The type corresponding to the
+Horizontal
+Rule
+element.
+INLINE_DRAWING
+Enum
+The type corresponding to the
+Inline
+Drawing
+element.
+INLINE_IMAGE
+Enum
+The type corresponding to the
+Inline
+Image
+element.
+LIST_ITEM
+Enum
+The type corresponding to the
+List
+Item
+element.
+PAGE_BREAK
+Enum
+The type corresponding to the
+Page
+Break
+element.
+PARAGRAPH
+Enum
+The type corresponding to the
+Paragraph
+element.
+PERSON
+Enum
+The type corresponding to the
+Person
+element.
+TABLE
+Enum
+The type corresponding to the
+Table
+element.
+TABLE_CELL
+Enum
+The type corresponding to the
+Table
+Cell
+element.
+TABLE_OF_CONTENTS
+Enum
+The type corresponding to the
+Table
+Of
+Contents
+element.
+TABLE_ROW
+Enum
+The type corresponding to the
+Table
+Row
+element.
+TEXT
+Enum
+The type corresponding to the
+Text
+element.
+UNSUPPORTED
+Enum
+The type corresponding to
+Unsupported
+Element
+. Unsupported elements
+represent document portions that do not support scripting.

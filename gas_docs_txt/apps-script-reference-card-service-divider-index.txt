@@ -1,0 +1,92 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/divider/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A divider creates a horizontal line in an add-on card.
+Use the
+newDivider()
+method from
+CardService
+to add a divider.
+The provided code sample demonstrates how to build a card with paragraphs separated by a divider.
+Divider
+A horizontal divider. To add a divider to your add-on card, use the
+new
+Divider()
+method within
+Card
+Service
+. For example, the following sample builds a simple card with 2
+paragraphs separated by a divider.
+function
+buildCard
+()
+{
+const
+cardSection1TextParagraph1
+=
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'Hello world!'
+);
+const
+cardSection1Divider1
+=
+CardService
+.
+newDivider
+();
+const
+cardSection1TextParagraph2
+=
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'Hello world!'
+);
+const
+cardSection1
+=
+CardService
+.
+newCardSection
+()
+.
+addWidget
+(
+cardSection1TextParagraph1
+)
+.
+addWidget
+(
+cardSection1Divider1
+)
+.
+addWidget
+(
+cardSection1TextParagraph2
+);
+const
+card
+=
+CardService
+.
+newCardBuilder
+().
+addSection
+(
+cardSection1
+).
+build
+();
+return
+card
+;
+}

@@ -1,0 +1,160 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/get-schema-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+GetSchemaResponse is a builder used to create a
+getSchema()
+response for your script project.
+The
+build()
+method validates and returns the object in the format Data Studio needs.
+The
+printJson()
+method prints the JSON representation of the object for debugging.
+The
+setFields(fields)
+method sets the fields for the builder.
+Get
+Schema
+Response
+Builder to create a
+get
+Schema()
+response for your script project.
+function
+getSchema
+()
+{
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+const
+fields
+=
+cc
+.
+getFields
+();
+fields
+.
+newDimension
+()
+.
+setId
+(
+'Created'
+)
+.
+setName
+(
+'Date Created'
+)
+.
+setDescription
+(
+'The date that this was created'
+)
+.
+setType
+(
+cc
+.
+FieldType
+.
+YEAR_MONTH_DAY
+);
+fields
+.
+newMetric
+()
+.
+setId
+(
+'Amount'
+)
+.
+setName
+(
+'Amount (USD)'
+)
+.
+setDescription
+(
+'The cost in US dollars'
+)
+.
+setType
+(
+cc
+.
+FieldType
+.
+CURRENCY_USD
+);
+return
+cc
+.
+newGetSchemaResponse
+().
+setFields
+(
+fields
+).
+build
+();
+}
+Methods
+Method
+Return type
+Brief description
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Fields(fields)
+Get
+Schema
+Response
+Sets the
+Fields
+of the builder.
+Detailed documentation
+build()
+Validates this object and returns it in the format needed by Data Studio.
+Return
+Object
+— The validated
+Get
+Schema
+Response
+object.
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+set
+Fields(fields)
+Sets the
+Fields
+of the builder.
+Parameters
+Name
+Type
+Description
+fields
+Fields
+The fields to set.
+Return
+Get
+Schema
+Response
+— This builder, for chaining.

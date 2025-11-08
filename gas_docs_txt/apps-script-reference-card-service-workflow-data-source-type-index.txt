@@ -1,0 +1,48 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/workflow-data-source-type/index.html
+
+Workflow
+Data
+Source
+Type
+An enum that represents the type of the workflow data source.
+Only available through the
+Gemini
+Alpha program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+workflowDataSource
+=
+CardService
+.
+newWorkflowDataSource
+().
+setIncludeVariables
+(
+true
+)
+.
+setType
+(
+CardService
+.
+WorkflowDataSourceType
+.
+USER
+);
+Properties
+Property
+Type
+Description
+UNKNOWN
+Enum
+Default value. Don't use.
+USER
+Enum
+The data source is a user's data.
+SPACE
+Enum
+The data source is a Google Chat space.
+USER_WITH_FREE_FORM
+Enum
+The data source is a user's data; users can choose to view and select existing members from
+their Google Workspace organization or manually enter an email address or a valid domain.

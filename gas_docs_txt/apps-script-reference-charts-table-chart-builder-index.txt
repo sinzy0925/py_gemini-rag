@@ -1,0 +1,622 @@
+Source Path: gas_docs_html/apps-script/reference/charts/table-chart-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TableChartBuilder is a tool for building table charts.
+Data for the table chart can be imported from an external source like a Google spreadsheet.
+You can configure various aspects of the table chart including dimensions, paging, sorting, and data source.
+The
+build()
+method is used to create the final Chart object from the builder.
+Table
+Chart
+Builder
+A builder for table charts. For more details, see the
+Google Charts documentation
+.
+Here is an example that shows how to build a table chart. The data is
+imported from a Google spreadsheet
+.
+// Get sample data from a spreadsheet.
+const
+dataSourceUrl
+=
+'https://docs.google.com/spreadsheet/tq?range=A1%3AF'
++
+'&key=0Aq4s9w_HxMs7dHpfX05JdmVSb1FpT21sbXd4NVE3UEE&gid=4&headers=-1'
+;
+const
+chartBuilder
+=
+Charts
+.
+newTableChart
+()
+.
+setDimensions
+(
+600
+,
+500
+)
+.
+enablePaging
+(
+20
+)
+.
+setDataSourceUrl
+(
+dataSourceUrl
+);
+const
+chart
+=
+chartBuilder
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+enable
+Paging(enablePaging)
+Table
+Chart
+Builder
+Sets whether to enable paging through the data.
+enable
+Paging(pageSize)
+Table
+Chart
+Builder
+Enables paging and sets the number of rows in each page.
+enable
+Paging(pageSize, startPage)
+Table
+Chart
+Builder
+Enables paging, sets the number of rows in each page and the first table page to display (page
+numbers are zero based).
+enable
+Rtl
+Table(rtlEnabled)
+Table
+Chart
+Builder
+Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing the
+column order of the table, so that column zero is the right-most column, and the last column is
+the left-most column.
+enable
+Sorting(enableSorting)
+Table
+Chart
+Builder
+Sets whether to sort columns when the user clicks a column heading.
+set
+Data
+Source
+Url(url)
+Table
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Table
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Table
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Table
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Table
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+First
+Row
+Number(number)
+Table
+Chart
+Builder
+Sets the row number for the first row in the data table.
+set
+Initial
+Sorting
+Ascending(column)
+Table
+Chart
+Builder
+Sets the index of the column according to which the table should be initially sorted
+(ascending).
+set
+Initial
+Sorting
+Descending(column)
+Table
+Chart
+Builder
+Sets the index of the column according to which the table should be initially sorted
+(descending).
+set
+Option(option, value)
+Table
+Chart
+Builder
+Sets advanced options for this chart.
+show
+Row
+Number
+Column(showRowNumber)
+Table
+Chart
+Builder
+Sets whether to show the row number as the first column of the table.
+use
+Alternating
+Row
+Style(alternate)
+Table
+Chart
+Builder
+Sets whether alternating color style is assigned to odd and even rows of a table chart.
+Detailed documentation
+build()
+Builds the chart.
+Return
+Chart
+— A Chart object, which can be embedded into documents, UI elements, or used as a static
+    image.
+enable
+Paging(enablePaging)
+Sets whether to enable paging through the data.
+The default behavior is paging disabled. If paging is enabled the default page size is 10.
+Parameters
+Name
+Type
+Description
+enable
+Paging
+Boolean
+true
+if paging should be enabled,
+false
+otherwise.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+enable
+Paging(pageSize)
+Enables paging and sets the number of rows in each page.
+The default page size is 10.
+// Creates a table chart builder and enables paging with page size of 5.
+const
+builder
+=
+Charts
+.
+newTableChart
+();
+builder
+.
+enablePaging
+(
+5
+);
+Parameters
+Name
+Type
+Description
+page
+Size
+Integer
+The number of rows in each page of the table.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+enable
+Paging(pageSize, startPage)
+Enables paging, sets the number of rows in each page and the first table page to display (page
+numbers are zero based).
+The default page size is 10, and the default start page is 0.
+// Creates a table chart builder and enables paging with page size of 5 and
+// displays page 2 first.
+const
+builder
+=
+Charts
+.
+newTableChart
+();
+builder
+.
+enablePaging
+(
+5
+,
+2
+);
+Parameters
+Name
+Type
+Description
+page
+Size
+Integer
+The number of rows in each page of the table.
+start
+Page
+Integer
+The first table page to display (page numbers are zero-based).
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+enable
+Rtl
+Table(rtlEnabled)
+Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing the
+column order of the table, so that column zero is the right-most column, and the last column is
+the left-most column.
+This does not affect the column index in the underlying data, only the order of display.
+Full bi-directional (BiDi) language display is not supported by the table visualization even
+with this option. This option is ignored if you enable paging (using the page option), or if
+the table has scroll bars because you have specified height and width options smaller than the
+required table size. The default behavior is RTL support disabled.
+Parameters
+Name
+Type
+Description
+rtl
+Enabled
+Boolean
+true
+if right-to-left support should be enabled,
+false
+otherwise.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+enable
+Sorting(enableSorting)
+Sets whether to sort columns when the user clicks a column heading.
+If sorting is enabled, when users click on the column header the rows are automatically
+sorted. The default behavior is sorting enabled.
+Parameters
+Name
+Type
+Description
+enable
+Sorting
+Boolean
+true
+to enable sorting by clicking on column headers,
+false
+otherwise.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Data
+Source
+Url(url)
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
+For more information about querying data sources, check out the
+Google Charts documentation
+.
+Parameters
+Name
+Type
+Description
+url
+String
+The data source URL, including any query parameters.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Data
+Table(tableBuilder)
+Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+for setting the data table without needing to call
+build()
+.
+Parameters
+Name
+Type
+Description
+table
+Builder
+Data
+Table
+Builder
+A data table builder. A new data table is created instantly as part of this
+    call, so any further updates to the builder won't be reflected in the chart.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Data
+Table(table)
+Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+first column should be a string, and contain the horizontal axis labels. Any number of columns
+can follow, all must be numeric. Each column is displayed as a separate line.
+Parameters
+Name
+Type
+Description
+table
+Data
+Table
+Source
+The data table to use for the chart.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Data
+View
+Definition(dataViewDefinition)
+Sets the data view definition to use for the chart.
+Parameters
+Name
+Type
+Description
+data
+View
+Definition
+Data
+View
+Definition
+A data view definition object that defines the view that should be
+    derived from the given data source for the chart drawing.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Dimensions(width, height)
+Sets the dimensions for the chart.
+Parameters
+Name
+Type
+Description
+width
+Integer
+The width of the chart, in pixels.
+height
+Integer
+The height of the chart, in pixels.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+First
+Row
+Number(number)
+Sets the row number for the first row in the data table.
+The default row number of the first row is 1.
+// Creates a table chart builder and sets the first row to be 2.
+const
+builder
+=
+Charts
+.
+newTableChart
+();
+builder
+.
+setFirstRowNumber
+(
+2
+);
+Parameters
+Name
+Type
+Description
+number
+Integer
+The row number for the first row in the data table.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Initial
+Sorting
+Ascending(column)
+Sets the index of the column according to which the table should be initially sorted
+(ascending).
+The column os sorted in ascending order and is marked with a small arrow indicating that.
+// Creates a table chart builder and sorts it by the second column (ascending).
+const
+builder
+=
+Charts
+.
+newTableChart
+();
+builder
+.
+setInitialSortingAscending
+(
+2
+);
+Parameters
+Name
+Type
+Description
+column
+Integer
+The number of the column according to which the table should be initially sorted.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Initial
+Sorting
+Descending(column)
+Sets the index of the column according to which the table should be initially sorted
+(descending).
+The column os sorted in descending order and is marked with a a small arrow indicating that.
+// Creates a table chart builder and sorts it by the second column (descending).
+const
+builder
+=
+Charts
+.
+newTableChart
+();
+builder
+.
+setInitialSortingDescending
+(
+2
+);
+Parameters
+Name
+Type
+Description
+column
+Integer
+The number of the column according to which the table should be initially sorted.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Option(option, value)
+Sets advanced options for this chart. See
+the available options for
+this chart
+. This method has no effect if the given option is invalid.
+// Build a table chart which renders HTML.
+const
+builder
+=
+Charts
+.
+newTableChart
+();
+builder
+.
+setOption
+(
+'allowHtml'
+,
+{
+@
+code
+true
+});
+const
+chart
+=
+builder
+.
+build
+();
+Parameters
+Name
+Type
+Description
+option
+String
+The option to set.
+value
+Object
+The value to set.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+show
+Row
+Number
+Column(showRowNumber)
+Sets whether to show the row number as the first column of the table.
+The default behavior is not showing row numbers.
+Parameters
+Name
+Type
+Description
+show
+Row
+Number
+Boolean
+true
+if the first column of the table should show the row number,
+false
+otherwise.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.
+use
+Alternating
+Row
+Style(alternate)
+Sets whether alternating color style is assigned to odd and even rows of a table chart.
+The default behavior is the rows having alternating color style.
+Parameters
+Name
+Type
+Description
+alternate
+Boolean
+true
+if color styles should be alternating,
+false
+otherwise.
+Return
+Table
+Chart
+Builder
+— This builder, useful for chaining.

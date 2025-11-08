@@ -1,0 +1,72 @@
+Source Path: gemini_api_docs_html/gemini-api/docs/logs-datasets/index.html
+
+This guide contains everything you need to get started with enabling logging
+for your existing Gemini API applications. In this guide you'll learn how to
+view logs from an existing or new application in the Google AI Studio dashboard
+to better understand model behavior and how users may be interacting with your
+applications. Use logging to observe, debug, and
+optionally share usage feedback
+with Google to help improve Gemini across developer use cases
+.
+*
+All
+GenerateContent
+and
+StreamGenerateContent
+API calls are supported,
+including those made through
+OpenAI compatibility
+endpoints.
+1. Enable logging in Google AI Studio
+Before you begin, ensure you have a billing-enabled project that you own.
+Open the logs page in Google
+AI Studio
+.
+Choose your project from the drop-down and press the enable button to enable logging for all requests by default.
+You can enable or disable logging for all projects or for specific projects, and
+change these preferences at any time through Google AI Studio.
+2. View logs in AI Studio
+Go to
+AI Studio
+.
+Select the project you've enabled logging for.
+You should see your logs appear in the table in reverse chronological order.
+Click on an entry for a full page view of the request and response pair. You can
+inspect the full prompt, the complete response from Gemini, and the context from
+the previous turn. Note that each project has a default storage limit of up to
+1,000 logs, and logs not saved in datasets will expire after 55 days. If your
+project reaches its storage limit you will be promoted to delete logs.
+3. Curate and share datasets
+From the logs table, locate the filter bar at the top to select a property to
+filter by.
+From your filtered view of logs use the checkboxes to select all or a
+few of the logs.
+Click the "Create Dataset" button that appears at the top of the list.
+Give your new dataset a descriptive name and optional description.
+You will see the dataset you just created with the curated set of logs.
+Datasets can be helpful for a number of different use cases.
+Curating challenge sets:
+Drive future improvements that target areas where you want your AI to improve.
+Curate sample sets:
+For example, a sample from real usage to generate responses from another model, or a collection of edge cases for routine checks before deployment.
+Evaluation sets:
+Sets that are representative of real usage across important capabilities, for comparison across other models or system instruction iterations.
+You can help drive progress in AI research, the Gemini API, and Google AI Studio
+by choosing to share your datasets as demonstration examples. This allows us to
+refine our models in diverse contexts and create AI systems that remain useful
+to developers across many fields and applications
+Next steps & what to test
+Now that you have logging enabled, here are a few things to try:
+Prototype with session history:
+Leverage
+AI Studio Build
+to vibe code apps and add your API key to enable a history of user logs.
+Re-run logs with the Gemini Batch API:
+Use datasets for response sampling
+and evaluation of models or application logic by re-running logs via the
+Gemini Batch API
+.
+Compatibility
+Logging is not currently supported for the following:
+Imagen and Veo
+Inputs containing videos, GIFs or PDFs

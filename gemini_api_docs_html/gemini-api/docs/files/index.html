@@ -1,0 +1,3018 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com"><meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award"><meta property="og:site_name" content="Google AI for Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#1967d2"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/googledevai/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Inter:400,500|Inter+Tight:300,500,600&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/css/app.css">
+      
+        <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/css/dark-theme.css" disabled>
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/images/favicon-new.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/images/touchicon-180-new.png"><link rel="canonical" href="https://ai.google.dev/gemini-api/docs/files"><link rel="search" type="application/opensearchdescription+xml"
+            title="Google AI for Developers" href="https://ai.google.dev/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://ai.google.dev/gemini-api/docs/files" /><link rel="alternate" hreflang="x-default" href="https://ai.google.dev/gemini-api/docs/files" /><link rel="alternate" hreflang="ar"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=vi" /><link rel="alternate" hreflang="sq"
+          href="https://ai.google.dev/gemini-api/docs/files?hl=sq" /><title>Files API &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers</title>
+
+<meta property="og:title" content="Files API &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers"><meta property="og:url" content="https://ai.google.dev/gemini-api/docs/files"><meta property="og:image" content="https://ai.google.dev/static/site-assets/images/share-gemini-api-2.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    
+    "headline": "Files API"
+  }
+</script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Gemini API",
+      "item": "https://ai.google.dev/gemini-api"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Files API",
+      "item": "https://ai.google.dev/gemini-api/docs/files"
+    }]
+  }
+  </script>
+  
+
+  
+
+  
+
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class="gemini-api"
+        template="page"
+        theme="googledevai-theme"
+        type="article"
+        
+        
+        appearance
+        
+        layout="docs"
+        
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar><devsite-header role="banner" keep-tabs-visible>
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="geminiAPI" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://ai.google.dev/_static/googledevai/images/gemini-api-logo-dark-theme.svg"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://ai.google.dev/_static/googledevai/images/gemini-api-logo.svg" class="devsite-site-logo" alt="Gemini API">
+  </picture>
+  
+</a>
+
+
+
+  
+  
+  <span class="devsite-product-name">
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+  </span>
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    project-name="Gemini API"
+    tenant-name="Google AI for Developers"
+    project-scope="/gemini-api"
+    url-scoped="https://ai.google.dev/s/results/gemini-api"
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://ai.google.dev/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          <devsite-appearance-selector></devsite-appearance-selector>
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="sq"
+        >Shqip</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://aistudio.google.com/apikey"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Get API key"
+    
+      
+        target="_blank"
+      
+    >
+  Get API key
+</a>
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://github.com/google-gemini/cookbook"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Cookbook"
+    
+      
+        target="_blank"
+      
+    >
+  Cookbook
+</a>
+          
+            <a class="devsite-header-link devsite-top-button button gc-analytics-event "
+    href="https://discuss.ai.google.dev/c/gemini-api/"
+    data-category="Site-Wide Custom Events"
+    data-label="Site header link: Community"
+    
+      
+        target="_blank"
+      
+    >
+  Community
+</a>
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="devsite-collapsible-section
+    ">
+    <div class="devsite-header-background">
+      
+        
+      
+      
+        <div class="devsite-doc-set-nav-row">
+          
+          
+            
+            
+  <devsite-tabs class="lower-tabs">
+
+    <nav class="devsite-tabs-wrapper" aria-label="Lower tabs">
+      
+        
+          <tab  class="devsite-active">
+            
+    <a href="https://ai.google.dev/gemini-api/docs"
+    class="devsite-tabs-content gc-analytics-event "
+      track-metadata-eventdetail="https://ai.google.dev/gemini-api/docs"
+    
+       track-type="nav"
+       track-metadata-position="nav - gemini api docs"
+       track-metadata-module="primary nav"
+       aria-label="Gemini API Docs, selected" 
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Gemini API Docs"
+         
+           track-name="gemini api docs"
+         
+       >
+    Gemini API Docs
+  
+    </a>
+    
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/api"
+    class="devsite-tabs-content gc-analytics-event "
+      track-metadata-eventdetail="https://ai.google.dev/api"
+    
+       track-type="nav"
+       track-metadata-position="nav - api reference"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: API Reference"
+         
+           track-name="api reference"
+         
+       >
+    API Reference
+  
+    </a>
+    
+  
+          </tab>
+        
+      
+    </nav>
+
+  </devsite-tabs>
+
+          
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars >
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="geminiAPI" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <source srcset="https://ai.google.dev/_static/googledevai/images/gemini-api-logo-dark-theme.svg"
+            media="(prefers-color-scheme: dark)"
+            class="devsite-dark-theme">
+    
+    <img src="https://ai.google.dev/_static/googledevai/images/gemini-api-logo.svg" class="devsite-site-logo" alt="Gemini API">
+  </picture>
+  
+</a>
+
+
+  
+      <span class="devsite-product-name">
+        
+        
+        <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+      </span>
+    
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/gemini-api/docs"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              devsite-nav-active"
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Gemini API"
+      
+        track-name="gemini api"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Gemini API"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Gemini API
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+                <ul class="devsite-nav-responsive-tabs">
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/gemini-api/docs"
+    
+       class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              devsite-nav-active"
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Gemini API Docs"
+      
+        track-name="gemini api docs"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Gemini API Docs"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip menu="_book">
+      Gemini API Docs
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward"
+          menu="_book">
+    </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/api"
+    
+       class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: API Reference"
+      
+        track-name="api reference"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: API Reference"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      API Reference
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward"
+          >
+    </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+          
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="https://aistudio.google.com/apikey"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+      
+        target="_blank"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Get API key"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Get API key
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="https://github.com/google-gemini/cookbook"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+      
+        target="_blank"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Cookbook"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Cookbook
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+    
+    
+<li class="devsite-nav-item">
+
+  
+  <a href="https://discuss.ai.google.dev/c/gemini-api/"
+    
+       class="devsite-nav-title gc-analytics-event "
+    
+
+    
+      
+        target="_blank"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Community"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Community
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+  
+          
+        </ul>
+      
+    </div>
+    
+      <div class="devsite-mobile-nav-bottom">
+        
+          
+          <ul class="devsite-nav-list" menu="_book">
+            <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Get Started</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs"
+      ><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/quickstart"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/quickstart"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/quickstart"
+      ><span class="devsite-nav-text" tooltip>Quickstart</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/api-key"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/api-key"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/api-key"
+      ><span class="devsite-nav-text" tooltip>API keys</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/libraries"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/libraries"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/libraries"
+      ><span class="devsite-nav-text" tooltip>Libraries</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/openai"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/openai"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/openai"
+      ><span class="devsite-nav-text" tooltip>OpenAI compatibility</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Models</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/models"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/models"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/models"
+      ><span class="devsite-nav-text" tooltip>Gemini</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/imagen"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/imagen"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/imagen"
+      ><span class="devsite-nav-text" tooltip>Imagen (image generation)</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/video"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/video"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/video"
+      ><span class="devsite-nav-text" tooltip>Veo (video generation)</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/music-generation"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/music-generation"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/music-generation"
+      ><span class="devsite-nav-text" tooltip>Lyria (music generation)</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/embeddings"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/embeddings"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/embeddings"
+      ><span class="devsite-nav-text" tooltip>Embeddings</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/robotics-overview"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/robotics-overview"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/robotics-overview"
+      ><span class="devsite-nav-text" tooltip>Robotics</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/pricing"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/pricing"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/pricing"
+      ><span class="devsite-nav-text" tooltip>Pricing</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/rate-limits"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/rate-limits"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/rate-limits"
+      ><span class="devsite-nav-text" tooltip>Rate limits</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Core Capabilities</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/text-generation"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/text-generation"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/text-generation"
+      ><span class="devsite-nav-text" tooltip>Text</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Image</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/image-generation"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/image-generation"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/image-generation"
+      ><span class="devsite-nav-text" tooltip>Image generation</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/image-understanding"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/image-understanding"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/image-understanding"
+      ><span class="devsite-nav-text" tooltip>Image understanding</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/video-understanding"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/video-understanding"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/video-understanding"
+      ><span class="devsite-nav-text" tooltip>Video</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/document-processing"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/document-processing"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/document-processing"
+      ><span class="devsite-nav-text" tooltip>Documents</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Speech and audio</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/speech-generation"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/speech-generation"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/speech-generation"
+      ><span class="devsite-nav-text" tooltip>Speech generation</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/audio"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/audio"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/audio"
+      ><span class="devsite-nav-text" tooltip>Audio understanding</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/thinking"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/thinking"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/thinking"
+      ><span class="devsite-nav-text" tooltip>Thinking</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/structured-output"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/structured-output"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/structured-output"
+      ><span class="devsite-nav-text" tooltip>Structured output</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/function-calling"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/function-calling"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/function-calling"
+      ><span class="devsite-nav-text" tooltip>Function calling</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/long-context"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/long-context"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/long-context"
+      ><span class="devsite-nav-text" tooltip>Long context</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Tools</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/google-search"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/google-search"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/google-search"
+      ><span class="devsite-nav-text" tooltip>Google Search</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/maps-grounding"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/maps-grounding"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/maps-grounding"
+      ><span class="devsite-nav-text" tooltip>Google Maps</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/code-execution"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/code-execution"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/code-execution"
+      ><span class="devsite-nav-text" tooltip>Code execution</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/url-context"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/url-context"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/url-context"
+      ><span class="devsite-nav-text" tooltip>URL context</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/computer-use"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/computer-use"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/computer-use"
+      ><span class="devsite-nav-text" tooltip>Computer Use</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/file-search"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/file-search"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/file-search"
+      ><span class="devsite-nav-text" tooltip>File Search</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Live API</span>
+      </div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-preview"><a href="/gemini-api/docs/live"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/live"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/live"
+      ><span class="devsite-nav-text" tooltip>Get Started</span><span class="devsite-nav-icon material-icons"
+        data-icon="preview"
+        data-title="Preview"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/live-guide"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/live-guide"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/live-guide"
+      ><span class="devsite-nav-text" tooltip>Capabilities</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/live-tools"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/live-tools"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/live-tools"
+      ><span class="devsite-nav-text" tooltip>Tool use</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/live-session"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/live-session"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/live-session"
+      ><span class="devsite-nav-text" tooltip>Session management</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/ephemeral-tokens"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/ephemeral-tokens"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/ephemeral-tokens"
+      ><span class="devsite-nav-text" tooltip>Ephemeral tokens</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Guides</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/batch-api"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/batch-api"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/batch-api"
+      ><span class="devsite-nav-text" tooltip>Batch API</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/files"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/files"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/files"
+      ><span class="devsite-nav-text" tooltip>Files API</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/caching"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/caching"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/caching"
+      ><span class="devsite-nav-text" tooltip>Context caching</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/tokens"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/tokens"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/tokens"
+      ><span class="devsite-nav-text" tooltip>Token counting</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/prompting-strategies"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/prompting-strategies"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/prompting-strategies"
+      ><span class="devsite-nav-text" tooltip>Prompt engineering</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/logs-datasets"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/logs-datasets"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/logs-datasets"
+      ><span class="devsite-nav-text" tooltip>Logs and datasets</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/logs-policy"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/logs-policy"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/logs-policy"
+      ><span class="devsite-nav-text" tooltip>Data logging and sharing</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Safety</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/safety-settings"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/safety-settings"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/safety-settings"
+      ><span class="devsite-nav-text" tooltip>Safety settings</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/safety-guidance"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/safety-guidance"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/safety-guidance"
+      ><span class="devsite-nav-text" tooltip>Safety guidance</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Open-Source Frameworks</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/langgraph-example"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/langgraph-example"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/langgraph-example"
+      ><span class="devsite-nav-text" tooltip>LangChain &amp; LangGraph</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/crewai-example"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/crewai-example"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/crewai-example"
+      ><span class="devsite-nav-text" tooltip>CrewAI</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/llama-index"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/llama-index"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/llama-index"
+      ><span class="devsite-nav-text" tooltip>LlamaIndex</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/vercel-ai-sdk-example"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/vercel-ai-sdk-example"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/vercel-ai-sdk-example"
+      ><span class="devsite-nav-text" tooltip>Vercel AI SDK</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Resources</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/migrate"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/migrate"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/migrate"
+      ><span class="devsite-nav-text" tooltip>Migrate to Gen AI SDK</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/changelog"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/changelog"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/changelog"
+      ><span class="devsite-nav-text" tooltip>Release notes</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/deprecations"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/deprecations"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/deprecations"
+      ><span class="devsite-nav-text" tooltip>Deprecations</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/troubleshooting"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/troubleshooting"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/troubleshooting"
+      ><span class="devsite-nav-text" tooltip>API troubleshooting</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/billing"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/billing"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/billing"
+      ><span class="devsite-nav-text" tooltip>Billing info</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/model-tuning"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/model-tuning"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/model-tuning"
+      ><span class="devsite-nav-text" tooltip>Fine-tuning</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Google AI Studio</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/ai-studio-quickstart"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/ai-studio-quickstart"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/ai-studio-quickstart"
+      ><span class="devsite-nav-text" tooltip>Google AI Studio quickstart</span></a></li><li class="devsite-nav-item
+           devsite-nav-experimental"><a href="/gemini-api/docs/learnlm"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/learnlm"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/learnlm"
+      ><span class="devsite-nav-text" tooltip>LearnLM</span><span class="devsite-nav-icon material-icons"
+        data-icon="experimental"
+        data-title="Experimental!"
+        aria-hidden="true"></span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/troubleshoot-ai-studio"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/troubleshoot-ai-studio"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/troubleshoot-ai-studio"
+      ><span class="devsite-nav-text" tooltip>AI Studio troubleshooting</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/workspace"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/workspace"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/workspace"
+      ><span class="devsite-nav-text" tooltip>Google Workspace</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Google Cloud Platform</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/migrate-to-cloud"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/migrate-to-cloud"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/migrate-to-cloud"
+      ><span class="devsite-nav-text" tooltip>VertexAI Gemini API</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/oauth"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/oauth"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/oauth"
+      ><span class="devsite-nav-text" tooltip>OAuth authentication</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Policies</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/terms"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/terms"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/terms"
+      ><span class="devsite-nav-text" tooltip>Terms of service</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/available-regions"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/available-regions"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/available-regions"
+      ><span class="devsite-nav-text" tooltip>Available regions</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/usage-policies"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/usage-policies"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/usage-policies"
+      ><span class="devsite-nav-text" tooltip>Additional usage polices</span></a></li>
+          </ul>
+        
+        
+          
+    
+  
+        
+        
+          
+    
+  
+    
+  
+        
+      </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              has-book-nav
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="2"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article">
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  
+    aria-label="Breadcrumb">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+  <a href="https://ai.google.dev/"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="1"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="1"
+      
+        track-metadata-eventdetail=""
+      
+    >
+    
+        Home
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://ai.google.dev/gemini-api"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="2"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="2"
+      
+        track-metadata-eventdetail="Gemini API"
+      
+    >
+    
+        Gemini API
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://ai.google.dev/gemini-api/docs"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="3"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="3"
+      
+        track-metadata-eventdetail=""
+      
+    >
+    
+        Gemini API Docs
+      
+  </a>
+  
+    
+  </li>
+  
+</ul>
+    
+      
+    <devsite-thumb-rating position="header">
+    </devsite-thumb-rating>
+  
+    
+  </div>
+  
+    <devsite-feedback
+  position="header"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20251104-r00-rc00.473098406716517814"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="header"
+  class="nocontent"
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/images/touchicon-180-new.png"
+  
+  
+  
+  >
+
+  <button>
+  
+    
+    Send feedback
+  
+  </button>
+</devsite-feedback>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Files API<devsite-actions hidden data-nosnippet>
+    <devsite-llm-tools></devsite-llm-tools></devsite-actions>
+  
+      
+    </h1>
+  <div class="devsite-page-title-meta"><devsite-view-release-notes></devsite-view-release-notes></div>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="2"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+<p>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The Gemini family of artificial intelligence (AI) models is built to handle
+various types of input data, including text, images, and audio. Since these
+models can handle more than one type or <em>mode</em> of data, the Gemini models
+are called <em>multimodal models</em> or explained as having <em>multimodal capabilities</em>.</p>
+
+<p>This guide shows you how to work with media files using the Files API. The
+basic operations are the same for audio files, images, videos, documents, and
+other supported file types.</p>
+
+<p>For file prompting guidance, check out the <a href="/gemini-api/docs/files#prompt-guide">File prompt guide</a> section.</p>
+
+<h2 id="upload-audio" data-text="Upload a file" tabindex="-1">Upload a file</h2>
+
+<p>You can use the Files API to upload a media file. Always use the Files API when
+the total request size (including the files, text prompt, system instructions,
+etc.) is larger than 20&nbsp;MB.</p>
+
+<p>The following code uploads a file and then uses the file in a call to
+<code translate="no" dir="ltr">generateContent</code>.</p>
+<div class="ds-selector-tabs" data-ds-scope="code-sample">
+<section><h3 id="python" data-text="Python" tabindex="-1">Python</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">genai</span>
+
+<span class="devsite-syntax-n">client</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">genai</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Client</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-n">myfile</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">upload</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"path/to/sample.mp3"</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-2.5-flash"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-s2">"Describe this audio clip"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">myfile</span><span class="devsite-syntax-p">]</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code></section>
+<section><h3 id="javascript" data-text="JavaScript" tabindex="-1">JavaScript</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="JavaScript"><code translate="no" dir="ltr"><span class="devsite-syntax-k">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">GoogleGenAI</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">createUserContent</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">createPartFromUri</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kr">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"@google/genai"</span><span class="devsite-syntax-p">;</span>
+
+<span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">new</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">GoogleGenAI</span><span class="devsite-syntax-p">({});</span>
+
+<span class="devsite-syntax-k">async</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">function</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">myfile</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">files</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">upload</span><span class="devsite-syntax-p">({</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"path/to/sample.mp3"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">config</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mimeType</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"audio/mpeg"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-p">});</span>
+
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">response</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">models</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">generateContent</span><span class="devsite-syntax-p">({</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">model</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"gemini-2.5-flash"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">contents</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">createUserContent</span><span class="devsite-syntax-p">([</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-nx">createPartFromUri</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">myfile</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">uri</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">myfile</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">mimeType</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-s2">"Describe this audio clip"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">]),</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-p">});</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">console</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">response</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-p">);</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">();</span>
+</code></pre></devsite-code></section>
+<section><h3 id="go" data-text="Go" tabindex="-1">Go</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">UploadFileFromPath</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"path/to/sample.mp3"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatal</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-k">defer</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">DeleteFile</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Name</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-nx">model</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">GenerativeModel</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"gemini-2.5-flash"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nx">resp</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">model</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">GenerateContent</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">genai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">FileData</span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-nx">URI</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">URI</span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">genai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Text</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Describe this audio clip"</span><span class="devsite-syntax-p">))</span>
+<span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatal</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-nx">printResponse</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">resp</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code></section>
+<section><h3 id="rest" data-text="REST" tabindex="-1">REST</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Bash"><code translate="no" dir="ltr"><span class="devsite-syntax-nv">AUDIO_PATH</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"path/to/sample.mp3"</span>
+<span class="devsite-syntax-nv">MIME_TYPE</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-k">$(</span>file<span class="devsite-syntax-w"> </span>-b<span class="devsite-syntax-w"> </span>--mime-type<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">AUDIO_PATH</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-k">)</span>
+<span class="devsite-syntax-nv">NUM_BYTES</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-k">$(</span>wc<span class="devsite-syntax-w"> </span>-c<span class="devsite-syntax-w"> &lt; </span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">AUDIO_PATH</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-k">)</span>
+<span class="devsite-syntax-nv">DISPLAY_NAME</span><span class="devsite-syntax-o">=</span>AUDIO
+
+<span class="devsite-syntax-nv">tmp_header_file</span><span class="devsite-syntax-o">=</span>upload-header.tmp
+
+<span class="devsite-syntax-c1"># Initial resumable request defining metadata.</span>
+<span class="devsite-syntax-c1"># The upload url is in the response headers dump them to a file.</span>
+curl<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">BASE_URL</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">/upload/v1beta/files"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"x-goog-api-key: </span><span class="devsite-syntax-nv">$GEMINI_API_KEY</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-D<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">tmp_header_file</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"X-Goog-Upload-Protocol: resumable"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"X-Goog-Upload-Command: start"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"X-Goog-Upload-Header-Content-Length: </span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">NUM_BYTES</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"X-Goog-Upload-Header-Content-Type: </span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">MIME_TYPE</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"Content-Type: application/json"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-d<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"{'file': {'display_name': '</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">DISPLAY_NAME</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">'}}"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-m">2</span>&gt;<span class="devsite-syntax-w"> </span>/dev/null
+
+<span class="devsite-syntax-nv">upload_url</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-k">$(</span>grep<span class="devsite-syntax-w"> </span>-i<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"x-goog-upload-url: "</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">tmp_header_file</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">|</span><span class="devsite-syntax-w"> </span>cut<span class="devsite-syntax-w"> </span>-d<span class="devsite-syntax-s2">" "</span><span class="devsite-syntax-w"> </span>-f2<span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">|</span><span class="devsite-syntax-w"> </span>tr<span class="devsite-syntax-w"> </span>-d<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"\r"</span><span class="devsite-syntax-k">)</span>
+rm<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">tmp_header_file</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span>
+
+<span class="devsite-syntax-c1"># Upload the actual bytes.</span>
+curl<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">upload_url</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"Content-Length: </span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">NUM_BYTES</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"X-Goog-Upload-Offset: 0"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"X-Goog-Upload-Command: upload, finalize"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>--data-binary<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"@</span><span class="devsite-syntax-si">${</span><span class="devsite-syntax-nv">AUDIO_PATH</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-m">2</span>&gt;<span class="devsite-syntax-w"> </span>/dev/null<span class="devsite-syntax-w"> &gt; </span>file_info.json
+
+<span class="devsite-syntax-nv">file_uri</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-k">$(</span>jq<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">".file.uri"</span><span class="devsite-syntax-w"> </span>file_info.json<span class="devsite-syntax-k">)</span>
+<span class="devsite-syntax-nb">echo</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nv">file_uri</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-nv">$file_uri</span>
+
+<span class="devsite-syntax-c1"># Now generate content using that file</span>
+curl<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">    </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"x-goog-api-key: </span><span class="devsite-syntax-nv">$GEMINI_API_KEY</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">    </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'Content-Type: application/json'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">    </span>-X<span class="devsite-syntax-w"> </span>POST<span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">    </span>-d<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'{</span>
+<span class="devsite-syntax-s1">      "contents": [{</span>
+<span class="devsite-syntax-s1">        "parts":[</span>
+<span class="devsite-syntax-s1">          {"text": "Describe this audio clip"},</span>
+<span class="devsite-syntax-s1">          {"file_data":{"mime_type": "${MIME_TYPE}", "file_uri": '</span><span class="devsite-syntax-nv">$file_uri</span><span class="devsite-syntax-s1">'}}]</span>
+<span class="devsite-syntax-s1">        }]</span>
+<span class="devsite-syntax-s1">      }'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-m">2</span>&gt;<span class="devsite-syntax-w"> </span>/dev/null<span class="devsite-syntax-w"> &gt; </span>response.json
+
+cat<span class="devsite-syntax-w"> </span>response.json
+<span class="devsite-syntax-nb">echo</span>
+
+jq<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">".candidates[].content.parts[].text"</span><span class="devsite-syntax-w"> </span>response.json
+</code></pre></devsite-code></section>
+</div>
+<h2 id="get-metadata" data-text="Get metadata for a file" tabindex="-1">Get metadata for a file</h2>
+
+<p>You can verify that the API successfully stored the uploaded file and get its
+metadata by calling <code translate="no" dir="ltr">files.get</code>.</p>
+<div class="ds-selector-tabs" data-ds-scope="code-sample">
+<section><h3 id="python_1" data-text="Python" tabindex="-1">Python</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">myfile</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">upload</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s1">'path/to/sample.mp3'</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-n">file_name</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">myfile</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span>
+<span class="devsite-syntax-n">myfile</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">get</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">file_name</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">myfile</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code></section>
+<section><h3 id="javascript_1" data-text="JavaScript" tabindex="-1">JavaScript</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="JavaScript"><code translate="no" dir="ltr"><span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">myfile</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">files</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">upload</span><span class="devsite-syntax-p">({</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"path/to/sample.mp3"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">config</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mimeType</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"audio/mpeg"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-p">});</span>
+
+<span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fileName</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">myfile</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fetchedFile</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">files</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">get</span><span class="devsite-syntax-p">({</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fileName</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">});</span>
+<span class="devsite-syntax-nx">console</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">fetchedFile</span><span class="devsite-syntax-p">);</span>
+</code></pre></devsite-code></section>
+<section><h3 id="go_1" data-text="Go" tabindex="-1">Go</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">UploadFileFromPath</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"path/to/sample.mp3"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatal</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-nx">gotFile</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">GetFile</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Name</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatal</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-nx">fmt</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Println</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Got file:"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">gotFile</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Name</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code></section>
+<section><h3 id="rest_1" data-text="REST" tabindex="-1">REST</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Bash"><code translate="no" dir="ltr"><span class="devsite-syntax-c1"># file_info.json was created in the upload example</span>
+<span class="devsite-syntax-nv">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-k">$(</span>jq<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">".file.name"</span><span class="devsite-syntax-w"> </span>file_info.json<span class="devsite-syntax-k">)</span>
+<span class="devsite-syntax-c1"># Get the file of interest to check state</span>
+curl<span class="devsite-syntax-w"> </span>https://generativelanguage.googleapis.com/v1beta/files/<span class="devsite-syntax-nv">$name</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"x-goog-api-key: </span><span class="devsite-syntax-nv">$GEMINI_API_KEY</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-w"> &gt; </span>file_info.json
+<span class="devsite-syntax-c1"># Print some information about the file you got</span>
+<span class="devsite-syntax-nv">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-k">$(</span>jq<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">".file.name"</span><span class="devsite-syntax-w"> </span>file_info.json<span class="devsite-syntax-k">)</span>
+<span class="devsite-syntax-nb">echo</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nv">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-nv">$name</span>
+<span class="devsite-syntax-nv">file_uri</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-k">$(</span>jq<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">".file.uri"</span><span class="devsite-syntax-w"> </span>file_info.json<span class="devsite-syntax-k">)</span>
+<span class="devsite-syntax-nb">echo</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nv">file_uri</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-nv">$file_uri</span>
+</code></pre></devsite-code></section>
+</div>
+<h2 id="list-uploaded" data-text="List uploaded files" tabindex="-1">List uploaded files</h2>
+
+<p>You can upload multiple files using the Files API. The following code gets
+a list of all the files uploaded:</p>
+<div class="ds-selector-tabs" data-ds-scope="code-sample">
+<section><h3 id="python_2" data-text="Python" tabindex="-1">Python</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s1">'My files:'</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">f</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">list</span><span class="devsite-syntax-p">():</span>
+    <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s1">' '</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">f</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code></section>
+<section><h3 id="javascript_2" data-text="JavaScript" tabindex="-1">JavaScript</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="JavaScript"><code translate="no" dir="ltr"><span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">listResponse</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">files</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">list</span><span class="devsite-syntax-p">({</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">config</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">pageSize</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mf">10</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">});</span>
+<span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">of</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">listResponse</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">console</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-p">);</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code></section>
+<section><h3 id="go_2" data-text="Go" tabindex="-1">Go</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">iter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">ListFiles</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">ifile</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">iter</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Next</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">==</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">iterator</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Done</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">break</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatal</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">fmt</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Println</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ifile</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Name</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code></section>
+<section><h3 id="rest_2" data-text="REST" tabindex="-1">REST</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Bash"><code translate="no" dir="ltr"><span class="devsite-syntax-nb">echo</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"My files: "</span>
+
+curl<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"https://generativelanguage.googleapis.com/v1beta/files"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"x-goog-api-key: </span><span class="devsite-syntax-nv">$GEMINI_API_KEY</span><span class="devsite-syntax-s2">"</span>
+</code></pre></devsite-code></section>
+</div>
+<h2 id="delete-uploaded" data-text="Delete uploaded files" tabindex="-1">Delete uploaded files</h2>
+
+<p>Files are automatically deleted after 48 hours. You can also manually delete an
+uploaded file:</p>
+<div class="ds-selector-tabs" data-ds-scope="code-sample">
+<section><h3 id="python_3" data-text="Python" tabindex="-1">Python</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">myfile</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">upload</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s1">'path/to/sample.mp3'</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">delete</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">myfile</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code></section>
+<section><h3 id="javascript_3" data-text="JavaScript" tabindex="-1">JavaScript</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="JavaScript"><code translate="no" dir="ltr"><span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">myfile</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">files</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">upload</span><span class="devsite-syntax-p">({</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"path/to/sample.mp3"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-nx">config</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mimeType</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"audio/mpeg"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-p">});</span>
+
+<span class="devsite-syntax-kd">const</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fileName</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">myfile</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-p">;</span>
+<span class="devsite-syntax-k">await</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">files</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-ow">delete</span><span class="devsite-syntax-p">({</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fileName</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">});</span>
+</code></pre></devsite-code></section>
+<section><h3 id="go_3" data-text="Go" tabindex="-1">Go</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">UploadFileFromPath</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"path/to/sample.mp3"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatal</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-nx">client</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">DeleteFile</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Name</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code></section>
+<section><h3 id="rest_3" data-text="REST" tabindex="-1">REST</h3><div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Bash"><code translate="no" dir="ltr">curl<span class="devsite-syntax-w"> </span>--request<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"DELETE"</span><span class="devsite-syntax-w"> </span>https://generativelanguage.googleapis.com/v1beta/files/<span class="devsite-syntax-nv">$name</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-se">\</span>
+<span class="devsite-syntax-w">  </span>-H<span class="devsite-syntax-w"> </span><span class="devsite-syntax-s2">"x-goog-api-key: </span><span class="devsite-syntax-nv">$GEMINI_API_KEY</span><span class="devsite-syntax-s2">"</span>
+</code></pre></devsite-code></section>
+</div>
+<h2 id="usage_info" data-text="Usage info" tabindex="-1">Usage info</h2>
+
+<p>You can use the Files API to upload and interact with media files. The Files API
+lets you store up to 20&nbsp;GB of files per project, with a per-file maximum
+size of 2&nbsp;GB. Files are stored for 48 hours. During that time, you can
+use the API to get metadata about the files, but you can&#39;t download the files.
+The Files API is available at no cost in all regions where the Gemini API is
+available.</p>
+
+<h2 id="prompt-guide" data-text="File prompting strategies" tabindex="-1">File prompting strategies</h2>
+
+<p>This section provides guidance and best practices for using media files with
+prompts for the Gemini API. </p>
+
+<p>Being able to use various types of data in your prompts gives you more
+flexibility in terms of what tasks you can tackle with the Gemini API. For
+example, you can send the model a photo of a delicious meal and ask it to write
+a short blog about the meal.</p>
+
+<table>
+  <tr>
+    <td width="50%"><b>Prompt</b></td>
+    <td width="50%"><b>Response</b></td>
+  </tr>
+  <tr>
+    <td>
+      <p>Write a short, engaging blog post based on this picture. It should
+      include a description of the meal in the photo and talk about my journey
+      meal prepping.</p>
+      <br>
+      <img style="width: 100%; border: 1px solid black" src="/static/gemini-api/docs/images/image_prompt.png" alt="Cookies">
+    </td>
+    <td style="background-color: var(--devsite-responsive-table-first-column-background)">
+      <p>Meal prepping is a great way to save time and money, and it can also
+      help you to eat healthier. This meal is a great example of a healthy
+      and delicious meal that can be easily prepped ahead of time.</p>
+
+      <p>This meal features brown rice, roasted vegetables, and chicken teriyaki.
+      The brown rice is a healthy and complex carbohydrate that will give you
+      sustained energy. The roasted vegetables are a great way to get your daily
+      dose of vitamins and minerals, and the chicken teriyaki is a delicious and
+      protein-rich option.</p>
+
+      <p>This meal is also very easy to prepare. Simply cook the brown rice, roast
+      the vegetables, and cook the chicken teriyaki. Once everything is cooked,
+      divide it into meal prep containers and store them in the refrigerator.
+      You can then grab a container and go on busy mornings!</p>
+
+      <p>If you're looking for a healthy and delicious meal that can be easily
+      prepped ahead of time, this meal is a great option. It's packed with
+      nutrients and flavor, and it's sure to keep you feeling full and satisfied.</p>
+
+      <p>Here's to healthy and delicious meal prepping!</p>
+    </td>
+  </tr>
+</table>
+
+<p>If you are having trouble getting the output you want from prompts that use
+media files, there are some strategies that can help you get the results you
+want. The following sections provide design approaches and troubleshooting
+tips for improving prompts that use multimodal input.</p>
+
+<p>You can improve your multimodal prompts by following these best practices:</p>
+
+<ul>
+    <li>
+        <h3 class="hide-from-toc" id="prompt-design-fundamentals" data-text="Prompt design fundamentals" tabindex="-1"><a href="#specific-instructions">Prompt design fundamentals</a></h3>
+        <ul>
+            <li><strong>Be specific in your instructions</strong>: Craft clear and concise instructions that leave minimal room for misinterpretation.</li>
+            <li><strong>Add a few examples to your prompt:</strong> Use realistic few-shot examples to illustrate what you want to achieve.</li>
+            <li><strong>Break it down step-by-step</strong>: Divide complex tasks into manageable sub-goals, guiding the model through the process.</li>
+            <li><strong>Specify the output format</strong>: In your prompt, ask for the output to be in the format you want, like markdown, JSON, HTML and more. </li>
+            
+            <li><strong>Put your image first for single-image prompts</strong>: While Gemini can handle image and text inputs in any order, for prompts containing a single image, it might perform better if that image (or video) is placed before the text prompt. However, for prompts that require images to be highly interleaved with texts to make sense, use whatever order is most natural.</li>
+            
+        </ul>
+    </li>
+    <li>
+        <h3 class="hide-from-toc" id="troubleshooting-your-multimodal-prompt" data-text="Troubleshooting your multimodal prompt" tabindex="-1"><a href="#troubleshooting">Troubleshooting your multimodal prompt</a></h3>
+        <ul>
+            <li><strong>If the model is not drawing information from the relevant part of the image:</strong> Drop hints with which aspects of the image you want the prompt to draw information from.</li>
+            
+            <li><strong>If the model output is too generic (not tailored enough to the image/video input): </strong>At the start of the prompt, try asking the model to describe the image(s) or video before providing the task instruction, or try asking the model to refer to what's in the image.</li>
+            <li><strong>To troubleshoot which part failed:</strong> Ask the model to describe the image, or ask the model to explain its reasoning, to gauge the model's initial understanding.</li>
+            <li><strong>If your prompt results in hallucinated content:</strong> Try dialing down the temperature setting or asking the model for shorter descriptions so that it's less likely to extrapolate additional details.</li>
+            <li><strong>Tuning the sampling parameters:</strong> Experiment with different temperature settings and top-k selections to adjust the model's creativity.</li>
+            
+        </ul>
+    </li>
+</ul>
+
+<h3 id="specific-instructions" data-text="Be specific in your instructions" tabindex="-1">Be specific in your instructions</h3>
+
+<p>Prompts have the most success when they are clear and detailed. If you have a
+specific output in mind, it&#39;s better to include that requirement in the prompt
+to ensure you get the output you want.</p>
+
+<p>For this image of an airport board, asking the model to just &quot;describe this
+image&quot; could generate a general description. If you need the model to parse the
+time and city from the image, you can include that request directly in your prompt.</p>
+
+<table class="alternating-even-rows">
+  <tr>
+    <th style="width:40%">Prompt</th>
+    <th style="width:30%">Model response</th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/timetable.png">
+      <p>Describe this image.</p>
+    </td>
+    <td><p>The image shows an airport arrivals and departures board.</p></td>
+  </tr>
+</table>
+
+<p><table class= "alternating-even-rows">
+    <tr>
+      <th width="40%"><b>Updated prompt</b></th>
+      <th width="30%"><b>Improved response</b></th>
+    </tr>
+    <tr>
+      <td><img
+        class="fit-picture"
+        src="/static/gemini-api/docs/images/timetable.png"
+        alt="Travel timetable"/><p>Parse the time and city from the airport board shown in this image into a list.</p></td>
+      <td><p><li>10:50 Moscow</li>
+        <li>11:05 Edinburgh</li>
+        <li>11:05 London</li>
+        <li>11:10 Bucharest</li>
+        <li>11:30 Kiev</li>
+        <li>11:35 Dublin</li>
+        <li>11:45 East Midlands</li>
+        <li>12:15 Sofia</li>
+        <li>12:30 London</li>
+        <li>12:30 Newcastle</li>
+        <li>12:40 St Petersburg</li>
+        <li>12:40 London</li>
+        <li>12:45 Manchester</li></p></td>
+    </tr>
+</table></p>
+
+<h3 id="add_a_few_examples" data-text="Add a few examples" tabindex="-1">Add a few examples</h3>
+
+<p>The Gemini model can accept multiple inputs which it can use as examples to understand the
+output you want. Adding these examples can help the model identify the patterns and apply the
+relationship between the given images and responses to the new example. This is also called
+&quot;few-shot&quot; learning.</p>
+
+<p>In the example below, the initial output is written in sentence form, and also contains the
+country (Brazil). Suppose you want the output in a different format or style, and you want
+only the city, not the country. Adding few-shot examples to your prompt can steer the model
+to respond in the way you want.</p>
+
+<p><table class= "alternating-even-rows">
+    <tr>
+      <th width="40%"><b>Prompt</b></th>
+      <th width="30%"><b>Model response</b></th>
+    </tr>
+    <tr>
+      <td><img
+        class="fit-picture"
+        src="/static/gemini-api/docs/images/redeemer.png"
+        alt="Travel timetable"/><p>Determine the city along with the landmark.</p></td>
+      <td><p>The landmark is the Christ the Redeemer statue in Rio de Janeiro, Brazil.</p></td>
+    </tr>
+</table></p>
+
+<table class= "alternating-even-rows">
+  <tr>
+    <th width="40%"><b>Updated prompt</b></th>
+    <th width="30%"><b>Improved response</b></th>
+  </tr>
+  <tr>
+    <td>
+      <p>Determine the city along with the landmark.</p>
+      <img
+      class="fit-picture"
+      src="/static/gemini-api/docs/images/colosseum.png"
+      alt="colosseum"/>
+    </td>
+    <td>
+      <p>city: Rome, landmark: the Colosseum.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img
+      class="fit-picture"
+      src="/static/gemini-api/docs/images/forbidden-city.png"
+      alt="Forbidden City"/>
+    </td>
+    <td>
+      <p>city: Beijing, landmark: Forbidden City</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img
+      class="fit-picture"
+      src="/static/gemini-api/docs/images/redeemer.png"
+      alt="forbidden-city"/>
+    </td>
+    <td>
+      <p>city: Rio de Janeiro, landmark: Christ the Redeemer statue</p>
+    </td>
+  </tr>
+</table>
+
+<h3 id="break_it_down_step-by-step" data-text="Break it down step-by-step" tabindex="-1">Break it down step-by-step</h3>
+
+<p>For complex tasks like the ones that require both visual understanding and
+reasoning, it can be helpful to split the task into smaller, more straightforward
+steps. Alternatively, it could also be effective if you
+directly ask the model to “think step by step” in your prompt.</p>
+
+<table class="alternating-even-rows">
+  <tr>
+    <th style="width:40%">Prompt</th>
+    <th style="width:30%">Model response</th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/toilet-paper.jpg">
+      <p>When will I run out of toilet paper?</p>
+    </td>
+    <td><p>Soon, you only have 3 rolls left.</p></td>
+  </tr>
+</table>
+
+<table class= "alternating-even-rows">
+    <tr>
+      <th width="40%"><b>Updated prompt</b></th>
+      <th width="30%"><b>Improved response</b></th>
+    </tr>
+    <tr>
+      <td><img
+        class="fit-picture"
+        src="/static/gemini-api/docs/images/toilet-paper.jpg"/><p>
+          <ol>1. First, count how many toilet paper rolls are in this picture.</ol>
+          <ol>2. Then, determine how much toilet paper a typical person uses per day.</ol>
+          <ol>3. Calculate how long these rolls of toilet paper will last.</ol>
+          </p></td>
+      <td><p>
+          <ol>1. There are 3 rolls of toilet paper in this picture.</ol>
+          <ol>2. A typical person uses about 20 sheets of toilet paper per day.</ol>
+          <ol>3. If each roll contains 200 sheets, then each roll will last for about 10 days. Therefore, the 3 rolls will last for about a month.</ol>
+        </p></td>
+    </tr>
+</table>
+
+<p>Math problems or other types of word problems are great candidates for asking
+the model to think step-by-step.</p>
+
+<table class= "alternating-even-rows">
+    <tr>
+      <th width="40%"><b>Prompt</b></th>
+      <th width="30%"><b>Response</b></th>
+    </tr>
+    <tr>
+      <td><img
+        class="fit-picture"
+        src="/static/gemini-api/docs/images/math.jpg"/><p>
+          <p>What is the 4th term in the sequence?</p>
+          </p></td>
+      <td><p>-135
+        </p></td>
+    </tr>
+</table>
+
+<p>The response from the model is incorrect. Some ways to improve this is to ask
+the model to parse the problem before answering the prompt.</p>
+
+<table class= "alternating-even-rows">
+    <tr>
+      <th width="40%"><b>Prompt</b></th>
+      <th width="30%"><b>Response</b></th>
+    </tr>
+    <tr>
+      <td><img
+        class="fit-picture"
+        src="/static/gemini-api/docs/images/math.jpg"/><p>
+          <p>Parse the formula in the image first.</p>
+          <p>Then based on the formula, answer "what's the 4th term in the sequence?".</p>
+          </p></td>
+      <td><p><details>
+        <summary><em>Click to expand the result</em></summary>
+<p>$$ b(n) = b(n-1) * (-3) $$</p>
+<p>$$ b(1) = 15 $$</p>
+<ol>
+<li>Substitute n = 4 into the formula:</li>
+<p>$$ b(4) = b(4-1) * (-3) $$</p>
+<p>$$ b(4) = b(3) * (-3) $$</p>
+<li>We don't know the value of b(3), so substitute n = 3 into the formula:</li>
+<p>$$ b(3) = b(3-1) * (-3) $$</p>
+<p>$$ b(3) = b(2) * (-3) $$</p>
+<li>We don't know the value of b(2), so substitute n = 2 into the formula:</li>
+<p>$$ b(2) = b(2-1) * (-3) $$</p>
+<p>$$ b(2) = b(1) * (-3) $$</p>
+<li>We know the value of b(1) is 15, so substitute it into the formula:</li>
+<p>$$ b(2) = 15 * (-3) $$</p>
+<p>$$ b(2) = -45 $$</p>
+<li>Now that we know the value of b(2), substitute it into the formula for b(3):</li>
+<p>$$ b(3) = b(2) * (-3) $$</p>
+<p>$$ b(3) = -45 * (-3) $$</p>
+<p>$$ b(3) = 135 $$</p>
+<li>Now that we know the value of b(3), substitute it into the formula for b(4):</li>
+<p>$$ b(4) = b(3) * (-3) $$</p>
+<p>$$ b(4) = 135 * (-3) $$</p>
+<p>$$ b(4) = -405 $$</p>
+</ol>
+<p>Therefore, the 4th term in the sequence is -405.</p>
+      </details>
+        </p></td>
+    </tr>
+</table>
+
+<p>This model response is correct - now to make the response even more streamlined,
+you can ask the model to to think step-by-step.</p>
+
+<p><table class= "alternating-even-rows">
+    <tr>
+      <th width="40%"><b>Updated prompt</b></th>
+      <th width="30%"><b>Improved response</b></th>
+    </tr>
+    <tr>
+      <td>
+        <img class="fit-picture" src="/static/gemini-api/docs/images/math.jpg">
+        <p>What is the 4th term in the sequence? Think step by step.</p>
+      </td>
+      <td>
+        <p>The first term is 15.</p>
+        <p>The second term is b(1) * (-3) = 15 * (-3) = -45.</p>
+        <p>The third term is b(2) * (-3) = -45 * (-3) = 135.</p>
+        <p>The fourth term is b(3) * (-3) = 135 * (-3) = -405.</p>
+      </td>
+    </tr>
+</table></p>
+
+<h3 id="specify_the_output_format" data-text="Specify the output format" tabindex="-1">Specify the output format</h3>
+
+<p>A common problem is the need for model output to be in a certain format
+(e.g. markdown, JSON, HTML), especially if the model output needs to
+be ingested by a downstream task. You can try to produce output in that format
+by instructing the model to do so within the prompt. Below are two examples:</p>
+
+<table class="alternating-even-rows">
+  <tr>
+    <th style="width:40%">Prompt</th>
+    <th style="width:30%">Model response</th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/excel-example.png">
+      <p>Parse the table in this image into markdown format</p>
+    </td>
+    <td>
+      <p>| Subject | Status | Time | Start date | Due on |</p>
+      <p>| ------- | ------ | ---- | ---------- | ------ |</p>
+      <p>| Math | Done | 1.5 hrs | 11/29/2023 | 12/1/2023 |</p>
+      <p>| Geography | Done | 30 min | 12/2/2023 | 12/4/2023 |</p>
+      <p>| Physics | In progress | 2 hrs | 12/3/2023 | 12/5/2023 |</p>
+      <p>| Biology | Not started | 6 hrs | 11/2/2016 | 12/6/2023 |</p>
+    </td>
+  </tr>
+</table>
+
+<table class= "alternating-even-rows">
+  <tr>
+    <th width="40%"><b>Prompt</b></th>
+    <th width="30%"><b>Model response</b></th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/spanish-meal.png">
+      <p>Provide a list of all the following attributes:</p>
+      <p>ingredients, type of cuisine, vegetarian or not, in JSON format</p>
+    </td>
+    <td>
+      <p>
+        <code translate="no" dir="ltr">
+          <p>```json</p>
+          <p>{</p>
+          <p>"ingredients": [</p>
+          <p>"rice",</p>
+          <p>"shrimp",</p>
+          <p>"clams",</p>
+          <p>"mussels",</p>
+          <p>"peas",</p>
+          <p>"tomatoes",</p>
+          <p>"onions",</p>
+          <p>"garlic",</p>
+          <p>"olive oil",</p>
+          <p>"paprika",</p>
+          <p>"salt",</p>
+          <p>"pepper"</p>
+          <p>],</p>
+          <p>"type of cuisine": "Spanish",</p>
+          <p>"vegetarian": false</p>
+          <p>}</p>
+          <p>```</p>
+        </code>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<h3 id="single-image-prompts" data-text="Put your image first for single-image prompts" tabindex="-1">Put your image first for single-image prompts</h3>
+
+<p>While Gemini can interpret image and text in any order within a prompt, placing
+a single image before the text prompt might lead to better results.
+In the following samples, you&#39;ll notice the image comes first before the text in
+each prompt.</p>
+
+<h3 id="troubleshooting" data-text="Troubleshooting your multimodal prompt" tabindex="-1">Troubleshooting your multimodal prompt</h3>
+
+<p>You might need to troubleshoot your prompt if you are not getting a helpful
+response. Here are a few strategies you could try.</p>
+
+<h4 id="if_the_model_is_not_drawing_information_from_the_relevant_part_of_the_image" data-text="If the model is not drawing information from the relevant part of the image" tabindex="-1">If the model is not drawing information from the relevant part of the image</h4>
+
+<p>To get a more specific response, you can point out which aspects of the image
+you want the prompt to draw information from to inform its response.</p>
+
+<table class="alternating-even-rows">
+  <tr>
+    <th style="width:40%">Prompt</th>
+    <th style="width:30%">Model response</th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/diapers.png">
+      <p>How many days will these diapers last a baby?</p>
+    </td>
+    <td><p>The diapers will last for 198 days before they run out.</p></td>
+  </tr>
+</table>
+
+<table class= "alternating-even-rows">
+  <tr>
+    <th width="40%"><b>Updated prompt</b></th>
+    <th width="30%"><b>Improved response</b></th>
+  </tr>
+  <tr>
+    <td><img
+      class="fit-picture"
+      src="/static/gemini-api/docs/images/diapers.png"/>
+      <p>How long will these diapers last before I run out?</p>
+      <p>Use the weight shown on the box to determine the child's age, and use the total number of diapers in the box.</p>
+      <p>Divide the total number by how many diapers the child goes through per day.</p></td>
+    <td>
+      <p>The box contains 198 diapers. The box states the diapers are for a child weighing 22-37 lbs.</p>
+      <p>The average child in this weight range is likely between 1 and 2 years old.</p>
+      <p>A 2-year-old typically goes through 6 diapers per day, therefore, the diapers will last around 33 days (198/6).</p>
+    </td>
+  </tr>
+</table>
+
+<h4 id="if_the_model_output_is_too_generic_and_not_tailored_enough_to_the_image_input" data-text="If the model output is too generic and not tailored enough to the image input" tabindex="-1">If the model output is too generic and not tailored enough to the image input</h4>
+
+<p>To help the model tailor its response to the image(s), try asking it to describe
+the images before performing its reasoning task.</p>
+
+<table class="alternating-even-rows">
+  <tr>
+    <th style="width:40%">Prompt</th>
+    <th style="width:30%">Model response</th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/packing.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/mall.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/toilet-paper.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/ocean.jpg">
+      <p>What is in common between these images?</p>
+    </td>
+    <td><p>All four images are examples of landscape photography.</p></td>
+  </tr>
+</table>
+
+<table class= "alternating-even-rows">
+  <tr>
+    <th width="40%"><b>Updated prompt</b></th>
+    <th width="30%"><b>Improved response</b></th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/packing.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/mall.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/toilet-paper.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/ocean.jpg">
+      <p>First, describe what's in each image in detail. What's in common between these images?</p>
+    </td>
+    <td>
+      <p>The first image shows a person packing a suitcase. The second image shows an empty hallway in a shopping mall. The third image shows a roll of toilet paper. The fourth image shows a dark and stormy sea.</p>
+      <p>The commonality between these images is that they are all examples of liminal spaces. Liminal spaces are places or situations that are in between two other places or situations. They are often characterized by a sense of uncertainty or ambiguity.</p>
+      <p>The first image shows the person in between being at home and being on a trip. The second image shows the hallway in between two stores. The third image is of toilet paper, which can represent a bathroom. A bathroom is a transitional space between private
+      and public realms. It's a place where we prepare ourselves to enter or leave the outside world.</p>
+      <p>The fourth image shows the sea in between being calm and being stormy.</p>
+      <p>Liminal spaces can be both exciting and unsettling. They can be a place of new beginning or a place of endings. They can be a place of reflection or a place of action.</p>
+    </td>
+  </tr>
+</table>
+
+<p>You can also try explicitly asking the model to refer to what&#39;s in the image.</p>
+
+<table class= "alternating-even-rows">
+  <tr>
+    <th width="40%"><b>Updated prompt</b></th>
+    <th width="30%"><b>Improved response</b></th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/packing.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/mall.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/toilet-paper.jpg">
+      <img class="fit-picture" src="/static/gemini-api/docs/images/ocean.jpg">
+      <p>What is in common between these images? Refer to what's in the images in your response.</p>
+    </td>
+    <td>
+      <p>All of the images are related to travel. The first image shows a person packing a suitcase, the second image shows
+        an empty hallway in a shopping mall, the third image shows a stack of toilet paper, and the fourth image shows a
+        dark and stormy sea.</p>
+      <p>These images are all related to travel because they are all things that people need or use when
+        they travel. The first image shows a person packing a suitcase, which is something that people do when they are
+        going on a trip. The second image shows an empty hallway in a shopping mall, which is a place where people
+        often go to buy things for their trips. The third image shows a stack of toilet paper, which is something
+        that people often use when they are traveling. The fourth image shows a dark and stormy sea, which is
+        something that people often encounter when they are traveling.</p>
+    </td>
+  </tr>
+</table>
+
+<p>The same tips work for creative output from images. In the following example with
+the rabbit, explicitly asking the model to include aspects from the image can
+improve the output.</p>
+
+<table class="alternating-even-rows">
+  <tr>
+    <th style="width:40%">Prompt</th>
+    <th style="width:30%">Model response</th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/rabbit.jpg">
+      <p>Can you write me a poem about this image?</p>
+    </td>
+    <td>
+        <p>Little bunny, so soft and brown,<br>
+        Hopping through the field, up and down.<br>
+        Your ears so long, your tail so small,<br>
+        You're the cutest creature of them all.</p>
+        <p>You nibble on the grass, so green and sweet,<br>
+        And hop away when you see me.<br>
+        But I'll always be your friend,<br>
+        Little bunny, until the very end.</p>
+    </td>
+  </tr>
+</table>
+
+<p><table class= "alternating-even-rows">
+    <tr>
+      <th width="40%"><b>Updated prompt</b></th>
+      <th width="30%"><b>Improved response</b></th>
+    </tr>
+    <tr>
+      <td><img
+        class="fit-picture"
+        src="/static/gemini-api/docs/images/rabbit.jpg"/>
+        <p>Can you write me a descriptive and dramatic poem about this image and include the location?</p></td>
+      <td>
+          <p>Little bunny on the green,<br>
+          Ears so long, so keen.<br>
+          What do you see out there,<br>
+          In the distance, where you stare?</p>
+          <p>Is it the ocean blue,<br>
+          Sparkling in the sun&#39;s hue?<br>
+          Or the waves that crash and roar,<br>
+          A rhythm that you adore?</p>
+          <p>Little bunny, tell me true,<br>
+          What captures your attention so?<br>
+          Is it the salty breeze,<br>
+          Or the seagulls&#39; cries that please?</p>
+          <p>Perhaps it&#39;s the vastness of it all,<br>
+          A world so big and small.<br>
+          A place where dreams can roam,<br>
+          And adventures can be sown.</p>
+          <p>Little bunny, I wonder what you dream,<br>
+          As you sit on the grass, so serene.<br>
+          Do you yearn to explore the deep,<br>
+          Or stay on land, where you can leap?</p>
+          <p>Whatever it may be, little bunny,<br>
+          Keep that spark of wonder burning brightly.<br>
+          For in your dreams and aspirations,<br>
+          Lies a world waiting for your creation.</p>
+      </td>
+    </tr>
+</table></p>
+
+<h4 id="troubleshooting_which_part_of_the_prompt_failed" data-text="Troubleshooting which part of the prompt failed" tabindex="-1">Troubleshooting which part of the prompt failed</h4>
+
+<p>It can be hard to know whether a prompt failed because the model
+didn&#39;t <strong>understand the image</strong> to begin with, or if it did understand the image
+but did not perform the correct <strong>reasoning steps</strong> afterward.
+To disambiguate between those reasons, ask the model to describe what&#39;s in the image.</p>
+
+<p>In the following example, if the model responds with a snack that seems surprising
+when paired with tea (e.g. popcorn), you can first troubleshoot to determine
+whether the model correctly recognized that the image contains tea.</p>
+
+<table class="alternating-even-rows">
+  <tr>
+    <th style="width:40%">Prompt</th>
+    <th style="width:30%">Prompt for troubleshooting</th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/tea-set.png">
+      <p>What's a snack I can make in 1 minute that would go well with this?</p>
+    </td>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/tea-set.png">
+      <p>Describe what's in this image.</p>
+    </td>
+  </tr>
+</table>
+
+<p>Another strategy is to ask the model to explain its reasoning. That can help you
+narrow down which part of the reasoning broke down, if any.</p>
+
+<table class="alternating-even-rows">
+  <tr>
+    <th style="width:40%">Prompt</th>
+    <th style="width:30%">Prompt for troubleshooting</th>
+  </tr>
+  <tr>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/tea-set.png">
+      <p>What's a snack I can make in 1 minute that would go well with this?</p>
+    </td>
+    <td>
+      <img class="fit-picture" src="/static/gemini-api/docs/images/tea-set.png">
+      <p>What's a snack I can make in 1 minute that would go well with this? Please explain why.</p>
+    </td>
+  </tr>
+</table>
+
+<h2 id="whats-next" data-text="What's next" tabindex="-1">What's next</h2>
+
+<ul>
+<li>Try writing your own multimodal prompts using <a href="http://aistudio.google.com">Google AI
+Studio</a>.</li>
+<li>For information on using the Gemini Files API for
+uploading media files and including them in your prompts, see the
+<a href="/gemini-api/docs/vision">Vision</a>, <a href="/gemini-api/docs/audio">Audio</a>, and
+<a href="/gemini-api/docs/document-processing">Document processing</a> guides.</li>
+<li>For more guidance on prompt design, like tuning sampling parameters, see the
+<a href="/gemini-api/docs/prompting-strategies">Prompt strategies</a> page.</li>
+</ul>
+<link href="/site-assets/css/style.css?v=3" rel="stylesheet" data-page-link><link href="https://fonts.googleapis.com/css2?family=Google+Symbols:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" data-page-link>
+  
+
+  
+</div>
+
+  
+    
+    
+      
+    <devsite-thumb-rating position="footer">
+    </devsite-thumb-rating>
+  
+       
+         <devsite-feedback
+  position="footer"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20251104-r00-rc00.473098406716517814"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="footer"
+  class="nocontent"
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/images/touchicon-180-new.png"
+  
+  
+  
+  >
+
+  <button>
+  
+    
+    Send feedback
+  
+  </button>
+</devsite-feedback>
+       
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  <p>Last updated 2025-09-22 UTC.</p>
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+    
+    
+    <template class="devsite-thumb-rating-feedback">
+      <devsite-feedback
+  position="thumb-rating"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20251104-r00-rc00.473098406716517814"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="thumb-rating"
+  class="nocontent"
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/images/touchicon-180-new.png"
+  
+  
+  
+  >
+
+  <button>
+  
+    Need to tell us more?
+  
+  </button>
+</devsite-feedback>
+    </template>
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-09-22 UTC."],[],[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="sq"
+        >Shqip</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [{&#34;id&#34;: &#34;GTM-TC2MQKS8&#34;, &#34;purpose&#34;: 0}], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;article&#34;, &#34;projectName&#34;: &#34;Gemini API&#34;, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;googledevai&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+    
+<script nonce="y8Gx1vbwkl4ZjfUV/nhsgSI14gQ4hF">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/js/app_loader.js', '[59,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5","https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai","https://googledevai-dot-devsite-v2-prod-3p.appspot.com",null,null,["/_pwa/googledevai/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vbbbf67a54a0fa61d452a62d016ca62f820d4cb99ab70cea0bd30d469bb65aaf5/googledevai/images/favicon-new.png","/_static/googledevai/images/gemini-api-logo.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Inter:400,500|Inter+Tight:300,500,600&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyCNm9YxQumEXwGJgTDjxoxXK6m1F-9720Q","AIzaSyCc76DZePGtoyUjqKrLdsMGk_ry7sljLbY","ai.google.dev","AIzaSyB9bqgQ2t11WJsOX8qNsCQ6U-w91mmqF-I","AIzaSyAdYnStPdzjcJJtQ0mvIaeaMKj7_t6J_Fg",null,null,null,["Cloud__enable_legacy_calculator_redirect","Profiles__enable_awarding_url","Profiles__enable_join_program_group_endpoint","Profiles__enable_profile_collections","CloudShell__cloud_shell_button","MiscFeatureFlags__enable_explain_this_code","Profiles__enable_developer_profiles_callout","TpcFeatures__proxy_prod_host","EngEduTelemetry__enable_engedu_telemetry","DevPro__remove_eu_tax_intake_form","Analytics__enable_clearcut_logging","MiscFeatureFlags__enable_appearance_cookies","Concierge__enable_actions_menu","MiscFeatureFlags__enable_explicit_template_dependencies","Profiles__enable_developer_profile_benefits_ui_redesign","DevPro__enable_vertex_credit_card","Profiles__enable_page_saving","Cloud__enable_free_trial_server_call","Profiles__enable_completequiz_endpoint","Cloud__enable_cloud_shell","Experiments__reqs_query_experiments","Profiles__enable_complete_playlist_endpoint","DevPro__enable_cloud_innovators_plus","DevPro__enable_free_benefits","Search__enable_page_map","DevPro__enable_google_payments","Profiles__enable_dashboard_curated_recommendations","Cloud__cache_serialized_dynamic_content","Profiles__enable_callout_notifications","Profiles__enable_stripe_subscription_management","MiscFeatureFlags__gdp_dashboard_reskin_enabled","DevPro__enable_nvidia_credits_card","Profiles__enable_public_developer_profiles","Concierge__enable_remove_info_panel_tags","DevPro__enable_google_one_card","Cloud__fast_free_trial","Profiles__require_profile_eligibility_for_signin","Profiles__enable_developer_profile_pages_as_content","Profiles__enable_release_notes_notifications","Profiles__enable_auto_apply_credits","Search__enable_suggestions_from_borg","Profiles__enable_recognition_badges","DevPro__enable_devpro_offers","Search__enable_dynamic_content_confidential_banner","CloudShell__cloud_code_overflow_menu","Cloud__enable_cloud_shell_fte_user_flow","Profiles__enable_purchase_prompts","MiscFeatureFlags__enable_variable_operator","MiscFeatureFlags__developers_footer_image","Cloud__enable_llm_concierge_chat","DevPro__enable_code_assist","DevPro__enable_firebase_workspaces_card","DevPro__enable_google_payments_buyflow","MiscFeatureFlags__enable_llms_txt","DevPro__enable_enterprise","MiscFeatureFlags__enable_variable_operator_index_yaml","MiscFeatureFlags__enable_firebase_utm","Search__enable_ai_eligibility_checks","Concierge__enable_devsite_llm_tools","Profiles__enable_playlist_community_acl","BookNav__enable_tenant_cache_key","Profiles__enable_user_type","Concierge__enable_pushui","TpcFeatures__enable_unmirrored_page_left_nav","Cloud__enable_cloudx_experiment_ids","OnSwitch__enable","MiscFeatureFlags__developers_footer_dark_image","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_completecodelab_endpoint","MiscFeatureFlags__emergency_css","Search__enable_ai_search_summaries_for_all","MiscFeatureFlags__enable_project_variables","MiscFeatureFlags__enable_view_transitions","MiscFeatureFlags__enable_project_body_class","DevPro__enable_embed_profile_creation","DevPro__enable_developer_subscriptions"],null,null,"AIzaSyA58TaKli1DculwmAmbpzLVGuWc8eCQgQc","https://developerscontentserving-pa.googleapis.com","AIzaSyDWBU60w0P9hEkr29kkksYs8Z7gvZ8u_wc","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[59,"googledevai","Google AI for Developers","ai.google.dev",null,"googledevai-dot-devsite-v2-prod-3p.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1],[1,1,null,1,1],null,null,null,null,null,[1]],null,[73,null,null,null,null,null,"/images/lockup-new.svg","/images/touchicon-180-new.png",null,null,null,null,1,1,null,null,null,null,null,null,null,2,null,null,null,"/images/lockup-dark-theme-new.svg",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[44,2,4,6,7,12,14,15,17,18,20,21,22,23,28,29,32,37,39,40,43],null,[[],[1,1],null,1],[[null,null,null,null,null,["GTM-TC2MQKS8"],null,null,null,null,null,[["GTM-TC2MQKS8",1]],1]],null,4,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[]],null,null,1,1,"https://developerscontentinsights-pa.googleapis.com","AIzaSyC11xEGtFhkmSh_iF6l_itbxnFz2GrIBOg","AIzaSyAXJ10nRF73mmdSDINgkCNX5bbd2KPcWm8","https://developers.googleapis.com",["https://aistudio.google.com"],null,"AIzaSyCjP0KOnHfv8mwe38sfzZJMOnqE3HvrD4A",null,"https://developerslogging.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

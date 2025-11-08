@@ -1,0 +1,541 @@
+Source Path: gas_docs_html/apps-script/reference/maps/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Maps service allows scripts to generate static maps, find directions, convert addresses to coordinates, and sample elevations.
+The service provides classes for finding directions, geocoding, sampling elevation, and creating static map images.
+Enums are available for defining restrictions to avoid in directions, map image formats, marker sizes, travel modes, and map types.
+You can create new instances of DirectionFinder, ElevationSampler, Geocoder, and StaticMap using the Maps class methods.
+Authentication for a Google Maps APIs Premium Plan account can be set to leverage additional quota allowances.
+Maps
+This service allows scripts to generate static maps, find directions, convert
+addresses into geocode coordinates, and sample elevations.
+Classes
+Name
+Brief description
+Avoid
+An enum representing the types of restrictions to avoid when finding directions.
+Color
+An enum representing the named colors available to use in map images.
+Direction
+Finder
+Allows for the retrieval of directions between locations.
+Direction
+Finder
+Enums
+A collection of enums used by
+Direction
+Finder
+.
+Elevation
+Sampler
+Allows for the sampling of elevations at particular locations.
+Format
+An enum representing the format of the map image.
+Geocoder
+Allows for the conversion between an address and geographical coordinates.
+Maps
+Allows for direction finding, geocoding, elevation sampling and the creation of static map
+images.
+Marker
+Size
+An enum representing the size of a marker added to a map.
+Mode
+An enum representing the mode of travel to use when finding directions.
+Static
+Map
+Allows for the creation and decoration of static map images.
+Static
+Map
+Enums
+A collection of enums used by
+Static
+Map
+.
+Type
+An enum representing the type of map to render.
+Avoid
+Properties
+Property
+Type
+Description
+TOLLS
+Enum
+Avoid tolls.
+HIGHWAYS
+Enum
+Avoid highways.
+Color
+Properties
+Property
+Type
+Description
+BLACK
+Enum
+BROWN
+Enum
+GREEN
+Enum
+PURPLE
+Enum
+YELLOW
+Enum
+BLUE
+Enum
+GRAY
+Enum
+ORANGE
+Enum
+RED
+Enum
+WHITE
+Enum
+Direction
+Finder
+Methods
+Method
+Return type
+Brief description
+add
+Waypoint(latitude, longitude)
+Direction
+Finder
+Adds a waypoint that the route must pass through, using a point (lat/lng).
+add
+Waypoint(address)
+Direction
+Finder
+Adds a waypoint that the route must pass through, using an address.
+clear
+Waypoints()
+Direction
+Finder
+Clears the current set of waypoints.
+get
+Directions()
+Object
+Gets the directions using the origin, destination, and other options that were set.
+set
+Alternatives(useAlternatives)
+Direction
+Finder
+Sets whether or not alternative routes should be returned, instead of just the highest ranked
+route (defaults to false).
+set
+Arrive(time)
+Direction
+Finder
+Sets the desired time of arrival (when applicable).
+set
+Avoid(avoid)
+Direction
+Finder
+Sets whether to avoid certain types of restrictions.
+set
+Depart(time)
+Direction
+Finder
+Sets the desired time of departure (when applicable).
+set
+Destination(latitude, longitude)
+Direction
+Finder
+Sets the ending location for which to calculate directions to, using a point (lat/lng).
+set
+Destination(address)
+Direction
+Finder
+Sets the ending location for which to calculate directions to, using an address.
+set
+Language(language)
+Direction
+Finder
+Sets the language to be used for the directions.
+set
+Mode(mode)
+Direction
+Finder
+Sets the mode of travel (defaults to driving).
+set
+Optimize
+Waypoints(optimizeOrder)
+Direction
+Finder
+Sets whether or not to optimize the provided route by rearranging the waypoints in a more
+efficient order (defaults to false).
+set
+Origin(latitude, longitude)
+Direction
+Finder
+Sets the starting location from which to calculate directions, using a point (lat/lng).
+set
+Origin(address)
+Direction
+Finder
+Sets the starting location from which to calculate directions, using an address.
+set
+Region(region)
+Direction
+Finder
+Sets a region to use when interpreting location names.
+Direction
+Finder
+Enums
+Properties
+Property
+Type
+Description
+Avoid
+Avoid
+Mode
+Mode
+Elevation
+Sampler
+Methods
+Method
+Return type
+Brief description
+sample
+Location(latitude, longitude)
+Object
+Returns elevation data for a single point (lat/lng).
+sample
+Locations(points)
+Object
+Returns elevation data for a series of points (lat/lng).
+sample
+Locations(encodedPolyline)
+Object
+Returns elevation data for the points in an encoded polyline.
+sample
+Path(points, numSamples)
+Object
+Returns elevation data for a number of samples along a line, defined using a series of points.
+sample
+Path(encodedPolyline, numSamples)
+Object
+Returns elevation data for a number of samples along a line, defined using an encoded polyline.
+Format
+Properties
+Property
+Type
+Description
+PNG
+Enum
+8-bit PNG format.
+PNG8
+Enum
+8-bit PNG format.
+PNG32
+Enum
+32-bit PNG format.
+GIF
+Enum
+GIF format.
+JPG
+Enum
+JPEG format.
+JPG_BASELINE
+Enum
+Non-progressive JPEG format.
+Geocoder
+Methods
+Method
+Return type
+Brief description
+geocode(address)
+Object
+Gets the approximate geographic points for a given address.
+reverse
+Geocode(latitude, longitude)
+Object
+Gets the approximate addresses for a given geographic point.
+set
+Bounds(swLatitude, swLongitude, neLatitude, neLongitude)
+Geocoder
+Sets the bounds of an area that should be given extra preference in the results.
+set
+Language(language)
+Geocoder
+Sets the language to be used in the results.
+set
+Region(region)
+Geocoder
+Sets a region to use when interpreting location names.
+Maps
+Properties
+Property
+Type
+Description
+Direction
+Finder
+Direction
+Finder
+Enums
+Static
+Map
+Static
+Map
+Enums
+Methods
+Method
+Return type
+Brief description
+decode
+Polyline(polyline)
+Number[]
+Decodes an encoded polyline string back into an array of points.
+encode
+Polyline(points)
+String
+Encodes an array of points into a string.
+new
+Direction
+Finder()
+Direction
+Finder
+Creates a new DirectionFinder object.
+new
+Elevation
+Sampler()
+Elevation
+Sampler
+Creates an ElevationSampler object.
+new
+Geocoder()
+Geocoder
+Creates a new Geocoder object.
+new
+Static
+Map()
+Static
+Map
+Creates a new StaticMap object.
+set
+Authentication(clientId, signingKey)
+void
+Enables the use of an externally established
+Google Maps APIs Premium Plan
+account,
+to leverage additional
+quota
+allowances
+.
+Marker
+Size
+Properties
+Property
+Type
+Description
+TINY
+Enum
+Tiny sized markets (smallest available).
+MID
+Enum
+Medium sized markers (largest available).
+SMALL
+Enum
+Small sized markers.
+Mode
+Properties
+Property
+Type
+Description
+DRIVING
+Enum
+Driving directions via roads.
+WALKING
+Enum
+Walking directions via pedestrian paths and sidewalks (where available).
+BICYCLING
+Enum
+Bicycling directions via bicycle paths and preferred streets (where available).
+TRANSIT
+Enum
+Transit directions via public transit routes (where available).
+Static
+Map
+Methods
+Method
+Return type
+Brief description
+add
+Address(address)
+Static
+Map
+Adds a new address to the current path definition.
+add
+Marker(latitude, longitude)
+Static
+Map
+Adds a marker to the map using a point (lat/lng).
+add
+Marker(address)
+Static
+Map
+Adds a marker to the map using an address.
+add
+Path(points)
+Static
+Map
+Adds a path to the map using an array of points.
+add
+Path(polyline)
+Static
+Map
+Adds a path to the map using an encoded polyline.
+add
+Point(latitude, longitude)
+Static
+Map
+Adds a new point (lat/lng) to the current path definition.
+add
+Visible(latitude, longitude)
+Static
+Map
+Adds a point (lat/lng) location that must be visible in the map.
+add
+Visible(address)
+Static
+Map
+Adds an address location that must be visible in the map.
+begin
+Path()
+Static
+Map
+Starts a new path definition.
+clear
+Markers()
+Static
+Map
+Clears the current set of markers.
+clear
+Paths()
+Static
+Map
+Clear the current set of paths.
+clear
+Visibles()
+Static
+Map
+Clears the current set of visible locations.
+end
+Path()
+Static
+Map
+Completes a path definition started with beginPath().
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Gets the image data as a
+Blob
+.
+get
+Map
+Image()
+Byte[]
+Gets the raw image data as a byte array.
+get
+Map
+Url()
+String
+Gets the URL of the map image.
+set
+Center(latitude, longitude)
+Static
+Map
+Sets the center of the map using a point (lat/lng).
+set
+Center(address)
+Static
+Map
+Sets the center of the map using an address.
+set
+Custom
+Marker
+Style(imageUrl, useShadow)
+Static
+Map
+Sets the custom marker image to use when creating new markers.
+set
+Format(format)
+Static
+Map
+Sets the format of the map image.
+set
+Language(language)
+Static
+Map
+Sets the language to be used for text on the map (where available).
+set
+Map
+Type(mapType)
+Static
+Map
+Sets the type of map to be shown.
+set
+Marker
+Style(size, color, label)
+Static
+Map
+Sets the marker style to use when creating new markers.
+set
+Mobile(useMobileTiles)
+Static
+Map
+Sets whether or not to use specialized tile sets for mobile devices.
+set
+Path
+Style(weight, color, fillColor)
+Static
+Map
+Sets the path style to use when creating new paths.
+set
+Size(width, height)
+Static
+Map
+Sets the width and height of the map image in pixels.
+set
+Zoom(zoom)
+Static
+Map
+Sets the zoom factor, or magnification level, used for the map.
+Static
+Map
+Enums
+Properties
+Property
+Type
+Description
+Color
+Color
+Format
+Format
+Marker
+Size
+Marker
+Size
+Type
+Type
+Type
+Properties
+Property
+Type
+Description
+ROADMAP
+Enum
+A standard roadmap, as is normally shown on the Google Maps website.
+SATELLITE
+Enum
+A satellite map.
+TERRAIN
+Enum
+A physical relief map, showing terrain and vegetation.
+HYBRID
+Enum
+A hybrid of the satellite and roadmap maps, showing a transparent layer of major streets and
+place names on the satellite map.

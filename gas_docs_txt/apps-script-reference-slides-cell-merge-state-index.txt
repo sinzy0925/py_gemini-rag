@@ -1,0 +1,52 @@
+Source Path: gas_docs_html/apps-script/reference/slides/cell-merge-state/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CellMergeState defines the possible states of a table cell's merge status.
+You can access enum values using the parent class, name, and property like
+SlidesApp.CellMergeState.NORMAL
+.
+NORMAL
+indicates a cell is not merged.
+HEAD
+signifies the upper-left cell in a merged set.
+MERGED
+indicates a cell is part of a merged set but is not the head cell.
+Cell
+Merge
+State
+The table cell merge states.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.CellMergeState.NORMAL
+.
+Properties
+Property
+Type
+Description
+NORMAL
+Enum
+The cell is not merged.
+HEAD
+Enum
+The cell is merged and it is the head (i.e. upper left) cell within the merged set of cells.
+As an example, assume the following table.
+-------------------
+|(0,0)|(0,1)|(0,2)|
+-------------------
+If the first two cells are merged to form the following table, cell (0,0) is the head cell and
+(0,1) is a merged cell.
+-------------------
+|(0,0)      |(0,2)|
+-------------------
+MERGED
+Enum
+The cell is merged but is not the head (i.e. upper left) cell.
+As an example, assume the following table.
+-------------------
+|(0,0)|(0,1)|(0,2)|
+-------------------
+If the first two cells are merged to form the following table, cell (0,0) is the head cell and
+(0,1) is a merged cell.
+-------------------
+|(0,0)      |(0,2)|
+-------------------

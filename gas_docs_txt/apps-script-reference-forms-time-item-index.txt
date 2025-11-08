@@ -1,0 +1,494 @@
+Source Path: gas_docs_html/apps-script/reference/forms/time-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TimeItem allows respondents to indicate a time of day in a form.
+TimeItem can be accessed or created from a Form and is graded when used in a quiz.
+Various methods are available for TimeItem, including creating responses, duplicating the item, and getting or setting properties like feedback, help text, ID, index, points, title, required status, and type.
+Methods like
+createResponse
+,
+duplicate
+,
+getGeneralFeedback
+,
+getHelpText
+,
+getId
+,
+getIndex
+,
+getPoints
+,
+getTitle
+,
+getType
+,
+isRequired
+,
+setGeneralFeedback
+,
+setHelpText
+,
+setPoints
+,
+setRequired
+, and
+setTitle
+provide functionality for interacting with a TimeItem programmatically.
+Time
+Item
+A question item that allows the respondent to indicate a time of day. Items can be accessed or
+created from a
+Form
+. When used in a quiz, these items are graded.
+// Open a form by ID and add a new time item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addTimeItem
+();
+item
+.
+setTitle
+(
+'What time do you usually wake up in the morning?'
+);
+Methods
+Method
+Return type
+Brief description
+create
+Response(hour, minute)
+Item
+Response
+Creates a new
+Item
+Response
+for this time item.
+duplicate()
+Time
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Time
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Time
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Time
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Time
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Time
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Detailed documentation
+create
+Response(hour, minute)
+Creates a new
+Item
+Response
+for this time item. The arguments
+hour
+and
+minute
+are best represented as integers from
+0
+to
+23
+and from
+0
+to
+59
+, respectively. If they exceed those bounds, they behave as a clock would: for
+example,
+10, 90
+is interpreted as 11:30, and
+-1, 60
+is interpreted as 00:00.
+Parameters
+Name
+Type
+Description
+hour
+Integer
+the hour, represented as an integer from
+0
+to
+23
+minute
+Integer
+the minute of the hour, represented as an integer from
+0
+to
+59
+Return
+Item
+Response
+— the item response
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Time
+Item
+— a duplicate of this
+Time
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+General
+Feedback()
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+Return
+Quiz
+Feedback
+— the feedback, if any.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Points()
+Returns the point value of a gradeable item.
+Return
+Integer
+— the number of points a question is worth.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Required()
+Determines whether the respondent must answer the question.
+Return
+Boolean
+— whether the respondent must answer the question
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+General
+Feedback(feedback)
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+Parameters
+Name
+Type
+Description
+feedback
+Quiz
+Feedback
+the new feedback
+Return
+Time
+Item
+— this
+Time
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Time
+Item
+— this
+Time
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Points(points)
+Sets the number of points a gradeable item is worth. The default for new items is 0.
+Parameters
+Name
+Type
+Description
+points
+Integer
+the number of a points a question item is worth
+Return
+Time
+Item
+— this
+Time
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Required(enabled)
+Sets whether the respondent must answer the question.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+whether the respondent must answer the question
+Return
+Time
+Item
+— the current item (for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Time
+Item
+— this
+Time
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

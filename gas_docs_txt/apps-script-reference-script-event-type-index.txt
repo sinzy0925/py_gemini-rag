@@ -1,0 +1,41 @@
+Source Path: gas_docs_html/apps-script/reference/script/event-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+EventType is an enumeration indicating the type of triggered event.
+You access an enum by calling its parent class, name, and property, like
+ScriptApp.EventType.CLOCK
+.
+The properties listed define different events that can trigger actions, such as time-driven events, opening or editing files, form submissions, changes to files, and calendar event updates.
+Event
+Type
+An enumeration denoting the type of triggered event.
+To call an enum, you call its parent class, name, and property. For example,
+ScriptApp.EventType.CLOCK
+.
+Properties
+Property
+Type
+Description
+CLOCK
+Enum
+The trigger fires once the time-driven event reaches a specific time.
+ON_OPEN
+Enum
+The trigger fires once the user opens the Google Docs, Sheets, or Forms file.
+ON_EDIT
+Enum
+The trigger fires once the user edits the Google Sheets file (for example, by entering a new
+value into a cell, which counts as an edit instead of a change).
+ON_FORM_SUBMIT
+Enum
+The trigger fires once the user responds to a Google Form. This trigger is available either in
+the Google Form itself or in the Google Sheets file that the form sends its responses to.
+ON_CHANGE
+Enum
+The trigger fires once the user changes the Google Sheets file (for example, by adding a row,
+which counts as a change instead of an edit).
+ON_EVENT_UPDATED
+Enum
+The trigger fires once an event gets created, updated, or deleted on the specified Google
+Calendar.

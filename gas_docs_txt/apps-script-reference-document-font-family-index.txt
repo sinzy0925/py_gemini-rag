@@ -1,0 +1,232 @@
+Source Path: gas_docs_html/apps-script/reference/document/font-family/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+FontFamily
+enumeration is deprecated.
+The methods
+getFontFamily()
+and
+setFontFamily(String)
+now use string names for fonts.
+The
+FontFamily
+enumeration remains available for compatibility with older scripts.
+You can use the
+FontFamily
+enumeration to set the font for text, elements, or documents.
+Font
+Family
+Deprecated.
+The methods
+get
+Font
+Family()
+and
+set
+Font
+Family(String)
+now use string
+    names for fonts instead of this enum. Although this enum is deprecated, it will remain
+    available for compatibility with older scripts.
+An enumeration of the supported fonts.
+Use the
+Font
+Family
+enumeration to set the font for a range of text, element or
+document.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Insert a paragraph at the start of the document.
+body
+.
+insertParagraph
+(
+0
+,
+'Hello, Apps Script!'
+);
+// Set the tab font to Calibri.
+body
+.
+editAsText
+().
+setFontFamily
+(
+DocumentApp
+.
+FontFamily
+.
+CALIBRI
+);
+// Set the first paragraph font to Arial.
+body
+.
+getParagraphs
+()[
+0
+].
+setFontFamily
+(
+DocumentApp
+.
+FontFamily
+.
+ARIAL
+);
+// Set "Apps Script" to Comic Sans MS.
+const
+text
+=
+'Apps Script'
+;
+const
+a
+=
+body
+.
+getText
+().
+indexOf
+(
+text
+);
+const
+b
+=
+a
++
+text
+.
+length
+-
+1
+;
+body
+.
+editAsText
+().
+setFontFamily
+(
+a
+,
+b
+,
+DocumentApp
+.
+FontFamily
+.
+COMIC_SANS_MS
+);
+Deprecated properties
+Property
+Type
+Description
+AMARANTH
+Enum
+The Amaranth font family.
+ARIAL
+Enum
+The Arial font family.
+ARIAL_BLACK
+Enum
+The Arial Black font family.
+ARIAL_NARROW
+Enum
+The Arial Narrow font family.
+ARVO
+Enum
+The Arvo font family.
+CALIBRI
+Enum
+The Calibri font family.
+CAMBRIA
+Enum
+The Cambria font family.
+COMIC_SANS_MS
+Enum
+The Comic Sans MS font family.
+CONSOLAS
+Enum
+The Consolas font family.
+CORSIVA
+Enum
+The Corsiva font family.
+COURIER_NEW
+Enum
+The Courier New font family.
+DANCING_SCRIPT
+Enum
+The Dancing Script font family.
+DROID_SANS
+Enum
+The Droid Sans font family.
+DROID_SERIF
+Enum
+The Droid Serif font family.
+GARAMOND
+Enum
+The Garamond font family.
+GEORGIA
+Enum
+The Georgia font family.
+GLORIA_HALLELUJAH
+Enum
+The Gloria Hallelujah font family.
+GREAT_VIBES
+Enum
+The Great Vibes font family.
+LOBSTER
+Enum
+The Lobster font family.
+MERRIWEATHER
+Enum
+The Merriweather font family.
+PACIFICO
+Enum
+The Pacifico font family.
+PHILOSOPHER
+Enum
+The Philosopher font family.
+POIRET_ONE
+Enum
+The Poiret One font family
+QUATTROCENTO
+Enum
+The Quattrocento font family.
+ROBOTO
+Enum
+The Roboto font family
+SHADOWS_INTO_LIGHT
+Enum
+The Shadows Into Light font family.
+SYNCOPATE
+Enum
+The Syncopate font family.
+TAHOMA
+Enum
+The Tahoma font family.
+TIMES_NEW_ROMAN
+Enum
+The Times New Roman font family.
+TREBUCHET_MS
+Enum
+The Trebuchet MS font family.
+UBUNTU
+Enum
+The Ubuntu font family.
+VERDANA
+Enum
+The Verdana font family.

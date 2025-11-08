@@ -1,0 +1,23 @@
+Source Path: gas_docs_html/apps-script/reference/calendar/visibility/index.html
+
+Visibility
+An enum representing the visibility of an event.
+To call an enum, you call its parent class, name, and property. For example,
+CalendarApp.Visibility.CONFIDENTIAL
+.
+Properties
+Property
+Type
+Description
+CONFIDENTIAL
+Enum
+The event is private. This value is provided for compatibility reasons.
+DEFAULT
+Enum
+Uses the default visibility for events on the calendar.
+PRIVATE
+Enum
+The event is private and only event attendees may view event details.
+PUBLIC
+Enum
+The event is public and event details are visible to all readers of the calendar.

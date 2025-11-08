@@ -1,0 +1,45 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/calendar-event-action-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CalendarEventActionResponse represents a response that modifies a calendar event being edited based on a user action.
+You can use the CalendarEventActionResponseBuilder to create a response, for example, to add attendees to an event.
+The printJson() method is available for debugging purposes, returning a JSON representation of the object.
+Calendar
+Event
+Action
+Response
+Represents a response that makes changes to the calendar event that the user is currently editing
+in reaction to an action taken in the UI, such as a button click.
+// A CalendarEventActionResponse that adds two attendees to an event.
+const
+calendarEventActionResponse
+=
+CardService
+.
+newCalendarEventActionResponseBuilder
+()
+.
+addAttendees
+([
+'user1@example.com'
+,
+'user2@example.com'
+])
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String

@@ -1,0 +1,57 @@
+Source Path: gas_docs_html/apps-script/reference/slides/predefined-layout/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PredefinedLayout refers to commonly found layouts in presentations, though their presence and placeholder configurations may vary.
+Enums within PredefinedLayout are accessed by calling their parent class, name, and property, such as
+SlidesApp.PredefinedLayout.BLANK
+.
+The Properties table lists various predefined layouts and their descriptions, ranging from blank to layouts with titles, bodies, columns, or specific elements like captions, main points, or big numbers.
+Predefined
+Layout
+Predefined layouts. These are commonly found layouts in presentations. However, there is no
+guarantee that these layouts are present in the current master as they could have been deleted or
+not part of the used theme. Additionally, the placeholders on each layout may have been changed.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.PredefinedLayout.BLANK
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A layout that is not supported.
+BLANK
+Enum
+Blank layout, with no placeholders.
+CAPTION_ONLY
+Enum
+Layout with a caption at the bottom.
+TITLE
+Enum
+Layout with a title and a subtitle.
+TITLE_AND_BODY
+Enum
+Layout with a title and body.
+TITLE_AND_TWO_COLUMNS
+Enum
+Layout with a title and two columns.
+TITLE_ONLY
+Enum
+Layout with only a title.
+SECTION_HEADER
+Enum
+Layout with a section title.
+SECTION_TITLE_AND_DESCRIPTION
+Enum
+Layout with a title and subtitle on one side and description on the other.
+ONE_COLUMN_TEXT
+Enum
+Layout with one title and one body, arranged in a single column.
+MAIN_POINT
+Enum
+Layout with a main point.
+BIG_NUMBER
+Enum
+Layout with a big number heading.

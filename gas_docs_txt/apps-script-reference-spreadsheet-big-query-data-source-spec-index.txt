@@ -1,0 +1,226 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/big-query-data-source-spec/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+BigQueryDataSourceSpec allows access to existing BigQuery data source specifications within SpreadsheetApp.
+You can create a new data source specification using SpreadsheetApp.newDataSourceSpec().
+The methods available include retrieving dataset ID, parameters, project ID, raw query, table ID, table project ID, and data source type.
+The copy() method creates a DataSourceSpecBuilder based on the existing data source's settings.
+Big
+Query
+Data
+Source
+Spec
+Access the existing BigQuery data source specification. To create a new data source
+specification, use
+Spreadsheet
+App.newDataSourceSpec()
+.
+Methods
+Method
+Return type
+Brief description
+copy()
+Data
+Source
+Spec
+Builder
+Creates a
+Data
+Source
+Spec
+Builder
+based on this data source's settings.
+get
+Dataset
+Id()
+String
+Gets the BigQuery dataset ID.
+get
+Parameters()
+Data
+Source
+Parameter[]
+Gets the parameters of the data source.
+get
+Project
+Id()
+String
+Gets the billing project ID.
+get
+Raw
+Query()
+String
+Gets the raw query string.
+get
+Table
+Id()
+String
+Gets the BigQuery table ID.
+get
+Table
+Project
+Id()
+String
+Gets the BigQuery project ID for the table.
+get
+Type()
+Data
+Source
+Type
+Gets the type of the data source.
+Detailed documentation
+copy()
+Creates a
+Data
+Source
+Spec
+Builder
+based on this data source's settings.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+newSpec
+=
+spec
+.
+copy
+();
+Return
+Data
+Source
+Spec
+Builder
+— The builder.
+get
+Dataset
+Id()
+Gets the BigQuery dataset ID.
+Return
+String
+— The dataset ID, or an empty string if the data source spec is defined by a raw query.
+get
+Parameters()
+Gets the parameters of the data source.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+parameters
+=
+spec
+.
+getParameters
+();
+This method is only available for BigQuery data sources.
+Return
+Data
+Source
+Parameter[]
+— The parameter list.
+get
+Project
+Id()
+Gets the billing project ID.
+Return
+String
+— The project ID.
+get
+Raw
+Query()
+Gets the raw query string.
+Return
+String
+— The raw query string.
+get
+Table
+Id()
+Gets the BigQuery table ID.
+Return
+String
+— The table ID, or an empty string if the data source spec is defined by a raw query.
+get
+Table
+Project
+Id()
+Gets the BigQuery project ID for the table.
+Return
+String
+— The table project ID, or an empty string if the data source spec is defined by a raw
+    query.
+get
+Type()
+Gets the type of the data source.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+type
+=
+spec
+.
+getType
+();
+Return
+Data
+Source
+Type
+— The data source type.

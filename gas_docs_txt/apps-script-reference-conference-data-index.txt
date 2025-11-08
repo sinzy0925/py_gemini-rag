@@ -1,0 +1,403 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Conference Data service allows scripts to configure conferencing data objects that interact with Google Calendar.
+This service is primarily used with Calendar conferencing add-ons or Google Workspace add-ons that connect to third-party conferencing systems.
+The service provides classes for managing conference data, handling errors, and defining entry points for joining conferences.
+Key classes include
+ConferenceData
+,
+ConferenceDataBuilder
+, and
+ConferenceDataService
+.
+Enumerations are available for defining conference error types, entry point features, and entry point types.
+Conference Data
+This service allows scripts to configure and build conferencing data objects that interact
+  with Google Calendar.
+Currently you can only use this service in conjunction with
+Calendar conferencing add-ons
+or
+Google Workspace add-ons
+that interact with Google Calendar conferencing. Only add-ons that connect to third-party
+  conferencing systems have need of this service.
+Classes
+Name
+Brief description
+Conference
+Data
+Container for all conference-related information.
+Conference
+Data
+Builder
+Builder for creating for
+Conference
+Data
+objects.
+Conference
+Data
+Service
+Service that scripts can use to create conferencing information.
+Conference
+Error
+Error that occurred in a conferencing add-on.
+Conference
+Error
+Type
+Enum that defines the types of errors that you can specify in a
+Conference
+Error
+.
+Conference
+Parameter
+Solution-specific parameter available fo the add-on's use.
+Entry
+Point
+Definition of a specific way to join a conference.
+Entry
+Point
+Feature
+Enum that defines the features of the entry point that can be created by a conferencing add-on.
+Entry
+Point
+Type
+Enum that defines the types of entry points that can be created by a conferencing add-on.
+Conference
+Data
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+Conference
+Data
+Builder
+Methods
+Method
+Return type
+Brief description
+add
+Conference
+Parameter(conferenceParameter)
+Conference
+Data
+Builder
+Adds a
+Conference
+Parameter
+to this
+Conference
+Data
+.
+add
+Entry
+Point(entryPoint)
+Conference
+Data
+Builder
+Adds an
+Entry
+Point
+to this
+Conference
+Data
+.
+build()
+Conference
+Data
+Builds and validates the
+Conference
+Data
+.
+set
+Conference
+Id(conferenceId)
+Conference
+Data
+Builder
+Sets the conference ID of this
+Conference
+Data
+.
+set
+Conference
+Solution
+Id(conferenceSolutionId)
+Conference
+Data
+Builder
+Sets the conference solution ID defined in the addon's manifest.
+set
+Error(conferenceError)
+Conference
+Data
+Builder
+Sets the
+Conference
+Error
+of this
+Conference
+Data
+, indicating that the conference
+was not successfully created.
+set
+Notes(notes)
+Conference
+Data
+Builder
+Sets the additional notes of this
+Conference
+Data
+, such as instructions from the
+administrator or legal notices.
+Conference
+Data
+Service
+Properties
+Property
+Type
+Description
+Conference
+Error
+Type
+Conference
+Error
+Type
+The
+Conference
+Error
+Type
+enumeration.
+Entry
+Point
+Feature
+Entry
+Point
+Feature
+The
+Entry
+Point
+Feature
+enumeration.
+Entry
+Point
+Type
+Entry
+Point
+Type
+The
+Entry
+Point
+Type
+enumeration.
+Methods
+Method
+Return type
+Brief description
+new
+Conference
+Data
+Builder()
+Conference
+Data
+Builder
+Returns a new, empty
+Conference
+Data
+Builder
+.
+new
+Conference
+Error()
+Conference
+Error
+Returns a new, empty
+Conference
+Error
+.
+new
+Conference
+Parameter()
+Conference
+Parameter
+Returns a new, empty
+Conference
+Parameter
+.
+new
+Entry
+Point()
+Entry
+Point
+Returns a new, empty
+Entry
+Point
+.
+Conference
+Error
+Methods
+Method
+Return type
+Brief description
+set
+Authentication
+Url(authenticationUrl)
+Conference
+Error
+If the error type is
+AUTHENTICATION
+, the add-on must
+provide a URL calling back into the add-on to allow users to log in.
+set
+Conference
+Error
+Type(conferenceErrorType)
+Conference
+Error
+Sets the error type of this
+Conference
+Error
+.
+Conference
+Error
+Type
+Properties
+Property
+Type
+Description
+AUTHENTICATION
+Enum
+An authentication error during conference data generation.
+CONFERENCE_SOLUTION_FORBIDDEN
+Enum
+The user is not allowed to use the selected conference solution (but might be allowed to use
+other solutions offered by the add-on).
+PERMANENT
+Enum
+A permanent error during conference data generation.
+PERMISSION_DENIED
+Enum
+The user isn't allowed to perform an action in the third-party conferencing system.
+TEMPORARY
+Enum
+A temporary error during conference data generation.
+UNKNOWN
+Enum
+An unknown error during conference data generation.
+Conference
+Parameter
+Methods
+Method
+Return type
+Brief description
+set
+Key(key)
+Conference
+Parameter
+Sets the key of this
+Conference
+Parameter
+.
+set
+Value(value)
+Conference
+Parameter
+Sets the value of this
+Conference
+Parameter
+.
+Entry
+Point
+Methods
+Method
+Return type
+Brief description
+add
+Feature(feature)
+Entry
+Point
+Adds the feature of the entry point, such as being toll or toll-free.
+set
+Access
+Code(accessCode)
+Entry
+Point
+An access code for accessing the conference.
+set
+Entry
+Point
+Type(entryPointType)
+Entry
+Point
+Sets the type of this entry point.
+set
+Meeting
+Code(meetingCode)
+Entry
+Point
+A meeting code for accessing the conference.
+set
+Passcode(passcode)
+Entry
+Point
+A passcode for accessing the conference.
+set
+Password(password)
+Entry
+Point
+A password code for accessing the conference.
+set
+Pin(pin)
+Entry
+Point
+A PIN code for accessing the conference.
+set
+Region
+Code(regionCode)
+Entry
+Point
+The CLDR/ISO 3166 region code for the country associated with this entry point.
+set
+Uri(uri)
+Entry
+Point
+Sets the URI for joining the conference through this entry point.
+Entry
+Point
+Feature
+Properties
+Property
+Type
+Description
+UNKNOWN_FEATURE
+Enum
+Do not use.
+TOLL
+Enum
+Applies to PHONE entry point only.
+TOLL_FREE
+Enum
+Applies to PHONE entry point only.
+Entry
+Point
+Type
+Properties
+Property
+Type
+Description
+VIDEO
+Enum
+A video entry point for a conference.
+PHONE
+Enum
+A phone entry point for a conference.
+MORE
+Enum
+A link to more information about entry points into a conference.
+SIP
+Enum
+A SIP entry point for a conference.

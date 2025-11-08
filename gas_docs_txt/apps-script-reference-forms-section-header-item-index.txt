@@ -1,0 +1,291 @@
+Source Path: gas_docs_html/apps-script/reference/forms/section-header-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SectionHeaderItem
+is a layout item in Google Forms that visually indicates the start of a section.
+You can access or create a
+SectionHeaderItem
+from a
+Form
+object.
+Methods available for
+SectionHeaderItem
+include getting and setting the title and help text, duplicating the item, and getting its ID, index, and type.
+Using
+setHelpText()
+and
+setTitle()
+methods allows you to modify the text displayed for the section header.
+Scripts using these methods require specific authorization scopes related to Google Forms.
+Section
+Header
+Item
+A layout item that visually indicates the start of a section. Items can be accessed or created
+from a
+Form
+.
+// Open a form by ID and add a new section header.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addSectionHeaderItem
+();
+item
+.
+setTitle
+(
+'Title of new section'
+);
+Methods
+Method
+Return type
+Brief description
+duplicate()
+Section
+Header
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+set
+Help
+Text(text)
+Section
+Header
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Title(title)
+Section
+Header
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Detailed documentation
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Section
+Header
+Item
+— a duplicate of this
+Section
+Header
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Section
+Header
+Item
+— this
+Section
+Header
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Section
+Header
+Item
+— this
+Section
+Header
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

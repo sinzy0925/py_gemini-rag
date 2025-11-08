@@ -1,0 +1,1113 @@
+Source Path: gas_docs_html/apps-script/reference/drive/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Drive service in Apps Script allows scripts to manage files and folders in Google Drive.
+For enhanced features, including shared drive access, use the advanced Drive service.
+If using a standard Cloud project, the Drive API must be manually enabled.
+Google Workspace Administrators can disable the Drive SDK, affecting script access unless the add-on is domain-wide installed or the client is allowlisted.
+Drive
+This service lets scripts create, find, and modify files and folders in
+Google Drive. Although the built-in Drive service is easier to use, it has some limitations.
+  For the most
+  up-to-date features and support, and to access files or folders in shared drives, use the
+advanced Drive service
+.
+If your script uses a
+standard Cloud project
+instead of a default Cloud project, you must
+ manually turn on the Drive API. In your standard Cloud project, turn on the Drive API:
+Turn on the Drive API
+The following code sample shows how to log the names of each file in the user's
+My Drive folder:
+//
+Logs
+the
+name
+of
+every
+file
+in
+the
+user
+'s Drive.
+var
+files
+=
+DriveApp
+.
+getFiles
+();
+while
+(
+files
+.
+hasNext
+())
+{
+var
+file
+=
+files
+.
+next
+();
+console
+.
+log
+(
+file
+.
+getName
+());
+}
+Note:
+Google Workspace Administrators
+can turn off the
+Drive SDK
+for their domain, which prevents their users from installing and using Google
+Drive apps. This setting also prevents users from using
+Apps Script scripts, web apps and add-ons that use the
+Drive
+service
+or
+Advanced Drive Service
+(even if the add-on or web app was installed before the admin turned off the
+Drive SDK
+).
+However, if an add-on using the Drive service is published for domain-wide installation
+and is installed by the administrator for some or all users in the domain, or any script that
+has its
+OAuth client allowlisted
+by the domain administrator, the add-on functions for those users even if the
+Drive SDK
+is turned off in the domain.
+Classes
+Name
+Brief description
+Access
+An enum representing classes of users who can access a file or folder, besides any individual
+users who have been explicitly given access.
+Drive
+App
+Allows scripts to create, find, and modify files and folders in Google Drive.
+File
+A file in Google Drive.
+File
+Iterator
+An iterator that allows scripts to iterate over a potentially large collection of files.
+Folder
+A folder in Google Drive.
+Folder
+Iterator
+An object that allows scripts to iterate over a potentially large collection of folders.
+Permission
+An enum representing the permissions granted to users who can access a file or folder, besides
+any individual users who have been explicitly given access.
+User
+A user associated with a file in Google Drive.
+Access
+Properties
+Property
+Type
+Description
+ANYONE
+Enum
+Anyone on the Internet can find and access.
+ANYONE_WITH_LINK
+Enum
+Anyone who has the link can access.
+DOMAIN
+Enum
+People in your domain can find and access.
+DOMAIN_WITH_LINK
+Enum
+People in your domain who have the link can access.
+PRIVATE
+Enum
+Only people explicitly granted permission can access.
+Drive
+App
+Properties
+Property
+Type
+Description
+Access
+Access
+An enum representing classes of users who can access a file or folder, besides any individual
+users who have been explicitly given access.
+Permission
+Permission
+An enum representing the permissions granted to users who can access a file or folder, besides
+any individual users who have been explicitly given access.
+Methods
+Method
+Return type
+Brief description
+continue
+File
+Iterator(continuationToken)
+File
+Iterator
+Resumes a file iteration using a continuation token from a previous iterator.
+continue
+Folder
+Iterator(continuationToken)
+Folder
+Iterator
+Resumes a folder iteration using a continuation token from a previous iterator.
+create
+File(blob)
+File
+Creates a file in the root of the user's Drive from a given
+Blob
+of arbitrary data.
+create
+File(name, content)
+File
+Creates a text file in the root of the user's Drive with the given name and contents.
+create
+File(name, content, mimeType)
+File
+Creates a file in the root of the user's Drive with the given name, contents, and MIME type.
+create
+Folder(name)
+Folder
+Creates a folder in the root of the user's Drive with the given name.
+create
+Shortcut(targetId)
+File
+Creates a shortcut to the provided Drive item ID, and returns it.
+create
+Shortcut
+For
+Target
+Id
+And
+Resource
+Key(targetId, targetResourceKey)
+File
+Creates a shortcut to the provided Drive item ID and resource key, and returns it.
+enforce
+Single
+Parent(value)
+void
+Enables or disables enforceSingleParent behavior for all calls affecting item parents.
+get
+File
+By
+Id(id)
+File
+Gets the file with the given ID.
+get
+File
+By
+Id
+And
+Resource
+Key(id, resourceKey)
+File
+Gets the file with the given ID and resource key.
+get
+Files()
+File
+Iterator
+Gets a collection of all files in the user's Drive.
+get
+Files
+By
+Name(name)
+File
+Iterator
+Gets a collection of all files in the user's Drive that have the given name.
+get
+Files
+By
+Type(mimeType)
+File
+Iterator
+Gets a collection of all files in the user's Drive that have the given MIME type.
+get
+Folder
+By
+Id(id)
+Folder
+Gets the folder with the given ID.
+get
+Folder
+By
+Id
+And
+Resource
+Key(id, resourceKey)
+Folder
+Gets the folder with the given ID and resource key.
+get
+Folders()
+Folder
+Iterator
+Gets a collection of all folders in the user's Drive.
+get
+Folders
+By
+Name(name)
+Folder
+Iterator
+Gets a collection of all folders in the user's Drive that have the given name.
+get
+Root
+Folder()
+Folder
+Gets the folder at the root of the user's Drive.
+get
+Storage
+Limit()
+Integer
+Gets the number of bytes the user is allowed to store in Drive.
+get
+Storage
+Used()
+Integer
+Gets the number of bytes the user is currently storing in Drive.
+get
+Trashed
+Files()
+File
+Iterator
+Gets a collection of all the files in the trash of the user's Drive.
+get
+Trashed
+Folders()
+Folder
+Iterator
+Gets a collection of all the folders in the trash of the user's Drive.
+search
+Files(params)
+File
+Iterator
+Gets a collection of all files in the user's Drive that match the given search
+criteria.
+search
+Folders(params)
+Folder
+Iterator
+Gets a collection of all folders in the user's Drive that match the given search
+criteria.
+File
+Methods
+Method
+Return type
+Brief description
+add
+Commenter(emailAddress)
+File
+Add the given user to the list of commenters for the
+File
+.
+add
+Commenter(user)
+File
+Add the given user to the list of commenters for the
+File
+.
+add
+Commenters(emailAddresses)
+File
+Add the given array of users to the list of commenters for the
+File
+.
+add
+Editor(emailAddress)
+File
+Adds the given user to the list of editors for the
+File
+.
+add
+Editor(user)
+File
+Adds the given user to the list of editors for the
+File
+.
+add
+Editors(emailAddresses)
+File
+Adds the given array of users to the list of editors for the
+File
+.
+add
+Viewer(emailAddress)
+File
+Adds the given user to the list of viewers for the
+File
+.
+add
+Viewer(user)
+File
+Adds the given user to the list of viewers for the
+File
+.
+add
+Viewers(emailAddresses)
+File
+Adds the given array of users to the list of viewers for the
+File
+.
+get
+Access(email)
+Permission
+Gets the permission granted to a specific user.
+get
+Access(user)
+Permission
+Gets the permission granted to a specific user.
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Date
+Created()
+Date
+Gets the date the
+File
+was created.
+get
+Description()
+String
+Gets the description for the
+File
+.
+get
+Download
+Url()
+String
+Gets the URL that can be used to download the file.
+get
+Editors()
+User[]
+Gets the list of editors for this
+File
+.
+get
+Id()
+String
+Gets the ID of the
+File
+.
+get
+Last
+Updated()
+Date
+Gets the date the
+File
+was last updated.
+get
+Mime
+Type()
+String
+Gets the MIME type of the file.
+get
+Name()
+String
+Gets the name of the
+File
+.
+get
+Owner()
+User
+Gets the file owner.
+get
+Parents()
+Folder
+Iterator
+Gets a collection of folders that are immediate parents of the
+File
+.
+get
+Resource
+Key()
+String
+Gets the resource key of the
+File
+that is required to access items that
+have been shared using a link.
+get
+Security
+Update
+Eligible()
+Boolean
+Gets whether this
+File
+is eligible to apply the security update that
+requires a resource key for access when it's shared using a link.
+get
+Security
+Update
+Enabled()
+Boolean
+Gets whether this
+File
+requires a resource key for access when it's
+shared using a link.
+get
+Sharing
+Access()
+Access
+Gets which class of users can access the
+File
+, besides any individual
+users who have been explicitly given access.
+get
+Sharing
+Permission()
+Permission
+Gets the permission granted to those users who can access the
+File
+,
+besides any individual users who have been explicitly given access.
+get
+Size()
+Integer
+Gets the number of bytes used to store the
+File
+in Drive.
+get
+Target
+Id()
+String
+If this is a Shortcut, returns the ID of the item it points to.
+get
+Target
+Mime
+Type()
+String
+If this is a Shortcut, returns the mime type of the item it points to.
+get
+Target
+Resource
+Key()
+String
+If the file is a shortcut, returns the resource key of the item it points to.
+get
+Thumbnail()
+Blob
+Gets a thumbnail image for the file, or
+null
+if no thumbnail exists.
+get
+Url()
+String
+Gets the URL that can be used to open the
+File
+in a Google App like
+Drive or Docs.
+get
+Viewers()
+User[]
+Gets the list of viewers and commenters for this
+File
+.
+is
+Shareable
+By
+Editors()
+Boolean
+Determines whether users with edit permissions to the
+File
+are allowed to
+share with other users or change the permissions.
+is
+Starred()
+Boolean
+Determines whether the
+File
+has been starred in the user's Drive.
+is
+Trashed()
+Boolean
+Determines whether the
+File
+is in the trash of the user's Drive.
+make
+Copy()
+File
+Creates a copy of the file.
+make
+Copy(destination)
+File
+Creates a copy of the file in the destination directory.
+make
+Copy(name)
+File
+Creates a copy of the file and names it with the name provided.
+make
+Copy(name, destination)
+File
+Creates a copy of the file in the destination directory and names it with the name provided.
+move
+To(destination)
+File
+Moves this item to the provided destination folder.
+remove
+Commenter(emailAddress)
+File
+Removes the given user from the list of commenters for the
+File
+.
+remove
+Commenter(user)
+File
+Removes the given user from the list of commenters for the
+File
+.
+remove
+Editor(emailAddress)
+File
+Removes the given user from the list of editors for the
+File
+.
+remove
+Editor(user)
+File
+Removes the given user from the list of editors for the
+File
+.
+remove
+Viewer(emailAddress)
+File
+Removes the given user from the list of viewers and commenters for the
+File
+.
+remove
+Viewer(user)
+File
+Removes the given user from the list of viewers and commenters for the
+File
+.
+revoke
+Permissions(emailAddress)
+File
+Revokes the access to the
+File
+granted to the given user.
+revoke
+Permissions(user)
+File
+Revokes the access to the
+File
+granted to the given user.
+set
+Content(content)
+File
+Overwrites the content of the file with a given replacement.
+set
+Description(description)
+File
+Sets the description for the
+File
+.
+set
+Name(name)
+File
+Sets the name of the
+File
+.
+set
+Owner(emailAddress)
+File
+Changes the owner of the
+File
+.
+set
+Owner(user)
+File
+Changes the owner of the
+File
+.
+set
+Security
+Update
+Enabled(enabled)
+File
+Sets whether the
+File
+requires a resource key for access when it's
+shared using a link.
+set
+Shareable
+By
+Editors(shareable)
+File
+Sets whether users with edit permissions to the
+File
+are allowed to share
+with other users or change the permissions.
+set
+Sharing(accessType, permissionType)
+File
+Sets which class of users can access the
+File
+and what permissions
+those users are granted, besides any individual users who have been explicitly given access.
+set
+Starred(starred)
+File
+Sets whether the
+File
+is starred in the user's Drive.
+set
+Trashed(trashed)
+File
+Sets whether the
+File
+is in the trash of the user's Drive.
+File
+Iterator
+Methods
+Method
+Return type
+Brief description
+get
+Continuation
+Token()
+String
+Gets a token that can be used to resume this iteration at a later time.
+has
+Next()
+Boolean
+Determines whether calling
+next()
+will return an item.
+next()
+File
+Gets the next item in the collection of files or folders.
+Folder
+Methods
+Method
+Return type
+Brief description
+add
+Editor(emailAddress)
+Folder
+Adds the given user to the list of editors for the
+Folder
+.
+add
+Editor(user)
+Folder
+Adds the given user to the list of editors for the
+Folder
+.
+add
+Editors(emailAddresses)
+Folder
+Adds the given array of users to the list of editors for the
+Folder
+.
+add
+Viewer(emailAddress)
+Folder
+Adds the given user to the list of viewers for the
+Folder
+.
+add
+Viewer(user)
+Folder
+Adds the given user to the list of viewers for the
+Folder
+.
+add
+Viewers(emailAddresses)
+Folder
+Adds the given array of users to the list of viewers for the
+Folder
+.
+create
+File(blob)
+File
+Creates a file in the current folder from a given
+Blob
+of arbitrary data.
+create
+File(name, content)
+File
+Creates a text file in the current folder with the given name and contents.
+create
+File(name, content, mimeType)
+File
+Creates a file in the current folder with the given name, contents, and MIME type.
+create
+Folder(name)
+Folder
+Creates a folder in the current folder with the given name.
+create
+Shortcut(targetId)
+File
+Creates a shortcut to the provided Drive item ID, and returns it.
+create
+Shortcut
+For
+Target
+Id
+And
+Resource
+Key(targetId, targetResourceKey)
+File
+Creates a shortcut to the provided Drive item ID and resource key, and returns it.
+get
+Access(email)
+Permission
+Gets the permission granted to a specific user.
+get
+Access(user)
+Permission
+Gets the permission granted to a specific user.
+get
+Date
+Created()
+Date
+Gets the date the
+Folder
+was created.
+get
+Description()
+String
+Gets the description for the
+Folder
+.
+get
+Editors()
+User[]
+Gets the list of editors for this
+Folder
+.
+get
+Files()
+File
+Iterator
+Gets a collection of all files that are children of the current folder.
+get
+Files
+By
+Name(name)
+File
+Iterator
+Gets a collection of all files that are children of the current folder and have the given name.
+get
+Files
+By
+Type(mimeType)
+File
+Iterator
+Gets a collection of all files that are children of the current folder and have the given MIME type.
+get
+Folders()
+Folder
+Iterator
+Gets a collection of all folders that are children of the current folder.
+get
+Folders
+By
+Name(name)
+Folder
+Iterator
+Gets a collection of all folders that are children of the current folder and have the given name.
+get
+Id()
+String
+Gets the ID of the
+Folder
+.
+get
+Last
+Updated()
+Date
+Gets the date the
+Folder
+was last updated.
+get
+Name()
+String
+Gets the name of the
+Folder
+.
+get
+Owner()
+User
+Gets the owner of this
+Folder
+.
+get
+Parents()
+Folder
+Iterator
+Gets a collection of folders that are immediate parents of the
+Folder
+.
+get
+Resource
+Key()
+String
+Gets the resource key of the
+Folder
+that is required to access items that
+have been shared using a link.
+get
+Security
+Update
+Eligible()
+Boolean
+Gets whether this
+Folder
+is eligible to apply the security update that
+requires a resource key for access when it's shared using a link.
+get
+Security
+Update
+Enabled()
+Boolean
+Gets whether this
+Folder
+requires a resource key for access when it's
+shared using a link.
+get
+Sharing
+Access()
+Access
+Gets which class of users can access the
+Folder
+, besides any individual
+users who have been explicitly given access.
+get
+Sharing
+Permission()
+Permission
+Gets the permission granted to those users who can access the
+Folder
+,
+besides any individual users who have been explicitly given access.
+get
+Size()
+Integer
+Gets the number of bytes used to store the
+Folder
+in Drive.
+get
+Url()
+String
+Gets the URL that can be used to open the
+Folder
+in a Google App like
+Drive or Docs.
+get
+Viewers()
+User[]
+Gets the list of viewers and commenters for this
+Folder
+.
+is
+Shareable
+By
+Editors()
+Boolean
+Determines whether users with edit permissions to the
+Folder
+are allowed to
+share with other users or change the permissions.
+is
+Starred()
+Boolean
+Determines whether the
+Folder
+has been starred in the user's Drive.
+is
+Trashed()
+Boolean
+Determines whether the
+Folder
+is in the trash of the user's Drive.
+move
+To(destination)
+Folder
+Moves this item to the provided destination folder.
+remove
+Editor(emailAddress)
+Folder
+Removes the given user from the list of editors for the
+Folder
+.
+remove
+Editor(user)
+Folder
+Removes the given user from the list of editors for the
+Folder
+.
+remove
+Viewer(emailAddress)
+Folder
+Removes the given user from the list of viewers and commenters for the
+Folder
+.
+remove
+Viewer(user)
+Folder
+Removes the given user from the list of viewers and commenters for the
+Folder
+.
+revoke
+Permissions(emailAddress)
+Folder
+Revokes the access to the
+Folder
+granted to the given user.
+revoke
+Permissions(user)
+Folder
+Revokes the access to the
+Folder
+granted to the given user.
+search
+Files(params)
+File
+Iterator
+Gets a collection of all files that are children of the current folder and match the given search
+criteria.
+search
+Folders(params)
+Folder
+Iterator
+Gets a collection of all folders that are children of the current folder and match the given search
+criteria.
+set
+Description(description)
+Folder
+Sets the description for the
+Folder
+.
+set
+Name(name)
+Folder
+Sets the name of the
+Folder
+.
+set
+Owner(emailAddress)
+Folder
+Changes the owner of the
+Folder
+.
+set
+Owner(user)
+Folder
+Changes the owner of the
+Folder
+.
+set
+Security
+Update
+Enabled(enabled)
+Folder
+Sets whether the
+Folder
+requires a resource key for access when it's
+shared using a link.
+set
+Shareable
+By
+Editors(shareable)
+Folder
+Sets whether users with edit permissions to the
+Folder
+are allowed to share
+with other users or change the permissions.
+set
+Sharing(accessType, permissionType)
+Folder
+Sets which class of users can access the
+Folder
+and what permissions
+those users are granted, besides any individual users who have been explicitly given access.
+set
+Starred(starred)
+Folder
+Sets whether the
+Folder
+is starred in the user's Drive.
+set
+Trashed(trashed)
+Folder
+Sets whether the
+Folder
+is in the trash of the user's Drive.
+Folder
+Iterator
+Methods
+Method
+Return type
+Brief description
+get
+Continuation
+Token()
+String
+Gets a token that can be used to resume this iteration at a later time.
+has
+Next()
+Boolean
+Determines whether calling
+next()
+will return an item.
+next()
+Folder
+Gets the next item in the collection of files or folders.
+Permission
+Properties
+Property
+Type
+Description
+VIEW
+Enum
+Users who can access the file or folder are able only to view it or copy it.
+EDIT
+Enum
+Users who can access the file or folder are able to edit it.
+COMMENT
+Enum
+Users who can access the file or folder are able only to view it, copy it, or comment on it.
+OWNER
+Enum
+The user owns the file or folder.
+ORGANIZER
+Enum
+Users who can organize files and folders within a shared drive.
+FILE_ORGANIZER
+Enum
+Users who can edit, trash, and move content within a shared drive.
+NONE
+Enum
+The user does not have any permissions for the file or folder.
+User
+Methods
+Method
+Return type
+Brief description
+get
+Domain()
+String
+Gets the domain name associated with the user's account.
+get
+Email()
+String
+Gets the user's email address.
+get
+Name()
+String
+Gets the user's name.
+get
+Photo
+Url()
+String
+Gets the URL for the user's photo.

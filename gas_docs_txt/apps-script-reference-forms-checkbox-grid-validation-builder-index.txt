@@ -1,0 +1,115 @@
+Source Path: gas_docs_html/apps-script/reference/forms/checkbox-grid-validation-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CheckboxGridValidationBuilder is used to create validation rules for Checkbox Grid items in Google Forms.
+The
+requireLimitOneResponsePerColumn()
+method is used to ensure that users select only one response per column in a Checkbox Grid item.
+The example demonstrates how to add a Checkbox Grid item to a form and apply validation to limit responses per column.
+Checkbox
+Grid
+Validation
+Builder
+A DataValidationBuilder for a
+Checkbox
+Grid
+Validation
+.
+// Add a checkbox grid item to a form and restrict it to one response per
+// column.
+const
+form
+=
+FormApp
+.
+openById
+(
+'123abc'
+);
+const
+checkboxGridItem
+=
+form
+.
+addCheckboxGridItem
+();
+checkboxGridItem
+.
+setTitle
+(
+'Where did you celebrate New Years?'
+)
+.
+setRows
+([
+'New York'
+,
+'San Francisco'
+,
+'London'
+])
+.
+setColumns
+([
+'2014'
+,
+'2015'
+,
+'2016'
+,
+'2017'
+]);
+const
+checkboxGridValidation
+=
+FormApp
+.
+createcheckboxGridValidation
+()
+.
+setHelpText
+(
+'Select one item per column.'
+)
+.
+requireLimitOneResponsePerColumn
+()
+.
+build
+();
+checkboxGridItem
+.
+setValidation
+(
+checkboxGridValidation
+);
+Methods
+Method
+Return type
+Brief description
+require
+Limit
+One
+Response
+Per
+Column()
+Checkbox
+Grid
+Validation
+Builder
+Requires limit of one response per column for a grid item.
+Detailed documentation
+require
+Limit
+One
+Response
+Per
+Column()
+Requires limit of one response per column for a grid item.
+Return
+Checkbox
+Grid
+Validation
+Builder
+— this validation builder, for chaining

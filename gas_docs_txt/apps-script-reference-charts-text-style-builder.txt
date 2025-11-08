@@ -1,0 +1,225 @@
+Source Path: gas_docs_html/apps-script/reference/charts/text-style-builder.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextStyleBuilder is used to create TextStyle objects and configure text properties like name, color, and size.
+The
+build()
+method finalizes the configuration and returns a TextStyle object.
+Methods like
+setColor()
+,
+setFontName()
+, and
+setFontSize()
+allow setting specific text style attributes.
+These setter methods return the TextStyleBuilder itself, enabling method chaining.
+Text
+Style
+Builder
+A builder used to create
+Text
+Style
+objects. It allows configuration of the text's
+properties such as name, color, and size.
+The following example shows how to create a text style using the builder. For a more complete
+example, refer to the documentation for
+Text
+Style
+.
+// Creates a new text style that uses 26-point, blue, Ariel font.
+const
+textStyleBuilder
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'#0000FF'
+).
+setFontName
+(
+'Ariel'
+).
+setFontSize
+(
+26
+);
+const
+style
+=
+textStyleBuilder
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+build()
+Text
+Style
+Builds and returns a text style configuration object that was built using this builder.
+set
+Color(cssValue)
+Text
+Style
+Builder
+Sets the color of the text style.
+set
+Font
+Name(fontName)
+Text
+Style
+Builder
+Sets the font name of the text style.
+set
+Font
+Size(fontSize)
+Text
+Style
+Builder
+Sets the font size of the text style.
+Detailed documentation
+build()
+Builds and returns a text style configuration object that was built using this builder.
+// Creates a new text style that uses 26-point blue font.
+const
+textStyleBuilder
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'#0000FF'
+).
+setFontSize
+(
+26
+);
+const
+style
+=
+textStyleBuilder
+.
+build
+();
+Return
+Text
+Style
+— A text style object built using this builder.
+set
+Color(cssValue)
+Sets the color of the text style.
+// Creates a new text style that uses blue font.
+const
+textStyleBuilder
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'#0000FF'
+);
+const
+style
+=
+textStyleBuilder
+.
+build
+();
+Parameters
+Name
+Type
+Description
+css
+Value
+String
+The CSS value for the color (such as
+"blue"
+or
+"#00f"
+).
+Return
+Text
+Style
+Builder
+— This builder, useful for chaining.
+set
+Font
+Name(fontName)
+Sets the font name of the text style.
+// Creates a new text style that uses Ariel font.
+const
+textStyleBuilder
+=
+Charts
+.
+newTextStyle
+().
+setFontName
+(
+'Ariel'
+);
+const
+style
+=
+textStyleBuilder
+.
+build
+();
+Parameters
+Name
+Type
+Description
+font
+Name
+String
+The font name to use for the text style.
+Return
+Text
+Style
+Builder
+— This builder, useful for chaining.
+set
+Font
+Size(fontSize)
+Sets the font size of the text style.
+// Creates a new text style that uses 26-point font.
+const
+textStyleBuilder
+=
+Charts
+.
+newTextStyle
+().
+setFontSize
+(
+26
+);
+const
+style
+=
+textStyleBuilder
+.
+build
+();
+Parameters
+Name
+Type
+Description
+font
+Size
+Number
+The font size in pixels to use for the text style.
+Return
+Text
+Style
+Builder
+— This builder, useful for chaining.

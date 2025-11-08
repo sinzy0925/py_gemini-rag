@@ -1,0 +1,72 @@
+Source Path: gas_docs_html/apps-script/reference/slides/selection-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SelectionType indicates the most specific type of selected objects in Google Slides.
+Examples show how to retrieve details like TableCellRange or the parent Table based on the SelectionType.
+The SelectionType enum is accessed using its parent class, name, and property, like
+SlidesApp.SelectionType.TEXT
+.
+Properties like UNSUPPORTED, NONE, TEXT, TABLE_CELL, PAGE, PAGE_ELEMENT, and CURRENT_PAGE represent different selection states.
+Selection
+Type
+Type of
+Selection
+.
+The
+Selection
+Type
+represents the most specific type of one or more objects that are
+selected. As an example if one or more
+Table
+Cell
+instances are selected in a
+Table
+, the selection type is
+Selection
+Type.TABLE_CELL
+. The
+Table
+Cell
+Range
+can be
+retrieved by using the
+Selection.getTableCellRange
+. The
+Table
+can be retrieved by
+using the
+Selection.getPageElementRange
+and the
+Page
+can be retrieved from the
+Selection.getCurrentPage
+.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.SelectionType.TEXT
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A selection type that is not supported.
+NONE
+Enum
+No selection.
+TEXT
+Enum
+Text selection.
+TABLE_CELL
+Enum
+Table cell selection.
+PAGE
+Enum
+Page selection in the thumbnail flimstrip.
+PAGE_ELEMENT
+Enum
+Page element selection.
+CURRENT_PAGE
+Enum
+Current page selection.

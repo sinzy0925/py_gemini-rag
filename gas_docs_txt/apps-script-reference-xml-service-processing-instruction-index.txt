@@ -1,0 +1,116 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/processing-instruction/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ProcessingInstruction represents an XML ProcessingInstruction node.
+It includes methods to detach the node, get its raw data, retrieve its parent element, get its target, and get its text value.
+The
+detach()
+method removes the node from its parent, returning the detached node.
+The
+getData()
+method returns the raw data of the instructions within the node as a string.
+The
+getParentElement()
+method returns the parent Element node or null if no parent exists.
+The
+getTarget()
+method returns the target of the ProcessingInstruction node as a string.
+The
+getValue()
+method returns the combined text value of all direct and indirect child nodes as a string.
+Processing
+Instruction
+A representation of an XML
+Processing
+Instruction
+node.
+Methods
+Method
+Return type
+Brief description
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Data()
+String
+Gets the raw data for every instruction in the
+Processing
+Instruction
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Target()
+String
+Gets the target for the
+Processing
+Instruction
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Detailed documentation
+detach()
+Detaches the node from its parent
+Element
+node. If the node does not have a parent,
+this method has no effect.
+Return
+Content
+— the detached node
+get
+Data()
+Gets the raw data for every instruction in the
+Processing
+Instruction
+node.
+Return
+String
+— the raw data for every instruction in the
+Processing
+Instruction
+node
+get
+Parent
+Element()
+Gets the node's parent
+Element
+node. If the node does not have a parent, this method
+returns
+null
+.
+Return
+Element
+— the parent
+Element
+node
+get
+Target()
+Gets the target for the
+Processing
+Instruction
+node.
+Return
+String
+— the target for the
+Processing
+Instruction
+node
+get
+Value()
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Return
+String
+— the text value of all nodes that are direct or indirect children of the node

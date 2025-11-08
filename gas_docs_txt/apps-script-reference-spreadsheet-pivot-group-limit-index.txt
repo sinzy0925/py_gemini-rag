@@ -1,0 +1,105 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/pivot-group-limit/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PivotGroupLimit allows access and modification of pivot table group limits.
+You can get the count limit on rows or columns in the pivot group using
+getCountLimit()
+.
+The pivot group the limit belongs to can be retrieved using
+getPivotGroup()
+.
+You can remove the pivot group limit using
+remove()
+.
+The count limit on rows or columns in the pivot group can be set using
+setCountLimit(countLimit)
+.
+Pivot
+Group
+Limit
+Access and modify pivot table group limit.
+Methods
+Method
+Return type
+Brief description
+get
+Count
+Limit()
+Integer
+Gets the count limit on rows or columns in the pivot group.
+get
+Pivot
+Group()
+Pivot
+Group
+Returns the pivot group the limit belongs to.
+remove()
+void
+Removes the pivot group limit.
+set
+Count
+Limit(countLimit)
+Pivot
+Group
+Limit
+Sets the count limit on rows or columns in the pivot group.
+Detailed documentation
+get
+Count
+Limit()
+Gets the count limit on rows or columns in the pivot group.
+Return
+Integer
+— The count limit on rows or columns.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Pivot
+Group()
+Returns the pivot group the limit belongs to.
+Return
+Pivot
+Group
+— The pivot group.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Removes the pivot group limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Count
+Limit(countLimit)
+Sets the count limit on rows or columns in the pivot group.
+Parameters
+Name
+Type
+Description
+count
+Limit
+Integer
+The count limit on rows or columns to set. Must be positive.
+Return
+Pivot
+Group
+Limit
+— The pivot group limit, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

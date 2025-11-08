@@ -1,0 +1,23 @@
+Source Path: gas_docs_html/apps-script/reference/maps/static-map-enums/index.html
+
+Static
+Map
+Enums
+A collection of enums used by
+Static
+Map
+.
+Properties
+Property
+Type
+Description
+Color
+Color
+Format
+Format
+Marker
+Size
+Marker
+Size
+Type
+Type

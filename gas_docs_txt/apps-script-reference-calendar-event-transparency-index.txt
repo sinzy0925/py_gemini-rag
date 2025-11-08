@@ -1,0 +1,20 @@
+Source Path: gas_docs_html/apps-script/reference/calendar/event-transparency/index.html
+
+Event
+Transparency
+An enum representing the transparency of an event.
+To call an enum, you call its parent class, name, and property. For example,
+CalendarApp.EventTransparency.OPAQUE
+.
+Properties
+Property
+Type
+Description
+OPAQUE
+Enum
+The event does block time on the calendar. This is equivalent to setting "Show me as" to "Busy"
+in the Calendar UI.
+TRANSPARENT
+Enum
+The event does not block time on the calendar. This is equivalent to setting "Show me as" to
+"Available" in the Calendar UI.

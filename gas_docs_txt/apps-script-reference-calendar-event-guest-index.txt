@@ -1,0 +1,128 @@
+Source Path: gas_docs_html/apps-script/reference/calendar/event-guest/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+EventGuest represents a guest of an event.
+The EventGuest object provides methods to retrieve information about a guest, including the number of additional guests, email address, guest status, and name.
+The
+getStatus()
+method is deprecated and should not be used in new scripts;
+getGuestStatus()
+should be used instead.
+Event
+Guest
+Represents a guest of an event.
+Methods
+Method
+Return type
+Brief description
+get
+Additional
+Guests()
+Integer
+Gets the number of additional people that this guest has said are attending.
+get
+Email()
+String
+Gets the email address of the guest.
+get
+Guest
+Status()
+Guest
+Status
+Gets the status of the guest for the event.
+get
+Name()
+String
+Gets the name of the guest.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+Status()
+String
+Gets the status of the guest for the event.
+Detailed documentation
+get
+Additional
+Guests()
+Gets the number of additional people that this guest has said are attending.
+Return
+Integer
+— the number of additional people this guest has said are attending
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Email()
+Gets the email address of the guest.
+Return
+String
+— the guest's email address
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Guest
+Status()
+Gets the status of the guest for the event.
+Return
+Guest
+Status
+— the status of this guest
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Name()
+Gets the name of the guest. If the name of the guest is not available, this method returns the
+guest's email address.
+Return
+String
+— the guest's name, or the guest's email address if the name is not available
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+Deprecated methods
+get
+Status()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the status of the guest for the event.
+Return
+String
+— the status of this guest
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds

@@ -1,0 +1,89 @@
+Source Path: gas_docs_html/apps-script/reference/charts/chart/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Chart object can be converted to a static image.
+The
+getAs(contentType)
+method returns the chart data as a blob converted to a specified content type, adding the appropriate file extension.
+The
+getBlob()
+method returns the chart data as a blob.
+The
+getOptions()
+method returns the immutable options for the chart, such as height, colors, and axes.
+Chart
+A Chart object, which can be converted to a static image. For charts embedded in spreadsheets,
+see
+Embedded
+Chart
+.
+Methods
+Method
+Return type
+Brief description
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Options()
+Chart
+Options
+Returns the options for this chart, such as height, colors, and axes.
+Detailed documentation
+get
+As(contentType)
+Return the data inside this object as a blob converted to the specified content type. This
+method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
+assumes that the part of the filename that follows the last period (if any) is an existing
+extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+"ShoppingList.12.25.pdf".
+To view the daily quotas for conversions, see
+Quotas for Google
+Services
+. Newly created Google Workspace domains might be temporarily subject to stricter
+quotas.
+Parameters
+Name
+Type
+Description
+content
+Type
+String
+The MIME type to convert to. For most blobs,
+'application/pdf'
+is
+    the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of
+'image/bmp'
+,
+'image/gif'
+,
+'image/jpeg'
+, or
+'image/png'
+are also
+    valid. For a Google Docs document,
+'text/markdown'
+is also valid.
+Return
+Blob
+— The data as a blob.
+get
+Blob()
+Return the data inside this object as a blob.
+Return
+Blob
+— The data as a blob.
+get
+Options()
+Returns the options for this chart, such as height, colors, and axes.
+The returned options are immutable.
+Return
+Chart
+Options
+— The options for this chart, such as height, colors, and axes.

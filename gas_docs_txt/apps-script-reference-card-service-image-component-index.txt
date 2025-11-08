@@ -1,0 +1,138 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/image-component/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The ImageComponent is an image component that can be added to grid items.
+This component is available for Google Workspace add-ons and Google Chat apps.
+Key methods for the ImageComponent include setting alt text, border style, crop style, and image URL.
+Image
+Component
+An image component that can be added to grid items.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+ImageComponent
+=
+CardService
+.
+newImageComponent
+()
+.
+setImageUrl
+(
+'http://imageurl.ca'
+)
+.
+setAltText
+(
+'YOUR ALT TEXT'
+)
+.
+setCropStyle
+(
+CardService
+.
+newImageCropStyle
+())
+.
+setBorderStyle
+(
+CardService
+.
+newBorderStyle
+());
+Methods
+Method
+Return type
+Brief description
+set
+Alt
+Text(altText)
+Image
+Component
+Sets the alternative text of the image.
+set
+Border
+Style(borderStyle)
+Image
+Component
+Sets the border style applied to the image.
+set
+Crop
+Style(imageCropStyle)
+Image
+Component
+Sets the crop style for the image.
+set
+Image
+Url(url)
+Image
+Component
+Sets the URL of the image.
+Detailed documentation
+set
+Alt
+Text(altText)
+Sets the alternative text of the image.
+Parameters
+Name
+Type
+Description
+alt
+Text
+String
+The alt_text to set for the image.
+Return
+Image
+Component
+— This object, for chaining.
+set
+Border
+Style(borderStyle)
+Sets the border style applied to the image.
+Parameters
+Name
+Type
+Description
+border
+Style
+Border
+Style
+The BorderStyle object to apply.
+Return
+Image
+Component
+— This object, for chaining.
+set
+Crop
+Style(imageCropStyle)
+Sets the crop style for the image.
+Parameters
+Name
+Type
+Description
+image
+Crop
+Style
+Image
+Crop
+Style
+The ImageCropStyle object to apply.
+Return
+Image
+Component
+— This object, for chaining.
+set
+Image
+Url(url)
+Sets the URL of the image.
+Parameters
+Name
+Type
+Description
+url
+String
+The URL.
+Return
+Image
+Component
+— This object, for chaining.

@@ -1,0 +1,48 @@
+Source Path: gas_docs_html/apps-script/reference/slides/table-cell-range/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TableCellRange is a collection of one or more TableCell instances.
+The
+getTableCells()
+method returns a list of TableCell instances.
+Scripts using
+getTableCells()
+require specific Google API authorization scopes.
+Table
+Cell
+Range
+A collection of one or more
+Table
+Cell
+instances.
+Methods
+Method
+Return type
+Brief description
+get
+Table
+Cells()
+Table
+Cell[]
+Returns the list of
+Table
+Cell
+instances.
+Detailed documentation
+get
+Table
+Cells()
+Returns the list of
+Table
+Cell
+instances.
+Return
+Table
+Cell[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

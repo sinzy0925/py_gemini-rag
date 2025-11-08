@@ -1,0 +1,281 @@
+Source Path: gas_docs_html/apps-script/reference/slides/table-cell/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TableCell represents a single cell within a table structure.
+Methods are available to retrieve information about the cell's position, span, content alignment, fill, merge state, and parent elements.
+You can get the text content of a TableCell using the
+getText()
+method.
+The content alignment of the text within a TableCell can be set using the
+setContentAlignment()
+method.
+All methods for TableCell require specific authorization scopes related to presentations.
+Table
+Cell
+A cell in a table.
+Methods
+Method
+Return type
+Brief description
+get
+Column
+Index()
+Integer
+Returns the 0-based column index of the table cell.
+get
+Column
+Span()
+Integer
+Returns the column span of the table cell.
+get
+Content
+Alignment()
+Content
+Alignment
+Returns the
+Content
+Alignment
+of the text in the table cell.
+get
+Fill()
+Fill
+Returns the fill of the table cell.
+get
+Head
+Cell()
+Table
+Cell
+Returns the head cell of this table cell.
+get
+Merge
+State()
+Cell
+Merge
+State
+Returns the merge state of the table cell.
+get
+Parent
+Column()
+Table
+Column
+Returns the table column containing the current cell.
+get
+Parent
+Row()
+Table
+Row
+Returns the table row containing the current cell.
+get
+Parent
+Table()
+Table
+Returns the table containing the current cell.
+get
+Row
+Index()
+Integer
+Returns the 0-based row index of the table cell.
+get
+Row
+Span()
+Integer
+Returns the row span of the table cell.
+get
+Text()
+Text
+Range
+Returns the text content of the table cell.
+set
+Content
+Alignment(contentAlignment)
+Table
+Cell
+Sets the
+Content
+Alignment
+of the text in the table cell.
+Detailed documentation
+get
+Column
+Index()
+Returns the 0-based column index of the table cell.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Column
+Span()
+Returns the column span of the table cell.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Content
+Alignment()
+Returns the
+Content
+Alignment
+of the text in the table cell.
+Return
+Content
+Alignment
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Fill()
+Returns the fill of the table cell.
+Return
+Fill
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Head
+Cell()
+Returns the head cell of this table cell. Returns
+null
+if this cell has not been merged
+or if this cell is the head cell.
+Return
+Table
+Cell
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Merge
+State()
+Returns the merge state of the table cell.
+Return
+Cell
+Merge
+State
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Parent
+Column()
+Returns the table column containing the current cell.
+Return
+Table
+Column
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Parent
+Row()
+Returns the table row containing the current cell.
+Return
+Table
+Row
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Parent
+Table()
+Returns the table containing the current cell.
+Return
+Table
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Row
+Index()
+Returns the 0-based row index of the table cell.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Row
+Span()
+Returns the row span of the table cell.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Text()
+Returns the text content of the table cell. Returns
+null
+if the cell is merged but is
+not a head cell.
+Text within a table cell always terminates with a newline character.
+Return
+Text
+Range
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Content
+Alignment(contentAlignment)
+Sets the
+Content
+Alignment
+of the text in the table cell.
+Parameters
+Name
+Type
+Description
+content
+Alignment
+Content
+Alignment
+Return
+Table
+Cell
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

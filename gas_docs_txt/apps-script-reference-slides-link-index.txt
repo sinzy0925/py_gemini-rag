@@ -1,0 +1,552 @@
+Source Path: gas_docs_html/apps-script/reference/slides/link/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+Link
+object represents a hypertext link in Google Slides.
+You can determine the type of a link using the
+getLinkType()
+method.
+Methods like
+getLinkedSlide()
+,
+getSlideId()
+,
+getSlideIndex()
+, and
+getSlidePosition()
+are used to retrieve information about linked slides for non-URL link types.
+The
+getUrl()
+method is used to retrieve the URL for external web page links.
+Accessing link information may require specific authorization scopes.
+Link
+A hypertext link.
+Methods
+Method
+Return type
+Brief description
+get
+Link
+Type()
+Link
+Type
+Returns the
+Link
+Type
+.
+get
+Linked
+Slide()
+Slide
+Returns the linked
+Slide
+for non-URL links types, if it exists.
+get
+Slide
+Id()
+String
+Returns the ID of the linked
+Slide
+or
+null
+if the
+Link
+Type
+is not
+Link
+Type.SLIDE_ID
+.
+get
+Slide
+Index()
+Integer
+Returns the zero-based index of the linked
+Slide
+or
+null
+if the
+Link
+Type
+is not
+Link
+Type.SLIDE_INDEX
+.
+get
+Slide
+Position()
+Slide
+Position
+Returns the
+Slide
+Position
+of the linked
+Slide
+or
+null
+if the
+Link
+Type
+is not
+Link
+Type.SLIDE_POSITION
+.
+get
+Url()
+String
+Returns the URL to the external web page or
+null
+if the
+Link
+Type
+is not
+Link
+Type.URL
+.
+Detailed documentation
+get
+Link
+Type()
+Returns the
+Link
+Type
+.
+const
+shape
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+];
+const
+link
+=
+shape
+.
+getLink
+();
+if
+(
+link
+!=
+null
+)
+{
+Logger
+.
+log
+(
+`Shape has a link of type:
+${
+link
+.
+getLinkType
+()
+}
+`
+);
+}
+Return
+Link
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Linked
+Slide()
+Returns the linked
+Slide
+for non-URL links types, if it exists. Returns
+null
+if
+the slide doesn't exist in the presentation, or if the
+Link
+Type
+is
+Link
+Type.URL
+.
+const
+shape
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+];
+const
+link
+=
+shape
+.
+getLink
+();
+if
+(
+link
+!=
+null
+&&
+link
+.
+getLinkType
+()
+!==
+SlidesApp
+.
+LinkType
+.
+URL
+)
+{
+Logger
+.
+log
+(
+`Shape has link to slide:
+${
+link
+.
+getLinkedSlide
+()
+}
+`
+);
+}
+Return
+Slide
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Slide
+Id()
+Returns the ID of the linked
+Slide
+or
+null
+if the
+Link
+Type
+is not
+Link
+Type.SLIDE_ID
+.
+Note that the slide with the returned ID might not exist.
+const
+shape
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+];
+const
+link
+=
+shape
+.
+getLink
+();
+if
+(
+link
+!=
+null
+&&
+link
+.
+getLinkType
+()
+===
+SlidesApp
+.
+LinkType
+.
+SLIDE_ID
+)
+{
+Logger
+.
+log
+(
+`Shape has link to slide with ID:
+${
+link
+.
+getSlideId
+()
+}
+`
+);
+}
+Return
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Slide
+Index()
+Returns the zero-based index of the linked
+Slide
+or
+null
+if the
+Link
+Type
+is not
+Link
+Type.SLIDE_INDEX
+.
+Note that the slide at the returned index might not exist.
+const
+shape
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+];
+const
+link
+=
+shape
+.
+getLink
+();
+if
+(
+link
+!=
+null
+&&
+link
+.
+getLinkType
+()
+===
+SlidesApp
+.
+LinkType
+.
+SLIDE_INDEX
+)
+{
+Logger
+.
+log
+(
+`Shape has link to slide with index:
+${
+link
+.
+getSlideIndex
+()
+}
+`
+);
+}
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Slide
+Position()
+Returns the
+Slide
+Position
+of the linked
+Slide
+or
+null
+if the
+Link
+Type
+is not
+Link
+Type.SLIDE_POSITION
+.
+Note that the slide with the returned relative position might not exist.
+const
+shape
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+];
+const
+link
+=
+shape
+.
+getLink
+();
+if
+(
+link
+!=
+null
+&&
+link
+.
+getLinkType
+()
+===
+SlidesApp
+.
+LinkType
+.
+SLIDE_POSITION
+)
+{
+Logger
+.
+log
+(
+`Shape has link to slide with relative position:
+${
+link
+.
+getSlidePosition
+()
+}
+`
+,
+);
+}
+Return
+Slide
+Position
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Url()
+Returns the URL to the external web page or
+null
+if the
+Link
+Type
+is not
+Link
+Type.URL
+.
+const
+shape
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+];
+const
+link
+=
+shape
+.
+getLink
+();
+if
+(
+link
+!=
+null
+&&
+link
+.
+getLinkType
+()
+===
+SlidesApp
+.
+LinkType
+.
+URL
+)
+{
+Logger
+.
+log
+(
+`Shape has link to URL:
+${
+link
+.
+getUrl
+()
+}
+`
+);
+}
+Return
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

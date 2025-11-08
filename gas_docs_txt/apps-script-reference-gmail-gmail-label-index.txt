@@ -1,0 +1,555 @@
+Source Path: gas_docs_html/apps-script/reference/gmail/gmail-label/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A GmailLabel is a user-created label in a user's Gmail account.
+Gmail Labels have methods to add or remove themselves from individual threads or multiple threads.
+You can delete a Gmail label.
+You can retrieve the ID or name of a Gmail label.
+You can get the threads associated with a label or a range of threads, and also get the count of unread threads with that label.
+Gmail
+Label
+A user-created label in a user's Gmail account.
+Methods
+Method
+Return type
+Brief description
+add
+To
+Thread(thread)
+Gmail
+Label
+Adds this label to the given thread and forces the thread to refresh (
+Gmail
+Thread.refresh()
+).
+add
+To
+Threads(threads)
+Gmail
+Label
+Adds this label to the given threads and forces the threads to refresh.
+delete
+Label()
+void
+Deletes this label.
+get
+Id()
+String
+Gets the id of this label.
+get
+Name()
+String
+Gets the name of this label.
+get
+Threads()
+Gmail
+Thread[]
+Gets the threads that are marked with this label.
+get
+Threads(start, max)
+Gmail
+Thread[]
+Gets a range of threads marked with this label.
+get
+Unread
+Count()
+Integer
+Gets the number of unread threads tagged with this label.
+remove
+From
+Thread(thread)
+Gmail
+Label
+Removes this label from the given thread and forces the thread to refresh.
+remove
+From
+Threads(threads)
+Gmail
+Label
+Removes this label from the given threads and forces the threads to refresh.
+Detailed documentation
+add
+To
+Thread(thread)
+Adds this label to the given thread and forces the thread to refresh (
+Gmail
+Thread.refresh()
+).
+// label the first thread in the inbox with the label MyLabel
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+label
+.
+addToThread
+(
+firstThread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+The thread to be labeled.
+Return
+Gmail
+Label
+— This label, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+remove
+From
+Thread(thread)
+add
+To
+Threads(threads)
+Adds this label to the given threads and forces the threads to refresh. You can add labels for
+up to 100 threads per batch.
+// label the first three threads in the inbox with the label MyLabel
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+3
+);
+label
+.
+addToThreads
+(
+threads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+An array of threads to be labeled.
+Return
+Gmail
+Label
+— This label, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+remove
+From
+Threads(threads)
+delete
+Label()
+Deletes this label.
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+label
+.
+deleteLabel
+();
+Throws
+Error
+— if the label can't be deleted
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Name()
+get
+Id()
+Gets the id of this label.
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+console
+.
+log
+(
+label
+.
+getId
+());
+Return
+String
+— The id of the label.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Name()
+Gets the name of this label.
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+Logger
+.
+log
+(
+label
+.
+getName
+());
+// logs MyLabel
+Return
+String
+— The name of the label.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Threads()
+Gets the threads that are marked with this label.
+This calls fail when the size of all threads is too large for the system to handle. Where
+the thread size is unknown, and potentially very large, please use
+get
+Threads(start, max)
+and specify ranges of the threads to retrieve in each call.
+// Log the subject lines of the threads labeled with MyLabel
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+const
+threads
+=
+label
+.
+getThreads
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+threads
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+threads
+[
+i
+].
+getFirstMessageSubject
+());
+}
+Return
+Gmail
+Thread[]
+— An array of threads marked with this label.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Threads(start, max)
+Gets a range of threads marked with this label.
+// log the subject lines of up to the first 30 threads with the label MyLabel
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+const
+threads
+=
+label
+.
+getThreads
+(
+0
+,
+30
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+threads
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+threads
+[
+i
+].
+getFirstMessageSubject
+());
+}
+Parameters
+Name
+Type
+Description
+start
+Integer
+The index of the starting thread.
+max
+Integer
+The maximum number of threads to return.
+Return
+Gmail
+Thread[]
+— An array of threads marked with this label.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Unread
+Count()
+Gets the number of unread threads tagged with this label.
+// log the number of unread threads labeled with MyLabel
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+Logger
+.
+log
+(
+label
+.
+getUnreadCount
+());
+Return
+Integer
+— The number of unread labeled threads.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+remove
+From
+Thread(thread)
+Removes this label from the given thread and forces the thread to refresh.
+// remove the label MyLabel from the first thread in the inbox
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+label
+.
+removeFromThread
+(
+firstThread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+The thread be unlabeled.
+Return
+Gmail
+Label
+— This label, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+add
+To
+Thread(thread)
+remove
+From
+Threads(threads)
+Removes this label from the given threads and forces the threads to refresh. You can remove
+labels for up to 100 threads per batch.
+// remove the label MyLabel from the first three threads in the inbox
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'MyLabel'
+);
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+3
+);
+label
+.
+removeFromThreads
+(
+threads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+An array of threads to be unlabeled.
+Return
+Gmail
+Label
+— This label, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+add
+To
+Threads(threads)

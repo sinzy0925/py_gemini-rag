@@ -1,0 +1,99 @@
+Source Path: gas_docs_html/apps-script/reference/script/service/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+Service
+class allows access and manipulation of script publishing, specifically for web apps.
+The
+getUrl()
+method returns the URL of a deployed web app or
+null
+if not deployed.
+The
+isEnabled()
+method indicates whether a script is accessible as a web app.
+The
+disable()
+method, though deprecated, was used to disable a script from being accessed as a web app.
+Service
+Access and manipulate script publishing.
+Methods
+Method
+Return type
+Brief description
+get
+Url()
+String
+Returns the URL of the web app, if it has been deployed; otherwise returns
+null
+.
+is
+Enabled()
+Boolean
+Returns
+true
+if the script is accessible as a web app.
+Deprecated methods
+Method
+Return type
+Brief description
+disable()
+void
+Disables the script from being accessed as a web app.
+Detailed documentation
+get
+Url()
+Returns the URL of the web app, if it has been deployed; otherwise returns
+null
+. If you
+are running the development mode web app, this returns the development mode url.
+// Mail the URL of the published web app.
+MailApp
+.
+sendMail
+(
+'myself@example.com'
+,
+'My Snazzy App'
+,
+`My new app is now available at
+${
+ScriptApp
+.
+getService
+().
+getUrl
+()
+}
+`
+,
+);
+Return
+String
+— the URL of the web app
+is
+Enabled()
+Returns
+true
+if the script is accessible as a web app.
+Return
+Boolean
+—
+true
+if the script is published as a web app;
+false
+if not
+Deprecated methods
+disable()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Disables the script from being accessed as a web app. This method is equivalent to opening the
+"Publish > Deploy as web app" dialog and clicking "disable web app".
+Script
+App
+.
+getService
+().
+disable
+();

@@ -1,0 +1,84 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/chat-space-data-source/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ChatSpaceDataSource populates Google Chat spaces as selection items for a multiselect menu, only including spaces the user is a member of.
+This data source is exclusively for Google Chat apps and is not available for Google Workspace add-ons.
+The
+setDefaultToCurrentSpace
+method allows the current Google Chat space to be selected as an item by default in the multiselect menu when set to
+true
+.
+Chat
+Space
+Data
+Source
+A data source that populates Google Chat spaces as selection items for a multiselect menu. Only
+populates spaces that the user is a member of.
+const
+chatSpaceDataSource
+=
+CardService
+.
+newChatSpaceDataSource
+().
+setDefaultToCurrentSpace
+(
+true
+);
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+Methods
+Method
+Return type
+Brief description
+set
+Default
+To
+Current
+Space(defaultToCurrentSpace)
+Chat
+Space
+Data
+Source
+If set to
+true
+, the multi select menu selects the current Google Chat space as an item
+by default.
+Detailed documentation
+set
+Default
+To
+Current
+Space(defaultToCurrentSpace)
+If set to
+true
+, the multi select menu selects the current Google Chat space as an item
+by default.
+const
+chatSpaceDataSource
+=
+CardService
+.
+newChatSpaceDataSource
+().
+setDefaultToCurrentSpace
+(
+true
+);
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+Parameters
+Name
+Type
+Description
+default
+To
+Current
+Space
+Boolean
+The boolean to be set.
+Return
+Chat
+Space
+Data
+Source
+— This object, for chaining.

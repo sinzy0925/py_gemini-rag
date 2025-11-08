@@ -1,0 +1,15 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/border-type/index.html
+
+Border
+Type
+An enum that represents the border types that can be applied to widgets.
+Properties
+Property
+Type
+Description
+NO_BORDER
+Enum
+No border style.
+STROKE
+Enum
+Stroke border style.

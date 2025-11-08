@@ -1,0 +1,277 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/conference-data-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+ConferenceDataBuilder
+is used to create
+ConferenceData
+objects.
+Methods are available to add conference parameters and entry points, set conference ID and solution ID, set errors, and add notes.
+The
+build()
+method is used to finalize and validate the
+ConferenceData
+object.
+Conference
+Data
+Builder
+Builder for creating for
+Conference
+Data
+objects.
+Methods
+Method
+Return type
+Brief description
+add
+Conference
+Parameter(conferenceParameter)
+Conference
+Data
+Builder
+Adds a
+Conference
+Parameter
+to this
+Conference
+Data
+.
+add
+Entry
+Point(entryPoint)
+Conference
+Data
+Builder
+Adds an
+Entry
+Point
+to this
+Conference
+Data
+.
+build()
+Conference
+Data
+Builds and validates the
+Conference
+Data
+.
+set
+Conference
+Id(conferenceId)
+Conference
+Data
+Builder
+Sets the conference ID of this
+Conference
+Data
+.
+set
+Conference
+Solution
+Id(conferenceSolutionId)
+Conference
+Data
+Builder
+Sets the conference solution ID defined in the addon's manifest.
+set
+Error(conferenceError)
+Conference
+Data
+Builder
+Sets the
+Conference
+Error
+of this
+Conference
+Data
+, indicating that the conference
+was not successfully created.
+set
+Notes(notes)
+Conference
+Data
+Builder
+Sets the additional notes of this
+Conference
+Data
+, such as instructions from the
+administrator or legal notices.
+Detailed documentation
+add
+Conference
+Parameter(conferenceParameter)
+Adds a
+Conference
+Parameter
+to this
+Conference
+Data
+. The maximum number of
+parameters per
+Conference
+Data
+is 300.
+Parameters
+Name
+Type
+Description
+conference
+Parameter
+Conference
+Parameter
+The parameter to add.
+Return
+Conference
+Data
+Builder
+— This builder, for chaining.
+Throws
+Error
+— if the provided conference parameter is invalid or if too many
+    conference parameters were added.
+add
+Entry
+Point(entryPoint)
+Adds an
+Entry
+Point
+to this
+Conference
+Data
+. The maximum number of entry points
+per
+Conference
+Data
+is 300.
+Parameters
+Name
+Type
+Description
+entry
+Point
+Entry
+Point
+The entry point to add.
+Return
+Conference
+Data
+Builder
+— This builder, for chaining.
+Throws
+Error
+— if the provided entry point is invalid or if too many entry
+    points were added.
+build()
+Builds and validates the
+Conference
+Data
+.
+Return
+Conference
+Data
+— the validated conference data
+Throws
+Error
+— if the constructed conference data is not valid.
+set
+Conference
+Id(conferenceId)
+Sets the conference ID of this
+Conference
+Data
+. The maximum length for this field is 512
+characters.
+Parameters
+Name
+Type
+Description
+conference
+Id
+String
+The ID to set.
+Return
+Conference
+Data
+Builder
+— This builder, for chaining.
+Throws
+Error
+— if the provided conference ID is too long.
+set
+Conference
+Solution
+Id(conferenceSolutionId)
+Sets the conference solution ID defined in the addon's manifest. The value must be specified
+and populates conference's name and iconUrl values.
+Note that the field is required for GSuite add-ons whereas it's ignored for Conferencing
+add-ons
+Parameters
+Name
+Type
+Description
+conference
+Solution
+Id
+String
+The ID matching the manifest.
+Return
+Conference
+Data
+Builder
+— This builder, for chaining.
+Throws
+Error
+— if the provided conference solution id is too long. The maximum
+    length for this field is 512 characters.
+set
+Error(conferenceError)
+Sets the
+Conference
+Error
+of this
+Conference
+Data
+, indicating that the conference
+was not successfully created.
+Parameters
+Name
+Type
+Description
+conference
+Error
+Conference
+Error
+The error to set.
+Return
+Conference
+Data
+Builder
+— This builder, for chaining.
+Throws
+Error
+— if the provided error is invalid.
+set
+Notes(notes)
+Sets the additional notes of this
+Conference
+Data
+, such as instructions from the
+administrator or legal notices. Can contain HTML. The maximum length for this field is 2048
+characters.
+Parameters
+Name
+Type
+Description
+notes
+String
+The additional notes to set.
+Return
+Conference
+Data
+Builder
+— This builder, for chaining.
+Throws
+Error
+— if the provided notes are too long.

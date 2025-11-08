@@ -1,0 +1,674 @@
+Source Path: gas_docs_html/apps-script/reference/script/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Script service provides access to script triggers and script publishing.
+It includes classes for managing authorization modes, statuses, and information.
+Various trigger builders are available for specific event types like calendar, clock, document, form, and spreadsheet.
+The ScriptApp class allows access to properties like AuthMode, EventType, and TriggerSource, and methods for managing triggers and getting authorization information.
+The Service class provides methods to check the status and URL of a published web app.
+Script
+This service provides access to script triggers and script publishing.
+Classes
+Name
+Brief description
+Auth
+Mode
+An enumeration that identifies which categories of authorized services Apps Script is able to
+execute through a triggered function.
+Authorization
+Info
+An object that checks if the user has granted authorization for the required scopes of the
+script.
+Authorization
+Status
+An enumeration denoting the authorization status of a script.
+Calendar
+Trigger
+Builder
+Builder for calendar triggers.
+Clock
+Trigger
+Builder
+A builder for clock triggers.
+Document
+Trigger
+Builder
+A builder for document triggers.
+Event
+Type
+An enumeration denoting the type of triggered event.
+Form
+Trigger
+Builder
+A builder for form triggers.
+Installation
+Source
+An enumeration that indicates how the script came to be installed as an add-on for the current
+user.
+Script
+App
+Access and manipulate script publishing and triggers.
+Service
+Access and manipulate script publishing.
+Spreadsheet
+Trigger
+Builder
+Builder for spreadsheet triggers.
+State
+Token
+Builder
+Allows scripts to create state tokens that can be used in callback APIs (like OAuth flows).
+Trigger
+A script trigger.
+Trigger
+Builder
+A generic builder for script triggers.
+Trigger
+Source
+An enumeration denoting the source of the event that causes the trigger to fire.
+Auth
+Mode
+Properties
+Property
+Type
+Description
+NONE
+Enum
+A mode that does not allow access to any services that require authorization.
+CUSTOM_FUNCTION
+Enum
+A mode that allows access to a limited subset of services for use in custom spreadsheet
+functions.
+LIMITED
+Enum
+A mode that allows access to a limited subset of services.
+FULL
+Enum
+A mode that allows access to all services that require authorization.
+Authorization
+Info
+Methods
+Method
+Return type
+Brief description
+get
+Authorization
+Status()
+Authorization
+Status
+Gets a value that indicates whether the user needs to authorize this script to use one or more
+services (for example,
+Script
+App.AuthorizationStatus.REQUIRED
+).
+get
+Authorization
+Url()
+String
+Gets the authorization URL that can be used to grant access to the script.
+get
+Authorized
+Scopes()
+String[]
+Gets a list of authorized scopes for the script.
+Authorization
+Status
+Properties
+Property
+Type
+Description
+REQUIRED
+Enum
+The user needs to authorize this script to use one or more services.
+NOT_REQUIRED
+Enum
+The user has granted this script all the authorization it currently requires.
+Calendar
+Trigger
+Builder
+Methods
+Method
+Return type
+Brief description
+create()
+Trigger
+Creates the trigger and returns it.
+on
+Event
+Updated()
+Calendar
+Trigger
+Builder
+Specifies a trigger that fires when a calendar entry is created, updated, or deleted.
+Clock
+Trigger
+Builder
+Methods
+Method
+Return type
+Brief description
+after(durationMilliseconds)
+Clock
+Trigger
+Builder
+Specifies the minimum duration (in milliseconds) after the current time that the trigger runs.
+at(date)
+Clock
+Trigger
+Builder
+Specifies when the trigger runs.
+at
+Date(year, month, day)
+Clock
+Trigger
+Builder
+Specifies that the trigger fires on the given date, by default near midnight (+/- 15 minutes).
+at
+Hour(hour)
+Clock
+Trigger
+Builder
+Specifies the hour the trigger at which the trigger runs.
+create()
+Trigger
+Creates the trigger.
+every
+Days(n)
+Clock
+Trigger
+Builder
+Specifies to run the trigger every
+n
+days.
+every
+Hours(n)
+Clock
+Trigger
+Builder
+Specifies to run the trigger every
+n
+hours.
+every
+Minutes(n)
+Clock
+Trigger
+Builder
+Specifies to run the trigger every
+n
+minutes.
+every
+Weeks(n)
+Clock
+Trigger
+Builder
+Specifies to run the trigger every
+n
+weeks.
+in
+Timezone(timezone)
+Clock
+Trigger
+Builder
+Specifies the timezone for the specified dates/time when the trigger runs.
+near
+Minute(minute)
+Clock
+Trigger
+Builder
+Specifies the minute at which the trigger runs (plus or minus 15 minutes).
+on
+Month
+Day(day)
+Clock
+Trigger
+Builder
+Specifies the date in the month that the trigger runs.
+on
+Week
+Day(day)
+Clock
+Trigger
+Builder
+Specifies the day of the week that the trigger runs.
+Document
+Trigger
+Builder
+Methods
+Method
+Return type
+Brief description
+create()
+Trigger
+Creates and returns the new trigger.
+on
+Open()
+Document
+Trigger
+Builder
+Specifies a trigger that will fire when the document is opened.
+Event
+Type
+Properties
+Property
+Type
+Description
+CLOCK
+Enum
+The trigger fires once the time-driven event reaches a specific time.
+ON_OPEN
+Enum
+The trigger fires once the user opens the Google Docs, Sheets, or Forms file.
+ON_EDIT
+Enum
+The trigger fires once the user edits the Google Sheets file (for example, by entering a new
+value into a cell, which counts as an edit instead of a change).
+ON_FORM_SUBMIT
+Enum
+The trigger fires once the user responds to a Google Form.
+ON_CHANGE
+Enum
+The trigger fires once the user changes the Google Sheets file (for example, by adding a row,
+which counts as a change instead of an edit).
+ON_EVENT_UPDATED
+Enum
+The trigger fires once an event gets created, updated, or deleted on the specified Google
+Calendar.
+Form
+Trigger
+Builder
+Methods
+Method
+Return type
+Brief description
+create()
+Trigger
+Creates and returns the new trigger.
+on
+Form
+Submit()
+Form
+Trigger
+Builder
+Specifies a trigger that will fire when a response is submitted to the form.
+on
+Open()
+Form
+Trigger
+Builder
+Specifies a trigger that will fire when the form's edit view is opened.
+Installation
+Source
+Properties
+Property
+Type
+Description
+APPS_MARKETPLACE_DOMAIN_ADD_ON
+Enum
+Add-on was installed by the administrator for the user's domain.
+NONE
+Enum
+Script is not running as an add-on.
+WEB_STORE_ADD_ON
+Enum
+Add-on was installed by the user from the Chrome Web Store.
+Script
+App
+Properties
+Property
+Type
+Description
+Auth
+Mode
+Auth
+Mode
+An enumeration that identifies which categories of authorized services Apps Script is able to
+execute through a triggered function.
+Authorization
+Status
+Authorization
+Status
+An enumeration denoting the authorization status of a script.
+Event
+Type
+Event
+Type
+An enumeration denoting the type of triggered event.
+Installation
+Source
+Installation
+Source
+An enumeration denoting how the script was installed to the user as an add-on.
+Trigger
+Source
+Trigger
+Source
+An enumeration denoting the source of the event that causes the trigger to fire.
+Week
+Day
+Weekday
+An enumeration representing the days of the week.
+Methods
+Method
+Return type
+Brief description
+delete
+Trigger(trigger)
+void
+Removes the given trigger so it no longer runs.
+get
+Authorization
+Info(authMode)
+Authorization
+Info
+Gets an object that checks if the user has granted authorization for all the script
+requirements.
+get
+Authorization
+Info(authMode, oAuthScopes)
+Authorization
+Info
+Gets an object that checks if the user has granted authorization for the requested scopes.
+get
+Identity
+Token()
+String
+Gets an
+Open
+ID Connect
+identity token for the
+effective user, if the
+openid
+scope has been granted.
+get
+Installation
+Source()
+Installation
+Source
+Returns an enum value that indicates how the script came to be installed as an add-on for the
+current user (for example, whether the user installed it personally through the Chrome Web
+Store, or whether a domain administrator installed it for all users).
+get
+OAuth
+Token()
+String
+Gets the OAuth 2.0
+access
+token
+for the effective user.
+get
+Project
+Triggers()
+Trigger[]
+Gets all installable triggers associated with the current project and current user.
+get
+Script
+Id()
+String
+Gets the script project's unique ID.
+get
+Service()
+Service
+Gets an object used to control publishing the script as a web app.
+get
+User
+Triggers(document)
+Trigger[]
+Gets all installable triggers owned by this user in the given document, for this script or
+add-on only.
+get
+User
+Triggers(form)
+Trigger[]
+Gets all installable triggers owned by this user in the given form, for this script or add-on
+only.
+get
+User
+Triggers(spreadsheet)
+Trigger[]
+Gets all installable triggers owned by this user in the given spreadsheet, for this script or
+add-on only.
+invalidate
+Auth()
+void
+Invalidates the authorization the effective user has to execute the current script.
+new
+State
+Token()
+State
+Token
+Builder
+Creates a builder for a state token that can be used in a callback API (like an OAuth flow).
+new
+Trigger(functionName)
+Trigger
+Builder
+Begins the process of creating an installable trigger that, when fired, calls a given function.
+require
+All
+Scopes(authMode)
+void
+Validates if the user has granted consent for all of the scopes requested by the script.
+require
+Scopes(authMode, oAuthScopes)
+void
+Validates if the user has granted consent for the requested scopes.
+Service
+Methods
+Method
+Return type
+Brief description
+get
+Url()
+String
+Returns the URL of the web app, if it has been deployed; otherwise returns
+null
+.
+is
+Enabled()
+Boolean
+Returns
+true
+if the script is accessible as a web app.
+Spreadsheet
+Trigger
+Builder
+Methods
+Method
+Return type
+Brief description
+create()
+Trigger
+Creates the trigger and returns it.
+on
+Change()
+Spreadsheet
+Trigger
+Builder
+Specifies a trigger that will fire when the spreadsheet's content or structure is changed.
+on
+Edit()
+Spreadsheet
+Trigger
+Builder
+Specifies a trigger that will fire when the spreadsheet is edited.
+on
+Form
+Submit()
+Spreadsheet
+Trigger
+Builder
+Specifies a trigger that will fire when the spreadsheet has a form submitted to it.
+on
+Open()
+Spreadsheet
+Trigger
+Builder
+Specifies a trigger that will fire when the spreadsheet is opened.
+State
+Token
+Builder
+Methods
+Method
+Return type
+Brief description
+create
+Token()
+String
+Constructs an encrypted string representation of the state token.
+with
+Argument(name, value)
+State
+Token
+Builder
+Adds an argument to the token.
+with
+Method(method)
+State
+Token
+Builder
+Sets a callback function.
+with
+Timeout(seconds)
+State
+Token
+Builder
+Sets the duration (in seconds) for which the token is valid.
+Trigger
+Methods
+Method
+Return type
+Brief description
+get
+Event
+Type()
+Event
+Type
+Returns the event type that the trigger fires on.
+get
+Handler
+Function()
+String
+Returns the function that will be called when the trigger fires.
+get
+Trigger
+Source()
+Trigger
+Source
+Returns the source of events that will cause the trigger to fire.
+get
+Trigger
+Source
+Id()
+String
+Returns the id specific to the source.
+get
+Unique
+Id()
+String
+Returns a unique identifier that can be used to distinguish triggers from each other.
+Trigger
+Builder
+Methods
+Method
+Return type
+Brief description
+for
+Document(document)
+Document
+Trigger
+Builder
+Creates and returns a
+Document
+Trigger
+Builder
+tied to the given document.
+for
+Document(key)
+Document
+Trigger
+Builder
+Creates and returns a
+Document
+Trigger
+Builder
+tied to the document with the given ID.
+for
+Form(form)
+Form
+Trigger
+Builder
+Creates and returns a
+Form
+Trigger
+Builder
+tied to the given form.
+for
+Form(key)
+Form
+Trigger
+Builder
+Creates and returns a
+Form
+Trigger
+Builder
+tied to the form with the given ID.
+for
+Spreadsheet(sheet)
+Spreadsheet
+Trigger
+Builder
+Creates and returns a
+Spreadsheet
+Trigger
+Builder
+tied to the given spreadsheet.
+for
+Spreadsheet(key)
+Spreadsheet
+Trigger
+Builder
+Creates and returns a
+Spreadsheet
+Trigger
+Builder
+tied to the spreadsheet with the given
+ID.
+for
+User
+Calendar(emailId)
+Calendar
+Trigger
+Builder
+Returns a builder for building calendar triggers.
+time
+Based()
+Clock
+Trigger
+Builder
+Creates and returns a
+Clock
+Trigger
+Builder
+for building time-based triggers.
+Trigger
+Source
+Properties
+Property
+Type
+Description
+SPREADSHEETS
+Enum
+Google Sheets causes the trigger to fire.
+CLOCK
+Enum
+A time-driven event causes the trigger to fire.
+FORMS
+Enum
+Google Forms causes the trigger to fire.
+DOCUMENTS
+Enum
+Google Docs causes the trigger to fire.
+CALENDAR
+Enum
+Google Calendar causes the trigger to fire.

@@ -1,0 +1,414 @@
+Source Path: gas_docs_html/apps-script/reference/calendar/event-recurrence/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+EventRecurrence represents the recurrence settings for an event series.
+You can add rules to specify daily, weekly, monthly, or yearly recurrences or exclusions for events.
+Specific dates can be added for event recurrences or excluded from an event series.
+The time zone for the recurrence can be set, affecting when events recur.
+Event
+Recurrence
+Represents the recurrence settings for an event series.
+Methods
+Method
+Return type
+Brief description
+add
+Daily
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a daily basis.
+add
+Daily
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a daily basis.
+add
+Date(date)
+Event
+Recurrence
+Adds a rule that causes the event to recur on a specific date.
+add
+Date
+Exclusion(date)
+Event
+Recurrence
+Adds a rule that excludes an occurrence for a specific date.
+add
+Monthly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a monthly basis.
+add
+Monthly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a monthly basis.
+add
+Weekly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a weekly basis.
+add
+Weekly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a weekly basis.
+add
+Yearly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a yearly basis.
+add
+Yearly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a yearly basis.
+set
+Time
+Zone(timeZone)
+Event
+Recurrence
+Sets the time zone for this recurrence.
+Detailed documentation
+add
+Daily
+Exclusion()
+Adds a rule that excludes occurrences on a daily basis.
+// Creates a rule that recurs every week after the first 30 days.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+addDailyExclusion
+().
+times
+(
+30
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Daily
+Rule()
+Adds a rule that causes the event to recur on a daily basis.
+// Creates a rule that recurs every day for ten days.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addDailyRule
+().
+times
+(
+10
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Date(date)
+Adds a rule that causes the event to recur on a specific date.
+Parameters
+Name
+Type
+Description
+date
+Date
+Return
+Event
+Recurrence
+— this EventRecurrence for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Date
+Exclusion(date)
+Adds a rule that excludes an occurrence for a specific date.
+Parameters
+Name
+Type
+Description
+date
+Date
+Return
+Event
+Recurrence
+— this EventRecurrence for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Monthly
+Exclusion()
+Adds a rule that excludes occurrences on a monthly basis.
+By default the exclusion is applied on the same day of the month as the first event in the
+series, but this can be altered by calling
+Recurrence
+Rule.onlyOnMonthDay(day)
+or
+Recurrence
+Rule.onlyOnMonthDays(days)
+.
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Monthly
+Rule()
+Adds a rule that causes the event to recur on a monthly basis.
+By default the event recurs on the same day of the month as the first event in the series,
+but this can be altered by calling
+Recurrence
+Rule.onlyOnMonthDay(day)
+or
+Recurrence
+Rule.onlyOnMonthDays(days)
+.
+// Creates a rule that recurs every month for three months.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addMonthlyRule
+().
+times
+(
+4
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Weekly
+Exclusion()
+Adds a rule that excludes occurrences on a weekly basis.
+By default the exclusion is applied on the same day of the week as the first event in the
+series, but this can be altered by calling
+Recurrence
+Rule.onlyOnWeekday(day)
+or
+Recurrence
+Rule.onlyOnWeekdays(days)
+.
+// Creates a rule that recurs every day except the first four Wednesdays.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+()
+.
+addDailyRule
+()
+.
+addWeeklyExclusion
+()
+.
+onlyOnWeekday
+(
+CalendarApp
+.
+Weekday
+.
+WEDNESDAY
+)
+.
+times
+(
+4
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Weekly
+Rule()
+Adds a rule that causes the event to recur on a weekly basis.
+By default the event recurs on the same day of the week as the first event in the series,
+but this can be altered by calling
+Recurrence
+Rule.onlyOnWeekday(day)
+or
+Recurrence
+Rule.onlyOnWeekdays(days)
+.
+// Creates a rule that recurs every week for ten weeks.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+times
+(
+10
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Yearly
+Exclusion()
+Adds a rule that excludes occurrences on a yearly basis.
+By default the exclusion is applied on the same day of the year as the first event in the
+series, but this can be altered by calling
+Recurrence
+Rule.onlyOnYearDay(day)
+or
+Recurrence
+Rule.onlyOnYearDays(days)
+.
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Yearly
+Rule()
+Adds a rule that causes the event to recur on a yearly basis.
+By default the event recurs on the same day of the year as the first event in the series,
+but this can be altered by calling
+Recurrence
+Rule.onlyOnYearDay(day)
+or
+Recurrence
+Rule.onlyOnYearDays(days)
+.
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+set
+Time
+Zone(timeZone)
+Sets the time zone for this recurrence. This affects the date and time that events recur on,
+and whether the event shifts with daylight savings time. Defaults to the calendar's time zone.
+Parameters
+Name
+Type
+Description
+time
+Zone
+String
+the time zone, specified in "long" format (e.g., 'America/New_York', as listed
+    by
+Joda.org
+)
+Return
+Event
+Recurrence
+— this EventRecurrence for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds

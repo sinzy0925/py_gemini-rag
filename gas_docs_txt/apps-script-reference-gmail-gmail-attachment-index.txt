@@ -1,0 +1,462 @@
+Source Path: gas_docs_html/apps-script/reference/gmail/gmail-attachment/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A GmailAttachment is a Blob with an extra
+getSize()
+method that is faster and does not count against the Gmail read quota.
+You can retrieve information about Gmail attachments, such as name and size, using provided methods.
+The
+getSize()
+and
+getHash()
+methods for Gmail attachments do not count against the Gmail read quota and require specific authorization scopes.
+Several methods are available for interacting with the data of a Gmail attachment, including getting and setting the data as bytes or strings, and converting to different content types.
+The
+getAllBlobs()
+method for Gmail attachments is deprecated and should not be used in new scripts.
+Gmail
+Attachment
+An attachment from Gmail. This is a regular
+Blob
+except that it has an extra
+get
+Size()
+method that is faster than calling
+get
+Bytes()
+.length
+and does not count against the Gmail read quota.
+// Logs information about any attachments in the first 100 inbox threads.
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+100
+);
+const
+msgs
+=
+GmailApp
+.
+getMessagesForThreads
+(
+threads
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+msgs
+.
+length
+;
+i
+++
+)
+{
+for
+(
+let
+j
+=
+0
+;
+j
+<
+msgs
+[
+i
+].
+length
+;
+j
+++
+)
+{
+const
+attachments
+=
+msgs
+[
+i
+][
+j
+].
+getAttachments
+();
+for
+(
+let
+k
+=
+0
+;
+k
+<
+attachments
+.
+length
+;
+k
+++
+)
+{
+Logger
+.
+log
+(
+'Message "%s" contains the attachment "%s" (%s bytes)'
+,
+msgs
+[
+i
+][
+j
+].
+getSubject
+(),
+attachments
+[
+k
+].
+getName
+(),
+attachments
+[
+k
+].
+getSize
+(),
+);
+}
+}
+}
+Methods
+Method
+Return type
+Brief description
+copy
+Blob()
+Blob
+Returns a copy of this blob.
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Bytes()
+Byte[]
+Gets the data stored in this blob.
+get
+Content
+Type()
+String
+Gets the content type of the bytes in this blob.
+get
+Data
+As
+String()
+String
+Gets the data of this blob as a String with UTF-8 encoding.
+get
+Data
+As
+String(charset)
+String
+Gets the data of this blob as a string with the specified encoding.
+get
+Hash()
+String
+Gets the SHA1 content hash for this attachment.
+get
+Name()
+String
+Gets the name of this blob.
+get
+Size()
+Integer
+Gets the size of this attachment.
+is
+Google
+Type()
+Boolean
+Returns whether this blob is a Google Workspace file (Sheets, Docs, etc.).
+set
+Bytes(data)
+Blob
+Sets the data stored in this blob.
+set
+Content
+Type(contentType)
+Blob
+Sets the content type of the bytes in this blob.
+set
+Content
+Type
+From
+Extension()
+Blob
+Sets the content type of the bytes in this blob based on the file extension.
+set
+Data
+From
+String(string)
+Blob
+Sets the data of this blob from a string with UTF-8 encoding.
+set
+Data
+From
+String(string, charset)
+Blob
+Sets the data of this blob from a string with the specified encoding.
+set
+Name(name)
+Blob
+Sets the name of this blob.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+All
+Blobs()
+Blob[]
+Gets all the blobs that are contained within this (possibly composite) blob.
+Detailed documentation
+copy
+Blob()
+Returns a copy of this blob.
+Return
+Blob
+— The new copy.
+get
+As(contentType)
+Return the data inside this object as a blob converted to the specified content type. This
+method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
+assumes that the part of the filename that follows the last period (if any) is an existing
+extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+"ShoppingList.12.25.pdf".
+To view the daily quotas for conversions, see
+Quotas for Google
+Services
+. Newly created Google Workspace domains might be temporarily subject to stricter
+quotas.
+Parameters
+Name
+Type
+Description
+content
+Type
+String
+The MIME type to convert to. For most blobs,
+'application/pdf'
+is
+    the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of
+'image/bmp'
+,
+'image/gif'
+,
+'image/jpeg'
+, or
+'image/png'
+are also
+    valid. For a Google Docs document,
+'text/markdown'
+is also valid.
+Return
+Blob
+— The data as a blob.
+get
+Bytes()
+Gets the data stored in this blob.
+Return
+Byte[]
+— The stored bytes.
+get
+Content
+Type()
+Gets the content type of the bytes in this blob.
+Return
+String
+— The content type of this data, if known, or
+null
+.
+get
+Data
+As
+String()
+Gets the data of this blob as a String with UTF-8 encoding.
+Return
+String
+— The data as a string.
+get
+Data
+As
+String(charset)
+Gets the data of this blob as a string with the specified encoding.
+Parameters
+Name
+Type
+Description
+charset
+String
+The charset to use in encoding the data in this blob as a string.
+Return
+String
+— The data as a string.
+get
+Hash()
+Gets the SHA1 content hash for this attachment. This method does not count against the Gmail
+read quota.
+Return
+String
+— The SHA1 content hash, as a string.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Name()
+Gets the name of this blob.
+Return
+String
+— The name of this data, if known, or
+null
+.
+get
+Size()
+Gets the size of this attachment. This method is faster than calling
+get
+Bytes()
+.length
+and does not count against the Gmail read quota.
+Return
+Integer
+— The size of the attachment, in bytes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+is
+Google
+Type()
+Returns whether this blob is a Google Workspace file (Sheets, Docs, etc.).
+Return
+Boolean
+—
+true
+if this blob is a Google Workspace file;
+false
+if not.
+set
+Bytes(data)
+Sets the data stored in this blob.
+Parameters
+Name
+Type
+Description
+data
+Byte[]
+The new data.
+Return
+Blob
+— This blob, for chaining.
+set
+Content
+Type(contentType)
+Sets the content type of the bytes in this blob.
+Parameters
+Name
+Type
+Description
+content
+Type
+String
+The new contentType.
+Return
+Blob
+— This blob, for chaining.
+set
+Content
+Type
+From
+Extension()
+Sets the content type of the bytes in this blob based on the file extension. The contentType is
+null
+if it cannot be guessed from its extension.
+Return
+Blob
+— This blob, for chaining.
+set
+Data
+From
+String(string)
+Sets the data of this blob from a string with UTF-8 encoding.
+Parameters
+Name
+Type
+Description
+string
+String
+The string data.
+Return
+Blob
+— This blob, for chaining.
+set
+Data
+From
+String(string, charset)
+Sets the data of this blob from a string with the specified encoding.
+Parameters
+Name
+Type
+Description
+string
+String
+The string data.
+charset
+String
+The charset to use in interpreting the string as bytes.
+Return
+Blob
+— This blob, for chaining.
+set
+Name(name)
+Sets the name of this blob.
+Parameters
+Name
+Type
+Description
+name
+String
+The new name.
+Return
+Blob
+— This blob, for chaining.
+Deprecated methods
+get
+All
+Blobs()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the blobs that are contained within this (possibly composite) blob.
+Return
+Blob[]
+— The blobs contained within the blob.

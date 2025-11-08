@@ -1,0 +1,302 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-validation-criteria/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DataValidationCriteria is an enumeration used to define data validation rules for a range in a spreadsheet.
+Enum properties are accessed by calling the parent class, name, and property, such as SpreadsheetApp.DataValidationCriteria.DATE_IS_VALID_DATE.
+The provided code example demonstrates how to iterate through existing data validation rules on a range and modify them based on specific criteria.
+Data validation criteria cover various types including dates, numbers, text, values from lists or ranges, custom formulas, and checkboxes.
+Data
+Validation
+Criteria
+An enumeration representing the data validation criteria that can be set on a range.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.DataValidationCriteria.DATE_IS_VALID_DATE
+.
+// Change existing data-validation rules that require a date in 2013 to require
+// a date in 2014.
+const
+oldDates
+=
+[
+new
+Date
+(
+'1/1/2013'
+),
+new
+Date
+(
+'12/31/2013'
+)];
+const
+newDates
+=
+[
+new
+Date
+(
+'1/1/2014'
+),
+new
+Date
+(
+'12/31/2014'
+)];
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+range
+=
+sheet
+.
+getRange
+(
+1
+,
+1
+,
+sheet
+.
+getMaxRows
+(),
+sheet
+.
+getMaxColumns
+());
+const
+rules
+=
+range
+.
+getDataValidations
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+rules
+.
+length
+;
+i
+++
+)
+{
+for
+(
+let
+j
+=
+0
+;
+j
+<
+rules
+[
+i
+].
+length
+;
+j
+++
+)
+{
+const
+rule
+=
+rules
+[
+i
+][
+j
+];
+if
+(
+rule
+!=
+null
+)
+{
+const
+criteria
+=
+rule
+.
+getCriteriaType
+();
+const
+args
+=
+rule
+.
+getCriteriaValues
+();
+if
+(
+criteria
+===
+SpreadsheetApp
+.
+DataValidationCriteria
+.
+DATE_BETWEEN
+&&
+args
+[
+0
+].
+getTime
+()
+===
+oldDates
+[
+0
+].
+getTime
+()
+&&
+args
+[
+1
+].
+getTime
+()
+===
+oldDates
+[
+1
+].
+getTime
+())
+{
+// Create a builder from the existing rule, then change the dates.
+rules
+[
+i
+][
+j
+]
+=
+rule
+.
+copy
+().
+withCriteria
+(
+criteria
+,
+newDates
+).
+build
+();
+}
+}
+}
+}
+range
+.
+setDataValidations
+(
+rules
+);
+Properties
+Property
+Type
+Description
+DATE_AFTER
+Enum
+Requires a date that is after the given value.
+DATE_BEFORE
+Enum
+Requires a date that is before the given value.
+DATE_BETWEEN
+Enum
+Requires a date that is between the given values.
+DATE_EQUAL_TO
+Enum
+Requires a date that is equal to the given value.
+DATE_IS_VALID_DATE
+Enum
+Requires a date.
+DATE_NOT_BETWEEN
+Enum
+Requires a date that is not between the given values.
+DATE_ON_OR_AFTER
+Enum
+Require a date that is on or after the given value.
+DATE_ON_OR_BEFORE
+Enum
+Requires a date that is on or before the given value.
+NUMBER_BETWEEN
+Enum
+Requires a number that is between the given values.
+NUMBER_EQUAL_TO
+Enum
+Requires a number that is equal to the given value.
+NUMBER_GREATER_THAN
+Enum
+Require a number that is greater than the given value.
+NUMBER_GREATER_THAN_OR_EQUAL_TO
+Enum
+Requires a number that is greater than or equal to the given value.
+NUMBER_LESS_THAN
+Enum
+Requires a number that is less than the given value.
+NUMBER_LESS_THAN_OR_EQUAL_TO
+Enum
+Requires a number that is less than or equal to the given value.
+NUMBER_NOT_BETWEEN
+Enum
+Requires a number that is not between the given values.
+NUMBER_NOT_EQUAL_TO
+Enum
+Requires a number that is not equal to the given value.
+TEXT_CONTAINS
+Enum
+Requires that the input contains the given value.
+TEXT_DOES_NOT_CONTAIN
+Enum
+Requires that the input does not contain the given value.
+TEXT_EQUAL_TO
+Enum
+Requires that the input is equal to the given value.
+TEXT_IS_VALID_EMAIL
+Enum
+Requires that the input is in the form of an email address.
+TEXT_IS_VALID_URL
+Enum
+Requires that the input is in the form of a URL.
+VALUE_IN_LIST
+Enum
+Requires that the input is equal to one of the given values.
+VALUE_IN_RANGE
+Enum
+Requires that the input is equal to a value in the given range.
+CUSTOM_FORMULA
+Enum
+Requires that the input makes the given formula evaluate to
+true
+.
+CHECKBOX
+Enum
+Requires that the input is a custom value or a boolean; rendered as a checkbox.
+DATE_AFTER_RELATIVE
+Enum
+Requires a date that is after the relative date value.
+DATE_BEFORE_RELATIVE
+Enum
+Requires a date that is before the relative date value.
+DATE_EQUAL_TO_RELATIVE
+Enum
+Requires a date that is equal to the relative date value.

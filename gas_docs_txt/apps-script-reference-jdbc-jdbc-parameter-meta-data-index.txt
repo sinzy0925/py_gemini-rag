@@ -1,0 +1,303 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-parameter-meta-data/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcParameterMetaData provides metadata about the parameters of a prepared statement.
+It offers methods to retrieve information such as parameter count, type, mode, class name, precision, scale, nullability, and signed status.
+Detailed documentation for each method is available, referencing the corresponding
+java.sql.ParameterMetaData
+methods.
+Each method requires authorization with the
+https://www.googleapis.com/auth/script.external_request
+scope.
+Jdbc
+Parameter
+Meta
+Data
+A JDBC
+Parameter
+Meta
+Data
+. For documentation of this class, see
+java.sql.ParameterMetaData
+.
+Methods
+Method
+Return type
+Brief description
+get
+Parameter
+Class
+Name(param)
+String
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterClassName(int)
+.
+get
+Parameter
+Count()
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterCount()
+.
+get
+Parameter
+Mode(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterMode(int)
+.
+get
+Parameter
+Type(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterType(int)
+.
+get
+Parameter
+Type
+Name(param)
+String
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterTypeName(int)
+.
+get
+Precision(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getPrecision(int)
+.
+get
+Scale(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getScale(int)
+.
+is
+Nullable(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#isNullable(int)
+.
+is
+Signed(param)
+Boolean
+For documentation of this method, see
+java.sql.ParameterMetaData#isSigned(int)
+.
+Detailed documentation
+get
+Parameter
+Class
+Name(param)
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterClassName(int)
+.
+Parameters
+Name
+Type
+Description
+param
+Integer
+The index of the parameter to examine. The first parameter has an index of 1.
+Return
+String
+— The fully-qualified Java class name that is used by the
+Jdbc
+Prepared
+Statement.setObject(index, x)
+methods.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Parameter
+Count()
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterCount()
+.
+Return
+Integer
+— The number of parameters for which this metadata contains information.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Parameter
+Mode(param)
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterMode(int)
+.
+Parameters
+Name
+Type
+Description
+param
+Integer
+The index of the parameter to examine. The first parameter has an index of 1.
+Return
+Integer
+— The designated parameter's mode, which is one of
+Jdbc.ParameterMetaData.parameterModeIn
+,
+Jdbc.ParameterMetaData.parameterModeOut
+,
+Jdbc.ParameterMetaData.parameterModeInOut
+, or
+Jdbc.ParameterMetaData.parameterModeUnknown
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Parameter
+Type(param)
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterType(int)
+.
+Parameters
+Name
+Type
+Description
+param
+Integer
+The index of the parameter to examine. The first parameter has an index of 1.
+Return
+Integer
+— The designated parameter's
+SQL type
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Parameter
+Type
+Name(param)
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterTypeName(int)
+.
+Parameters
+Name
+Type
+Description
+param
+Integer
+The index of the parameter to examine. The first parameter has an index of 1.
+Return
+String
+— The designated parameter's database-specific type name. This is a fully-qualified type
+    name if the parameter is a user-defined type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Precision(param)
+For documentation of this method, see
+java.sql.ParameterMetaData#getPrecision(int)
+.
+Parameters
+Name
+Type
+Description
+param
+Integer
+The index of the parameter to examine. The first parameter has an index of 1.
+Return
+Integer
+— The maximum column size for the given parameter. For numeric data, this is the maximum
+    precision. For character data, this is the length in characters. For datetime data, this is
+    the length in characters of the string representation (assuming the maximum allowed
+    precision of the fractional seconds component). For binary data, this is the length in
+    bytes. For the
+ROWID
+datatype, this is the length in bytes. Returns 0 for types
+    where the column size is not applicable.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Scale(param)
+For documentation of this method, see
+java.sql.ParameterMetaData#getScale(int)
+.
+Parameters
+Name
+Type
+Description
+param
+Integer
+The index of the parameter to examine. The first parameter has an index of 1.
+Return
+Integer
+— The designated parameter's number of digits to right of the decimal point. Returns 0
+    for data types where the scale is not applicable.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Nullable(param)
+For documentation of this method, see
+java.sql.ParameterMetaData#isNullable(int)
+.
+Parameters
+Name
+Type
+Description
+param
+Integer
+The index of the parameter to examine. The first parameter has an index of 1.
+Return
+Integer
+— The nullability status of the given parameter; one of
+Jdbc.ParameterMetaData.parameterNoNulls
+,
+Jdbc.ParameterMetaData.parameterNullable
+,
+    or
+Jdbc.ParameterMetaData.parameterNullableUnknown
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Signed(param)
+For documentation of this method, see
+java.sql.ParameterMetaData#isSigned(int)
+.
+Parameters
+Name
+Type
+Description
+param
+Integer
+The index of the parameter to examine. The first parameter has an index of 1.
+Return
+Boolean
+—
+true
+if the specified parameter can accept signed number values;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request

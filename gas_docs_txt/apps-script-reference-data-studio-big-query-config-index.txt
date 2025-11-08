@@ -1,0 +1,262 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/big-query-config/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+BigQueryConfig is a configuration object for a native BigQuery connector used with Data Studio.
+It is returned from the
+getData()
+function for Data Studio to query BigQuery.
+Methods available for BigQueryConfig include adding query parameters, building the configuration, printing JSON, setting access token, setting billing project ID, setting the query, and setting the SQL interpretation method.
+The
+build()
+method validates the object and formats it for Data Studio, while other
+set
+methods configure specific aspects of the BigQuery connection and query.
+Big
+Query
+Config
+A configuration object for a native BigQuery connector. Return this object from
+get
+Data()
+for Data Studio to query BigQuery for the connector.
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+const
+bqConfig
+=
+cc
+.
+newBigQueryConfig
+()
+.
+setBillingProjectId
+(
+'billingProjectId'
+)
+.
+setQuery
+(
+'queryString'
+)
+.
+setUseStandardSql
+(
+true
+)
+.
+setAccessToken
+(
+'accessToken'
+)
+.
+addQueryParameter
+(
+'dob'
+,
+cc
+.
+BigQueryParameterType
+.
+STRING
+,
+'01011990'
+)
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+add
+Query
+Parameter(name, type, value)
+Big
+Query
+Config
+Adds a query parameter to this
+Big
+Query
+Config
+.
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Access
+Token(accessToken)
+Big
+Query
+Config
+Sets the access token of this
+Big
+Query
+Config
+.
+set
+Billing
+Project
+Id(billingProjectId)
+Big
+Query
+Config
+Sets the billing project ID of this
+Big
+Query
+Config
+.
+set
+Query(query)
+Big
+Query
+Config
+Sets the SQL query of this
+Big
+Query
+Config
+.
+set
+Use
+Standard
+Sql(useStandardSql)
+Big
+Query
+Config
+Determines if the query is interpreted as standard or legacy SQL.
+Detailed documentation
+add
+Query
+Parameter(name, type, value)
+Adds a query parameter to this
+Big
+Query
+Config
+.
+Parameters
+Name
+Type
+Description
+name
+String
+The parameter name.
+type
+Big
+Query
+Parameter
+Type
+The parameter type.
+value
+String
+The parameter value.
+Return
+Big
+Query
+Config
+— This object, for chaining.
+build()
+Validates this object and returns it in the format needed by Data Studio.
+Return
+Object
+— The validated
+Config
+object.
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+set
+Access
+Token(accessToken)
+Sets the access token of this
+Big
+Query
+Config
+.
+Parameters
+Name
+Type
+Description
+access
+Token
+String
+The access token to set.
+Return
+Big
+Query
+Config
+— This object, for chaining.
+set
+Billing
+Project
+Id(billingProjectId)
+Sets the billing project ID of this
+Big
+Query
+Config
+.
+Parameters
+Name
+Type
+Description
+billing
+Project
+Id
+String
+The billing project ID to set.
+Return
+Big
+Query
+Config
+— This object, for chaining.
+set
+Query(query)
+Sets the SQL query of this
+Big
+Query
+Config
+.
+Parameters
+Name
+Type
+Description
+query
+String
+The query to set.
+Return
+Big
+Query
+Config
+— This object, for chaining.
+set
+Use
+Standard
+Sql(useStandardSql)
+Determines if the query is interpreted as standard or legacy SQL.
+Parameters
+Name
+Type
+Description
+use
+Standard
+Sql
+Boolean
+If
+true
+, the query is interpreted as standard SQL. If
+false
+, the query is interpreted as legacy SQL.
+Return
+Big
+Query
+Config
+— This object, for chaining.

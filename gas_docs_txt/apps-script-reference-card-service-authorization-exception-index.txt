@@ -1,0 +1,120 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/authorization-exception/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+AuthorizationException is an error used to trigger an authorization card for the user.
+Key methods include setting the authorization URL and resource display name.
+The exception can be configured with a custom UI callback function.
+Use
+throwException()
+to trigger the authorization card.
+Authorization
+Exception
+An error that can be returned to trigger an authorization card to be shown to the user.
+Card
+Service
+.
+newAuthorizationException
+()
+.
+setAuthorizationUrl
+(
+'http://auth.com/'
+)
+.
+setResourceDisplayName
+(
+'Example Resource'
+)
+.
+throwException
+();
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Authorization
+Url(authUrl)
+Authorization
+Exception
+Sets the authorization URL that user is taken to from the authorization prompt.
+set
+Custom
+Ui
+Callback(callback)
+Authorization
+Exception
+The name of a function to call to generate a custom authorization prompt.
+set
+Resource
+Display
+Name(name)
+Authorization
+Exception
+Sets the name that is displayed to the user when asking for authorization.
+throw
+Exception()
+void
+Triggers this exception to be thrown.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+set
+Authorization
+Url(authUrl)
+Sets the authorization URL that user is taken to from the authorization prompt. Required.
+Parameters
+Name
+Type
+Description
+auth
+Url
+String
+The authorization URL to set.
+Return
+Authorization
+Exception
+— This object, for chaining.
+set
+Custom
+Ui
+Callback(callback)
+The name of a function to call to generate a custom authorization prompt. Optional.
+Parameters
+Name
+Type
+Description
+callback
+String
+The name of the function that generates a custom authorization prompt.
+Return
+Authorization
+Exception
+— This object, for chaining.
+set
+Resource
+Display
+Name(name)
+Sets the name that is displayed to the user when asking for authorization. Required.
+Parameters
+Name
+Type
+Description
+name
+String
+The display name.
+Return
+Authorization
+Exception
+— This object, for chaining.
+throw
+Exception()
+Triggers this exception to be thrown.

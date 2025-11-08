@@ -1,0 +1,162 @@
+Source Path: gas_docs_html/apps-script/reference/base/menu/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Custom menus are part of the user interface for a Google App and can only be interacted with by container-bound scripts.
+The provided example demonstrates how to create a custom menu with items, a separator, and a submenu using Apps Script.
+Key methods for creating a custom menu include
+addItem
+to add menu options,
+addSeparator
+for visual separation,
+addSubMenu
+to add nested menus, and
+addToUi
+to display the menu.
+Each menu method returns the
+Menu
+object for chaining except for
+addToUi
+, which returns
+void
+.
+Menu
+A custom menu in an instance of the user interface for a Google App. A script can only interact
+with the UI for the current instance of an open document or form, and only if the script is
+container-bound
+to the document or form. For more
+information, see the
+guide to menus
+.
+// Add a custom menu to the active spreadsheet, including a separator and a
+// sub-menu.
+function
+onOpen
+(
+e
+)
+{
+SpreadsheetApp
+.
+getUi
+()
+.
+createMenu
+(
+'My Menu'
+)
+.
+addItem
+(
+'My Menu Item'
+,
+'myFunction'
+)
+.
+addSeparator
+()
+.
+addSubMenu
+(
+SpreadsheetApp
+.
+getUi
+()
+.
+createMenu
+(
+'My Submenu'
+)
+.
+addItem
+(
+'One Submenu Item'
+,
+'mySecondFunction'
+)
+.
+addItem
+(
+'Another Submenu Item'
+,
+'myThirdFunction'
+),
+)
+.
+addToUi
+();
+}
+Methods
+Method
+Return type
+Brief description
+add
+Item(caption, functionName)
+Menu
+Adds an item to the menu.
+add
+Separator()
+Menu
+Adds a visual separator to the menu.
+add
+Sub
+Menu(menu)
+Menu
+Adds a sub-menu to the menu.
+add
+To
+Ui()
+void
+Inserts the menu into the instance of the editor's user interface.
+Detailed documentation
+add
+Item(caption, functionName)
+Adds an item to the menu. The label for a menu item should be in sentence case (only the first
+word capitalized).
+Parameters
+Name
+Type
+Description
+caption
+String
+The label for the menu item, with only the first word capitalized.
+function
+Name
+String
+The name of the function to invoke when the user selects the item. You can
+    use functions from included libraries, such as
+Library.libFunction1
+.
+Return
+Menu
+— This
+Menu
+, for chaining.
+add
+Separator()
+Adds a visual separator to the menu.
+Return
+Menu
+— This
+Menu
+, for chaining.
+add
+Sub
+Menu(menu)
+Adds a sub-menu to the menu.
+Parameters
+Name
+Type
+Description
+menu
+Menu
+The sub-menu, constructed like a top-level menu.
+Return
+Menu
+— This
+Menu
+, for chaining.
+add
+To
+Ui()
+Inserts the menu into the instance of the editor's user interface.

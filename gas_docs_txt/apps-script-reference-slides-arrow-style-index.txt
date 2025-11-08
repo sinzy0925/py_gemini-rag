@@ -1,0 +1,58 @@
+Source Path: gas_docs_html/apps-script/reference/slides/arrow-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ArrowStyle defines the start and end forms for rendering linear geometry.
+Some ArrowStyle values are based on the "ST_LineEndType" simple type from ECMA-376 5th edition.
+Enum values are accessed by calling the parent class, name, and property, for example,
+SlidesApp.ArrowStyle.FILL_ARROW
+.
+Available ArrowStyle properties include various arrow, circle, square, and diamond shapes, both filled and open, as well as unsupported and none.
+Arrow
+Style
+The kinds of start and end forms with which linear geometry can be rendered.
+Some values are based on the "ST_LineEndType" simple type described in section 20.1.10.33 of
+of "Office Open XML File Formats - Fundamentals and Markup Language Reference", part 1 of
+ECMA-376 5th
+edition
+.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.ArrowStyle.FILL_ARROW
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+An arrow style that is not supported.
+NONE
+Enum
+No arrow.
+STEALTH_ARROW
+Enum
+Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'.
+FILL_ARROW
+Enum
+Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'.
+FILL_CIRCLE
+Enum
+Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'.
+FILL_SQUARE
+Enum
+Filled square.
+FILL_DIAMOND
+Enum
+Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'.
+OPEN_ARROW
+Enum
+Hollow arrow.
+OPEN_CIRCLE
+Enum
+Hollow circle.
+OPEN_SQUARE
+Enum
+Hollow square.
+OPEN_DIAMOND
+Enum
+Hollow diamond.

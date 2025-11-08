@@ -1,0 +1,297 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-formula/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Use DataSourceFormula to access and modify existing data source formulas, but use Range.setFormula(formula) to create a new one.
+This class is specifically for data connected to a BigQuery database.
+Methods are available to cancel, force, or simply refresh data, get information about the formula and its status, and set a new formula.
+Scripts using these methods require specific authorization scopes related to spreadsheets.
+Data
+Source
+Formula
+Access and modify existing data source formulas. To create a new data source formula, use
+Range.setFormula(formula)
+.
+Only use this class with data that's connected to a BigQuery database.
+Methods
+Method
+Return type
+Brief description
+cancel
+Data
+Refresh()
+Data
+Source
+Formula
+Cancels the data refresh associated with this object if it's currently running.
+force
+Refresh
+Data()
+Data
+Source
+Formula
+Refreshes the data of this object regardless of the current state.
+get
+Anchor
+Cell()
+Range
+Returns the
+Range
+representing the cell where this data source formula is anchored.
+get
+Data
+Source()
+Data
+Source
+Gets the data source the object is linked to.
+get
+Display
+Value()
+String
+Returns the display value of the data source formula.
+get
+Formula()
+String
+Returns the formula for this data source formula.
+get
+Status()
+Data
+Execution
+Status
+Gets the data execution status of the object.
+refresh
+Data()
+Data
+Source
+Formula
+Refreshes the data of the object.
+set
+Formula(formula)
+Data
+Source
+Formula
+Updates the formula.
+wait
+For
+Completion(timeoutInSeconds)
+Data
+Execution
+Status
+Waits until the current execution completes, timing out after the provided number of seconds.
+Detailed documentation
+cancel
+Data
+Refresh()
+Cancels the data refresh associated with this object if it's currently running.
+This example shows how to cancel a formula refresh.
+const
+spreadsheet
+=
+SpreadsheetApp
+.
+getActive
+();
+const
+formula
+=
+spreadsheet
+.
+getDataSourceFormulas
+()[
+0
+];
+// Cancel the ongoing refresh on the formula.
+formula
+.
+cancelDataRefresh
+();
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Formula
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+force
+Refresh
+Data()
+Refreshes the data of this object regardless of the current state. See
+refresh
+Data()
+for
+more details. If you want to cancel a currently running refresh of this object, see
+cancel
+Data
+Refresh()
+.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Formula
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Anchor
+Cell()
+Returns the
+Range
+representing the cell where this data source formula is anchored.
+Return
+Range
+— The anchor cell.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Data
+Source()
+Gets the data source the object is linked to.
+Return
+Data
+Source
+— The data source.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Display
+Value()
+Returns the display value of the data source formula.
+Return
+String
+— The display value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Formula()
+Returns the formula for this data source formula.
+Return
+String
+— The formula.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Status()
+Gets the data execution status of the object.
+Return
+Data
+Execution
+Status
+— The data execution status.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+refresh
+Data()
+Refreshes the data of the object.
+Throws an exception if currently in
+error
+state. Use
+Data
+Source#updateSpec()
+to update the specification. The method is
+preferred over
+force
+Refresh
+Data()
+to prevent unexpected edits on data source.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Formula
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Formula(formula)
+Updates the formula.
+Parameters
+Name
+Type
+Description
+formula
+String
+The new formula.
+Return
+Data
+Source
+Formula
+— The data source formula, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+wait
+For
+Completion(timeoutInSeconds)
+Waits until the current execution completes, timing out after the provided number of seconds.
+Throws an exception if the execution is not completed when timing out, but does not cancel the
+data execution.
+Parameters
+Name
+Type
+Description
+timeout
+In
+Seconds
+Integer
+The time to wait for data execution, in seconds. The maximum is 300
+    seconds.
+Return
+Data
+Execution
+Status
+— The data execution status.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

@@ -1,0 +1,22 @@
+Source Path: gas_docs_html/apps-script/reference/script/installation-source/index.html
+
+Installation
+Source
+An enumeration that indicates how the script came to be installed as an add-on for the current
+user.
+To call an enum, you call its parent class, name, and property. For example,
+ScriptApp.InstallationSource.APPS_MARKETPLACE_DOMAIN_ADD_ON
+.
+Properties
+Property
+Type
+Description
+APPS_MARKETPLACE_DOMAIN_ADD_ON
+Enum
+Add-on was installed by the administrator for the user's domain.
+NONE
+Enum
+Script is not running as an add-on.
+WEB_STORE_ADD_ON
+Enum
+Add-on was installed by the user from the Chrome Web Store.

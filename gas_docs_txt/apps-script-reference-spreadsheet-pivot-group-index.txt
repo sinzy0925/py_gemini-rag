@@ -1,0 +1,792 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/pivot-group/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PivotGroup provides methods to access and modify pivot table breakout groups.
+You can add or remove manual grouping rules and clear existing grouping rules or sorting.
+Methods are available to get details about the group, such as its dimension, index, parent pivot table, and source data column.
+You can control the display of labels and totals, and set date-time or histogram grouping rules.
+Sorting can be set to ascending or descending, and you can sort by a specific pivot value.
+Pivot
+Group
+Access and modify pivot table breakout groups.
+Methods
+Method
+Return type
+Brief description
+add
+Manual
+Grouping
+Rule(groupName, groupMembers)
+Pivot
+Group
+Adds a manual grouping rule for this pivot group.
+are
+Labels
+Repeated()
+Boolean
+Returns whether labels are displayed as repeated.
+clear
+Grouping
+Rule()
+Pivot
+Group
+Removes any grouping rules from this pivot group.
+clear
+Sort()
+Pivot
+Group
+Removes any sorting applied to this group.
+get
+Date
+Time
+Grouping
+Rule()
+Date
+Time
+Grouping
+Rule
+Returns the date-time grouping rule on the pivot group, or
+null
+if no date-time
+grouping rule is set.
+get
+Dimension()
+Dimension
+Returns whether this is a row or column group.
+get
+Group
+Limit()
+Pivot
+Group
+Limit
+Returns the pivot group limit on the pivot group.
+get
+Index()
+Integer
+Returns the index of this pivot group in the current group order.
+get
+Pivot
+Table()
+Pivot
+Table
+Returns the
+Pivot
+Table
+which this grouping belongs to.
+get
+Source
+Data
+Column()
+Integer
+Returns the number of the source data column this group summarizes.
+get
+Source
+Data
+Source
+Column()
+Data
+Source
+Column
+Returns the data source column the pivot group operates on.
+hide
+Repeated
+Labels()
+Pivot
+Group
+Hides repeated labels for this grouping.
+is
+Sort
+Ascending()
+Boolean
+Returns
+true
+if the sort is ascending, returns
+false
+if the sort order is
+descending.
+move
+To
+Index(index)
+Pivot
+Group
+Moves this group to the specified position in the current list of row or column groups.
+remove()
+void
+Removes this pivot group from the table.
+remove
+Manual
+Grouping
+Rule(groupName)
+Pivot
+Group
+Removes the manual grouping rule with the specified
+group
+Name
+.
+reset
+Display
+Name()
+Pivot
+Group
+Resets the display name of this group in the pivot table to its default value.
+set
+Date
+Time
+Grouping
+Rule(dateTimeGroupingRuleType)
+Pivot
+Group
+Sets the date-time grouping rule on the pivot group.
+set
+Display
+Name(name)
+Pivot
+Group
+Sets the display name of this group in the pivot table.
+set
+Group
+Limit(countLimit)
+Pivot
+Group
+Sets the pivot group limit on the pivot group.
+set
+Histogram
+Grouping
+Rule(minValue, maxValue, intervalSize)
+Pivot
+Group
+Sets a histogram grouping rule for this pivot group.
+show
+Repeated
+Labels()
+Pivot
+Group
+When there is more than one row or column grouping, this method displays this grouping's label
+for each entry of the subsequent grouping.
+show
+Totals(showTotals)
+Pivot
+Group
+Sets whether to show total values for this pivot group in the table.
+sort
+Ascending()
+Pivot
+Group
+Sets the sort order to be ascending.
+sort
+By(value, oppositeGroupValues)
+Pivot
+Group
+Sorts this group by the specified
+Pivot
+Value
+for the values from the
+opposite
+Group
+Values
+.
+sort
+Descending()
+Pivot
+Group
+Sets the sort order to be descending.
+totals
+Are
+Shown()
+Boolean
+Returns whether total values are currently shown for this pivot group.
+Detailed documentation
+add
+Manual
+Grouping
+Rule(groupName, groupMembers)
+Adds a manual grouping rule for this pivot group.
+Parameters
+Name
+Type
+Description
+group
+Name
+String
+The name of this grouping rule.
+group
+Members
+Object[]
+The values that are included in this grouping rule.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+are
+Labels
+Repeated()
+Returns whether labels are displayed as repeated.
+Return
+Boolean
+—
+true
+if labels are repeated; otherwise returns
+false
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+clear
+Grouping
+Rule()
+Removes any grouping rules from this pivot group.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+clear
+Sort()
+Removes any sorting applied to this group.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Date
+Time
+Grouping
+Rule()
+Returns the date-time grouping rule on the pivot group, or
+null
+if no date-time
+grouping rule is set.
+Return
+Date
+Time
+Grouping
+Rule
+— The date-time grouping rule.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Dimension()
+Returns whether this is a row or column group.
+Return
+Dimension
+— the dimension representing this group's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Group
+Limit()
+Returns the pivot group limit on the pivot group. Returns
+null
+if no pivot group limit
+is set.
+Return
+Pivot
+Group
+Limit
+— The pivot group limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Index()
+Returns the index of this pivot group in the current group order.
+Return
+Integer
+— the pivot group's index
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Pivot
+Table()
+Returns the
+Pivot
+Table
+which this grouping belongs to.
+Return
+Pivot
+Table
+— the pivot table this group belongs to.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Source
+Data
+Column()
+Returns the number of the source data column this group summarizes. This index is 1-based, if
+this group summarizes source data in column "A" of the spreadsheet this method returns
+1
+.
+Return
+Integer
+— the source data column number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Source
+Data
+Source
+Column()
+Returns the data source column the pivot group operates on. Returns
+null
+if the pivot
+table is not a {DataSourcePivotTableApi}.
+Return
+Data
+Source
+Column
+— The data source column the pivot group operates on.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+hide
+Repeated
+Labels()
+Hides repeated labels for this grouping. If labels are already hidden this results in a no-op.
+If this method is called before there are multiple row or column groupings, when an additional
+grouping is added repeated labels are hidden.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+is
+Sort
+Ascending()
+Returns
+true
+if the sort is ascending, returns
+false
+if the sort order is
+descending.
+Return
+Boolean
+—
+true
+if the sort order is ascending.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+move
+To
+Index(index)
+Moves this group to the specified position in the current list of row or column groups. These
+indices are 0-based. For example, if this group should be moved to the first position this
+method should be called with
+0
+.
+Parameters
+Name
+Type
+Description
+index
+Integer
+The index to move this grouping to.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Removes this pivot group from the table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove
+Manual
+Grouping
+Rule(groupName)
+Removes the manual grouping rule with the specified
+group
+Name
+.
+Parameters
+Name
+Type
+Description
+group
+Name
+String
+The name of the grouping rule to remove.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+reset
+Display
+Name()
+Resets the display name of this group in the pivot table to its default value.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Date
+Time
+Grouping
+Rule(dateTimeGroupingRuleType)
+Sets the date-time grouping rule on the pivot group.
+To remove the rule, use
+clear
+Grouping
+Rule()
+.
+Parameters
+Name
+Type
+Description
+date
+Time
+Grouping
+Rule
+Type
+Date
+Time
+Grouping
+Rule
+Type
+The rule type to set.
+Return
+Pivot
+Group
+— The pivot group, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Display
+Name(name)
+Sets the display name of this group in the pivot table.
+Parameters
+Name
+Type
+Description
+name
+String
+The display name to set.
+Return
+Pivot
+Group
+— the pivot group for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Group
+Limit(countLimit)
+Sets the pivot group limit on the pivot group. The operation is only supported for
+Data
+Source
+Pivot
+Table
+.
+Parameters
+Name
+Type
+Description
+count
+Limit
+Integer
+The count limit of rows or columns to set. Must be positive.
+Return
+Pivot
+Group
+— The pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Histogram
+Grouping
+Rule(minValue, maxValue, intervalSize)
+Sets a histogram grouping rule for this pivot group. A histogram rule organizes values in a
+source data column into buckets of a constant size. All values from
+min
+Value
+to
+max
+Value
+are placed into groups of size
+interval
+. All values below
+min
+Value
+are placed into one bucket, as are all values greater than
+max
+Value
+.
+Parameters
+Name
+Type
+Description
+min
+Value
+Integer
+The minimum value for items to be placed into buckets. Values less than this
+    are combined into a single bucket.
+max
+Value
+Integer
+The maximum value for items to be placed into buckets. Values greater than this
+    are combined into a single bucket.
+interval
+Size
+Integer
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+show
+Repeated
+Labels()
+When there is more than one row or column grouping, this method displays this grouping's label
+for each entry of the subsequent grouping. If labels are already repeated this results in a
+no-op. If this method is called before there are multiple row or column groupings, when an
+additional grouping is added repeated labels are shown.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+show
+Totals(showTotals)
+Sets whether to show total values for this pivot group in the table.
+Parameters
+Name
+Type
+Description
+show
+Totals
+Boolean
+Whether to show totals or not.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+sort
+Ascending()
+Sets the sort order to be ascending.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+sort
+By(value, oppositeGroupValues)
+Sorts this group by the specified
+Pivot
+Value
+for the values from the
+opposite
+Group
+Values
+.
+// Sorts the item group by the "SUM of Quantity" pivot value for the specified
+// salespersons.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+pivotTable
+=
+sheet
+.
+getPivotTables
+()[
+0
+];
+const
+itemGroup
+=
+pivotTable
+.
+getRowGroups
+()[
+0
+];
+const
+sumQuantityValue
+=
+pivotTable
+.
+getPivotValues
+()[
+0
+];
+itemGroup
+.
+sortBy
+(
+sumQuantityValue
+,
+[
+'Beth'
+,
+'Amir'
+,
+'Devyn'
+]);
+Parameters
+Name
+Type
+Description
+value
+Pivot
+Value
+The pivot value to sort by.
+opposite
+Group
+Values
+Object[]
+The values of an opposite pivot group (a column group if sorting a
+    row group, or a row group if sorting a column group) that are used to sort. The order of
+    these values determines precedence for tie breaking.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+sort
+Descending()
+Sets the sort order to be descending.
+Return
+Pivot
+Group
+— the pivot group for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+totals
+Are
+Shown()
+Returns whether total values are currently shown for this pivot group.
+Return
+Boolean
+—
+true
+if total values are displayed for this pivot group; otherwise returns
+false
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

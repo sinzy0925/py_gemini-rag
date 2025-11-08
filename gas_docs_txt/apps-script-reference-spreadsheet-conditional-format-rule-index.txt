@@ -1,0 +1,256 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/conditional-format-rule/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Use
+SpreadsheetApp.newConditionalFormatRule()
+and
+ConditionalFormatRuleBuilder
+to create new conditional formatting rules.
+You can set conditional format rules for a sheet using
+Sheet.setConditionalFormatRules()
+.
+Methods available for
+ConditionalFormatRule
+include
+copy()
+,
+getBooleanCondition()
+,
+getGradientCondition()
+, and
+getRanges()
+.
+copy()
+returns a builder preset with the current rule's settings.
+getBooleanCondition()
+and
+getGradientCondition()
+retrieve condition details if applicable, otherwise return
+null
+.
+getRanges()
+returns the ranges where the conditional format rule is applied.
+Conditional
+Format
+Rule
+Access conditional formatting rules. To create a new rule, use
+Spreadsheet
+App.newConditionalFormatRule()
+and
+Conditional
+Format
+Rule
+Builder
+.
+You can use
+Sheet.setConditionalFormatRules(rules)
+to set the
+rules for a given sheet.
+Methods
+Method
+Return type
+Brief description
+copy()
+Conditional
+Format
+Rule
+Builder
+Returns a rule builder preset with this rule's settings.
+get
+Boolean
+Condition()
+Boolean
+Condition
+Retrieves the rule's
+Boolean
+Condition
+information if this rule uses
+boolean condition criteria.
+get
+Gradient
+Condition()
+Gradient
+Condition
+Retrieves the rule's
+Gradient
+Condition
+information, if this rule
+uses gradient condition criteria.
+get
+Ranges()
+Range[]
+Retrieves the ranges to which this conditional format rule is applied.
+Detailed documentation
+copy()
+Returns a rule builder preset with this rule's settings.
+Return
+Conditional
+Format
+Rule
+Builder
+— A builder based on this rule's settings.
+get
+Boolean
+Condition()
+Retrieves the rule's
+Boolean
+Condition
+information if this rule uses
+boolean condition criteria. Otherwise returns
+null
+.
+// Log the boolean criteria type of the first conditional format rules of a
+// sheet.
+const
+rule
+=
+SpreadsheetApp
+.
+getActiveSheet
+().
+getConditionalFormatRules
+()[
+0
+];
+const
+booleanCondition
+=
+rule
+.
+getBooleanCondition
+();
+if
+(
+booleanCondition
+!=
+null
+)
+{
+Logger
+.
+log
+(
+booleanCondition
+.
+getCriteriaType
+());
+}
+Return
+Boolean
+Condition
+— The boolean condition object, or
+null
+if the rule does not use a boolean
+    condition.
+get
+Gradient
+Condition()
+Retrieves the rule's
+Gradient
+Condition
+information, if this rule
+uses gradient condition criteria. Otherwise returns
+null
+.
+// Log the gradient minimum color of the first conditional format rule of a
+// sheet.
+const
+rule
+=
+SpreadsheetApp
+.
+getActiveSheet
+().
+getConditionalFormatRules
+()[
+0
+];
+const
+gradientCondition
+=
+rule
+.
+getGradientCondition
+();
+if
+(
+gradientCondition
+!=
+null
+)
+{
+// Assume the color has ColorType.RGB.
+Logger
+.
+log
+(
+gradientCondition
+.
+getMinColorObject
+().
+asRgbColor
+().
+asHexString
+());
+}
+Return
+Gradient
+Condition
+— The gradient condition object, or
+null
+if the rule does not use a gradient
+    condition.
+get
+Ranges()
+Retrieves the ranges to which this conditional format rule is applied.
+// Log each range of the first conditional format rule of a sheet.
+const
+rule
+=
+SpreadsheetApp
+.
+getActiveSheet
+().
+getConditionalFormatRules
+()[
+0
+];
+const
+ranges
+=
+rule
+.
+getRanges
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+ranges
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+ranges
+[
+i
+].
+getA1Notation
+());
+}
+Return
+Range[]
+— The ranges to which this conditional format rule is applied.

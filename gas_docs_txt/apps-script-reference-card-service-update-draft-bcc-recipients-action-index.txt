@@ -1,0 +1,44 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-draft-bcc-recipients-action/index.html
+
+Update
+Draft
+Bcc
+Recipients
+Action
+Updates the Bcc recipients of an email draft.
+Methods
+Method
+Return type
+Brief description
+add
+Update
+Bcc
+Recipients(bccRecipientEmails)
+Update
+Draft
+Bcc
+Recipients
+Action
+Updates the Bcc recipients of an email draft.
+Detailed documentation
+add
+Update
+Bcc
+Recipients(bccRecipientEmails)
+Updates the Bcc recipients of an email draft.
+Parameters
+Name
+Type
+Description
+bcc
+Recipient
+Emails
+String[]
+The Bcc recipients to insert to the email draft.
+Return
+Update
+Draft
+Bcc
+Recipients
+Action
+— This object, for chaining.

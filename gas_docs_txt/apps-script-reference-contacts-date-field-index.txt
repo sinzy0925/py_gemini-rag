@@ -1,0 +1,569 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/date-field/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DateField is a deprecated class used only by the Contacts service to represent a date field in a Contact.
+Instead of DateField, the People API advanced service should be used.
+Dates in App Script outside the Contacts service use JavaScript's standard Date object.
+The DateField class has methods to get and set its label.
+Most methods of the DateField class are deprecated, including those for getting and setting the day, month, and year, and for deleting the date field.
+Date
+Field
+Deprecated.
+Instead, use the
+People API advanced
+    service
+A date field in a Contact.
+This class is only used by the Contacts service, and dates used elsewhere in App Script use
+JavaScript's standard
+Date
+object.
+Methods
+Method
+Return type
+Brief description
+get
+Label()
+Object
+Gets the label for this field.
+set
+Label(label)
+Date
+Field
+Sets the label of this field.
+Deprecated methods
+Method
+Return type
+Brief description
+delete
+Date
+Field()
+void
+Deletes this date.
+get
+Day()
+Integer
+Gets the day of the month for this date.
+get
+Month()
+Month
+Gets the month for this date.
+get
+Year()
+Integer
+Gets the year for this date.
+set
+Date(month, day)
+Date
+Field
+Sets the date to this day, without a year.
+set
+Date(month, day, year)
+Date
+Field
+Sets the date to this day.
+set
+Label(label)
+Date
+Field
+Sets the label of this field, such as 'Birthday' or 'Anniversary'.
+Detailed documentation
+get
+Label()
+Gets the label for this field. This may be a Field, ExtendedField, or a String.
+// Logs the label for all the address fields associated with contact
+// 'John Doe'. This method can be similarly called for any field that has
+// a label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+addressFields
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+addressFields
+[
+i
+].
+getLabel
+());
+}
+Return
+Object
+— the label for this field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Label(label)
+Sets the label of this field.
+// Sets the label to 'Apartment' for the first address field associated
+// with contact 'John Doe'. This method can be similarly called for any
+// field that has a label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+addressFields
+[
+0
+].
+setLabel
+(
+'Apartment'
+);
+Parameters
+Name
+Type
+Description
+label
+String
+the new label for this field
+Return
+Date
+Field
+— this field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+Deprecated methods
+delete
+Date
+Field()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes this date.
+// Deletes all the dates that are set for contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+dates
+=
+contacts
+[
+0
+].
+getDates
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+dates
+.
+length
+;
+i
+++
+)
+{
+dates
+[
+i
+].
+deleteDateField
+();
+}
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Day()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the day of the month for this date.
+Note: For standard JavaScript Date objects the
+get
+Day()
+method returns the day of the week instead.
+// Logs the day of the birthday for contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+birthday
+=
+contacts
+[
+0
+].
+getDates
+(
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+)[
+0
+];
+Logger
+.
+log
+(
+birthday
+.
+getDay
+());
+Return
+Integer
+— the day of the month
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Month()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the month for this date.
+// Logs the month of the birthday for contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+birthday
+=
+contacts
+[
+0
+].
+getDates
+(
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+)[
+0
+];
+Logger
+.
+log
+(
+birthday
+.
+getMonth
+());
+Return
+Month
+— the month
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Year()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the year for this date.
+// Logs the year of the birthday for contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+birthday
+=
+contacts
+[
+0
+].
+getDates
+(
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+)[
+0
+];
+Logger
+.
+log
+(
+birthday
+.
+getYear
+());
+Return
+Integer
+— the year
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Date(month, day)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the date to this day, without a year.
+This method only applies to date fields that don't require a year, such as birthdays.
+// Sets the birthday for contact 'John Doe' to April 1
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+birthday
+=
+contacts
+[
+0
+].
+getDates
+(
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+)[
+0
+];
+birthday
+.
+setDate
+(
+ContactsApp
+.
+Month
+.
+APRIL
+,
+1
+);
+Parameters
+Name
+Type
+Description
+month
+Month
+the month
+day
+Integer
+the day
+Return
+Date
+Field
+— this date, useful for chaining
+Throws
+Error
+— if this date field requires a year
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Date(month, day, year)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the date to this day.
+// Sets the birthday for contact 'John Doe' to April 1, 1980
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+birthday
+=
+contacts
+[
+0
+].
+getDates
+(
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+)[
+0
+];
+birthday
+.
+setDate
+(
+ContactsApp
+.
+Month
+.
+APRIL
+,
+1
+,
+1980
+);
+Parameters
+Name
+Type
+Description
+month
+Month
+the month
+day
+Integer
+the day
+year
+Integer
+the year
+Return
+Date
+Field
+— this date, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Label(label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the label of this field, such as 'Birthday' or 'Anniversary'.
+// Retrieves the first date that's set for contact 'John Doe' and re-labels
+// it as an anniversary
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+firstDate
+=
+contacts
+[
+0
+].
+getDates
+()[
+0
+];
+firstDate
+.
+setLabel
+(
+ContactsApp
+.
+Field
+.
+ANNIVERSARY
+);
+Parameters
+Name
+Type
+Description
+label
+Field
+the new standard label
+Return
+Date
+Field
+— this field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds

@@ -1,0 +1,239 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/collapse-control/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CollapseControl is a customizable control for collapsing and expanding content, available for Google Chat apps and in developer preview for Google Workspace add-ons.
+Key methods for CollapseControl include setting the collapse and expand buttons and setting the horizontal alignment.
+The
+setCollapseButton
+and
+setExpandButton
+methods require a Button object and return the CollapseControl object for chaining.
+The
+setHorizontalAlign
+method requires a HorizontalAlignment value and returns the CollapseControl object for chaining.
+Collapse
+Control
+A customizable collapse and expand control.
+Available for Google Chat apps. In developer preview for Google Workspace add-ons.
+Developer Preview:
+Available as part of the
+Google Workspace Developer Preview Program
+, which grants early access to certain features.
+const
+collapseButton
+=
+CardService
+.
+newTextButton
+()
+.
+setTextButtonStyle
+(
+CardService
+.
+TextButtonStyle
+.
+BORDERLESS
+)
+.
+setText
+(
+'Collapse'
+);
+const
+expandButton
+=
+CardService
+.
+newImageButton
+()
+.
+setImageButtonStyle
+(
+CardService
+.
+ImageButtonStyle
+.
+FILLED
+);
+const
+collapseControl
+=
+CardService
+.
+newCollapseControl
+()
+.
+setHorizontalAlign
+(
+CardService
+.
+HorizontalAlignment
+.
+END
+)
+.
+setExpandButton
+(
+expandButton
+)
+.
+setCollapseButton
+(
+collapseButton
+);
+Methods
+Method
+Return type
+Brief description
+set
+Collapse
+Button(button)
+Collapse
+Control
+Sets the
+Button
+that is displayed for "show less" button.
+set
+Expand
+Button(button)
+Collapse
+Control
+Sets the
+Button
+that is displayed for "show more" button.
+set
+Horizontal
+Align(horizontalAlignment)
+Collapse
+Control
+Sets the
+Horizontal
+Alignment
+of the
+Collapse
+Control
+.
+Detailed documentation
+set
+Collapse
+Button(button)
+Sets the
+Button
+that is displayed for "show less" button. Optional.
+Must be set together with collapse button.
+const
+collapseButton
+=
+CardService
+.
+newTextButton
+().
+setText
+(
+'Collapse'
+);
+const
+collapseControl
+=
+CardService
+.
+newCollapseControl
+()
+.
+setCollapseButton
+(
+collapseButton
+);
+Parameters
+Name
+Type
+Description
+button
+Button
+The collapse button to set.
+Return
+Collapse
+Control
+— This object, for chaining.
+set
+Expand
+Button(button)
+Sets the
+Button
+that is displayed for "show more" button. Optional.
+Must be set together with collapse button.
+const
+expandButton
+=
+CardService
+.
+newTextButton
+().
+setText
+(
+'Expand'
+);
+const
+collapseControl
+=
+CardService
+.
+newCollapseControl
+()
+.
+setExpandButton
+(
+expandButton
+);
+Parameters
+Name
+Type
+Description
+button
+Button
+The expand button to set.
+Return
+Collapse
+Control
+— This object, for chaining.
+set
+Horizontal
+Align(horizontalAlignment)
+Sets the
+Horizontal
+Alignment
+of the
+Collapse
+Control
+. Optional. *
+const
+collapseControl
+=
+CardService
+.
+newCollapseControl
+().
+setHorizontalAlign
+(
+CardService
+.
+HorizontalAlignment
+.
+START
+,
+);
+Parameters
+Name
+Type
+Description
+horizontal
+Alignment
+Horizontal
+Alignment
+The horizontal alignment of the CollapseControl widget.
+Return
+Collapse
+Control
+— This object, for chaining.

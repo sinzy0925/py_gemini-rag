@@ -1,0 +1,31 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-draft-body-type/index.html
+
+Update
+Draft
+Body
+Type
+An enum value that specifies the type of an
+Update
+Draft
+Body
+Action
+.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.UpdateDraftBodyType.IN_PLACE_INSERT
+.
+Properties
+Property
+Type
+Description
+IN_PLACE_INSERT
+Enum
+Default. Update actions insert content at the current cursor position, replacing any selected
+content.
+INSERT_AT_START
+Enum
+Update actions insert content at the start of message body.
+INSERT_AT_END
+Enum
+Update actions insert content at the end of the message body. If an email signature is present,
+in Gmail on the web, the update action inserts after the user's signature. In the Gmail mobile
+app, the update action inserts before the user's signature.

@@ -1,0 +1,387 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/community-connector/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+CommunityConnector
+class provides builders and utilities for developing Community Connectors for Data Studio.
+You can get references to
+Fields
+,
+FieldType
+, and
+AggregationType
+through the
+CommunityConnector
+object.
+The
+CommunityConnector
+class has properties like
+AggregationType
+,
+AuthType
+,
+BigQueryParameterType
+, and
+FieldType
+.
+Useful methods like
+getConfig()
+,
+getFields()
+,
+newGetDataResponse()
+, and
+newGetSchemaResponse()
+are available for connector development.
+Community
+Connector
+Community
+Connector enables scripts to access builders and utilities to help with development of
+Community Connectors for Data Studio. Use this class to get a reference to the
+Fields
+object and the
+Field
+Type
+and
+Aggregation
+Type
+enums so they can be used in the
+construction of
+Field
+s.
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+const
+fields
+=
+cc
+.
+getFields
+();
+fields
+.
+newMetric
+()
+.
+setAggregation
+(
+cc
+.
+AggregationType
+.
+AVG
+)
+.
+setType
+(
+cc
+.
+FieldType
+.
+CURRENCY_USD
+);
+Properties
+Property
+Type
+Description
+Aggregation
+Type
+Aggregation
+Type
+The
+Aggregation
+Type
+enumeration.
+Auth
+Type
+Auth
+Type
+The
+Auth
+Type
+enumeration.
+Big
+Query
+Parameter
+Type
+Big
+Query
+Parameter
+Type
+The
+Big
+Query
+Parameter
+Type
+enumeration.
+Field
+Type
+Field
+Type
+The
+Field
+Type
+enumeration.
+Methods
+Method
+Return type
+Brief description
+get
+Config()
+Config
+Returns a
+Config
+object.
+get
+Fields()
+Fields
+Returns a
+Fields
+object.
+new
+Auth
+Type
+Response()
+Get
+Auth
+Type
+Response
+Returns a new
+Get
+Auth
+Type
+Response
+object.
+new
+Big
+Query
+Config()
+Big
+Query
+Config
+Returns a new
+Big
+Query
+Config
+object.
+new
+Debug
+Error()
+Debug
+Error
+Returns a new
+Debug
+Error
+object.
+new
+Get
+Data
+Response()
+Get
+Data
+Response
+Returns a new
+Get
+Data
+Response
+object.
+new
+Get
+Schema
+Response()
+Get
+Schema
+Response
+Returns a new
+Get
+Schema
+Response
+object.
+new
+Set
+Credentials
+Response()
+Set
+Credentials
+Response
+Returns a new
+Set
+Credentials
+Response
+object.
+new
+User
+Error()
+User
+Error
+Returns a new
+User
+Error
+object.
+Detailed documentation
+get
+Config()
+Returns a
+Config
+object. Use this object to add configuration entries.
+Return
+Config
+— A
+Config
+object.
+get
+Fields()
+Returns a
+Fields
+object. Use this object to add metric and dimension
+Field
+s.
+Return
+Fields
+— A
+Fields
+object.
+new
+Auth
+Type
+Response()
+Returns a new
+Get
+Auth
+Type
+Response
+object. Use this object to create a response for the
+get
+Auth
+Type()
+function you implement in your script project.
+Return
+Get
+Auth
+Type
+Response
+— A new
+Get
+Auth
+Type
+Response
+object.
+new
+Big
+Query
+Config()
+Returns a new
+Big
+Query
+Config
+object. Use this object to create a response for the
+get
+Data()
+function you implement in your script project.
+Return
+Big
+Query
+Config
+— A new
+Big
+Query
+Config
+object.
+new
+Debug
+Error()
+Returns a new
+Debug
+Error
+object. Use this object to create debug errors.
+Return
+Debug
+Error
+— A new
+Debug
+Error
+object.
+new
+Get
+Data
+Response()
+Returns a new
+Get
+Data
+Response
+object. Use this object to create a response for the
+get
+Data()
+function you implement in your script project.
+Return
+Get
+Data
+Response
+— A new
+Get
+Data
+Response
+object.
+new
+Get
+Schema
+Response()
+Returns a new
+Get
+Schema
+Response
+object. Use this object to create a response for the
+get
+Schema()
+function you implement in your script project.
+Return
+Get
+Schema
+Response
+— A new
+Get
+Schema
+Response
+object.
+new
+Set
+Credentials
+Response()
+Returns a new
+Set
+Credentials
+Response
+object. Use this object to create a response for
+the
+set
+Credentials()
+function you implement in your script project.
+Return
+Set
+Credentials
+Response
+— A new
+Set
+Credentials
+Response
+object.
+new
+User
+Error()
+Returns a new
+User
+Error
+object. Use this object to create user errors.
+Return
+User
+Error
+— A new
+User
+Error
+object.

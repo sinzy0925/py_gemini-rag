@@ -1,0 +1,316 @@
+Source Path: gas_docs_html/apps-script/reference/slides/fill/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Fill describes the background of a page element.
+You can get the solid fill, fill type, and visibility status of a fill.
+Solid fills can be set using Color objects, RGB values, hex strings, or ThemeColorType.
+You can set the fill to transparent.
+Fill
+Describes the page element's background
+Methods
+Method
+Return type
+Brief description
+get
+Solid
+Fill()
+Solid
+Fill
+Get the solid fill of this background, or
+null
+if the fill type is not
+Fill
+Type.SOLID
+.
+get
+Type()
+Fill
+Type
+Get the type of this fill.
+is
+Visible()
+Boolean
+Whether the background is visible.
+set
+Solid
+Fill(color)
+void
+Sets the solid fill to the given
+Color
+.
+set
+Solid
+Fill(color, alpha)
+void
+Sets the solid fill to the given alpha and
+Color
+.
+set
+Solid
+Fill(red, green, blue)
+void
+Sets the solid fill to the given RGB values.
+set
+Solid
+Fill(red, green, blue, alpha)
+void
+Sets the solid fill to the given alpha and RGB values.
+set
+Solid
+Fill(hexString)
+void
+Sets the solid fill to the given hex color string.
+set
+Solid
+Fill(hexString, alpha)
+void
+Sets the solid fill to the given alpha and hex color string.
+set
+Solid
+Fill(color)
+void
+Sets the solid fill to the given
+Theme
+Color
+Type
+.
+set
+Solid
+Fill(color, alpha)
+void
+Sets the solid fill to the given alpha and
+Theme
+Color
+Type
+.
+set
+Transparent()
+void
+Sets the background to transparent.
+Detailed documentation
+get
+Solid
+Fill()
+Get the solid fill of this background, or
+null
+if the fill type is not
+Fill
+Type.SOLID
+.
+Return
+Solid
+Fill
+— The solid fill setting, or
+null
+if this fill type is not solid.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Type()
+Get the type of this fill.
+Return
+Fill
+Type
+— The type of this fill.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Visible()
+Whether the background is visible.
+Return
+Boolean
+—
+true
+if the background is visible;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color)
+Sets the solid fill to the given
+Color
+.
+Parameters
+Name
+Type
+Description
+color
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color, alpha)
+Sets the solid fill to the given alpha and
+Color
+.
+Parameters
+Name
+Type
+Description
+color
+Color
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(red, green, blue)
+Sets the solid fill to the given RGB values.
+Parameters
+Name
+Type
+Description
+red
+Integer
+green
+Integer
+blue
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(red, green, blue, alpha)
+Sets the solid fill to the given alpha and RGB values.
+Parameters
+Name
+Type
+Description
+red
+Integer
+green
+Integer
+blue
+Integer
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(hexString)
+Sets the solid fill to the given hex color string.
+The hex string must be in the format '#RRGGBB'. For example, pink is represented as
+'#FFC0CB'.
+Parameters
+Name
+Type
+Description
+hex
+String
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(hexString, alpha)
+Sets the solid fill to the given alpha and hex color string.
+The hex string must be in the format '#RRGGBB'. For example, pink is represented as
+'#FFC0CB'.
+Parameters
+Name
+Type
+Description
+hex
+String
+String
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color)
+Sets the solid fill to the given
+Theme
+Color
+Type
+.
+Parameters
+Name
+Type
+Description
+color
+Theme
+Color
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color, alpha)
+Sets the solid fill to the given alpha and
+Theme
+Color
+Type
+.
+Parameters
+Name
+Type
+Description
+color
+Theme
+Color
+Type
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Transparent()
+Sets the background to transparent.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

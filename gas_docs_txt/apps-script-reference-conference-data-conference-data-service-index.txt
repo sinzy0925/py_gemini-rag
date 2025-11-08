@@ -1,0 +1,148 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/conference-data-service/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The ConferenceDataService allows scripts to create conferencing information.
+It includes properties for ConferenceErrorType, EntryPointFeature, and EntryPointType enumerations.
+The service provides methods to create new instances of ConferenceDataBuilder, ConferenceError, ConferenceParameter, and EntryPoint.
+Conference
+Data
+Service
+Service that scripts can use to create conferencing information.
+Properties
+Property
+Type
+Description
+Conference
+Error
+Type
+Conference
+Error
+Type
+The
+Conference
+Error
+Type
+enumeration.
+Entry
+Point
+Feature
+Entry
+Point
+Feature
+The
+Entry
+Point
+Feature
+enumeration.
+Entry
+Point
+Type
+Entry
+Point
+Type
+The
+Entry
+Point
+Type
+enumeration.
+Methods
+Method
+Return type
+Brief description
+new
+Conference
+Data
+Builder()
+Conference
+Data
+Builder
+Returns a new, empty
+Conference
+Data
+Builder
+.
+new
+Conference
+Error()
+Conference
+Error
+Returns a new, empty
+Conference
+Error
+.
+new
+Conference
+Parameter()
+Conference
+Parameter
+Returns a new, empty
+Conference
+Parameter
+.
+new
+Entry
+Point()
+Entry
+Point
+Returns a new, empty
+Entry
+Point
+.
+Detailed documentation
+new
+Conference
+Data
+Builder()
+Returns a new, empty
+Conference
+Data
+Builder
+.
+Return
+Conference
+Data
+Builder
+— a new, empty
+Conference
+Data
+Builder
+new
+Conference
+Error()
+Returns a new, empty
+Conference
+Error
+.
+Return
+Conference
+Error
+— a new, empty
+Conference
+Error
+new
+Conference
+Parameter()
+Returns a new, empty
+Conference
+Parameter
+.
+Return
+Conference
+Parameter
+— a new, empty
+Conference
+Parameter
+new
+Entry
+Point()
+Returns a new, empty
+Entry
+Point
+.
+Return
+Entry
+Point
+— a new, empty
+Entry
+Point

@@ -1,0 +1,454 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+DataSource
+class is used to access and modify existing data sources connected to a database.
+You can create calculated columns and new pivot or data source tables on new sheets using this class.
+The class provides methods to retrieve columns, calculated columns, and associated data source sheets.
+You can refresh or cancel refreshes for linked data source objects and update the data source specification.
+You can wait for data executions linked to the data source to complete within a specified timeout.
+Data
+Source
+Access and modify existing data source. To create a data source table with new data source, see
+Data
+Source
+Table
+.
+Only use this class with data that's connected to a database.
+Methods
+Method
+Return type
+Brief description
+cancel
+All
+Linked
+Data
+Source
+Object
+Refreshes()
+void
+Cancels all currently running refreshes of data source objects linked to this data source.
+create
+Calculated
+Column(name, formula)
+Data
+Source
+Column
+Creates a calculated column.
+create
+Data
+Source
+Pivot
+Table
+On
+New
+Sheet()
+Data
+Source
+Pivot
+Table
+Creates a data source pivot table from this data source in the first cell of a new sheet.
+create
+Data
+Source
+Table
+On
+New
+Sheet()
+Data
+Source
+Table
+Creates a data source table from this data source in the first cell of a new sheet.
+get
+Calculated
+Column
+By
+Name(columnName)
+Data
+Source
+Column
+Returns the calculated column in the data source that matches the column name.
+get
+Calculated
+Columns()
+Data
+Source
+Column[]
+Returns all the calculated columns in the data source.
+get
+Columns()
+Data
+Source
+Column[]
+Returns all the columns in the data source.
+get
+Data
+Source
+Sheets()
+Data
+Source
+Sheet[]
+Returns the data source sheets associated with this data source.
+get
+Spec()
+Data
+Source
+Spec
+Gets the data source specification.
+refresh
+All
+Linked
+Data
+Source
+Objects()
+void
+Refreshes all data source objects linked to the data source.
+update
+Spec(spec)
+Data
+Source
+Updates the data source specification and refreshes the data source objects linked with this
+data source with the new specification.
+update
+Spec(spec, refreshAllLinkedObjects)
+Data
+Source
+Updates the data source specification and refreshes the linked
+data
+source sheets
+with the new specification.
+wait
+For
+All
+Data
+Executions
+Completion(timeoutInSeconds)
+void
+Waits until all the current executions of the linked data source objects complete, timing out
+after the provided number of seconds.
+Detailed documentation
+cancel
+All
+Linked
+Data
+Source
+Object
+Refreshes()
+Cancels all currently running refreshes of data source objects linked to this data source.
+This example shows how to cancel all the refreshes of a data source.
+Spreadsheet
+App
+.
+enableBigQueryExecution
+();
+const
+spreadsheet
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+();
+const
+dataSource
+=
+spreadsheet
+.
+getDataSources
+()[
+0
+];
+dataSource
+.
+cancelAllLinkedDataSourceObjectRefreshes
+();
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for the specific data
+source type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+create
+Calculated
+Column(name, formula)
+Creates a calculated column. This method is only available for BigQuery data sources.
+Parameters
+Name
+Type
+Description
+name
+String
+The name of the calculated column.
+formula
+String
+The calculated column formula.
+Return
+Data
+Source
+Column
+— The newly created calculated column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+create
+Data
+Source
+Pivot
+Table
+On
+New
+Sheet()
+Creates a data source pivot table from this data source in the first cell of a new sheet. As a
+side effect, makes the new sheet the active sheet.
+Return
+Data
+Source
+Pivot
+Table
+— The newly created data source pivot table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+create
+Data
+Source
+Table
+On
+New
+Sheet()
+Creates a data source table from this data source in the first cell of a new sheet. As a side
+effect, makes the new sheet the active sheet.
+This method is only available for BigQuery data sources.
+Return
+Data
+Source
+Table
+— The newly created data source table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Calculated
+Column
+By
+Name(columnName)
+Returns the calculated column in the data source that matches the column name.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The name of the calculated column to get.
+Return
+Data
+Source
+Column
+— The calculated column that matches the column name, or
+null
+if there is no such
+    calculated column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Calculated
+Columns()
+Returns all the calculated columns in the data source.
+Data source specs of
+Data
+Source
+Type.LOOKER
+type returns an empty array.
+Return
+Data
+Source
+Column[]
+— An array of all the calculated columns in the data source.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Columns()
+Returns all the columns in the data source.
+Return
+Data
+Source
+Column[]
+— An array of all the
+Data
+Source
+Column
+in the data source.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Data
+Source
+Sheets()
+Returns the data source sheets associated with this data source.
+Return
+Data
+Source
+Sheet[]
+— An array of data source sheets.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Spec()
+Gets the data source specification.
+Return
+Data
+Source
+Spec
+— The data source specification.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+refresh
+All
+Linked
+Data
+Source
+Objects()
+Refreshes all data source objects linked to the data source.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for the specific data
+source type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+update
+Spec(spec)
+Updates the data source specification and refreshes the data source objects linked with this
+data source with the new specification.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for the specific data
+source type.
+Throws an exception if the data source specification type is of a different type than the
+current data source type.
+Parameters
+Name
+Type
+Description
+spec
+Data
+Source
+Spec
+The data source specification to update with.
+Return
+Data
+Source
+— The data source.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+update
+Spec(spec, refreshAllLinkedObjects)
+Updates the data source specification and refreshes the linked
+data
+source sheets
+with the new specification.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for the specific data
+source type.
+Throws an exception if the data source specification type is of a different type than the
+current data source type.
+Parameters
+Name
+Type
+Description
+spec
+Data
+Source
+Spec
+The data source specification to update with.
+refresh
+All
+Linked
+Objects
+Boolean
+If
+true
+, also refreshes all the data source objects
+    linked with this data source.
+Return
+Data
+Source
+— The data source.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+wait
+For
+All
+Data
+Executions
+Completion(timeoutInSeconds)
+Waits until all the current executions of the linked data source objects complete, timing out
+after the provided number of seconds. Throws an exception if the executions are not completed
+when timing out, but does not cancel the data executions.
+Parameters
+Name
+Type
+Description
+timeout
+In
+Seconds
+Integer
+The time to wait for data executions, in seconds. The maximum is 300
+    seconds.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

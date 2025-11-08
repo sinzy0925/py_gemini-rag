@@ -1,0 +1,237 @@
+Source Path: gas_docs_html/apps-script/reference/base/console/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+console
+class allows developers to write to the Execution log and Google Cloud Logging.
+Unlike the
+Logger
+class,
+console
+methods serialize objects to strings and do not support structured logging with
+jsonPayload
+.
+The
+console
+class provides methods for logging messages at different levels, including
+error()
+,
+info()
+,
+log()
+, and
+warn()
+.
+The
+console
+class also includes
+time()
+and
+timeEnd()
+methods for measuring execution time.
+console
+This class allows the developer to write to the Execution log and to
+Google Cloud Logging
+if the script is associated with
+a
+standard
+Cloud Project
+.
+For full support of Cloud Logging and structured logging, use
+Logger
+. The
+console
+methods
+serialize the objects to strings and do not support
+json
+Payload
+as part of the structured
+logging
+Log
+Entry
+.
+function
+measuringExecutionTime
+()
+{
+const
+label
+=
+"myFunction() time"
+;
+// Labels the timing log entry.
+console
+.
+time
+(
+label
+);
+// Starts the timer.
+try
+{
+myFunction
+();
+// Function to time.
+}
+catch
+(
+e
+)
+{
+// Logs an ERROR message.
+console
+.
+error
+(
+"myFunction() yielded an error: "
++
+e
+);
+}
+console
+.
+timeEnd
+(
+label
+);
+// Stops the timer, logs execution duration.
+}
+function
+myFunction
+()
+{
+// ...
+}
+Methods
+Method
+Return type
+Brief description
+error()
+void
+Outputs a blank ERROR level message to Stackdriver Logging.
+error(formatOrObject, values)
+void
+Outputs an ERROR level message to Stackdriver Logging.
+info()
+void
+Outputs blank INFO level message to Stackdriver Logging.
+info(formatOrObject, values)
+void
+Outputs an INFO level message to Stackdriver Logging.
+log()
+void
+Outputs a blank DEBUG level message to Stackdriver Logging.
+log(formatOrObject, values)
+void
+Outputs a DEBUG level message to Stackdriver Logging.
+time(label)
+void
+Starts a timer you can use to track how long an operation takes.
+time
+End(label)
+void
+Stops a timer that was previously started by calling
+console.time()
+.
+warn()
+void
+Outputs a blank WARNING level message to Stackdriver Logging.
+warn(formatOrObject, values)
+void
+Outputs a WARNING level message to Stackdriver Logging.
+Detailed documentation
+error()
+Outputs a blank ERROR level message to Stackdriver Logging.
+error(formatOrObject, values)
+Outputs an ERROR level message to Stackdriver Logging.
+Parameters
+Name
+Type
+Description
+format
+Or
+Object
+Object
+a string containing zero or more substitution strings, or a JavaScript
+    object to be logged as a JavaScript object if no other parameters.
+values
+Object...
+objects with which to replace substitution strings within the message. This gives
+    you additional control over the format of the output.
+info()
+Outputs blank INFO level message to Stackdriver Logging.
+info(formatOrObject, values)
+Outputs an INFO level message to Stackdriver Logging.
+Parameters
+Name
+Type
+Description
+format
+Or
+Object
+Object
+a string containing zero or more substitution strings, or a JavaScript
+    object to be logged as a JavaScript object if no other parameters.
+values
+Object...
+objects with which to replace substitution strings within the message. This gives
+    you additional control over the format of the output.
+log()
+Outputs a blank DEBUG level message to Stackdriver Logging.
+log(formatOrObject, values)
+Outputs a DEBUG level message to Stackdriver Logging.
+Parameters
+Name
+Type
+Description
+format
+Or
+Object
+Object
+a string containing zero or more substitution strings, or a JavaScript
+    object to be logged as a JavaScript object if no other parameters.
+values
+Object...
+objects with which to replace substitution strings within the message. This gives
+    you additional control over the format of the output.
+time(label)
+Starts a timer you can use to track how long an operation takes.
+Parameters
+Name
+Type
+Description
+label
+String
+The name to give the new timer.
+time
+End(label)
+Stops a timer that was previously started by calling
+console.time()
+. The time duration
+is logged in Stackdriver.
+Parameters
+Name
+Type
+Description
+label
+String
+the name of the timer to stop.
+warn()
+Outputs a blank WARNING level message to Stackdriver Logging.
+warn(formatOrObject, values)
+Outputs a WARNING level message to Stackdriver Logging.
+Parameters
+Name
+Type
+Description
+format
+Or
+Object
+Object
+a string containing zero or more substitution strings, or a JavaScript
+    object to be logged as a JavaScript object if no other parameters.
+values
+Object...
+objects with which to replace substitution strings within the message. This gives
+    you additional control over the format of the output.

@@ -1,0 +1,284 @@
+Source Path: gas_docs_html/apps-script/reference/script/trigger/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+getEventType()
+returns the type of event that causes the trigger to fire.
+getHandlerFunction()
+returns the name of the script function that runs when the trigger fires.
+getTriggerSource()
+identifies the origin of the event that activates the trigger.
+getTriggerSourceId()
+provides an ID specific to the event source, like a spreadsheet ID.
+getUniqueId()
+returns a unique identifier for the trigger itself.
+Trigger
+A script trigger.
+Methods
+Method
+Return type
+Brief description
+get
+Event
+Type()
+Event
+Type
+Returns the event type that the trigger fires on.
+get
+Handler
+Function()
+String
+Returns the function that will be called when the trigger fires.
+get
+Trigger
+Source()
+Trigger
+Source
+Returns the source of events that will cause the trigger to fire.
+get
+Trigger
+Source
+Id()
+String
+Returns the id specific to the source.
+get
+Unique
+Id()
+String
+Returns a unique identifier that can be used to distinguish triggers from each other.
+Detailed documentation
+get
+Event
+Type()
+Returns the event type that the trigger fires on.
+const
+triggers
+=
+ScriptApp
+.
+getProjectTriggers
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+triggers
+.
+length
+;
+i
+++
+)
+{
+if
+(
+triggers
+[
+i
+].
+getEventType
+()
+===
+ScriptApp
+.
+EventType
+.
+CLOCK
+)
+{
+// Some code here - other options are:
+// ScriptApp.EventType.ON_EDIT
+// ScriptApp.EventType.ON_FORM_SUBMIT
+// ScriptApp.EventType.ON_OPEN
+}
+}
+Return
+Event
+Type
+— the event type that this is a trigger for
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+get
+Handler
+Function()
+Returns the function that will be called when the trigger fires.
+// Create a trigger for the script.
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forSpreadsheet
+(
+'id of my spreadsheet'
+)
+.
+onEdit
+()
+.
+create
+();
+Logger
+.
+log
+(
+ScriptApp
+.
+getProjectTriggers
+()[
+0
+]
+.
+getHandlerFunction
+());
+// logs "myFunction"
+Return
+String
+— the method name
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+get
+Trigger
+Source()
+Returns the source of events that will cause the trigger to fire.
+For example, a spreadsheet onEdit trigger would return SPREADSHEETS, or a time based trigger
+would return CLOCK.
+const
+triggers
+=
+ScriptApp
+.
+getProjectTriggers
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+triggers
+.
+length
+;
+i
+++
+)
+{
+if
+(
+triggers
+[
+i
+].
+getTriggerSource
+()
+===
+ScriptApp
+.
+TriggerSource
+.
+CLOCK
+)
+{
+Logger
+.
+log
+(
+`
+${
+triggers
+[
+i
+].
+getUniqueId
+()
+}
+source is clock`
+);
+}
+else
+if
+(
+triggers
+[
+i
+].
+getTriggerSource
+()
+===
+ScriptApp
+.
+TriggerSource
+.
+SPREADSHEETS
+)
+{
+Logger
+.
+log
+(
+`
+${
+triggers
+[
+i
+].
+getUniqueId
+()
+}
+source is spreadsheets`
+);
+}
+}
+Return
+Trigger
+Source
+— the publisher this is a trigger for
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+get
+Trigger
+Source
+Id()
+Returns the id specific to the source.
+For example, if the trigger source is a spreadsheet, this would be the id of the
+spreadsheet. For clock events this returns null.
+Return
+String
+— the id of the entity in the publisher that this is a trigger for
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+get
+Unique
+Id()
+Returns a unique identifier that can be used to distinguish triggers from each other.
+Return
+String
+— the unique identifier of the trigger
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp

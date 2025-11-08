@@ -1,0 +1,149 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/sort-spec/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SortSpec represents the sorting specification.
+It includes methods to retrieve background and foreground colors used for sorting.
+It can get the data source column or the dimension index the sort spec acts on.
+SortSpec provides access to the sort order and indicates whether the sort order is ascending.
+Sort
+Spec
+The sorting specification.
+Methods
+Method
+Return type
+Brief description
+get
+Background
+Color()
+Color
+Returns the background color used for sorting, or
+null
+if absent.
+get
+Data
+Source
+Column()
+Data
+Source
+Column
+Gets the data source column the sort spec acts on.
+get
+Dimension
+Index()
+Integer
+Returns the dimension index or
+null
+if not linked to a local filter.
+get
+Foreground
+Color()
+Color
+Returns the foreground color used for sorting, or
+null
+if absent.
+get
+Sort
+Order()
+Sort
+Order
+Returns the sort order.
+is
+Ascending()
+Boolean
+Returns whether the sort order is ascending.
+Detailed documentation
+get
+Background
+Color()
+Returns the background color used for sorting, or
+null
+if absent.
+Return
+Color
+— The background color.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Data
+Source
+Column()
+Gets the data source column the sort spec acts on. Returns
+null
+if this sort spec is
+not acting on a data source column.
+Return
+Data
+Source
+Column
+— The data source column the sort spec acts on.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Dimension
+Index()
+Returns the dimension index or
+null
+if not linked to a local filter.
+Return
+Integer
+— The dimension index.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Foreground
+Color()
+Returns the foreground color used for sorting, or
+null
+if absent.
+Return
+Color
+— The foreground color.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Sort
+Order()
+Returns the sort order.
+Return
+Sort
+Order
+— The sort order.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+is
+Ascending()
+Returns whether the sort order is ascending.
+Return
+Boolean
+—
+true
+if the sort order is ascending, or
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

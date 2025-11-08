@@ -1,0 +1,80 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-parameter/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DataSourceParameter allows you to access existing data source parameters, but should only be used with data connected to a database.
+You can use
+getName()
+to retrieve the parameter name.
+You can use
+getSourceCell()
+to get the source cell the parameter is valued based on, or
+null
+if the type is not CELL.
+You can use
+getType()
+to get the parameter type.
+Data
+Source
+Parameter
+Access existing data source parameters.
+Only use this class with data that's connected to a database.
+Methods
+Method
+Return type
+Brief description
+get
+Name()
+String
+Gets the parameter name.
+get
+Source
+Cell()
+String
+Gets the source cell the parameter is valued based on, or
+null
+if the parameter type is
+not
+Data
+Source
+Parameter
+Type.CELL
+.
+get
+Type()
+Data
+Source
+Parameter
+Type
+Gets the parameter type.
+Detailed documentation
+get
+Name()
+Gets the parameter name.
+Return
+String
+— The parameter name.
+get
+Source
+Cell()
+Gets the source cell the parameter is valued based on, or
+null
+if the parameter type is
+not
+Data
+Source
+Parameter
+Type.CELL
+.
+Return
+String
+— The source cell, as specified in A1 notation.
+get
+Type()
+Gets the parameter type.
+Return
+Data
+Source
+Parameter
+Type
+— The parameter type.

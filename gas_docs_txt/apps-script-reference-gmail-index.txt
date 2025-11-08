@@ -1,0 +1,999 @@
+Source Path: gas_docs_html/apps-script/reference/gmail/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Gmail service allows for a wide range of email and account management tasks beyond just sending emails.
+This service includes classes for interacting with threads, messages, drafts, labels, and attachments within Gmail.
+The GmailApp class provides methods for creating drafts and labels, deleting labels, retrieving various types of threads and messages, marking and moving messages and threads, and searching Gmail.
+Additional classes such as GmailAttachment, GmailDraft, GmailLabel, GmailMessage, and GmailThread offer specific methods for managing their respective components.
+The Mail Service is a simpler alternative for sending email only.
+Gmail
+This Service lets you send email, compose drafts, manage labels, mark
+  messages and threads, and conduct a variety of other Gmail account management tasks.
+  See also
+Mail Service
+, a simpler service
+  that only allows the sending of email.
+Classes
+Name
+Brief description
+Gmail
+App
+Provides access to Gmail threads, messages, and labels.
+Gmail
+Attachment
+An attachment from Gmail.
+Gmail
+Draft
+A user-created draft message in a user's Gmail account.
+Gmail
+Label
+A user-created label in a user's Gmail account.
+Gmail
+Message
+A message in a user's Gmail account.
+Gmail
+Thread
+A thread in a user's Gmail account.
+Gmail
+App
+Methods
+Method
+Return type
+Brief description
+create
+Draft(recipient, subject, body)
+Gmail
+Draft
+Creates a draft email message.
+create
+Draft(recipient, subject, body, options)
+Gmail
+Draft
+Creates a draft email message with optional arguments.
+create
+Label(name)
+Gmail
+Label
+Create a new user label of the given name.
+delete
+Label(label)
+Gmail
+App
+Deletes the specified label.
+get
+Aliases()
+String[]
+Gets a list of the emails that are set up as aliases for this account in Gmail.
+get
+Draft(draftId)
+Gmail
+Draft
+Retrieve an email message draft by ID.
+get
+Draft
+Messages()
+Gmail
+Message[]
+Retrieves all draft messages.
+get
+Drafts()
+Gmail
+Draft[]
+Gets all Gmail draft messages.
+get
+Inbox
+Threads()
+Gmail
+Thread[]
+Retrieves all Inbox threads irrespective of labels.
+get
+Inbox
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of Inbox threads irrespective of labels.
+get
+Inbox
+Unread
+Count()
+Integer
+Gets the number of unread threads in the inbox.
+get
+Message
+By
+Id(id)
+Gmail
+Message
+Gets a message by ID.
+get
+Messages
+For
+Thread(thread)
+Gmail
+Message[]
+Retrieve all messages in the specified thread.
+get
+Messages
+For
+Threads(threads)
+Gmail
+Message[][]
+Retrieve all messages in the specified threads.
+get
+Priority
+Inbox
+Threads()
+Gmail
+Thread[]
+Retrieves all Priority Inbox threads irrespective of labels.
+get
+Priority
+Inbox
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of Priority Inbox threads irrespective of labels.
+get
+Priority
+Inbox
+Unread
+Count()
+Integer
+Gets the number of unread threads in the Priority Inbox.
+get
+Spam
+Threads()
+Gmail
+Thread[]
+Retrieves all spam threads irrespective of labels.
+get
+Spam
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of spam threads irrespective of labels.
+get
+Spam
+Unread
+Count()
+Integer
+Gets the number of unread threads that are spam.
+get
+Starred
+Threads()
+Gmail
+Thread[]
+Retrieves all starred threads irrespective of labels.
+get
+Starred
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of starred threads irrespective of labels.
+get
+Starred
+Unread
+Count()
+Integer
+Gets the number of unread threads that are starred.
+get
+Thread
+By
+Id(id)
+Gmail
+Thread
+Gets a thread by ID.
+get
+Trash
+Threads()
+Gmail
+Thread[]
+Retrieves all trash threads irrespective of labels.
+get
+Trash
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of trash threads irrespective of labels.
+get
+User
+Label
+By
+Name(name)
+Gmail
+Label
+Retrieves a label given the label name.
+get
+User
+Labels()
+Gmail
+Label[]
+Retrieves a list of user-created labels.
+mark
+Message
+Read(message)
+Gmail
+App
+Marks this message read and forces the message to refresh.
+mark
+Message
+Unread(message)
+Gmail
+App
+Marks this message unread and forces the message to refresh.
+mark
+Messages
+Read(messages)
+Gmail
+App
+Marks these messages read and forces the messages to refresh.
+mark
+Messages
+Unread(messages)
+Gmail
+App
+Marks these messages unread and forces the messages to refresh.
+mark
+Thread
+Important(thread)
+Gmail
+App
+Marks this thread as important and forces the thread to refresh.
+mark
+Thread
+Read(thread)
+Gmail
+App
+Marks this thread as read and forces the thread to refresh.
+mark
+Thread
+Unimportant(thread)
+Gmail
+App
+Marks this thread as unimportant and forces the thread to refresh.
+mark
+Thread
+Unread(thread)
+Gmail
+App
+Marks this thread unread and forces the thread to refresh.
+mark
+Threads
+Important(threads)
+Gmail
+App
+Marks these threads as important and forces the threads to refresh.
+mark
+Threads
+Read(threads)
+Gmail
+App
+Marks these threads as read and forces the threads to refresh.
+mark
+Threads
+Unimportant(threads)
+Gmail
+App
+Marks these threads as unimportant and forces the threads to refresh.
+mark
+Threads
+Unread(threads)
+Gmail
+App
+Marks these threads as unread and forces the threads to refresh.
+move
+Message
+To
+Trash(message)
+Gmail
+App
+Moves the message to the trash and forces the message to refresh.
+move
+Messages
+To
+Trash(messages)
+Gmail
+App
+Moves the specified messages to the trash and forces the messages to refresh.
+move
+Thread
+To
+Archive(thread)
+Gmail
+App
+Moves this thread to the archive and forces the thread to refresh.
+move
+Thread
+To
+Inbox(thread)
+Gmail
+App
+Moves this thread to the inbox and forces the thread to refresh.
+move
+Thread
+To
+Spam(thread)
+Gmail
+App
+Moves this thread to spam and forces the thread to refresh.
+move
+Thread
+To
+Trash(thread)
+Gmail
+App
+Moves this thread to the trash and forces the thread to refresh.
+move
+Threads
+To
+Archive(threads)
+Gmail
+App
+Moves these threads to the archive and forces the threads to refresh.
+move
+Threads
+To
+Inbox(threads)
+Gmail
+App
+Moves these threads to the inbox and forces the threads to refresh.
+move
+Threads
+To
+Spam(threads)
+Gmail
+App
+Moves these threads to spam and forces the threads to refresh.
+move
+Threads
+To
+Trash(threads)
+Gmail
+App
+Moves these threads to the trash and forces the threads to refresh.
+refresh
+Message(message)
+Gmail
+App
+Reloads the message and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+refresh
+Messages(messages)
+Gmail
+App
+Reloads the messages and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+refresh
+Thread(thread)
+Gmail
+App
+Reloads the thread and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+refresh
+Threads(threads)
+Gmail
+App
+Reloads the threads and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+search(query)
+Gmail
+Thread[]
+Search Gmail with the given query.
+search(query, start, max)
+Gmail
+Thread[]
+Search Gmail with the given query.
+send
+Email(recipient, subject, body)
+Gmail
+App
+Sends an email message.
+send
+Email(recipient, subject, body, options)
+Gmail
+App
+Sends an email message with optional arguments.
+set
+Current
+Message
+Access
+Token(accessToken)
+void
+Sets the
+current message
+access token
+that enables the script to access the current
+Gmail
+Message
+properties.
+star
+Message(message)
+Gmail
+App
+Adds a star to this message and forces the message to refresh.
+star
+Messages(messages)
+Gmail
+App
+Adds stars to these messages and forces the messages to refresh.
+unstar
+Message(message)
+Gmail
+App
+Removes a star from this message and forces the message to refresh.
+unstar
+Messages(messages)
+Gmail
+App
+Removes stars from these messages and forces the messages to refresh.
+Gmail
+Attachment
+Methods
+Method
+Return type
+Brief description
+copy
+Blob()
+Blob
+Returns a copy of this blob.
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Bytes()
+Byte[]
+Gets the data stored in this blob.
+get
+Content
+Type()
+String
+Gets the content type of the bytes in this blob.
+get
+Data
+As
+String()
+String
+Gets the data of this blob as a String with UTF-8 encoding.
+get
+Data
+As
+String(charset)
+String
+Gets the data of this blob as a string with the specified encoding.
+get
+Hash()
+String
+Gets the SHA1 content hash for this attachment.
+get
+Name()
+String
+Gets the name of this blob.
+get
+Size()
+Integer
+Gets the size of this attachment.
+is
+Google
+Type()
+Boolean
+Returns whether this blob is a Google Workspace file (Sheets, Docs, etc.).
+set
+Bytes(data)
+Blob
+Sets the data stored in this blob.
+set
+Content
+Type(contentType)
+Blob
+Sets the content type of the bytes in this blob.
+set
+Content
+Type
+From
+Extension()
+Blob
+Sets the content type of the bytes in this blob based on the file extension.
+set
+Data
+From
+String(string)
+Blob
+Sets the data of this blob from a string with UTF-8 encoding.
+set
+Data
+From
+String(string, charset)
+Blob
+Sets the data of this blob from a string with the specified encoding.
+set
+Name(name)
+Blob
+Sets the name of this blob.
+Gmail
+Draft
+Methods
+Method
+Return type
+Brief description
+delete
+Draft()
+void
+Deletes this draft message.
+get
+Id()
+String
+Gets the ID of this draft message.
+get
+Message()
+Gmail
+Message
+Returns a GmailMessage representing this draft.
+get
+Message
+Id()
+String
+Returns the ID of the
+Gmail
+Message
+representing this draft.
+send()
+Gmail
+Message
+Sends this draft email message.
+update(recipient, subject, body)
+Gmail
+Draft
+Replaces the contents of this draft message.
+update(recipient, subject, body, options)
+Gmail
+Draft
+Replaces the contents of this draft message using optional arguments.
+Gmail
+Label
+Methods
+Method
+Return type
+Brief description
+add
+To
+Thread(thread)
+Gmail
+Label
+Adds this label to the given thread and forces the thread to refresh (
+Gmail
+Thread.refresh()
+).
+add
+To
+Threads(threads)
+Gmail
+Label
+Adds this label to the given threads and forces the threads to refresh.
+delete
+Label()
+void
+Deletes this label.
+get
+Id()
+String
+Gets the id of this label.
+get
+Name()
+String
+Gets the name of this label.
+get
+Threads()
+Gmail
+Thread[]
+Gets the threads that are marked with this label.
+get
+Threads(start, max)
+Gmail
+Thread[]
+Gets a range of threads marked with this label.
+get
+Unread
+Count()
+Integer
+Gets the number of unread threads tagged with this label.
+remove
+From
+Thread(thread)
+Gmail
+Label
+Removes this label from the given thread and forces the thread to refresh.
+remove
+From
+Threads(threads)
+Gmail
+Label
+Removes this label from the given threads and forces the threads to refresh.
+Gmail
+Message
+Methods
+Method
+Return type
+Brief description
+create
+Draft
+Reply(body)
+Gmail
+Draft
+Creates a draft message replying to the sender of this message using the reply-to address.
+create
+Draft
+Reply(body, options)
+Gmail
+Draft
+Creates a draft message replying to the sender of this message using the reply-to address, with
+optional arguments.
+create
+Draft
+Reply
+All(body)
+Gmail
+Draft
+Creates a draft message replying to the sender using the reply-to address and all recipients of
+this message.
+create
+Draft
+Reply
+All(body, options)
+Gmail
+Draft
+Creates a draft message replying to the sender of this message using the reply-to address and
+all recipients, with optional arguments.
+forward(recipient)
+Gmail
+Message
+Forwards this message to new recipients.
+forward(recipient, options)
+Gmail
+Message
+Forwards this message to new recipients, with optional arguments.
+get
+Attachments()
+Gmail
+Attachment[]
+Gets all the attachments for this message.
+get
+Attachments(options)
+Gmail
+Attachment[]
+Gets all the attachments for this message.
+get
+Bcc()
+String
+Gets the comma-separated recipients bcc'd on this message.
+get
+Body()
+String
+Gets the HTML content of the body of this message.
+get
+Cc()
+String
+Gets the comma-separated recipients cc'd on this message.
+get
+Date()
+Date
+Gets the date and time of this message.
+get
+From()
+String
+Gets the sender of this message.
+get
+Header(name)
+String
+Gets the value of an RFC 2822 header given the header name.
+get
+Id()
+String
+Gets the ID of this message.
+get
+Plain
+Body()
+String
+Gets the content of the body of this message without HTML formatting.
+get
+Raw
+Content()
+String
+Gets the raw content of this message.
+get
+Reply
+To()
+String
+Gets the reply-to address of this message (usually the sender).
+get
+Subject()
+String
+Gets the subject of this message.
+get
+Thread()
+Gmail
+Thread
+Gets the thread that contains this message.
+get
+To()
+String
+Gets the comma-separated recipients of this message.
+is
+Draft()
+Boolean
+Gets whether this message is a draft.
+is
+In
+Chats()
+Boolean
+Gets whether this message is a chat.
+is
+In
+Inbox()
+Boolean
+Gets whether this message is in the inbox.
+is
+In
+Priority
+Inbox()
+Boolean
+Returns
+true
+if this message is in the priority inbox; returns
+false
+otherwise.
+is
+In
+Trash()
+Boolean
+Gets whether this message is in the trash.
+is
+Starred()
+Boolean
+Gets whether this message is starred.
+is
+Unread()
+Boolean
+Gets whether this message is unread.
+mark
+Read()
+Gmail
+Message
+Marks the message as read.
+mark
+Unread()
+Gmail
+Message
+Marks the message as unread.
+move
+To
+Trash()
+Gmail
+Message
+Moves the message to the trash.
+refresh()
+Gmail
+Message
+Reloads this message and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+reply(body)
+Gmail
+Message
+Replies to the sender of this message using the reply-to address.
+reply(body, options)
+Gmail
+Message
+Replies to the sender of this message using the reply-to address, with optional arguments.
+reply
+All(body)
+Gmail
+Message
+Replies to the sender using the reply-to address and all recipients of this message.
+reply
+All(body, options)
+Gmail
+Message
+Replies to the sender of this message using the reply-to address and all recipients, with
+optional arguments.
+star()
+Gmail
+Message
+Stars the message.
+unstar()
+Gmail
+Message
+Unstars the message.
+Gmail
+Thread
+Methods
+Method
+Return type
+Brief description
+add
+Label(label)
+Gmail
+Thread
+Adds this label to the thread.
+create
+Draft
+Reply(body)
+Gmail
+Draft
+Creates a draft message replying to the sender of the last message in this thread using the
+reply-to address.
+create
+Draft
+Reply(body, options)
+Gmail
+Draft
+Creates a draft message replying to the sender of the last message in this thread using the
+reply-to address, with optional arguments.
+create
+Draft
+Reply
+All(body)
+Gmail
+Draft
+Creates a draft message replying to the sender of the last message in this thread, using the
+reply-to address and all recipients of this message.
+create
+Draft
+Reply
+All(body, options)
+Gmail
+Draft
+Creates a draft message replying to the sender of the last message in this thread, using the
+reply-to address and all recipients, with optional arguments.
+get
+First
+Message
+Subject()
+String
+Gets the subject of the first message in the thread.
+get
+Id()
+String
+Gets the ID of this thread.
+get
+Labels()
+Gmail
+Label[]
+Returns the user-created labels on this thread.
+get
+Last
+Message
+Date()
+Date
+Gets the date of this thread's most recent message.
+get
+Message
+Count()
+Integer
+Returns the number of messages in the thread.
+get
+Messages()
+Gmail
+Message[]
+Gets the messages in this thread.
+get
+Permalink()
+String
+Gets a permalink for this thread.
+has
+Starred
+Messages()
+Boolean
+Returns whether the thread has any starred messages.
+is
+Important()
+Boolean
+Returns whether the thread is marked as important.
+is
+In
+Chats()
+Boolean
+Returns whether the thread is labeled a chat.
+is
+In
+Inbox()
+Boolean
+Returns whether the thread is in the inbox.
+is
+In
+Priority
+Inbox()
+Boolean
+Returns true if this thread is in the priority inbox; returns false otherwise.
+is
+In
+Spam()
+Boolean
+Returns whether the thread is marked as spam.
+is
+In
+Trash()
+Boolean
+Returns whether the thread is in the trash.
+is
+Unread()
+Boolean
+Returns whether the thread has any unread messages.
+mark
+Important()
+Gmail
+Thread
+Marks this thread as important.
+mark
+Read()
+Gmail
+Thread
+Marks this thread as read.
+mark
+Unimportant()
+Gmail
+Thread
+Marks this thread as unimportant.
+mark
+Unread()
+Gmail
+Thread
+Marks this thread as unread.
+move
+To
+Archive()
+Gmail
+Thread
+Moves this thread to the archive.
+move
+To
+Inbox()
+Gmail
+Thread
+Moves this thread to the inbox.
+move
+To
+Spam()
+Gmail
+Thread
+Moves this thread to spam.
+move
+To
+Trash()
+Gmail
+Thread
+Moves this thread to the trash.
+refresh()
+Gmail
+Thread
+Reloads this thread, and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+remove
+Label(label)
+Gmail
+Thread
+Removes this label from the thread.
+reply(body)
+Gmail
+Thread
+Reply to the sender of the last message on this thread using the replyTo address.
+reply(body, options)
+Gmail
+Thread
+Reply to the sender of the last message on this thread using the replyTo address, with optional
+arguments.
+reply
+All(body)
+Gmail
+Thread
+Reply to the sender (using the replyTo address), and all recipients of the last message on this
+thread.
+reply
+All(body, options)
+Gmail
+Thread
+Reply to the sender (using the
+reply
+To
+address), and all recipients of the last message
+on this thread, with optional arguments.

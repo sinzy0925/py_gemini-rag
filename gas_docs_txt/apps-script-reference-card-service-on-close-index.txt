@@ -1,0 +1,58 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/on-close/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+OnClose is an enum used to specify what happens when a URL opened via OpenLink is closed.
+Its behavior can depend on the client platform and may take precedence over OpenAs.
+You access an OnClose enum value by calling its parent class, name, and property, such as
+CardService.OnClose.RELOAD
+.
+Available properties include NOTHING (default) and RELOAD, which reloads the add-on on close.
+On
+Close
+An enum that specifies what to do when a URL opened through an
+Open
+Link
+is closed.
+When a link is opened, the client either forgets about it or waits until the window is closed.
+The implementation depends on the client platform capabilities.
+On
+Close
+may cause
+Open
+As
+to be ignored; if the client platform cannot support both selected values together,
+On
+Close
+takes precedence.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.OnClose.RELOAD
+.
+Properties
+Property
+Type
+Description
+NOTHING
+Enum
+Do nothing on close. Default.
+RELOAD
+Enum
+Reloads the add-on on when the window closes.
+If
+Open
+As.OVERLAY
+is also set, then the main card is blocked until the overlay
+window is closed and the add-on has finished reloading.
+Deprecated properties
+Property
+Type
+Description
+RELOAD_ADD_ON
+Enum
+Reload the add-on on closing the URL. This action differs from
+RELOAD
+in that it does
+not block the main card while showing an
+Open
+As.OVERLAY
+window.

@@ -1,0 +1,74 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/conference-data/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ConferenceData is a container for all conference-related information.
+You can build a ConferenceData object using the
+ConferenceDataService.newConferenceDataBuilder()
+method.
+The
+printJson()
+method allows you to print the JSON representation of the ConferenceData object for debugging purposes.
+Conference
+Data
+Container for all conference-related information.
+let
+conferenceId
+;
+// Set the conference ID, that is, the identifier your system creates for the
+// meeting.
+const
+entryPoint
+=
+ConferenceDataService
+.
+newEntryPoint
+();
+// Finish building the entry point ...
+const
+conferenceParameter
+=
+ConferenceDataService
+.
+newConferenceParameter
+();
+// Finish building the parameter ...
+const
+conferenceData
+=
+ConferenceDataService
+.
+newConferenceDataBuilder
+()
+.
+setConferenceId
+(
+conferenceId
+)
+.
+addEntryPoint
+(
+entryPoint
+)
+.
+addConferenceParameter
+(
+conferenceParameter
+)
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String

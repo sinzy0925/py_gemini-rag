@@ -1,0 +1,24 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/entry-point-feature/index.html
+
+Entry
+Point
+Feature
+Enum that defines the features of the entry point that can be created by a conferencing add-on.
+To call an enum, you call its parent class, name, and property. For example,
+ConferenceDataService.EntryPointFeature.TOLL
+.
+Properties
+Property
+Type
+Description
+UNKNOWN_FEATURE
+Enum
+Do not use. Here only as a default value for compatibility reasons.
+TOLL
+Enum
+Applies to PHONE entry point only. A call to a toll number is charged to the calling party. A
+number can't be toll and toll-free at the same time.
+TOLL_FREE
+Enum
+Applies to PHONE entry point only. For the calling party, a call to a toll-free number is free
+of charge. A number can't be toll and toll-free at the same time.

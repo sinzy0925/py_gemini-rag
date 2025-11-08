@@ -1,0 +1,61 @@
+Source Path: gas_docs_html/apps-script/reference/language/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Language service enables scripts to automatically translate text.
+The
+LanguageApp
+class provides methods for translating text.
+The
+translate
+method is used to translate text from a source language to a target language.
+Language
+This service allows scripts to automatically translate text.
+//
+The
+code
+below
+will
+write
+'Esta es una prueba'
+to
+the
+log
+.
+var
+spanish
+=
+LanguageApp
+.
+translate
+(
+'This is a test'
+,
+'en'
+,
+'es'
+);
+Logger
+.
+log
+(
+spanish
+);
+Classes
+Name
+Brief description
+Language
+App
+The Language service provides scripts a way to compute automatic translations of text.
+Language
+App
+Methods
+Method
+Return type
+Brief description
+translate(text, sourceLanguage, targetLanguage)
+String
+Automatically translates some text from a source language to a destination language.
+translate(text, sourceLanguage, targetLanguage, advancedArgs)
+String
+Automatically translates some text from a source language to a destination language.

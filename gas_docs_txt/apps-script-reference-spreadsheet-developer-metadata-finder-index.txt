@@ -1,0 +1,184 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/developer-metadata-finder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DeveloperMetadataFinder is used to search for developer metadata in a spreadsheet.
+You can create a DeveloperMetadataFinder using methods on Range, Sheet, or Spreadsheet objects.
+The
+find()
+method executes the search and returns matching metadata.
+You can refine your search using methods like
+withId()
+,
+withKey()
+,
+withLocationType()
+,
+withValue()
+, and
+withVisibility()
+.
+onIntersectingLocations()
+is an option specifically for range-scoped searches to consider intersecting locations with metadata.
+Developer
+Metadata
+Finder
+Search for developer metadata in a spreadsheet. To create new developer metadata finder use
+Range.createDeveloperMetadataFinder()
+,
+Sheet.createDeveloperMetadataFinder()
+,
+or
+Spreadsheet.createDeveloperMetadataFinder()
+.
+Methods
+Method
+Return type
+Brief description
+find()
+Developer
+Metadata[]
+Executes this search and returns the matching metadata.
+on
+Intersecting
+Locations()
+Developer
+Metadata
+Finder
+Configures the search to consider intersecting locations that have metadata.
+with
+Id(id)
+Developer
+Metadata
+Finder
+Limits this search to consider only metadata that match the specified ID.
+with
+Key(key)
+Developer
+Metadata
+Finder
+Limits this search to consider only metadata that match the specified key.
+with
+Location
+Type(locationType)
+Developer
+Metadata
+Finder
+Limits this search to consider only metadata that match the specified location type.
+with
+Value(value)
+Developer
+Metadata
+Finder
+Limits this search to consider only metadata that match the specified value.
+with
+Visibility(visibility)
+Developer
+Metadata
+Finder
+Limits this search to consider only metadata that match the specified visibility.
+Detailed documentation
+find()
+Executes this search and returns the matching metadata.
+Return
+Developer
+Metadata[]
+— The developer metadata that match the search criteria.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+on
+Intersecting
+Locations()
+Configures the search to consider intersecting locations that have metadata. This option is
+only valid for range-scoped searches.
+Return
+Developer
+Metadata
+Finder
+— The developer metadata finder, for chaining.
+with
+Id(id)
+Limits this search to consider only metadata that match the specified ID.
+Parameters
+Name
+Type
+Description
+id
+Integer
+The ID to match when searching for metadata.
+Return
+Developer
+Metadata
+Finder
+— The developer metadata finder, for chaining.
+with
+Key(key)
+Limits this search to consider only metadata that match the specified key.
+Parameters
+Name
+Type
+Description
+key
+String
+The key to match when searching for metadata.
+Return
+Developer
+Metadata
+Finder
+— The developer metadata finder, for chaining.
+with
+Location
+Type(locationType)
+Limits this search to consider only metadata that match the specified location type.
+Parameters
+Name
+Type
+Description
+location
+Type
+Developer
+Metadata
+Location
+Type
+The location type to match when searching for metadata.
+Return
+Developer
+Metadata
+Finder
+— The developer metadata finder, for chaining.
+with
+Value(value)
+Limits this search to consider only metadata that match the specified value.
+Parameters
+Name
+Type
+Description
+value
+String
+The value to match when searching for metadata.
+Return
+Developer
+Metadata
+Finder
+— The developer metadata finder, for chaining.
+with
+Visibility(visibility)
+Limits this search to consider only metadata that match the specified visibility.
+Parameters
+Name
+Type
+Description
+visibility
+Developer
+Metadata
+Visibility
+The visibility to match when searching for metadata.
+Return
+Developer
+Metadata
+Finder
+— The developer metadata finder, for chaining.

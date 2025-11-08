@@ -1,0 +1,16 @@
+Source Path: gas_docs_html/apps-script/reference/utilities/rsa-algorithm/index.html
+
+Rsa
+Algorithm
+Selector of RSA algorithm
+To call an enum, you call its parent class, name, and property. For example,
+Utilities.RsaAlgorithm.RSA_SHA_1
+.
+Properties
+Property
+Type
+Description
+RSA_SHA_1
+Enum
+RSA_SHA_256
+Enum

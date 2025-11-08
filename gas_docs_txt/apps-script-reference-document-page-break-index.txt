@@ -1,0 +1,538 @@
+Source Path: gas_docs_html/apps-script/reference/document/page-break/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A PageBreak is an element representing a page break within a document.
+A PageBreak can be contained within a ListItem or Paragraph, unless they are within certain other document structures like Tables or Headers.
+A PageBreak cannot contain any other elements.
+The PageBreak element has various methods available, including copying itself, retrieving and setting attributes, navigating siblings and parent, getting its type, checking if it's at the document end, and removing itself from its parent.
+Page
+Break
+An element representing a page break. A
+Page
+Break
+can be contained within a
+List
+Item
+or
+Paragraph
+, unless the
+List
+Item
+or
+Paragraph
+is within a
+Table
+,
+Header
+Section
+,
+Footer
+Section
+, or
+Footnote
+Section
+. A
+Page
+Break
+cannot itself contain any other element. For more information on document structure,
+see the
+guide to extending Google
+Docs
+.
+Methods
+Method
+Return type
+Brief description
+copy()
+Page
+Break
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+remove
+From
+Parent()
+Page
+Break
+Removes the element from its parent.
+set
+Attributes(attributes)
+Page
+Break
+Sets the element's attributes.
+Detailed documentation
+copy()
+Returns a detached, deep copy of the current element.
+Any child elements present in the element are also copied. The new element doesn't have a
+parent.
+Return
+Page
+Break
+— The new copy.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Attributes()
+Retrieves the element's attributes.
+The result is an object containing a property for each valid element attribute where each
+property name corresponds to an item in the
+Document
+App.Attribute
+enumeration.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Append a styled paragraph.
+const
+par
+=
+body
+.
+appendParagraph
+(
+'A bold, italicized paragraph.'
+);
+par
+.
+setBold
+(
+true
+);
+par
+.
+setItalic
+(
+true
+);
+// Retrieve the paragraph's attributes.
+const
+atts
+=
+par
+.
+getAttributes
+();
+// Log the paragraph attributes.
+for
+(
+const
+att
+in
+atts
+)
+{
+Logger
+.
+log
+(
+`
+${
+att
+}
+:
+${
+atts
+[
+att
+]
+}
+`
+);
+}
+Return
+Object
+— The element's attributes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Next
+Sibling()
+Retrieves the element's next sibling element.
+The next sibling has the same parent and follows the current element.
+Return
+Element
+— The next sibling element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Parent()
+Retrieves the element's parent element.
+The parent element contains the current element.
+Return
+Container
+Element
+— The parent element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Previous
+Sibling()
+Retrieves the element's previous sibling element.
+The previous sibling has the same parent and precedes the current element.
+Return
+Element
+— The previous sibling element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Type()
+Retrieves the element's
+Element
+Type
+.
+Use
+get
+Type()
+to determine the exact type of a given element.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Obtain the first element in the active tab's body.
+const
+firstChild
+=
+body
+.
+getChild
+(
+0
+);
+// Use getType() to determine the element's type.
+if
+(
+firstChild
+.
+getType
+()
+===
+DocumentApp
+.
+ElementType
+.
+PARAGRAPH
+)
+{
+Logger
+.
+log
+(
+'The first element is a paragraph.'
+);
+}
+else
+{
+Logger
+.
+log
+(
+'The first element is not a paragraph.'
+);
+}
+Return
+Element
+Type
+— The element type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+At
+Document
+End()
+Determines whether the element is at the end of the
+Document
+.
+Return
+Boolean
+— Whether the element is at the end of the tab.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+remove
+From
+Parent()
+Removes the element from its parent.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Remove all images in the active tab's body.
+const
+imgs
+=
+body
+.
+getImages
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+imgs
+.
+length
+;
+i
+++
+)
+{
+imgs
+[
+i
+].
+removeFromParent
+();
+}
+Return
+Page
+Break
+— The removed element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Attributes(attributes)
+Sets the element's attributes.
+The specified attributes parameter must be an object where each property name is an item in
+the
+Document
+App.Attribute
+enumeration and each property value is the new value to be
+applied.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Define a custom paragraph style.
+const
+style
+=
+{};
+style
+[
+DocumentApp
+.
+Attribute
+.
+HORIZONTAL_ALIGNMENT
+]
+=
+DocumentApp
+.
+HorizontalAlignment
+.
+RIGHT
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_FAMILY
+]
+=
+'Calibri'
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_SIZE
+]
+=
+18
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+BOLD
+]
+=
+true
+;
+// Append a plain paragraph.
+const
+par
+=
+body
+.
+appendParagraph
+(
+'A paragraph with custom style.'
+);
+// Apply the custom style.
+par
+.
+setAttributes
+(
+style
+);
+Parameters
+Name
+Type
+Description
+attributes
+Object
+The element's attributes.
+Return
+Page
+Break
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

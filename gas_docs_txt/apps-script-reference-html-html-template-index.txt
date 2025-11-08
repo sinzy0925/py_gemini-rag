@@ -1,0 +1,198 @@
+Source Path: gas_docs_html/apps-script/reference/html/html-template/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+HtmlTemplate is a template object used for dynamically constructing HTML.
+The
+evaluate()
+method evaluates the template and returns an HtmlOutput object, making any set properties available within the template's scope.
+The
+getCode()
+method generates a string of JavaScript code based on the template for evaluation.
+The
+getCodeWithComments()
+method generates JavaScript code with the original template lines as comments.
+The
+getRawContent()
+method returns the unprocessed content of the template.
+Html
+Template
+A template object for dynamically constructing HTML. For more information, see the
+guide to templates
+.
+Methods
+Method
+Return type
+Brief description
+evaluate()
+Html
+Output
+Evaluates this template and returns an
+Html
+Output
+object.
+get
+Code()
+String
+Generates a string of JavaScript code, based on the template file, that can be evaluated.
+get
+Code
+With
+Comments()
+String
+Generates a string of JavaScript code that can be evaluated, with each line of the code
+containing the original line from the template as a comment.
+get
+Raw
+Content()
+String
+Returns the unprocessed content of this template.
+Detailed documentation
+evaluate()
+Evaluates this template and returns an
+Html
+Output
+object. Any properties set on this
+Html
+Template
+object will be in scope when evaluating. To debug errors in a template,
+examine the code using the
+get
+Code()
+method.
+// A template which evaluates to whatever is bound to 'foo'.
+const
+template
+=
+HtmlService
+.
+createTemplate
+(
+'<?= foo ?>'
+);
+template
+.
+foo
+=
+'Hello World!'
+;
+Logger
+.
+log
+(
+template
+.
+evaluate
+().
+getContent
+());
+// will log 'Hello World!'
+Return
+Html
+Output
+— an HtmlOutput object
+get
+Code()
+Generates a string of JavaScript code, based on the template file, that can be evaluated. This
+method produces a string of JavaScript code based on the template file. Calling
+eval(<code>)
+will return a new
+Html
+Output
+object with the content of the
+template after running all embedded server scripts. The generated code is intended to be
+human-readable, and so if you need to debug a template you can call
+Logger.log(<code>)
+to see what was produced.
+Evaluating this code will implicitly bind in all variables in the current scope. In general,
+it's preferable to use the
+evaluate()
+method, which takes explicit bindings.
+const
+template
+=
+HtmlService
+.
+createTemplate
+(
+'<b>The time is &lt;?= new Date() ?&gt;</b>'
+,
+);
+Logger
+.
+log
+(
+template
+.
+getCode
+());
+Return
+String
+— a string based on the template, which can be evaluated
+get
+Code
+With
+Comments()
+Generates a string of JavaScript code that can be evaluated, with each line of the code
+containing the original line from the template as a comment. This method produces a string of
+JavaScript code based on the template file. Calling
+eval(<code>)
+will return
+a new
+Html
+Output
+object with the content of the template after running all embedded
+server scripts. The generated code is intended to be human-readable, and so if you need to
+debug a template you can call
+Logger.log(<code>)
+to see what was produced.
+Evaluating this code will implicitly bind in all variables in the current scope. In general,
+it's preferable to use the
+evaluate()
+method, which takes explicit bindings.
+const
+template
+=
+HtmlService
+.
+createTemplate
+(
+'<b>The time is &lt;?= new Date() ?&gt;</b>'
+,
+);
+Logger
+.
+log
+(
+template
+.
+getCodeWithComments
+());
+Return
+String
+— an string based on the template, which can be evaluated
+get
+Raw
+Content()
+Returns the unprocessed content of this template.
+const
+template
+=
+HtmlService
+.
+createTemplate
+(
+'<b>The time is &lt;?= new Date() ?&gt;</b>'
+,
+);
+Logger
+.
+log
+(
+template
+.
+getRawContent
+());
+Return
+String
+— the template's raw content

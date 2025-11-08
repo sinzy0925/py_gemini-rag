@@ -1,0 +1,22 @@
+Source Path: gas_docs_html/apps-script/reference/slides/line-fill-type/index.html
+
+Line
+Fill
+Type
+The kinds of line fill.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.LineFillType.SOLID
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A line fill type that is not supported.
+NONE
+Enum
+No fill, so the line or outline is transparent.
+SOLID
+Enum
+A solid color fill.

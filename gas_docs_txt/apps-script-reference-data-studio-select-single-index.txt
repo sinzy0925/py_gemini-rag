@@ -1,0 +1,228 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/select-single/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SelectSingle contains configuration information for how a select single is displayed in Data Studio.
+You can add select options, enable overriding, set help text, ID, dynamic status, and display name for a SelectSingle config entry.
+The provided code example demonstrates how to create a SelectSingle instance and add options to it.
+Select
+Single
+Contains select single information for the config. Its properties determine how the select single
+is displayed in Data Studio.
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+const
+config
+=
+cc
+.
+getConfig
+();
+const
+option1
+=
+config
+.
+newOptionBuilder
+().
+setLabel
+(
+'option label'
+).
+setValue
+(
+'option_value'
+);
+const
+option2
+=
+config
+.
+newOptionBuilder
+()
+.
+setLabel
+(
+'second option label'
+)
+.
+setValue
+(
+'option_value_2'
+);
+const
+info1
+=
+config
+.
+newSelectSingle
+()
+.
+setId
+(
+'api_endpoint'
+)
+.
+setName
+(
+'Data Type'
+)
+.
+setHelpText
+(
+'Select the data type you\'re interested in.'
+)
+.
+setAllowOverride
+(
+true
+)
+.
+addOption
+(
+option1
+)
+.
+addOption
+(
+option2
+);
+Methods
+Method
+Return type
+Brief description
+add
+Option(optionBuilder)
+Select
+Single
+Adds a new select option.
+set
+Allow
+Override(allowOverride)
+Select
+Single
+Enables overriding for this config entry.
+set
+Help
+Text(helpText)
+Select
+Single
+Sets the help text for this configuration entry.
+set
+Id(id)
+Select
+Single
+Sets the unique ID for this configuration entry.
+set
+Is
+Dynamic(isDynamic)
+Select
+Single
+Sets the dynamic status for this configuration entry.
+set
+Name(name)
+Select
+Single
+Sets the display name for this configuration entry.
+Detailed documentation
+add
+Option(optionBuilder)
+Adds a new select option.
+Parameters
+Name
+Type
+Description
+option
+Builder
+Option
+Builder
+A builder for an option.
+Return
+Select
+Single
+— This builder, for chaining.
+set
+Allow
+Override(allowOverride)
+Enables overriding for this config entry. If set to
+true
+, data source creators have the
+option to enable this for report editors.
+Parameters
+Name
+Type
+Description
+allow
+Override
+Boolean
+Whether or not this config entry can be overridden in reports.
+Return
+Select
+Single
+— This builder, for chaining.
+set
+Help
+Text(helpText)
+Sets the help text for this configuration entry.
+Parameters
+Name
+Type
+Description
+help
+Text
+String
+The helpText to set.
+Return
+Select
+Single
+— This builder, for chaining.
+set
+Id(id)
+Sets the unique ID for this configuration entry.
+Parameters
+Name
+Type
+Description
+id
+String
+The ID to set.
+Return
+Select
+Single
+— This builder, for chaining.
+set
+Is
+Dynamic(isDynamic)
+Sets the dynamic status for this configuration entry.
+If a dynamic configuration entry is modified, subsequent configuration entries are cleared.
+Parameters
+Name
+Type
+Description
+is
+Dynamic
+Boolean
+The dynamic status to set.
+Return
+Select
+Single
+— This builder, for chaining.
+set
+Name(name)
+Sets the display name for this configuration entry.
+Parameters
+Name
+Type
+Description
+name
+String
+The name to set.
+Return
+Select
+Single
+— This builder, for chaining.

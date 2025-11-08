@@ -1,0 +1,68 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/overflow-menu/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+OverflowMenu holds a list of OverflowMenuItem objects displayed in a pop-up menu.
+OverflowMenu is available for Google Chat apps and in developer preview for Google Workspace add-ons.
+The addMenuItem method is used to add an OverflowMenuItem to the OverflowMenu.
+The addMenuItem method takes an OverflowMenuItem object as a parameter and returns the OverflowMenu object for chaining.
+Overflow
+Menu
+Holds a list of
+Overflow
+Menu
+Item
+objects that are displayed in a pop-up menu.
+Available for Google Chat apps. In developer preview for Google Workspace add-ons.
+Developer Preview:
+Available as part of the
+Google Workspace Developer Preview Program
+, which grants early access to certain features.
+const
+overflowMenuItem
+=
+CardService
+.
+newOverflowMenuItem
+();
+// Finish building the overflow menu item...
+const
+overflowMenu
+=
+CardService
+.
+newOverflowMenu
+().
+addMenuItem
+(
+overflowMenuItem
+);
+Methods
+Method
+Return type
+Brief description
+add
+Menu
+Item(menuItem)
+Overflow
+Menu
+Adds a menu item.
+Detailed documentation
+add
+Menu
+Item(menuItem)
+Adds a menu item.
+Parameters
+Name
+Type
+Description
+menu
+Item
+Overflow
+Menu
+Item
+The menu item to add.
+Return
+Overflow
+Menu
+— This object, for chaining.

@@ -1,0 +1,24 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/sensitivity/index.html
+
+Sensitivity
+Deprecated.
+Instead, use the
+People API advanced
+    service
+An enum for contact sensitivity.
+Deprecated properties
+Property
+Type
+Description
+CONFIDENTIAL
+Enum
+confidential sensitivity
+NORMAL
+Enum
+normal sensitivity
+PERSONAL
+Enum
+personal sensitivity
+PRIVATE
+Enum
+private sensitivity

@@ -1,0 +1,466 @@
+Source Path: gas_docs_html/apps-script/reference/slides/shape-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ShapeType is an enum representing various shape types, many of which align with predefined shapes from the ECMA-376 standard.
+You can access an enum value by calling its parent class, name, and property, like
+SlidesApp.ShapeType.TEXT_BOX
+.
+The ShapeType includes a wide range of shapes such as rectangles, ellipses, various arrows, stars, and flowchart elements.
+There is also an
+UNSUPPORTED
+shape type and a
+CUSTOM
+shape type available.
+Shape
+Type
+The shape types. Many of these shapes correspond to predefined shapes from the ECMA-376 standard.
+More information on those shapes can be found in the description of the "ST_ShapeType" simple
+type in section 20.1.10.55 of "Office Open XML File Formats - Fundamentals and Markup Language
+Reference", part 1 of
+ECMA-376 5th
+edition
+.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.ShapeType.TEXT_BOX
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A shape type that is not supported.
+TEXT_BOX
+Enum
+Text box shape.
+RECTANGLE
+Enum
+Rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'rect'.
+ROUND_RECTANGLE
+Enum
+Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'roundRect'.
+ELLIPSE
+Enum
+Ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'ellipse'.
+ARC
+Enum
+Curved arc shape. Corresponds to ECMA-376 ST_ShapeType 'arc'.
+BENT_ARROW
+Enum
+Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentArrow'.
+BENT_UP_ARROW
+Enum
+Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentUpArrow'.
+BEVEL
+Enum
+Bevel shape. Corresponds to ECMA-376 ST_ShapeType 'bevel'.
+BLOCK_ARC
+Enum
+Block arc shape. Corresponds to ECMA-376 ST_ShapeType 'blockArc'.
+BRACE_PAIR
+Enum
+Brace pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracePair'.
+BRACKET_PAIR
+Enum
+Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracketPair'.
+CAN
+Enum
+Can shape. Corresponds to ECMA-376 ST_ShapeType 'can'.
+CHEVRON
+Enum
+Chevron shape. Corresponds to ECMA-376 ST_ShapeType 'chevron'.
+CHORD
+Enum
+Chord shape. Corresponds to ECMA-376 ST_ShapeType 'chord'.
+CLOUD
+Enum
+Cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloud'.
+CORNER
+Enum
+Corner shape. Corresponds to ECMA-376 ST_ShapeType 'corner'.
+CUBE
+Enum
+Cube shape. Corresponds to ECMA-376 ST_ShapeType 'cube'.
+CURVED_DOWN_ARROW
+Enum
+Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedDownArrow'.
+CURVED_LEFT_ARROW
+Enum
+Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedLeftArrow'.
+CURVED_RIGHT_ARROW
+Enum
+Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedRightArrow'.
+CURVED_UP_ARROW
+Enum
+Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedUpArrow'.
+DECAGON
+Enum
+Decagon shape. Corresponds to ECMA-376 ST_ShapeType 'decagon'.
+DIAGONAL_STRIPE
+Enum
+Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType 'diagStripe'.
+DIAMOND
+Enum
+Diamond shape. Corresponds to ECMA-376 ST_ShapeType 'diamond'.
+DODECAGON
+Enum
+Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType 'dodecagon'.
+DONUT
+Enum
+Donut shape. Corresponds to ECMA-376 ST_ShapeType 'donut'.
+DOUBLE_WAVE
+Enum
+Double wave shape. Corresponds to ECMA-376 ST_ShapeType 'doubleWave'.
+DOWN_ARROW
+Enum
+Down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrow'.
+DOWN_ARROW_CALLOUT
+Enum
+Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrowCallout'.
+FOLDED_CORNER
+Enum
+Folded corner shape. Corresponds to ECMA-376 ST_ShapeType 'foldedCorner'.
+FRAME
+Enum
+Frame shape. Corresponds to ECMA-376 ST_ShapeType 'frame'.
+HALF_FRAME
+Enum
+Half frame shape. Corresponds to ECMA-376 ST_ShapeType 'halfFrame'.
+HEART
+Enum
+Heart shape. Corresponds to ECMA-376 ST_ShapeType 'heart'.
+HEPTAGON
+Enum
+Heptagon shape. Corresponds to ECMA-376 ST_ShapeType 'heptagon'.
+HEXAGON
+Enum
+Hexagon shape. Corresponds to ECMA-376 ST_ShapeType 'hexagon'.
+HOME_PLATE
+Enum
+Home plate shape. Corresponds to ECMA-376 ST_ShapeType 'homePlate'.
+HORIZONTAL_SCROLL
+Enum
+Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType 'horizontalScroll'.
+IRREGULAR_SEAL_1
+Enum
+Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal1'.
+IRREGULAR_SEAL_2
+Enum
+Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal2'.
+LEFT_ARROW
+Enum
+Left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrow'.
+LEFT_ARROW_CALLOUT
+Enum
+Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrowCallout'.
+LEFT_BRACE
+Enum
+Left brace shape. Corresponds to ECMA-376 ST_ShapeType 'leftBrace'.
+LEFT_BRACKET
+Enum
+Left bracket shape. Corresponds to ECMA-376 ST_ShapeType 'leftBracket'.
+LEFT_RIGHT_ARROW
+Enum
+Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrow'.
+LEFT_RIGHT_ARROW_CALLOUT
+Enum
+Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrowCallout'.
+LEFT_RIGHT_UP_ARROW
+Enum
+Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightUpArrow'.
+LEFT_UP_ARROW
+Enum
+Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftUpArrow'.
+LIGHTNING_BOLT
+Enum
+Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType 'lightningBolt'.
+MATH_DIVIDE
+Enum
+Divide math shape. Corresponds to ECMA-376 ST_ShapeType 'mathDivide'.
+MATH_EQUAL
+Enum
+Equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathEqual'.
+MATH_MINUS
+Enum
+Minus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMinus'.
+MATH_MULTIPLY
+Enum
+Multiply math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMultiply'.
+MATH_NOT_EQUAL
+Enum
+Not equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathNotEqual'.
+MATH_PLUS
+Enum
+Plus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathPlus'.
+MOON
+Enum
+Moon shape. Corresponds to ECMA-376 ST_ShapeType 'moon'.
+NO_SMOKING
+Enum
+No smoking shape. Corresponds to ECMA-376 ST_ShapeType 'noSmoking'.
+NOTCHED_RIGHT_ARROW
+Enum
+Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'notchedRightArrow'.
+OCTAGON
+Enum
+Octagon shape. Corresponds to ECMA-376 ST_ShapeType 'octagon'.
+PARALLELOGRAM
+Enum
+Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType 'parallelogram'.
+PENTAGON
+Enum
+Pentagon shape. Corresponds to ECMA-376 ST_ShapeType 'pentagon'.
+PIE
+Enum
+Pie shape. Corresponds to ECMA-376 ST_ShapeType 'pie'.
+PLAQUE
+Enum
+Plaque shape. Corresponds to ECMA-376 ST_ShapeType 'plaque'.
+PLUS
+Enum
+Plus shape. Corresponds to ECMA-376 ST_ShapeType 'plus'.
+QUAD_ARROW
+Enum
+Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrow'.
+QUAD_ARROW_CALLOUT
+Enum
+Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrowCallout'.
+RIBBON
+Enum
+Ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon'.
+RIBBON_2
+Enum
+Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon2'.
+RIGHT_ARROW
+Enum
+Right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrow'.
+RIGHT_ARROW_CALLOUT
+Enum
+Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrowCallout'.
+RIGHT_BRACE
+Enum
+Right brace shape. Corresponds to ECMA-376 ST_ShapeType 'rightBrace'.
+RIGHT_BRACKET
+Enum
+Right bracket shape. Corresponds to ECMA-376 ST_ShapeType 'rightBracket'.
+ROUND_1_RECTANGLE
+Enum
+One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round1Rect'.
+ROUND_2_DIAGONAL_RECTANGLE
+Enum
+Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+'round2DiagRect'.
+ROUND_2_SAME_RECTANGLE
+Enum
+Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+'round2SameRect'.
+RIGHT_TRIANGLE
+Enum
+Right triangle shape. Corresponds to ECMA-376 ST_ShapeType 'rtTriangle'.
+SMILEY_FACE
+Enum
+Smiley face shape. Corresponds to ECMA-376 ST_ShapeType 'smileyFace'.
+SNIP_1_RECTANGLE
+Enum
+One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip1Rect'.
+SNIP_2_DIAGONAL_RECTANGLE
+Enum
+Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2DiagRect'.
+SNIP_2_SAME_RECTANGLE
+Enum
+Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+'snip2SameRect'.
+SNIP_ROUND_RECTANGLE
+Enum
+One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+'snipRoundRect'.
+STAR_10
+Enum
+Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star10'.
+STAR_12
+Enum
+Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star12'.
+STAR_16
+Enum
+Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star16'.
+STAR_24
+Enum
+Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star24'.
+STAR_32
+Enum
+Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star32'.
+STAR_4
+Enum
+Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star4'.
+STAR_5
+Enum
+Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star5'.
+STAR_6
+Enum
+Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star6'.
+STAR_7
+Enum
+Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star7'.
+STAR_8
+Enum
+Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star8'.
+STRIPED_RIGHT_ARROW
+Enum
+Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'stripedRightArrow'.
+SUN
+Enum
+Sun shape. Corresponds to ECMA-376 ST_ShapeType 'sun'.
+TRAPEZOID
+Enum
+Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType 'trapezoid'.
+TRIANGLE
+Enum
+Triangle shape. Corresponds to ECMA-376 ST_ShapeType 'triangle'.
+UP_ARROW
+Enum
+Up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrow'.
+UP_ARROW_CALLOUT
+Enum
+Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrowCallout'.
+UP_DOWN_ARROW
+Enum
+Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upDownArrow'.
+UTURN_ARROW
+Enum
+U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType 'uturnArrow'.
+VERTICAL_SCROLL
+Enum
+Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType 'verticalScroll'.
+WAVE
+Enum
+Wave shape. Corresponds to ECMA-376 ST_ShapeType 'wave'.
+WEDGE_ELLIPSE_CALLOUT
+Enum
+Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeEllipseCallout'.
+WEDGE_RECTANGLE_CALLOUT
+Enum
+Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRectCallout'.
+WEDGE_ROUND_RECTANGLE_CALLOUT
+Enum
+Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+'wedgeRoundRectCallout'.
+FLOW_CHART_ALTERNATE_PROCESS
+Enum
+Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartAlternateProcess'.
+FLOW_CHART_COLLATE
+Enum
+Collate flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartCollate'.
+FLOW_CHART_CONNECTOR
+Enum
+Connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartConnector'.
+FLOW_CHART_DECISION
+Enum
+Decision flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDecision'.
+FLOW_CHART_DELAY
+Enum
+Delay flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDelay'.
+FLOW_CHART_DISPLAY
+Enum
+Display flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDisplay'.
+FLOW_CHART_DOCUMENT
+Enum
+Document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDocument'.
+FLOW_CHART_EXTRACT
+Enum
+Extract flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartExtract'.
+FLOW_CHART_INPUT_OUTPUT
+Enum
+Input output flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInputOutput'.
+FLOW_CHART_INTERNAL_STORAGE
+Enum
+Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInternalStorage'.
+FLOW_CHART_MAGNETIC_DISK
+Enum
+Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDisk'.
+FLOW_CHART_MAGNETIC_DRUM
+Enum
+Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDrum'.
+FLOW_CHART_MAGNETIC_TAPE
+Enum
+Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticTape'.
+FLOW_CHART_MANUAL_INPUT
+Enum
+Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualInput'.
+FLOW_CHART_MANUAL_OPERATION
+Enum
+Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualOperation'.
+FLOW_CHART_MERGE
+Enum
+Merge flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMerge'.
+FLOW_CHART_MULTIDOCUMENT
+Enum
+Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMultidocument'.
+FLOW_CHART_OFFLINE_STORAGE
+Enum
+Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOfflineStorage'.
+FLOW_CHART_OFFPAGE_CONNECTOR
+Enum
+Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType
+'flowChartOffpageConnector'.
+FLOW_CHART_ONLINE_STORAGE
+Enum
+Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOnlineStorage'.
+FLOW_CHART_OR
+Enum
+Or flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOr'.
+FLOW_CHART_PREDEFINED_PROCESS
+Enum
+Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType
+'flowChartPredefinedProcess'.
+FLOW_CHART_PREPARATION
+Enum
+Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPreparation'.
+FLOW_CHART_PROCESS
+Enum
+Process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartProcess'.
+FLOW_CHART_PUNCHED_CARD
+Enum
+Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedCard'.
+FLOW_CHART_PUNCHED_TAPE
+Enum
+Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedTape'.
+FLOW_CHART_SORT
+Enum
+Sort flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSort'.
+FLOW_CHART_SUMMING_JUNCTION
+Enum
+Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSummingJunction'.
+FLOW_CHART_TERMINATOR
+Enum
+Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartTerminator'.
+ARROW_EAST
+Enum
+East arrow shape.
+ARROW_NORTH_EAST
+Enum
+Northeast arrow shape.
+ARROW_NORTH
+Enum
+North arrow shape.
+SPEECH
+Enum
+Speech shape.
+STARBURST
+Enum
+Star burst shape.
+TEARDROP
+Enum
+Teardrop shape. Corresponds to ECMA-376 ST_ShapeType 'teardrop'.
+ELLIPSE_RIBBON
+Enum
+Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon'.
+ELLIPSE_RIBBON_2
+Enum
+Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon2'.
+CLOUD_CALLOUT
+Enum
+Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloudCallout'.
+CUSTOM
+Enum
+Custom shape.

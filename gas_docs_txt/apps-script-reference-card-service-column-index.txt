@@ -1,0 +1,264 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/column/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Columns are available for Google Chat apps and Google Workspace add-ons.
+You can add various widgets like TextParagraph, Image, and TextInput to a column using the
+addWidget()
+method.
+The appearance of a column can be customized using methods like
+setHorizontalAlignment()
+,
+setHorizontalSizeStyle()
+, and
+setVerticalAlignment()
+.
+Each method returns the Column object for chaining.
+Column
+A column.
+Available for Google Chat apps and Google Workspace add-ons.
+const
+columnWidget
+=
+CardService
+.
+newTextParagraph
+();
+const
+column
+=
+CardService
+.
+newColumn
+()
+.
+setHorizontalSizeStyle
+(
+CardService
+.
+HorizontalSizeStyle
+.
+FILL_AVAILABLE_SPACE
+)
+.
+setHorizontalAlignment
+(
+CardService
+.
+HorizontalAlignment
+.
+CENTER
+)
+.
+setVerticalAlignment
+(
+CardService
+.
+VerticalAlignment
+.
+CENTER
+)
+.
+addWidget
+(
+columnWidget
+);
+Methods
+Method
+Return type
+Brief description
+add
+Widget(widget)
+Column
+Adds a widget to the column.
+set
+Horizontal
+Alignment(horizontalAlignment)
+Column
+Sets the
+Horizontal
+Alignment
+of the
+Column
+.
+set
+Horizontal
+Size
+Style(horizontalSizeStyle)
+Column
+Sets the
+Horizontal
+Size
+Style
+of the Column.
+set
+Vertical
+Alignment(verticalAlignment)
+Column
+Sets the
+Vertical
+Alignment
+of the
+Column
+.
+Detailed documentation
+add
+Widget(widget)
+Adds a widget to the column.
+Widgets are displayed in the order they are added. You can add the following widgets to a
+column:
+Text
+Paragraph
+Image
+Decorated
+Text
+Button
+Set
+Text
+Input
+Selection
+Input
+Date
+Time
+Picker
+const
+column
+=
+CardService
+.
+newColumn
+().
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'This is a text paragraph widget'
+),
+);
+Parameters
+Name
+Type
+Description
+widget
+Widget
+The widget to add to the column.
+Return
+Column
+— This object, for chaining.
+set
+Horizontal
+Alignment(horizontalAlignment)
+Sets the
+Horizontal
+Alignment
+of the
+Column
+. Optional.
+const
+column
+=
+CardService
+.
+newColumn
+().
+setHorizontalAlignment
+(
+CardService
+.
+HorizontalAlignment
+.
+CENTER
+,
+);
+Parameters
+Name
+Type
+Description
+horizontal
+Alignment
+Horizontal
+Alignment
+The horizontal alignment of the column.
+Return
+Column
+— This object, for chaining.
+set
+Horizontal
+Size
+Style(horizontalSizeStyle)
+Sets the
+Horizontal
+Size
+Style
+of the Column. Optional.
+const
+column
+=
+CardService
+.
+newColumn
+().
+setHorizontalSizeStyle
+(
+CardService
+.
+HorizontalSizeStyle
+.
+FILL_AVAILABLE_SPACE
+,
+);
+Parameters
+Name
+Type
+Description
+horizontal
+Size
+Style
+Horizontal
+Size
+Style
+The horizontal size of the column.
+Return
+Column
+— This object, for chaining.
+set
+Vertical
+Alignment(verticalAlignment)
+Sets the
+Vertical
+Alignment
+of the
+Column
+. Optional.
+const
+column
+=
+CardService
+.
+newColumn
+().
+setVerticalAlignment
+(
+CardService
+.
+VerticalAlignment
+.
+CENTER
+,
+);
+Parameters
+Name
+Type
+Description
+vertical
+Alignment
+Vertical
+Alignment
+The vertical alignment of the column.
+Return
+Column
+— This object, for chaining.

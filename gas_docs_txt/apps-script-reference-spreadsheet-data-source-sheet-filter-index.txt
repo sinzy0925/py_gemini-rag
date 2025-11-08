@@ -1,0 +1,146 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-sheet-filter/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Access and modify existing data source sheet filters; to create new filters, use
+DataSourceSheet.addFilter()
+.
+This class should only be used with data connected to a database.
+Methods are available to get the applied data source column, the parent data source sheet, and the filter criteria.
+You can remove or set the filter criteria for the filter.
+Data
+Source
+Sheet
+Filter
+Access and modify an existing data source sheet filter. To create a new data source sheet filter,
+use
+Data
+Source
+Sheet.addFilter(columnName, filterCriteria)
+.
+Only use this class with data that's connected to a database.
+Methods
+Method
+Return type
+Brief description
+get
+Data
+Source
+Column()
+Data
+Source
+Column
+Returns the data source column this filter applies to.
+get
+Data
+Source
+Sheet()
+Data
+Source
+Sheet
+Returns the
+Data
+Source
+Sheet
+that this filter belongs to.
+get
+Filter
+Criteria()
+Filter
+Criteria
+Returns the filter criteria for this filter.
+remove()
+void
+Removes this filter from the data source object.
+set
+Filter
+Criteria(filterCriteria)
+Data
+Source
+Sheet
+Filter
+Sets the filter criteria for this filter.
+Detailed documentation
+get
+Data
+Source
+Column()
+Returns the data source column this filter applies to.
+Return
+Data
+Source
+Column
+— The data source column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Data
+Source
+Sheet()
+Returns the
+Data
+Source
+Sheet
+that this filter belongs to.
+Return
+Data
+Source
+Sheet
+— The data source sheet, to which this filter belongs.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Filter
+Criteria()
+Returns the filter criteria for this filter.
+Return
+Filter
+Criteria
+— The filter criteria for this filter.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Removes this filter from the data source object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Filter
+Criteria(filterCriteria)
+Sets the filter criteria for this filter.
+Parameters
+Name
+Type
+Description
+filter
+Criteria
+Filter
+Criteria
+The filter criteria to set.
+Return
+Data
+Source
+Sheet
+Filter
+— The filter for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

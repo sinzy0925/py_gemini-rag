@@ -1,0 +1,80 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/status/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Status is an enum representing status codes available only for Google Chat apps.
+Enums are called by referencing their parent class, name, and property, like
+CardService.Status.OK
+.
+The Status enum includes various properties mapping to standard HTTP status codes, such as
+OK
+(200),
+NOT_FOUND
+(404), and
+INTERNAL
+(500).
+Status
+An enum that represents the status code.
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.Status.OK
+.
+Properties
+Property
+Type
+Description
+OK
+Enum
+HTTP Mapping: 200 OK
+CANCELLED
+Enum
+HTTP Mapping: 499 Client Closed Request
+UNKNOWN
+Enum
+Unknown error. HTTP Mapping: 500 Internal Server Error
+INVALID_ARGUMENT
+Enum
+The client specified an invalid argument. HTTP Mapping: 400 Bad Request
+DEADLINE_EXCEEDED
+Enum
+HTTP Mapping: 504 Gateway Timeout
+NOT_FOUND
+Enum
+HTTP Mapping: 404 Not Found
+ALREADY_EXISTS
+Enum
+The entity that a client attempted to create already exists. HTTP Mapping: 409 Conflict
+PERMISSION_DENIED
+Enum
+HTTP Mapping: 403 Forbidden
+UNAUTHENTICATED
+Enum
+HTTP Mapping: 401 Unauthorized
+RESOURCE_EXHAUSTED
+Enum
+HTTP Mapping: 429 Too Many Requests
+FAILED_PRECONDITION
+Enum
+The operation was rejected because the system is not in a state required for the operation's
+execution. HTTP Mapping: 400 Bad Request
+ABORTED
+Enum
+The operation was aborted, typically due to a concurrency issue such as a sequencer check
+failure or transaction abort. HTTP Mapping: 409 Conflict
+OUT_OF_RANGE
+Enum
+The operation was attempted past the valid range. HTTP Mapping: 400 Bad Request
+UNIMPLEMENTED
+Enum
+HTTP Mapping: 501 Not Implemented
+INTERNAL
+Enum
+Internal errors. This means that some invariants expected by the underlying system have been
+broken. This error code is reserved for serious errors. HTTP Mapping: 500 Internal Server
+Error
+UNAVAILABLE
+Enum
+HTTP Mapping: 503 Service Unavailable
+DATA_LOSS
+Enum
+Unrecoverable data loss or corruption. HTTP Mapping: 500 Internal Server Error.

@@ -1,0 +1,291 @@
+Source Path: gemini_api_docs_html/gemini-api/docs/semantic_retrieval/index.html
+
+Gemini Developer API
+Get a Gemini API Key
+Get a Gemini API key and make your first API request in minutes.
+Python
+from
+google
+import
+genai
+client
+=
+genai
+.
+Client
+()
+response
+=
+client
+.
+models
+.
+generate_content
+(
+model
+=
+"gemini-2.5-flash"
+,
+contents
+=
+"Explain how AI works in a few words"
+,
+)
+print
+(
+response
+.
+text
+)
+JavaScript
+import
+{
+GoogleGenAI
+}
+from
+"@google/genai"
+;
+const
+ai
+=
+new
+GoogleGenAI
+({});
+async
+function
+main
+()
+{
+const
+response
+=
+await
+ai
+.
+models
+.
+generateContent
+({
+model
+:
+"gemini-2.5-flash"
+,
+contents
+:
+"Explain how AI works in a few words"
+,
+});
+console
+.
+log
+(
+response
+.
+text
+);
+}
+await
+main
+();
+Go
+package
+main
+import
+(
+"context"
+"fmt"
+"log"
+"google.golang.org/genai"
+)
+func
+main
+()
+{
+ctx
+:=
+context
+.
+Background
+()
+client
+,
+err
+:=
+genai
+.
+NewClient
+(
+ctx
+,
+nil
+)
+if
+err
+!=
+nil
+{
+log
+.
+Fatal
+(
+err
+)
+}
+result
+,
+err
+:=
+client
+.
+Models
+.
+GenerateContent
+(
+ctx
+,
+"gemini-2.5-flash"
+,
+genai
+.
+Text
+(
+"Explain how AI works in a few words"
+),
+nil
+,
+)
+if
+err
+!=
+nil
+{
+log
+.
+Fatal
+(
+err
+)
+}
+fmt
+.
+Println
+(
+result
+.
+Text
+())
+}
+Java
+package
+com.example
+;
+import
+com.google.genai.Client
+;
+import
+com.google.genai.types.GenerateContentResponse
+;
+public
+class
+GenerateTextFromTextInput
+{
+public
+static
+void
+main
+(
+String
+[]
+args
+)
+{
+Client
+client
+=
+new
+Client
+();
+GenerateContentResponse
+response
+=
+client
+.
+models
+.
+generateContent
+(
+"gemini-2.5-flash"
+,
+"Explain how AI works in a few words"
+,
+null
+);
+System
+.
+out
+.
+println
+(
+response
+.
+text
+());
+}
+}
+REST
+curl
+"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+\
+-H
+"x-goog-api-key:
+$GEMINI_API_KEY
+"
+\
+-H
+'Content-Type: application/json'
+\
+-X
+POST
+\
+-d
+'{
+"contents": [
+{
+"parts": [
+{
+"text": "Explain how AI works in a few words"
+}
+]
+}
+]
+}'
+Meet the models
+Start building with Gemini
+2.5 Pro
+spark
+Our most powerful thinking model with features for complex reasoning and much more
+2.5 Flash
+spark
+Our most balanced model, with a 1 million token context window and more
+2.5 Flash-Lite
+spark
+Our fastest and most cost-efficient multimodal model with great performance
+          for high-frequency tasks
+Veo 3.1
+video_library
+Our state of the art video generation model, with native audio
+Gemini 2.5 Flash Image
+imagesmode
+(Nano Banana), our highly effective and precise image generation model
+Gemini Embeddings
+data_array
+Our first Gemini embedding model, designed for production RAG workflows
+Explore the API
+Native Image Generation (aka Nano Banana)
+Generate and edit highly contextual images natively with Gemini 2.5 Flash Image.
+Explore long context
+Input millions of tokens to Gemini models and derive understanding from unstructured images, videos, and documents.
+Generate structured outputs
+Constrain Gemini to respond with JSON, a structured data format suitable for automated processing.
+Start building with the Gemini API
+Get started

@@ -1,0 +1,2508 @@
+Source Path: gas_docs_html/apps-script/reference/gmail/gmail-message.html
+
+AI-generated Key Takeaways
+outlined_flag
+GmailMessage represents a single email message within a user's Gmail account.
+You can create draft replies, draft replies to all recipients, forward messages, and reply to messages or reply to all recipients with various options for the message body and additional parameters.
+The
+GmailMessage
+object provides methods to retrieve message details such as attachments, recipients (To, Cc, Bcc), date, sender, subject, and body content in both HTML and plain text formats.
+You can check the status of a message, including whether it is a draft, in chats, in the inbox, in priority inbox, in trash, starred, or unread.
+Actions like marking a message as read or unread, moving it to trash, starring or unstarring it, and refreshing its state are available methods.
+Gmail
+Message
+A message in a user's Gmail account.
+Methods
+Method
+Return type
+Brief description
+create
+Draft
+Reply(body)
+Gmail
+Draft
+Creates a draft message replying to the sender of this message using the reply-to address.
+create
+Draft
+Reply(body, options)
+Gmail
+Draft
+Creates a draft message replying to the sender of this message using the reply-to address, with
+optional arguments.
+create
+Draft
+Reply
+All(body)
+Gmail
+Draft
+Creates a draft message replying to the sender using the reply-to address and all recipients of
+this message.
+create
+Draft
+Reply
+All(body, options)
+Gmail
+Draft
+Creates a draft message replying to the sender of this message using the reply-to address and
+all recipients, with optional arguments.
+forward(recipient)
+Gmail
+Message
+Forwards this message to new recipients.
+forward(recipient, options)
+Gmail
+Message
+Forwards this message to new recipients, with optional arguments.
+get
+Attachments()
+Gmail
+Attachment[]
+Gets all the attachments for this message.
+get
+Attachments(options)
+Gmail
+Attachment[]
+Gets all the attachments for this message.
+get
+Bcc()
+String
+Gets the comma-separated recipients bcc'd on this message.
+get
+Body()
+String
+Gets the HTML content of the body of this message.
+get
+Cc()
+String
+Gets the comma-separated recipients cc'd on this message.
+get
+Date()
+Date
+Gets the date and time of this message.
+get
+From()
+String
+Gets the sender of this message.
+get
+Header(name)
+String
+Gets the value of an RFC 2822 header given the header name.
+get
+Id()
+String
+Gets the ID of this message.
+get
+Plain
+Body()
+String
+Gets the content of the body of this message without HTML formatting.
+get
+Raw
+Content()
+String
+Gets the raw content of this message.
+get
+Reply
+To()
+String
+Gets the reply-to address of this message (usually the sender).
+get
+Subject()
+String
+Gets the subject of this message.
+get
+Thread()
+Gmail
+Thread
+Gets the thread that contains this message.
+get
+To()
+String
+Gets the comma-separated recipients of this message.
+is
+Draft()
+Boolean
+Gets whether this message is a draft.
+is
+In
+Chats()
+Boolean
+Gets whether this message is a chat.
+is
+In
+Inbox()
+Boolean
+Gets whether this message is in the inbox.
+is
+In
+Priority
+Inbox()
+Boolean
+Returns
+true
+if this message is in the priority inbox; returns
+false
+otherwise.
+is
+In
+Trash()
+Boolean
+Gets whether this message is in the trash.
+is
+Starred()
+Boolean
+Gets whether this message is starred.
+is
+Unread()
+Boolean
+Gets whether this message is unread.
+mark
+Read()
+Gmail
+Message
+Marks the message as read.
+mark
+Unread()
+Gmail
+Message
+Marks the message as unread.
+move
+To
+Trash()
+Gmail
+Message
+Moves the message to the trash.
+refresh()
+Gmail
+Message
+Reloads this message and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+reply(body)
+Gmail
+Message
+Replies to the sender of this message using the reply-to address.
+reply(body, options)
+Gmail
+Message
+Replies to the sender of this message using the reply-to address, with optional arguments.
+reply
+All(body)
+Gmail
+Message
+Replies to the sender using the reply-to address and all recipients of this message.
+reply
+All(body, options)
+Gmail
+Message
+Replies to the sender of this message using the reply-to address and all recipients, with
+optional arguments.
+star()
+Gmail
+Message
+Stars the message.
+unstar()
+Gmail
+Message
+Unstars the message.
+Detailed documentation
+create
+Draft
+Reply(body)
+Creates a draft message replying to the sender of this message using the reply-to address. The
+size of the email (including headers) is
+quota limited
+.
+// Create a draft reply to the original message with an acknowledgment.
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+createDraftReply
+(
+'Got your message'
+);
+Parameters
+Name
+Type
+Description
+body
+String
+The body of the email.
+Return
+Gmail
+Draft
+— The newly created draft message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+reply(body)
+create
+Draft
+Reply(body, options)
+create
+Draft
+Reply
+All(body)
+create
+Draft
+Reply
+All(body, options)
+create
+Draft
+Reply(body, options)
+Creates a draft message replying to the sender of this message using the reply-to address, with
+optional arguments.
+The email can contain both plain text and an HTML body. The size of the email (including
+headers) is
+quota
+limited
+.
+// Create a draft response with an HTML text body.
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+createDraftReply
+(
+'incapable of HTML'
+,
+{
+htmlBody
+:
+'<b>some HTML body text</b>'
+,
+cc
+:
+'another@example.com'
+,
+});
+Parameters
+Name
+Type
+Description
+body
+String
+The body of the email.
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+attachments
+Blob
+Source[]
+an
+    array of files to send with the email
+bcc
+String
+a comma-separated list of email addresses to BCC
+cc
+String
+a comma-separated list of email addresses to CC
+from
+String
+the address that the email should be sent from, which must be one
+    of the values returned by
+Gmail
+App.getAliases()
+html
+Body
+String
+when set, devices capable of rendering HTML use it instead of
+    the required body argument; you can add an optional
+inline
+Images
+field in HTML body
+    if you have inlined images for your email
+inline
+Images
+Object
+a JavaScript object containing a mapping from image key
+    (
+String
+) to image data (
+Blob
+Source
+); this assumes that the
+html
+Body
+parameter is used and contains references to these images in the format
+<img src="cid:imageKey" />
+name
+String
+the name of the sender of the email (default: the user's name)
+reply
+To
+String
+an email address to use as the default reply-to address
+    (default: the user's email address)
+subject
+String
+A new subject line for the email, up to 250 characters.
+Return
+Gmail
+Draft
+— The newly created draft message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+reply(body, options)
+create
+Draft
+Reply(body)
+create
+Draft
+Reply
+All(body)
+create
+Draft
+Reply
+All(body, options)
+create
+Draft
+Reply
+All(body)
+Creates a draft message replying to the sender using the reply-to address and all recipients of
+this message. The size of the email (including headers) is
+quota limited
+.
+// Create a draft response to all recipients (except those bcc'd) with an
+// acknowledgment.
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+createDraftReplyAll
+(
+'Got your message'
+);
+Parameters
+Name
+Type
+Description
+body
+String
+The body of the email.
+Return
+Gmail
+Draft
+— The newly created draft message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+reply
+All(body)
+create
+Draft
+Reply(body)
+create
+Draft
+Reply(body, options)
+create
+Draft
+Reply
+All(body, options)
+create
+Draft
+Reply
+All(body, options)
+Creates a draft message replying to the sender of this message using the reply-to address and
+all recipients, with optional arguments.
+The email can contain both plain text and an HTML body. The size of the email (including
+headers) is
+quota
+limited
+.
+// Create a draft response to all recipients (except those bcc'd) using an HTML
+// text body.
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+createDraftReplyAll
+(
+'incapable of HTML'
+,
+{
+htmlBody
+:
+'<b>some HTML body text</b>'
+,
+cc
+:
+'another@example.com'
+,
+});
+Parameters
+Name
+Type
+Description
+body
+String
+The body of the email.
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+attachments
+Blob
+Source[]
+an
+    array of files to send with the email
+bcc
+String
+a comma-separated list of email addresses to BCC
+cc
+String
+a comma-separated list of email addresses to CC
+from
+String
+the address that the email should be sent from, which must be one
+    of the values returned by
+Gmail
+App.getAliases()
+html
+Body
+String
+when set, devices capable of rendering HTML use it instead of
+    the required body argument; you can add an optional
+inline
+Images
+field in HTML body
+    if you have inlined images for your email
+inline
+Images
+Object
+a JavaScript object containing a mapping from image key
+    (
+String
+) to image data (
+Blob
+Source
+); this assumes that the
+html
+Body
+parameter is used and contains references to these images in the format
+<img src="cid:imageKey" />
+name
+String
+the name of the sender of the email (default: the user's name)
+reply
+To
+String
+an email address to use as the default reply-to address
+    (default: the user's email address)
+subject
+String
+A new subject line for the email, up to 250 characters.
+Return
+Gmail
+Draft
+— The newly created draft message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+reply
+All(body, options)
+create
+Draft
+Reply(body)
+create
+Draft
+Reply(body, options)
+create
+Draft
+Reply
+All(body)
+forward(recipient)
+Forwards this message to new recipients. The size of the email (including headers) is
+quota limited
+.
+// Forward first message of first inbox thread to recipient1 & recipient2,
+// both @example.com
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+forward
+(
+'recipient1@example.com,recipient2@example.com'
+);
+Parameters
+Name
+Type
+Description
+recipient
+String
+A comma-separated list of email addresses.
+Return
+Gmail
+Message
+— This message, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+forward(recipient, options)
+forward(recipient, options)
+Forwards this message to new recipients, with optional arguments.
+The email can contain both plain text, and also an HTML body. The size of the email
+(including headers) is
+quota
+limited
+.
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+forward
+(
+'recipient1@example.com,recipient2@example.com'
+,
+{
+cc
+:
+'myboss@example.com'
+,
+bcc
+:
+'mybosses-boss@example.com,vp@example.com'
+,
+});
+Parameters
+Name
+Type
+Description
+recipient
+String
+A comma-separated list of email addresses.
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+attachments
+Blob
+Source[]
+an
+    array of files to send with the email
+bcc
+String
+a comma-separated list of email addresses to BCC
+cc
+String
+a comma-separated list of email addresses to CC
+from
+String
+the address that the email should be sent from, which must be one
+    of the values returned by
+Gmail
+App.getAliases()
+html
+Body
+String
+when set, devices capable of rendering HTML use it instead of
+    the required body argument; you can add an optional
+inline
+Images
+field in HTML body
+    if you have inlined images for your email
+inline
+Images
+Object
+a JavaScript object containing a mapping from image key
+    (
+String
+) to image data (
+Blob
+Source
+); this assumes that the
+html
+Body
+parameter is used and contains references to these images in the format
+<img src="cid:imageKey" />
+name
+String
+the name of the sender of the email (default: the user's name)
+no
+Reply
+Boolean
+true
+if the email should be sent from a generic
+    no-reply email address to discourage recipients from responding to emails; this option is
+    only possible for Google Workspace accounts, not Gmail users
+reply
+To
+String
+an email address to use as the default reply-to address
+    (default: the user's email address)
+subject
+String
+A new subject line for the email, up to 250 characters.
+Return
+Gmail
+Message
+— This message, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+forward(recipient)
+get
+Attachments()
+Gets all the attachments for this message.
+Return
+Gmail
+Attachment[]
+— An array of Blob attachments for this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Attachments(options)
+Gets all the attachments for this message.
+Parameters
+Name
+Type
+Description
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+include
+Inline
+Images
+Boolean
+true
+if the returned array of Blob
+    attachments should include inline images (default is
+true
+).
+include
+Attachments
+Boolean
+true
+if the returned array of Blob
+    attachments should include regular (non-inline) attachments (default is
+true
+).
+Return
+Gmail
+Attachment[]
+— An array of Blob attachments for this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Bcc()
+Gets the comma-separated recipients bcc'd on this message.
+This is empty for all received messages, by definition.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getBcc
+());
+// Log bcc'd addresses
+Return
+String
+— The comma-separated recipients bcc'd on this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+To()
+get
+Body()
+Gets the HTML content of the body of this message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getBody
+());
+// Log contents of the body
+Return
+String
+— The body content of this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Subject()
+get
+Cc()
+Gets the comma-separated recipients cc'd on this message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getCc
+());
+// Log cc'd addresses
+Return
+String
+— The comma-separated recipients cc'd on this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+To()
+get
+Date()
+Gets the date and time of this message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getDate
+());
+// Log date and time of the message
+Return
+Date
+— The date and time of this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+From()
+Gets the sender of this message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getFrom
+());
+// Log from address of the message
+Return
+String
+— The email address of the message sender.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Reply
+To()
+get
+Header(name)
+Gets the value of an RFC 2822 header given the header name.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox.
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get the first message.
+Logger
+.
+log
+(
+message
+.
+getHeader
+(
+'Message-ID'
+));
+// Logs the Message-ID RFC 2822 header.
+Parameters
+Name
+Type
+Description
+name
+String
+The name of the RFC header, without the colon separating it from the value.
+Return
+String
+— The value of the header, or an empty string if the header doesn't exist in the message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Id()
+Gets the ID of this message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+const
+id
+=
+message
+.
+getId
+();
+const
+messageById
+=
+GmailApp
+.
+getMessageById
+(
+id
+);
+Logger
+.
+log
+(
+message
+.
+getSubject
+()
+===
+messageById
+.
+getMessage
+());
+// Always logs true
+Return
+String
+— The message ID.
+get
+Plain
+Body()
+Gets the content of the body of this message without HTML formatting. This is more complex than
+get
+Body()
+and takes longer.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getPlainBody
+());
+// Log contents of the body
+Return
+String
+— The plain body content of this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Subject()
+get
+Raw
+Content()
+Gets the raw content of this message. This is equivalent to "Show Original" in the Gmail UI.
+Return
+String
+— The raw content of this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Reply
+To()
+Gets the reply-to address of this message (usually the sender).
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getReplyTo
+());
+// Logs reply-to address
+Return
+String
+— The email address for replies.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Cc()
+get
+Subject()
+Gets the subject of this message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getSubject
+());
+// Log subject line
+Return
+String
+— The subject of this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Attachments()
+get
+Thread()
+Gets the thread that contains this message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getThread
+().
+getFirstMessageSubject
+()
+===
+thread
+.
+getFirstMessageSubject
+(),
+);
+// Always logs true
+Return
+Gmail
+Thread
+— The GmailThread that contains this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+To()
+Gets the comma-separated recipients of this message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+message
+.
+getTo
+());
+// Log the recipient of message
+Return
+String
+— The comma-separated recipients of this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Cc()
+is
+Draft()
+Gets whether this message is a draft.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+`is draft?
+${
+message
+.
+isDraft
+()
+}
+`
+);
+Return
+Boolean
+— Whether this message is a draft.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+is
+In
+Chats()
+Gets whether this message is a chat.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+`is a chat?
+${
+message
+.
+isInChats
+()
+}
+`
+);
+Return
+Boolean
+— Whether this message is a chat.
+is
+In
+Inbox()
+Gets whether this message is in the inbox.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+`is in inbox?
+${
+message
+.
+isInInbox
+()
+}
+`
+);
+Return
+Boolean
+— Whether this message is in the inbox.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+is
+In
+Priority
+Inbox()
+Returns
+true
+if this message is in the priority inbox; returns
+false
+otherwise.
+const
+thread
+=
+GmailApp
+.
+getPriorityInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in priority inbox
+const
+messages
+=
+thread
+.
+getMessages
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+messages
+.
+length
+;
+i
+++
+)
+{
+// At least one of the messages is in priority inbox
+Logger
+.
+log
+(
+`is in priority inbox?
+${
+messages
+[
+i
+].
+isInPriorityInbox
+()
+}
+`
+);
+}
+Return
+Boolean
+— Whether this message is in the priority inbox.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+is
+In
+Trash()
+Gets whether this message is in the trash.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+`is in the trash?
+${
+message
+.
+isInTrash
+()
+}
+`
+);
+Return
+Boolean
+— Whether this message is in the trash.
+is
+Starred()
+Gets whether this message is starred.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+`is starred?
+${
+message
+.
+isStarred
+()
+}
+`
+);
+Return
+Boolean
+— Whether this message is starred.
+is
+Unread()
+Gets whether this message is unread.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+Logger
+.
+log
+(
+`is unread?
+${
+message
+.
+isUnread
+()
+}
+`
+);
+Return
+Boolean
+— The unread status of this message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+mark
+Read()
+Marks the message as read.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+message
+.
+markRead
+();
+// Mark as read
+Return
+Gmail
+Message
+— This GmailMessage, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+is
+Unread()
+mark
+Unread()
+Marks the message as unread.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+message
+.
+markUnread
+();
+// Mark as unread
+Return
+Gmail
+Message
+— This GmailMessage, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+is
+Unread()
+move
+To
+Trash()
+Moves the message to the trash.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+message
+.
+moveToTrash
+();
+// Move message to trash
+Return
+Gmail
+Message
+— This GmailMessage, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+is
+In
+Trash()
+refresh()
+Reloads this message and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+// .. Do bunch of stuff here
+message
+.
+refresh
+();
+// Make sure it's up to date
+// Do more stuff to message
+Return
+Gmail
+Message
+— This message for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+reply(body)
+Replies to the sender of this message using the reply-to address. The size of the email
+(including headers) is
+quota
+limited
+.
+// Respond to author of message with acknowledgment
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+reply
+(
+'Got your message'
+);
+Parameters
+Name
+Type
+Description
+body
+String
+The body of the email.
+Return
+Gmail
+Message
+— This message, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+reply(body, options)
+reply
+All(body)
+reply
+All(body, options)
+reply(body, options)
+Replies to the sender of this message using the reply-to address, with optional arguments.
+The email can contain both plain text, and also an HTML body. The size of the email
+(including headers) is
+quota
+limited
+.
+// Respond with HTML body text
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+reply
+(
+'incapable of HTML'
+,
+{
+htmlBody
+:
+'<b>some HTML body text</b>'
+,
+noReply
+:
+true
+,
+});
+Parameters
+Name
+Type
+Description
+body
+String
+The body of the email.
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+attachments
+Blob
+Source[]
+an
+    array of files to send with the email
+bcc
+String
+a comma-separated list of email addresses to BCC
+cc
+String
+a comma-separated list of email addresses to CC
+from
+String
+the address that the email should be sent from, which must be one
+    of the values returned by
+Gmail
+App.getAliases()
+html
+Body
+String
+when set, devices capable of rendering HTML use it instead of
+    the required body argument; you can add an optional
+inline
+Images
+field in HTML body
+    if you have inlined images for your email
+inline
+Images
+Object
+a JavaScript object containing a mapping from image key
+    (
+String
+) to image data (
+Blob
+Source
+); this assumes that the
+html
+Body
+parameter is used and contains references to these images in the format
+<img src="cid:imageKey" />
+name
+String
+the name of the sender of the email (default: the user's name)
+no
+Reply
+Boolean
+true
+if the email should be sent from a generic
+    no-reply email address to discourage recipients from responding to emails; this option is
+    only possible for Google Workspace accounts, not Gmail users
+reply
+To
+String
+an email address to use as the default reply-to address
+    (default: the user's email address)
+subject
+String
+A new subject line for the email, up to 250 characters.
+Return
+Gmail
+Message
+— This message, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+reply(body)
+reply
+All(body)
+reply
+All(body, options)
+reply
+All(body)
+Replies to the sender using the reply-to address and all recipients of this message. The size
+of the email (including headers) is
+quota limited
+.
+// Respond to all recipients (except bcc'd) of last email in thread with
+// acknowledgment
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+replyAll
+(
+'Got your message'
+);
+Parameters
+Name
+Type
+Description
+body
+String
+The body of the email.
+Return
+Gmail
+Message
+— This message,useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+reply(body)
+reply(body, options)
+reply
+All(body, options)
+reply
+All(body, options)
+Replies to the sender of this message using the reply-to address and all recipients, with
+optional arguments.
+The email can contain both plain text, and also an HTML body. The size of the email
+(including headers) is
+quota
+limited
+.
+// Respond with HTML body text
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+message
+.
+replyAll
+(
+'incapable of HTML'
+,
+{
+htmlBody
+:
+'<b>some HTML body text</b>'
+,
+noReply
+:
+true
+,
+});
+Parameters
+Name
+Type
+Description
+body
+String
+The body of the email.
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+attachments
+Blob
+Source[]
+an
+    array of files to send with the email
+bcc
+String
+a comma-separated list of email addresses to BCC
+cc
+String
+a comma-separated list of email addresses to CC
+from
+String
+the address that the email should be sent from, which must be one
+    of the values returned by
+Gmail
+App.getAliases()
+html
+Body
+String
+when set, devices capable of rendering HTML use it instead of
+    the required body argument; you can add an optional
+inline
+Images
+field in HTML body
+    if you have inlined images for your email
+inline
+Images
+Object
+a JavaScript object containing a mapping from image key
+    (
+String
+) to image data (
+Blob
+Source
+); this assumes that the
+html
+Body
+parameter is used and contains references to these images in the format
+<img src="cid:imageKey" />
+name
+String
+the name of the sender of the email (default: the user's name)
+no
+Reply
+Boolean
+true
+if the email should be sent from a generic
+    no-reply email address to discourage recipients from responding to emails; this option is
+    only possible for Google Workspace accounts, not Gmail users
+reply
+To
+String
+an email address to use as the default reply-to address
+    (default: the user's email address)
+subject
+String
+A new subject line for the email, up to 250 characters.
+Return
+Gmail
+Message
+— This message, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+reply(body)
+reply(body, options)
+reply
+All(body)
+star()
+Stars the message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+message
+.
+star
+();
+// Star the message
+Return
+Gmail
+Message
+— This GmailMessage, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+unstar()
+unstar()
+Unstars the message.
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Get first thread in inbox
+const
+message
+=
+thread
+.
+getMessages
+()[
+0
+];
+// Get first message
+message
+.
+unstar
+();
+// Unstar the message
+Return
+Gmail
+Message
+— This GmailMessage, useful for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+star()

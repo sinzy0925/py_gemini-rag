@@ -1,0 +1,174 @@
+Source Path: gas_docs_html/apps-script/reference/document/named-range/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A NamedRange is a Range with a name and ID for later retrieval; names are not unique, but IDs are unique within the tab.
+Once added to a tab, a NamedRange cannot be modified, only removed.
+NamedRanges can be accessed by any script accessing the tab, and prefixing names with a unique string can help avoid conflicts.
+The available methods for a NamedRange are getId(), getName(), getRange(), and remove().
+Named
+Range
+A
+Range
+that has a name and ID to allow later retrieval. Names are not
+necessarily unique; several different ranges in the same tab may share the same name, much like a
+class in HTML. By contrast, IDs are unique within the tab, like an ID in HTML. Once a
+Named
+Range
+has been added to a tab, it cannot be modified, only removed.
+A
+Named
+Range
+can be accessed by any script that accesses the tab. To avoid unintended
+conflicts between scripts, consider prefixing range names with a unique string.
+// Create a named range that includes every table in the active tab.
+const
+documentTab
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+();
+const
+rangeBuilder
+=
+documentTab
+.
+newRange
+();
+const
+tables
+=
+documentTab
+.
+getBody
+().
+getTables
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+tables
+.
+length
+;
+i
+++
+)
+{
+rangeBuilder
+.
+addElement
+(
+tables
+[
+i
+]);
+}
+documentTab
+.
+addNamedRange
+(
+'myUniquePrefix-tables'
+,
+rangeBuilder
+.
+build
+());
+Methods
+Method
+Return type
+Brief description
+get
+Id()
+String
+Gets the ID of this
+Named
+Range
+.
+get
+Name()
+String
+Gets the name of this
+Named
+Range
+.
+get
+Range()
+Range
+Gets the range of elements associated with this
+Named
+Range
+.
+remove()
+void
+Removes this
+Named
+Range
+from the tab.
+Detailed documentation
+get
+Id()
+Gets the ID of this
+Named
+Range
+. The ID is unique within the tab.
+Return
+String
+— The range's ID, which is unique within the tab.
+get
+Name()
+Gets the name of this
+Named
+Range
+. The name is not necessarily unique.
+Return
+String
+— The range's name, which is not necessarily unique.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Range()
+Gets the range of elements associated with this
+Named
+Range
+.
+Return
+Range
+— The range of elements associated with the name and ID.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+remove()
+Removes this
+Named
+Range
+from the tab. This method doesn't delete the contents of the
+range; it merely the removes the reference. Calling this method on a
+Named
+Range
+that
+has already been removed has no effect.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

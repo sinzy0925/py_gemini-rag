@@ -1,0 +1,440 @@
+Source Path: gemini_api_docs_html/gemini-api/docs/migrate-to-cloud/index.html
+
+When developing generative AI solutions with Gemini, Google offers two API products:
+the
+Gemini Developer API
+and the
+Vertex AI Gemini API
+.
+The Gemini Developer API provides the fastest path to build, productionize, and
+scale Gemini powered applications. Most developers should use the Gemini Developer
+API unless there is a need for specific enterprise controls.
+Vertex AI offers a comprehensive ecosystem of enterprise ready features and services
+for building and deploying generative AI applications backed by the Google Cloud Platform.
+We've recently simplified migrating between these services. Both the Gemini
+Developer API and the Vertex AI Gemini API are now accessible through the unified
+Google Gen AI SDK
+.
+Code comparison
+This page has side-by-side code comparisons between Gemini Developer API and
+Vertex AI quickstarts for text generation.
+Python
+You can access both the Gemini Developer API and Vertex AI services through
+the
+google-genai
+library. See the
+libraries
+page
+for instructions on how to install
+google-genai
+.
+Gemini Developer API
+from
+google
+import
+genai
+client
+=
+genai
+.
+Client
+()
+response
+=
+client
+.
+models
+.
+generate_content
+(
+model
+=
+"gemini-2.0-flash"
+,
+contents
+=
+"Explain how AI works in a few words"
+)
+print
+(
+response
+.
+text
+)
+Vertex AI Gemini API
+from
+google
+import
+genai
+client
+=
+genai
+.
+Client
+(
+vertexai
+=
+True
+,
+project
+=
+'your-project-id'
+,
+location
+=
+'us-central1'
+)
+response
+=
+client
+.
+models
+.
+generate_content
+(
+model
+=
+"gemini-2.0-flash"
+,
+contents
+=
+"Explain how AI works in a few words"
+)
+print
+(
+response
+.
+text
+)
+JavaScript and TypeScript
+You can access both Gemini Developer API and Vertex AI services through
+@google/genai
+library. See
+libraries
+page for instructions on how
+to install
+@google/genai
+.
+Gemini Developer API
+import
+{
+GoogleGenAI
+}
+from
+"@google/genai"
+;
+const
+ai
+=
+new
+GoogleGenAI
+({});
+async
+function
+main
+()
+{
+const
+response
+=
+await
+ai
+.
+models
+.
+generateContent
+({
+model
+:
+"gemini-2.0-flash"
+,
+contents
+:
+"Explain how AI works in a few words"
+,
+});
+console
+.
+log
+(
+response
+.
+text
+);
+}
+main
+();
+Vertex AI Gemini API
+import
+{
+GoogleGenAI
+}
+from
+'@google/genai'
+;
+const
+ai
+=
+new
+GoogleGenAI
+({
+vertexai
+:
+true
+,
+project
+:
+'your_project'
+,
+location
+:
+'your_location'
+,
+});
+async
+function
+main
+()
+{
+const
+response
+=
+await
+ai
+.
+models
+.
+generateContent
+({
+model
+:
+"gemini-2.0-flash"
+,
+contents
+:
+"Explain how AI works in a few words"
+,
+});
+console
+.
+log
+(
+response
+.
+text
+);
+}
+main
+();
+Go
+You can access both Gemini Developer API and Vertex AI services through
+google.golang.org/genai
+library. See
+libraries
+page for instructions on how
+to install
+google.golang.org/genai
+.
+Gemini Developer API
+import
+(
+"context"
+"encoding/json"
+"fmt"
+"log"
+"google.golang.org/genai"
+)
+// Your Google API key
+const
+apiKey
+=
+"your-api-key"
+func
+main
+()
+{
+ctx
+:=
+context
+.
+Background
+()
+client
+,
+err
+:=
+genai
+.
+NewClient
+(
+ctx
+,
+nil
+)
+if
+err
+!=
+nil
+{
+log
+.
+Fatal
+(
+err
+)
+}
+// Call the GenerateContent method.
+result
+,
+err
+:=
+client
+.
+Models
+.
+GenerateContent
+(
+ctx
+,
+"gemini-2.0-flash"
+,
+genai
+.
+Text
+(
+"Tell me about New York?"
+),
+nil
+)
+}
+Vertex AI Gemini API
+import
+(
+"context"
+"encoding/json"
+"fmt"
+"log"
+"google.golang.org/genai"
+)
+// Your GCP project
+const
+project
+=
+"your-project"
+// A GCP location like "us-central1"
+const
+location
+=
+"some-gcp-location"
+func
+main
+()
+{
+ctx
+:=
+context
+.
+Background
+()
+client
+,
+err
+:=
+genai
+.
+NewClient
+(
+ctx
+,
+&
+genai
+.
+ClientConfig
+{
+Project
+:
+project
+,
+Location
+:
+location
+,
+Backend
+:
+genai
+.
+BackendVertexAI
+,
+})
+// Call the GenerateContent method.
+result
+,
+err
+:=
+client
+.
+Models
+.
+GenerateContent
+(
+ctx
+,
+"gemini-2.0-flash"
+,
+genai
+.
+Text
+(
+"Tell me about New York?"
+),
+nil
+)
+}
+Other use cases and platforms
+Refer to use case specific guides on
+Gemini Developer API Documentation
+and
+Vertex AI documentation
+for other platforms and use cases.
+Migration considerations
+When you migrate:
+You'll need to use Google Cloud service accounts to authenticate. See the
+Vertex AI documentation
+for more information.
+You can use your existing Google Cloud project
+(the same one you used to generate your API key) or you can
+create a new Google Cloud project
+.
+Supported regions may differ between the Gemini Developer API and the
+Vertex AI Gemini API. See the list of
+supported regions for generative AI on Google Cloud
+.
+Any models you created in Google AI Studio need to be retrained in Vertex AI.
+If you no longer need to use your Gemini API key for the Gemini Developer API,
+then follow security best practices and delete it.
+To delete an API key:
+Open the
+Google Cloud API Credentials
+page.
+Find the API key you want to delete and click the
+Actions
+icon.
+Select
+Delete API key
+.
+In the
+Delete credential
+modal, select
+Delete
+.
+Deleting an API key takes a few minutes to propagate. After
+propagation completes, any traffic using the deleted API key is rejected.
+Important:
+If you have deleted a key that is still used in production and need
+to recover it, see
+gcloud beta services api-keys undelete
+.
+Next steps
+See the
+Generative AI on Vertex AI overview
+to learn more about generative AI solutions on Vertex AI.

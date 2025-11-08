@@ -1,0 +1,386 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/document/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Document represents an XML document.
+It includes methods for adding, getting, removing, and cloning content nodes that are immediate children or descendants of the document.
+The Document object allows for managing the root element and Document Type declaration.
+Methods are available to check for the presence of a root element and determine the number of immediate child nodes.
+Document
+A representation of an XML document.
+Methods
+Method
+Return type
+Brief description
+add
+Content(content)
+Document
+Appends the given node to the end of the document.
+add
+Content(index, content)
+Document
+Inserts the given node at the given index among all nodes that are immediate children of the
+document.
+clone
+Content()
+Content[]
+Creates unattached copies of all nodes that are immediate children of the document.
+detach
+Root
+Element()
+Element
+Detaches and returns the document's root
+Element
+node.
+get
+All
+Content()
+Content[]
+Gets all nodes that are immediate children of the document.
+get
+Content(index)
+Content
+Gets the node at the given index among all nodes that are immediate children of the
+document.
+get
+Content
+Size()
+Integer
+Gets the number of nodes that are immediate children of the document.
+get
+Descendants()
+Content[]
+Gets all nodes that are direct or indirect children of the document, in the order they
+appear in the document.
+get
+Doc
+Type()
+Doc
+Type
+Gets the document's
+Doc
+Type
+declaration.
+get
+Root
+Element()
+Element
+Gets the document's root
+Element
+node.
+has
+Root
+Element()
+Boolean
+Determines whether the document has a root
+Element
+node.
+remove
+Content()
+Content[]
+Removes all nodes that are immediate children of the document.
+remove
+Content(content)
+Boolean
+Removes the given node, if the node is an immediate child of the document.
+remove
+Content(index)
+Content
+Removes the node at the given index among all nodes that are immediate children of the
+document.
+set
+Doc
+Type(docType)
+Document
+Sets the document's
+Doc
+Type
+declaration.
+set
+Root
+Element(element)
+Document
+Sets the document's root
+Element
+node.
+Detailed documentation
+add
+Content(content)
+Appends the given node to the end of the document. The
+content
+argument can be a
+Content
+object or any node object that corresponds to a type listed in
+Content
+Type
+. Note, however, that a document can only have one child
+Element
+node, which is implicitly the root
+Element
+node.
+Parameters
+Name
+Type
+Description
+content
+Content
+the node to append
+Return
+Document
+— the document, for chaining
+add
+Content(index, content)
+Inserts the given node at the given index among all nodes that are immediate children of the
+document. The
+content
+argument can be a
+Content
+object or any node object
+that corresponds to a type listed in
+Content
+Type
+. Note, however, that a document
+can only have one child
+Element
+node, which is implicitly the root
+Element
+node.
+Parameters
+Name
+Type
+Description
+index
+Integer
+the index at which to insert the node among all nodes that are immediate children
+    of the document
+content
+Content
+the node to insert
+Return
+Document
+— the document, for chaining
+clone
+Content()
+Creates unattached copies of all nodes that are immediate children of the document.
+Return
+Content[]
+— an array of unattached copies of all nodes that are immediate children of the
+    document
+detach
+Root
+Element()
+Detaches and returns the document's root
+Element
+node. If the document does not have
+a root
+Element
+node, this method returns
+null
+.
+Return
+Element
+— the detached
+Element
+node, or
+null
+if the document does not have a root
+Element
+node
+get
+All
+Content()
+Gets all nodes that are immediate children of the document.
+Return
+Content[]
+— an array of all nodes that are immediate children of the document
+get
+Content(index)
+Gets the node at the given index among all nodes that are immediate children of the
+document. If there is no node at the given index, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+index
+Integer
+the index for the node among all nodes that are immediate children of the
+    document
+Return
+Content
+— the node, or
+null
+if there is no node at the given index
+get
+Content
+Size()
+Gets the number of nodes that are immediate children of the document.
+Return
+Integer
+— the number of nodes that are immediate children of the document
+get
+Descendants()
+Gets all nodes that are direct or indirect children of the document, in the order they
+appear in the document.
+Return
+Content[]
+— an array of all nodes that are direct or indirect children of the document
+get
+Doc
+Type()
+Gets the document's
+Doc
+Type
+declaration. If the document does not have a
+Document
+Type
+node, this method returns
+null
+.
+Return
+Doc
+Type
+— the
+Document
+Type
+node, or
+null
+if the document does not have a
+Document
+Type
+node
+get
+Root
+Element()
+Gets the document's root
+Element
+node. If the document does not have a root
+Element
+node, this method returns
+null
+.
+Return
+Element
+— the root
+Element
+node, or
+null
+if the document does not have a root
+Element
+node
+has
+Root
+Element()
+Determines whether the document has a root
+Element
+node.
+Return
+Boolean
+—
+true
+if the document has a root
+Element
+node;
+false
+if not
+remove
+Content()
+Removes all nodes that are immediate children of the document.
+Return
+Content[]
+— an array of all nodes that were immediate children of the document before they
+    were removed
+remove
+Content(content)
+Removes the given node, if the node is an immediate child of the document. The
+content
+argument can be a
+Content
+object or any node object that corresponds to a
+type listed in
+Content
+Type
+.
+Parameters
+Name
+Type
+Description
+content
+Content
+the node to remove
+Return
+Boolean
+—
+true
+if the node was an immediate child and was removed;
+false
+if not
+remove
+Content(index)
+Removes the node at the given index among all nodes that are immediate children of the
+document. If there is no node at the given index, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+index
+Integer
+the index for the node among all nodes that are immediate children of the
+    document
+Return
+Content
+— the node that was removed, or
+null
+if there is no node at the given index
+set
+Doc
+Type(docType)
+Sets the document's
+Doc
+Type
+declaration. If the document already has a different
+Doc
+Type
+node, this method overwrites the old node. This method throws an exception if
+the document already contains the same
+Doc
+Type
+node that is being set.
+Parameters
+Name
+Type
+Description
+doc
+Type
+Doc
+Type
+the
+Document
+Type
+to set
+Return
+Document
+— the document, for chaining
+set
+Root
+Element(element)
+Sets the document's root
+Element
+node. If the document already has a root
+Element
+node, this method overwrites the old node.
+Parameters
+Name
+Type
+Description
+element
+Element
+the root
+Element
+node to set
+Return
+Document
+— the document, for chaining

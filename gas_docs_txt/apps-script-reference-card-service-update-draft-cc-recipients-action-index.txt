@@ -1,0 +1,44 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-draft-cc-recipients-action/index.html
+
+Update
+Draft
+Cc
+Recipients
+Action
+Updates the Cc recipients of an email draft.
+Methods
+Method
+Return type
+Brief description
+add
+Update
+Cc
+Recipients(ccRecipientEmails)
+Update
+Draft
+Cc
+Recipients
+Action
+Updates the Cc recipients of an email draft.
+Detailed documentation
+add
+Update
+Cc
+Recipients(ccRecipientEmails)
+Updates the Cc recipients of an email draft.
+Parameters
+Name
+Type
+Description
+cc
+Recipient
+Emails
+String[]
+The Cc recipients to insert to the email draft.
+Return
+Update
+Draft
+Cc
+Recipients
+Action
+— This object, for chaining.

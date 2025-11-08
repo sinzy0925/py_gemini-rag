@@ -1,0 +1,210 @@
+Source Path: gas_docs_html/apps-script/reference/document/tab/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Tab class represents a tab within a Google Docs document.
+You can retrieve a specific tab by its ID or get all first-level tabs in a document.
+The
+asDocumentTab()
+method retrieves the tab contents as a DocumentTab.
+The
+getChildTabs()
+method retrieves nested child tabs.
+Methods like
+getId()
+,
+getIndex()
+,
+getTitle()
+, and
+getType()
+provide information about the tab.
+Tab
+A tab within a Google Docs document.
+// Get all of the first-level tabs (tabs that are not nested within a parent
+// tab) in the document.
+// TODO(developer): Replace the ID with your own.
+const
+tabs
+=
+DocumentApp
+.
+openById
+(
+'123abc'
+).
+getTabs
+();
+// Get a specific tab based on the tab ID.
+// TODO(developer): Replace the IDs with your own.
+const
+tab
+=
+DocumentApp
+.
+openById
+(
+'123abc'
+).
+getTab
+(
+'123abc'
+);
+Methods
+Method
+Return type
+Brief description
+as
+Document
+Tab()
+Document
+Tab
+Retrieves the tab contents as a
+Document
+Tab
+.
+get
+Child
+Tabs()
+Tab[]
+Retrieves the child tabs nested within this tab.
+get
+Id()
+String
+Retrieves the ID of the tab.
+get
+Index()
+Integer
+Retrieves the 0-based index of the tab within the parent.
+get
+Title()
+String
+Retrieves the title of the tab.
+get
+Type()
+Tab
+Type
+Retrieves the type of tab.
+Detailed documentation
+as
+Document
+Tab()
+Retrieves the tab contents as a
+Document
+Tab
+.
+Return
+Document
+Tab
+— The tab as a
+Document
+Tab
+.
+get
+Child
+Tabs()
+Retrieves the child tabs nested within this tab.
+Return
+Tab[]
+— The child tabs nested within this tab.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Id()
+Retrieves the ID of the tab.
+Return
+String
+— The ID of the tab.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Index()
+Retrieves the 0-based index of the tab within the parent.
+Return
+Integer
+— The index of the tab within the parent.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Title()
+Retrieves the title of the tab.
+Return
+String
+— The title of the tab.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Type()
+Retrieves the type of tab.
+Use this method to determine the content type of this
+Tab
+before casting to the more
+specific type using
+as
+Document
+Tab()
+.
+const
+tab
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+();
+// Use getType() to determine the tab's type before casting.
+if
+(
+tab
+.
+getType
+()
+===
+DocumentApp
+.
+TabType
+.
+DOCUMENT_TAB
+)
+{
+// It's a document tab, write some text to it.
+tab
+.
+asDocumentTab
+().
+setText
+(
+'Hello World!'
+);
+}
+else
+{
+// There are currently no types other than DOCUMENT_TAB.
+}
+Return
+Tab
+Type
+— The tab's type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

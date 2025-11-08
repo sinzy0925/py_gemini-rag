@@ -1,0 +1,108 @@
+Source Path: gas_docs_html/apps-script/reference/forms/grid-validation-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+GridValidationBuilder is a DataValidationBuilder for a GridValidation in Google Apps Script forms.
+It can be used to set validation rules for grid items, such as requiring a limit of one response per column.
+The
+requireLimitOneResponsePerColumn()
+method is available to enforce this rule.
+Grid
+Validation
+Builder
+A DataValidationBuilder for a
+Grid
+Validation
+.
+// Add a grid item to a form and require one response per column.
+const
+form
+=
+FormApp
+.
+create
+(
+'My Form'
+);
+const
+gridItem
+=
+form
+.
+addGridItem
+();
+gridItem
+.
+setTitle
+(
+'Rate your interests'
+)
+.
+setRows
+([
+'Cars'
+,
+'Computers'
+,
+'Celebrities'
+])
+.
+setColumns
+([
+'Boring'
+,
+'So-so'
+,
+'Interesting'
+]);
+const
+gridValidation
+=
+FormApp
+.
+createGridValidation
+()
+.
+setHelpText
+(
+'Select one item per column.'
+)
+.
+requireLimitOneResponsePerColumn
+()
+.
+build
+();
+gridItem
+.
+setValidation
+(
+gridValidation
+);
+Methods
+Method
+Return type
+Brief description
+require
+Limit
+One
+Response
+Per
+Column()
+Grid
+Validation
+Builder
+Requires limit of one response per column for a grid item.
+Detailed documentation
+require
+Limit
+One
+Response
+Per
+Column()
+Requires limit of one response per column for a grid item.
+Return
+Grid
+Validation
+Builder
+— this validation builder, for chaining

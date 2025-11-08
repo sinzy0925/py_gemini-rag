@@ -1,0 +1,20 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/group-control-toggle-position/index.html
+
+Group
+Control
+Toggle
+Position
+An enumeration representing the possible positions that a group control toggle can have.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.GroupControlTogglePosition.BEFORE
+.
+Properties
+Property
+Type
+Description
+BEFORE
+Enum
+The position where the control toggle is before the group (at lower indices).
+AFTER
+Enum
+The position where the control toggle is after the group (at higher indices).

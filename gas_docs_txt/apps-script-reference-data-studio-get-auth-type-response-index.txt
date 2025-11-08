@@ -1,0 +1,161 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/get-auth-type-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+GetAuthTypeResponse is a builder used to create a
+getAuthType()
+response for your script project in Data Studio.
+The builder includes methods such as
+build()
+,
+printJson()
+,
+setAuthType(authType)
+, and
+setHelpUrl(helpUrl)
+to configure the authentication response.
+The
+build()
+method validates the object and returns it in the format required by Data Studio.
+The
+setAuthType()
+method sets the authentication type using an AuthType value, and the
+setHelpUrl()
+method sets an optional URL for help with authentication setup.
+Get
+Auth
+Type
+Response
+Builder to create a
+get
+Auth
+Type()
+response for your script project.
+function
+getAuthType
+()
+{
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+return
+cc
+.
+newAuthTypeResponse
+()
+.
+setAuthType
+(
+cc
+.
+AuthType
+.
+USER_PASS
+)
+.
+setHelpUrl
+(
+'https://www.example.org/connector-auth-help'
+)
+.
+build
+();
+}
+Methods
+Method
+Return type
+Brief description
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Auth
+Type(authType)
+Get
+Auth
+Type
+Response
+Sets the
+Auth
+Type
+of the builder.
+set
+Help
+Url(helpUrl)
+Get
+Auth
+Type
+Response
+Sets the help URL of the builder.
+Detailed documentation
+build()
+Validates this object and returns it in the format needed by Data Studio.
+Return
+Object
+— The validated
+Get
+Auth
+Type
+Response
+object.
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+set
+Auth
+Type(authType)
+Sets the
+Auth
+Type
+of the builder.
+Parameters
+Name
+Type
+Description
+auth
+Type
+Auth
+Type
+The authentication type to set.
+Return
+Get
+Auth
+Type
+Response
+— This builder, for chaining.
+set
+Help
+Url(helpUrl)
+Sets the help URL of the builder.
+The help URL is an optional URL the user can visit to get help on setting up auth. This is
+only supported for
+USER_PASS
+,
+KEY
+, and
+USER_TOKEN
+authTypes.
+Parameters
+Name
+Type
+Description
+help
+Url
+String
+The help URL to set.
+Return
+Get
+Auth
+Type
+Response
+— This builder, for chaining.

@@ -1,0 +1,116 @@
+Source Path: gas_docs_html/apps-script/reference/drive/access/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+Access
+enum represents classes of users who can access a file or folder in Google Drive.
+To use an
+Access
+enum, you call
+DriveApp.Access
+followed by the specific access property, such as
+DriveApp.Access.ANYONE
+.
+The available
+Access
+properties include
+ANYONE
+,
+ANYONE_WITH_LINK
+,
+DOMAIN
+,
+DOMAIN_WITH_LINK
+, and
+PRIVATE
+.
+ANYONE
+and
+ANYONE_WITH_LINK
+allow access without sign-in, while
+DOMAIN
+,
+DOMAIN_WITH_LINK
+, and
+PRIVATE
+require sign-in.
+Domain administrators can restrict the
+ANYONE
+and
+ANYONE_WITH_LINK
+settings for Google Workspace users.
+Access
+An enum representing classes of users who can access a file or folder, besides any individual
+users who have been explicitly given access. These properties can be accessed from
+Drive
+App.Access
+.
+To call an enum, you call its parent class, name, and property. For example,
+DriveApp.Access.ANYONE
+.
+// Creates a folder that anyone on the Internet can read from and write to.
+// (Domain administrators can prohibit this setting for users of a Google
+// Workspace domain.)
+const
+folder
+=
+DriveApp
+.
+createFolder
+(
+'Shared Folder'
+);
+folder
+.
+setSharing
+(
+DriveApp
+.
+Access
+.
+ANYONE
+,
+DriveApp
+.
+Permission
+.
+EDIT
+);
+Properties
+Property
+Type
+Description
+ANYONE
+Enum
+Anyone on the Internet can find and access. No sign-in required.
+Domain administrators can prohibit this setting for users of a Google Workspace domain. If
+the setting is disabled, passing this value to
+File.setSharing(accessType, permissionType)
+throws an exception.
+ANYONE_WITH_LINK
+Enum
+Anyone who has the link can access. No sign-in required.
+Domain administrators can prohibit this setting for users of a Google Workspace domain. If
+the setting is disabled, passing this value to
+File.setSharing(accessType, permissionType)
+throws an exception.
+DOMAIN
+Enum
+People in your domain can find and access. Sign-in required.
+This setting is available only for users of a Google Workspace domain. For other types of
+Google accounts, passing this value to
+File.setSharing(accessType, permissionType)
+throws
+an exception.
+DOMAIN_WITH_LINK
+Enum
+People in your domain who have the link can access. Sign-in required.
+This setting is available only for users of a Google Workspace domain. For other types of
+Google accounts, passing this value to
+File.setSharing(accessType, permissionType)
+throws
+an exception.
+PRIVATE
+Enum
+Only people explicitly granted permission can access. Sign-in required.

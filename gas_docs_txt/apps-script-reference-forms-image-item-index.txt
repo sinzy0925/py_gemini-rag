@@ -1,0 +1,420 @@
+Source Path: gas_docs_html/apps-script/reference/forms/image-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ImageItem is a layout item used in Google Forms to display an image.
+ImageItems can be created or accessed from a Form object in Apps Script.
+You can set or get properties of an ImageItem such as its title, help text, image data, alignment, and width using various methods.
+The
+duplicate()
+method creates a copy of the ImageItem and adds it to the form.
+Image
+Item
+A layout item that displays an image. Items can be accessed or created from a
+Form
+.
+// Open a form by ID and add a new image item
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+img
+=
+UrlFetchApp
+.
+fetch
+(
+'https://www.google.com/images/srpr/logo4w.png'
+);
+form
+.
+addImageItem
+()
+.
+setTitle
+(
+'Google'
+)
+.
+setHelpText
+(
+'Google Logo'
+)
+// The help text is the image description
+.
+setImage
+(
+img
+);
+Methods
+Method
+Return type
+Brief description
+duplicate()
+Image
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Alignment()
+Alignment
+Gets the image's horizontal alignment.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Image()
+Blob
+Gets the image that is currently assigned to the item.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+get
+Width()
+Integer
+Gets the image's width in pixels.
+set
+Alignment(alignment)
+Image
+Item
+Sets the image's horizontal alignment.
+set
+Help
+Text(text)
+Image
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Image(image)
+Image
+Item
+Sets the image itself.
+set
+Title(title)
+Image
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Width(width)
+Image
+Item
+Sets the image's width in pixels.
+Detailed documentation
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Image
+Item
+— a duplicate of this
+Image
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Alignment()
+Gets the image's horizontal alignment.
+Return
+Alignment
+— the horizontal alignment
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Image()
+Gets the image that is currently assigned to the item.
+Return
+Blob
+— the image data
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Width()
+Gets the image's width in pixels.
+Return
+Integer
+— the width in pixels
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Alignment(alignment)
+Sets the image's horizontal alignment.
+Parameters
+Name
+Type
+Description
+alignment
+Alignment
+the horizontal alignment
+Return
+Image
+Item
+— this
+Image
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Image
+Item
+— this
+Image
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Image(image)
+Sets the image itself.
+Parameters
+Name
+Type
+Description
+image
+Blob
+Source
+the image data
+Return
+Image
+Item
+— this
+Image
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Image
+Item
+— this
+Image
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Width(width)
+Sets the image's width in pixels. Only the image's width can be set. Height is set
+automatically to maintain the image's proportions.
+Parameters
+Name
+Type
+Description
+width
+Integer
+the width in pixels
+Return
+Image
+Item
+— this
+Image
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

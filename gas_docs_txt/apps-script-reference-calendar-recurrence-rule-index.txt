@@ -1,0 +1,1018 @@
+Source Path: gas_docs_html/apps-script/reference/calendar/recurrence-rule/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+RecurrenceRule represents a recurrence rule for an event series and can be chained with other rule creation methods.
+Modifiers like
+times()
+and
+interval()
+apply to the most recently added rule.
+Recurrence rules can be added on a daily, weekly, monthly, or yearly basis, with options for both inclusion and exclusion.
+You can configure rules to apply only at specific intervals or on specific days, weeks, or months using various
+onlyOn
+and
+onlyIn
+methods.
+Recurrence rules can be configured to end after a certain number of occurrences using
+times()
+or on a specific date using
+until()
+.
+Recurrence
+Rule
+Represents a recurrence rule for an event series.
+Note that this class also behaves like the
+Event
+Recurrence
+that it belongs to,
+allowing you to chain rule creation together like so:
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addDailyRule
+().
+times
+(
+3
+).
+interval
+(
+2
+).
+addWeeklyExclusion
+().
+times
+(
+2
+);
+Modifiers like
+times(times)
+and
+interval(interval)
+are applied to the most recently added rule.
+Methods
+Method
+Return type
+Brief description
+add
+Daily
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a daily basis.
+add
+Daily
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a daily basis.
+add
+Date(date)
+Event
+Recurrence
+Adds a rule that causes the event to recur on a specific date.
+add
+Date
+Exclusion(date)
+Event
+Recurrence
+Adds a rule that excludes an occurrence for a specific date.
+add
+Monthly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a monthly basis.
+add
+Monthly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a monthly basis.
+add
+Weekly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a weekly basis.
+add
+Weekly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a weekly basis.
+add
+Yearly
+Exclusion()
+Recurrence
+Rule
+Adds a rule that excludes occurrences on a yearly basis.
+add
+Yearly
+Rule()
+Recurrence
+Rule
+Adds a rule that causes the event to recur on a yearly basis.
+interval(interval)
+Recurrence
+Rule
+Configures the rule to only apply at this interval of the rule's time unit.
+only
+In
+Month(month)
+Recurrence
+Rule
+Configures the rule to only apply to a specific month.
+only
+In
+Months(months)
+Recurrence
+Rule
+Configures the rule to only apply to specific months.
+only
+On
+Month
+Day(day)
+Recurrence
+Rule
+Configures the rule to only apply to a specific day of the month.
+only
+On
+Month
+Days(days)
+Recurrence
+Rule
+Configures the rule to only apply to specific days of the month.
+only
+On
+Week(week)
+Recurrence
+Rule
+Configures the rule to only apply to a specific week of the year.
+only
+On
+Weekday(day)
+Recurrence
+Rule
+Configures the rule to only apply to a specific day of the week.
+only
+On
+Weekdays(days)
+Recurrence
+Rule
+Configures the rule to only apply to specific days of the week.
+only
+On
+Weeks(weeks)
+Recurrence
+Rule
+Configures the rule to only apply to specific weeks of the year.
+only
+On
+Year
+Day(day)
+Recurrence
+Rule
+Configures the rule to only apply to a specific day of the year.
+only
+On
+Year
+Days(days)
+Recurrence
+Rule
+Configures the rule to only apply to specific days of the year.
+set
+Time
+Zone(timeZone)
+Event
+Recurrence
+Sets the time zone for this recurrence.
+times(times)
+Recurrence
+Rule
+Configures the rule to end after a given number of occurrences.
+until(endDate)
+Recurrence
+Rule
+Configures the rule to end on a given date (inclusive).
+week
+Starts
+On(day)
+Recurrence
+Rule
+Configures which day a week starts on, for the purposes of applying the rule.
+Detailed documentation
+add
+Daily
+Exclusion()
+Adds a rule that excludes occurrences on a daily basis.
+// Creates a rule that recurs every week after the first 30 days.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+addDailyExclusion
+().
+times
+(
+30
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Daily
+Rule()
+Adds a rule that causes the event to recur on a daily basis.
+// Creates a rule that recurs every day for ten days.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addDailyRule
+().
+times
+(
+10
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Date(date)
+Adds a rule that causes the event to recur on a specific date.
+Parameters
+Name
+Type
+Description
+date
+Date
+Return
+Event
+Recurrence
+— this EventRecurrence for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Date
+Exclusion(date)
+Adds a rule that excludes an occurrence for a specific date.
+Parameters
+Name
+Type
+Description
+date
+Date
+Return
+Event
+Recurrence
+— this EventRecurrence for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Monthly
+Exclusion()
+Adds a rule that excludes occurrences on a monthly basis.
+By default the exclusion is applied on the same day of the month as the first event in the
+series, but this can be altered by calling
+only
+On
+Month
+Day(day)
+or
+only
+On
+Month
+Days(days)
+.
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Monthly
+Rule()
+Adds a rule that causes the event to recur on a monthly basis.
+By default the event recurs on the same day of the month as the first event in the series,
+but this can be altered by calling
+only
+On
+Month
+Day(day)
+or
+only
+On
+Month
+Days(days)
+.
+// Creates a rule that recurs every month for three months.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addMonthlyRule
+().
+times
+(
+4
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Weekly
+Exclusion()
+Adds a rule that excludes occurrences on a weekly basis.
+By default the exclusion is applied on the same day of the week as the first event in the
+series, but this can be altered by calling
+only
+On
+Weekday(day)
+or
+only
+On
+Weekdays(days)
+.
+// Creates a rule that recurs every day except the first four Wednesdays.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+()
+.
+addDailyRule
+()
+.
+addWeeklyExclusion
+()
+.
+onlyOnWeekday
+(
+CalendarApp
+.
+Weekday
+.
+WEDNESDAY
+)
+.
+times
+(
+4
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Weekly
+Rule()
+Adds a rule that causes the event to recur on a weekly basis.
+By default the event recurs on the same day of the week as the first event in the series,
+but this can be altered by calling
+only
+On
+Weekday(day)
+or
+only
+On
+Weekdays(days)
+.
+// Creates a rule that recurs every week for ten weeks.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+times
+(
+10
+);
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Yearly
+Exclusion()
+Adds a rule that excludes occurrences on a yearly basis.
+By default the exclusion is applied on the same day of the year as the first event in the
+series, but this can be altered by calling
+only
+On
+Year
+Day(day)
+or
+only
+On
+Year
+Days(days)
+.
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+add
+Yearly
+Rule()
+Adds a rule that causes the event to recur on a yearly basis.
+By default the event recurs on the same day of the year as the first event in the series,
+but this can be altered by calling
+only
+On
+Year
+Day(day)
+or
+only
+On
+Year
+Days(days)
+.
+Return
+Recurrence
+Rule
+— the new RecurrenceRule
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+interval(interval)
+Configures the rule to only apply at this interval of the rule's time unit.
+// Creates a rule that recurs every fourth week.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+interval
+(
+4
+);
+Parameters
+Name
+Type
+Description
+interval
+Integer
+the interval in the rule's time unit
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+In
+Month(month)
+Configures the rule to only apply to a specific month.
+// Creates a rule that recurs every week in February.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+onlyInMonth
+(
+CalendarApp
+.
+Month
+.
+FEBRUARY
+);
+Parameters
+Name
+Type
+Description
+month
+Month
+the month
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+In
+Months(months)
+Configures the rule to only apply to specific months.
+// Creates a rule that recurs every week in February and March.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+onlyInMonths
+(
+[
+CalendarApp
+.
+Month
+.
+FEBRUARY
+,
+CalendarApp
+.
+Month
+.
+MARCH
+]);
+Parameters
+Name
+Type
+Description
+months
+Month[]
+the months
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+On
+Month
+Day(day)
+Configures the rule to only apply to a specific day of the month.
+// Creates a rule that recurs every month on the fifth day of the month.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addMonthlyRule
+().
+onlyOnMonthDay
+(
+5
+);
+Parameters
+Name
+Type
+Description
+day
+Integer
+the day of the month
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+On
+Month
+Days(days)
+Configures the rule to only apply to specific days of the month.
+// Creates a rule that recurs every month on the first and fifteenth day of the
+// month.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addMonthlyRule
+().
+onlyOnMonthDays
+([
+1
+,
+15
+]);
+Parameters
+Name
+Type
+Description
+days
+Integer[]
+the days of the month
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+On
+Week(week)
+Configures the rule to only apply to a specific week of the year.
+// Creates a rule that recurs on the fifth week of every year.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+onlyOnWeek
+(
+5
+);
+Parameters
+Name
+Type
+Description
+week
+Integer
+the week
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+On
+Weekday(day)
+Configures the rule to only apply to a specific day of the week.
+// Creates a rule that recurs every week on Wednesdays.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+onlyOnWeekday
+(
+CalendarApp
+.
+Weekday
+.
+WEDNESDAY
+);
+Parameters
+Name
+Type
+Description
+day
+Weekday
+the day of the week
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+On
+Weekdays(days)
+Configures the rule to only apply to specific days of the week.
+// Creates a rule that recurs every week on Tuesdays and Thursdays.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+onlyOnWeekdays
+(
+[
+CalendarApp
+.
+Weekday
+.
+TUESDAY
+,
+CalendarApp
+.
+Weekday
+.
+THURSDAY
+]);
+Parameters
+Name
+Type
+Description
+days
+Weekday[]
+the days of the week
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+On
+Weeks(weeks)
+Configures the rule to only apply to specific weeks of the year.
+// Creates a rule that recurs on the fifth and tenth weeks of every year.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+onlyOnWeeks
+([
+5
+,
+10
+]);
+Parameters
+Name
+Type
+Description
+weeks
+Integer[]
+the weeks
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+On
+Year
+Day(day)
+Configures the rule to only apply to a specific day of the year.
+// Creates a rule that recurs every year on February 15 (the 46th day).
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addYearlyRule
+().
+onlyOnYearDay
+(
+46
+);
+Parameters
+Name
+Type
+Description
+day
+Integer
+the day of the year
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+only
+On
+Year
+Days(days)
+Configures the rule to only apply to specific days of the year.
+// Creates a rule that recurs every year on January 20 and February 15.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addYearlyRule
+().
+onlyOnYearDay
+([
+20
+,
+46
+]);
+Parameters
+Name
+Type
+Description
+days
+Integer[]
+the days of the year
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+set
+Time
+Zone(timeZone)
+Sets the time zone for this recurrence. This affects the date and time that events recur on,
+and whether the event shifts with daylight savings time. Defaults to the calendar's time zone.
+Parameters
+Name
+Type
+Description
+time
+Zone
+String
+the time zone, specified in "long" format (e.g., 'America/New_York', as listed
+    by
+Joda.org
+)
+Return
+Event
+Recurrence
+— this EventRecurrence for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+times(times)
+Configures the rule to end after a given number of occurrences.
+// Creates a rule that recurs every day for ten days.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addDailyRule
+().
+times
+(
+10
+);
+Parameters
+Name
+Type
+Description
+times
+Integer
+the number of times to recur
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+until(endDate)
+Configures the rule to end on a given date (inclusive).
+// Creates a rule that recurs every day through the end of 2013.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addDailyRule
+().
+until
+(
+new
+Date
+(
+'December 31, 2013'
+));
+Parameters
+Name
+Type
+Description
+end
+Date
+Date
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+week
+Starts
+On(day)
+Configures which day a week starts on, for the purposes of applying the rule.
+// Creates a weekly rule where weeks start on Monday.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+().
+addWeeklyRule
+().
+weekStartsOn
+(
+CalendarApp
+.
+Weekday
+.
+MONDAY
+);
+Parameters
+Name
+Type
+Description
+day
+Weekday
+the day on which the week starts
+Return
+Recurrence
+Rule
+— this RecurrenceRule for chaining

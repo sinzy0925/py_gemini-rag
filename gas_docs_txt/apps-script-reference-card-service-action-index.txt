@@ -1,0 +1,400 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/action/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+An Action enables interactivity in UI elements by invoking an Apps Script callback function with optional parameters.
+Actions are available for Google Workspace add-ons and Google Chat apps.
+You can add required widgets, set all widgets as required, and set the name of the callback function for an Action.
+Actions also allow setting interaction type (specifically for dialogs in Google Chat), load indicators, and custom parameters.
+You can control whether form values persist from the client or are overwritten by server values after an action response.
+Action
+An action that enables interactivity within UI elements. The action does not happen directly on
+the client but rather invokes an
+Apps Script callback function
+with optional parameters.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+image
+=
+CardService
+.
+newImage
+().
+setOnClickAction
+(
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'handleImageClick'
+).
+setParameters
+({
+imageSrc
+:
+'carImage'
+}),
+);
+Methods
+Method
+Return type
+Brief description
+add
+Required
+Widget(requiredWidget)
+Action
+Adds the names of the widgets that this Action needs for a valid submission.
+set
+All
+Widgets
+Are
+Required(allWidgetsAreRequired)
+Action
+Indicates whether this Action requires inputs from all widgets.
+set
+Function
+Name(functionName)
+Action
+Sets the name of the callback function to be called.
+set
+Interaction(interaction)
+Action
+Sets the interaction with a user, only required when opening a dialog.
+set
+Load
+Indicator(loadIndicator)
+Action
+Sets the loading indicator that displays while the action is in progress.
+set
+Parameters(parameters)
+Action
+Allows custom parameters to be passed to the callback function.
+set
+Persist
+Values(persistValues)
+Action
+Indicates whether form values are determined by the client's values or the server's values
+after an action response updates the form's
+Card
+.
+Deprecated methods
+Method
+Return type
+Brief description
+set
+Method
+Name(functionName)
+Action
+Detailed documentation
+add
+Required
+Widget(requiredWidget)
+Adds the names of the widgets that this Action needs for a valid submission. If the widgets in
+this list don't have a value when this Action is invoked, the form submission is aborted.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+textInput
+=
+CardService
+.
+newTextInput
+()
+.
+setFieldName
+(
+'text_input_1'
+)
+.
+setTitle
+(
+'Text input title'
+);
+// Creates a footer button that requires an input from the above TextInput
+// Widget.
+const
+action
+=
+CardService
+.
+newAction
+()
+.
+setFunctionName
+(
+'notificationCallback'
+)
+.
+addRequiredWidget
+(
+'text_input_1'
+);
+const
+fixedFooter
+=
+CardService
+.
+newFixedFooter
+().
+setPrimaryButton
+(
+CardService
+.
+newTextButton
+().
+setText
+(
+'help'
+).
+setOnClickAction
+(
+action
+),
+);
+Parameters
+Name
+Type
+Description
+required
+Widget
+String
+The name of the widget required by this Action.
+Return
+Action
+— This object, for chaining.
+set
+All
+Widgets
+Are
+Required(allWidgetsAreRequired)
+Indicates whether this Action requires inputs from all widgets.
+Available for Google Workspace add-ons and Google Chat apps.
+// Creates a button with an action that requires inputs from all widgets.
+const
+button
+=
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Create notification'
+)
+.
+setOnClickAction
+(
+CardService
+.
+newAction
+().
+setAllWidgetsAreRequired
+(
+true
+));
+Parameters
+Name
+Type
+Description
+all
+Widgets
+Are
+Required
+Boolean
+Whether the action requires inputs from all widgets. Defaults to
+false
+.
+Return
+Action
+— This object, for chaining.
+set
+Function
+Name(functionName)
+Sets the name of the callback function to be called. Required.
+Parameters
+Name
+Type
+Description
+function
+Name
+String
+The name of the function. You can use functions from included libraries,
+    such as
+Library.libFunction1
+.
+Return
+Action
+— This object, for chaining.
+set
+Interaction(interaction)
+Sets the interaction with a user, only required when opening a dialog. If unspecified, the app
+responds by executing an
+Action
+like opening a link or running a function—as normal.
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+const
+action
+=
+CardService
+.
+newAction
+()
+.
+setFunctionName
+(
+'handleDialog'
+)
+.
+setInteraction
+(
+CardService
+.
+Interaction
+.
+OPEN_DIALOG
+);
+Parameters
+Name
+Type
+Description
+interaction
+Interaction
+The interaction to specify.
+Return
+Action
+— This object, for chaining.
+set
+Load
+Indicator(loadIndicator)
+Sets the loading indicator that displays while the action is in progress.
+Parameters
+Name
+Type
+Description
+load
+Indicator
+Load
+Indicator
+The indicator to display.
+Return
+Action
+— This object, for chaining.
+set
+Parameters(parameters)
+Allows custom parameters to be passed to the callback function. Optional.
+Parameters
+Name
+Type
+Description
+parameters
+Object
+Both keys and values must be strings.
+Return
+Action
+— This object, for chaining.
+set
+Persist
+Values(persistValues)
+Indicates whether form values are determined by the client's values or the server's values
+after an action response updates the form's
+Card
+. When set to
+true
+, the
+client's values persist after the server response. When set to
+false
+, the server's
+values overwrite the form values. Defaults to
+false
+.
+Persisting the client values helps prevent situations where a form changes unexpectedly
+after a user makes an edit. For example, if a user makes an edit to a
+Text
+Input
+after
+submitting a form, but before the server responds. If the values are persisted, the edit the
+user made remains after the server response updates the
+Card
+; otherwise the form value
+returns to the value that the user originally submitted to the form.
+Persisting client values can interfere with your script's ability to clear form fields or
+override form values, so avoid turning on persistence for that type of functionality. Without
+persistence, it's recommended that you use the
+Load
+Indicator.SPINNER
+for events,
+because this locks the UI and prevents user edits before the server responds. Alternatively,
+you can use
+Load
+Indicator.NONE
+and make sure every element in the form has an onChange
+action.
+// Creates a button with an action that persists the client's values as the
+// on-click action.
+const
+button
+=
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Create notification'
+)
+.
+setOnClickAction
+(
+CardService
+.
+newAction
+().
+setPersistValues
+(
+true
+).
+setFunctionName
+(
+'functionName'
+),
+);
+Parameters
+Name
+Type
+Description
+persist
+Values
+Boolean
+Whether to persist values. Defaults to
+false
+.
+Return
+Action
+— This object, for chaining.
+Deprecated methods
+set
+Method
+Name(functionName)
+Deprecated.
+Legacy alias for
+set
+Function
+Name(functionName)
+.
+Parameters
+Name
+Type
+Description
+function
+Name
+String
+The name of the function. You can use functions from included libraries,
+    such as
+Library.libFunction1
+.
+Return
+Action
+— This object, for chaining.

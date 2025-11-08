@@ -1,0 +1,184 @@
+Source Path: gas_docs_html/apps-script/reference/forms/quiz-feedback-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+QuizFeedbackBuilder is used to build Feedback objects and set common properties like display text.
+It provides methods to add links, set text, build the feedback object, and create a copy.
+The addLink method can include a display text for the link.
+The build method finalizes the feedback object.
+Quiz
+Feedback
+Builder
+The base FeedbackBuilder that contains setters for properties common to all feedback, such as
+display text. Used to build Feedback objects.
+// Open a form by ID and add a new list item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addListItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+item
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Dogs'
+,
+true
+),
+item
+.
+createChoice
+(
+'Cats'
+,
+false
+),
+]);
+// Add feedback which will be shown for correct responses; ie "Dogs".
+item
+.
+setFeedbackForCorrect
+(
+FormApp
+.
+createFeedback
+().
+setText
+(
+'Dogs rule, cats drool.'
+).
+build
+(),
+);
+Methods
+Method
+Return type
+Brief description
+add
+Link(url)
+Quiz
+Feedback
+Builder
+Adds a link to the feedback's supplemental material.
+add
+Link(url, displayText)
+Quiz
+Feedback
+Builder
+Adds a link to the feedback's supplemental material.
+build()
+Quiz
+Feedback
+Builds a Feedback of the corresponding type for this builder.
+copy()
+Quiz
+Feedback
+Builder
+Returns a copy of this builder.
+set
+Text(text)
+Quiz
+Feedback
+Builder
+Sets the feedback text.
+Detailed documentation
+add
+Link(url)
+Adds a link to the feedback's supplemental material.
+Parameters
+Name
+Type
+Description
+url
+String
+the link to display under the display text
+Return
+Quiz
+Feedback
+Builder
+— this
+Quiz
+Feedback
+Builder
+, for chaining
+add
+Link(url, displayText)
+Adds a link to the feedback's supplemental material.
+Parameters
+Name
+Type
+Description
+url
+String
+the link to display under the display text
+display
+Text
+String
+the text to display for the link
+Return
+Quiz
+Feedback
+Builder
+— this
+Quiz
+Feedback
+Builder
+, for chaining
+build()
+Builds a Feedback of the corresponding type for this builder.
+Return
+Quiz
+Feedback
+—
+Quiz
+Feedback
+copy()
+Returns a copy of this builder.
+Return
+Quiz
+Feedback
+Builder
+—
+Quiz
+Feedback
+Builder
+set
+Text(text)
+Sets the feedback text.
+Parameters
+Name
+Type
+Description
+text
+String
+the new text
+Return
+Quiz
+Feedback
+Builder
+— this
+Quiz
+Feedback
+Builder
+, for chaining

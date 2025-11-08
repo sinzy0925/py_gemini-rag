@@ -1,0 +1,26 @@
+Source Path: gas_docs_html/apps-script/reference/slides/slide-position/index.html
+
+Slide
+Position
+The relative position of a
+Slide
+.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.SlidePosition.NEXT_SLIDE
+.
+Properties
+Property
+Type
+Description
+NEXT_SLIDE
+Enum
+The next slide.
+PREVIOUS_SLIDE
+Enum
+The previous slide.
+FIRST_SLIDE
+Enum
+The first slide in the presentation.
+LAST_SLIDE
+Enum
+The last slide in the presentation.

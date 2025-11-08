@@ -1,0 +1,78 @@
+Source Path: gas_docs_html/apps-script/reference/add-ons-response-service/render-action-builder/index.html
+
+Render
+Action
+Builder
+A builder for
+Render
+Action
+objects.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+Methods
+Method
+Return type
+Brief description
+build()
+Render
+Action
+Builds the current render action and validates it.
+set
+Action(action)
+Render
+Action
+Builder
+Sets the action that add-ons can use to update the UI to the render action.
+set
+Host
+App
+Action(hostAppAction)
+Render
+Action
+Builder
+Sets the host app action handled by individual host apps to the render action.
+Detailed documentation
+build()
+Builds the current render action and validates it.
+Return
+Render
+Action
+— A validated render action.
+set
+Action(action)
+Sets the action that add-ons can use to update the UI to the render action.
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to use.
+Return
+Render
+Action
+Builder
+— This object, for chaining.
+set
+Host
+App
+Action(hostAppAction)
+Sets the host app action handled by individual host apps to the render action.
+Parameters
+Name
+Type
+Description
+host
+App
+Action
+Host
+App
+Action
+The host app action to use.
+Return
+Render
+Action
+Builder
+— This object, for chaining.

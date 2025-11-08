@@ -1,0 +1,1189 @@
+Source Path: gas_docs_html/apps-script/reference/charts/area-chart-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+AreaChartBuilder is used to create area charts.
+You can set various chart options like title, axis titles, dimensions, colors, and data using the builder methods.
+Data for the chart can be provided via a DataTable or a data source URL.
+The
+build()
+method is used to finalize the chart creation and returns a Chart object.
+Area
+Chart
+Builder
+Builder for area charts. For more details, see the
+Google Charts documentation
+.
+Here is an example that shows how to build an area chart.
+// Create a data table with some sample data.
+const
+sampleData
+=
+Charts
+.
+newDataTable
+()
+.
+addColumn
+(
+Charts
+.
+ColumnType
+.
+STRING
+,
+'Month'
+)
+.
+addColumn
+(
+Charts
+.
+ColumnType
+.
+NUMBER
+,
+'Dining'
+)
+.
+addColumn
+(
+Charts
+.
+ColumnType
+.
+NUMBER
+,
+'Total'
+)
+.
+addRow
+([
+'Jan'
+,
+60
+,
+520
+])
+.
+addRow
+([
+'Feb'
+,
+50
+,
+430
+])
+.
+addRow
+([
+'Mar'
+,
+53
+,
+440
+])
+.
+addRow
+([
+'Apr'
+,
+70
+,
+410
+])
+.
+addRow
+([
+'May'
+,
+80
+,
+390
+])
+.
+addRow
+([
+'Jun'
+,
+60
+,
+500
+])
+.
+addRow
+([
+'Jul'
+,
+100
+,
+450
+])
+.
+addRow
+([
+'Aug'
+,
+140
+,
+431
+])
+.
+addRow
+([
+'Sep'
+,
+75
+,
+488
+])
+.
+addRow
+([
+'Oct'
+,
+70
+,
+521
+])
+.
+addRow
+([
+'Nov'
+,
+58
+,
+388
+])
+.
+addRow
+([
+'Dec'
+,
+63
+,
+400
+])
+.
+build
+();
+const
+chart
+=
+Charts
+.
+newAreaChart
+()
+.
+setTitle
+(
+'Yearly Spending'
+)
+.
+setXAxisTitle
+(
+'Month'
+)
+.
+setYAxisTitle
+(
+'Spending (USD)'
+)
+.
+setDimensions
+(
+600
+,
+500
+)
+.
+setStacked
+()
+.
+setColors
+([
+'red'
+,
+'green'
+])
+.
+setDataTable
+(
+sampleData
+)
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+reverse
+Categories()
+Area
+Chart
+Builder
+Reverses the drawing of series in the domain axis.
+set
+Background
+Color(cssValue)
+Area
+Chart
+Builder
+Sets the background color for the chart.
+set
+Colors(cssValues)
+Area
+Chart
+Builder
+Sets the colors for the lines in the chart.
+set
+Data
+Source
+Url(url)
+Area
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Area
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Area
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Area
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Area
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+Legend
+Position(position)
+Area
+Chart
+Builder
+Sets the position of the legend with respect to the chart.
+set
+Legend
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the text style of the chart legend.
+set
+Option(option, value)
+Area
+Chart
+Builder
+Sets advanced options for this chart.
+set
+Point
+Style(style)
+Area
+Chart
+Builder
+Sets the style for points in the line.
+set
+Range(start, end)
+Area
+Chart
+Builder
+Sets the range for the chart.
+set
+Stacked()
+Area
+Chart
+Builder
+Uses stacked lines, meaning that line and bar values are stacked (accumulated).
+set
+Title(chartTitle)
+Area
+Chart
+Builder
+Sets the title of the chart.
+set
+Title
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the text style of the chart title.
+set
+XAxis
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the horizontal axis text style.
+set
+XAxis
+Title(title)
+Area
+Chart
+Builder
+Adds a title to the horizontal axis.
+set
+XAxis
+Title
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the horizontal axis title text style.
+set
+YAxis
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the vertical axis text style.
+set
+YAxis
+Title(title)
+Area
+Chart
+Builder
+Adds a title to the vertical axis.
+set
+YAxis
+Title
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the vertical axis title text style.
+use
+Log
+Scale()
+Area
+Chart
+Builder
+Makes the range axis into a logarithmic scale (requires all values to be positive).
+Detailed documentation
+build()
+Builds the chart.
+Return
+Chart
+— A Chart object, which can be embedded into documents, UI elements, or used as a static
+    image.
+reverse
+Categories()
+Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+area or column charts), this means the horizontal axis is drawn from right to left. For
+horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+bottom. For pie charts, this means the slices are drawn counterclockwise.
+// Creates a pie chart builder and sets drawing of the slices in a
+// counter-clockwise manner.
+const
+builder
+=
+Charts
+.
+newPieChart
+();
+builder
+.
+reverseCategories
+();
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Background
+Color(cssValue)
+Sets the background color for the chart.
+// Creates a line chart builder and sets the background color to gray
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setBackgroundColor
+(
+'gray'
+);
+Parameters
+Name
+Type
+Description
+css
+Value
+String
+The CSS value for the color (such as
+"blue"
+or
+"#00f"
+).
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Colors(cssValues)
+Sets the colors for the lines in the chart.
+// Creates a line chart builder and sets the first two lines to be drawn in
+// green and red, respectively.
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setColors
+([
+'green'
+,
+'red'
+]);
+Parameters
+Name
+Type
+Description
+css
+Values
+String[]
+An array of color CSS values, such as
+["red", "#acf"]
+. The nth element
+    in the array represents the color of the nth line in the chart.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Data
+Source
+Url(url)
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
+For more information about querying data sources, check out the
+Google Charts documentation
+.
+Parameters
+Name
+Type
+Description
+url
+String
+The data source URL, including any query parameters.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Data
+Table(tableBuilder)
+Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+for setting the data table without needing to call
+build()
+.
+Parameters
+Name
+Type
+Description
+table
+Builder
+Data
+Table
+Builder
+A data table builder. A new data table is created instantly as part of this
+    call, so any further updates to the builder won't be reflected in the chart.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Data
+Table(table)
+Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+first column should be a string, and contain the horizontal axis labels. Any number of columns
+can follow, all must be numeric. Each column is displayed as a separate line.
+Parameters
+Name
+Type
+Description
+table
+Data
+Table
+Source
+The data table to use for the chart.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Data
+View
+Definition(dataViewDefinition)
+Sets the data view definition to use for the chart.
+Parameters
+Name
+Type
+Description
+data
+View
+Definition
+Data
+View
+Definition
+A data view definition object that defines the view that should be
+    derived from the given data source for the chart drawing.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Dimensions(width, height)
+Sets the dimensions for the chart.
+Parameters
+Name
+Type
+Description
+width
+Integer
+The width of the chart, in pixels.
+height
+Integer
+The height of the chart, in pixels.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Legend
+Position(position)
+Sets the position of the legend with respect to the chart. By default, there is no legend.
+// Creates a line chart builder and sets the legend position to right.
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setLegendPosition
+(
+Charts
+.
+Position
+.
+RIGHT
+);
+Parameters
+Name
+Type
+Description
+position
+Position
+The position of the legend.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Legend
+Text
+Style(textStyle)
+Sets the text style of the chart legend.
+// Creates a line chart builder and sets it up for a  blue, 26-point legend.
+const
+textStyleBuilder
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'#0000FF'
+).
+setFontSize
+(
+26
+);
+const
+style
+=
+textStyleBuilder
+.
+build
+();
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setLegendTextStyle
+(
+style
+);
+Parameters
+Name
+Type
+Description
+text
+Style
+Text
+Style
+The text style to use for the chart legend.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Option(option, value)
+Sets advanced options for this chart. See
+the available options for
+this chart
+. This method has no effect if the given option is invalid.
+// Build an area chart with a 1-second animation duration.
+const
+builder
+=
+Charts
+.
+newAreaChart
+();
+builder
+.
+setOption
+(
+'animation.duration'
+,
+1000
+);
+const
+chart
+=
+builder
+.
+build
+();
+Parameters
+Name
+Type
+Description
+option
+String
+The option to set.
+value
+Object
+The value to set.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Point
+Style(style)
+Sets the style for points in the line. By default, points have no particular styles, and only
+the line is visible.
+// Creates a line chart builder and sets large point style.
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setPointStyle
+(
+Charts
+.
+PointStyle
+.
+LARGE
+);
+Parameters
+Name
+Type
+Description
+style
+Point
+Style
+The style to use for points in the line.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+See also
+Point
+Style
+set
+Range(start, end)
+Sets the range for the chart.
+If any data points fall outside the range, the range is expanded to include those data
+points.
+Parameters
+Name
+Type
+Description
+start
+Number
+The value for the lowest grid line of the range axis.
+end
+Number
+The value for the highest grid line of the range axis.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Stacked()
+Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
+there is no stacking.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Title(chartTitle)
+Sets the title of the chart. The title is displayed centered above the chart.
+// Creates a line chart builder and title to 'My Line Chart'.
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setTitle
+(
+'My Line Chart'
+);
+Parameters
+Name
+Type
+Description
+chart
+Title
+String
+the chart title.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+Title
+Text
+Style(textStyle)
+Sets the text style of the chart title.
+// Creates a line chart builder and sets it up for a  blue, 26-point title.
+const
+textStyleBuilder
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'#0000FF'
+).
+setFontSize
+(
+26
+);
+const
+style
+=
+textStyleBuilder
+.
+build
+();
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setTitleTextStyle
+(
+style
+);
+Parameters
+Name
+Type
+Description
+text
+Style
+Text
+Style
+The text style to use for the chart title. You can create a
+Text
+Style
+Builder
+object by calling
+Charts.newTextStyle()
+.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+XAxis
+Text
+Style(textStyle)
+Sets the horizontal axis text style.
+// Creates a line chart builder and sets the X-axis text style to blue, 18-point
+// font.
+const
+textStyle
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'blue'
+).
+setFontSize
+(
+18
+).
+build
+();
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setXAxisTextStyle
+(
+textStyle
+);
+Parameters
+Name
+Type
+Description
+text
+Style
+Text
+Style
+The text style to use for the horizontal axis title. You can create a
+Text
+Style
+Builder
+object by calling
+Charts.newTextStyle()
+.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+XAxis
+Title(title)
+Adds a title to the horizontal axis. The title is centered and appears below the axis value
+labels.
+// Creates a line chart builder and sets the X-axis title.
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setTitle
+(
+'X-axis Title'
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The title for the X-axis.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+XAxis
+Title
+Text
+Style(textStyle)
+Sets the horizontal axis title text style.
+// Creates a line chart builder and sets the X-axis title text style to blue,
+// 18-point font.
+const
+textStyle
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'blue'
+).
+setFontSize
+(
+18
+).
+build
+();
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setXAxisTitleTextStyle
+(
+textStyle
+);
+Parameters
+Name
+Type
+Description
+text
+Style
+Text
+Style
+The text style to use for the horizontal axis title. You can create a
+Text
+Style
+Builder
+object by calling
+Charts.newTextStyle()
+.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+YAxis
+Text
+Style(textStyle)
+Sets the vertical axis text style.
+// Creates a line chart builder and sets the Y-axis text style to blue, 18-point
+// font.
+const
+textStyle
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'blue'
+).
+setFontSize
+(
+18
+).
+build
+();
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setYAxisTextStyle
+(
+textStyle
+);
+Parameters
+Name
+Type
+Description
+text
+Style
+Text
+Style
+The text style to use for the horizontal axis title. You can create a
+Text
+Style
+Builder
+object by calling
+Charts.newTextStyle()
+.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+YAxis
+Title(title)
+Adds a title to the vertical axis. The title is centered and appears to the left of the value
+labels.
+// Creates a line chart builder and sets the Y-axis title.
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setYAxisTitle
+(
+'Y-axis Title'
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The title for the Y-axis.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+set
+YAxis
+Title
+Text
+Style(textStyle)
+Sets the vertical axis title text style.
+// Creates a line chart builder and sets the Y-axis title text style to blue,
+// 18-point font.
+const
+textStyle
+=
+Charts
+.
+newTextStyle
+().
+setColor
+(
+'blue'
+).
+setFontSize
+(
+18
+).
+build
+();
+const
+builder
+=
+Charts
+.
+newLineChart
+();
+builder
+.
+setYAxisTitleTextStyle
+(
+textStyle
+);
+Parameters
+Name
+Type
+Description
+text
+Style
+Text
+Style
+The text style to use for the horizontal axis title. You can create a
+Text
+Style
+Builder
+object by calling
+Charts.newTextStyle()
+.
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.
+use
+Log
+Scale()
+Makes the range axis into a logarithmic scale (requires all values to be positive). The range
+axis are the vertical axis for vertical charts (such as line, area, or column) and the
+horizontal axis for horizontal charts (such as bar).
+Return
+Area
+Chart
+Builder
+— This builder, useful for chaining.

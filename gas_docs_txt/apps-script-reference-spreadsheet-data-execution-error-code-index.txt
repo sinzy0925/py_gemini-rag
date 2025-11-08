@@ -1,0 +1,99 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-execution-error-code/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DataExecutionErrorCode is an enumeration of data execution error codes.
+You call an enum by calling its parent class, name, and property, like
+SpreadsheetApp.DataExecutionErrorCode.TIME_OUT
+.
+The available properties represent different types of data execution errors, such as timeout, too many rows/columns/cells, engine errors, invalid parameters, unsupported data types, duplicate column names, interruptions, and permission denied.
+Data
+Execution
+Error
+Code
+An enumeration of data execution error codes.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.DataExecutionErrorCode.TIME_OUT
+.
+Properties
+Property
+Type
+Description
+DATA_EXECUTION_ERROR_CODE_UNSUPPORTED
+Enum
+A data execution error code that is not supported in Apps Script.
+NONE
+Enum
+The data execution has no error.
+TIME_OUT
+Enum
+The data execution timed out. Please update the data source
+specification
+.
+TOO_MANY_ROWS
+Enum
+The data execution returns more rows than the limit. Please update the data source
+specification
+.
+TOO_MANY_COLUMNS
+Enum
+The data execution returns more columns than the limit. Please update the data source
+specification
+.
+TOO_MANY_CELLS
+Enum
+The data execution returns more cells than the limit. Please update the data source
+specification
+.
+ENGINE
+Enum
+Data execution engine error. Use
+Data
+Execution
+Status.getErrorMessage()
+for details.
+PARAMETER_INVALID
+Enum
+Invalid data execution parameter. The source cell must exist and contain only a number or text.
+Please update the data source
+specification
+.
+UNSUPPORTED_DATA_TYPE
+Enum
+The data execution returns unsupported data type. Please update the data source
+specification
+.
+For BigQuery,
+ARRAY
+or
+STRUCT
+type is not supported.
+DUPLICATE_COLUMN_NAMES
+Enum
+The data execution returns duplicate column names. Please update the data source
+specification
+.
+INTERRUPTED
+Enum
+The data execution is interrupted. Please refresh later.
+OTHER
+Enum
+Other errors.
+TOO_MANY_CHARS_PER_CELL
+Enum
+The data execution returns values that exceed the maximum characters allowed in a single cell.
+Please update the data source
+specification
+.
+DATA_NOT_FOUND
+Enum
+The database referenced by the data source is not found. Please update the data source
+specification
+.
+PERMISSION_DENIED
+Enum
+The user does not have access to the database referenced by the data source. Please update the
+data source
+specification
+or contact the owner of the billing
+project to request access.

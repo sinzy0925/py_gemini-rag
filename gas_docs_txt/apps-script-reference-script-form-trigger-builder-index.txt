@@ -1,0 +1,113 @@
+Source Path: gas_docs_html/apps-script/reference/script/form-trigger-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+FormTriggerBuilder is used to build form triggers.
+The
+create()
+method creates and returns a new trigger.
+The
+onFormSubmit()
+method specifies a trigger that fires when a form response is submitted.
+The
+onOpen()
+method specifies a trigger that fires when the form's edit view is opened.
+Form
+Trigger
+Builder
+A builder for form triggers.
+Methods
+Method
+Return type
+Brief description
+create()
+Trigger
+Creates and returns the new trigger.
+on
+Form
+Submit()
+Form
+Trigger
+Builder
+Specifies a trigger that will fire when a response is submitted to the form.
+on
+Open()
+Form
+Trigger
+Builder
+Specifies a trigger that will fire when the form's edit view is opened.
+Detailed documentation
+create()
+Creates and returns the new trigger.
+Return
+Trigger
+— The new trigger.
+on
+Form
+Submit()
+Specifies a trigger that will fire when a response is submitted to the form.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+).
+forForm
+(
+form
+).
+onFormSubmit
+().
+create
+();
+Return
+Form
+Trigger
+Builder
+— this
+Form
+Trigger
+Builder
+, for chaining
+on
+Open()
+Specifies a trigger that will fire when the form's edit view is opened.
+const
+form
+=
+FormApp
+.
+getActiveForm
+();
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+).
+forForm
+(
+form
+).
+onOpen
+().
+create
+();
+Return
+Form
+Trigger
+Builder
+— This
+Form
+Trigger
+Builder
+, for chaining.

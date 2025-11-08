@@ -1,0 +1,30 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/data-studio-app/index.html
+
+Data
+Studio
+App
+Data
+Studio
+App allows scripts to interact with developer-oriented features for Data Studio.
+Methods
+Method
+Return type
+Brief description
+create
+Community
+Connector()
+Community
+Connector
+Creates a new Community Connector.
+Detailed documentation
+create
+Community
+Connector()
+Creates a new Community Connector.
+Return
+Community
+Connector
+— A new
+Community
+Connector
+object.

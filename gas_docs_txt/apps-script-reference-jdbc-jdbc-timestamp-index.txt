@@ -1,0 +1,371 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-timestamp/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A
+JdbcTimestamp
+is a JDBC Timestamp.
+It provides methods to compare timestamps like
+after()
+and
+before()
+.
+You can retrieve individual components of the timestamp such as date, hours, minutes, month, nanos, seconds, time, and year using the
+get
+methods.
+The
+set
+methods allow you to modify different parts of the timestamp like date, hours, minutes, month, nanos, seconds, time, and year.
+The documentation for the methods refers to the
+java.sql.Timestamp
+and
+java.sql.Date
+classes.
+Jdbc
+Timestamp
+A JDBC
+Timestamp
+. For documentation of this class, see
+java.sql.Timestamp
+.
+Methods
+Method
+Return type
+Brief description
+after(when)
+Boolean
+For documentation of this method, see
+java.sql.Timestamp#after(Timestamp)
+.
+before(when)
+Boolean
+For documentation of this method, see
+java.sql.Timestamp#before(Timestamp)
+.
+get
+Date()
+Integer
+For documentation of this method, see
+java.sql.Date#getDate()
+.
+get
+Hours()
+Integer
+For documentation of this method, see
+java.sql.Date#getHours()
+.
+get
+Minutes()
+Integer
+For documentation of this method, see
+java.sql.Date#getMinutes()
+.
+get
+Month()
+Integer
+For documentation of this method, see
+java.sql.Date#getMonth()
+.
+get
+Nanos()
+Integer
+For documentation of this method, see
+java.sql.Timestamp#getNanos()
+.
+get
+Seconds()
+Integer
+For documentation of this method, see
+java.sql.Date#getSeconds()
+.
+get
+Time()
+Integer
+For documentation of this method, see
+java.sql.Timestamp#getTime()
+.
+get
+Year()
+Integer
+For documentation of this method, see
+java.sql.Date#getYear()
+.
+set
+Date(date)
+void
+For documentation of this method, see
+java.sql.Date#setDate(int)
+.
+set
+Hours(hours)
+void
+For documentation of this method, see
+java.sql.Date#setHours(int)
+.
+set
+Minutes(minutes)
+void
+For documentation of this method, see
+java.sql.Date#setMinutes(int)
+.
+set
+Month(month)
+void
+For documentation of this method, see
+java.sql.Date#setMonth(int)
+.
+set
+Nanos(nanoseconds)
+void
+For documentation of this method, see
+java.sql.Timestamp#setNanos(int)
+.
+set
+Seconds(seconds)
+void
+For documentation of this method, see
+java.sql.Date#setSeconds(int)
+.
+set
+Time(milliseconds)
+void
+For documentation of this method, see
+java.sql.Timestamp#setTime(long)
+.
+set
+Year(year)
+void
+For documentation of this method, see
+java.sql.Date#setYear(int)
+.
+Detailed documentation
+after(when)
+For documentation of this method, see
+java.sql.Timestamp#after(Timestamp)
+.
+Parameters
+Name
+Type
+Description
+when
+Jdbc
+Timestamp
+A timestamp to compare to.
+Return
+Boolean
+—
+true
+if and only if this timestampe is strictly later than the timestamp
+    specified as a parameter;
+false
+otherwise.
+before(when)
+For documentation of this method, see
+java.sql.Timestamp#before(Timestamp)
+.
+Parameters
+Name
+Type
+Description
+when
+Jdbc
+Timestamp
+A timestamp to compare to.
+Return
+Boolean
+—
+true
+if and only if this timestamp is strictly earlier than the timestamp
+    specified as a parameter;
+false
+otherwise.
+get
+Date()
+For documentation of this method, see
+java.sql.Date#getDate()
+.
+Return
+Integer
+— The day of the month represented by this timestamp. The value returned is between 1 and
+    31 representing the day of the month that contains or begins with the instant in time
+    represented by this timestamp, as interpreted in the local time zone.
+get
+Hours()
+For documentation of this method, see
+java.sql.Date#getHours()
+.
+Return
+Integer
+— The hour represented by this object; the value is a number (0 through 23) representing
+    the hour within the day that contains or begins with the instant in time represented by
+    this object, as interpreted in the local time zone.
+get
+Minutes()
+For documentation of this method, see
+java.sql.Date#getMinutes()
+.
+Return
+Integer
+— The minutes past the hour represented by this object, as interpreted in the local time
+    zone. The value is a number between 0 through 59 inclusive.
+get
+Month()
+For documentation of this method, see
+java.sql.Date#getMonth()
+.
+Return
+Integer
+— The month that contains or begins with the instant in time represented by this
+    timestamp. The value returned is between 0 and 11, with the value 0 representing January.
+get
+Nanos()
+For documentation of this method, see
+java.sql.Timestamp#getNanos()
+.
+Return
+Integer
+— This timestamp's fractional seconds value (nanoseconds).
+get
+Seconds()
+For documentation of this method, see
+java.sql.Date#getSeconds()
+.
+Return
+Integer
+— The seconds past the minute represented by this object, as interpreted in the local
+    time zone. The value is a number between 0 through 61 inclusive, whiere 60 and 61 are only
+    possible for machines that take leap seconds into account.
+get
+Time()
+For documentation of this method, see
+java.sql.Timestamp#getTime()
+.
+Return
+Integer
+— The number of milliseconds since January 1, 1970, 00:00:00 GMT represented by this time
+    object.
+get
+Year()
+For documentation of this method, see
+java.sql.Date#getYear()
+.
+Return
+Integer
+— A value that is the result of subtracting 1900 from the year that contains or begins
+    with the instant in time represented by this timestampe, as interpreted in the local time
+    zone.
+set
+Date(date)
+For documentation of this method, see
+java.sql.Date#setDate(int)
+.
+Parameters
+Name
+Type
+Description
+date
+Integer
+The day of month to set. This timestamp is updated to represent a point in time
+    within the specified day of month, with the year, month, hour, minute, and second the same
+    as before, as interpreted in the local time zone. If the date was April 30, for example,
+    and the date is set to 31, then it is treated as if it were on May 1, because April has
+    only 30 days.
+set
+Hours(hours)
+For documentation of this method, see
+java.sql.Date#setHours(int)
+.
+Parameters
+Name
+Type
+Description
+hours
+Integer
+The hour to set; this object is updated to represent a point in time within the
+    specified hour of the day, with the year, month, date, minute, and second the same as
+    before, as interpreted in the local time zone.
+set
+Minutes(minutes)
+For documentation of this method, see
+java.sql.Date#setMinutes(int)
+.
+Parameters
+Name
+Type
+Description
+minutes
+Integer
+The minutes to set; this object is updated to represent a point in time within
+    the specified minute of the hour, with the year, month, date, hour, and second the same as
+    before, as interpreted in the local time zone.
+set
+Month(month)
+For documentation of this method, see
+java.sql.Date#setMonth(int)
+.
+Parameters
+Name
+Type
+Description
+month
+Integer
+The month to set. This timestamp is updated to represent a point in time within
+    the specified month, with the year, date, hour, minute, and second the same as before, as
+    interpreted in the local time zone. If the date was October 31, for example, and the month
+    is set to June, then the new date is treated as if it were on July 1, because June has only
+    30 days.
+set
+Nanos(nanoseconds)
+For documentation of this method, see
+java.sql.Timestamp#setNanos(int)
+.
+Parameters
+Name
+Type
+Description
+nanoseconds
+Integer
+The new fractional seconds value.
+set
+Seconds(seconds)
+For documentation of this method, see
+java.sql.Date#setSeconds(int)
+.
+Parameters
+Name
+Type
+Description
+seconds
+Integer
+The seconds to set; this object is updated to represent a point in time within
+    the specified second of the minute, with the year, month, date, hour, and minute the same
+    as before, as interpreted in the local time zone.
+set
+Time(milliseconds)
+For documentation of this method, see
+java.sql.Timestamp#setTime(long)
+.
+Parameters
+Name
+Type
+Description
+milliseconds
+Integer
+The time value to set. The value is milliseconds since January 1, 1970,
+    00:00:00 GMT.
+set
+Year(year)
+For documentation of this method, see
+java.sql.Date#setYear(int)
+.
+Parameters
+Name
+Type
+Description
+year
+Integer
+The year value to set; the timestamp's year is set to this value plus 1900. This
+    timestamp is updated to represent a point in time within the specified year, with the
+    month, date, hour, minute, and second the same as before, as interpreted in the local time
+    zone. If the date was February 29, for example, and the year is set to a non-leap year,
+    then the new date is treated as if it were on March 1.

@@ -1,0 +1,312 @@
+Source Path: gas_docs_html/apps-script/reference/properties/user-properties/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+This class is deprecated and should not be used in new scripts.
+User Properties are key-value pairs unique to a user.
+User Properties are scoped per user, meaning a script can only access properties for the user running the script.
+User
+Properties
+Deprecated.
+This class is deprecated and should not be used in new scripts.
+User Properties are key-value pairs unique to a user. User Properties are scoped per user; any
+script running under the identity of a user can access User Properties for that user only.
+Deprecated methods
+Method
+Return type
+Brief description
+delete
+All
+Properties()
+User
+Properties
+Deletes all properties.
+delete
+Property(key)
+User
+Properties
+Deletes the property with the given key.
+get
+Keys()
+String[]
+Get all of the available keys.
+get
+Properties()
+Object
+Get all of the available properties at once.
+get
+Property(key)
+String
+Returns the value associated with the provided key, or null if there is no such value.
+set
+Properties(properties)
+User
+Properties
+Bulk-sets all the properties drawn from the given object.
+set
+Properties(properties, deleteAllOthers)
+User
+Properties
+Bulk-sets all the properties drawn from the given object.
+set
+Property(key, value)
+User
+Properties
+Persists the specified in value with the provided key.
+Deprecated methods
+delete
+All
+Properties()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes all properties.
+User
+Properties
+.
+deleteAllProperties
+();
+Return
+User
+Properties
+— this object, for chaining
+See also
+delete
+Property(key)
+delete
+Property(key)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes the property with the given key.
+User
+Properties
+.
+deleteProperty
+(
+'special'
+);
+Parameters
+Name
+Type
+Description
+key
+String
+key for property to delete
+Return
+User
+Properties
+— this object, for chaining
+See also
+delete
+All
+Properties()
+get
+Keys()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get all of the available keys.
+Return
+String[]
+get
+Properties()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get all of the available properties at once.
+This gives a copy, not a live view, so changing the properties on the returned object won't
+update them in storage and vice versa.
+User
+Properties
+.
+setProperties
+({
+"cow"
+:
+"moo"
+,
+"sheep"
+:
+"baa"
+,
+"chicken"
+:
+"cluck"
+});
+// Logs "A cow goes: moo"
+Logger
+.
+log
+(
+"A cow goes: %s"
+,
+UserProperties
+.
+getProperty
+(
+"cow"
+));
+// This makes a copy. Any changes that happen here will not
+// be written back to properties.
+var
+animalSounds
+=
+UserProperties
+.
+getProperties
+();
+// Logs:
+// A chicken goes cluck!
+// A cow goes moo!
+// A sheep goes baa!
+for
+(
+var
+kind
+in
+animalSounds
+)
+{
+Logger
+.
+log
+(
+"A %s goes %s!"
+,
+kind
+,
+animalSounds
+[
+kind
+]);
+}
+Return
+Object
+— a copy of the properties containing key-value pairs
+get
+Property(key)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Returns the value associated with the provided key, or null if there is no such value.
+const
+specialValue
+=
+UserProperties
+.
+getProperty
+(
+'special'
+);
+Parameters
+Name
+Type
+Description
+key
+String
+key for the value to retrieve
+Return
+String
+— the value associated with the key
+See also
+set
+Property(key, value)
+set
+Properties(properties)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Bulk-sets all the properties drawn from the given object.
+User
+Properties
+.
+setProperties
+({
+special
+:
+'sauce'
+,
+'meaning'
+:
+42
+});
+Parameters
+Name
+Type
+Description
+properties
+Object
+an object containing the properties to set.
+Return
+User
+Properties
+— this object, for chaining
+See also
+set
+Property(key, value)
+set
+Properties(properties, deleteAllOthers)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Bulk-sets all the properties drawn from the given object.
+// This deletes all other properties
+UserProperties
+.
+setProperties
+({
+special
+:
+'sauce'
+,
+'meaning'
+:
+42
+},
+true
+);
+Parameters
+Name
+Type
+Description
+properties
+Object
+an object containing the properties to set.
+delete
+All
+Others
+Boolean
+whether to delete all existing properties.
+Return
+User
+Properties
+— this object, for chaining
+See also
+set
+Property(key, value)
+set
+Property(key, value)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Persists the specified in value with the provided key. Any existing value associated with this
+key will be overwritten.
+User
+Properties
+.
+setProperty
+(
+'special'
+,
+'sauce'
+);
+Parameters
+Name
+Type
+Description
+key
+String
+key for property
+value
+String
+value to associate with the key
+Return
+User
+Properties
+— this object, for chaining
+See also
+get
+Property(key)

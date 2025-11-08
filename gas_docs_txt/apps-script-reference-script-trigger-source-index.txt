@@ -1,0 +1,27 @@
+Source Path: gas_docs_html/apps-script/reference/script/trigger-source/index.html
+
+Trigger
+Source
+An enumeration denoting the source of the event that causes the trigger to fire.
+To call an enum, you call its parent class, name, and property. For example,
+ScriptApp.TriggerSource.SPREADSHEETS
+.
+Properties
+Property
+Type
+Description
+SPREADSHEETS
+Enum
+Google Sheets causes the trigger to fire.
+CLOCK
+Enum
+A time-driven event causes the trigger to fire.
+FORMS
+Enum
+Google Forms causes the trigger to fire.
+DOCUMENTS
+Enum
+Google Docs causes the trigger to fire.
+CALENDAR
+Enum
+Google Calendar causes the trigger to fire.

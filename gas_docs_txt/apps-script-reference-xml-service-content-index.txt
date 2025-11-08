@@ -1,0 +1,299 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/content/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A generic XML node is represented by this class.
+It has implementing classes for various XML node types like Cdata, Comment, DocType, Element, EntityRef, ProcessingInstruction, and Text.
+Methods allow casting the node to specific types, detaching it from its parent, getting the parent element, determining its type, and retrieving its text value.
+Content
+A representation of a generic XML node.
+Implementing classes
+Name
+Brief description
+Cdata
+A representation of an XML
+CDATASection
+node.
+Comment
+A representation of an XML
+Comment
+node.
+Doc
+Type
+A representation of an XML
+Document
+Type
+node.
+Element
+A representation of an XML
+Element
+node.
+Entity
+Ref
+A representation of an XML
+Entity
+Reference
+node.
+Processing
+Instruction
+A representation of an XML
+Processing
+Instruction
+node.
+Text
+A representation of an XML
+Text
+node.
+Methods
+Method
+Return type
+Brief description
+as
+Cdata()
+Cdata
+Casts the node as a
+CDATASection
+node for the purposes of autocomplete.
+as
+Comment()
+Comment
+Casts the node as a
+Comment
+node for the purposes of autocomplete.
+as
+Doc
+Type()
+Doc
+Type
+Casts the node as a
+Document
+Type
+node for the purposes of autocomplete.
+as
+Element()
+Element
+Casts the node as an
+Element
+node for the purposes of autocomplete.
+as
+Entity
+Ref()
+Entity
+Ref
+Casts the node as a
+Entity
+Reference
+node for the purposes of autocomplete.
+as
+Processing
+Instruction()
+Processing
+Instruction
+Casts the node as a
+Processing
+Instruction
+node for the purposes of autocomplete.
+as
+Text()
+Text
+Casts the node as a
+Text
+node for the purposes of autocomplete.
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Type()
+Content
+Type
+Gets the node's content type.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Detailed documentation
+as
+Cdata()
+Casts the node as a
+CDATASection
+node for the purposes of autocomplete. If the
+node's
+Content
+Type
+is not already
+CDATA
+, this method returns
+null
+.
+Return
+Cdata
+— the
+CDATASection
+node
+as
+Comment()
+Casts the node as a
+Comment
+node for the purposes of autocomplete. If the node's
+Content
+Type
+is not already
+COMMENT
+, this method returns
+null
+.
+Return
+Comment
+— the
+Comment
+node, or
+null
+if the node's content type is not
+COMMENT
+as
+Doc
+Type()
+Casts the node as a
+Document
+Type
+node for the purposes of autocomplete. If
+the node's
+Content
+Type
+is not already
+DOCTYPE
+, this method returns
+null
+.
+Return
+Doc
+Type
+— the
+Document
+Type
+node
+as
+Element()
+Casts the node as an
+Element
+node for the purposes of autocomplete. If the node's
+Content
+Type
+is not already
+ELEMENT
+, this method returns
+null
+.
+Return
+Element
+— the
+Element
+node
+as
+Entity
+Ref()
+Casts the node as a
+Entity
+Reference
+node for the purposes of autocomplete.
+If the node's
+Content
+Type
+is not already
+ENTITYREF
+, this method returns
+null
+.
+Return
+Entity
+Ref
+— the
+Entity
+Reference
+node
+as
+Processing
+Instruction()
+Casts the node as a
+Processing
+Instruction
+node for the purposes of autocomplete. If
+the node's
+Content
+Type
+is not already
+PROCESSINGINSTRUCTION
+, this method
+returns
+null
+.
+Return
+Processing
+Instruction
+— the
+Processing
+Instruction
+node
+as
+Text()
+Casts the node as a
+Text
+node for the purposes of autocomplete. If the node's
+Content
+Type
+is not already
+TEXT
+, this method returns
+null
+.
+Return
+Text
+— the
+Text
+node
+detach()
+Detaches the node from its parent
+Element
+node. If the node does not have a parent,
+this method has no effect.
+Return
+Content
+— the detached node
+get
+Parent
+Element()
+Gets the node's parent
+Element
+node. If the node does not have a parent, this method
+returns
+null
+.
+Return
+Element
+— the parent
+Element
+node
+get
+Type()
+Gets the node's content type.
+Return
+Content
+Type
+— the node's content type
+get
+Value()
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Return
+String
+— the text value of all nodes that are direct or indirect children of the node

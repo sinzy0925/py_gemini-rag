@@ -1,0 +1,21 @@
+Source Path: gas_docs_html/apps-script/reference/slides/spacing-mode/index.html
+
+Spacing
+Mode
+The different modes for paragraph spacing.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.SpacingMode.NEVER_COLLAPSE
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A spacing mode that is not supported.
+NEVER_COLLAPSE
+Enum
+Paragraph spacing is always rendered.
+COLLAPSE_LISTS
+Enum
+Paragraph spacing is skipped between list elements.

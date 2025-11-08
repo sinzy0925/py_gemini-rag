@@ -1,0 +1,33 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/image-crop-type/index.html
+
+Image
+Crop
+Type
+An enum that represents the crop styles applied to image components.
+If you want to apply a crop style to an
+Icon
+Image
+, you can only use
+SQUARE
+or
+CIRCLE
+.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.ImageCropType.SQUARE
+.
+Properties
+Property
+Type
+Description
+SQUARE
+Enum
+Square shape crop style.
+CIRCLE
+Enum
+Circle shape crop style.
+RECTANGLE_CUSTOM
+Enum
+Rectangle shape crop style with custom ratio.
+RECTANGLE_4_3
+Enum
+Rectangle shape crop style with 4:3 ratio.

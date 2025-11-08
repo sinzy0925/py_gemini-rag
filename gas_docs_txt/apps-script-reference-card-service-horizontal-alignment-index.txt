@@ -1,0 +1,21 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/horizontal-alignment/index.html
+
+Horizontal
+Alignment
+An enum that specifies the horizontal alignment of a widget.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.HorizontalAlignment.START
+.
+Properties
+Property
+Type
+Description
+START
+Enum
+Align the widget to the start of the sentence side.
+CENTER
+Enum
+Align the widget to the center.
+END
+Enum
+Align the widget to the end of the sentence side.

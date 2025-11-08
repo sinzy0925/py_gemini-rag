@@ -1,0 +1,383 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/chat-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ChatResponseBuilder is a builder for ChatResponse objects, only available for Google Chat apps.
+It provides methods to add cards, build the response, set action responses, and set the text of the Chat message.
+The
+addCardsV2
+method allows adding cards to a Google Chat message using a CardWithId object.
+The
+build
+method finalizes and validates the ChatResponse.
+The
+setText
+method sets the main text content of the Chat message.
+Chat
+Response
+Builder
+A builder for
+Chat
+Response
+objects.
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+const
+cardSection
+=
+CardService
+.
+newCardSection
+();
+cardSection
+.
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'This is a text paragraph widget.'
+),
+);
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setName
+(
+'Card name'
+)
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'Card title'
+))
+.
+addSection
+(
+cardSection
+)
+.
+build
+();
+const
+cardWithId
+=
+CardService
+.
+newCardWithId
+().
+setCardId
+(
+'card_id'
+).
+setCard
+(
+card
+);
+const
+chatResponse
+=
+CardService
+.
+newChatResponseBuilder
+()
+.
+addCardsV2
+(
+cardWithId
+)
+.
+setText
+(
+'Example text'
+)
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+add
+Cards
+V2(cardWithId)
+Chat
+Response
+Builder
+Sets the card field of the message.
+build()
+Chat
+Response
+Builds the current action response and validates it.
+set
+Action
+Response(actionResponse)
+Chat
+Response
+Builder
+Sets the action response field of the message.
+set
+Text(text)
+Chat
+Response
+Builder
+Sets the text of the Chat message.
+Detailed documentation
+add
+Cards
+V2(cardWithId)
+Sets the card field of the message. This is used to send a card in a Google Chat message. Each
+card is associated with a unique id,
+Card
+With
+Id
+object should be built and be used with
+this method.
+const
+cardSection
+=
+CardService
+.
+newCardSection
+();
+cardSection
+.
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'This is a text paragraph widget.'
+),
+);
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'Card title'
+))
+.
+addSection
+(
+cardSection
+)
+.
+build
+();
+const
+cardWithId
+=
+CardService
+.
+newCardWithId
+().
+setCardId
+(
+'card_id'
+).
+setCard
+(
+card
+);
+const
+chatResponse
+=
+CardService
+.
+newChatResponseBuilder
+().
+addCardsV2
+(
+cardWithId
+).
+build
+();
+Parameters
+Name
+Type
+Description
+card
+With
+Id
+Card
+With
+Id
+The
+Card
+With
+Id
+to use.
+Return
+Chat
+Response
+Builder
+— This object, for chaining.
+build()
+Builds the current action response and validates it.
+Return
+Chat
+Response
+— A validated ChatResponse.
+set
+Action
+Response(actionResponse)
+Sets the action response field of the message.
+// Build the card.
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'card title'
+))
+.
+build
+();
+// Creates the dialog.
+const
+dialog
+=
+CardService
+.
+newDialog
+().
+setBody
+(
+card
+);
+// Creates the dialog action.
+const
+dialogAction
+=
+CardService
+.
+newDialogAction
+().
+setDialog
+(
+dialog
+);
+// Creates the action response and sets the type to DIALOG.
+const
+actionResponse
+=
+CardService
+.
+newChatActionResponse
+()
+.
+setDialogAction
+(
+dialogAction
+)
+.
+setResponseType
+(
+CardService
+.
+Type
+.
+DIALOG
+);
+// Creates the Chat response and sets the action response.
+const
+chatResponse
+=
+CardService
+.
+newChatResponseBuilder
+()
+.
+setActionResponse
+(
+actionResponse
+)
+.
+build
+();
+Parameters
+Name
+Type
+Description
+action
+Response
+Chat
+Action
+Response
+The
+Chat
+Action
+Response
+to use.
+Return
+Chat
+Response
+Builder
+— This object, for chaining.
+set
+Text(text)
+Sets the text of the Chat message.
+const
+chatResponse
+=
+CardService
+.
+newChatResponseBuilder
+().
+setText
+(
+'Example text'
+).
+build
+();
+Parameters
+Name
+Type
+Description
+text
+String
+The text to use.
+Return
+Chat
+Response
+Builder
+— This object, for chaining.

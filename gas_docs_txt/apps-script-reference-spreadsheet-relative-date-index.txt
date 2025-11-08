@@ -1,0 +1,34 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/relative-date/index.html
+
+Relative
+Date
+An enumeration representing the relative date options for calculating a value to be used in
+date-based
+Boolean
+Criteria
+.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.RelativeDate.TODAY
+.
+Properties
+Property
+Type
+Description
+TODAY
+Enum
+Dates compared against the current date.
+TOMORROW
+Enum
+Dates compared against the date after the current date.
+YESTERDAY
+Enum
+Dates compared against the date before the current date.
+PAST_WEEK
+Enum
+Dates that fall within the past week period.
+PAST_MONTH
+Enum
+Dates that fall within the past month period.
+PAST_YEAR
+Enum
+Dates that fall within the past year period.

@@ -1,0 +1,56 @@
+Source Path: gas_docs_html/apps-script/reference/charts/match-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+MatchType is an enumeration used to define how a string value should be matched.
+Matching a string using MatchType is a boolean operation returning
+true
+based on EXACT, PREFIX, or ANY match types.
+MatchType can be used by a string filter control to filter data table rows based on a specified column and filter value.
+You can access MatchType enum values by calling their parent class, name, and property, like
+Charts.MatchType.EXACT
+.
+Match
+Type
+An enumeration of how a string value should be matched. Matching a string is a boolean operation.
+Given a string, a match term (string), and a match type, the operation outputs
+true
+in
+the following cases:
+If the match type equals EXACT and the match term equals the string.
+If the match type equals PREFIX and the match term is a prefix of the string.
+If the match type equals ANY and the match term is a substring of the string.
+This enumeration can be used in by a string filter control to decide which rows to filter out
+of the data table. Given a column to filter on, leave only the rows that match the value entered
+in the filter input box, using one of the above matching types.
+To call an enum, you call its parent class, name, and property. For example,
+Charts.MatchType.EXACT
+.
+Properties
+Property
+Type
+Description
+EXACT
+Enum
+Match exact values only
+PREFIX
+Enum
+Match prefixes starting from the beginning of the value
+ANY
+Enum
+Match any substring
+Methods
+Method
+Return type
+Brief description
+get
+Name()
+String
+Returns the name of the match type to be used in the options JSON.
+Detailed documentation
+get
+Name()
+Returns the name of the match type to be used in the options JSON.
+Return
+String
+— The name of the type.

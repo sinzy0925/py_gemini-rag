@@ -1,0 +1,2520 @@
+Source Path: gas_docs_html/apps-script/reference/document/body/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Scripts using the documented methods require authorization with either the
+https://www.googleapis.com/auth/documents.currentonly
+or
+https://www.googleapis.com/auth/documents
+scopes.
+Methods are available to insert and remove elements like tables within the document body.
+Text content can be manipulated by replacing text patterns using regular expressions.
+Various attributes, including formatting and margins, can be set for elements and headings within the document body.
+Page dimensions such as height and width can be adjusted.
+Body
+The content of a tab in a Google Docs document. The
+Body
+may contain
+List
+Item
+,
+Paragraph
+,
+Table
+, and
+Table
+Of
+Contents
+elements. For more information on
+document structure, see the
+guide to
+extending Google Docs
+.
+The
+Body
+typically contains the full tab's contents except for the
+Header
+Section
+,
+Footer
+Section
+, and any
+Footnote
+Section
+elements.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Append a paragraph and a page break to the tab's body section directly.
+body
+.
+appendParagraph
+(
+'A paragraph.'
+);
+body
+.
+appendPageBreak
+();
+Methods
+Method
+Return type
+Brief description
+append
+Horizontal
+Rule()
+Horizontal
+Rule
+Creates and appends a new
+Horizontal
+Rule
+.
+append
+Image(image)
+Inline
+Image
+Creates and appends a new
+Inline
+Image
+from the specified image blob.
+append
+Image(image)
+Inline
+Image
+Appends the given
+Inline
+Image
+.
+append
+List
+Item(listItem)
+List
+Item
+Appends the given
+List
+Item
+.
+append
+List
+Item(text)
+List
+Item
+Creates and appends a new
+List
+Item
+containing the specified text contents.
+append
+Page
+Break()
+Page
+Break
+Creates and appends a new
+Page
+Break
+.
+append
+Page
+Break(pageBreak)
+Page
+Break
+Appends the given
+Page
+Break
+.
+append
+Paragraph(paragraph)
+Paragraph
+Appends the given
+Paragraph
+.
+append
+Paragraph(text)
+Paragraph
+Creates and appends a new
+Paragraph
+containing the specified text contents.
+append
+Table()
+Table
+Creates and appends a new
+Table
+.
+append
+Table(cells)
+Table
+Appends a new
+Table
+containing a
+Table
+Cell
+for each specified string value.
+append
+Table(table)
+Table
+Appends the given
+Table
+.
+clear()
+Body
+Clears the contents of the element.
+copy()
+Body
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Heading
+Attributes(paragraphHeading)
+Object
+Retrieves the set of attributes for the provided
+Paragraph
+Heading
+.
+get
+Images()
+Inline
+Image[]
+Retrieves all the
+Inline
+Images
+contained in the section.
+get
+List
+Items()
+List
+Item[]
+Retrieves all the
+List
+Items
+contained in the section.
+get
+Margin
+Bottom()
+Number
+Retrieves the bottom margin, in points.
+get
+Margin
+Left()
+Number
+Retrieves the left margin, in points.
+get
+Margin
+Right()
+Number
+Retrieves the right margin.
+get
+Margin
+Top()
+Number
+Retrieves the top margin.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Page
+Height()
+Number
+Retrieves the page height, in points.
+get
+Page
+Width()
+Number
+Retrieves the page width, in points.
+get
+Paragraphs()
+Paragraph[]
+Retrieves all the
+Paragraphs
+contained in the section (including
+List
+Items
+).
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Tables()
+Table[]
+Retrieves all the
+Tables
+contained in the section.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Horizontal
+Rule(childIndex)
+Horizontal
+Rule
+Creates and inserts a new
+Horizontal
+Rule
+at the specified index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Creates and inserts an
+Inline
+Image
+from the specified image blob, at the specified
+index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Inserts the given
+Inline
+Image
+at the specified index.
+insert
+List
+Item(childIndex, listItem)
+List
+Item
+Inserts the given
+List
+Item
+at the specified index.
+insert
+List
+Item(childIndex, text)
+List
+Item
+Creates and inserts a new
+List
+Item
+at the specified index, containing the specified
+text contents.
+insert
+Page
+Break(childIndex)
+Page
+Break
+Creates and inserts a new
+Page
+Break
+at the specified index.
+insert
+Page
+Break(childIndex, pageBreak)
+Page
+Break
+Inserts the given
+Page
+Break
+at the specified index.
+insert
+Paragraph(childIndex, paragraph)
+Paragraph
+Inserts the given
+Paragraph
+at the specified index.
+insert
+Paragraph(childIndex, text)
+Paragraph
+Creates and inserts a new
+Paragraph
+at the specified index, containing the specified
+text contents.
+insert
+Table(childIndex)
+Table
+Creates and inserts a new
+Table
+at the specified index.
+insert
+Table(childIndex, cells)
+Table
+Creates and inserts a new
+Table
+containing the specified cells, at the specified index.
+insert
+Table(childIndex, table)
+Table
+Inserts the given
+Table
+at the specified index.
+remove
+Child(child)
+Body
+Removes the specified child element.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Body
+Sets the element's attributes.
+set
+Heading
+Attributes(paragraphHeading, attributes)
+Body
+Sets the attributes for the provided
+Paragraph
+Heading
+.
+set
+Margin
+Bottom(marginBottom)
+Body
+Sets the bottom margin, in points.
+set
+Margin
+Left(marginLeft)
+Body
+Sets the left margin, in points.
+set
+Margin
+Right(marginRight)
+Body
+Sets the right margin, in points.
+set
+Margin
+Top(marginTop)
+Body
+Sets the top margin.
+set
+Page
+Height(pageHeight)
+Body
+Sets the page height, in points.
+set
+Page
+Width(pageWidth)
+Body
+Sets the page width, in points.
+set
+Text(text)
+Body
+Sets the contents as plain text.
+set
+Text
+Alignment(textAlignment)
+Body
+Sets the text alignment.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+Footnotes()
+Footnote[]
+Retrieves all the
+Footnotes
+contained in the section.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+set
+Link
+Url(url)
+Body
+Sets the link url.
+Detailed documentation
+append
+Horizontal
+Rule()
+Creates and appends a new
+Horizontal
+Rule
+.
+The
+Horizontal
+Rule
+will be contained in a new
+Paragraph
+.
+Return
+Horizontal
+Rule
+— The new horizontal rule.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Image(image)
+Creates and appends a new
+Inline
+Image
+from the specified image blob.
+The image will be contained in a new
+Paragraph
+.
+Parameters
+Name
+Type
+Description
+image
+Blob
+Source
+The image data.
+Return
+Inline
+Image
+— The appended image.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Image(image)
+Appends the given
+Inline
+Image
+.
+The
+Inline
+Image
+will be contained in a new
+Paragraph
+.
+Use this version of
+append
+Image
+when appending a copy of an existing
+Inline
+Image
+.
+Parameters
+Name
+Type
+Description
+image
+Inline
+Image
+The image data.
+Return
+Inline
+Image
+— The appended image.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+List
+Item(listItem)
+Appends the given
+List
+Item
+.
+Use this version of
+append
+List
+Item
+when appending a copy of an existing
+List
+Item
+.
+Parameters
+Name
+Type
+Description
+list
+Item
+List
+Item
+The list item to append.
+Return
+List
+Item
+— The appended list item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+List
+Item(text)
+Creates and appends a new
+List
+Item
+containing the specified text contents.
+Consecutive list items are added as part of the same list.
+Parameters
+Name
+Type
+Description
+text
+String
+The list item's text contents.
+Return
+List
+Item
+— The new list item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Page
+Break()
+Creates and appends a new
+Page
+Break
+.
+The
+Page
+Break
+will be contained in a new
+Paragraph
+.
+Return
+Page
+Break
+— The new page break.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Page
+Break(pageBreak)
+Appends the given
+Page
+Break
+.
+The
+Page
+Break
+will be contained in a new
+Paragraph
+.
+Use this version of
+append
+Page
+Break
+when appending a copy of an existing
+Page
+Break
+.
+Parameters
+Name
+Type
+Description
+page
+Break
+Page
+Break
+The page break to append.
+Return
+Page
+Break
+— The appended page break.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Paragraph(paragraph)
+Appends the given
+Paragraph
+.
+Use this version of
+append
+Paragraph
+when appending a copy of an existing
+Paragraph
+.
+Parameters
+Name
+Type
+Description
+paragraph
+Paragraph
+The paragraph to append.
+Return
+Paragraph
+— The appended paragraph.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Paragraph(text)
+Creates and appends a new
+Paragraph
+containing the specified text contents.
+Parameters
+Name
+Type
+Description
+text
+String
+The paragraph's text contents.
+Return
+Paragraph
+— The new paragraph.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Table()
+Creates and appends a new
+Table
+.
+This method will also append an empty paragraph after the table, since Google Docs documents
+cannot end with a table.
+Return
+Table
+— The new table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Table(cells)
+Appends a new
+Table
+containing a
+Table
+Cell
+for each specified string value.
+This method will also append an empty paragraph after the table, since Google Docs documents
+cannot end with a table.
+Parameters
+Name
+Type
+Description
+cells
+String[][]
+The text contents of the table cells to add to the new table.
+Return
+Table
+— The appended table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+append
+Table(table)
+Appends the given
+Table
+.
+Use this version of
+append
+Table
+when appending a copy of an existing
+Table
+.
+This method will also append an empty paragraph after the table, since Google Docs documents
+cannot end with a table.
+Parameters
+Name
+Type
+Description
+table
+Table
+The table to append.
+Return
+Table
+— The appended table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+clear()
+Clears the contents of the element.
+Return
+Body
+— The current element.
+copy()
+Returns a detached, deep copy of the current element.
+Any child elements present in the element are also copied. The new element doesn't have a
+parent.
+Return
+Body
+— The new copy.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+edit
+As
+Text()
+Obtains a
+Text
+version of the current element, for editing.
+Use
+edit
+As
+Text
+for manipulating the elements contents as rich text. The
+edit
+As
+Text
+mode ignores non-text elements (such as
+Inline
+Image
+and
+Horizontal
+Rule
+).
+Child elements fully contained within a deleted text range are removed from the element.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Insert two paragraphs separated by a paragraph containing an
+// horizontal rule.
+body
+.
+insertParagraph
+(
+0
+,
+'An editAsText sample.'
+);
+body
+.
+insertHorizontalRule
+(
+0
+);
+body
+.
+insertParagraph
+(
+0
+,
+'An example.'
+);
+// Delete " sample.\n\n An" removing the horizontal rule in the process.
+body
+.
+editAsText
+().
+deleteText
+(
+14
+,
+25
+);
+Return
+Text
+— a text version of the current element
+find
+Element(elementType)
+Searches the contents of the element for a descendant of the specified type.
+Parameters
+Name
+Type
+Description
+element
+Type
+Element
+Type
+The type of element to search for.
+Return
+Range
+Element
+— A search result indicating the position of the search element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+find
+Element(elementType, from)
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Define the search parameters.
+let
+searchResult
+=
+null
+;
+// Search until the paragraph is found.
+while
+(
+(
+searchResult
+=
+body
+.
+findElement
+(
+DocumentApp
+.
+ElementType
+.
+PARAGRAPH
+,
+searchResult
+,
+)))
+{
+const
+par
+=
+searchResult
+.
+getElement
+().
+asParagraph
+();
+if
+(
+par
+.
+getHeading
+()
+===
+DocumentApp
+.
+ParagraphHeading
+.
+HEADING1
+)
+{
+// Found one, update and stop.
+par
+.
+setText
+(
+'This is the first header.'
+);
+break
+;
+}
+}
+Parameters
+Name
+Type
+Description
+element
+Type
+Element
+Type
+The type of element to search for.
+from
+Range
+Element
+The search result to search from.
+Return
+Range
+Element
+— A search result indicating the next position of the search element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+find
+Text(searchPattern)
+Searches the contents of the element for the specified text pattern using regular expressions.
+A subset of the JavaScript regular expression features are not fully supported, such as
+capture groups and mode modifiers.
+The provided regular expression pattern is independently matched against each text block
+contained in the current element.
+Parameters
+Name
+Type
+Description
+search
+Pattern
+String
+the pattern to search for
+Return
+Range
+Element
+— a search result indicating the position of the search text, or null if there is no
+    match
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+find
+Text(searchPattern, from)
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+A subset of the JavaScript regular expression features are not fully supported, such as
+capture groups and mode modifiers.
+The provided regular expression pattern is independently matched against each text block
+contained in the current element.
+Parameters
+Name
+Type
+Description
+search
+Pattern
+String
+the pattern to search for
+from
+Range
+Element
+the search result to search from
+Return
+Range
+Element
+— a search result indicating the next position of the search text, or null if there is no
+    match
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Attributes()
+Retrieves the element's attributes.
+The result is an object containing a property for each valid element attribute where each
+property name corresponds to an item in the
+Document
+App.Attribute
+enumeration.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Append a styled paragraph.
+const
+par
+=
+body
+.
+appendParagraph
+(
+'A bold, italicized paragraph.'
+);
+par
+.
+setBold
+(
+true
+);
+par
+.
+setItalic
+(
+true
+);
+// Retrieve the paragraph's attributes.
+const
+atts
+=
+par
+.
+getAttributes
+();
+// Log the paragraph attributes.
+for
+(
+const
+att
+in
+atts
+)
+{
+Logger
+.
+log
+(
+`
+${
+att
+}
+:
+${
+atts
+[
+att
+]
+}
+`
+);
+}
+Return
+Object
+— The element's attributes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Child(childIndex)
+Retrieves the child element at the specified child index.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Obtain the first element in the tab.
+const
+firstChild
+=
+body
+.
+getChild
+(
+0
+);
+// If it's a paragraph, set its contents.
+if
+(
+firstChild
+.
+getType
+()
+===
+DocumentApp
+.
+ElementType
+.
+PARAGRAPH
+)
+{
+firstChild
+.
+asParagraph
+().
+setText
+(
+'This is the first paragraph.'
+);
+}
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index of the child element to retrieve.
+Return
+Element
+— The child element at the specified index.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Child
+Index(child)
+Retrieves the child index for the specified child element.
+Parameters
+Name
+Type
+Description
+child
+Element
+The child element for which to retrieve the index.
+Return
+Integer
+— The child index.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Heading
+Attributes(paragraphHeading)
+Retrieves the set of attributes for the provided
+Paragraph
+Heading
+.
+Parameters
+Name
+Type
+Description
+paragraph
+Heading
+Paragraph
+Heading
+The heading whose attributes should be retrieved.
+Return
+Object
+— A map of the attributes and their current values.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Images()
+Retrieves all the
+Inline
+Images
+contained in the section.
+Return
+Inline
+Image[]
+— The section images.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+List
+Items()
+Retrieves all the
+List
+Items
+contained in the section.
+Return
+List
+Item[]
+— The section list items.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Margin
+Bottom()
+Retrieves the bottom margin, in points.
+Return
+Number
+— The bottom margin, in points.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Margin
+Left()
+Retrieves the left margin, in points.
+Return
+Number
+— The left margin, in points.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Margin
+Right()
+Retrieves the right margin.
+Return
+Number
+— The right margin, in points.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Margin
+Top()
+Retrieves the top margin.
+Return
+Number
+— The top margin, in points.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Num
+Children()
+Retrieves the number of children.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Log the number of elements in the tab.
+Logger
+.
+log
+(
+`There are
+${
+body
+.
+getNumChildren
+()
+}
+elements in the tab's body.`
+);
+Return
+Integer
+— The number of children.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Page
+Height()
+Retrieves the page height, in points.
+Return
+Number
+— The page height, in points.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Page
+Width()
+Retrieves the page width, in points.
+Return
+Number
+— The page width, in points.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Paragraphs()
+Retrieves all the
+Paragraphs
+contained in the section (including
+List
+Items
+).
+Return
+Paragraph[]
+— The section paragraphs.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Parent()
+Retrieves the element's parent element.
+The parent element contains the current element.
+Return
+Container
+Element
+— The parent element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Tables()
+Retrieves all the
+Tables
+contained in the section.
+Return
+Table[]
+— The section tables.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Text()
+Retrieves the contents of the element as a text string.
+Return
+String
+— the contents of the element as text string
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Text
+Alignment()
+Gets the text alignment. The available types of alignment are
+Document
+App.TextAlignment.NORMAL
+,
+Document
+App.TextAlignment.SUBSCRIPT
+, and
+Document
+App.TextAlignment.SUPERSCRIPT
+.
+Return
+Text
+Alignment
+— the type of text alignment, or
+null
+if the text contains multiple types of text
+    alignments or if the text alignment has never been set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Type()
+Retrieves the element's
+Element
+Type
+.
+Use
+get
+Type()
+to determine the exact type of a given element.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Obtain the first element in the active tab's body.
+const
+firstChild
+=
+body
+.
+getChild
+(
+0
+);
+// Use getType() to determine the element's type.
+if
+(
+firstChild
+.
+getType
+()
+===
+DocumentApp
+.
+ElementType
+.
+PARAGRAPH
+)
+{
+Logger
+.
+log
+(
+'The first element is a paragraph.'
+);
+}
+else
+{
+Logger
+.
+log
+(
+'The first element is not a paragraph.'
+);
+}
+Return
+Element
+Type
+— The element type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Horizontal
+Rule(childIndex)
+Creates and inserts a new
+Horizontal
+Rule
+at the specified index.
+The
+Horizontal
+Rule
+will be contained in a new
+Paragraph
+.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert the element.
+Return
+Horizontal
+Rule
+— The new horizontal rule.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Image(childIndex, image)
+Creates and inserts an
+Inline
+Image
+from the specified image blob, at the specified
+index.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert the element.
+image
+Blob
+Source
+The image data.
+Return
+Inline
+Image
+— The inserted inline image.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Image(childIndex, image)
+Inserts the given
+Inline
+Image
+at the specified index.
+The image will be contained in a new
+Paragraph
+.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert the element.
+image
+Inline
+Image
+The image to insert.
+Return
+Inline
+Image
+— The inserted inline image.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+List
+Item(childIndex, listItem)
+Inserts the given
+List
+Item
+at the specified index.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert.
+list
+Item
+List
+Item
+The list item to insert.
+Return
+List
+Item
+— The inserted list item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+List
+Item(childIndex, text)
+Creates and inserts a new
+List
+Item
+at the specified index, containing the specified
+text contents.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert.
+text
+String
+The list item's text contents.
+Return
+List
+Item
+— The new list item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Page
+Break(childIndex)
+Creates and inserts a new
+Page
+Break
+at the specified index.
+The
+Page
+Break
+will be contained in a new
+Paragraph
+.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert the element.
+Return
+Page
+Break
+— The new page break.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Page
+Break(childIndex, pageBreak)
+Inserts the given
+Page
+Break
+at the specified index.
+The
+Page
+Break
+will be contained in a new
+Paragraph
+.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert the element.
+page
+Break
+Page
+Break
+The page break to insert.
+Return
+Page
+Break
+— The inserted page break.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Paragraph(childIndex, paragraph)
+Inserts the given
+Paragraph
+at the specified index.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert.
+paragraph
+Paragraph
+The paragraph to insert.
+Return
+Paragraph
+— The inserted paragraph.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Paragraph(childIndex, text)
+Creates and inserts a new
+Paragraph
+at the specified index, containing the specified
+text contents.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert.
+text
+String
+The paragraph's text contents.
+Return
+Paragraph
+— The new paragraph.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Table(childIndex)
+Creates and inserts a new
+Table
+at the specified index.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert.
+Return
+Table
+— The new table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Table(childIndex, cells)
+Creates and inserts a new
+Table
+containing the specified cells, at the specified index.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert.
+cells
+String[][]
+The text contents of the table cells to add to the new table.
+Return
+Table
+— The new table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Table(childIndex, table)
+Inserts the given
+Table
+at the specified index.
+Parameters
+Name
+Type
+Description
+child
+Index
+Integer
+The index at which to insert.
+table
+Table
+The table to insert.
+Return
+Table
+— The inserted table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+remove
+Child(child)
+Removes the specified child element.
+Parameters
+Name
+Type
+Description
+child
+Element
+The child element to remove.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+replace
+Text(searchPattern, replacement)
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+The search pattern is passed as a string, not a JavaScript regular expression object.
+Because of this you'll need to escape any backslashes in the pattern.
+This methods uses Google's
+RE2
+regular
+expression library, which limits the
+supported syntax
+.
+The provided regular expression pattern is independently matched against each text block
+contained in the current element.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Clear the text surrounding "Apps Script", with or without text.
+body
+.
+replaceText
+(
+'^.*Apps ?Script.*$'
+,
+'Apps Script'
+);
+Parameters
+Name
+Type
+Description
+search
+Pattern
+String
+the regex pattern to search for
+replacement
+String
+the text to use as replacement
+Return
+Element
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Attributes(attributes)
+Sets the element's attributes.
+The specified attributes parameter must be an object where each property name is an item in
+the
+Document
+App.Attribute
+enumeration and each property value is the new value to be
+applied.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Define a custom paragraph style.
+const
+style
+=
+{};
+style
+[
+DocumentApp
+.
+Attribute
+.
+HORIZONTAL_ALIGNMENT
+]
+=
+DocumentApp
+.
+HorizontalAlignment
+.
+RIGHT
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_FAMILY
+]
+=
+'Calibri'
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_SIZE
+]
+=
+18
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+BOLD
+]
+=
+true
+;
+// Append a plain paragraph.
+const
+par
+=
+body
+.
+appendParagraph
+(
+'A paragraph with custom style.'
+);
+// Apply the custom style.
+par
+.
+setAttributes
+(
+style
+);
+Parameters
+Name
+Type
+Description
+attributes
+Object
+The element's attributes.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Heading
+Attributes(paragraphHeading, attributes)
+Sets the attributes for the provided
+Paragraph
+Heading
+.
+Parameters
+Name
+Type
+Description
+paragraph
+Heading
+Paragraph
+Heading
+The heading whose attributes should be set.
+attributes
+Object
+A map of attributes and the values to set them to.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Margin
+Bottom(marginBottom)
+Sets the bottom margin, in points.
+Parameters
+Name
+Type
+Description
+margin
+Bottom
+Number
+The bottom margin, in points.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Margin
+Left(marginLeft)
+Sets the left margin, in points.
+Parameters
+Name
+Type
+Description
+margin
+Left
+Number
+The left margin, in points.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Margin
+Right(marginRight)
+Sets the right margin, in points.
+Parameters
+Name
+Type
+Description
+margin
+Right
+Number
+The right margin.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Margin
+Top(marginTop)
+Sets the top margin.
+Parameters
+Name
+Type
+Description
+margin
+Top
+Number
+The top margin, in points.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Page
+Height(pageHeight)
+Sets the page height, in points.
+Parameters
+Name
+Type
+Description
+page
+Height
+Number
+The page height, in points.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Page
+Width(pageWidth)
+Sets the page width, in points.
+Parameters
+Name
+Type
+Description
+page
+Width
+Number
+The page width, in points.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Text(text)
+Sets the contents as plain text.
+Note: existing contents are cleared.
+Parameters
+Name
+Type
+Description
+text
+String
+The new text contents.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Text
+Alignment(textAlignment)
+Sets the text alignment. The available types of alignment are
+Document
+App.TextAlignment.NORMAL
+,
+Document
+App.TextAlignment.SUBSCRIPT
+, and
+Document
+App.TextAlignment.SUPERSCRIPT
+.
+// Make the entire first paragraph in the active tab be superscript.
+const
+documentTab
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+();
+const
+text
+=
+documentTab
+.
+getBody
+().
+getParagraphs
+()[
+0
+].
+editAsText
+();
+text
+.
+setTextAlignment
+(
+DocumentApp
+.
+TextAlignment
+.
+SUPERSCRIPT
+);
+Parameters
+Name
+Type
+Description
+text
+Alignment
+Text
+Alignment
+the type of text alignment to apply
+Return
+Body
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+Deprecated methods
+get
+Footnotes()
+Deprecated.
+This element cannot contain a
+Footnote
+.
+Retrieves all the
+Footnotes
+contained in the section.
+Return
+Footnote[]
+— The section footnotes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Link
+Url()
+Deprecated.
+Instead of applying a link to an entire section, apply the link to an element
+    within the section instead.
+Retrieves the link url.
+Return
+String
+— the link url, or null if the element contains multiple values for this attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Next
+Sibling()
+Deprecated.
+This element does not have any siblings.
+Retrieves the element's next sibling element.
+The next sibling has the same parent and follows the current element.
+Return
+Element
+— The next sibling element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Previous
+Sibling()
+Deprecated.
+This element does not have any siblings.
+Retrieves the element's previous sibling element.
+The previous sibling has the same parent and precedes the current element.
+Return
+Element
+— The previous sibling element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+At
+Document
+End()
+Deprecated.
+This method is not reliable for
+Header
+Section
+.
+Determines whether the element is at the end of the
+Document
+.
+Return
+Boolean
+— Whether the element is at the end of the tab.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Link
+Url(url)
+Deprecated.
+Instead of applying a link to an entire section, apply the link to an element
+    within the section instead.
+Sets the link url.
+Parameters
+Name
+Type
+Description
+url
+String
+the link url
+Return
+Body
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

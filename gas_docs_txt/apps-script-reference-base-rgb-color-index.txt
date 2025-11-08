@@ -1,0 +1,74 @@
+Source Path: gas_docs_html/apps-script/reference/base/rgb-color/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+RgbColor defines a color using red, green, and blue channels.
+You can get the hexadecimal string representation of the color using asHexString().
+You can retrieve the individual red, green, and blue channel values (0-255) using getRed(), getGreen(), and getBlue().
+The type of the color can be obtained using getColorType().
+Rgb
+Color
+A color defined by red, green, blue color channels.
+Methods
+Method
+Return type
+Brief description
+as
+Hex
+String()
+String
+Returns the color as a CSS-style 7 character hexadecimal string (#rrggbb) or 9 character
+hexadecimal string (#aarrggbb).
+get
+Blue()
+Integer
+The blue channel of this color, as a number from 0 to 255.
+get
+Color
+Type()
+Color
+Type
+Get the type of this color.
+get
+Green()
+Integer
+The green channel of this color, as a number from 0 to 255.
+get
+Red()
+Integer
+The red channel of this color, as a number from 0 to 255.
+Detailed documentation
+as
+Hex
+String()
+Returns the color as a CSS-style 7 character hexadecimal string (#rrggbb) or 9 character
+hexadecimal string (#aarrggbb).
+Return
+String
+— The hex representation of color.
+get
+Blue()
+The blue channel of this color, as a number from 0 to 255.
+Return
+Integer
+— The value of blue channel.
+get
+Color
+Type()
+Get the type of this color.
+Return
+Color
+Type
+— The color type.
+get
+Green()
+The green channel of this color, as a number from 0 to 255.
+Return
+Integer
+— The value of green channel.
+get
+Red()
+The red channel of this color, as a number from 0 to 255.
+Return
+Integer
+— The value of red channel.

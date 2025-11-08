@@ -1,0 +1,56 @@
+Source Path: gas_docs_html/apps-script/reference/slides/solid-fill/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SolidFill
+represents a solid color fill and is detached and immutable.
+The
+getAlpha()
+method returns the opacity of the color as a number between 0 and 1.0.
+The
+getColor()
+method returns the color of the fill as a
+Color
+object.
+Solid
+Fill
+A solid color fill.
+Solid
+Fill
+objects are detached and immutable, so do not reflect changes made after
+they have been created.
+Methods
+Method
+Return type
+Brief description
+get
+Alpha()
+Number
+Get the opacity of the color, in the interval from [0, 1.0], where 1.0 means fully opaque.
+get
+Color()
+Color
+Get the color of the fill.
+Detailed documentation
+get
+Alpha()
+Get the opacity of the color, in the interval from [0, 1.0], where 1.0 means fully opaque.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Color()
+Get the color of the fill.
+Return
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

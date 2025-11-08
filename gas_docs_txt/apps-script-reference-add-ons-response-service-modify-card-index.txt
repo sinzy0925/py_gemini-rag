@@ -1,0 +1,203 @@
+Source Path: gas_docs_html/apps-script/reference/add-ons-response-service/modify-card/index.html
+
+Modify
+Card
+A builder for
+Modify
+Card
+objects that changes and updates an existing card's
+interface by passing the
+Modify
+Card
+object to a
+Action
+. For usage, see
+Update configuration cards
+.
+Sample usage:
+const
+insertSection
+=
+AddOnsResponseService
+.
+newInsertSection
+().
+insertBelowSection
+(
+'sample_id'
+)
+.
+setSection
+(
+CardService
+.
+newCardSection
+().
+setHeader
+(
+'New Section'
+));
+const
+modifyCard
+=
+AddOnsResponseService
+.
+newModifyCard
+().
+setInsertSection
+(
+insertSection
+);
+const
+navigation
+=
+AddOnsResponseService
+.
+newNavigation
+().
+addModifyCard
+(
+modifyCard
+);
+Methods
+Method
+Return type
+Brief description
+set
+Insert
+Section(insertSection)
+Modify
+Card
+Sets the insert section for this action.
+set
+Insert
+Widget(insertWidget)
+Modify
+Card
+Sets the insert widget for this action.
+set
+Remove
+Section(removeSection)
+Modify
+Card
+Sets the remove section for this action.
+set
+Remove
+Widget(removeWidget)
+Modify
+Card
+Sets the remove widget for this action.
+set
+Replace
+Section(replaceSection)
+Modify
+Card
+Sets the replace section for this action.
+set
+Replace
+Widget(replaceWidget)
+Modify
+Card
+Sets the replace widget for this action.
+Detailed documentation
+set
+Insert
+Section(insertSection)
+Sets the insert section for this action.
+Parameters
+Name
+Type
+Description
+insert
+Section
+Insert
+Section
+The insert section to create.
+Return
+Modify
+Card
+— This object, for chaining.
+set
+Insert
+Widget(insertWidget)
+Sets the insert widget for this action.
+Parameters
+Name
+Type
+Description
+insert
+Widget
+Insert
+Widget
+The insert widget to create.
+Return
+Modify
+Card
+— This object, for chaining.
+set
+Remove
+Section(removeSection)
+Sets the remove section for this action.
+Parameters
+Name
+Type
+Description
+remove
+Section
+Remove
+Section
+The remove section to create.
+Return
+Modify
+Card
+— This object, for chaining.
+set
+Remove
+Widget(removeWidget)
+Sets the remove widget for this action.
+Parameters
+Name
+Type
+Description
+remove
+Widget
+Remove
+Widget
+The remove widget to create.
+Return
+Modify
+Card
+— This object, for chaining.
+set
+Replace
+Section(replaceSection)
+Sets the replace section for this action.
+Parameters
+Name
+Type
+Description
+replace
+Section
+Card
+Section
+The replace section to create.
+Return
+Modify
+Card
+— This object, for chaining.
+set
+Replace
+Widget(replaceWidget)
+Sets the replace widget for this action.
+Parameters
+Name
+Type
+Description
+replace
+Widget
+Widget
+The replace widget to create.
+Return
+Modify
+Card
+— This object, for chaining.

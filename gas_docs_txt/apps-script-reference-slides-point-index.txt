@@ -1,0 +1,23 @@
+Source Path: gas_docs_html/apps-script/reference/slides/point/index.html
+
+Point
+A point representing a location.
+Methods
+Method
+Return type
+Brief description
+getX()
+Number
+Gets the horizontal coordinate, measured in points.
+getY()
+Number
+Gets the vertical coordinate, measured in points.
+Detailed documentation
+getX()
+Gets the horizontal coordinate, measured in points.
+Return
+Number
+getY()
+Gets the vertical coordinate, measured in points.
+Return
+Number

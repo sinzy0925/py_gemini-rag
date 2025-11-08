@@ -1,0 +1,211 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/card-with-id/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CardWithId
+is a builder for objects that provide a unique identifier for a card when sending multiple cards.
+CardWithId
+is only available for Google Chat apps.
+The
+setCard(card)
+method sets the card of the
+cardWithId
+.
+The
+setCardId(id)
+method sets the unique card ID of the
+cardWithId
+.
+Card
+With
+Id
+A builder for
+Card
+With
+Id
+objects. This class is a unique identifier for a card in a
+message when sending multiple cards.
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+const
+cardSection
+=
+CardService
+.
+newCardSection
+();
+cardSection
+.
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'This is a text paragraph widget.'
+),
+);
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'Card title'
+))
+.
+addSection
+(
+cardSection
+)
+.
+build
+();
+const
+cardWithId
+=
+CardService
+.
+newCardWithId
+().
+setCardId
+(
+'card_id'
+).
+setCard
+(
+card
+);
+Methods
+Method
+Return type
+Brief description
+set
+Card(card)
+Card
+With
+Id
+Sets the card of the
+card
+With
+Id
+.
+set
+Card
+Id(id)
+Card
+With
+Id
+Sets the unique card ID of the
+card
+With
+Id
+.
+Detailed documentation
+set
+Card(card)
+Sets the card of the
+card
+With
+Id
+.
+const
+cardHeader
+=
+CardService
+.
+newCardHeader
+()
+.
+setTitle
+(
+'Card Header Title'
+)
+.
+setSubtitle
+(
+'Card Header Subtitle'
+);
+const
+card
+=
+CardService
+.
+newCardBuilder
+().
+setHeader
+(
+cardHeader
+).
+build
+();
+const
+cardWithId
+=
+CardService
+.
+newCardWithId
+().
+setCard
+(
+card
+);
+Parameters
+Name
+Type
+Description
+card
+Card
+The
+Card
+to use.
+Return
+Card
+With
+Id
+— This object, for chaining.
+set
+Card
+Id(id)
+Sets the unique card ID of the
+card
+With
+Id
+.
+const
+cardWithId
+=
+CardService
+.
+newCardWithId
+();
+// Sets the card ID of the cardWithId.
+cardWithId
+.
+setCardId
+(
+'card_id'
+);
+Parameters
+Name
+Type
+Description
+id
+String
+The text to use.
+Return
+Card
+With
+Id
+— This object, for chaining.

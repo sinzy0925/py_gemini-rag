@@ -1,0 +1,68 @@
+Source Path: gas_docs_html/apps-script/reference/document/text-alignment/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextAlignment is an enumeration used to specify text alignment types.
+Text alignment enums are accessed via
+DocumentApp.TextAlignment
+.
+Examples include NORMAL, SUPERSCRIPT, and SUBSCRIPT.
+Text
+Alignment
+An enumeration of the type of text alignments.
+To call an enum, you call its parent class, name, and property. For example,
+DocumentApp.TextAlignment.NORMAL
+.
+// Make the first character in the first paragraph of the active tab be
+// superscript.
+const
+documentTab
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+();
+const
+text
+=
+documentTab
+.
+getBody
+().
+getParagraphs
+()[
+0
+].
+editAsText
+();
+text
+.
+setTextAlignment
+(
+0
+,
+0
+,
+DocumentApp
+.
+TextAlignment
+.
+SUPERSCRIPT
+);
+Properties
+Property
+Type
+Description
+NORMAL
+Enum
+The normal text alignment.
+SUPERSCRIPT
+Enum
+The superscript text alignment.
+SUBSCRIPT
+Enum
+The subscript text alignment.

@@ -1,0 +1,179 @@
+Source Path: gas_docs_html/apps-script/reference/forms/checkbox-validation-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CheckboxValidationBuilder is used to create validation rules for checkbox items in a form.
+It allows you to require a specific number of choices to be selected using methods like
+requireSelectAtLeast
+,
+requireSelectAtMost
+, and
+requireSelectExactly
+.
+These methods take an integer as a parameter to specify the required number of selections.
+Checkbox
+Validation
+Builder
+A DataValidationBuilder for a
+Checkbox
+Validation
+.
+// Add a checkBox item to a form and require exactly two selections.
+const
+form
+=
+FormApp
+.
+create
+(
+'My Form'
+);
+const
+checkBoxItem
+=
+form
+.
+addCheckboxItem
+();
+checkBoxItem
+.
+setTitle
+(
+'What two condiments would you like on your hot dog?'
+);
+checkBoxItem
+.
+setChoices
+([
+checkBoxItem
+.
+createChoice
+(
+'Ketchup'
+),
+checkBoxItem
+.
+createChoice
+(
+'Mustard'
+),
+checkBoxItem
+.
+createChoice
+(
+'Relish'
+),
+]);
+const
+checkBoxValidation
+=
+FormApp
+.
+createCheckboxValidation
+()
+.
+setHelpText
+(
+'Select two condiments.'
+)
+.
+requireSelectExactly
+(
+2
+)
+.
+build
+();
+checkBoxItem
+.
+setValidation
+(
+checkBoxValidation
+);
+Methods
+Method
+Return type
+Brief description
+require
+Select
+At
+Least(number)
+Checkbox
+Validation
+Builder
+Require at least this many choices to be selected.
+require
+Select
+At
+Most(number)
+Checkbox
+Validation
+Builder
+Require at most this many choices to be selected.
+require
+Select
+Exactly(number)
+Checkbox
+Validation
+Builder
+Require exactly this many choices to be selected.
+Detailed documentation
+require
+Select
+At
+Least(number)
+Require at least this many choices to be selected.
+Parameters
+Name
+Type
+Description
+number
+Integer
+Return
+Checkbox
+Validation
+Builder
+— this
+Checkbox
+Validation
+Builder
+, for chaining
+require
+Select
+At
+Most(number)
+Require at most this many choices to be selected.
+Parameters
+Name
+Type
+Description
+number
+Integer
+Return
+Checkbox
+Validation
+Builder
+— this
+Checkbox
+Validation
+Builder
+, for chaining
+require
+Select
+Exactly(number)
+Require exactly this many choices to be selected.
+Parameters
+Name
+Type
+Description
+number
+Integer
+Return
+Checkbox
+Validation
+Builder
+— this
+Checkbox
+Validation
+Builder
+, for chaining

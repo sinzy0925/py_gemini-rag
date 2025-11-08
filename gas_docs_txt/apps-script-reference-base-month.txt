@@ -1,0 +1,54 @@
+Source Path: gas_docs_html/apps-script/reference/base/month.html
+
+AI-generated Key Takeaways
+outlined_flag
+Month is an enum representing the months of the year.
+To call the enum, you use its parent class, name, and property like
+Base.Month.JANUARY
+.
+The enum includes properties for all twelve months, from January to December.
+Month
+An enum representing the months of the year.
+To call an enum, you call its parent class, name, and property. For example,
+Base.Month.JANUARY
+.
+Properties
+Property
+Type
+Description
+JANUARY
+Enum
+January (month 1).
+FEBRUARY
+Enum
+February (month 2).
+MARCH
+Enum
+March (month 3).
+APRIL
+Enum
+April (month 4).
+MAY
+Enum
+May (month 5).
+JUNE
+Enum
+June (month 6).
+JULY
+Enum
+July (month 7).
+AUGUST
+Enum
+August (month 8).
+SEPTEMBER
+Enum
+September (month 9).
+OCTOBER
+Enum
+October (month 10).
+NOVEMBER
+Enum
+November (month 11).
+DECEMBER
+Enum
+December (month 12).

@@ -1,0 +1,48 @@
+Source Path: gas_docs_html/apps-script/reference/slides/content-alignment/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ContentAlignment defines text anchoring types for Shape or TableCell.
+Supported alignments correspond to predefined types from the ECMA-376 standard.
+To use an enum, call its parent class, name, and property, like
+SlidesApp.ContentAlignment.TOP
+.
+Properties include UNSUPPORTED, TOP, MIDDLE, and BOTTOM alignments.
+Content
+Alignment
+The content alignments for a
+Shape
+or
+Table
+Cell
+. The supported alignments
+correspond to predefined text anchoring types from the ECMA-376 standard.
+More information on those alignments can be found in the description of
+the
+ST_TextAnchoringType
+simple type in section 20.1.10.59 of "Office Open XML File
+Formats - Fundamentals and Markup Language Reference", part 1 of
+ECMA-376
+5th edition.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.ContentAlignment.TOP
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A content alignment that is not supported.
+TOP
+Enum
+Aligns the content to the top of the content holder. Corresponds to ECMA-376
+ST_TextAnchoringType 't'.
+MIDDLE
+Enum
+Aligns the content to the middle of the content holder. Corresponds to ECMA-376
+ST_TextAnchoringType 'ctr'.
+BOTTOM
+Enum
+Aligns the content to the bottom of the content holder. Corresponds to ECMA-376
+ST_TextAnchoringType 'b'.

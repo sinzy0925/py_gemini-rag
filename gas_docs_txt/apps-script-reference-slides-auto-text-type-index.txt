@@ -1,0 +1,19 @@
+Source Path: gas_docs_html/apps-script/reference/slides/auto-text-type/index.html
+
+Auto
+Text
+Type
+The types of auto text.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.AutoTextType.SLIDE_NUMBER
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+An auto text type that is not supported.
+SLIDE_NUMBER
+Enum
+A slide number.

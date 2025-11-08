@@ -1,0 +1,59 @@
+Source Path: gas_docs_html/apps-script/reference/slides/theme-color-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ThemeColorType is the name of an entry in a page's color scheme.
+To call a ThemeColorType enum, you use its parent class, name, and property, for example,
+SlidesApp.ThemeColorType.LIGHT1
+.
+ThemeColorType has various properties representing different colors like dark colors, light colors, accent colors, and hyperlink colors.
+Theme
+Color
+Type
+The name of an entry in the page's color scheme.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.ThemeColorType.LIGHT1
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+Represents a theme color that is not supported.
+DARK1
+Enum
+Represents the first dark color.
+LIGHT1
+Enum
+Represents the first light color.
+DARK2
+Enum
+Represents the second dark color.
+LIGHT2
+Enum
+Represents the second light color.
+ACCENT1
+Enum
+Represents the first accent color.
+ACCENT2
+Enum
+Represents the second accent color.
+ACCENT3
+Enum
+Represents the third accent color.
+ACCENT4
+Enum
+Represents the fourth accent color.
+ACCENT5
+Enum
+Represents the fifth accent color.
+ACCENT6
+Enum
+Represents the sixth accent color.
+HYPERLINK
+Enum
+Represents the color to use for hyperlinks.
+FOLLOWED_HYPERLINK
+Enum
+Represents the color to use for visited hyperlinks.

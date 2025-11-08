@@ -1,0 +1,3159 @@
+Source Path: gas_docs_html/apps-script/reference/calendar/calendar-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Calendar class offers methods to create all-day event series and modify calendar properties like color, description, visibility, name, and selection status.
+All methods within the Calendar class for modifying calendar properties return the Calendar object itself.
+Authorization using specific calendar scopes is required for scripts utilizing these Calendar and CalendarApp methods.
+The CalendarApp class provides methods to subscribe users to calendars by ID, with options to set color, hidden, and selected properties during subscription.
+Subscribing to a calendar via CalendarApp methods returns the newly subscribed Calendar object and requires the calendar ID to exist.
+Calendar
+App
+Allows a script to read and update the user's Google Calendar. This class provides direct access
+to the user's default calendar, as well as the ability to retrieve additional calendars that the
+user owns or is subscribed to.
+Properties
+Property
+Type
+Description
+Color
+Color
+An enum representing the named colors available in the Calendar service.
+Event
+Color
+Event
+Color
+An enum representing the named event colors available in the Calendar service.
+Event
+Transparency
+Event
+Transparency
+The
+Event
+Transparency
+enumeration.
+Event
+Type
+Event
+Type
+The
+Event
+Type
+enumeration.
+Guest
+Status
+Guest
+Status
+An enum representing the statuses a guest can have for an event.
+Month
+Month
+An enum representing the months of the year.
+Visibility
+Visibility
+An enum representing the visibility of an event.
+Weekday
+Weekday
+An enum representing the days of the week.
+Methods
+Method
+Return type
+Brief description
+create
+All
+Day
+Event(title, date)
+Calendar
+Event
+Creates a new all-day event.
+create
+All
+Day
+Event(title, startDate, endDate)
+Calendar
+Event
+Creates a new all-day event that can span multiple days.
+create
+All
+Day
+Event(title, startDate, endDate, options)
+Calendar
+Event
+Creates a new all-day event that can span multiple days.
+create
+All
+Day
+Event(title, date, options)
+Calendar
+Event
+Creates a new all-day event.
+create
+All
+Day
+Event
+Series(title, startDate, recurrence)
+Calendar
+Event
+Series
+Creates a new all-day event series.
+create
+All
+Day
+Event
+Series(title, startDate, recurrence, options)
+Calendar
+Event
+Series
+Creates a new all-day event series.
+create
+Calendar(name)
+Calendar
+Creates a new calendar, owned by the user.
+create
+Calendar(name, options)
+Calendar
+Creates a new calendar, owned by the user.
+create
+Event(title, startTime, endTime)
+Calendar
+Event
+Creates a new event.
+create
+Event(title, startTime, endTime, options)
+Calendar
+Event
+Creates a new event.
+create
+Event
+From
+Description(description)
+Calendar
+Event
+Creates an event from a free-form description.
+create
+Event
+Series(title, startTime, endTime, recurrence)
+Calendar
+Event
+Series
+Creates a new event series.
+create
+Event
+Series(title, startTime, endTime, recurrence, options)
+Calendar
+Event
+Series
+Creates a new event series.
+get
+All
+Calendars()
+Calendar[]
+Gets all calendars that the user owns or is subscribed to.
+get
+All
+Owned
+Calendars()
+Calendar[]
+Gets all calendars that the user owns.
+get
+Calendar
+By
+Id(id)
+Calendar
+Gets the calendar with the given ID.
+get
+Calendars
+By
+Name(name)
+Calendar[]
+Gets all calendars with a given name that the user owns or is subscribed to.
+get
+Color()
+String
+Gets the color of the calendar.
+get
+Default
+Calendar()
+Calendar
+Gets the user's default calendar.
+get
+Description()
+String
+Gets the description of the calendar.
+get
+Event
+By
+Id(iCalId)
+Calendar
+Event
+Gets the event with the given ID.
+get
+Event
+Series
+By
+Id(iCalId)
+Calendar
+Event
+Series
+Gets the event series with the given ID.
+get
+Events(startTime, endTime)
+Calendar
+Event[]
+Gets all events that occur within a given time range.
+get
+Events(startTime, endTime, options)
+Calendar
+Event[]
+Gets all events that occur within a given time range and meet the specified criteria.
+get
+Events
+For
+Day(date)
+Calendar
+Event[]
+Gets all events that occur on a given day.
+get
+Events
+For
+Day(date, options)
+Calendar
+Event[]
+Gets all events that occur on a given day and meet specified criteria.
+get
+Id()
+String
+Gets the ID of the calendar.
+get
+Name()
+String
+Gets the name of the calendar.
+get
+Owned
+Calendar
+By
+Id(id)
+Calendar
+Gets the calendar with the given ID, if the user owns it.
+get
+Owned
+Calendars
+By
+Name(name)
+Calendar[]
+Gets all calendars with a given name that the user owns.
+get
+Time
+Zone()
+String
+Gets the time zone of the calendar.
+is
+Hidden()
+Boolean
+Determines whether the calendar is hidden in the user interface.
+is
+My
+Primary
+Calendar()
+Boolean
+Determines whether the calendar is the primary calendar for the effective user.
+is
+Owned
+By
+Me()
+Boolean
+Determines whether the calendar is owned by you.
+is
+Selected()
+Boolean
+Determines whether the calendar's events are displayed in the user interface.
+new
+Recurrence()
+Event
+Recurrence
+Creates a new recurrence object, which can be used to create rules for event recurrence.
+set
+Color(color)
+Calendar
+Sets the color of the calendar.
+set
+Description(description)
+Calendar
+Sets the description of a calendar.
+set
+Hidden(hidden)
+Calendar
+Sets whether the calendar is visible in the user interface.
+set
+Name(name)
+Calendar
+Sets the name of the calendar.
+set
+Selected(selected)
+Calendar
+Sets whether the calendar's events are displayed in the user interface.
+set
+Time
+Zone(timeZone)
+Calendar
+Sets the time zone of the calendar.
+subscribe
+To
+Calendar(id)
+Calendar
+Subscribes the user to the calendar with the given ID, if the user is allowed to subscribe.
+subscribe
+To
+Calendar(id, options)
+Calendar
+Subscribes the user to the calendar with the given ID, if the user is allowed to subscribe.
+Detailed documentation
+create
+All
+Day
+Event(title, date)
+Creates a new all-day event.
+// Creates an all-day event for the moon landing and logs the ID.
+const
+event
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createAllDayEvent
+(
+'Apollo 11 Landing'
+,
+new
+Date
+(
+'July 20, 1969'
+),
+);
+Logger
+.
+log
+(
+`Event ID:
+${
+event
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The title of the event.
+date
+Date
+The date of the event (only the day is used; the time is ignored).
+Return
+Calendar
+Event
+— The created event.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+All
+Day
+Event(title, startDate, endDate)
+Creates a new all-day event that can span multiple days.
+// Creates an all-day event for the Woodstock festival (August 15th to 17th) and
+// logs the ID.
+const
+event
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createAllDayEvent
+(
+'Woodstock Festival'
+,
+new
+Date
+(
+'August 15, 1969'
+),
+new
+Date
+(
+'August 18, 1969'
+),
+);
+Logger
+.
+log
+(
+`Event ID:
+${
+event
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The title of the event.
+start
+Date
+Date
+The date when the event starts (only the day is used; the time is ignored).
+end
+Date
+Date
+The date when the event ends (only the day is used; the time is ignored). The
+    end date is exclusive.
+Return
+Calendar
+Event
+— The created event.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+All
+Day
+Event(title, startDate, endDate, options)
+Creates a new all-day event that can span multiple days.
+// Creates an all-day event for the Woodstock festival (August 15th to 17th) and
+// logs the ID.
+const
+event
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createAllDayEvent
+(
+'Woodstock Festival'
+,
+new
+Date
+(
+'August 15, 1969'
+),
+new
+Date
+(
+'August 18, 1969'
+),
+{
+location
+:
+'Bethel, White Lake, New York, U.S.'
+,
+sendInvites
+:
+true
+},
+);
+Logger
+.
+log
+(
+`Event ID:
+${
+event
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The title of the event.
+start
+Date
+Date
+The date when the event starts (only the day is used; the time is ignored).
+end
+Date
+Date
+The date when the event ends (only the day is used; the time is ignored). The
+    end date is exclusive.
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+description
+String
+The description of the event.
+location
+String
+The location of the event.
+guests
+String
+A comma-separated list of email addresses that should be added
+    as guests.
+send
+Invites
+Boolean
+Whether to send invitation emails (default:
+false
+).
+Return
+Calendar
+Event
+— The created event.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+All
+Day
+Event(title, date, options)
+Creates a new all-day event.
+// Creates an all-day event for the moon landing and logs the ID.
+const
+event
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createAllDayEvent
+(
+'Apollo 11 Landing'
+,
+new
+Date
+(
+'July 20, 1969'
+),
+{
+location
+:
+'The Moon'
+},
+);
+Logger
+.
+log
+(
+`Event ID:
+${
+event
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The title of the event.
+date
+Date
+The date of the event (only the day is used; the time is ignored).
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+description
+String
+The description of the event.
+location
+String
+The location of the event.
+guests
+String
+A comma-separated list of email addresses that should be added
+    as guests.
+send
+Invites
+Boolean
+Whether to send invitation emails (default:
+false
+).
+Return
+Calendar
+Event
+— The created event.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+All
+Day
+Event
+Series(title, startDate, recurrence)
+Creates a new all-day event series.
+// Creates an event series for a no-meetings day, taking place every Wednesday
+// in 2013.
+const
+eventSeries
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createAllDayEventSeries
+(
+'No Meetings'
+,
+new
+Date
+(
+'January 2, 2013 03:00:00 PM EST'
+),
+CalendarApp
+.
+newRecurrence
+()
+.
+addWeeklyRule
+()
+.
+onlyOnWeekday
+(
+CalendarApp
+.
+Weekday
+.
+WEDNESDAY
+)
+.
+until
+(
+new
+Date
+(
+'January 1, 2014'
+)),
+);
+Logger
+.
+log
+(
+`Event Series ID:
+${
+eventSeries
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+the title of the events in the series
+start
+Date
+Date
+the date of the first event in the series (only the day is used; the time is
+    ignored)
+recurrence
+Event
+Recurrence
+the recurrence settings of the event series
+Return
+Calendar
+Event
+Series
+— the created event series
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+All
+Day
+Event
+Series(title, startDate, recurrence, options)
+Creates a new all-day event series.
+// Creates an event series for a no-meetings day, taking place every Wednesday
+// in 2013.
+const
+eventSeries
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createAllDayEventSeries
+(
+'No Meetings'
+,
+new
+Date
+(
+'January 2, 2013 03:00:00 PM EST'
+),
+CalendarApp
+.
+newRecurrence
+()
+.
+addWeeklyRule
+()
+.
+onlyOnWeekday
+(
+CalendarApp
+.
+Weekday
+.
+WEDNESDAY
+)
+.
+until
+(
+new
+Date
+(
+'January 1, 2014'
+)),
+{
+guests
+:
+'everyone@example.com'
+},
+);
+Logger
+.
+log
+(
+`Event Series ID:
+${
+eventSeries
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+the title of the events in the series
+start
+Date
+Date
+the date of the first event in the series (only the day is used; the time is
+    ignored)
+recurrence
+Event
+Recurrence
+the recurrence settings of the event series
+options
+Object
+a JavaScript object that specifies advanced parameters, as listed below
+Advanced parameters
+Name
+Type
+Description
+description
+String
+the description of the events in the series
+location
+String
+the location of the events in the series
+guests
+String
+a comma-separated list of email addresses that should be added
+    as guests to the events in the series
+send
+Invites
+Boolean
+whether to send invitation emails (default:
+false
+)
+Return
+Calendar
+Event
+Series
+— the created event series
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+Calendar(name)
+Creates a new calendar, owned by the user.
+// Creates a new calendar named "Travel Plans".
+const
+calendar
+=
+CalendarApp
+.
+createCalendar
+(
+'Travel Plans'
+);
+Logger
+.
+log
+(
+'Created the calendar "%s", with the ID "%s".'
+,
+calendar
+.
+getName
+(),
+calendar
+.
+getId
+(),
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the new calendar
+Return
+Calendar
+— the newly created calendar
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+Calendar(name, options)
+Creates a new calendar, owned by the user.
+// Creates a new calendar named "Travel Plans" with a description and color.
+const
+calendar
+=
+CalendarApp
+.
+createCalendar
+(
+'Travel Plans'
+,
+{
+description
+:
+'A calendar to plan my travel schedule.'
+,
+color
+:
+CalendarApp
+.
+Color
+.
+BLUE
+,
+});
+Logger
+.
+log
+(
+'Created the calendar "%s", with the ID "%s".'
+,
+calendar
+.
+getName
+(),
+calendar
+.
+getId
+(),
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the new calendar
+options
+Object
+a JavaScript object that specifies advanced parameters, as listed below
+Advanced parameters
+Name
+Type
+Description
+location
+String
+the calendar's location
+description
+String
+the calendar's description
+time
+Zone
+String
+the time zone to set the calendar to, specified in "long"
+    format (e.g., "America/New_York", as listed by
+Joda.org
+)
+color
+String
+a hexadecimal color string ("#rrggbb") or a value from
+Calendar
+App.Colors
+hidden
+Boolean
+whether the calendar is hidden in the user interface (default:
+false
+)
+selected
+Boolean
+whether the calendar's events are displayed in the user
+    interface (default:
+true
+)
+Return
+Calendar
+— the newly created calendar
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+Event(title, startTime, endTime)
+Creates a new event.
+If no time zone is specified, the time values are interpreted in the context of the script's
+time zone, which may be different than the calendar's time zone.
+// Creates an event for the moon landing and logs the ID.
+const
+event
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createEvent
+(
+'Apollo 11 Landing'
+,
+new
+Date
+(
+'July 20, 1969 20:00:00 UTC'
+),
+new
+Date
+(
+'July 21, 1969 21:00:00 UTC'
+),
+);
+Logger
+.
+log
+(
+`Event ID:
+${
+event
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+the title of the event
+start
+Time
+Date
+the date and time when the event starts
+end
+Time
+Date
+the date and time when the event ends
+Return
+Calendar
+Event
+— the created event
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+Event(title, startTime, endTime, options)
+Creates a new event.
+If no time zone is specified, the time values are interpreted in the context of the script's
+time zone, which may be different than the calendar's time zone.
+// Creates an event for the moon landing and logs the ID.
+const
+event
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createEvent
+(
+'Apollo 11 Landing'
+,
+new
+Date
+(
+'July 20, 1969 20:00:00 UTC'
+),
+new
+Date
+(
+'July 20, 1969 21:00:00 UTC'
+),
+{
+location
+:
+'The Moon'
+},
+);
+Logger
+.
+log
+(
+`Event ID:
+${
+event
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+the title of the event
+start
+Time
+Date
+the date and time when the event starts
+end
+Time
+Date
+the date and time when the event ends
+options
+Object
+a JavaScript object that specifies advanced parameters, as listed below
+Advanced parameters
+Name
+Type
+Description
+description
+String
+the description of the event
+location
+String
+the location of the event
+guests
+String
+a comma-separated list of email addresses that should be added
+    as guests
+send
+Invites
+Boolean
+whether to send invitation emails (default:
+false
+)
+Return
+Calendar
+Event
+— the created event
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+Event
+From
+Description(description)
+Creates an event from a free-form description.
+The description should use the same format as the UI's
+"Quick Add"
+feature.
+// Creates a new event and logs its ID.
+const
+event
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createEventFromDescription
+(
+'Lunch with Mary, Friday at 1PM'
+,
+);
+Logger
+.
+log
+(
+`Event ID:
+${
+event
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+description
+String
+a free-form description of the event
+Return
+Calendar
+Event
+— the created event
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+Event
+Series(title, startTime, endTime, recurrence)
+Creates a new event series.
+// Creates an event series for a team meeting, taking place every Tuesday and
+// Thursday in 2013.
+const
+eventSeries
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createEventSeries
+(
+'Team Meeting'
+,
+new
+Date
+(
+'January 1, 2013 03:00:00 PM EST'
+),
+new
+Date
+(
+'January 1, 2013 04:00:00 PM EST'
+),
+CalendarApp
+.
+newRecurrence
+()
+.
+addWeeklyRule
+()
+.
+onlyOnWeekdays
+(
+[
+CalendarApp
+.
+Weekday
+.
+TUESDAY
+,
+CalendarApp
+.
+Weekday
+.
+THURSDAY
+])
+.
+until
+(
+new
+Date
+(
+'January 1, 2014'
+)),
+);
+Logger
+.
+log
+(
+`Event Series ID:
+${
+eventSeries
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+the title of the events in the series
+start
+Time
+Date
+the date and time when the first event in the series starts
+end
+Time
+Date
+the date and time when the first event in the series ends
+recurrence
+Event
+Recurrence
+the recurrence settings of the event series
+Return
+Calendar
+Event
+Series
+— the created event series
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+create
+Event
+Series(title, startTime, endTime, recurrence, options)
+Creates a new event series.
+// Creates an event series for a team meeting, taking place every Tuesday and
+// Thursday in 2013.
+const
+eventSeries
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createEventSeries
+(
+'Team Meeting'
+,
+new
+Date
+(
+'January 1, 2013 03:00:00 PM EST'
+),
+new
+Date
+(
+'January 1, 2013 04:00:00 PM EST'
+),
+CalendarApp
+.
+newRecurrence
+()
+.
+addWeeklyRule
+()
+.
+onlyOnWeekdays
+(
+[
+CalendarApp
+.
+Weekday
+.
+TUESDAY
+,
+CalendarApp
+.
+Weekday
+.
+THURSDAY
+])
+.
+until
+(
+new
+Date
+(
+'January 1, 2014'
+)),
+{
+location
+:
+'Conference Room'
+},
+);
+Logger
+.
+log
+(
+`Event Series ID:
+${
+eventSeries
+.
+getId
+()
+}
+`
+);
+Parameters
+Name
+Type
+Description
+title
+String
+the title of the events in the series
+start
+Time
+Date
+the date and time when the first event in the series starts
+end
+Time
+Date
+the date and time when the first event in the series ends
+recurrence
+Event
+Recurrence
+the recurrence settings of the event series
+options
+Object
+a JavaScript object that specifies advanced parameters, as listed below
+Advanced parameters
+Name
+Type
+Description
+description
+String
+the description of the events in the series
+location
+String
+the location of the events in the series
+guests
+String
+a comma-separated list of email addresses that should be added
+    as guests to the events in the series
+send
+Invites
+Boolean
+whether to send invitation emails (default:
+false
+)
+Return
+Calendar
+Event
+Series
+— the created event series
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+get
+All
+Calendars()
+Gets all calendars that the user owns or is subscribed to.
+// Determines how many calendars the user can access.
+const
+calendars
+=
+CalendarApp
+.
+getAllCalendars
+();
+Logger
+.
+log
+(
+'This user owns or is subscribed to %s calendars.'
+,
+calendars
+.
+length
+,
+);
+Return
+Calendar[]
+— all calendars that the user can access
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+All
+Owned
+Calendars()
+Gets all calendars that the user owns.
+// Determines how many calendars the user owns.
+const
+calendars
+=
+CalendarApp
+.
+getAllOwnedCalendars
+();
+Logger
+.
+log
+(
+'This user owns %s calendars.'
+,
+calendars
+.
+length
+);
+Return
+Calendar[]
+— all calendars that the user owns
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Calendar
+By
+Id(id)
+Gets the calendar with the given ID.
+// Gets the public calendar "US Holidays" by ID.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'en.usa#holiday@group.v.calendar.google.com'
+,
+);
+Logger
+.
+log
+(
+'The calendar is named "%s".'
+,
+calendar
+.
+getName
+());
+Parameters
+Name
+Type
+Description
+id
+String
+the calendar ID
+Return
+Calendar
+— the calendar with the given ID, or
+null
+if the calendar does not exist, if the
+    user cannot access it, or if the user is not subscribed to the calendar
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Calendars
+By
+Name(name)
+Gets all calendars with a given name that the user owns or is subscribed to. Names are not
+case-sensitive.
+// Gets the public calendar named "US Holidays".
+const
+calendars
+=
+CalendarApp
+.
+getCalendarsByName
+(
+'US Holidays'
+);
+Logger
+.
+log
+(
+'Found %s matching calendars.'
+,
+calendars
+.
+length
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the calendar name
+Return
+Calendar[]
+— all calendars with this name that the user can access
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Color()
+Gets the color of the calendar.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Gets the color of the calendar and logs it to the console.
+// For the default calendar, you can use CalendarApp.getColor() instead.
+const
+calendarColor
+=
+calendar
+.
+getColor
+();
+console
+.
+log
+(
+calendarColor
+);
+Return
+String
+— A hexadecimal color string ("#rrggbb").
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Default
+Calendar()
+Gets the user's default calendar.
+// Determines the time zone of the user's default calendar.
+const
+calendar
+=
+CalendarApp
+.
+getDefaultCalendar
+();
+Logger
+.
+log
+(
+'My default calendar is set to the time zone "%s".'
+,
+calendar
+.
+getTimeZone
+(),
+);
+Return
+Calendar
+— the user's default calendar
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Description()
+Gets the description of the calendar.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Sets the description of the calendar to 'Test description.'
+calendar
+.
+setDescription
+(
+'Test description'
+);
+// Gets the description of the calendar and logs it to the console.
+// For the default calendar, you can use CalendarApp.getDescription() instead.
+const
+description
+=
+calendar
+.
+getDescription
+();
+console
+.
+log
+(
+description
+);
+Return
+String
+— The description of this calendar.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Event
+By
+Id(iCalId)
+Gets the event with the given ID. If the series belongs to a calendar other than the default
+calendar, this method must be called from that calendar. Calling
+get
+Event
+By
+Id(iCalId)
+only
+returns an event in the default calendar.
+Multiple events may have the same ID if they are part of an event series. In this case this
+method returns only the first event from that series.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Creates an event for the moon landing.
+const
+event
+=
+calendar
+.
+createEvent
+(
+'Apollo 11 Landing'
+,
+new
+Date
+(
+'July 20, 1969 20:05:00 UTC'
+),
+new
+Date
+(
+'July 20, 1969 20:17:00 UTC'
+),
+);
+// Gets the calendar event ID and logs it to the console.
+const
+iCalId
+=
+event
+.
+getId
+();
+console
+.
+log
+(
+iCalId
+);
+// Gets the event by its ID and logs the title of the event to the console.
+// For the default calendar, you can use CalendarApp.getEventById(iCalId)
+// instead.
+const
+myEvent
+=
+calendar
+.
+getEventById
+(
+iCalId
+);
+console
+.
+log
+(
+myEvent
+.
+getTitle
+());
+Parameters
+Name
+Type
+Description
+iCalId
+String
+ID of the event.
+Return
+Calendar
+Event
+— The event with the given ID, or
+null
+if the event doesn't exist or the user
+    cannot access it.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Event
+Series
+By
+Id(iCalId)
+Gets the event series with the given ID. If the ID given is for a single
+Calendar
+Event
+,
+then a
+Calendar
+Event
+Series
+is returned with a single event in the series. Note that if
+the event series belongs to a calendar other than the default calendar, this method must be
+called from that
+Calendar
+App
+; calling
+get
+Event
+Series
+By
+Id(iCalId)
+directly only returns an event series that exists in the default calendar.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Creates an event series for a daily team meeting from 1 PM to 2 PM.
+// The series adds the daily event from January 1, 2023 through December 31,
+// 2023.
+const
+eventSeries
+=
+calendar
+.
+createEventSeries
+(
+'Team meeting'
+,
+new
+Date
+(
+'Jan 1, 2023 13:00:00'
+),
+new
+Date
+(
+'Jan 1, 2023 14:00:00'
+),
+CalendarApp
+.
+newRecurrence
+().
+addDailyRule
+().
+until
+(
+new
+Date
+(
+'Jan 1, 2024'
+)),
+);
+// Gets the ID of the event series.
+const
+iCalId
+=
+eventSeries
+.
+getId
+();
+// Gets the event series by its ID and logs the series title to the console.
+// For the default calendar, you can use CalendarApp.getEventSeriesById(iCalId)
+// instead.
+console
+.
+log
+(
+calendar
+.
+getEventSeriesById
+(
+iCalId
+).
+getTitle
+());
+Parameters
+Name
+Type
+Description
+iCalId
+String
+ID of the event series.
+Return
+Calendar
+Event
+Series
+— The series with the given ID, or
+null
+if the series doesn't exist or the user
+    cannot access it.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Events(startTime, endTime)
+Gets all events that occur within a given time range.
+This method returns events that start during the given time range, end during the time
+range, or encompass the time range. If no time zone is specified, the time values are
+interpreted in the context of the script's time zone, which may be different from the
+calendar's time zone.
+// Determines how many events are happening in the next two hours.
+const
+now
+=
+new
+Date
+();
+const
+twoHoursFromNow
+=
+new
+Date
+(
+now
+.
+getTime
+()
++
+2
+*
+60
+*
+60
+*
+1000
+);
+const
+events
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+getEvents
+(
+now
+,
+twoHoursFromNow
+);
+Logger
+.
+log
+(
+`Number of events:
+${
+events
+.
+length
+}
+`
+);
+Parameters
+Name
+Type
+Description
+start
+Time
+Date
+the start of the time range
+end
+Time
+Date
+the end of the time range, non-inclusive
+Return
+Calendar
+Event[]
+— the events that occur within the time range
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Events(startTime, endTime, options)
+Gets all events that occur within a given time range and meet the specified criteria.
+This method returns events that start during the given time range, ends during the time
+range, or encompasses the time range. If no time zone is specified, the time values are
+interpreted in the context of the script's time zone, which may be different from the
+calendar's time zone.
+Be aware that filtering on
+author
+,
+search
+, or
+status
+Filters
+takes
+place after applying
+start
+and
+max
+. This means that the number of events
+returned may be less than
+max
+, even though additional events meet the criteria.
+// Determines how many events are happening in the next two hours that contain
+// the term "meeting".
+const
+now
+=
+new
+Date
+();
+const
+twoHoursFromNow
+=
+new
+Date
+(
+now
+.
+getTime
+()
++
+2
+*
+60
+*
+60
+*
+1000
+);
+const
+events
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+getEvents
+(
+now
+,
+twoHoursFromNow
+,
+{
+search
+:
+'meeting'
+},
+);
+Logger
+.
+log
+(
+`Number of events:
+${
+events
+.
+length
+}
+`
+);
+Parameters
+Name
+Type
+Description
+start
+Time
+Date
+the start of the time range
+end
+Time
+Date
+the end of the time range, non-inclusive
+options
+Object
+a JavaScript object that specifies advanced parameters, as listed below
+Advanced parameters
+Name
+Type
+Description
+start
+Integer
+the index of the first event to return
+max
+Integer
+the maximum number of events to return
+author
+String
+an email address used to filter results by the event creator
+search
+String
+a full-text search query used to filter results
+status
+Filters[]
+Guest
+Status
+an array of statuses used to filter results
+Return
+Calendar
+Event[]
+— the events that take place within the time range and match the criteria
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Events
+For
+Day(date)
+Gets all events that occur on a given day.
+This method returns events if they start during the given day, end during the day, or
+encompass the day.
+Note that only the date portion of the Date object is used, and the time portion is ignored.
+The date is interpreted as midnight that day to midnight the next day in the calendar's time
+zone.
+// Determines how many events are happening today.
+const
+today
+=
+new
+Date
+();
+const
+events
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+getEventsForDay
+(
+today
+);
+Logger
+.
+log
+(
+`Number of events:
+${
+events
+.
+length
+}
+`
+);
+Parameters
+Name
+Type
+Description
+date
+Date
+the date to retrieve events for (only the day is used; the time is ignored)
+Return
+Calendar
+Event[]
+— the events that occur on the given date
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Events
+For
+Day(date, options)
+Gets all events that occur on a given day and meet specified criteria.
+This method returns events if they start during the given day, end during the day, or
+encompass the day.
+Note that only the date portion of the Date object is used, and the time portion is ignored.
+The date is interpreted as midnight that day to midnight the next day in the calendar's time
+zone.
+Be aware that filtering on
+author
+,
+search
+, or
+status
+Filters
+takes
+place after applying
+start
+and
+max
+. This means that the number of events
+returned may be less than
+max
+, even though additional events meet the criteria.
+// Determines how many events are happening today and contain the term
+// "meeting".
+const
+today
+=
+new
+Date
+();
+const
+events
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+getEventsForDay
+(
+today
+,
+{
+search
+:
+'meeting'
+,
+});
+Logger
+.
+log
+(
+`Number of events:
+${
+events
+.
+length
+}
+`
+);
+Parameters
+Name
+Type
+Description
+date
+Date
+the date to retrieve events for (only the day is used; the time is ignored)
+options
+Object
+advanced filtering options
+Advanced parameters
+Name
+Type
+Description
+start
+Integer
+the index of the first event to return
+max
+Integer
+the maximum number of events to return
+author
+String
+an email address used to filter results by the event creator
+search
+String
+a full-text search query used to filter results
+status
+Filters[]
+Guest
+Status
+an array of statuses used to filter results
+Return
+Calendar
+Event[]
+— the events that occur on the given date and match the criteria
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Id()
+Gets the ID of the calendar. The ID for a user's default calendar is their email address.
+// Opens the calendar by its ID.
+// To get the user's default calendar, use CalendarApp.getDefaultCalendar().
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Gets the ID of the calendar and logs it to the console.
+const
+calendarId
+=
+calendar
+.
+getId
+();
+console
+.
+log
+(
+calendarId
+);
+Return
+String
+— The ID of the calendar.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Name()
+Gets the name of the calendar.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Gets the name of the calendar and logs it to the console.
+// For the default calendar, you can use CalendarApp.getName() instead.
+const
+calendarName
+=
+calendar
+.
+getName
+();
+console
+.
+log
+(
+calendarName
+);
+Return
+String
+— This calendar's name.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Owned
+Calendar
+By
+Id(id)
+Gets the calendar with the given ID, if the user owns it.
+To find a calendar ID, click the arrow next to the calendar's name in Google Calendar and
+select
+Calendar settings
+. The ID is shown near the bottom of the settings
+page.
+// Gets a (non-existent) private calendar by ID.
+const
+calendar
+=
+CalendarApp
+.
+getOwnedCalendarById
+(
+'123456789@group.calendar.google.com'
+,
+);
+Logger
+.
+log
+(
+'The calendar is named "%s".'
+,
+calendar
+.
+getName
+());
+Parameters
+Name
+Type
+Description
+id
+String
+the calendar id
+Return
+Calendar
+— the calendar with the given ID, or
+null
+if the calendar does not exist or the
+    user does not own it
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Owned
+Calendars
+By
+Name(name)
+Gets all calendars with a given name that the user owns. Names are not case-sensitive.
+// Gets a private calendar named "Travel Plans".
+const
+calendars
+=
+CalendarApp
+.
+getOwnedCalendarsByName
+(
+'Travel Plans'
+);
+Logger
+.
+log
+(
+'Found %s matching calendars.'
+,
+calendars
+.
+length
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the calendar name
+Return
+Calendar[]
+— all calendars with this name that the user owns
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+get
+Time
+Zone()
+Gets the time zone of the calendar.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Gets the time zone of the calendar and logs it to the console.
+// For the default calendar, you can use CalendarApp.getTimeZone() instead.
+const
+timeZone
+=
+calendar
+.
+getTimeZone
+();
+console
+.
+log
+(
+timeZone
+);
+Return
+String
+— The time zone, specified in "long" format (for example, "America/New_York", as listed
+    by
+Joda.org
+).
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+is
+Hidden()
+Determines whether the calendar is hidden in the user interface.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Determines whether the calendar is hidden in the user interface and logs it
+// to the console. For the default calendar, you can use CalendarApp.isHidden()
+// instead.
+const
+isHidden
+=
+calendar
+.
+isHidden
+();
+console
+.
+log
+(
+isHidden
+);
+Return
+Boolean
+—
+true
+if the calendar is hidden in the user interface;
+false
+if it
+    isn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+is
+My
+Primary
+Calendar()
+Determines whether the calendar is the primary calendar for the effective user.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Determines whether the calendar is the default calendar for
+// the effective user and logs it to the console.
+// For the default calendar, you can use CalendarApp.isMyPrimaryCalendar()
+// instead.
+const
+isMyPrimaryCalendar
+=
+calendar
+.
+isMyPrimaryCalendar
+();
+console
+.
+log
+(
+isMyPrimaryCalendar
+);
+Return
+Boolean
+—
+true
+if the calendar is the default calendar for the effective user;
+false
+if it isn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+is
+Owned
+By
+Me()
+Determines whether the calendar is owned by you.
+// Gets a calendar by its ID. To get the user's default calendar, use
+// CalendarApp.getDefault() instead.
+// TODO(developer): Replace the ID with the calendar ID that you want to use.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'abc123456@group.calendar.google.com'
+,
+);
+// Determines whether the calendar is owned by you and logs it.
+console
+.
+log
+(
+calendar
+.
+isOwnedByMe
+());
+Return
+Boolean
+—
+true
+if the calendar is owned by you;
+false
+if not.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+is
+Selected()
+Determines whether the calendar's events are displayed in the user interface.
+// Gets the user's default calendar. To get a different calendar,
+// use getCalendarById() instead.
+const
+calendar
+=
+CalendarApp
+.
+getDefaultCalendar
+();
+// Determines whether the calendar's events are displayed in the user interface
+// and logs it.
+console
+.
+log
+(
+calendar
+.
+isSelected
+());
+Return
+Boolean
+—
+true
+if the calendar's events are displayed in the user interface;
+false
+if not
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+new
+Recurrence()
+Creates a new recurrence object, which can be used to create rules for event recurrence.
+// Creates an event series for a no-meetings day, taking place every Wednesday
+// in 2013.
+const
+recurrence
+=
+CalendarApp
+.
+newRecurrence
+()
+.
+addWeeklyRule
+()
+.
+onlyOnWeekday
+(
+CalendarApp
+.
+Weekday
+.
+WEDNESDAY
+)
+.
+until
+(
+new
+Date
+(
+'January 1, 2014'
+));
+const
+eventSeries
+=
+CalendarApp
+.
+getDefaultCalendar
+().
+createAllDayEventSeries
+(
+'No Meetings'
+,
+new
+Date
+(
+'January 2, 2013 03:00:00 PM EST'
+),
+recurrence
+,
+);
+Logger
+.
+log
+(
+`Event Series ID:
+${
+eventSeries
+.
+getId
+()
+}
+`
+);
+Return
+Event
+Recurrence
+— a new recurrence object with no rules set (behaves as a weekly recurrence)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.google.com/calendar/feeds
+set
+Color(color)
+Sets the color of the calendar.
+// Opens the calendar by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+calendar
+=
+CalendarApp
+.
+getCalendarById
+(
+'222larabrown@gmail.com'
+);
+// Sets the color of the calendar to pink using the Calendar Color enum.
+// For the default calendar, you can use CalendarApp.setColor() instead.
+calendar
+.
+setColor
+(
+CalendarApp
+.
+Color
+.
+PINK
+);
+Parameters
+Name
+Type
+Description
+color
+String
+A
+Calendar
+App.Color
+or a hexadecimal color string
+    ("#rrggbb").
+Return
+Calendar
+— This calendar for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+set
+Description(description)
+Sets the description of a calendar.
+// Gets the user's default calendar. To get a different calendar,
+// use getCalendarById() instead.
+const
+calendar
+=
+CalendarApp
+.
+getDefaultCalendar
+();
+// Sets the description of the calendar.
+// TODO(developer): Update the string with the description that you want to use.
+calendar
+.
+setDescription
+(
+'Updated calendar description.'
+);
+Parameters
+Name
+Type
+Description
+description
+String
+the description of this calendar
+Return
+Calendar
+— this calendar for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+set
+Hidden(hidden)
+Sets whether the calendar is visible in the user interface.
+Parameters
+Name
+Type
+Description
+hidden
+Boolean
+true
+to hide the calendar in the user interface;
+false
+to show it
+Return
+Calendar
+— this calendar for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+set
+Name(name)
+Sets the name of the calendar.
+// Gets the user's default calendar. To get a different calendar,
+// use getCalendarById() instead.
+const
+calendar
+=
+CalendarApp
+.
+getDefaultCalendar
+();
+// Sets the name of the calendar.
+// TODO(developer): Update the string with the name that you want to use.
+calendar
+.
+setName
+(
+'Example calendar name'
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the new name
+Return
+Calendar
+— this calendar for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+set
+Selected(selected)
+Sets whether the calendar's events are displayed in the user interface.
+// Gets the user's default calendar. To get a different calendar,
+// use getCalendarById() instead.
+const
+calendar
+=
+CalendarApp
+.
+getDefaultCalendar
+();
+// Selects the calendar so that its events are displayed in the user interface.
+// To unselect the calendar, set the parameter to false.
+calendar
+.
+setSelected
+(
+true
+);
+Parameters
+Name
+Type
+Description
+selected
+Boolean
+true
+to show the calendar's events in the user interface;
+false
+to hide them
+Return
+Calendar
+— this calendar for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+set
+Time
+Zone(timeZone)
+Sets the time zone of the calendar.
+// Gets the user's default calendar. To get a different calendar,
+// use getCalendarById() instead.
+const
+calendar
+=
+CalendarApp
+.
+getDefaultCalendar
+();
+// Sets the time zone of the calendar to America/New York (US/Eastern) time.
+calendar
+.
+setTimeZone
+(
+'America/New_York'
+);
+Parameters
+Name
+Type
+Description
+time
+Zone
+String
+The time zone, specified in "long" format (such as "America/New_York", as
+    listed by
+Joda.org
+).
+Return
+Calendar
+— This calendar for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+subscribe
+To
+Calendar(id)
+Subscribes the user to the calendar with the given ID, if the user is allowed to subscribe.
+// Subscribe to the calendar "US Holidays".
+const
+calendar
+=
+CalendarApp
+.
+subscribeToCalendar
+(
+'en.usa#holiday@group.v.calendar.google.com'
+,
+);
+Logger
+.
+log
+(
+'Subscribed to the calendar "%s".'
+,
+calendar
+.
+getName
+());
+Parameters
+Name
+Type
+Description
+id
+String
+the ID of the calendar to subscribe to
+Return
+Calendar
+— the newly subscribed to calendar
+Throws
+Error
+— if no calendar with this ID exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds
+subscribe
+To
+Calendar(id, options)
+Subscribes the user to the calendar with the given ID, if the user is allowed to subscribe.
+// Subscribe to the calendar "US Holidays", and set it to the color blue.
+const
+calendar
+=
+CalendarApp
+.
+subscribeToCalendar
+(
+'en.usa#holiday@group.v.calendar.google.com'
+,
+{
+color
+:
+CalendarApp
+.
+Color
+.
+BLUE
+},
+);
+Logger
+.
+log
+(
+'Subscribed to the calendar "%s".'
+,
+calendar
+.
+getName
+());
+Parameters
+Name
+Type
+Description
+id
+String
+The ID of the calendar to subscribe to.
+options
+Object
+A JavaScript object that specifies advanced parameters, as listed below.
+Advanced parameters
+Name
+Type
+Description
+color
+String
+A hexadecimal color string ("#rrggbb") or a value from
+Calendar
+App.Colors
+.
+hidden
+Boolean
+Whether the calendar is hidden in the user interface (default:
+false
+).
+selected
+Boolean
+Whether the calendar's events are displayed in the user
+    interface (default:
+true
+if
+color
+is also specified,
+false
+otherwise).
+Return
+Calendar
+— The newly subscribed calendar.
+Throws
+Error
+— if no calendar with this ID exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://www.googleapis.com/auth/calendar
+https://www.google.com/calendar/feeds

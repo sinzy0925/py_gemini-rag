@@ -1,0 +1,89 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/icon/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Icons are predefined visual elements used in various UI objects like ImageButton or DecoratedText widgets.
+Icons are available for Google Workspace add-ons and Google Chat apps.
+To use an icon, you call its parent class, name, and property, for example,
+CardService.Icon.BOOKMARK
+.
+A table is provided listing the available icons, their types, and descriptions, including visual examples.
+Icon
+Predefined icons that can be used in various UI objects, such as
+Image
+Button
+or
+Decorated
+Text
+widgets.
+Available for Google Workspace add-ons and Google Chat apps.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.Icon.BOOKMARK
+.
+Properties
+Property
+Type
+Description
+NONE
+Enum
+No icon. Default.
+AIRPLANE
+Enum
+BOOKMARK
+Enum
+BUS
+Enum
+CAR
+Enum
+CLOCK
+Enum
+CONFIRMATION_NUMBER_ICON
+Enum
+DOLLAR
+Enum
+DESCRIPTION
+Enum
+EMAIL
+Enum
+EVENT_PERFORMER
+Enum
+EVENT_SEAT
+Enum
+FLIGHT_ARRIVAL
+Enum
+FLIGHT_DEPARTURE
+Enum
+HOTEL
+Enum
+HOTEL_ROOM_TYPE
+Enum
+INVITE
+Enum
+MAP_PIN
+Enum
+MEMBERSHIP
+Enum
+MULTIPLE_PEOPLE
+Enum
+OFFER
+Enum
+PERSON
+Enum
+PHONE
+Enum
+RESTAURANT_ICON
+Enum
+SHOPPING_CART
+Enum
+STAR
+Enum
+STORE
+Enum
+TICKET
+Enum
+TRAIN
+Enum
+VIDEO_CAMERA
+Enum
+VIDEO_PLAY
+Enum

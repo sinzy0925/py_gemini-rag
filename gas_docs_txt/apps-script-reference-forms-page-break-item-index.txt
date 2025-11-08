@@ -1,0 +1,491 @@
+Source Path: gas_docs_html/apps-script/reference/forms/page-break-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PageBreakItem marks the start of a new page in a form and can be accessed or created from a Form object.
+You can set the navigation for a page break to jump to another specific page break or use a defined PageNavigationType.
+Methods like
+duplicate()
+,
+getHelpText()
+,
+getId()
+,
+getIndex()
+,
+getPageNavigationType()
+,
+getTitle()
+, and
+getType()
+are available for PageBreakItem.
+Methods like
+setGoToPage()
+,
+setHelpText()
+, and
+setTitle()
+allow for modification of PageBreakItem properties.
+Page
+Break
+Item
+A layout item that marks the start of a page. Items can be accessed or created from a
+Form
+.
+// Create a form and add three page-break items.
+const
+form
+=
+FormApp
+.
+create
+(
+'Form Name'
+);
+const
+pageTwo
+=
+form
+.
+addPageBreakItem
+().
+setTitle
+(
+'Page Two'
+);
+const
+pageThree
+=
+form
+.
+addPageBreakItem
+().
+setTitle
+(
+'Page Three'
+);
+// Make the first two pages navigate elsewhere upon completion.
+pageTwo
+.
+setGoToPage
+(
+pageThree
+);
+// At end of page one (start of page two), jump to page three
+pageThree
+.
+setGoToPage
+(
+FormApp
+.
+PageNavigationType
+.
+RESTART
+);
+// At end of page two, restart form
+Methods
+Method
+Return type
+Brief description
+duplicate()
+Page
+Break
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Go
+To
+Page()
+Page
+Break
+Item
+Gets the
+Page
+Break
+Item
+that the form will jump to after completing the page before this
+page break (that is, upon reaching this page break by normal linear progression through the
+form).
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Page
+Navigation
+Type()
+Page
+Navigation
+Type
+Gets the type of page navigation that occurs after completing the page before this page break
+(that is, upon reaching this page break by normal linear progression through the form).
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+set
+Go
+To
+Page(goToPageItem)
+Page
+Break
+Item
+Sets the page to jump to after completing the page before this page break (that is, upon
+reaching this page break by normal linear progression through the form).
+set
+Go
+To
+Page(navigationType)
+Page
+Break
+Item
+Sets the type of page navigation that occurs after completing the page before this page break
+(that is, upon reaching this page break by normal linear progression through the form).
+set
+Help
+Text(text)
+Page
+Break
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Title(title)
+Page
+Break
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Detailed documentation
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Page
+Break
+Item
+— a duplicate of this
+Page
+Break
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Go
+To
+Page()
+Gets the
+Page
+Break
+Item
+that the form will jump to after completing the page before this
+page break (that is, upon reaching this page break by normal linear progression through the
+form).
+Return
+Page
+Break
+Item
+— the page break to jump to after completing the page before this page break, or
+null
+if none is set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Page
+Navigation
+Type()
+Gets the type of page navigation that occurs after completing the page before this page break
+(that is, upon reaching this page break by normal linear progression through the form).
+Return
+Page
+Navigation
+Type
+— the navigation action to take after completing the page before this page break
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Go
+To
+Page(goToPageItem)
+Sets the page to jump to after completing the page before this page break (that is, upon
+reaching this page break by normal linear progression through the form). If the previous page
+contained a
+Multiple
+Choice
+Item
+or
+List
+Item
+with a navigation option, that
+navigation overrules this navigation.
+Parameters
+Name
+Type
+Description
+go
+To
+Page
+Item
+Page
+Break
+Item
+the page break to jump to after completing the page before this page break
+Return
+Page
+Break
+Item
+— this
+Page
+Break
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Go
+To
+Page(navigationType)
+Sets the type of page navigation that occurs after completing the page before this page break
+(that is, upon reaching this page break by normal linear progression through the form). If the
+page contained a
+Multiple
+Choice
+Item
+or
+List
+Item
+with a navigation option, that
+navigation overrules this navigation.
+Parameters
+Name
+Type
+Description
+navigation
+Type
+Page
+Navigation
+Type
+the navigation action to take after completing the page before this page
+    break
+Return
+Page
+Break
+Item
+— this
+Page
+Break
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Page
+Break
+Item
+— this
+Page
+Break
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Page
+Break
+Item
+— this
+Page
+Break
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

@@ -1,0 +1,57 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/content-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ContentType is an enumeration representing the types of XML content nodes.
+To call an enum, you call its parent class, name, and property, such as
+XmlService.ContentType.CDATA
+.
+The ContentType enum includes properties for various XML node types like CDATA, COMMENT, DOCTYPE, ELEMENT, ENTITYREF, PROCESSINGINSTRUCTION, and TEXT.
+Content
+Type
+An enumeration representing the types of XML content nodes.
+To call an enum, you call its parent class, name, and property. For example,
+XmlService.ContentType.CDATA
+.
+Properties
+Property
+Type
+Description
+CDATA
+Enum
+An XML
+CDATASection
+node.
+COMMENT
+Enum
+An XML
+Comment
+node.
+DOCTYPE
+Enum
+An XML
+Document
+Type
+node.
+ELEMENT
+Enum
+An XML
+Element
+node.
+ENTITYREF
+Enum
+An XML
+Entity
+Reference
+node.
+PROCESSINGINSTRUCTION
+Enum
+An XML
+Processing
+Instruction
+node.
+TEXT
+Enum
+An XML
+Text
+node.

@@ -1,0 +1,147 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/text/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+Text
+class represents an XML text node.
+Methods are available to append, detach, get the parent element, get the text value, get the combined value of child nodes, and set the text value.
+The
+append()
+method adds text to the existing content and returns the
+Text
+node for chaining.
+The
+detach()
+method removes the node from its parent and returns the detached node.
+The
+getParentElement()
+method returns the node's parent
+Element
+or
+null
+if there is no parent.
+The
+getText()
+method retrieves the specific text content of the
+Text
+node.
+The
+getValue()
+method retrieves the combined text content of all child nodes, direct and indirect.
+The
+setText()
+method replaces the existing text content and returns the
+Text
+node for chaining.
+Text
+A representation of an XML
+Text
+node.
+Methods
+Method
+Return type
+Brief description
+append(text)
+Text
+Appends the given text to any content that already exists in the node.
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Text()
+String
+Gets the text value of the
+Text
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Text(text)
+Text
+Sets the text value of the
+Text
+node.
+Detailed documentation
+append(text)
+Appends the given text to any content that already exists in the node.
+Parameters
+Name
+Type
+Description
+text
+String
+the text to append to the node
+Return
+Text
+— the
+Text
+node, for chaining
+detach()
+Detaches the node from its parent
+Element
+node. If the node does not have a parent,
+this method has no effect.
+Return
+Content
+— the detached node
+get
+Parent
+Element()
+Gets the node's parent
+Element
+node. If the node does not have a parent, this method
+returns
+null
+.
+Return
+Element
+— the parent
+Element
+node
+get
+Text()
+Gets the text value of the
+Text
+node.
+Return
+String
+— the text value of the
+Text
+node
+get
+Value()
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Return
+String
+— the text value of all nodes that are direct or indirect children of the node
+set
+Text(text)
+Sets the text value of the
+Text
+node.
+Parameters
+Name
+Type
+Description
+text
+String
+the text value to set
+Return
+Text
+— the
+Text
+node, for chaining

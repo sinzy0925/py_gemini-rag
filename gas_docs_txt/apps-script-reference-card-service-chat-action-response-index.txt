@@ -1,0 +1,382 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/chat-action-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ChatActionResponse is a class used by Google Chat apps to configure how their responses are posted.
+This class is exclusively available for Google Chat apps and not for Google Workspace add-ons.
+Key methods include setting a dialog action, the response type, an updated widget for autocomplete, or a URL for authentication or configuration.
+Each method returns the ChatActionResponse object for method chaining.
+Chat
+Action
+Response
+A class that represents the parameters that a Chat app can use to configure how its response is
+posted.
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'Card title'
+))
+.
+build
+();
+const
+dialog
+=
+CardService
+.
+newDialog
+().
+setBody
+(
+card
+);
+const
+dialogAction
+=
+CardService
+.
+newDialogAction
+().
+setDialog
+(
+dialog
+);
+const
+chatActionResponse
+=
+CardService
+.
+newChatActionResponse
+()
+.
+setResponseType
+(
+CardService
+.
+Type
+.
+DIALOG
+)
+.
+setDialogAction
+(
+dialogAction
+);
+Methods
+Method
+Return type
+Brief description
+set
+Dialog
+Action(dialogAction)
+Chat
+Action
+Response
+Sets the dialog action to an event related to a dialog.
+set
+Response
+Type(responseType)
+Chat
+Action
+Response
+The type of Chat app response.
+set
+Updated
+Widget(updatedWidget)
+Chat
+Action
+Response
+Sets the updated widget, used to provide autocomplete options for a widget.
+set
+Url(url)
+Chat
+Action
+Response
+The URL for users to authenticate or configure.
+Detailed documentation
+set
+Dialog
+Action(dialogAction)
+Sets the dialog action to an event related to a dialog.
+const
+card
+=
+CardService
+.
+newCardBuilder
+()
+.
+setHeader
+(
+CardService
+.
+newCardHeader
+().
+setTitle
+(
+'Card title'
+))
+.
+build
+();
+const
+dialog
+=
+CardService
+.
+newDialog
+().
+setBody
+(
+card
+);
+const
+dialogAction
+=
+CardService
+.
+newDialogAction
+().
+setDialog
+(
+dialog
+);
+const
+chatActionResponse
+=
+CardService
+.
+newChatActionResponse
+()
+.
+setResponseType
+(
+CardService
+.
+Type
+.
+DIALOG
+)
+.
+setDialogAction
+(
+dialogAction
+);
+Parameters
+Name
+Type
+Description
+dialog
+Action
+Dialog
+Action
+The dialog action to set.
+Return
+Chat
+Action
+Response
+— This object, for chaining.
+set
+Response
+Type(responseType)
+The type of Chat app response.
+const
+chatActionResponse
+=
+CardService
+.
+newChatActionResponse
+().
+setResponseType
+(
+CardService
+.
+Type
+.
+DIALOG
+,
+);
+Parameters
+Name
+Type
+Description
+response
+Type
+Response
+Type
+The response type.
+Return
+Chat
+Action
+Response
+— This object, for chaining.
+set
+Updated
+Widget(updatedWidget)
+Sets the updated widget, used to provide autocomplete options for a widget.
+const
+updatedWidget
+=
+CardService
+.
+newUpdatedWidget
+()
+.
+addItem
+(
+'Contact 1'
+,
+'contact-1'
+,
+false
+,
+'https://www.gstatic.com/images/branding/product/2x/contacts_48dp.png'
+,
+'Contact one description'
+,
+)
+.
+addItem
+(
+'Contact 2'
+,
+'contact-2'
+,
+false
+,
+'https://www.gstatic.com/images/branding/product/2x/contacts_48dp.png'
+,
+'Contact two description'
+,
+)
+.
+addItem
+(
+'Contact 3'
+,
+'contact-3'
+,
+false
+,
+'https://www.gstatic.com/images/branding/product/2x/contacts_48dp.png'
+,
+'Contact three description'
+,
+)
+.
+addItem
+(
+'Contact 4'
+,
+'contact-4'
+,
+false
+,
+'https://www.gstatic.com/images/branding/product/2x/contacts_48dp.png'
+,
+'Contact four description'
+,
+)
+.
+addItem
+(
+'Contact 5'
+,
+'contact-5'
+,
+false
+,
+'https://www.gstatic.com/images/branding/product/2x/contacts_48dp.png'
+,
+'Contact five description'
+,
+);
+const
+actionResponse
+=
+CardService
+.
+newChatActionResponse
+()
+.
+setUpdatedWidget
+(
+updatedWidget
+)
+.
+setResponseType
+(
+CardService
+.
+ResponseType
+.
+UPDATE_WIDGET
+);
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+Parameters
+Name
+Type
+Description
+updated
+Widget
+Updated
+Widget
+The updated widget to be set.
+Return
+Chat
+Action
+Response
+— This object, for chaining.
+set
+Url(url)
+The URL for users to authenticate or configure. Only for the
+REQUEST_CONFIG
+response
+type.
+const
+chatActionResponse
+=
+CardService
+.
+newChatActionResponse
+()
+.
+setResponseType
+(
+CardService
+.
+Type
+.
+REQUEST_CONFIG
+)
+.
+setUrl
+(
+'https://www.google.com'
+);
+Parameters
+Name
+Type
+Description
+url
+String
+The URL to send.
+Return
+Chat
+Action
+Response
+— This object, for chaining.

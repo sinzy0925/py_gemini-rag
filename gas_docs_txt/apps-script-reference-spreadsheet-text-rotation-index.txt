@@ -1,0 +1,53 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/text-rotation/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+TextRotation
+class allows access to text rotation settings for a cell.
+You can get the rotation angle in degrees using the
+getDegrees()
+method.
+The
+isVertical()
+method checks if the text is stacked vertically.
+Text
+Rotation
+Access the text rotation settings for a cell.
+Methods
+Method
+Return type
+Brief description
+get
+Degrees()
+Integer
+Gets the angle between standard text orientation and the current text orientation.
+is
+Vertical()
+Boolean
+Returns
+true
+if the text is stacked vertically; returns
+false
+otherwise.
+Detailed documentation
+get
+Degrees()
+Gets the angle between standard text orientation and the current text orientation. For
+left-to-right text, positive angles are in the counterclockwise direction. If the text is set
+to stack vertically, this method returns
+0
+.
+Return
+Integer
+— The degrees between standard text rotation and the current text rotation.
+is
+Vertical()
+Returns
+true
+if the text is stacked vertically; returns
+false
+otherwise.
+Return
+Boolean
+— Whether or not the text is stacked vertically.

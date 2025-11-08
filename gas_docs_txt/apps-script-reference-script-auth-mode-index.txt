@@ -1,0 +1,181 @@
+Source Path: gas_docs_html/apps-script/reference/script/auth-mode/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+AuthMode is an enumeration in Apps Script that identifies the categories of authorized services triggered functions can execute.
+AuthMode values are exposed as the
+authMode
+property of the event parameter
+e
+in triggered functions.
+You can reference an AuthMode enum by calling its parent class, name, and property, such as
+ScriptApp.AuthMode.CUSTOM_FUNCTION
+.
+The AuthMode has properties like
+NONE
+,
+CUSTOM_FUNCTION
+,
+LIMITED
+, and
+FULL
+, each representing a different level of access to authorized services.
+Auth
+Mode
+An enumeration that identifies which categories of authorized services Apps Script is able to
+execute through a triggered function. These values are exposed in
+triggered functions
+as the
+auth
+Mode
+property of the
+event parameter
+,
+e
+. For
+more information, see the
+guide to the
+authorization lifecycle for add-ons
+.
+To call an enum, you call its parent class, name, and property. For example,
+ScriptApp.AuthMode.CUSTOM_FUNCTION
+.
+function
+onOpen
+(
+e
+)
+{
+const
+menu
+=
+SpreadsheetApp
+.
+getUi
+().
+createAddonMenu
+();
+if
+(
+e
+&&
+e
+.
+authMode
+===
+ScriptApp
+.
+AuthMode
+.
+NONE
+)
+{
+// Add a normal menu item (works in all authorization modes).
+menu
+.
+addItem
+(
+'Start workflow'
+,
+'startWorkflow'
+);
+}
+else
+{
+// Add a menu item based on properties (doesn't work in AuthMode.NONE).
+const
+properties
+=
+PropertiesService
+.
+getDocumentProperties
+();
+const
+workflowStarted
+=
+properties
+.
+getProperty
+(
+'workflowStarted'
+);
+if
+(
+workflowStarted
+)
+{
+menu
+.
+addItem
+(
+'Check workflow status'
+,
+'checkWorkflow'
+);
+}
+else
+{
+menu
+.
+addItem
+(
+'Start workflow'
+,
+'startWorkflow'
+);
+}
+// Record analytics.
+UrlFetchApp
+.
+fetch
+(
+'http://www.example.com/analytics?event=open'
+);
+}
+menu
+.
+addToUi
+();
+}
+Properties
+Property
+Type
+Description
+NONE
+Enum
+A mode that does not allow access to any services that require authorization. This mode occurs
+when an add-on executes an
+on
+Open(e)
+simple trigger, and the user has installed an
+add-on in a different document but the add-on has not been used in the current document.
+CUSTOM_FUNCTION
+Enum
+A mode that allows access to a limited subset of services for use in custom spreadsheet
+functions. Some of these services — including read-only access to Spreadsheet service —
+normally require authorization, but are permitted without authorization when used in a custom
+function. Because custom functions do not include an event parameter, this value is never
+returned; it is documented only to demonstrate that custom functions run in their own
+authorization mode.
+LIMITED
+Enum
+A mode that allows access to a limited subset of services. This mode occurs when an add-on or a
+script
+bound
+to a document executes an
+on
+Open(e)
+or
+on
+Edit(e)
+simple trigger, except in the case described for
+NONE
+.
+FULL
+Enum
+A mode that allows access to all services that require authorization. This mode occurs when an
+add-on or a script executes as the result of any trigger other than the cases described for
+LIMITED
+or
+NONE
+.

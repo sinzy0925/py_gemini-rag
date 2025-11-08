@@ -1,0 +1,1108 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/element/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Element object represents an XML Element node and provides methods for manipulating its content, attributes, and relationships within an XML document.
+You can add, remove, and retrieve content (including child elements and other nodes) from an Element using methods like addContent, removeContent, getAllContent, getChildren, and getContent.
+Attributes of an Element can be accessed, set, and removed using methods like getAttribute, getAttributes, setAttribute, and removeAttribute.
+The name and text value of an Element can be retrieved and set using getName, getQualifiedName, getText, setText, and getValue.
+Methods are available to check the parent and document of an Element, determine if it is the root element, and detach it from its parent.
+Element
+A representation of an XML
+Element
+node.
+// Adds up the values listed in a sample XML document and adds a new element
+// with the total.
+let
+xml
+=
+'<things>'
++
+'<plates>12</plates>'
++
+'<bowls>18</bowls>'
++
+'<cups>25</cups>'
++
+'</things>'
+;
+const
+document
+=
+XmlService
+.
+parse
+(
+xml
+);
+const
+root
+=
+document
+.
+getRootElement
+();
+const
+items
+=
+root
+.
+getChildren
+();
+let
+total
+=
+0
+;
+for
+(
+let
+i
+=
+0
+;
+i
+<
+items
+.
+length
+;
+i
+++
+)
+{
+total
++=
+Number
+(
+items
+[
+i
+].
+getText
+());
+}
+const
+totalElement
+=
+XmlService
+.
+createElement
+(
+'total'
+).
+setText
+(
+total
+);
+root
+.
+addContent
+(
+totalElement
+);
+xml
+=
+XmlService
+.
+getPrettyFormat
+().
+format
+(
+document
+);
+Logger
+.
+log
+(
+xml
+);
+Methods
+Method
+Return type
+Brief description
+add
+Content(content)
+Element
+Appends the given node as the last child of the
+Element
+node.
+add
+Content(index, content)
+Element
+Inserts the given node at the given index among all nodes that are immediate children of the
+Element
+node.
+clone
+Content()
+Content[]
+Creates unattached copies of all nodes that are immediate children of the {@code Element} node.
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+All
+Content()
+Content[]
+Gets all nodes that are immediate children of the {@code Element} node.
+get
+Attribute(name)
+Attribute
+Gets the attribute for this
+Element
+node with the given name and no namespace.
+get
+Attribute(name, namespace)
+Attribute
+Gets the attribute for this
+Element
+node with the given name and namespace.
+get
+Attributes()
+Attribute[]
+Gets all attributes for this
+Element
+node, in the order they appear in the document.
+get
+Child(name)
+Element
+Gets the first
+Element
+node with the given name and no namespace that is an immediate
+child of this
+Element
+node.
+get
+Child(name, namespace)
+Element
+Gets the first
+Element
+node with the given name and namespace that is an immediate
+child of this
+Element
+node.
+get
+Child
+Text(name)
+String
+Gets the text value of the node with the given name and no namespace, if the node is an
+immediate child of the
+Element
+node.
+get
+Child
+Text(name, namespace)
+String
+Gets the text value of the node with the given name and namespace, if the node is an immediate
+child of the
+Element
+node.
+get
+Children()
+Element[]
+Gets all
+Element
+nodes that are immediate children of this
+Element
+node, in the
+order they appear in the document.
+get
+Children(name)
+Element[]
+Gets all
+Element
+nodes with the given name and no namespace that are immediate children
+of this
+Element
+node, in the order they appear in the document.
+get
+Children(name, namespace)
+Element[]
+Gets all
+Element
+nodes with the given name and namespace that are immediate children of
+this
+Element
+node, in the order they appear in the document.
+get
+Content(index)
+Content
+Gets the node at the given index among all nodes that are immediate children of the
+{@code Element} node.
+get
+Content
+Size()
+Integer
+Gets the number of nodes that are immediate children of the {@code Element} node.
+get
+Descendants()
+Content[]
+Gets all nodes that are direct or indirect children of the {@code Element} node, in the order they
+appear in the document.
+get
+Document()
+Document
+Gets the XML document that contains the {@code Element} node.
+get
+Name()
+String
+Gets the local name of the
+Element
+node.
+get
+Namespace()
+Namespace
+Gets the namespace for the
+Element
+node.
+get
+Namespace(prefix)
+Namespace
+Gets the namespace with the given prefix for the
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Qualified
+Name()
+String
+Gets the local name and namespace prefix of the
+Element
+node, in the form
+[namespacePrefix]:[localName]
+.
+get
+Text()
+String
+Gets the text value of the
+Element
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+is
+Ancestor
+Of(other)
+Boolean
+Determines whether this
+Element
+node is a direct or indirect parent of a given
+Element
+node.
+is
+Root
+Element()
+Boolean
+Determines whether the
+Element
+node is the document's root node.
+remove
+Attribute(attribute)
+Boolean
+Removes the given attribute for this
+Element
+node, if such an attribute exists.
+remove
+Attribute(attributeName)
+Boolean
+Removes the attribute for this
+Element
+node with the given name and no namespace, if
+such an attribute exists.
+remove
+Attribute(attributeName, namespace)
+Boolean
+Removes the attribute for this
+Element
+node with the given name and namespace, if such
+an attribute exists.
+remove
+Content()
+Content[]
+Removes all nodes that are immediate children of the {@code Element} node.
+remove
+Content(content)
+Boolean
+Removes the given node, if the node is an immediate child of the {@code Element} node.
+remove
+Content(index)
+Content
+Removes the node at the given index among all nodes that are immediate children of the
+{@code Element} node.
+set
+Attribute(attribute)
+Element
+Sets the given attribute for this
+Element
+node.
+set
+Attribute(name, value)
+Element
+Sets the attribute for this
+Element
+node with the given name, value, and no namespace.
+set
+Attribute(name, value, namespace)
+Element
+Sets the attribute for this
+Element
+node with the given name, value, and namespace.
+set
+Name(name)
+Element
+Sets the local name of the
+Element
+node.
+set
+Namespace(namespace)
+Element
+Sets the namespace for the
+Element
+node.
+set
+Text(text)
+Element
+Sets the text value of the
+Element
+node.
+Detailed documentation
+add
+Content(content)
+Appends the given node as the last child of the
+Element
+node. The
+content
+argument can be a
+Element
+object or any node object that corresponds to a type
+listed in
+Content
+Type
+.
+Parameters
+Name
+Type
+Description
+content
+Content
+the node to append
+Return
+Element
+— the
+Element
+node, for chaining
+add
+Content(index, content)
+Inserts the given node at the given index among all nodes that are immediate children of the
+Element
+node. The
+content
+argument can be a
+Element
+object or any
+node object that corresponds to a type listed in
+Content
+Type
+.
+Parameters
+Name
+Type
+Description
+index
+Integer
+the index at which to insert the node among all nodes that are immediate children
+    of the
+Element
+node
+content
+Content
+the node to insert
+Return
+Element
+— the
+Element
+node, for chaining
+clone
+Content()
+Creates unattached copies of all nodes that are immediate children of the {@code Element} node.
+Return
+Content[]
+— an array of unattached copies of all nodes that are immediate children of the
+    {@code Element} node
+detach()
+Detaches the node from its parent
+Element
+node. If the node does not have a parent,
+this method has no effect.
+Return
+Content
+— the detached node
+get
+All
+Content()
+Gets all nodes that are immediate children of the {@code Element} node.
+Return
+Content[]
+— an array of all nodes that are immediate children of the {@code Element} node
+get
+Attribute(name)
+Gets the attribute for this
+Element
+node with the given name and no namespace. If there
+is no such attribute, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the attribute
+Return
+Attribute
+— the attribute, or
+null
+if there is no attribute with the given name and no
+    namespace
+get
+Attribute(name, namespace)
+Gets the attribute for this
+Element
+node with the given name and namespace. If there is
+no such node, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the attribute
+namespace
+Namespace
+the namespace of the attribute
+Return
+Attribute
+— the attribute, or
+null
+if there is no attribute with the given name and
+    namespace
+get
+Attributes()
+Gets all attributes for this
+Element
+node, in the order they appear in the document.
+Return
+Attribute[]
+— an array of all attributes for this
+Element
+node
+get
+Child(name)
+Gets the first
+Element
+node with the given name and no namespace that is an immediate
+child of this
+Element
+node. If there is no such node, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the child
+Element
+node
+Return
+Element
+— the
+Element
+node, or
+null
+if there is no immediate child
+Element
+node with the given name and no namespace
+get
+Child(name, namespace)
+Gets the first
+Element
+node with the given name and namespace that is an immediate
+child of this
+Element
+node. If there is no such node, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the child
+Element
+node
+namespace
+Namespace
+the namespace of the child
+Element
+node
+Return
+Element
+— the
+Element
+node, or
+null
+if there is no immediate child
+Element
+node with the given name and namespace
+get
+Child
+Text(name)
+Gets the text value of the node with the given name and no namespace, if the node is an
+immediate child of the
+Element
+node. If there is no such node, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the child node
+Return
+String
+— the text value of the child node, or
+null
+if there is no immediate child node
+    with the given name and no namespace
+get
+Child
+Text(name, namespace)
+Gets the text value of the node with the given name and namespace, if the node is an immediate
+child of the
+Element
+node. If there is no such node, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the child node
+namespace
+Namespace
+the namespace of the child node
+Return
+String
+— the text value of the child node, or
+null
+if there is no immediate child node
+    with the given name and namespace
+get
+Children()
+Gets all
+Element
+nodes that are immediate children of this
+Element
+node, in the
+order they appear in the document.
+Return
+Element[]
+— an array of all
+Element
+nodes that are immediate children of this
+Element
+node
+get
+Children(name)
+Gets all
+Element
+nodes with the given name and no namespace that are immediate children
+of this
+Element
+node, in the order they appear in the document.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the child
+Element
+nodes
+Return
+Element[]
+— an array of all
+Element
+nodes with the given name and no namespace that are
+    immediate children of this
+Element
+node
+get
+Children(name, namespace)
+Gets all
+Element
+nodes with the given name and namespace that are immediate children of
+this
+Element
+node, in the order they appear in the document.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the child
+Element
+nodes
+namespace
+Namespace
+the namespace of the child
+Element
+nodes
+Return
+Element[]
+— an array of all
+Element
+nodes with the given name and namespace that are
+    immediate children of this
+Element
+node
+get
+Content(index)
+Gets the node at the given index among all nodes that are immediate children of the
+{@code Element} node. If there is no node at the given index, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+index
+Integer
+the index for the node among all nodes that are immediate children of the
+    {@code Element} node
+Return
+Content
+— the node, or
+null
+if there is no node at the given index
+get
+Content
+Size()
+Gets the number of nodes that are immediate children of the {@code Element} node.
+Return
+Integer
+— the number of nodes that are immediate children of the {@code Element} node
+get
+Descendants()
+Gets all nodes that are direct or indirect children of the {@code Element} node, in the order they
+appear in the document.
+Return
+Content[]
+— an array of all nodes that are direct or indirect children of the {@code Element} node
+get
+Document()
+Gets the XML document that contains the {@code Element} node.
+Return
+Document
+— the document that contains the {@code Element} node
+get
+Name()
+Gets the local name of the
+Element
+node. If the node has a namespace prefix, use
+get
+Qualified
+Name()
+or
+get
+Namespace()
+.
+get
+Prefix()
+to
+get the prefix.
+Return
+String
+— the local name of the
+Element
+node
+get
+Namespace()
+Gets the namespace for the
+Element
+node.
+Return
+Namespace
+— the namespace for the
+Element
+node
+get
+Namespace(prefix)
+Gets the namespace with the given prefix for the
+Element
+node.
+Parameters
+Name
+Type
+Description
+prefix
+String
+the prefix for the namespace
+Return
+Namespace
+— the namespace with the given prefix for the
+Element
+node
+get
+Parent
+Element()
+Gets the node's parent
+Element
+node. If the node does not have a parent, this method
+returns
+null
+.
+Return
+Element
+— the parent
+Element
+node
+get
+Qualified
+Name()
+Gets the local name and namespace prefix of the
+Element
+node, in the form
+[namespacePrefix]:[localName]
+. If the node does not have a namespace prefix, use
+get
+Name()
+.
+Return
+String
+— the local name and namespace prefix of the
+Element
+node, in the form
+[namespacePrefix]:[localName]
+get
+Text()
+Gets the text value of the
+Element
+node.
+Return
+String
+— the text value of the
+Element
+node
+get
+Value()
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Return
+String
+— the text value of all nodes that are direct or indirect children of the node
+is
+Ancestor
+Of(other)
+Determines whether this
+Element
+node is a direct or indirect parent of a given
+Element
+node.
+Parameters
+Name
+Type
+Description
+other
+Element
+the other
+Element
+node
+Return
+Boolean
+—
+true
+if this
+Element
+node is a direct or indirect parent of the given
+Element
+node;
+false
+if not
+is
+Root
+Element()
+Determines whether the
+Element
+node is the document's root node.
+Return
+Boolean
+—
+true
+if the
+Element
+node is the document's root node;
+false
+if
+    not
+remove
+Attribute(attribute)
+Removes the given attribute for this
+Element
+node, if such an attribute exists.
+Parameters
+Name
+Type
+Description
+attribute
+Attribute
+the attribute
+Return
+Boolean
+—
+true
+if the attribute existed and was removed;
+false
+if not
+remove
+Attribute(attributeName)
+Removes the attribute for this
+Element
+node with the given name and no namespace, if
+such an attribute exists.
+Parameters
+Name
+Type
+Description
+attribute
+Name
+String
+the name of the attribute
+Return
+Boolean
+—
+true
+if the attribute existed and was removed;
+false
+if not
+remove
+Attribute(attributeName, namespace)
+Removes the attribute for this
+Element
+node with the given name and namespace, if such
+an attribute exists.
+Parameters
+Name
+Type
+Description
+attribute
+Name
+String
+the name of the attribute
+namespace
+Namespace
+the namespace of the attribute
+Return
+Boolean
+—
+true
+if the attribute existed and was removed;
+false
+if not
+remove
+Content()
+Removes all nodes that are immediate children of the {@code Element} node.
+Return
+Content[]
+— an array of all nodes that were immediate children of the {@code Element} node before they
+    were removed
+remove
+Content(content)
+Removes the given node, if the node is an immediate child of the {@code Element} node. The
+content
+argument can be a
+Element
+object or any node object that corresponds to a
+type listed in
+Content
+Type
+.
+Parameters
+Name
+Type
+Description
+content
+Content
+the node to remove
+Return
+Boolean
+—
+true
+if the node was an immediate child and was removed;
+false
+if not
+remove
+Content(index)
+Removes the node at the given index among all nodes that are immediate children of the
+{@code Element} node. If there is no node at the given index, this method returns
+null
+.
+Parameters
+Name
+Type
+Description
+index
+Integer
+the index for the node among all nodes that are immediate children of the
+    {@code Element} node
+Return
+Content
+— the node that was removed, or
+null
+if there is no node at the given index
+set
+Attribute(attribute)
+Sets the given attribute for this
+Element
+node.
+Parameters
+Name
+Type
+Description
+attribute
+Attribute
+the attribute to set
+Return
+Element
+— the
+Element
+node, for chaining
+set
+Attribute(name, value)
+Sets the attribute for this
+Element
+node with the given name, value, and no namespace.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the attribute to set
+value
+String
+the value of the attribute to set
+Return
+Element
+— the
+Element
+node, for chaining
+set
+Attribute(name, value, namespace)
+Sets the attribute for this
+Element
+node with the given name, value, and namespace.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the attribute to set
+value
+String
+the value of the attribute to set
+namespace
+Namespace
+the namespace of the attribute to set
+Return
+Element
+— the
+Element
+node, for chaining
+set
+Name(name)
+Sets the local name of the
+Element
+node. To set a namespace prefix for the node, use
+set
+Namespace(namespace)
+in conjunction with
+Xml
+Service.getNamespace(prefix, uri)
+.
+Parameters
+Name
+Type
+Description
+name
+String
+the local name to set
+Return
+Element
+— the
+Element
+node, for chaining
+set
+Namespace(namespace)
+Sets the namespace for the
+Element
+node.
+Parameters
+Name
+Type
+Description
+namespace
+Namespace
+the namespace to set
+Return
+Element
+— the
+Element
+node, for chaining
+set
+Text(text)
+Sets the text value of the
+Element
+node. If the node already contains a text value or
+any child nodes, this method overwrites the old content. To append or insert content instead,
+use
+add
+Content(content)
+or
+add
+Content(index, content)
+.
+Parameters
+Name
+Type
+Description
+text
+String
+the text to set
+Return
+Element
+— the
+Element
+node, for chaining

@@ -1,0 +1,4658 @@
+Source Path: gas_docs_html/apps-script/reference/forms/form.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+Form
+object in Google Apps Script represents a Google Form and can be accessed or created using
+FormApp
+.
+The document details numerous methods for the
+Form
+object, covering adding and managing various item types, controlling editors and responders, and managing responses.
+Methods are provided to get and set form properties and behaviors like title, description, confirmation message, response destination, and response settings.
+The document also lists methods for managing form content structure, permissions, and includes notes on deprecated methods.
+Form
+A form that contains overall properties and items. Properties include title, settings, and where
+responses are stored. Items include question items like checkboxes or radio items, while layout
+items refer to things like page breaks. Forms can be accessed or created from
+Form
+App
+.
+// Open a form by ID and create a new spreadsheet.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+ss
+=
+SpreadsheetApp
+.
+create
+(
+'Spreadsheet Name'
+);
+// Update form properties via chaining.
+form
+.
+setTitle
+(
+'Form Name'
+)
+.
+setDescription
+(
+'Description of form'
+)
+.
+setConfirmationMessage
+(
+'Thanks for responding!'
+)
+.
+setAllowResponseEdits
+(
+true
+)
+.
+setAcceptingResponses
+(
+false
+);
+// Update the form's response destination.
+form
+.
+setDestination
+(
+FormApp
+.
+DestinationType
+.
+SPREADSHEET
+,
+ss
+.
+getId
+());
+Methods
+Method
+Return type
+Brief description
+add
+Checkbox
+Grid
+Item()
+Checkbox
+Grid
+Item
+Appends a new question item, presented as a grid of columns and rows, that allows the
+respondent to select multiple choices per row from a sequence of checkboxes.
+add
+Checkbox
+Item()
+Checkbox
+Item
+Appends a new question item that allows the respondent to select one or more checkboxes, as
+well as an optional "other" field.
+add
+Date
+Item()
+Date
+Item
+Appends a new question item that allows the respondent to indicate a date.
+add
+Date
+Time
+Item()
+Date
+Time
+Item
+Appends a new question item that allows the respondent to indicate a date and time.
+add
+Duration
+Item()
+Duration
+Item
+Appends a new question item that allows the respondent to indicate a length of time.
+add
+Editor(emailAddress)
+Form
+Adds the given user to the list of editors for the
+Form
+.
+add
+Editor(user)
+Form
+Adds the given user to the list of editors for the
+Form
+.
+add
+Editors(emailAddresses)
+Form
+Adds the given array of users to the list of editors for the
+Form
+.
+add
+Grid
+Item()
+Grid
+Item
+Appends a new question item, presented as a grid of columns and rows, that allows the
+respondent to select one choice per row from a sequence of radio buttons.
+add
+Image
+Item()
+Image
+Item
+Appends a new layout item that displays an image.
+add
+List
+Item()
+List
+Item
+Appends a new question item that allows the respondent to select one choice from a dropdown
+list.
+add
+Multiple
+Choice
+Item()
+Multiple
+Choice
+Item
+Adds a new question item that allows the respondent to select one choice from a list of radio
+buttons or an optional "other" field.
+add
+Page
+Break
+Item()
+Page
+Break
+Item
+Adds a new layout item that marks the start of a page.
+add
+Paragraph
+Text
+Item()
+Paragraph
+Text
+Item
+Adds a new question item that allows the respondent to enter a block of text.
+add
+Published
+Reader(emailAddress)
+Form
+Adds the given user to the list of responders for the
+Form
+.
+add
+Published
+Reader(user)
+Form
+Adds the given user to the list of responders for the
+Form
+.
+add
+Published
+Readers(emailAddresses)
+Form
+Adds the given array of users to the list of responders for the
+Form
+.
+add
+Rating
+Item()
+Rating
+Item
+Appends a new question item that allows the respondent to give a rating.
+add
+Scale
+Item()
+Scale
+Item
+Appends a new question item that allows the respondent to choose one option from a numbered
+sequence of radio buttons.
+add
+Section
+Header
+Item()
+Section
+Header
+Item
+Appends a new layout item that visually indicates the start of a section.
+add
+Text
+Item()
+Text
+Item
+Appends a new question item that allows the respondent to enter a single line of text.
+add
+Time
+Item()
+Time
+Item
+Appends a new question item that allows the respondent to indicate a time of day.
+add
+Video
+Item()
+Video
+Item
+Appends a new layout item that displays a video.
+can
+Edit
+Response()
+Boolean
+Determines whether the form displays a link to edit a response after submitting it.
+collects
+Email()
+Boolean
+Determines whether the form collects respondents' email addresses.
+create
+Response()
+Form
+Response
+Creates a new response to the form.
+delete
+All
+Responses()
+Form
+Deletes all submitted responses from the form's response store.
+delete
+Item(index)
+void
+Deletes the item at a given index among all the items in the form.
+delete
+Item(item)
+void
+Deletes the given item.
+delete
+Response(responseId)
+Form
+Deletes a single response from the form's response store.
+get
+Confirmation
+Message()
+String
+Gets the form's confirmation message.
+get
+Custom
+Closed
+Form
+Message()
+String
+Gets the custom message that is displayed if the form is not accepting responses, or an empty
+string if no custom message is set.
+get
+Description()
+String
+Gets the form's description.
+get
+Destination
+Id()
+String
+Gets the ID of the form's response destination.
+get
+Destination
+Type()
+Destination
+Type
+Gets the type of the form's response destination.
+get
+Edit
+Url()
+String
+Gets the URL that can be used to access the form's edit mode.
+get
+Editors()
+User[]
+Gets the list of editors for this
+Form
+.
+get
+Id()
+String
+Gets the ID of the form.
+get
+Item
+By
+Id(id)
+Item
+Gets the item with a given ID.
+get
+Items()
+Item[]
+Gets an array of all items in the form.
+get
+Items(itemType)
+Item[]
+Gets an array of all items of a given type.
+get
+Published
+Readers()
+User[]
+Gets the list of responders for this
+Form
+.
+get
+Published
+Url()
+String
+Gets the URL that can be used to respond to the form.
+get
+Response(responseId)
+Form
+Response
+Gets a single form response based on its response ID.
+get
+Responses()
+Form
+Response[]
+Gets an array of all of the form's responses.
+get
+Responses(timestamp)
+Form
+Response[]
+Gets an array of all of the form's responses after a given date and time.
+get
+Shuffle
+Questions()
+Boolean
+Determines whether the order of the questions on each page of the form is randomized.
+get
+Summary
+Url()
+String
+Gets the URL that can be used to view a summary of the form's responses.
+get
+Title()
+String
+Gets the form's title.
+has
+Limit
+One
+Response
+Per
+User()
+Boolean
+Determines whether the form allows only one response per respondent.
+has
+Progress
+Bar()
+Boolean
+Determines whether the form displays a progress bar.
+has
+Respond
+Again
+Link()
+Boolean
+Determines whether the form displays a link to submit another response after a respondent
+completes the form.
+is
+Accepting
+Responses()
+Boolean
+Determines whether the form is currently accepting responses.
+is
+Published()
+Boolean
+Determines whether the form is published.
+is
+Publishing
+Summary()
+Boolean
+Determines whether the form displays a link to view a summary of responses after a respondent
+completes the form.
+is
+Quiz()
+Boolean
+Determines whether the form is a quiz.
+move
+Item(from, to)
+Item
+Moves an item at a given index among all the items in the form to another given index.
+move
+Item(item, toIndex)
+Item
+Moves a given item to a given index among all the items in the form.
+remove
+Destination()
+Form
+Unlinks the form from its current response destination.
+remove
+Editor(emailAddress)
+Form
+Removes the given user from the list of editors for the
+Form
+.
+remove
+Editor(user)
+Form
+Removes the given user from the list of editors for the
+Form
+.
+remove
+Published
+Reader(emailAddress)
+Form
+Removes the given user from the list of responders for the
+Form
+.
+remove
+Published
+Reader(user)
+Form
+Removes the given user from the list of responders for the
+Form
+.
+set
+Accepting
+Responses(enabled)
+Form
+Sets whether the form is currently accepting responses.
+set
+Allow
+Response
+Edits(enabled)
+Form
+Sets whether the form displays a link to edit a response after submitting it.
+set
+Collect
+Email(collect)
+Form
+Sets whether the form collects respondents' email addresses.
+set
+Confirmation
+Message(message)
+Form
+Sets the form's confirmation message.
+set
+Custom
+Closed
+Form
+Message(message)
+Form
+Sets the message to display if the form is not accepting responses.
+set
+Description(description)
+Form
+Sets the form's description.
+set
+Destination(type, id)
+Form
+Sets the destination where form responses are saved.
+set
+Is
+Quiz(enabled)
+Form
+Sets whether the form is a quiz.
+set
+Limit
+One
+Response
+Per
+User(enabled)
+Form
+Sets whether the form allows only one response per respondent.
+set
+Progress
+Bar(enabled)
+Form
+Sets whether the form has a progress bar.
+set
+Published(enabled)
+Form
+Sets whether the form is published.
+set
+Publishing
+Summary(enabled)
+Form
+Sets whether the form displays a link to view a summary of responses after a respondent submits
+the form.
+set
+Show
+Link
+To
+Respond
+Again(enabled)
+Form
+Sets whether the form displays a link to submit another response after a respondent completes
+the form.
+set
+Shuffle
+Questions(shuffle)
+Form
+Sets whether the order of the questions on each page of the form is randomized.
+set
+Title(title)
+Form
+Sets the form's title.
+shorten
+Form
+Url(url)
+String
+Converts a long URL for a form to a short URL.
+submit
+Grades(responses)
+Form
+Submits grades for the given FormResponses.
+supports
+Advanced
+Responder
+Permissions()
+Boolean
+Determines whether the form supports publishing.
+Deprecated methods
+Method
+Return type
+Brief description
+requires
+Login()
+Boolean
+Determines whether the form requires respondents to log in to an account in the same domain or
+a subdomain before responding.
+set
+Require
+Login(requireLogin)
+Form
+Sets whether the form requires respondents to log in to an account in the same domain or a
+subdomain before responding.
+Detailed documentation
+add
+Checkbox
+Grid
+Item()
+Appends a new question item, presented as a grid of columns and rows, that allows the
+respondent to select multiple choices per row from a sequence of checkboxes.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a checkbox grid item.
+const
+item
+=
+form
+.
+addCheckboxGridItem
+();
+item
+.
+setTitle
+(
+'Where did you celebrate New Year\'s?'
+);
+// Sets the grid's rows and columns.
+item
+.
+setRows
+([
+'New York'
+,
+'San Francisco'
+,
+'London'
+]).
+setColumns
+([
+'2014'
+,
+'2015'
+,
+'2016'
+,
+'2017'
+]);
+Return
+Checkbox
+Grid
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Checkbox
+Item()
+Appends a new question item that allows the respondent to select one or more checkboxes, as
+well as an optional "other" field.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a checkbox item.
+const
+item
+=
+form
+.
+addCheckboxItem
+();
+// Sets the title of the checkbox item to 'Do you prefer cats or dogs?'
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+// Sets the choices.
+item
+.
+setChoiceValues
+([
+'Cats'
+,
+'Dogs'
+]);
+Return
+Checkbox
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Date
+Item()
+Appends a new question item that allows the respondent to indicate a date.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a date item.
+const
+item
+=
+form
+.
+addDateItem
+();
+// Sets the title to 'When were you born?'
+item
+.
+setTitle
+(
+'When were you born?'
+);
+// Sets the description for the date item.
+item
+.
+setHelpText
+(
+'Some helper text.'
+);
+Return
+Date
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Date
+Time
+Item()
+Appends a new question item that allows the respondent to indicate a date and time.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a question with date and time inputs.
+const
+item
+=
+form
+.
+addDateTimeItem
+();
+// Sets the title to 'When were you born?'
+item
+.
+setTitle
+(
+'When were you born?'
+);
+// Sets the question as required.
+item
+.
+setRequired
+(
+true
+);
+Return
+Date
+Time
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Duration
+Item()
+Appends a new question item that allows the respondent to indicate a length of time.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a question with a duration input.
+const
+item
+=
+form
+.
+addDurationItem
+();
+// Sets the title to 'How long can you hold your breath?'
+item
+.
+setTitle
+(
+'How long can you hold your breath?'
+);
+// Sets the question as required.
+item
+.
+setRequired
+(
+true
+);
+Return
+Duration
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Editor(emailAddress)
+Adds the given user to the list of editors for the
+Form
+. If the user was already on the
+list of viewers or responders, this method promotes the user out of the list.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Adds editor to the form.
+// TODO(developer): replace the emailAddress.
+form
+.
+addEditor
+(
+'editor@uni.edu'
+);
+Parameters
+Name
+Type
+Description
+email
+Address
+String
+The email address of the user to add.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Editor(user)
+Adds the given user to the list of editors for the
+Form
+. If the user was already on the
+list of viewers or responders, this method promotes the user out of the list.
+// Opens the Forms file by its URL.
+// TODO(developer): Replace the URL with your own.
+const
+oldForm
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Gets the editors from the old form.
+const
+users
+=
+oldForm
+.
+getEditors
+();
+// Creates a new form.
+const
+newForm
+=
+FormApp
+.
+create
+(
+'New form'
+);
+// Adds the editors to a new form.
+users
+.
+forEach
+(
+user
+=
+>
+newForm
+.
+addEditor
+(
+user
+));
+Parameters
+Name
+Type
+Description
+user
+User
+A representation of the user to add.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Editors(emailAddresses)
+Adds the given array of users to the list of editors for the
+Form
+. If any of the users
+were already on the list of viewers, this method promotes them out of the list of viewers.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Adds editors to the form.
+// TODO(developer): replace the emailAddress.
+form
+.
+addPublishedReaders
+([
+'editor1@uni.edu'
+,
+'editor2@uni.edu'
+]);
+Parameters
+Name
+Type
+Description
+email
+Addresses
+String[]
+An array of email addresses of the users to add.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Grid
+Item()
+Appends a new question item, presented as a grid of columns and rows, that allows the
+respondent to select one choice per row from a sequence of radio buttons.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a multiple choice grid.
+const
+item
+=
+form
+.
+addGridItem
+();
+// Sets the title to 'Rate your interests.'
+item
+.
+setTitle
+(
+'Rate your interests'
+);
+// Sets the grid's rows and columns.
+item
+.
+setRows
+([
+'Cars'
+,
+'Computers'
+,
+'Celebrities'
+]).
+setColumns
+([
+'Boring'
+,
+'So-so'
+,
+'Interesting'
+]);
+Return
+Grid
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Image
+Item()
+Appends a new layout item that displays an image.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds an image item.
+const
+item
+=
+form
+.
+addImageItem
+();
+// Gets the Google icon to use as the image.
+const
+img
+=
+UrlFetchApp
+.
+fetch
+(
+'https://fonts.gstatic.com/s/i/productlogos/googleg/v6/web-24dp/logo_googleg_color_1x_web_24dp.png'
+,
+);
+// Sets the image, title, and description for the item.
+item
+.
+setTitle
+(
+'Google icon'
+).
+setHelpText
+(
+'Google icon'
+).
+setImage
+(
+img
+);
+Return
+Image
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+List
+Item()
+Appends a new question item that allows the respondent to select one choice from a dropdown
+list.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a dropdown list to the form.
+const
+item
+=
+form
+.
+addListItem
+();
+// Sets the title to 'Do you prefer cats or dogs?'
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+// Sets the description to 'This is description text...'
+item
+.
+setHelpText
+(
+'This is description text...'
+);
+// Creates and adds choices to the dropdown list.
+item
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'dog'
+),
+item
+.
+createChoice
+(
+'cat'
+)]);
+Return
+List
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Multiple
+Choice
+Item()
+Adds a new question item that allows the respondent to select one choice from a list of radio
+buttons or an optional "other" field.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a multiple choice item to the form.
+const
+item
+=
+form
+.
+addMultipleChoiceItem
+();
+// Sets the title.
+item
+.
+setTitle
+(
+'What is your favorite ice cream flavor?'
+);
+// Creates some choice items.
+const
+vanilla
+=
+item
+.
+createChoice
+(
+'vanilla'
+);
+const
+chocolate
+=
+item
+.
+createChoice
+(
+'chocolate'
+);
+const
+strawberry
+=
+item
+.
+createChoice
+(
+'strawberry'
+);
+// Sets the choices.
+item
+.
+setChoices
+([
+vanilla
+,
+chocolate
+,
+strawberry
+]);
+Return
+Multiple
+Choice
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Page
+Break
+Item()
+Adds a new layout item that marks the start of a page.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds page break items to create a second and third page for the form.
+const
+pageTwo
+=
+form
+.
+addPageBreakItem
+();
+const
+pageThree
+=
+form
+.
+addPageBreakItem
+();
+// Sets the titles for the pages.
+pageTwo
+.
+setTitle
+(
+'Page two'
+);
+pageThree
+.
+setTitle
+(
+'Page three'
+);
+// Upon completion of the first page, sets the form to navigate to the third
+// page.
+pageTwo
+.
+setGoToPage
+(
+pageThree
+);
+// Upon completion of the second page, sets the form to navigate back to the
+// first page.
+pageThree
+.
+setGoToPage
+(
+FormApp
+.
+PageNavigationType
+.
+RESTART
+);
+Return
+Page
+Break
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Paragraph
+Text
+Item()
+Adds a new question item that allows the respondent to enter a block of text.
+// Opens the form by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds the paragraph text item.
+const
+item
+=
+form
+.
+addParagraphTextItem
+();
+// Sets the title to 'What is your address?'
+item
+.
+setTitle
+(
+'What is your address?'
+);
+Return
+Paragraph
+Text
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Published
+Reader(emailAddress)
+Adds the given user to the list of responders for the
+Form
+. If the user was already on
+the list of editors or viewers, this method has no effect.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Adds responder to the form.
+// TODO(developer): replace the emailAddress.
+form
+.
+addPublishedReader
+(
+'responder@uni.edu'
+);
+Parameters
+Name
+Type
+Description
+email
+Address
+String
+The email address of the user to add.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Published
+Reader(user)
+Adds the given user to the list of responders for the
+Form
+. If the user was already on
+the list of editors or viewers, this method has no effect.
+// Opens the Forms file by its URL.
+// TODO(developer): Replace the URL with your own.
+const
+oldForm
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Gets the responders from the old form.
+const
+users
+=
+oldForm
+.
+getPublishedReaders
+();
+// Creates a new form.
+const
+newForm
+=
+FormApp
+.
+create
+(
+'New form'
+);
+// Adds the responders to a new form.
+users
+.
+forEach
+(
+user
+=
+>
+newForm
+.
+addPublishedReader
+(
+user
+));
+Parameters
+Name
+Type
+Description
+user
+User
+A representation of the user to add.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Published
+Readers(emailAddresses)
+Adds the given array of users to the list of responders for the
+Form
+. If the user was
+already on the list of editors or viewers, this method has no effect.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Adds responders to the form.
+// TODO(developer): replace the emailAddress.
+form
+.
+addPublishedReaders
+([
+'responder1@uni.edu'
+,
+'responder2@uni.edu'
+]);
+Parameters
+Name
+Type
+Description
+email
+Addresses
+String[]
+An array of email addresses of the users to add.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Rating
+Item()
+Appends a new question item that allows the respondent to give a rating.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds the rating item.
+const
+item
+=
+form
+.
+addRatingItem
+();
+Return
+Rating
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Scale
+Item()
+Appends a new question item that allows the respondent to choose one option from a numbered
+sequence of radio buttons.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds the scale item.
+const
+item
+=
+form
+.
+addScaleItem
+();
+// Sets the title of the scale item to 'Choose a number.'
+item
+.
+setTitle
+(
+'Choose a number'
+);
+// Sets the scale to 1-5.
+item
+.
+setBounds
+(
+1
+,
+5
+);
+// Sets the label for the lower and upper bounds.
+item
+.
+setLabels
+(
+'Lowest'
+,
+'Highest'
+);
+Return
+Scale
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Section
+Header
+Item()
+Appends a new layout item that visually indicates the start of a section.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds the section heading item.
+const
+item
+=
+form
+.
+addSectionHeaderItem
+();
+// Sets the title to 'Title of new section.'
+item
+.
+setTitle
+(
+'Title of new section'
+);
+// Sets the description.
+item
+.
+setHelpText
+(
+'Description of new section'
+);
+Return
+Section
+Header
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Text
+Item()
+Appends a new question item that allows the respondent to enter a single line of text.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a single-line text item.
+const
+item
+=
+form
+.
+addTextItem
+();
+// Sets the title to 'What is your name?'
+item
+.
+setTitle
+(
+'What is your name?'
+);
+Return
+Text
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Time
+Item()
+Appends a new question item that allows the respondent to indicate a time of day.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a question with a time input.
+const
+item
+=
+form
+.
+addTimeItem
+();
+// Sets the title to 'What time do you usually wake up in the morning?'
+item
+.
+setTitle
+(
+'What time do you usually wake up in the morning?'
+);
+Return
+Time
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+add
+Video
+Item()
+Appends a new layout item that displays a video.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Adds a video item.
+const
+item
+=
+form
+.
+addVideoItem
+();
+// Sets the title, description, and video.
+item
+.
+setTitle
+(
+'YouTube video'
+)
+.
+setHelpText
+(
+'Send content automatically via Google Sheets and Apps Script'
+)
+.
+setVideoUrl
+(
+'https://youtu.be/xxgQr-jSu9o'
+);
+// Sets the alignment to the center.
+item
+.
+setAlignment
+(
+FormApp
+.
+Alignment
+.
+CENTER
+);
+Return
+Video
+Item
+— The newly created item.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+can
+Edit
+Response()
+Determines whether the form displays a link to edit a response after submitting it.
+Regardless of this setting, the method
+Form
+Response.getEditResponseUrl()
+allows a
+script author who has edit access to the form to generate a URL that can be used to edit a
+response.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Checks if the form displays a link to edit a response after submitting it.
+// The default is false. To let people edit their responses, use
+// form.setAllowResponseEdits(true).
+const
+edit
+=
+form
+.
+canEditResponse
+();
+// If the form doesn't let people edit responses, logs false to the console.
+console
+.
+log
+(
+edit
+);
+Return
+Boolean
+—
+true
+if the form displays an "Edit your response" link;
+false
+if it
+    doesn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+collects
+Email()
+Determines whether the form collects respondents' email addresses.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form to not collect respondents' email addresses.
+form
+.
+setCollectEmail
+(
+false
+);
+// Checks whether the form collects respondents' email addresses and logs it to
+// the console.
+const
+bool
+=
+form
+.
+collectsEmail
+();
+console
+.
+log
+(
+bool
+);
+Return
+Boolean
+—
+true
+if the form collects email addresses;
+false
+if it doesn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Response()
+Creates a new response to the form. To answer a question item, create an
+Item
+Response
+from the item, then attach it to this form response by calling
+Form
+Response.withItemResponse(response)
+. To save the assembled response, call
+Form
+Response.submit()
+.
+Return
+Form
+Response
+— The newly created form response.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+delete
+All
+Responses()
+Deletes all submitted responses from the form's response store. This method does not delete
+copies of responses stored in an external response destination (like a spreadsheet), but does
+clear the form's summary view.
+Beware: this method is irreversible.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+delete
+Item(index)
+Deletes the item at a given index among all the items in the form. Throws a scripting exception
+if no item exists at the given index.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets all the items from the form.
+const
+items
+=
+form
+.
+getItems
+();
+// Finds the index of a paragraph text item and deletes it by the item's index.
+const
+index
+=
+items
+.
+findIndex
+(
+(
+item
+)
+=
+>
+item
+.
+getType
+()
+===
+FormApp
+.
+ItemType
+.
+PARAGRAPH_TEXT
+,
+);
+if
+(
+index
+!==
+-
+1
+)
+{
+form
+.
+deleteItem
+(
+index
+);
+}
+Parameters
+Name
+Type
+Description
+index
+Integer
+The index of the item among all the items in the form.
+Throws
+Error
+— if no item exists at the given index
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+delete
+Item(item)
+Deletes the given item. Throws a scripting exception if the item has already been deleted.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets all of the items from the form.
+const
+items
+=
+form
+.
+getItems
+();
+// Finds a paragraph text item and deletes it.
+const
+item
+=
+items
+.
+find
+(
+(
+item
+)
+=
+>
+item
+.
+getType
+()
+===
+FormApp
+.
+ItemType
+.
+PARAGRAPH_TEXT
+,
+);
+if
+(
+item
+)
+{
+form
+.
+deleteItem
+(
+item
+);
+}
+Parameters
+Name
+Type
+Description
+item
+Item
+The item to be deleted.
+Throws
+Error
+— if the item does not exist in the form
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+delete
+Response(responseId)
+Deletes a single response from the form's response store. This method does not delete copies of
+responses stored in an external response destination (like a spreadsheet), but does remove the
+response from the form's summary view. The response ID can be retrieved with
+Form
+Response.getId()
+.
+Warning
+: This method is irreversible.
+Parameters
+Name
+Type
+Description
+response
+Id
+String
+The ID of the form response to delete.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Confirmation
+Message()
+Gets the form's confirmation message.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the confirmation message to display after someone submits the form.
+form
+.
+setConfirmationMessage
+(
+'You successfully submitted the form.'
+);
+// Gets the confirmation message and logs it to the console.
+const
+message
+=
+form
+.
+getConfirmationMessage
+();
+console
+.
+log
+(
+message
+);
+Return
+String
+— The form's confirmation message.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Custom
+Closed
+Form
+Message()
+Gets the custom message that is displayed if the form is not accepting responses, or an empty
+string if no custom message is set.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets a custom closed form message to display to the user when the form
+// no longer accepts responses.
+form
+.
+setCustomClosedFormMessage
+(
+'The form is no longer accepting responses.'
+);
+// Gets the custom message set for the form and logs it to the console.
+const
+message
+=
+form
+.
+getCustomClosedFormMessage
+();
+console
+.
+log
+(
+message
+);
+Return
+String
+— The custom message to display if the form is not accepting responses, or an empty
+    string if no custom message is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Description()
+Gets the form's description.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form description.
+form
+.
+setDescription
+(
+'This is the form description.'
+);
+// Gets the form description and logs it to the console.
+const
+description
+=
+form
+.
+getDescription
+();
+console
+.
+log
+(
+description
+);
+Return
+String
+— The form's description.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Destination
+Id()
+Gets the ID of the form's response destination.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Creates a spreadsheet to use as the response destination.
+const
+ss
+=
+SpreadsheetApp
+.
+create
+(
+'Test_Spreadsheet'
+);
+// Updates the form's response destination.
+form
+.
+setDestination
+(
+FormApp
+.
+DestinationType
+.
+SPREADSHEET
+,
+ss
+.
+getId
+());
+// Gets the ID of the form's response destination and logs it to the console.
+const
+destinationId
+=
+form
+.
+getDestinationId
+();
+console
+.
+log
+(
+destinationId
+);
+Return
+String
+— The ID of the form's response destination.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Destination
+Type()
+Gets the type of the form's response destination.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc1234556/edit'
+,
+);
+// Gets the type of the form's response destination and logs it to the console.
+const
+destinationType
+=
+form
+.
+getDestinationType
+().
+name
+();
+console
+.
+log
+(
+destinationType
+);
+Return
+Destination
+Type
+— The type of the form's response destination.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Edit
+Url()
+Gets the URL that can be used to access the form's edit mode.
+// Opens the form by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets the URL that accesses the form's edit mode and logs it to the console.
+const
+url
+=
+form
+.
+getEditUrl
+();
+console
+.
+log
+(
+url
+);
+Return
+String
+— The URL to edit the form.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Editors()
+Gets the list of editors for this
+Form
+.
+Return
+User[]
+— An array of users with edit permission.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the ID of the form.
+// Opens the form by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets the ID of the form and logs it to the console.
+const
+id
+=
+form
+.
+getId
+();
+console
+.
+log
+(
+id
+);
+Return
+String
+— The ID of the form.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Item
+By
+Id(id)
+Gets the item with a given ID. Returns
+null
+if the ID does not correspond to an item in
+the form.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets the ID of the first item on the form.
+const
+itemId
+=
+form
+.
+getItems
+()[
+0
+].
+getId
+();
+// Gets the item from the ID.
+const
+item
+=
+form
+.
+getItemById
+(
+itemId
+);
+// Gets the name of the item type and logs it to the console.
+const
+type
+=
+item
+.
+getType
+().
+name
+();
+console
+.
+log
+(
+type
+);
+Parameters
+Name
+Type
+Description
+id
+Integer
+The item's ID.
+Return
+Item
+— The item with the given ID, or
+null
+if the item does not exist in the form.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Items()
+Gets an array of all items in the form.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets the list of items in the form.
+const
+items
+=
+form
+.
+getItems
+();
+// Gets the type for each item and logs them to the console.
+const
+types
+=
+items
+.
+map
+((
+item
+)
+=
+>
+item
+.
+getType
+().
+name
+());
+console
+.
+log
+(
+types
+);
+Return
+Item[]
+— An array of all items in the form.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Items(itemType)
+Gets an array of all items of a given type.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets a list of all checkbox items on the form.
+const
+items
+=
+form
+.
+getItems
+(
+FormApp
+.
+ItemType
+.
+CHECKBOX
+);
+// Gets the title of each checkbox item and logs them to the console.
+const
+checkboxItemsTitle
+=
+items
+.
+map
+(
+(
+item
+)
+=
+>
+item
+.
+asCheckboxItem
+().
+getTitle
+(),
+);
+console
+.
+log
+(
+checkboxItemsTitle
+);
+Parameters
+Name
+Type
+Description
+item
+Type
+Item
+Type
+The type of items to retrieve.
+Return
+Item[]
+— An array of all items of that type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Published
+Readers()
+Gets the list of responders for this
+Form
+.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Gets the responders for the form.
+const
+users
+=
+form
+.
+getPublishedReaders
+();
+users
+.
+forEach
+(
+user
+=
+>
+console
+.
+log
+(
+user
+.
+getEmail
+()));
+Return
+User[]
+— An array of users with responder permission.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Published
+Url()
+Gets the URL that can be used to respond to the form.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets the URL to respond to the form and logs it to the console.
+const
+url
+=
+form
+.
+getPublishedUrl
+();
+console
+.
+log
+(
+url
+);
+Return
+String
+— The URL to respond to the form.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Response(responseId)
+Gets a single form response based on its response ID. Response IDs can be retrieved from
+Form
+Response.getId()
+.
+Parameters
+Name
+Type
+Description
+response
+Id
+String
+The ID for the form response.
+Return
+Form
+Response
+— The form response.
+Throws
+Error
+— if the response does not exist
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Responses()
+Gets an array of all of the form's responses.
+Return
+Form
+Response[]
+— An array of all of the form's responses.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Responses(timestamp)
+Gets an array of all of the form's responses after a given date and time.
+Parameters
+Name
+Type
+Description
+timestamp
+Date
+The earliest date and time for which form responses should be returned.
+Return
+Form
+Response[]
+— The list of form responses.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Shuffle
+Questions()
+Determines whether the order of the questions on each page of the form is randomized.
+Return
+Boolean
+—
+true
+if the order of the questions on each page of the form is randomized;
+false
+if not.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Summary
+Url()
+Gets the URL that can be used to view a summary of the form's responses. Unless
+set
+Publishing
+Summary(enabled)
+is set to
+true
+, only the users with edit permission to the
+form is able to access the URL.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// Opens the form by its URL.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets the URL to view a summary of the form's responses and logs it to the
+// console.
+const
+url
+=
+form
+.
+getSummaryUrl
+();
+console
+.
+log
+(
+url
+);
+Return
+String
+— The URL to view a summary of responses.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the form's title.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the title of the form to 'For_Testing.'
+form
+.
+setTitle
+(
+'For_Testing'
+);
+// Gets the title of the form and logs it to the console.
+const
+title
+=
+form
+.
+getTitle
+();
+console
+.
+log
+(
+title
+);
+Return
+String
+— The form's title.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+has
+Limit
+One
+Response
+Per
+User()
+Determines whether the form allows only one response per respondent. If the value is
+true
+, the script cannot submit form responses at all.
+Return
+Boolean
+—
+true
+if the form allows only one response per respondent;
+false
+if not.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+has
+Progress
+Bar()
+Determines whether the form displays a progress bar.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// Opens the form by its URL.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Displays the progress bar on the form.
+form
+.
+setProgressBar
+(
+true
+);
+// Checks if the form displays a progress bar and logs it to the console.
+console
+.
+log
+(
+form
+.
+hasProgressBar
+());
+Return
+Boolean
+—
+true
+if the form displays a progress bar;
+false
+if it doesn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+has
+Respond
+Again
+Link()
+Determines whether the form displays a link to submit another response after a respondent
+completes the form.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form to display a link to submit another
+// response after someone submits the form.
+form
+.
+setShowLinkToRespondAgain
+(
+true
+);
+// Checks if the form displays a 'Submit another response' link and logs it to
+// the console.
+console
+.
+log
+(
+form
+.
+hasRespondAgainLink
+());
+Return
+Boolean
+—
+true
+if the form displays a "Submit another response" link;
+false
+if it
+    doesn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Accepting
+Responses()
+Determines whether the form is currently accepting responses. This is overwritten when the
+form's publishing state is changed.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form to accept responses.
+form
+.
+setAcceptingResponses
+(
+true
+);
+// Checks if the form is accepting responses or not and logs it to the console.
+const
+accepting
+=
+form
+.
+isAcceptingResponses
+();
+console
+.
+log
+(
+accepting
+);
+Return
+Boolean
+—
+true
+if the form is accepting responses;
+false
+if it isn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Published()
+Determines whether the form is published.
+This feature is only available for forms that support publishing. Use
+supports
+Advanced
+Responder
+Permissions()
+to check if the form supports publishing.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Checks whether the form is published or not and logs it to the console.
+console
+.
+log
+(
+form
+.
+isPublished
+());
+Return
+Boolean
+—
+true
+if the form is published;
+false
+if it isn't.
+Throws
+Error
+— if called on unsupported forms.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Publishing
+Summary()
+Determines whether the form displays a link to view a summary of responses after a respondent
+completes the form.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form to display a link to a summary of
+// the responses after someone submits the form.
+form
+.
+setPublishingSummary
+(
+true
+);
+// Checks if the form displays a "See previous responses" link and logs it to
+// the console.
+const
+publishingLink
+=
+form
+.
+isPublishingSummary
+();
+console
+.
+log
+(
+publishingLink
+);
+Return
+Boolean
+—
+true
+if the form displays a "See previous responses" link;
+false
+if it
+    doesn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Quiz()
+Determines whether the form is a quiz.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form as a quiz.
+form
+.
+setIsQuiz
+(
+true
+);
+// Checks if the form is a quiz or not and logs it to the console.
+console
+.
+log
+(
+form
+.
+isQuiz
+());
+Return
+Boolean
+—
+true
+if the form is accepting responses;
+false
+if it isn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+move
+Item(from, to)
+Moves an item at a given index among all the items in the form to another given index. Throws a
+scripting exception if the
+to
+index is out of bounds.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Moves the first item to be the last item.
+form
+.
+moveItem
+(
+0
+,
+form
+.
+getItems
+().
+length
+-
+1
+);
+Parameters
+Name
+Type
+Description
+from
+Integer
+The current index of the item among all the items in the form.
+to
+Integer
+The new index for the item among all the items in the form.
+Return
+Item
+— The item that was moved.
+Throws
+Error
+— if either index is out of bounds.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+move
+Item(item, toIndex)
+Moves a given item to a given index among all the items in the form. Throws a scripting
+exception if the given index is out of bounds.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Gets the first item.
+const
+item
+=
+form
+.
+getItems
+()[
+0
+];
+// Moves the item to be the last item.
+form
+.
+moveItem
+(
+item
+,
+form
+.
+getItems
+().
+length
+-
+1
+);
+Parameters
+Name
+Type
+Description
+item
+Item
+The item to move.
+to
+Index
+Integer
+The new index for the item among all the items in the form.
+Return
+Item
+— The item that was moved.
+Throws
+Error
+— if the index is out of bounds.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+remove
+Destination()
+Unlinks the form from its current response destination. The unlinked former destination still
+retains a copy of all previous responses. All forms, including those that do not have a
+destination set explicitly,
+save a
+copy of responses in the form's response store
+. If the form does not currently have a
+response destination, this method has no effect.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Opens a spreadsheet to use for the response destination.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+// Updates the form's response destination to the spreadsheet.
+form
+.
+setDestination
+(
+FormApp
+.
+DestinationType
+.
+SPREADSHEET
+,
+ss
+.
+getId
+());
+// Unlinks the form from the spreadsheet.
+form
+.
+removeDestination
+();
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+remove
+Editor(emailAddress)
+Removes the given user from the list of editors for the
+Form
+. This method doesn't block
+users from accessing the
+Form
+if they belong to a class of users who have general
+access—for example, if the
+Form
+is shared with the user's entire domain, or if
+the
+Form
+is in a shared drive that the user can access.
+For Drive files, this also removes the user from the list of viewers and responders.
+// Opens the Forms file by its URL.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Removes the editor from the form.
+// TODO(developer): replace the emailAddress.
+form
+.
+removeEditor
+(
+'editor@uni.edu'
+);
+Parameters
+Name
+Type
+Description
+email
+Address
+String
+The email address of the user to remove.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+remove
+Editor(user)
+Removes the given user from the list of editors for the
+Form
+. This method doesn't block
+users from accessing the
+Form
+if they belong to a class of users who have general
+access—for example, if the
+Form
+is shared with the user's entire domain, or if
+the
+Form
+is in a shared drive that the user can access.
+For Drive files, this also removes the user from the list of viewers.
+// Opens the Forms file by its URL.
+// TODO(developer): Replace the URL with your own.
+const
+form1
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Gets the editors from the form.
+const
+users
+=
+form1
+.
+getEditors
+();
+// Opens another form.
+// TODO(developer): Replace the URL with your own.
+const
+form2
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/efg123456/edit'
+);
+// Removes editors from the form.
+users
+.
+forEach
+(
+user
+=
+>
+form2
+.
+removeEditor
+(
+user
+));
+Parameters
+Name
+Type
+Description
+user
+User
+A representation of the user to remove.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+remove
+Published
+Reader(emailAddress)
+Removes the given user from the list of responders for the
+Form
+. This method doesn't
+block users from accessing the
+Form
+if they belong to a class of users who have general
+access—for example, if the
+Form
+is shared with the user's entire domain, or if
+the
+Form
+is in a shared drive that the user can access.
+For Drive files, this also removes the user from the list of viewers and editors.
+// Opens the Forms file by its URL.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Removes the responders from the form.
+// TODO(developer): replace the emailAddress.
+form
+.
+removePublishedReader
+(
+'responder1@uni.edu'
+);
+Parameters
+Name
+Type
+Description
+email
+Address
+String
+The email address of the user to remove.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+remove
+Published
+Reader(user)
+Removes the given user from the list of responders for the
+Form
+. This method doesn't
+block users from accessing the
+Form
+if they belong to a class of users who have general
+access—for example, if the
+Form
+is shared with the user's entire domain, or if
+the
+Form
+is in a shared drive that the user can access.
+For Drive files, this also removes the user from the list of viewers and editors.
+// Opens the Forms file by its URL.
+// TODO(developer): Replace the URL with your own.
+const
+form1
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Gets the responders from the form.
+const
+users
+=
+form1
+.
+getPublishedReaders
+();
+// Opens another form.
+// TODO(developer): Replace the URL with your own.
+const
+form2
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/efg123456/edit'
+);
+// Removes responders from the form.
+users
+.
+forEach
+(
+user
+=
+>
+form2
+.
+removePublishedReader
+(
+user
+));
+Parameters
+Name
+Type
+Description
+user
+User
+A representation of the user to remove.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Accepting
+Responses(enabled)
+Sets whether the form is currently accepting responses. The default for new forms is
+true
+. The state is overwritten when the publish state of the form is changed.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form to accept responses.
+form
+.
+setAcceptingResponses
+(
+true
+);
+// Checks whether the form is accepting responses or not and logs it to the
+// console.
+console
+.
+log
+(
+form
+.
+isAcceptingResponses
+());
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the form should accept responses;
+false
+if it shouldn't.
+Return
+Form
+— This
+Form
+, for chaining.
+Throws
+Error
+— if enabled on an unpublished form.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Allow
+Response
+Edits(enabled)
+Sets whether the form displays a link to edit a response after submitting it. The default for
+new forms is
+false
+.
+Regardless of this setting, the method
+Form
+Response.getEditResponseUrl()
+allows a
+script author who has edit permission to the form to generate a URL that can be used to edit a
+response.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Shows "Edit your response" link after someone submits the form.
+form
+.
+setAllowResponseEdits
+(
+true
+);
+// Checks whether the option to edit the form after a user submits it is set to
+// true or not and logs it to the console.
+console
+.
+log
+(
+form
+.
+canEditResponse
+());
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the form should display an "Edit your response" link;
+false
+if not.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Collect
+Email(collect)
+Sets whether the form collects respondents' email addresses. The default for new forms is
+false
+.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form to collect respondents' email addresses.
+form
+.
+setCollectEmail
+(
+true
+);
+// Checks whether the value is set to true or false and logs it to the console.
+const
+collect
+=
+form
+.
+collectsEmail
+();
+console
+.
+log
+(
+collect
+);
+Parameters
+Name
+Type
+Description
+collect
+Boolean
+true
+if the form should collect email addresses;
+false
+if it
+    doesn't.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Confirmation
+Message(message)
+Sets the form's confirmation message.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets a custom confirmation message to display after someone submits the form.
+form
+.
+setConfirmationMessage
+(
+'Your form has been successfully submitted.'
+);
+// Gets the confirmation message set for the form and logs it to the console.
+const
+message
+=
+form
+.
+getConfirmationMessage
+();
+console
+.
+log
+(
+message
+);
+Parameters
+Name
+Type
+Description
+message
+String
+The form's new confirmation message.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Custom
+Closed
+Form
+Message(message)
+Sets the message to display if the form is not accepting responses. If no message is set, the
+form uses a default message.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form to not accept responses.
+form
+.
+setAcceptingResponses
+(
+false
+);
+// Sets a custom closed form message to display to the user.
+form
+.
+setCustomClosedFormMessage
+(
+'The form is no longer accepting responses.'
+);
+// Gets the custom message set for the form and logs it to the console.
+const
+message
+=
+form
+.
+getCustomClosedFormMessage
+();
+console
+.
+log
+(
+message
+);
+Parameters
+Name
+Type
+Description
+message
+String
+The message to display if the form is not accepting responses.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Description(description)
+Sets the form's description.
+Parameters
+Name
+Type
+Description
+description
+String
+The form's new description.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Destination(type, id)
+Sets the destination where form responses are saved. All forms, including those that do not
+have a destination set explicitly,
+save a copy of responses in the form's
+response store
+.
+Parameters
+Name
+Type
+Description
+type
+Destination
+Type
+The type of the form's response destination.
+id
+String
+The ID of the form's response destination.
+Return
+Form
+— This
+Form
+, for chaining.
+Throws
+Error
+— if the given destination ID is invalid
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Is
+Quiz(enabled)
+Sets whether the form is a quiz. The default for new forms is
+false
+.
+Graded questions are only allowed in Quizzes, so setting this to
+false
+causes all
+grading options to be removed from all questions.
+Quiz settings are only available in the new Forms UI; making a form a Quiz opts the form
+into using the new UI.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Makes the form a quiz.
+form
+.
+setIsQuiz
+(
+true
+);
+// Checks whether the form is a quiz or not and logs it to the console.
+console
+.
+log
+(
+form
+.
+isQuiz
+());
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if quiz features should be enabled for the form;
+false
+if
+    not.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Limit
+One
+Response
+Per
+User(enabled)
+Sets whether the form allows only one response per respondent. The default for new forms is
+false
+. If the value is set to
+true
+, the script cannot submit form responses at
+all.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the form should allow only one response per respondent;
+false
+if not.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Progress
+Bar(enabled)
+Sets whether the form has a progress bar. The default for new forms is
+false
+.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Displays the progress bar on the form.
+form
+.
+setProgressBar
+(
+true
+);
+// Checks whether the form has a progress bar and logs it to the console.
+console
+.
+log
+(
+form
+.
+hasProgressBar
+());
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the form displays a progress bar;
+false
+if it doesn't.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Published(enabled)
+Sets whether the form is published. The default for new forms is
+true
+.
+This feature is only available for forms that support publishing. Use
+supports
+Advanced
+Responder
+Permissions()
+to check if the form supports publishing.
+A form needs to be published for it to be accessible to responders. This method supersedes
+calls to
+set
+Accepting
+Responses(enabled)
+.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Publishes the form before sharing it.
+form
+.
+setPublished
+(
+true
+);
+// Checks whether the form is published or not and logs it to the console.
+console
+.
+log
+(
+form
+.
+isPublished
+());
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the form should be published,
+false
+if not.
+Return
+Form
+— This
+Form
+, for chaining.
+Throws
+Error
+— if called on unsupported forms.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Publishing
+Summary(enabled)
+Sets whether the form displays a link to view a summary of responses after a respondent submits
+the form. The default for new forms is
+false
+.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the form should display a "See previous responses" link;
+false
+if not.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Show
+Link
+To
+Respond
+Again(enabled)
+Sets whether the form displays a link to submit another response after a respondent completes
+the form. The default for new forms is
+true
+.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the form should display a "Submit another response" link;
+false
+if not.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Shuffle
+Questions(shuffle)
+Sets whether the order of the questions on each page of the form is randomized.
+Parameters
+Name
+Type
+Description
+shuffle
+Boolean
+true
+if the order of the questions on each page of the form should be
+    randomized;
+false
+if not.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the form's title.
+Parameters
+Name
+Type
+Description
+title
+String
+The form's new title.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+shorten
+Form
+Url(url)
+Converts a long URL for a form to a short URL. Throws an exception if the long URL does not
+belong to Google Forms.
+Parameters
+Name
+Type
+Description
+url
+String
+The URL to shorten.
+Return
+String
+— A URL in the form
+http://goo.gl/forms/1234
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+submit
+Grades(responses)
+Submits grades for the given FormResponses.
+If your code includes an
+on
+Form
+Submit
+trigger, calling
+submit
+Grades()
+triggers the
+on
+Form
+Submit
+condition and causes an infinite loop. To prevent the
+infinite loop, add code that checks whether grades already exist before calling
+submit
+Grades()
+.
+Parameters
+Name
+Type
+Description
+responses
+Form
+Response[]
+An array of all of the form's responses.
+Return
+Form
+— This
+Form
+, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+supports
+Advanced
+Responder
+Permissions()
+Determines whether the form supports publishing. This method is used to determine whether the
+set
+Published(enabled)
+and
+is
+Published()
+methods, and responder permissions,
+are available.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Checks whether the form supports publishing or not and logs it to the
+// console.
+console
+.
+log
+(
+form
+.
+supportsAdvancedResponderPermissions
+());
+Return
+Boolean
+—
+true
+if the form supports publishing;
+false
+if it doesn't.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+Deprecated methods
+requires
+Login()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Determines whether the form requires respondents to log in to an account in the same domain or
+a subdomain before responding.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Checks if the form requires respondents to log in to a Google Workspace
+// account before responding and logs it to the console.
+const
+login
+=
+form
+.
+requiresLogin
+();
+console
+.
+log
+(
+login
+);
+Return
+Boolean
+—
+true
+if the form requires users to log in;
+false
+if it doesn't.
+set
+Require
+Login(requireLogin)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets whether the form requires respondents to log in to an account in the same domain or a
+subdomain before responding. The default for new forms is
+false
+unless a domain
+administrator changes the default.
+This feature is available only for forms created by Google Workspace users. Users of other
+types of Google accounts can't be required to log in.
+// Opens the Forms file by its URL. If you created your script from within
+// a Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+,
+);
+// Sets the form so that users must log in to their Google Workspace account.
+form
+.
+setRequireLogin
+(
+true
+);
+// Checks whether the form requires login or not and logs it to the console.
+console
+.
+log
+(
+form
+.
+requiresLogin
+());
+Parameters
+Name
+Type
+Description
+require
+Login
+Boolean
+true
+if the form requires users to log in;
+false
+if it
+    doesn't.
+Return
+Form
+— The current form (for chaining).
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

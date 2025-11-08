@@ -1,0 +1,104 @@
+Source Path: gas_docs_html/apps-script/reference/html/sandbox-mode/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SandboxMode
+is an enum in Apps Script's
+HtmlService
+used to define how client-side scripts execute in a security sandbox.
+The
+NATIVE
+and
+EMULATED
+sandbox modes were deprecated and are now sunset, with only
+IFRAME
+mode currently supported.
+Client-side code in HTML service runs in a security sandbox to protect users from malicious code, imposing restrictions on script execution.
+The
+IFRAME
+mode has fewer restrictions and runs faster than previous modes but may not be compatible with older browsers.
+You can check the actual sandbox mode on the client-side by inspecting
+google.script.sandbox.mode
+.
+Sandbox
+Mode
+An enum representing the sandbox modes that can be used for client-side
+Html
+Service
+scripts. These values can be accessed from
+Html
+Service.SandboxMode
+, and set by calling
+Html
+Output.setSandboxMode(mode)
+.
+To call an enum, you call its parent class, name, and property. For example,
+HtmlService.SandboxMode.IFRAME
+.
+The
+NATIVE
+and
+EMULATED
+modes were
+deprecated on October 13, 2015
+and both are now sunset. Only
+IFRAME
+mode is now
+supported.
+To protect users from being served malicious HTML or JavaScript, client-side code served from
+HTML service executes in a security sandbox that imposes restrictions on the code. The method
+Html
+Output.setSandboxMode(mode)
+previously allowed script authors to choose
+between different versions of the sandbox, but now has no effect. For more information, see the
+guide to restrictions in HTML service
+.
+The
+IFRAME
+mode imposes many fewer restrictions than the other sandbox modes and runs
+fastest, but does not work at all in certain older browsers, including Internet Explorer 9. The
+sandbox mode can also be read in a client-side script by inspecting
+google.script.sandbox.mode
+. Note that this property returns the actual mode on the client, which
+may differ from the mode requested on the server if the requested mode is not supported in the
+user's browser.
+<!-- Read the sandbox mode (in a client-side script). -->
+<script>
+  alert(google.script.sandbox.mode);
+</script>
+Properties
+Property
+Type
+Description
+EMULATED
+Enum
+A legacy sandbox mode that emulates ECMAScript 5 strict mode using only the features available
+in ECMAScript 3. This mode was the default prior to February 2014.
+EMULATED
+was
+sunset as of December 10,
+2015
+. All scripts attempting use
+EMULATED
+will now use
+IFRAME
+instead.
+IFRAME
+Enum
+A sandbox mode that uses iframe sandboxing instead of the Caja sandbox technology used by the
+EMULATED
+and
+NATIVE
+modes. This mode is the default for new scripts as of
+November 12, 2015 and for all scripts as of July 6, 2016.
+This mode imposes many fewer restrictions than the other sandbox modes and runs fastest, but
+does not work at all in certain older browsers, including Internet Explorer 9.
+NATIVE
+Enum
+A sandbox mode that is built on top of ECMAScript 5 strict mode. A sandbox mode built on top of
+ECMAScript 5 strict mode. This mode was
+sunset as
+of July 6, 2016
+. All scripts now use
+IFRAME
+mode.

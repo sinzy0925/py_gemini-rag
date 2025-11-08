@@ -1,0 +1,13 @@
+Source Path: gas_docs_html/apps-script/reference/charts/data-table/index.html
+
+Data
+Table
+A Data Table to be used in charts. A
+Data
+Table
+can come from sources such as Google
+Sheets or specified data-table URLs, or can be filled in by hand. This class intentionally has no
+methods: a
+Data
+Table
+can be passed around, but not manipulated directly.

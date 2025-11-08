@@ -1,0 +1,180 @@
+Source Path: gas_docs_html/apps-script/reference/script/spreadsheet-trigger-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SpreadsheetTriggerBuilder is a builder used to create triggers for spreadsheets.
+You can create triggers that fire on changes, edits, form submissions, or when the spreadsheet is opened.
+The
+create()
+method finalizes and returns the trigger.
+Methods like
+onChange()
+,
+onEdit()
+,
+onFormSubmit()
+, and
+onOpen()
+return the builder for method chaining.
+Spreadsheet
+Trigger
+Builder
+Builder for spreadsheet triggers.
+Methods
+Method
+Return type
+Brief description
+create()
+Trigger
+Creates the trigger and returns it.
+on
+Change()
+Spreadsheet
+Trigger
+Builder
+Specifies a trigger that will fire when the spreadsheet's content or structure is changed.
+on
+Edit()
+Spreadsheet
+Trigger
+Builder
+Specifies a trigger that will fire when the spreadsheet is edited.
+on
+Form
+Submit()
+Spreadsheet
+Trigger
+Builder
+Specifies a trigger that will fire when the spreadsheet has a form submitted to it.
+on
+Open()
+Spreadsheet
+Trigger
+Builder
+Specifies a trigger that will fire when the spreadsheet is opened.
+Detailed documentation
+create()
+Creates the trigger and returns it.
+Return
+Trigger
+— The created trigger.
+on
+Change()
+Specifies a trigger that will fire when the spreadsheet's content or structure is changed.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActive
+();
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+).
+forSpreadsheet
+(
+sheet
+).
+onChange
+().
+create
+();
+Return
+Spreadsheet
+Trigger
+Builder
+— a builder for chaining
+on
+Edit()
+Specifies a trigger that will fire when the spreadsheet is edited.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActive
+();
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+).
+forSpreadsheet
+(
+sheet
+).
+onEdit
+().
+create
+();
+Return
+Spreadsheet
+Trigger
+Builder
+— a builder for chaining
+on
+Form
+Submit()
+Specifies a trigger that will fire when the spreadsheet has a form submitted to it.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActive
+();
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forSpreadsheet
+(
+sheet
+)
+.
+onFormSubmit
+()
+.
+create
+();
+Return
+Spreadsheet
+Trigger
+Builder
+— A builder for chaining.
+on
+Open()
+Specifies a trigger that will fire when the spreadsheet is opened.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActive
+();
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+).
+forSpreadsheet
+(
+sheet
+).
+onOpen
+().
+create
+();
+Return
+Spreadsheet
+Trigger
+Builder
+— a builder for chaining

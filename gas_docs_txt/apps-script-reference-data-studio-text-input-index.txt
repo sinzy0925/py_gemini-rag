@@ -1,0 +1,201 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/text-input/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextInput is used in Data Studio configurations to display text input fields.
+Various methods like
+setAllowOverride
+,
+setHelpText
+,
+setId
+,
+setIsDynamic
+,
+setName
+, and
+setPlaceholder
+are available to configure the TextInput's properties.
+These methods allow for setting unique IDs, display names, help text, placeholder text, overriding capabilities, and dynamic behavior for the text input field.
+Text
+Input
+Contains text input information for the config. Its properties determine how the text input is
+displayed in Data Studio.
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+const
+config
+=
+cc
+.
+getConfig
+();
+const
+info1
+=
+config
+.
+newTextInput
+()
+.
+setId
+(
+'info1'
+)
+.
+setName
+(
+'Search'
+)
+.
+setHelpText
+(
+'for example, Coldplay'
+)
+.
+setAllowOverride
+(
+true
+)
+.
+setPlaceholder
+(
+'Search for an artist for all songs.'
+);
+Methods
+Method
+Return type
+Brief description
+set
+Allow
+Override(allowOverride)
+Text
+Input
+Enables overriding for this config entry.
+set
+Help
+Text(helpText)
+Text
+Input
+Sets the help text for this configuration entry.
+set
+Id(id)
+Text
+Input
+Sets the unique ID for this configuration entry.
+set
+Is
+Dynamic(isDynamic)
+Text
+Input
+Sets the dynamic status for this configuration entry.
+set
+Name(name)
+Text
+Input
+Sets the display name for this configuration entry.
+set
+Placeholder(placeholder)
+Text
+Input
+Sets the placeholder text for this configuration entry.
+Detailed documentation
+set
+Allow
+Override(allowOverride)
+Enables overriding for this config entry. If set to
+true
+, data source creators have the
+option to enable this for report editors
+Parameters
+Name
+Type
+Description
+allow
+Override
+Boolean
+Whether or not this config entry can be overridden in reports.
+Return
+Text
+Input
+— This builder, for chaining.
+set
+Help
+Text(helpText)
+Sets the help text for this configuration entry.
+Parameters
+Name
+Type
+Description
+help
+Text
+String
+The helpText to set.
+Return
+Text
+Input
+— This builder, for chaining.
+set
+Id(id)
+Sets the unique ID for this configuration entry.
+Parameters
+Name
+Type
+Description
+id
+String
+The ID to set.
+Return
+Text
+Input
+— This builder, for chaining.
+set
+Is
+Dynamic(isDynamic)
+Sets the dynamic status for this configuration entry.
+If a dynamic configuration entry is modified, subsequent configuration entries are cleared.
+Parameters
+Name
+Type
+Description
+is
+Dynamic
+Boolean
+The dynamic status to set.
+Return
+Text
+Input
+— This builder, for chaining.
+set
+Name(name)
+Sets the display name for this configuration entry.
+Parameters
+Name
+Type
+Description
+name
+String
+The name to set.
+Return
+Text
+Input
+— This builder, for chaining.
+set
+Placeholder(placeholder)
+Sets the placeholder text for this configuration entry.
+Parameters
+Name
+Type
+Description
+placeholder
+String
+The placeholder text to set.
+Return
+Text
+Input
+— This builder, for chaining.

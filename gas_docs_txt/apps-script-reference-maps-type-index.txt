@@ -1,0 +1,26 @@
+Source Path: gas_docs_html/apps-script/reference/maps/type/index.html
+
+Type
+An enum representing the type of map to render.
+To call an enum, you call its parent class, name, and property. For example,
+Maps.Type.ROADMAP
+.
+See also
+Google Static Maps API
+Properties
+Property
+Type
+Description
+ROADMAP
+Enum
+A standard roadmap, as is normally shown on the Google Maps website.
+SATELLITE
+Enum
+A satellite map.
+TERRAIN
+Enum
+A physical relief map, showing terrain and vegetation.
+HYBRID
+Enum
+A hybrid of the satellite and roadmap maps, showing a transparent layer of major streets and
+place names on the satellite map.

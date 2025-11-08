@@ -1,0 +1,124 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-refresh-schedule-frequency/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Access a refresh schedule's frequency which specifies how often and when to refresh data connected to a database.
+Use
+DataSourceRefreshSchedule.getTimeIntervalOfNextRun()
+to see the next scheduled run time.
+Update the frequency using
+DataSourceRefreshSchedule.setFrequency(newFrequency)
+.
+Methods are available to get details like the days of the month or week, the frequency type, and the start hour of the refresh schedule.
+Data
+Source
+Refresh
+Schedule
+Frequency
+Access a refresh schedule's frequency, which specifies how often and when to refresh.
+Only use this class with data that's connected to a database.
+To see the next time this refresh schedule is scheduled to run, use
+Data
+Source
+Refresh
+Schedule.getTimeIntervalOfNextRun()
+.
+To update, use
+Data
+Source
+Refresh
+Schedule.setFrequency(newFrequency)
+.
+Methods
+Method
+Return type
+Brief description
+get
+Days
+Of
+The
+Month()
+Integer[]
+Gets the days of the month as numbers (1-28) on which to refresh the data source.
+get
+Days
+Of
+The
+Week()
+Weekday[]
+Gets the days of the week on which to refresh the data source.
+get
+Frequency
+Type()
+Frequency
+Type
+Gets the frequency type.
+get
+Start
+Hour()
+Integer
+Gets the start hour (as a number 0-23) of the time interval during which the refresh schedule
+runs.
+Detailed documentation
+get
+Days
+Of
+The
+Month()
+Gets the days of the month as numbers (1-28) on which to refresh the data source. Only applies
+if frequency type is monthly.
+Return
+Integer[]
+— The days of the month on which to refresh.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Days
+Of
+The
+Week()
+Gets the days of the week on which to refresh the data source. Only applies if the frequency
+type is weekly.
+Return
+Weekday[]
+— The days of the week on which to refresh.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Frequency
+Type()
+Gets the frequency type.
+Return
+Frequency
+Type
+— The frequency type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Start
+Hour()
+Gets the start hour (as a number 0-23) of the time interval during which the refresh schedule
+runs. For example, if the start hour is 13 and the time interval's duration is 4 hours, then
+the data source is refreshed between 1 p.m. and 5 p.m. The hour is in the timezone of the
+spreadsheet.
+Return
+Integer
+— The start hour.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

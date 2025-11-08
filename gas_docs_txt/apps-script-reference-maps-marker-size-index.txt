@@ -1,0 +1,23 @@
+Source Path: gas_docs_html/apps-script/reference/maps/marker-size/index.html
+
+Marker
+Size
+An enum representing the size of a marker added to a map.
+To call an enum, you call its parent class, name, and property. For example,
+Maps.MarkerSize.TINY
+.
+See also
+Google Static Maps API
+Properties
+Property
+Type
+Description
+TINY
+Enum
+Tiny sized markets (smallest available). Labels will not be visible on markers of this size.
+MID
+Enum
+Medium sized markers (largest available).
+SMALL
+Enum
+Small sized markers. Labels will not be visible on markers of this size.

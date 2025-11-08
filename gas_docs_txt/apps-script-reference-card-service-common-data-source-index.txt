@@ -1,0 +1,17 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/common-data-source/index.html
+
+Common
+Data
+Source
+A data source shared by all Google Workspace applications.
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+Properties
+Property
+Type
+Description
+UNKNOWN
+Enum
+Default value. Don't use.
+USER
+Enum
+Google Workspace users.

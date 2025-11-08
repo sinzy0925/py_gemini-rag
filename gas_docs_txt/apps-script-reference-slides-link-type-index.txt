@@ -1,0 +1,29 @@
+Source Path: gas_docs_html/apps-script/reference/slides/link-type/index.html
+
+Link
+Type
+The types of a
+Link
+.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.LinkType.URL
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A link type that is not supported.
+URL
+Enum
+A link to an external web page.
+SLIDE_POSITION
+Enum
+A link to a specific slide in this presentation, addressed by its position.
+SLIDE_ID
+Enum
+A link to a specific slide in this presentation, addressed by its ID.
+SLIDE_INDEX
+Enum
+A link to a specific slide in this presentation, addressed by its zero-based index.

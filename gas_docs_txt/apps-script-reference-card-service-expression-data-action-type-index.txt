@@ -1,0 +1,43 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/expression-data-action-type/index.html
+
+Expression
+Data
+Action
+Type
+An enum that represents the type of the
+expression
+data action
+.
+Only available through the
+Gemini
+Alpha program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+expressionDataAction
+=
+CardService
+.
+newExpressionDataAction
+()
+.
+setActionType
+(
+CardService
+.
+ExpressionDataActionType
+.
+START_EXPRESSION_EVALUATION
+);
+Properties
+Property
+Type
+Description
+ACTION_TYPE_UNSPECIFIED
+Enum
+The unspecified action type.
+START_EXPRESSION_EVALUATION
+Enum
+The action to start the
+CEL
+expression validation
+.

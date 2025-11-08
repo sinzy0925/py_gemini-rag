@@ -1,0 +1,74 @@
+Source Path: gas_docs_html/apps-script/reference/charts/chart-options/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ChartOptions exposes configurable options for a Chart, such as height and color.
+Chart options are immutable.
+The
+get(option)
+method returns a configured option, or
+null
+if not set.
+The
+getOrDefault(option)
+method returns a configured option, or its default value if available.
+Chart
+Options
+Exposes options currently configured for a
+Chart
+, such as height, color, etc.
+Please see the
+visualization
+reference
+documentation for information on what options are available. Specific options for
+each chart can be found by clicking on the specific chart in the
+chart gallery
+.
+These options are immutable.
+Methods
+Method
+Return type
+Brief description
+get(option)
+Object
+Returns a configured option for this chart.
+get
+Or
+Default(option)
+Object
+Returns a configured option for this chart.
+Detailed documentation
+get(option)
+Returns a configured option for this chart.
+Parameters
+Name
+Type
+Description
+option
+String
+The string representing the desired option.
+Return
+Object
+— The value currently set for the specified option or
+null
+if the option was not
+    set.
+get
+Or
+Default(option)
+Returns a configured option for this chart. If the chart option is not set, returns the default
+value of this option if available, or returns
+null
+if the default value is not
+available.
+Parameters
+Name
+Type
+Description
+option
+String
+The string representing the desired option.
+Return
+Object
+— The value currently set for the specified option. If the option was not set and the
+    default value is available, returns the default value.

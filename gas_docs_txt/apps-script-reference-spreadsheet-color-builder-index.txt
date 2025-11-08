@@ -1,0 +1,161 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/color-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ColorBuilder is a builder for creating color objects in Apps Script spreadsheets.
+A new ColorBuilder is created using SpreadsheetApp.newColor().
+The builder allows setting a color as either an RGB color using a CSS string or as a theme color using a ThemeColorType.
+Once configured, the build() method creates the final Color object.
+You can also convert a built color object to its RgbColor or ThemeColor representation and get its ColorType.
+Color
+Builder
+The builder for
+Color
+Builder
+. To create a new builder, use
+Spreadsheet
+App.newColor()
+.
+Methods
+Method
+Return type
+Brief description
+as
+Rgb
+Color()
+Rgb
+Color
+Converts this color to an
+Rgb
+Color
+.
+as
+Theme
+Color()
+Theme
+Color
+Converts this color to a
+Theme
+Color
+.
+build()
+Color
+Creates a color object from the settings supplied to the builder.
+get
+Color
+Type()
+Color
+Type
+Get the type of this color.
+set
+Rgb
+Color(cssString)
+Color
+Builder
+Sets as RGB color.
+set
+Theme
+Color(themeColorType)
+Color
+Builder
+Sets as theme color.
+Detailed documentation
+as
+Rgb
+Color()
+Converts this color to an
+Rgb
+Color
+.
+Return
+Rgb
+Color
+— The RGB color.
+Throws
+Error
+— if the color is not an
+Rgb
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+as
+Theme
+Color()
+Converts this color to a
+Theme
+Color
+.
+Return
+Theme
+Color
+— The theme color.
+Throws
+Error
+— if the color is not a
+Theme
+Color
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+build()
+Creates a color object from the settings supplied to the builder.
+Return
+Color
+— A color object created from this builder.
+get
+Color
+Type()
+Get the type of this color.
+Return
+Color
+Type
+— The color type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Rgb
+Color(cssString)
+Sets as RGB color.
+Parameters
+Name
+Type
+Description
+css
+String
+String
+The RGB color in CSS notation (such as '#ffffff').
+Return
+Color
+Builder
+— This builder, for chaining.
+set
+Theme
+Color(themeColorType)
+Sets as theme color.
+Parameters
+Name
+Type
+Description
+theme
+Color
+Type
+Theme
+Color
+Type
+The theme color type.
+Return
+Color
+Builder
+— This builder, for chaining.

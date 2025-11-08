@@ -1,0 +1,12 @@
+Source Path: gemini_api_docs_html/gemini-api/docs/model-tuning/index.html
+
+With the deprecation of Gemini 1.5 Flash-001 in May 2025, we no longer have a
+model available which supports fine-tuning in the Gemini API, but it is supported
+in
+Vertex AI
+.
+We plan to bring fine-tuning support back in the future. We would love to
+hear
+from you on our developer forum
+if
+fine-tuning is important to your use case.

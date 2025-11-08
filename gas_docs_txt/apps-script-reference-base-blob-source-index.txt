@@ -1,0 +1,152 @@
+Source Path: gas_docs_html/apps-script/reference/base/blob-source/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+BlobSource
+interface is for objects that can export their data as a
+Blob
+.
+Numerous Apps Script classes implement the
+BlobSource
+interface, including
+Blob
+,
+Chart
+,
+File
+, and
+Spreadsheet
+.
+The
+BlobSource
+interface includes methods like
+getAs(contentType)
+to get data as a blob with a specified content type and
+getBlob()
+to get the data as a blob.
+The
+getAs(contentType)
+method allows converting data to different MIME types, such as
+application/pdf
+or various image formats, with filename extension handling.
+Blob
+Source
+Interface for objects that can export their data as a
+Blob
+.
+Implementing classes
+Name
+Brief description
+Blob
+A data interchange object for Apps Script services.
+Chart
+A Chart object, which can be converted to a static image.
+Document
+A document, containing one or more
+Tab
+objects, each of which contains rich text and
+elements such as tables and lists.
+Embedded
+Chart
+Represents a chart that has been embedded into a spreadsheet.
+File
+A file in Google Drive.
+Gmail
+Attachment
+An attachment from Gmail.
+HTTPResponse
+This class allows users to access specific information on HTTP responses.
+Html
+Output
+An
+Html
+Output
+object that can be served from a script.
+Image
+A
+Page
+Element
+representing an image.
+Inline
+Image
+An element representing an embedded image.
+Jdbc
+Blob
+A JDBC
+Blob
+.
+Jdbc
+Clob
+A JDBC
+Clob
+.
+Picture
+Fill
+A fill that renders an image that's stretched to the dimensions of its container.
+Positioned
+Image
+Fixed position image anchored to a
+Paragraph
+.
+Spreadsheet
+Access and modify Google Sheets files.
+Static
+Map
+Allows for the creation and decoration of static map images.
+Methods
+Method
+Return type
+Brief description
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+Detailed documentation
+get
+As(contentType)
+Return the data inside this object as a blob converted to the specified content type. This
+method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
+assumes that the part of the filename that follows the last period (if any) is an existing
+extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+"ShoppingList.12.25.pdf".
+To view the daily quotas for conversions, see
+Quotas for Google
+Services
+. Newly created Google Workspace domains might be temporarily subject to stricter
+quotas.
+Parameters
+Name
+Type
+Description
+content
+Type
+String
+The MIME type to convert to. For most blobs,
+'application/pdf'
+is
+    the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of
+'image/bmp'
+,
+'image/gif'
+,
+'image/jpeg'
+, or
+'image/png'
+are also
+    valid. For a Google Docs document,
+'text/markdown'
+is also valid.
+Return
+Blob
+— The data as a blob.
+get
+Blob()
+Return the data inside this object as a blob.
+Return
+Blob
+— The data as a blob.

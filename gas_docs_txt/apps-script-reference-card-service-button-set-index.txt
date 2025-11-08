@@ -1,0 +1,70 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/button-set/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ButtonSet holds a set of Button objects displayed in a row.
+ButtonSet is available for Google Workspace add-ons and Google Chat apps.
+You can add a button to a ButtonSet using the
+addButton()
+method.
+Button
+Set
+Holds a set of
+Button
+objects that are displayed in a row.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+textButton
+=
+CardService
+.
+newTextButton
+();
+// Finish building the text button...
+const
+imageButton
+=
+CardService
+.
+newImageButton
+();
+// Finish building the image button...
+const
+buttonSet
+=
+CardService
+.
+newButtonSet
+().
+addButton
+(
+textButton
+).
+addButton
+(
+imageButton
+);
+Methods
+Method
+Return type
+Brief description
+add
+Button(button)
+Button
+Set
+Adds a button.
+Detailed documentation
+add
+Button(button)
+Adds a button.
+Parameters
+Name
+Type
+Description
+button
+Button
+The button to add.
+Return
+Button
+Set
+— This object, for chaining.

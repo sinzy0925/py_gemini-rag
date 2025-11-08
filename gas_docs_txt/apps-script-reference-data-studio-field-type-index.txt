@@ -1,0 +1,349 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/field-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+FieldType
+enum defines the types that can be set for a
+Field
+.
+To use a
+FieldType
+enum value, call its parent class, name, and property, such as
+DataStudioApp.FieldType.YEAR
+.
+The
+FieldType
+enum includes properties for various data types including dates and times, geographical locations, numbers, text, booleans, URLs, images, and numerous global currencies.
+Field
+Type
+An enum that defines the types that can be set for a
+Field
+.
+To call an enum, you call its parent class, name, and property. For example,
+DataStudioApp.FieldType.YEAR
+.
+Properties
+Property
+Type
+Description
+YEAR
+Enum
+Year in the format of YYYY such as 2017.
+YEAR_QUARTER
+Enum
+Year and quarter in the format of YYYYQ such as 20171.
+YEAR_MONTH
+Enum
+Year and month in the format of YYYYMM such as 201703.
+YEAR_WEEK
+Enum
+Year and week in the format of YYYYww such as 201707.
+YEAR_MONTH_DAY
+Enum
+Year, month, and day in the format of YYYYMMDD such as 20170317.
+YEAR_MONTH_DAY_HOUR
+Enum
+Year, month, day, and hour in the format of YYYYMMDDHH such as 2017031703.
+YEAR_MONTH_DAY_MINUTE
+Enum
+Year, month, day, hour, and minute in the format of YYYYMMDDHHmm such as 201703170230.
+YEAR_MONTH_DAY_SECOND
+Enum
+Year, month, day, hour, minute, and second in the format of YYYYMMDDHHmmss such as
+20170317023017.
+QUARTER
+Enum
+Quarter in the format of 1, 2, 3, or 4).
+MONTH
+Enum
+Month in the format of MM such as 03.
+WEEK
+Enum
+Week in the format of ww such as 07.
+MONTH_DAY
+Enum
+Month and day in the format of MMDD such as 0317.
+DAY_OF_WEEK
+Enum
+A number in the range of [0,6] with 0 representing Sunday.
+DAY
+Enum
+Day in the format of DD such as 17.
+HOUR
+Enum
+Hour in the format of HH such as 13.
+MINUTE
+Enum
+Minute in the format of mm such as 12.
+DURATION
+Enum
+A duration of time in seconds.
+COUNTRY
+Enum
+A country such as United States.
+COUNTRY_CODE
+Enum
+A country code such as US.
+CONTINENT
+Enum
+A continent such as Americas.
+CONTINENT_CODE
+Enum
+A continent code such as 019.
+SUB_CONTINENT
+Enum
+A sub-continent such as North America.
+SUB_CONTINENT_CODE
+Enum
+A sub-continent code such as 003.
+REGION
+Enum
+A region such as California.
+REGION_CODE
+Enum
+A region code such as CA.
+CITY
+Enum
+A city such as Mountain View.
+CITY_CODE
+Enum
+A city code such as 1014044.
+METRO
+Enum
+A metro such as San Francisco-Oakland-San Jose CA.
+METRO_CODE
+Enum
+A metro code such as 200807.
+LATITUDE_LONGITUDE
+Enum
+A latitude longitude pair such as 51.5074, -0.1278.
+NUMBER
+Enum
+A decimal number.
+PERCENT
+Enum
+Decimal percentage (can be over 1.0). For example, 137% is represented as 1.37.
+TEXT
+Enum
+Free-form text.
+BOOLEAN
+Enum
+A
+true
+or
+false
+boolean value.
+URL
+Enum
+A URL as text such as https://google.com.
+HYPERLINK
+Enum
+A hyperlink. Only use this for calculated fields with the
+HYPERLINK
+function.
+IMAGE
+Enum
+An image. Only use this for calculated fields with the
+IMAGE
+function.
+IMAGE_LINK
+Enum
+An image link. Only use this for calculated fields with the
+HYPERLINK
+function
+while using
+IMAGE
+for the link label.
+CURRENCY_AED
+Enum
+Currency from AED.
+CURRENCY_ALL
+Enum
+Currency from ALL.
+CURRENCY_ARS
+Enum
+Currency from ARS.
+CURRENCY_AUD
+Enum
+Currency from AUD.
+CURRENCY_BDT
+Enum
+Currency from BDT.
+CURRENCY_BGN
+Enum
+Currency from BGN.
+CURRENCY_BOB
+Enum
+Currency from BOB.
+CURRENCY_BRL
+Enum
+Currency from BRL.
+CURRENCY_CAD
+Enum
+Currency from CAD.
+CURRENCY_CDF
+Enum
+Currency from CDF.
+CURRENCY_CHF
+Enum
+Currency from CHF.
+CURRENCY_CLP
+Enum
+Currency from CLP.
+CURRENCY_CNY
+Enum
+Currency from CNY.
+CURRENCY_COP
+Enum
+Currency from COP.
+CURRENCY_CRC
+Enum
+Currency from CRC.
+CURRENCY_CZK
+Enum
+Currency from CZK.
+CURRENCY_DKK
+Enum
+Currency from DKK.
+CURRENCY_DOP
+Enum
+Currency from DOP.
+CURRENCY_EGP
+Enum
+Currency from EGP.
+CURRENCY_ETB
+Enum
+Currency from ETB.
+CURRENCY_EUR
+Enum
+Currency from EUR.
+CURRENCY_GBP
+Enum
+Currency from GBP.
+CURRENCY_HKD
+Enum
+Currency from HKD.
+CURRENCY_HRK
+Enum
+Currency from HRK.
+CURRENCY_HUF
+Enum
+Currency from HUF.
+CURRENCY_IDR
+Enum
+Currency from IDR.
+CURRENCY_ILS
+Enum
+Currency from ILS.
+CURRENCY_INR
+Enum
+Currency from INR.
+CURRENCY_IRR
+Enum
+Currency from IRR.
+CURRENCY_ISK
+Enum
+Currency from ISK.
+CURRENCY_JMD
+Enum
+Currency from JMD.
+CURRENCY_JPY
+Enum
+Currency from JPY.
+CURRENCY_KRW
+Enum
+Currency from KRW.
+CURRENCY_LKR
+Enum
+Currency from LKR.
+CURRENCY_LTL
+Enum
+Currency from LTL.
+CURRENCY_MNT
+Enum
+Currency from MNT.
+CURRENCY_MVR
+Enum
+Currency from MVR.
+CURRENCY_MXN
+Enum
+Currency from MXN.
+CURRENCY_MYR
+Enum
+Currency from MYR.
+CURRENCY_NGN
+Enum
+Currency from NGN.
+CURRENCY_NOK
+Enum
+Currency from NOK.
+CURRENCY_NZD
+Enum
+Currency from NZD.
+CURRENCY_PAB
+Enum
+Currency from PAB.
+CURRENCY_PEN
+Enum
+Currency from PEN.
+CURRENCY_PHP
+Enum
+Currency from PHP.
+CURRENCY_PKR
+Enum
+Currency from PKR.
+CURRENCY_PLN
+Enum
+Currency from PLN.
+CURRENCY_RON
+Enum
+Currency from RON.
+CURRENCY_RSD
+Enum
+Currency from RSD.
+CURRENCY_RUB
+Enum
+Currency from RUB.
+CURRENCY_SAR
+Enum
+Currency from SAR.
+CURRENCY_SEK
+Enum
+Currency from SEK.
+CURRENCY_SGD
+Enum
+Currency from SGD.
+CURRENCY_THB
+Enum
+Currency from THB.
+CURRENCY_TRY
+Enum
+Currency from TRY.
+CURRENCY_TWD
+Enum
+Currency from TWD.
+CURRENCY_TZS
+Enum
+Currency from TZS.
+CURRENCY_UAH
+Enum
+Currency from UAH.
+CURRENCY_USD
+Enum
+Currency from USD.
+CURRENCY_UYU
+Enum
+Currency from UYU.
+CURRENCY_VEF
+Enum
+Currency from VEF.
+CURRENCY_VND
+Enum
+Currency from VND.
+CURRENCY_YER
+Enum
+Currency from YER.
+CURRENCY_ZAR
+Enum
+Currency from ZAR.

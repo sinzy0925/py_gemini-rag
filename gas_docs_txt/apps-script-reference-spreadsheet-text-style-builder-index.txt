@@ -1,0 +1,214 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/text-style-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextStyleBuilder is used to create text styles.
+It provides methods to set properties like bold, italic, underline, strikethrough, font family, font size, and foreground color.
+The
+build()
+method creates the final TextStyle object from the builder.
+Most methods return the TextStyleBuilder itself, allowing for method chaining.
+Text
+Style
+Builder
+A builder for text styles.
+Methods
+Method
+Return type
+Brief description
+build()
+Text
+Style
+Creates a text style from this builder.
+set
+Bold(bold)
+Text
+Style
+Builder
+Sets whether or not the text is bold.
+set
+Font
+Family(fontFamily)
+Text
+Style
+Builder
+Sets the text font family, such as "Arial".
+set
+Font
+Size(fontSize)
+Text
+Style
+Builder
+Sets the text font size in points.
+set
+Foreground
+Color(cssString)
+Text
+Style
+Builder
+Sets the text font color.
+set
+Foreground
+Color
+Object(color)
+Text
+Style
+Builder
+Sets the text font color.
+set
+Italic(italic)
+Text
+Style
+Builder
+Sets whether or not the text is italic.
+set
+Strikethrough(strikethrough)
+Text
+Style
+Builder
+Sets whether or not the text has strikethrough.
+set
+Underline(underline)
+Text
+Style
+Builder
+Sets whether or not the text is underlined.
+Detailed documentation
+build()
+Creates a text style from this builder.
+Return
+Text
+Style
+— A text style created from this builder.
+set
+Bold(bold)
+Sets whether or not the text is bold.
+Parameters
+Name
+Type
+Description
+bold
+Boolean
+Whether or not the text is bold.
+Return
+Text
+Style
+Builder
+— The builder for chaining.
+set
+Font
+Family(fontFamily)
+Sets the text font family, such as "Arial".
+Parameters
+Name
+Type
+Description
+font
+Family
+String
+The desired font family.
+Return
+Text
+Style
+Builder
+— The builder for chaining.
+set
+Font
+Size(fontSize)
+Sets the text font size in points.
+Parameters
+Name
+Type
+Description
+font
+Size
+Integer
+The desired font size.
+Return
+Text
+Style
+Builder
+— The builder for chaining.
+set
+Foreground
+Color(cssString)
+Sets the text font color.
+Parameters
+Name
+Type
+Description
+css
+String
+String
+The desired font color in CSS notation (such as
+'#ffffff'
+or
+'white'
+).
+Return
+Text
+Style
+Builder
+— The builder for chaining.
+set
+Foreground
+Color
+Object(color)
+Sets the text font color.
+Parameters
+Name
+Type
+Description
+color
+Color
+The desired font color.
+Return
+Text
+Style
+Builder
+— The builder for chaining.
+set
+Italic(italic)
+Sets whether or not the text is italic.
+Parameters
+Name
+Type
+Description
+italic
+Boolean
+Whether or not the text is italic.
+Return
+Text
+Style
+Builder
+— The builder for chaining.
+set
+Strikethrough(strikethrough)
+Sets whether or not the text has strikethrough.
+Parameters
+Name
+Type
+Description
+strikethrough
+Boolean
+Whether or not the text has strikethrough.
+Return
+Text
+Style
+Builder
+— The builder for chaining.
+set
+Underline(underline)
+Sets whether or not the text is underlined.
+Parameters
+Name
+Type
+Description
+underline
+Boolean
+Whether or not the text is underlined.
+Return
+Text
+Style
+Builder
+— The builder for chaining.

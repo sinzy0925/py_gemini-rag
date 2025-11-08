@@ -1,0 +1,671 @@
+Source Path: gas_docs_html/apps-script/reference/url-fetch/url-fetch-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+UrlFetchApp enables scripts to communicate with external hosts and access web resources by fetching URLs using HTTP and HTTPS requests.
+Requests made by UrlFetchApp originate from a specific set of Google IP ranges, which may need to be allowlisted.
+The
+https://www.googleapis.com/auth/script.external_request
+scope is required to use UrlFetchApp.
+Key methods include
+fetch()
+for single requests,
+fetchAll()
+for multiple requests, and
+getRequest()
+to inspect request details without issuing them.
+Url
+Fetch
+App
+Fetch resources and communicate with other hosts over the Internet.
+This service allows scripts to communicate with other applications or access other resources
+on the web by fetching URLs. A script can use the URL Fetch service to issue HTTP and HTTPS
+requests and receive responses. The URL Fetch service uses Google's network infrastructure for
+efficiency and scaling purposes.
+Requests made using this service originate from a set pool of IP ranges. You can
+look up the full list of IP addresses
+if
+you need to allowlist or approve these requests.
+This service requires the
+https://www.googleapis.com/auth/script.external_request
+scope. In most cases Apps Script automatically detects and includes the scopes a script needs,
+but if you are
+setting your scopes
+explicitly
+you must manually add this scope to use
+Url
+Fetch
+App
+.
+See also
+HTTPResponse
+Setting explicit scopes
+Methods
+Method
+Return type
+Brief description
+fetch(url)
+HTTPResponse
+Makes a request to fetch a URL.
+fetch(url, params)
+HTTPResponse
+Makes a request to fetch a URL using optional advanced parameters.
+fetch
+All(requests)
+HTTPResponse[]
+Makes multiple requests to fetch multiple URLs using optional advanced parameters.
+get
+Request(url)
+Object
+Returns the request that is made if the operation was invoked.
+get
+Request(url, params)
+Object
+Returns the request that is made if the operation were invoked.
+Detailed documentation
+fetch(url)
+Makes a request to fetch a URL.
+This works over HTTP as well as HTTPS.
+// The code below logs the HTML code of the Google home page.
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+'http://www.google.com/'
+);
+Logger
+.
+log
+(
+response
+.
+getContentText
+());
+Parameters
+Name
+Type
+Description
+url
+String
+The URL to fetch. The URL can have up to 2,082 characters.
+Return
+HTTPResponse
+— The HTTP response data.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+fetch(url, params)
+Makes a request to fetch a URL using optional advanced parameters.
+This works over HTTP as well as HTTPS.
+// Make a GET request and log the returned content.
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+'http://www.google.com/'
+);
+Logger
+.
+log
+(
+response
+.
+getContentText
+());
+// Make a POST request with form data.
+const
+resumeBlob
+=
+Utilities
+.
+newBlob
+(
+'Hire me!'
+,
+'text/plain'
+,
+'resume.txt'
+);
+const
+formData
+=
+{
+name
+:
+'Bob Smith'
+,
+email
+:
+'bob@example.com'
+,
+resume
+:
+resumeBlob
+,
+};
+// Because payload is a JavaScript object, it is interpreted as
+// as form data. (No need to specify contentType; it automatically
+// defaults to either 'application/x-www-form-urlencoded'
+// or 'multipart/form-data')
+const
+options
+=
+{
+method
+:
+'post'
+,
+payload
+:
+formData
+,
+};
+UrlFetchApp
+.
+fetch
+(
+'https://httpbin.org/post'
+,
+options
+);
+// Make a POST request with a JSON payload.
+const
+data
+=
+{
+name
+:
+'Bob Smith'
+,
+age
+:
+35
+,
+pets
+:
+[
+'fido'
+,
+'fluffy'
+],
+};
+const
+options
+=
+{
+method
+:
+'post'
+,
+contentType
+:
+'application/json'
+,
+// Convert the JavaScript object to a JSON string.
+payload
+:
+JSON
+.
+stringify
+(
+data
+),
+};
+UrlFetchApp
+.
+fetch
+(
+'https://httpbin.org/post'
+,
+options
+);
+Parameters
+Name
+Type
+Description
+url
+String
+The URL to fetch. The URL can have up to 2,082 characters.
+params
+Object
+The optional JavaScript object specifying advanced parameters as defined below.
+Advanced parameters
+Name
+Type
+Description
+content
+Type
+String
+the content type (defaults to
+    'application/x-www-form-urlencoded'). Another example of content type is 'application/xml;
+    charset=utf-8'.
+headers
+Object
+a JavaScript key/value map of HTTP headers for the request
+method
+String
+the HTTP method for the request:
+get
+,
+delete
+,
+patch
+,
+post
+, or
+put
+. The default is
+get
+.
+payload
+String
+the payload (that is, the POST body) for the request. Certain
+    HTTP methods (for example, GET) do not accept a payload. It can be a string, a byte array,
+    a blob, or a JavaScript object. A JavaScript object is interpreted as a map of form field
+    names to values, where the values can be either strings or blobs.
+use
+Intranet
+Boolean
+Deprecated. This instructs fetch to resolve the specified
+    URL within the intranet linked to your domain through (deprecated)
+SDC
+validate
+Https
+Certificates
+Boolean
+If
+false
+the fetch ignores any
+    invalid certificates for HTTPS requests. The default is
+true
+.
+follow
+Redirects
+Boolean
+If
+false
+the fetch doesn't automatically
+    follow HTTP redirects; it returns the original HTTP response. The default is
+true
+.
+mute
+Http
+Exceptions
+Boolean
+If
+true
+the fetch doesn't throw an
+    exception if the response code indicates failure, and instead returns the
+HTTPResponse
+. The default is
+false
+.
+escaping
+Boolean
+If
+false
+reserved characters in the URL aren't
+    escaped. The default is
+true
+.
+Return
+HTTPResponse
+— The HTTP response data.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+fetch
+All(requests)
+Makes multiple requests to fetch multiple URLs using optional advanced parameters.
+This works over HTTP as well as HTTPS.
+// Make both a POST request with form data, and a GET request.
+const
+resumeBlob
+=
+Utilities
+.
+newBlob
+(
+'Hire me!'
+,
+'text/plain'
+,
+'resume.txt'
+);
+const
+formData
+=
+{
+name
+:
+'Bob Smith'
+,
+email
+:
+'bob@example.com'
+,
+resume
+:
+resumeBlob
+,
+};
+// Because payload is a JavaScript object, it is interpreted as
+// as form data. (No need to specify contentType; it defaults to either
+// 'application/x-www-form-urlencoded' or 'multipart/form-data')
+const
+request1
+=
+{
+url
+:
+'https://httpbin.org/post'
+,
+method
+:
+'post'
+,
+payload
+:
+formData
+,
+};
+// A request may also just be a URL.
+const
+request2
+=
+'https://httpbin.org/get?key=value'
+;
+UrlFetchApp
+.
+fetchAll
+([
+request1
+,
+request2
+]);
+Parameters
+Name
+Type
+Description
+requests
+Object[]
+An array of either URLs or JavaScript objects specifying requests as defined
+    below.
+Advanced parameters
+Name
+Type
+Description
+url
+String
+the URL to fetch. The URL can have up to 2,082 characters.
+content
+Type
+String
+the content type (defaults to
+    'application/x-www-form-urlencoded'). Another example of content type is 'application/xml;
+    charset=utf-8'.
+headers
+Object
+a JavaScript key/value map of HTTP headers for the request
+method
+String
+the HTTP method for the request:
+get
+,
+delete
+,
+patch
+,
+post
+, or
+put
+. The default is
+get
+.
+payload
+String
+the payload (that is, the POST body) for the request. Certain
+    HTTP methods (for example, GET) do not accept a payload. It can be a string, a byte array,
+    a blob, or a JavaScript object. A JavaScript object is interpreted as a map of form field
+    names to values, where the values can be either strings or blobs.
+use
+Intranet
+Boolean
+Deprecated. This instructs fetch to resolve the specified
+    URL within the intranet linked to your domain through (deprecated)
+SDC
+validate
+Https
+Certificates
+Boolean
+If
+false
+the fetch ignores any
+    invalid certificates for HTTPS requests. The default is
+true
+.
+follow
+Redirects
+Boolean
+If
+false
+the fetch doesn't automatically
+    follow HTTP redirects; it returns the original HTTP response. The default is
+true
+.
+mute
+Http
+Exceptions
+Boolean
+If
+true
+, the fetch doesn't throw an
+    exception if the response code indicates failure, and instead returns the
+HTTPResponse
+. The default is
+false
+.
+escaping
+Boolean
+If
+false
+, reserved characters in the URL are not
+    escaped. The default is
+true
+.
+Return
+HTTPResponse[]
+— An array of HTTP response data from each input request.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Request(url)
+Returns the request that is made if the operation was invoked.
+This method does not actually issue the request.
+// The code below logs the value for every key of the returned map.
+const
+response
+=
+UrlFetchApp
+.
+getRequest
+(
+'http://www.google.com/'
+);
+for
+(
+const
+i
+in
+response
+)
+{
+Logger
+.
+log
+(
+`
+${
+i
+}
+:
+${
+response
+[
+i
+]
+}
+`
+);
+}
+Parameters
+Name
+Type
+Description
+url
+String
+The URL to look up. The URL can have up to 2,082 characters.
+Return
+Object
+— A map of Field Name to Value. The map has at least the following keys:
+url
+,
+method
+,
+content
+Type
+,
+payload
+, and
+headers
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Request(url, params)
+Returns the request that is made if the operation were invoked.
+This method does not actually issue the request.
+Parameters
+Name
+Type
+Description
+url
+String
+The URL to look up. The URL can have up to 2,082 characters.
+params
+Object
+An optional JavaScript object specifying advanced parameters as defined below.
+Advanced parameters
+Name
+Type
+Description
+content
+Type
+String
+the content type (defaults to
+    'application/x-www-form-urlencoded'). Another example of content type is 'application/xml;
+    charset=utf-8'.
+headers
+Object
+a JavaScript key/value map of HTTP headers for the request
+method
+String
+the HTTP method for the request:
+get
+,
+delete
+,
+patch
+,
+post
+, or
+put
+. The default is
+get
+.
+payload
+String
+the payload (that is, the POST body) for the request. Certain
+    HTTP methods (for example, GET) do not accept a payload. It can be a string, a byte array,
+    a blob, or a JavaScript object. A JavaScript object is interpreted as a map of form field
+    names to values, where the values can be either strings or blobs.
+use
+Intranet
+Boolean
+Deprecated. This instructs fetch to resolve the specified
+    URL within the intranet linked to your domain through (deprecated)
+SDC
+validate
+Https
+Certificates
+Boolean
+If
+false
+the fetch ignores any
+    invalid certificates for HTTPS requests. The default is
+true
+.
+follow
+Redirects
+Boolean
+If
+false
+the fetch doesn't automatically
+    follow HTTP redirects; it returns the original HTTP response. The default is
+true
+.
+mute
+Http
+Exceptions
+Boolean
+If
+true
+the fetch doesn't throw an
+    exception if the response code indicates failure, and instead returns the
+HTTPResponse
+. The default is
+false
+.
+escaping
+Boolean
+If
+false
+reserved characters in the URL aren't be
+    escaped. The default is
+true
+.
+Return
+Object
+— A map of Field Name to Value. The map has at least the following keys:
+url
+,
+method
+,
+content
+Type
+,
+payload
+, and
+headers
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request

@@ -1,0 +1,59 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/theme-color/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ThemeColor represents a theme color.
+It includes methods to get the color type and theme color type.
+Both methods require specific authorization scopes.
+Theme
+Color
+A representation for a theme color.
+Methods
+Method
+Return type
+Brief description
+get
+Color
+Type()
+Color
+Type
+Get the type of this color.
+get
+Theme
+Color
+Type()
+Theme
+Color
+Type
+Gets the theme color type of this color.
+Detailed documentation
+get
+Color
+Type()
+Get the type of this color.
+Return
+Color
+Type
+— The color type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Theme
+Color
+Type()
+Gets the theme color type of this color.
+Return
+Theme
+Color
+Type
+— The theme color type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

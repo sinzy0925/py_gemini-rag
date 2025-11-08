@@ -1,0 +1,195 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/grid-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+GridItems are interactive elements within a grid widget, available for Google Workspace add-ons and Google Chat apps.
+Enums like
+CardService.GridItemLayout.TEXT_BELOW
+are called by referencing their parent class, name, and property.
+GridItem objects can be configured using methods such as
+setIdentifier
+,
+setImage
+,
+setLayout
+,
+setSubtitle
+,
+setTextAlignment
+, and
+setTitle
+.
+The
+setIdentifier
+method assigns an ID that is returned in the parent grid's on_click callback.
+Methods like
+setLayout
+and
+setTextAlignment
+have default values if not explicitly set.
+Grid
+Item
+The items users interact with within a grid widget.
+Available for Google Workspace add-ons and Google Chat apps.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.GridItemLayout.TEXT_BELOW
+.
+const
+gridItem
+=
+CardService
+.
+newGridItem
+()
+.
+setIdentifier
+(
+'itemA'
+)
+.
+setTitle
+(
+'This is a cat'
+)
+.
+setImage
+(
+CardService
+.
+newImageComponent
+())
+.
+setLayout
+(
+CardService
+.
+GridItemLayout
+.
+TEXT_BELOW
+);
+Methods
+Method
+Return type
+Brief description
+set
+Identifier(id)
+Grid
+Item
+Sets the identifier for the grid item.
+set
+Image(image)
+Grid
+Item
+Sets the image for this grid item.
+set
+Layout(layout)
+Grid
+Item
+Sets the layout of text and image for the grid item.
+set
+Subtitle(subtitle)
+Grid
+Item
+Sets the subtitle of the grid item.
+set
+Text
+Alignment(alignment)
+Grid
+Item
+Sets the horizontal alignment of the grid item.
+set
+Title(title)
+Grid
+Item
+Sets the title text of the grid item.
+Detailed documentation
+set
+Identifier(id)
+Sets the identifier for the grid item. When a user clicks this grid item, this ID is returned
+in the parent grid's on_click call back parameters.
+Parameters
+Name
+Type
+Description
+id
+String
+The ID.
+Return
+Grid
+Item
+— This object, for chaining.
+set
+Image(image)
+Sets the image for this grid item.
+Parameters
+Name
+Type
+Description
+image
+Image
+Component
+The ImageComponent object.
+Return
+Grid
+Item
+— This object, for chaining.
+set
+Layout(layout)
+Sets the layout of text and image for the grid item. Default is TEXT_BELOW
+Parameters
+Name
+Type
+Description
+layout
+Grid
+Item
+Layout
+The layout setting.
+Return
+Grid
+Item
+— This object, for chaining.
+set
+Subtitle(subtitle)
+Sets the subtitle of the grid item.
+Parameters
+Name
+Type
+Description
+subtitle
+String
+The subtitle text.
+Return
+Grid
+Item
+— This object, for chaining.
+set
+Text
+Alignment(alignment)
+Sets the horizontal alignment of the grid item. Default is START.
+Parameters
+Name
+Type
+Description
+alignment
+Horizontal
+Alignment
+The alignment setting.
+Return
+Grid
+Item
+— This object, for chaining.
+set
+Title(title)
+Sets the title text of the grid item.
+Parameters
+Name
+Type
+Description
+title
+String
+The title text.
+Return
+Grid
+Item
+— This object, for chaining.

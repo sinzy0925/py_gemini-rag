@@ -1,0 +1,641 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/overflow-menu-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+OverflowMenuItem is a UI element for Google Chat apps and Google Workspace add-ons that displays an icon and text.
+You can set the text, starting icon, and disable the OverflowMenuItem.
+An OverflowMenuItem can trigger various actions when clicked, such as opening a link, executing a custom action, initiating an authorization flow, or composing an email draft.
+An OverflowMenuItem can only have one click action set at a time.
+Overflow
+Menu
+Item
+An
+Overflow
+Menu
+Item
+with an icon and text label. You can deactivate the menu item when
+needed.
+Available for Google Chat apps. In developer preview for Google Workspace add-ons.
+Developer Preview:
+Available as part of the
+Google Workspace Developer Preview Program
+, which grants early access to certain features.
+const
+overflowMenuItem
+=
+CardService
+.
+newOverflowMenuItem
+()
+.
+setStartIcon
+(
+CardService
+.
+newIconImage
+().
+setIconUrl
+(
+'https://www.google.com/images/branding/googleg/1x/googleg_standard_color_64dp.png'
+,
+),
+)
+.
+setText
+(
+'Open Link'
+)
+.
+setOpenLink
+(
+CardService
+.
+newOpenLink
+().
+setUrl
+(
+'https://www.google.com'
+));
+Methods
+Method
+Return type
+Brief description
+set
+Authorization
+Action(action)
+Overflow
+Menu
+Item
+Sets an authorization action that opens a URL to the authorization flow when the object is
+clicked.
+set
+Compose
+Action(action, composedEmailType)
+Overflow
+Menu
+Item
+Sets an action that composes a draft email when the object is clicked.
+set
+Disabled(disabled)
+Overflow
+Menu
+Item
+Sets whether the menu item is disabled.
+set
+On
+Click
+Action(action)
+Overflow
+Menu
+Item
+Sets an action that executes when the object is clicked.
+set
+On
+Click
+Open
+Link
+Action(action)
+Overflow
+Menu
+Item
+Sets an action that opens a URL in a tab when the object is clicked.
+set
+Open
+Link(openLink)
+Overflow
+Menu
+Item
+Sets a URL to be opened when the object is clicked.
+set
+Start
+Icon(icon)
+Overflow
+Menu
+Item
+Sets the menu item's leading icon.
+set
+Text(text)
+Overflow
+Menu
+Item
+Sets the title of the menu item.
+Detailed documentation
+set
+Authorization
+Action(action)
+Sets an authorization action that opens a URL to the authorization flow when the object is
+clicked. This opens the URL in a new window. When the user finishes the authorization flow and
+returns to the application, the add-on reloads.
+A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+// ...
+const
+action
+=
+CardService
+.
+newAuthorizationAction
+().
+setAuthorizationUrl
+(
+'url'
+);
+CardService
+.
+newTextButton
+().
+setText
+(
+'Authorize'
+).
+setAuthorizationAction
+(
+action
+);
+Parameters
+Name
+Type
+Description
+action
+Authorization
+Action
+The object that specifies the authorization action to take when this element is
+    clicked.
+Return
+Overflow
+Menu
+Item
+— This object, for chaining.
+set
+Compose
+Action(action, composedEmailType)
+Sets an action that composes a draft email when the object is clicked. A UI object can only
+have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Compose
+Action
+Response
+object configured using
+Compose
+Action
+Response
+Builder.setGmailDraft(draft)
+.
+Note
+: This method doesn't set a
+compose action
+that is
+used to
+extend the compose UI
+.
+Rather, this method connects this UI element to an
+Action
+that
+composes draft messages
+in Apps Script that are
+opened in Gmail when the action completes.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'composeEmailCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Compose Email'
+)
+.
+setComposeAction
+(
+action
+,
+CardService
+.
+ComposedEmailType
+.
+REPLY_AS_DRAFT
+);
+// ...
+function
+composeEmailCallback
+(
+e
+)
+{
+const
+thread
+=
+GmailApp
+.
+getThreadById
+(
+e
+.
+threadId
+);
+const
+draft
+=
+thread
+.
+createDraftReply
+(
+'This is a reply'
+);
+return
+CardService
+.
+newComposeActionResponseBuilder
+()
+.
+setGmailDraft
+(
+draft
+)
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The object that specifies the compose action to take when this element is
+    clicked.
+composed
+Email
+Type
+Composed
+Email
+Type
+An enum value that specifies whether the composed draft is a
+    standalone or reply draft.
+Return
+Overflow
+Menu
+Item
+— This object, for chaining.
+set
+Disabled(disabled)
+Sets whether the menu item is disabled. A disabled item is greyed out and cannot be clicked.
+Parameters
+Name
+Type
+Description
+disabled
+Boolean
+The disabled state.
+Return
+Overflow
+Menu
+Item
+— This object, for chaining.
+set
+On
+Click
+Action(action)
+Sets an action that executes when the object is clicked. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Action
+Response
+object.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'notificationCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Create notification'
+)
+.
+setOnClickAction
+(
+action
+);
+// ...
+function
+notificationCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setNotification
+(
+CardService
+.
+newNotification
+().
+setText
+(
+'Some info to display to user'
+),
+)
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to take when this element is clicked.
+Return
+Overflow
+Menu
+Item
+— This object, for chaining.
+set
+On
+Click
+Open
+Link
+Action(action)
+Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
+URL needs to be built or when you need to take other actions in addition to creating the
+Open
+Link
+object. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Action
+Response
+object configured using
+Action
+Response
+Builder.setOpenLink(openLink)
+.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'openLinkCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Open Link'
+)
+.
+setOnClickOpenLinkAction
+(
+action
+);
+// ...
+function
+openLinkCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setOpenLink
+(
+CardService
+.
+newOpenLink
+().
+setUrl
+(
+'https://www.google.com'
+))
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The object that specifies the open link action to take when this element is
+    clicked.
+Return
+Overflow
+Menu
+Item
+— This object, for chaining.
+set
+Open
+Link(openLink)
+Sets a URL to be opened when the object is clicked. Use this function when the URL is already
+known and only needs to be opened. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+,
+or
+set
+Compose
+Action(action, composedEmailType)
+set.
+Parameters
+Name
+Type
+Description
+open
+Link
+Open
+Link
+An
+Open
+Link
+object describing the URL to open.
+Return
+Overflow
+Menu
+Item
+— This object, for chaining.
+set
+Start
+Icon(icon)
+Sets the menu item's leading icon.
+Parameters
+Name
+Type
+Description
+icon
+Icon
+Image
+The icon to display.
+Return
+Overflow
+Menu
+Item
+— This object, for chaining.
+set
+Text(text)
+Sets the title of the menu item. Required.
+Parameters
+Name
+Type
+Description
+text
+String
+The text to display.
+Return
+Overflow
+Menu
+Item
+— This object, for chaining.

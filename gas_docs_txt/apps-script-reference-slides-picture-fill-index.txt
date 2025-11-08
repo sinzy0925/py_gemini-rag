@@ -1,0 +1,110 @@
+Source Path: gas_docs_html/apps-script/reference/slides/picture-fill/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PictureFill is a fill that renders an image stretched to its container's dimensions.
+It provides methods to retrieve the image data as a Blob, a temporary content URL, or the original source URL.
+The
+getAs
+method allows converting the image data to a specified content type before returning it as a Blob.
+Accessing the content or source URL may require specific authorization scopes.
+Picture
+Fill
+A fill that renders an image that's stretched to the dimensions of its container.
+Methods
+Method
+Return type
+Brief description
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Content
+Url()
+String
+Gets a URL to the image.
+get
+Source
+Url()
+String
+Gets the image's source URL, if available.
+Detailed documentation
+get
+As(contentType)
+Return the data inside this object as a blob converted to the specified content type. This
+method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
+assumes that the part of the filename that follows the last period (if any) is an existing
+extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+"ShoppingList.12.25.pdf".
+To view the daily quotas for conversions, see
+Quotas for Google
+Services
+. Newly created Google Workspace domains might be temporarily subject to stricter
+quotas.
+Parameters
+Name
+Type
+Description
+content
+Type
+String
+The MIME type to convert to. For most blobs,
+'application/pdf'
+is
+    the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of
+'image/bmp'
+,
+'image/gif'
+,
+'image/jpeg'
+, or
+'image/png'
+are also
+    valid. For a Google Docs document,
+'text/markdown'
+is also valid.
+Return
+Blob
+— The data as a blob.
+get
+Blob()
+Return the data inside this object as a blob.
+Return
+Blob
+— The data as a blob.
+get
+Content
+Url()
+Gets a URL to the image.
+This URL is tagged with the account of the requester, so anyone with the URL effectively
+accesses the image as the original requester. Access to the image may be lost if the
+presentation's sharing settings change. The URL expires after a short period of time.
+Return
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Source
+Url()
+Gets the image's source URL, if available.
+When an image is inserted by URL, returns the URL provided during image insertion.
+Return
+String
+— the image URL or
+null
+if the image does not have a source URL
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

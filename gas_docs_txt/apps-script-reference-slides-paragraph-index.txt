@@ -1,0 +1,68 @@
+Source Path: gas_docs_html/apps-script/reference/slides/paragraph/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Paragraph is a segment of text terminated by a newline character.
+The
+getIndex()
+method returns the index of the paragraph's newline.
+The
+getRange()
+method returns a TextRange spanning the text in the paragraph.
+Both
+getIndex()
+and
+getRange()
+require specific authorization scopes.
+Paragraph
+A segment of text terminated by a newline character.
+Methods
+Method
+Return type
+Brief description
+get
+Index()
+Integer
+Returns the index of the paragraph's newline.
+get
+Range()
+Text
+Range
+Returns a
+Text
+Range
+spanning the text in the paragraph ended by this object's newline
+character.
+Detailed documentation
+get
+Index()
+Returns the index of the paragraph's newline. Returns
+null
+if the newline has been
+deleted.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Range()
+Returns a
+Text
+Range
+spanning the text in the paragraph ended by this object's newline
+character. Returns
+null
+if the paragraph's newline has been deleted.
+Return
+Text
+Range
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

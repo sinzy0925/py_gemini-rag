@@ -1,0 +1,15 @@
+Source Path: gas_docs_html/apps-script/reference/utilities/charset/index.html
+
+Charset
+A typesafe enum for character sets.
+To call an enum, you call its parent class, name, and property. For example,
+Utilities.Charset.US_ASCII
+.
+Properties
+Property
+Type
+Description
+US_ASCII
+Enum
+UTF_8
+Enum

@@ -1,0 +1,353 @@
+Source Path: gas_docs_html/apps-script/reference/drive/user/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+User
+class in Google Drive represents a user associated with a file and can be accessed through methods like
+File.getEditors()
+or
+Folder.getViewers()
+.
+Available methods for a
+User
+include retrieving their domain (
+getDomain()
+), email address (
+getEmail()
+), name (
+getName()
+), and photo URL (
+getPhotoUrl()
+).
+The
+getUserLoginId()
+method is deprecated and has been replaced by
+getEmail()
+.
+User
+A user associated with a file in Google Drive. Users can be accessed from
+File.getEditors()
+,
+Folder.getViewers()
+, and other methods.
+// Log the email address of all users who have edit access to a file.
+const
+file
+=
+DriveApp
+.
+getFileById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+editors
+=
+file
+.
+getEditors
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+editors
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+editors
+[
+i
+].
+getEmail
+());
+}
+Methods
+Method
+Return type
+Brief description
+get
+Domain()
+String
+Gets the domain name associated with the user's account.
+get
+Email()
+String
+Gets the user's email address.
+get
+Name()
+String
+Gets the user's name.
+get
+Photo
+Url()
+String
+Gets the URL for the user's photo.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+User
+Login
+Id()
+String
+Gets the user's email address.
+Detailed documentation
+get
+Domain()
+Gets the domain name associated with the user's account.
+// Log the domain names associated with all users who have edit access to a
+// file.
+const
+file
+=
+DriveApp
+.
+getFileById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+editors
+=
+file
+.
+getEditors
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+editors
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+editors
+[
+i
+].
+getDomain
+());
+}
+Return
+String
+— the domain name associated with the user's account
+get
+Email()
+Gets the user's email address. The user's email address is only available if the user has
+chosen to share the address from the Google+ account settings page, or if the user belongs to
+the same domain as the user running the script and the domain administrator has allowed all
+users within the domain to see other users' email addresses.
+// Log the email address of all users who have edit access to a file.
+const
+file
+=
+DriveApp
+.
+getFileById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+editors
+=
+file
+.
+getEditors
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+editors
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+editors
+[
+i
+].
+getEmail
+());
+}
+Return
+String
+— the user's email's address, or a blank string if the email address is not available
+get
+Name()
+Gets the user's name. This method returns
+null
+if the user's name is not available.
+// Log the names of all users who have edit access to a file.
+const
+file
+=
+DriveApp
+.
+getFileById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+editors
+=
+file
+.
+getEditors
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+editors
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+editors
+[
+i
+].
+getName
+());
+}
+Return
+String
+— the user's name, or
+null
+if the name is not available
+get
+Photo
+Url()
+Gets the URL for the user's photo. This method returns
+null
+if the user's photo is not
+available.
+// Log the URLs for the photos of all users who have edit access to a file.
+const
+file
+=
+DriveApp
+.
+getFileById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+editors
+=
+file
+.
+getEditors
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+editors
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+editors
+[
+i
+].
+getPhotoUrl
+());
+}
+Return
+String
+— the URL for the user's photo, or
+null
+if the photo is not available
+Deprecated methods
+get
+User
+Login
+Id()
+Deprecated.
+As of June 24, 2013, replaced by
+get
+Email()
+.
+Gets the user's email address.
+// Log the email address of the person running the script.
+Logger
+.
+log
+(
+Session
+.
+getActiveUser
+().
+getUserLoginId
+());
+Return
+String
+— The user's email's address.

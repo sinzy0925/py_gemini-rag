@@ -1,0 +1,1372 @@
+Source Path: gas_docs_html/apps-script/reference/document/element/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Elements are generic representations of content within a Google Docs document.
+Various specific content types, such as ListItem, Paragraph, and Table, are considered elements and inherit methods from the generic
+Element
+.
+The content includes a table listing numerous classes that implement the generic Element, along with brief descriptions of what each represents within a document.
+A table of methods is provided, showing different ways to interact with an Element, including casting it to a specific type, copying, retrieving attributes, and navigating the document structure.
+Detailed documentation for several
+as
+methods demonstrates how to explicitly set an element's type for improved auto-completion and provides authorization scopes needed for these methods.
+Element
+A generic element.
+Document
+contents are
+represented as elements. For example,
+List
+Item
+,
+Paragraph
+, and
+Table
+are
+elements and inherit all of the methods defined by
+Element
+, such as
+get
+Type()
+.
+Implementing classes
+Name
+Brief description
+Body
+The content of a tab in a Google Docs document.
+Container
+Element
+A generic element that may contain other elements.
+Date
+An element representing a formatted date
+Equation
+An element representing a mathematical expression.
+Equation
+Function
+An element representing a function in a mathematical
+Equation
+.
+Equation
+Function
+Argument
+Separator
+An element representing a function separator in a mathematical
+Equation
+.
+Equation
+Symbol
+An element representing a symbol in a mathematical
+Equation
+.
+Footer
+Section
+An element representing a footer section.
+Footnote
+An element representing a footnote.
+Footnote
+Section
+An element representing a footnote section.
+Header
+Section
+An element representing a header section.
+Horizontal
+Rule
+An element representing an horizontal rule.
+Inline
+Drawing
+An element representing an embedded drawing.
+Inline
+Image
+An element representing an embedded image.
+List
+Item
+An element representing a list item.
+Page
+Break
+An element representing a page break.
+Paragraph
+An element representing a paragraph.
+Person
+An element representing a link to a person.
+Rich
+Link
+An element representing a link to a Google resource, such as a Drive file or a YouTube video.
+Table
+An element representing a table.
+Table
+Cell
+An element representing a table cell.
+Table
+Of
+Contents
+An element containing a table of contents.
+Table
+Row
+An element representing a table row.
+Text
+An element representing a rich text region.
+Unsupported
+Element
+An element representing a region that is unknown or cannot be affected by a script, such as a
+page number.
+Methods
+Method
+Return type
+Brief description
+as
+Body()
+Body
+Returns the current element as a
+Body
+.
+as
+Date()
+Date
+Returns the current element as a
+Date
+.
+as
+Equation()
+Equation
+Returns the current element as an
+Equation
+.
+as
+Equation
+Function()
+Equation
+Function
+Returns the current element as a
+Equation
+Function
+.
+as
+Equation
+Function
+Argument
+Separator()
+Equation
+Function
+Argument
+Separator
+Returns the current element as a
+Equation
+Function
+Argument
+Separator
+.
+as
+Equation
+Symbol()
+Equation
+Symbol
+Returns the current element as a
+Equation
+Symbol
+.
+as
+Footer
+Section()
+Footer
+Section
+Returns the current element as a
+Footer
+Section
+.
+as
+Footnote()
+Footnote
+Returns the current element as a
+Footnote
+.
+as
+Footnote
+Section()
+Footnote
+Section
+Returns the current element as a
+Footnote
+Section
+.
+as
+Header
+Section()
+Header
+Section
+Returns the current element as a
+Header
+Section
+.
+as
+Horizontal
+Rule()
+Horizontal
+Rule
+Returns the current element as a
+Horizontal
+Rule
+.
+as
+Inline
+Drawing()
+Inline
+Drawing
+Returns the current element as a
+Inline
+Drawing
+.
+as
+Inline
+Image()
+Inline
+Image
+Returns the current element as a
+Inline
+Image
+.
+as
+List
+Item()
+List
+Item
+Returns the current element as a
+List
+Item
+.
+as
+Page
+Break()
+Page
+Break
+Returns the current element as a
+Page
+Break
+.
+as
+Paragraph()
+Paragraph
+Returns the current element as a
+Paragraph
+.
+as
+Person()
+Person
+Returns the current element as a
+Person
+.
+as
+Rich
+Link()
+Rich
+Link
+Returns the current element as a
+Rich
+Link
+, for example, a link to a Google Sheets file.
+as
+Table()
+Table
+Returns the current element as a
+Table
+.
+as
+Table
+Cell()
+Table
+Cell
+Returns the current element as a
+Table
+Cell
+.
+as
+Table
+Of
+Contents()
+Table
+Of
+Contents
+Returns the current element as a
+Table
+Of
+Contents
+.
+as
+Table
+Row()
+Table
+Row
+Returns the current element as a
+Table
+Row
+.
+as
+Text()
+Text
+Returns the current element as a
+Text
+.
+copy()
+Element
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Element
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Element
+Removes the element from its parent.
+set
+Attributes(attributes)
+Element
+Sets the element's attributes.
+Detailed documentation
+as
+Body()
+Returns the current element as a
+Body
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Body
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Date()
+Returns the current element as a
+Date
+.
+When you know an element is a
+Date
+, use this method to set its type as a
+Date
+. Doing so lets autocomplete in the Apps Script editor show you the methods you can use
+with a
+Date
+.
+Return
+Date
+— The current element with its type set as
+Date
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Equation()
+Returns the current element as an
+Equation
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Equation
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Equation
+Function()
+Returns the current element as a
+Equation
+Function
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Equation
+Function
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Equation
+Function
+Argument
+Separator()
+Returns the current element as a
+Equation
+Function
+Argument
+Separator
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Equation
+Function
+Argument
+Separator
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Equation
+Symbol()
+Returns the current element as a
+Equation
+Symbol
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Equation
+Symbol
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Footer
+Section()
+Returns the current element as a
+Footer
+Section
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Footer
+Section
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Footnote()
+Returns the current element as a
+Footnote
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Footnote
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Footnote
+Section()
+Returns the current element as a
+Footnote
+Section
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Footnote
+Section
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Header
+Section()
+Returns the current element as a
+Header
+Section
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Header
+Section
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Horizontal
+Rule()
+Returns the current element as a
+Horizontal
+Rule
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Horizontal
+Rule
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Inline
+Drawing()
+Returns the current element as a
+Inline
+Drawing
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Inline
+Drawing
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Inline
+Image()
+Returns the current element as a
+Inline
+Image
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Inline
+Image
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+List
+Item()
+Returns the current element as a
+List
+Item
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+List
+Item
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Page
+Break()
+Returns the current element as a
+Page
+Break
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Page
+Break
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Paragraph()
+Returns the current element as a
+Paragraph
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Paragraph
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Person()
+Returns the current element as a
+Person
+.
+When you know an element is a
+Person
+, use this method to set its type as a person.
+Doing so lets autocomplete in the Apps Script editor show you the methods you can use with a
+person element.
+Return
+Person
+— The current element with its type set as
+Person
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Rich
+Link()
+Returns the current element as a
+Rich
+Link
+, for example, a link to a Google Sheets file.
+When you know an element is a
+Rich
+Link
+, use this method to set its type as a
+Rich
+Link
+. Doing so lets autocomplete in the Apps Script editor show you the methods you can
+use with a
+Rich
+Link
+.
+Return
+Rich
+Link
+— The current element with its type set as
+Rich
+Link
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Table()
+Returns the current element as a
+Table
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Table
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Table
+Cell()
+Returns the current element as a
+Table
+Cell
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Table
+Cell
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Table
+Of
+Contents()
+Returns the current element as a
+Table
+Of
+Contents
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Table
+Of
+Contents
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Table
+Row()
+Returns the current element as a
+Table
+Row
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Table
+Row
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+as
+Text()
+Returns the current element as a
+Text
+.
+Use this method to aid auto-complete whenever a given element is known to be of a specific
+type.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+copy()
+Returns a detached, deep copy of the current element.
+Any child elements present in the element are also copied. The new element doesn't have a
+parent.
+Return
+Element
+— The new copy.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Attributes()
+Retrieves the element's attributes.
+The result is an object containing a property for each valid element attribute where each
+property name corresponds to an item in the
+Document
+App.Attribute
+enumeration.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Append a styled paragraph.
+const
+par
+=
+body
+.
+appendParagraph
+(
+'A bold, italicized paragraph.'
+);
+par
+.
+setBold
+(
+true
+);
+par
+.
+setItalic
+(
+true
+);
+// Retrieve the paragraph's attributes.
+const
+atts
+=
+par
+.
+getAttributes
+();
+// Log the paragraph attributes.
+for
+(
+const
+att
+in
+atts
+)
+{
+Logger
+.
+log
+(
+`
+${
+att
+}
+:
+${
+atts
+[
+att
+]
+}
+`
+);
+}
+Return
+Object
+— The element's attributes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Next
+Sibling()
+Retrieves the element's next sibling element.
+The next sibling has the same parent and follows the current element.
+Return
+Element
+— The next sibling element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Parent()
+Retrieves the element's parent element.
+The parent element contains the current element.
+Return
+Container
+Element
+— The parent element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Previous
+Sibling()
+Retrieves the element's previous sibling element.
+The previous sibling has the same parent and precedes the current element.
+Return
+Element
+— The previous sibling element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Type()
+Retrieves the element's
+Element
+Type
+.
+Use
+get
+Type()
+to determine the exact type of a given element.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Obtain the first element in the active tab's body.
+const
+firstChild
+=
+body
+.
+getChild
+(
+0
+);
+// Use getType() to determine the element's type.
+if
+(
+firstChild
+.
+getType
+()
+===
+DocumentApp
+.
+ElementType
+.
+PARAGRAPH
+)
+{
+Logger
+.
+log
+(
+'The first element is a paragraph.'
+);
+}
+else
+{
+Logger
+.
+log
+(
+'The first element is not a paragraph.'
+);
+}
+Return
+Element
+Type
+— The element type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+At
+Document
+End()
+Determines whether the element is at the end of the
+Document
+.
+Return
+Boolean
+— Whether the element is at the end of the tab.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+merge()
+Merges the element with the preceding sibling of the same type.
+Only elements of the same
+Element
+Type
+can be merged. Any child elements contained in
+the current element are moved to the preceding sibling element.
+The current element is removed from the document.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Example 1: Merge paragraphs
+// Append two paragraphs to the document's active tab.
+const
+par1
+=
+body
+.
+appendParagraph
+(
+'Paragraph 1.'
+);
+const
+par2
+=
+body
+.
+appendParagraph
+(
+'Paragraph 2.'
+);
+// Merge the newly added paragraphs into a single paragraph.
+par2
+.
+merge
+();
+// Example 2: Merge table cells
+// Create a two-dimensional array containing the table's cell contents.
+const
+cells
+=
+[
+[
+'Row 1, Cell 1'
+,
+'Row 1, Cell 2'
+],
+[
+'Row 2, Cell 1'
+,
+'Row 2, Cell 2'
+],
+];
+// Build a table from the array.
+const
+table
+=
+body
+.
+appendTable
+(
+cells
+);
+// Get the first row in the table.
+const
+row
+=
+table
+.
+getRow
+(
+0
+);
+// Get the two cells in this row.
+const
+cell1
+=
+row
+.
+getCell
+(
+0
+);
+const
+cell2
+=
+row
+.
+getCell
+(
+1
+);
+// Merge the current cell into its preceding sibling element.
+const
+merged
+=
+cell2
+.
+merge
+();
+Return
+Element
+— The merged element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+remove
+From
+Parent()
+Removes the element from its parent.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Remove all images in the active tab's body.
+const
+imgs
+=
+body
+.
+getImages
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+imgs
+.
+length
+;
+i
+++
+)
+{
+imgs
+[
+i
+].
+removeFromParent
+();
+}
+Return
+Element
+— The removed element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Attributes(attributes)
+Sets the element's attributes.
+The specified attributes parameter must be an object where each property name is an item in
+the
+Document
+App.Attribute
+enumeration and each property value is the new value to be
+applied.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Define a custom paragraph style.
+const
+style
+=
+{};
+style
+[
+DocumentApp
+.
+Attribute
+.
+HORIZONTAL_ALIGNMENT
+]
+=
+DocumentApp
+.
+HorizontalAlignment
+.
+RIGHT
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_FAMILY
+]
+=
+'Calibri'
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_SIZE
+]
+=
+18
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+BOLD
+]
+=
+true
+;
+// Append a plain paragraph.
+const
+par
+=
+body
+.
+appendParagraph
+(
+'A paragraph with custom style.'
+);
+// Apply the custom style.
+par
+.
+setAttributes
+(
+style
+);
+Parameters
+Name
+Type
+Description
+attributes
+Object
+The element's attributes.
+Return
+Element
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

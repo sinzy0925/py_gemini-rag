@@ -1,0 +1,178 @@
+Source Path: gas_docs_html/apps-script/reference/slides/affine-transform-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+AffineTransformBuilder is used to build AffineTransform objects and defaults to the identity transform.
+Call the
+build()
+method to get the AffineTransform object.
+Methods are available to set scaling, shearing, and translation elements for both X and Y coordinates.
+Affine
+Transform
+Builder
+A builder for
+Affine
+Transform
+objects. Defaults to the identity transform.
+Call
+Affine
+Transform
+Builder#build()
+to get the
+Affine
+Transform
+object.
+const transform =
+    SlidesApp.newAffineTransformBuilder().setScaleX(2.0).setShearY(1.1).build();
+
+// The resulting transform matrix is
+//  [ 2.0   0.0   0.0 ]
+//  [ 1.1   1.0   0.0 ]
+//  [  0     0     1  ]
+}
+Methods
+Method
+Return type
+Brief description
+build()
+Affine
+Transform
+Creates an
+Affine
+Transform
+object initialized with the elements set in the builder.
+set
+Scale
+X(scaleX)
+Affine
+Transform
+Builder
+Sets the X coordinate scaling element and returns the builder.
+set
+Scale
+Y(scaleY)
+Affine
+Transform
+Builder
+Sets the Y coordinate scaling element and returns the builder.
+set
+Shear
+X(shearX)
+Affine
+Transform
+Builder
+Sets the X coordinate shearing element and returns the builder.
+set
+Shear
+Y(shearY)
+Affine
+Transform
+Builder
+Sets the Y coordinate shearing element and returns the builder.
+set
+Translate
+X(translateX)
+Affine
+Transform
+Builder
+Sets the X coordinate translation element in points, and returns the builder.
+set
+Translate
+Y(translateY)
+Affine
+Transform
+Builder
+Sets the Y coordinate translation element in points, and returns the builder.
+Detailed documentation
+build()
+Creates an
+Affine
+Transform
+object initialized with the elements set in the builder.
+Return
+Affine
+Transform
+set
+Scale
+X(scaleX)
+Sets the X coordinate scaling element and returns the builder.
+Parameters
+Name
+Type
+Description
+scaleX
+Number
+Return
+Affine
+Transform
+Builder
+set
+Scale
+Y(scaleY)
+Sets the Y coordinate scaling element and returns the builder.
+Parameters
+Name
+Type
+Description
+scaleY
+Number
+Return
+Affine
+Transform
+Builder
+set
+Shear
+X(shearX)
+Sets the X coordinate shearing element and returns the builder.
+Parameters
+Name
+Type
+Description
+shearX
+Number
+Return
+Affine
+Transform
+Builder
+set
+Shear
+Y(shearY)
+Sets the Y coordinate shearing element and returns the builder.
+Parameters
+Name
+Type
+Description
+shearY
+Number
+Return
+Affine
+Transform
+Builder
+set
+Translate
+X(translateX)
+Sets the X coordinate translation element in points, and returns the builder.
+Parameters
+Name
+Type
+Description
+translateX
+Number
+Return
+Affine
+Transform
+Builder
+set
+Translate
+Y(translateY)
+Sets the Y coordinate translation element in points, and returns the builder.
+Parameters
+Name
+Type
+Description
+translateY
+Number
+Return
+Affine
+Transform
+Builder

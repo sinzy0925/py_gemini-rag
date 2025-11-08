@@ -1,0 +1,190 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/cdata/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Cdata object represents an XML
+CDATASection
+node.
+Special characters are stored differently in
+CDATASection
+nodes compared to Text nodes.
+Methods are available to manipulate Cdata nodes, such as appending text, detaching from a parent, getting the parent element, and getting or setting the text value.
+Cdata
+A representation of an XML
+CDATASection
+node.
+// Create and log an XML document that shows how special characters like '<',
+// '>', and '&' are stored in a CDATASection node as compared to in a Text node.
+const
+illegalCharacters
+=
+'<em>The Amazing Adventures of Kavalier & Clay</em>'
+;
+const
+cdata
+=
+XmlService
+.
+createCdata
+(
+illegalCharacters
+);
+const
+text
+=
+XmlService
+.
+createText
+(
+illegalCharacters
+);
+const
+root
+=
+XmlService
+.
+createElement
+(
+'root'
+).
+addContent
+(
+cdata
+).
+addContent
+(
+text
+);
+const
+document
+=
+XmlService
+.
+createDocument
+(
+root
+);
+const
+xml
+=
+XmlService
+.
+getPrettyFormat
+().
+format
+(
+document
+);
+Logger
+.
+log
+(
+xml
+);
+Methods
+Method
+Return type
+Brief description
+append(text)
+Text
+Appends the given text to any content that already exists in the node.
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Text()
+String
+Gets the text value of the
+Text
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Text(text)
+Text
+Sets the text value of the
+Text
+node.
+Detailed documentation
+append(text)
+Appends the given text to any content that already exists in the node.
+Parameters
+Name
+Type
+Description
+text
+String
+the text to append to the node
+Return
+Text
+— the
+Text
+node, for chaining
+detach()
+Detaches the node from its parent
+Element
+node. If the node does not have a parent,
+this method has no effect.
+Return
+Content
+— the detached node
+get
+Parent
+Element()
+Gets the node's parent
+Element
+node. If the node does not have a parent, this method
+returns
+null
+.
+Return
+Element
+— the parent
+Element
+node
+get
+Text()
+Gets the text value of the
+Text
+node.
+Return
+String
+— the text value of the
+Text
+node
+get
+Value()
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Return
+String
+— the text value of all nodes that are direct or indirect children of the node
+set
+Text(text)
+Sets the text value of the
+Text
+node.
+Parameters
+Name
+Type
+Description
+text
+String
+the text value to set
+Return
+Text
+— the
+Text
+node, for chaining

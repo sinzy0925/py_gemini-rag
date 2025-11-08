@@ -1,0 +1,161 @@
+Source Path: gas_docs_html/apps-script/reference/optimization/linear-optimization-constraint/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A
+LinearOptimizationConstraint
+object represents a linear constraint of the form
+lowerBound ≤ Sum(a(i) x(i)) ≤ upperBound
+.
+The
+setCoefficient
+method is used to set the coefficient of a variable within a constraint.
+By default, variables in a constraint have a coefficient of 0.
+The provided example demonstrates how to create a variable and a constraint and then set the coefficient of the variable within that constraint.
+Linear
+Optimization
+Constraint
+Object storing a linear constraint of the form
+lower
+Bound ≤ Sum(a(i) x(i)) ≤ upperBound
+where
+lower
+Bound
+and
+upper
+Bound
+are constants,
+a(i)
+are constant
+coefficients and
+x(i)
+are variables (unknowns).
+The example below creates one variable
+x
+with values between
+0
+and
+5
+and creates the constraint
+0 ≤ 2 * x ≤ 5
+. This is done by first creating a constraint
+with the lower bound
+5
+and upper bound
+5
+. Then the coefficient for variable
+x
+in this constraint is set to
+2
+.
+const
+engine
+=
+LinearOptimizationService
+.
+createEngine
+();
+// Create a variable so we can add it to the constraint
+engine
+.
+addVariable
+(
+'x'
+,
+0
+,
+5
+);
+// Create a linear constraint with the bounds 0 and 10
+const
+constraint
+=
+engine
+.
+addConstraint
+(
+0
+,
+10
+);
+// Set the coefficient of the variable in the constraint. The constraint is now:
+// 0 <= 2 * x <= 5
+constraint
+.
+setCoefficient
+(
+'x'
+,
+2
+);
+Methods
+Method
+Return type
+Brief description
+set
+Coefficient(variableName, coefficient)
+Linear
+Optimization
+Constraint
+Sets the coefficient of a variable in the constraint.
+Detailed documentation
+set
+Coefficient(variableName, coefficient)
+Sets the coefficient of a variable in the constraint. By default, variables have a coefficient
+of 0.
+const
+engine
+=
+LinearOptimizationService
+.
+createEngine
+();
+// Create a linear constraint with the bounds 0 and 10
+const
+constraint
+=
+engine
+.
+addConstraint
+(
+0
+,
+10
+);
+// Create a variable so we can add it to the constraint
+engine
+.
+addVariable
+(
+'x'
+,
+0
+,
+5
+);
+// Set the coefficient of the variable in the constraint. The constraint is now:
+// 0 <= 2 * x <= 5
+constraint
+.
+setCoefficient
+(
+'x'
+,
+2
+);
+Parameters
+Name
+Type
+Description
+variable
+Name
+String
+the name of variable for which the coefficient is being set
+coefficient
+Number
+coefficient being set
+Return
+Linear
+Optimization
+Constraint
+— this linear optimization constraint

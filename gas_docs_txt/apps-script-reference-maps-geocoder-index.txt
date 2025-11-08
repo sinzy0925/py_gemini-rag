@@ -1,0 +1,458 @@
+Source Path: gas_docs_html/apps-script/reference/maps/geocoder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Geocoder converts between addresses and geographical coordinates.
+The
+geocode(address)
+method gets geographic points for an address.
+The
+reverseGeocode(latitude, longitude)
+method gets addresses for a geographic point.
+Methods like
+setBounds
+,
+setLanguage
+, and
+setRegion
+can refine geocoding results.
+Geocoder
+Allows for the conversion between an address and geographical coordinates.
+The example below shows how you can use this class find the top nine matches for the location
+"Main St" in Colorado, add them to a map, and then embed it in a new Google Doc.
+// Find the best matches for "Main St" in Colorado.
+const
+response
+=
+Maps
+.
+newGeocoder
+()
+// The latitudes and longitudes of southwest and northeast
+// corners of Colorado, respectively.
+.
+setBounds
+(
+36.998166
+,
+-
+109.045486
+,
+41.001666
+,
+-
+102.052002
+)
+.
+geocode
+(
+'Main St'
+);
+// Create a Google Doc and map.
+const
+doc
+=
+DocumentApp
+.
+create
+(
+'My Map'
+);
+const
+map
+=
+Maps
+.
+newStaticMap
+();
+// Add each result to the map and doc.
+for
+(
+let
+i
+=
+0
+;
+i
+<
+response
+.
+results
+.
+length
+&&
+i
+<
+9
+;
+i
+++
+)
+{
+const
+result
+=
+response
+.
+results
+[
+i
+];
+map
+.
+setMarkerStyle
+(
+null
+,
+null
+,
+i
++
+1
+);
+map
+.
+addMarker
+(
+result
+.
+geometry
+.
+location
+.
+lat
+,
+result
+.
+geometry
+.
+location
+.
+lng
+);
+doc
+.
+appendListItem
+(
+result
+.
+formatted_address
+);
+}
+// Add the finished map to the doc.
+doc
+.
+appendImage
+(
+Utilities
+.
+newBlob
+(
+map
+.
+getMapImage
+(),
+'image/png'
+));
+See also
+Google Geocoding API
+Methods
+Method
+Return type
+Brief description
+geocode(address)
+Object
+Gets the approximate geographic points for a given address.
+reverse
+Geocode(latitude, longitude)
+Object
+Gets the approximate addresses for a given geographic point.
+set
+Bounds(swLatitude, swLongitude, neLatitude, neLongitude)
+Geocoder
+Sets the bounds of an area that should be given extra preference in the results.
+set
+Language(language)
+Geocoder
+Sets the language to be used in the results.
+set
+Region(region)
+Geocoder
+Sets a region to use when interpreting location names.
+Detailed documentation
+geocode(address)
+Gets the approximate geographic points for a given address.
+// Gets the geographic coordinates for Times Square.
+const
+response
+=
+Maps
+.
+newGeocoder
+().
+geocode
+(
+'Times Square, New York, NY'
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+response
+.
+results
+.
+length
+;
+i
+++
+)
+{
+const
+result
+=
+response
+.
+results
+[
+i
+];
+Logger
+.
+log
+(
+'%s: %s, %s'
+,
+result
+.
+formatted_address
+,
+result
+.
+geometry
+.
+location
+.
+lat
+,
+result
+.
+geometry
+.
+location
+.
+lng
+,
+);
+}
+Parameters
+Name
+Type
+Description
+address
+String
+an address
+Return
+Object
+— a JSON Object containing the geocoding data, as described
+here
+reverse
+Geocode(latitude, longitude)
+Gets the approximate addresses for a given geographic point.
+// Gets the address of a point in Times Square.
+const
+response
+=
+Maps
+.
+newGeocoder
+().
+reverseGeocode
+(
+40.758577
+,
+-
+73.984464
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+response
+.
+results
+.
+length
+;
+i
+++
+)
+{
+const
+result
+=
+response
+.
+results
+[
+i
+];
+Logger
+.
+log
+(
+'%s: %s, %s'
+,
+result
+.
+formatted_address
+,
+result
+.
+geometry
+.
+location
+.
+lat
+,
+result
+.
+geometry
+.
+location
+.
+lng
+,
+);
+}
+Parameters
+Name
+Type
+Description
+latitude
+Number
+the latitude of the point
+longitude
+Number
+the longitude of the point
+Return
+Object
+— a JSON Object containing the reverse geocoding data, as described
+here
+See also
+Google Geocoding API
+set
+Bounds(swLatitude, swLongitude, neLatitude, neLongitude)
+Sets the bounds of an area that should be given extra preference in the results.
+// Creates a Geocoder that prefers points in the area of Manhattan.
+const
+geocoder
+=
+Maps
+.
+newGeocoder
+().
+setBounds
+(
+40.699642
+,
+-
+74.021072
+,
+40.877569
+,
+-
+73.908548
+,
+);
+Parameters
+Name
+Type
+Description
+sw
+Latitude
+Number
+the latitude of the south west corner of the bounds
+sw
+Longitude
+Number
+the longitude of the south west corner of the bounds
+ne
+Latitude
+Number
+the latitude of the north east corner of the bounds
+ne
+Longitude
+Number
+the longitude of the north east corner of the bounds
+Return
+Geocoder
+— the Geocoder object to facilitate chaining of calls
+See also
+Google Geocoding API
+set
+Language(language)
+Sets the language to be used in the results.
+// Creates a Geocoder with the language set to French.
+const
+geocoder
+=
+Maps
+.
+newGeocoder
+().
+setLanguage
+(
+'fr'
+);
+Parameters
+Name
+Type
+Description
+language
+String
+a BCP-47 language identifier
+Return
+Geocoder
+— the Geocoder object to facilitate chaining of calls.
+See also
+Encoded Polyline Format
+set
+Region(region)
+Sets a region to use when interpreting location names. The supported region codes correspond to
+the ccTLDs supported by Google Maps. For example, the region code "uk" corresponds to
+"maps.google.co.uk".
+// Creates a Geocoder with the region set to France.
+const
+geocoder
+=
+Maps
+.
+newGeocoder
+().
+setRegion
+(
+'fr'
+);
+Parameters
+Name
+Type
+Description
+region
+String
+the region code to use
+Return
+Geocoder
+— the Geocoder object to facilitate chaining of calls
+See also
+Google Geocoding API

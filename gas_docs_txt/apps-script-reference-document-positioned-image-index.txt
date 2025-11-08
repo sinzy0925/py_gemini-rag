@@ -1,0 +1,397 @@
+Source Path: gas_docs_html/apps-script/reference/document/positioned-image/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A PositionedImage is a fixed position image anchored to a Paragraph or ListItem, unlike an InlineImage which is an Element.
+PositionedImages are not considered Elements and do not have parent or sibling Elements.
+PositionedImages are placed using offsets from their anchor point and have an ID for referencing.
+The provided example code demonstrates how to add a PositionedImage anchored to a new paragraph.
+The documentation details various methods for getting and setting properties of a PositionedImage, such as its dimensions, layout, offsets, and associated blob data.
+Positioned
+Image
+Fixed position image anchored to a
+Paragraph
+. Unlike an
+Inline
+Image
+, a
+Positioned
+Image
+is
+not an
+Element
+. It does not have a
+parent or sibling
+Element
+. Instead,
+it is anchored to a
+Paragraph
+or
+List
+Item
+, and is placed via offsets from
+that anchor. A
+Positioned
+Image
+has an ID that can be used to reference it.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Append a new paragraph.
+const
+paragraph
+=
+body
+.
+appendParagraph
+(
+'New paragraph to anchor the image to.'
+);
+// Get an image in Drive from its ID.
+const
+image
+=
+DriveApp
+.
+getFileById
+(
+'ENTER_IMAGE_FILE_ID_HERE'
+).
+getBlob
+();
+// Add the PositionedImage with offsets (in points).
+const
+posImage
+=
+paragraph
+.
+addPositionedImage
+(
+image
+).
+setTopOffset
+(
+60
+).
+setLeftOffset
+(
+40
+);
+Methods
+Method
+Return type
+Brief description
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Height()
+Integer
+Retrieves the image's height, in pixels.
+get
+Id()
+String
+Gets the image's ID.
+get
+Layout()
+Positioned
+Layout
+Gets an enum value that represents how the image is laid out.
+get
+Left
+Offset()
+Number
+Gets the image's offset, in points, from the paragraph's left.
+get
+Paragraph()
+Paragraph
+Gets the
+Paragraph
+the image is anchored to.
+get
+Top
+Offset()
+Number
+Gets the image's offset, in points, from the paragraph's top.
+get
+Width()
+Integer
+Retrieves the image's width, in pixels.
+set
+Height(height)
+Positioned
+Image
+Sets the image's height, in pixels.
+set
+Layout(layout)
+Positioned
+Image
+Sets the definition of how the image is laid out.
+set
+Left
+Offset(offset)
+Positioned
+Image
+Sets the image's offset, in points, from the paragraph's left.
+set
+Top
+Offset(offset)
+Positioned
+Image
+Sets the image's offset, in points, from the paragraph's top.
+set
+Width(width)
+Positioned
+Image
+Sets the image's width, in pixels.
+Detailed documentation
+get
+As(contentType)
+Return the data inside this object as a blob converted to the specified content type. This
+method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
+assumes that the part of the filename that follows the last period (if any) is an existing
+extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+"ShoppingList.12.25.pdf".
+To view the daily quotas for conversions, see
+Quotas for Google
+Services
+. Newly created Google Workspace domains might be temporarily subject to stricter
+quotas.
+Parameters
+Name
+Type
+Description
+content
+Type
+String
+The MIME type to convert to. For most blobs,
+'application/pdf'
+is
+    the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of
+'image/bmp'
+,
+'image/gif'
+,
+'image/jpeg'
+, or
+'image/png'
+are also
+    valid. For a Google Docs document,
+'text/markdown'
+is also valid.
+Return
+Blob
+— The data as a blob.
+get
+Blob()
+Return the data inside this object as a blob.
+Return
+Blob
+— The data as a blob.
+get
+Height()
+Retrieves the image's height, in pixels.
+Return
+Integer
+— the image's height, in pixels
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Id()
+Gets the image's ID.
+Return
+String
+— the image ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Layout()
+Gets an enum value that represents how the image is laid out.
+Return
+Positioned
+Layout
+— the image layout
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Left
+Offset()
+Gets the image's offset, in points, from the paragraph's left.
+Return
+Number
+— the image offset from the left paragraph's left
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Paragraph()
+Gets the
+Paragraph
+the image is anchored to.
+Return
+Paragraph
+— the parent paragraph
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Top
+Offset()
+Gets the image's offset, in points, from the paragraph's top.
+Return
+Number
+— the image offset from the left paragraph's top
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Width()
+Retrieves the image's width, in pixels.
+Return
+Integer
+— the image's width, in pixels
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Height(height)
+Sets the image's height, in pixels.
+Parameters
+Name
+Type
+Description
+height
+Integer
+the image's height, in pixels
+Return
+Positioned
+Image
+— the current object
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Layout(layout)
+Sets the definition of how the image is laid out.
+Parameters
+Name
+Type
+Description
+layout
+Positioned
+Layout
+an enum representing the layout mode
+Return
+Positioned
+Image
+— this object for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Left
+Offset(offset)
+Sets the image's offset, in points, from the paragraph's left.
+Parameters
+Name
+Type
+Description
+offset
+Number
+offset from the paragraph's left
+Return
+Positioned
+Image
+— this object for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Top
+Offset(offset)
+Sets the image's offset, in points, from the paragraph's top.
+Parameters
+Name
+Type
+Description
+offset
+Number
+offset from the paragraph's top
+Return
+Positioned
+Image
+— this object for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Width(width)
+Sets the image's width, in pixels.
+Parameters
+Name
+Type
+Description
+width
+Integer
+the image's width, in pixels
+Return
+Positioned
+Image
+— the current object
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

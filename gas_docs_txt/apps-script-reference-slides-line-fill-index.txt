@@ -1,0 +1,299 @@
+Source Path: gas_docs_html/apps-script/reference/slides/line-fill/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+LineFill describes the fill of a line or outline.
+You can get the type of line fill using
+getFillType()
+.
+You can retrieve the solid fill of a line using
+getSolidFill()
+, which returns
+null
+if the fill type is not
+LineFillType.SOLID
+.
+The solid fill can be set using various methods that accept different color representations and an optional alpha value.
+All methods related to LineFill require authorization with either
+https://www.googleapis.com/auth/presentations.currentonly
+or
+https://www.googleapis.com/auth/presentations
+scopes.
+Line
+Fill
+Describes the fill of a line or outline
+Methods
+Method
+Return type
+Brief description
+get
+Fill
+Type()
+Line
+Fill
+Type
+Gets the type of the line fill.
+get
+Solid
+Fill()
+Solid
+Fill
+Gets the solid fill of the line, or
+null
+if the fill type is not
+Line
+Fill
+Type.SOLID
+.
+set
+Solid
+Fill(color)
+void
+Sets the solid fill to the given
+Color
+.
+set
+Solid
+Fill(color, alpha)
+void
+Sets the solid fill to the given alpha and
+Color
+.
+set
+Solid
+Fill(red, green, blue)
+void
+Sets the solid fill to the given RGB values.
+set
+Solid
+Fill(red, green, blue, alpha)
+void
+Sets the solid fill to the given alpha and RGB values.
+set
+Solid
+Fill(hexString)
+void
+Sets the solid fill to the given hex color string.
+set
+Solid
+Fill(hexString, alpha)
+void
+Sets the solid fill to the given alpha and hex color string.
+set
+Solid
+Fill(color)
+void
+Sets the solid fill to the given
+Theme
+Color
+Type
+.
+set
+Solid
+Fill(color, alpha)
+void
+Sets the solid fill to the given alpha and
+Theme
+Color
+Type
+.
+Detailed documentation
+get
+Fill
+Type()
+Gets the type of the line fill.
+Return
+Line
+Fill
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Solid
+Fill()
+Gets the solid fill of the line, or
+null
+if the fill type is not
+Line
+Fill
+Type.SOLID
+.
+Return
+Solid
+Fill
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color)
+Sets the solid fill to the given
+Color
+.
+Parameters
+Name
+Type
+Description
+color
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color, alpha)
+Sets the solid fill to the given alpha and
+Color
+.
+Parameters
+Name
+Type
+Description
+color
+Color
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(red, green, blue)
+Sets the solid fill to the given RGB values.
+Parameters
+Name
+Type
+Description
+red
+Integer
+green
+Integer
+blue
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(red, green, blue, alpha)
+Sets the solid fill to the given alpha and RGB values.
+Parameters
+Name
+Type
+Description
+red
+Integer
+green
+Integer
+blue
+Integer
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(hexString)
+Sets the solid fill to the given hex color string.
+The hex string must be in the format '#RRGGBB'. For example, pink is represented as
+'#FFC0CB'.
+Parameters
+Name
+Type
+Description
+hex
+String
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(hexString, alpha)
+Sets the solid fill to the given alpha and hex color string.
+The hex string must be in the format '#RRGGBB'. For example, pink is represented as
+'#FFC0CB'.
+Parameters
+Name
+Type
+Description
+hex
+String
+String
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color)
+Sets the solid fill to the given
+Theme
+Color
+Type
+.
+Parameters
+Name
+Type
+Description
+color
+Theme
+Color
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color, alpha)
+Sets the solid fill to the given alpha and
+Theme
+Color
+Type
+.
+Parameters
+Name
+Type
+Description
+color
+Theme
+Color
+Type
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

@@ -1,0 +1,208 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/card-header/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CardHeader
+represents the header for a
+Card
+in Google Workspace add-ons and Google Chat apps.
+You can set the title, subtitle, image URL, image style, and image alt text for a
+CardHeader
+using its methods.
+The
+setImageUrl
+method accepts either a publicly accessible URL or a base64 encoded image string.
+Methods like
+setTitle
+and
+setSubtitle
+are used to define the text content of the header.
+Card
+Header
+The header of a
+Card
+.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+cardHeader
+=
+CardService
+.
+newCardHeader
+()
+.
+setTitle
+(
+'Card header title'
+)
+.
+setSubtitle
+(
+'Card header subtitle'
+)
+.
+setImageStyle
+(
+CardService
+.
+ImageStyle
+.
+CIRCLE
+)
+.
+setImageUrl
+(
+'https://image.png'
+);
+Methods
+Method
+Return type
+Brief description
+set
+Image
+Alt
+Text(imageAltText)
+Card
+Header
+Sets the alternative text for the header image.
+set
+Image
+Style(imageStyle)
+Card
+Header
+Sets the cropping of the icon in the card header.
+set
+Image
+Url(imageUrl)
+Card
+Header
+Sets the image to use in the header by providing its URL or data string.
+set
+Subtitle(subtitle)
+Card
+Header
+Sets the subtitle of the card header.
+set
+Title(title)
+Card
+Header
+Sets the title of the card header.
+Detailed documentation
+set
+Image
+Alt
+Text(imageAltText)
+Sets the alternative text for the header image.
+Parameters
+Name
+Type
+Description
+image
+Alt
+Text
+String
+The alternative text for the header image.
+Return
+Card
+Header
+— This object, for chaining.
+set
+Image
+Style(imageStyle)
+Sets the cropping of the icon in the card header. Defaults to no crop. Optional.
+Parameters
+Name
+Type
+Description
+image
+Style
+Image
+Style
+The style setting.
+Return
+Card
+Header
+— This object, for chaining.
+set
+Image
+Url(imageUrl)
+Sets the image to use in the header by providing its URL or data string.
+The provided URL can either be a publicly accessible URL or a base64 encoded image string.
+To obtain the latter, you can use the following code to create an encoded image string from an
+image in your Google Drive, then store that string for later use with
+set
+Image
+Url(imageUrl)
+. This method prevents the need for your add-on to access a publicly
+available image URL:
+// The following assumes you have the image to use in Google Drive and have its
+// ID.
+const
+imageBytes
+=
+DriveApp
+.
+getFileById
+(
+'123abc'
+).
+getBlob
+().
+getBytes
+();
+const
+encodedImageURL
+=
+`data:image/jpeg;base64,
+${
+Utilities
+.
+base64Encode
+(
+imageBytes
+)
+}
+`
+;
+// You can store encodeImageURL and use it as a parameter to
+// CardHeader.setImageUrl(imageUrl).
+Parameters
+Name
+Type
+Description
+image
+Url
+String
+The URL address of a hosted image to use, or an encoded image string.
+Return
+Card
+Header
+— This object, for chaining.
+set
+Subtitle(subtitle)
+Sets the subtitle of the card header. Optional.
+Parameters
+Name
+Type
+Description
+subtitle
+String
+The header subtitle text.
+Return
+Card
+Header
+— This object, for chaining.
+set
+Title(title)
+Sets the title of the card header. Required.
+Parameters
+Name
+Type
+Description
+title
+String
+The header text.
+Return
+Card
+Header
+— This object, for chaining.

@@ -1,0 +1,26 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/pivot-value-display-type/index.html
+
+Pivot
+Value
+Display
+Type
+An enumeration of ways to display a pivot value as a function of another value.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.PivotValueDisplayType.PERCENT_OF_ROW_TOTAL
+.
+Properties
+Property
+Type
+Description
+DEFAULT
+Enum
+Default. Displays pivot values as the actual value and not as a function of another value.
+PERCENT_OF_ROW_TOTAL
+Enum
+Displays pivot values as a percent of the total for that row.
+PERCENT_OF_COLUMN_TOTAL
+Enum
+Displays pivot values as a percent of the total for that column.
+PERCENT_OF_GRAND_TOTAL
+Enum
+Displays pivot values as a percent of the grand total.

@@ -1,0 +1,59 @@
+Source Path: gas_docs_html/apps-script/reference/optimization/status/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The status of a solution indicates whether a problem has been solved and if the solution is optimal.
+Status is represented by an enum which can be accessed by calling the parent class, name, and property.
+Different status values like
+OPTIMAL
+,
+FEASIBLE
+,
+INFEASIBLE
+,
+UNBOUNDED
+,
+ABNORMAL
+,
+MODEL_INVALID
+, and
+NOT_SOLVED
+describe the outcome of the solution process.
+Status
+Status of the solution. Before solving a problem the status will be
+NOT_SOLVED
+;
+afterwards it will take any of the other values depending if it successfully found a solution and
+if the solution is optimal.
+To call an enum, you call its parent class, name, and property. For example,
+LinearOptimizationService.Status.OPTIMAL
+.
+Properties
+Property
+Type
+Description
+OPTIMAL
+Enum
+Status when an optimal solution has been found.
+FEASIBLE
+Enum
+Status when a feasible (not necessarily optimal) solution has been found.
+INFEASIBLE
+Enum
+Status when the current model is unfeasible (has no solution).
+UNBOUNDED
+Enum
+Status when the current model is unbound.
+ABNORMAL
+Enum
+Status when it failed to find a solution for unexpected reasons.
+MODEL_INVALID
+Enum
+Status when the model is invalid.
+NOT_SOLVED
+Enum
+Status when
+Linear
+Optimization
+Engine.solve()
+has not been called yet.

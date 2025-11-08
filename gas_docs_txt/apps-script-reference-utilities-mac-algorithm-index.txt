@@ -1,0 +1,19 @@
+Source Path: gas_docs_html/apps-script/reference/utilities/mac-algorithm/index.html
+
+Mac
+Algorithm
+Selector of MAC algorithm
+Properties
+Property
+Type
+Description
+HMAC_MD5
+Enum
+HMAC_SHA_1
+Enum
+HMAC_SHA_256
+Enum
+HMAC_SHA_384
+Enum
+HMAC_SHA_512
+Enum

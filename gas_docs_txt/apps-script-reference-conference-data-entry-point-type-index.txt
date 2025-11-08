@@ -1,0 +1,38 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/entry-point-type/index.html
+
+Entry
+Point
+Type
+Enum that defines the types of entry points that can be created by a conferencing add-on.
+To call an enum, you call its parent class, name, and property. For example,
+ConferenceDataService.EntryPointType.VIDEO
+.
+Properties
+Property
+Type
+Description
+VIDEO
+Enum
+A video entry point for a conference. A conference can have zero or one
+VIDEO
+entry
+points.
+PHONE
+Enum
+A phone entry point for a conference. A conference can have zero or more
+PHONE
+entry
+points.
+MORE
+Enum
+A link to more information about entry points into a conference. A conference can have zero or
+one
+MORE
+entry points. A conference with only a
+MORE
+entry point is not valid.
+SIP
+Enum
+A SIP entry point for a conference. A conference can have zero or one
+SIP
+entry points.

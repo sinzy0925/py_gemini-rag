@@ -1,0 +1,50 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/text-button-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextButtonStyle is an enum used to specify the style for TextButton.
+Available styles include OUTLINED (default), FILLED, FILLED_TONAL, and BORDERLESS.
+The TEXT property is deprecated and should not be used.
+You can set the background color for FILLED buttons using
+TextButton.setBackgroundColor()
+.
+Enums are called using their parent class, name, and property, such as
+CardService.TextButtonStyle.OUTLINED
+.
+Text
+Button
+Style
+An enum that specifies the style for
+Text
+Button
+.
+OUTLINED
+is the default; it renders a simple text button with clear background.
+FILLED
+buttons have a background color you can set with
+Text
+Button.setBackgroundColor(backgroundColor)
+.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.TextButtonStyle.OUTLINED
+.
+Properties
+Property
+Type
+Description
+OUTLINED
+Enum
+Normal text button with clear background. Default.
+TEXT
+Enum
+DO NOT USE. Deprecated version of OUTLINED. Do not remove the field until it is confirmed not
+being used by any apps.
+FILLED
+Enum
+Text button with colored background.
+FILLED_TONAL
+Enum
+Normal text button with an alternative middle ground between filled and outlined buttons.
+BORDERLESS
+Enum
+Normal text button with no border.

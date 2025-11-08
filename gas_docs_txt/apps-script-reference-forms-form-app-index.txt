@@ -1,0 +1,519 @@
+Source Path: gas_docs_html/apps-script/reference/forms/form-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+FormApp
+service allows scripts to open existing forms or create new ones.
+You can open a form using its ID or URL.
+You can create a new form by providing a title, and optionally specify if it should be published.
+The
+FormApp
+provides methods to create various validation builders for form items like checkboxes, grid items, and text items.
+You can access the UI of the form editor using
+getUi()
+to add custom menus, dialogs, and sidebars.
+Form
+App
+Allows a script to open an existing
+Form
+or create a new one.
+// Open a form by ID.
+const
+existingForm
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+// Create and open a form.
+const
+newForm
+=
+FormApp
+.
+create
+(
+'Form Name'
+);
+Properties
+Property
+Type
+Description
+Alignment
+Alignment
+An enumeration of types of image alignment.
+Destination
+Type
+Destination
+Type
+An enumeration of types of destinations that can store form responses.
+Feedback
+Type
+Feedback
+Type
+An enumeration of types of form
+Feedbacks
+.
+Item
+Type
+Item
+Type
+An enumeration of types of form
+Items
+.
+Page
+Navigation
+Type
+Page
+Navigation
+Type
+An enumeration of possible behaviors for navigating pages.
+Rating
+Icon
+Type
+Rating
+Icon
+Type
+An enumeration of rating icon types
+Rating
+Icons
+Methods
+Method
+Return type
+Brief description
+create(title)
+Form
+Creates and returns a new
+Form
+.
+create(title, isPublished)
+Form
+Creates and returns a new
+Form
+in the requested publish state.
+create
+Checkbox
+Grid
+Validation()
+Checkbox
+Grid
+Validation
+Builder
+Returns an instance of a CheckboxGridValidationBuilder which can be used to set validation on a
+Checkbox
+Grid
+Item
+.
+create
+Checkbox
+Validation()
+Checkbox
+Validation
+Builder
+Returns an instance of a CheckboxValidationBuilder which can be used to set validation on a
+Checkbox
+Item
+.
+create
+Feedback()
+Quiz
+Feedback
+Builder
+Returns an instance of a QuizFeedbackBuilder which can be used to set feedback on a gradeable
+Item
+.
+create
+Grid
+Validation()
+Grid
+Validation
+Builder
+Returns an instance of a GridValidationBuilder which can be used to set validation on a
+Grid
+Item
+.
+create
+Paragraph
+Text
+Validation()
+Paragraph
+Text
+Validation
+Builder
+Returns an instance of a ParagraphTextValidationBuilder which can be used to set validation on
+a
+Paragraph
+Text
+Item
+.
+create
+Text
+Validation()
+Text
+Validation
+Builder
+Returns an instance of a TextValidationBuilder which can be used to set validation on a
+Text
+Item
+.
+get
+Active
+Form()
+Form
+Returns the form to which the script is
+container-bound
+.
+get
+Ui()
+Ui
+Returns an instance of the form editor's user-interface environment that allows the script to
+add features like menus, dialogs, and sidebars.
+open
+By
+Id(id)
+Form
+Returns the
+Form
+with the specified ID.
+open
+By
+Url(url)
+Form
+Returns the
+Form
+with the specified URL.
+Detailed documentation
+create(title)
+Creates and returns a new
+Form
+. Throws an exception if the given title is
+null
+or empty.
+// Create and open a form.
+const
+form
+=
+FormApp
+.
+create
+(
+'Form Name'
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The name of the new form.
+Return
+Form
+— The new form.
+Throws
+Error
+— if the given title is
+null
+or empty
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms
+create(title, isPublished)
+Creates and returns a new
+Form
+in the requested publish state. Throws an exception if
+the given title is
+null
+or empty.
+// Create, publish and open a form.
+const
+form
+=
+FormApp
+.
+create
+(
+'Form Name'
+,
+true
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The name of the new form.
+is
+Published
+Boolean
+Whether the form should be published.
+Return
+Form
+— The new form.
+Throws
+Error
+— if the given title is
+null
+or empty
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms
+create
+Checkbox
+Grid
+Validation()
+Returns an instance of a CheckboxGridValidationBuilder which can be used to set validation on a
+Checkbox
+Grid
+Item
+.
+Return
+Checkbox
+Grid
+Validation
+Builder
+create
+Checkbox
+Validation()
+Returns an instance of a CheckboxValidationBuilder which can be used to set validation on a
+Checkbox
+Item
+.
+Return
+Checkbox
+Validation
+Builder
+create
+Feedback()
+Returns an instance of a QuizFeedbackBuilder which can be used to set feedback on a gradeable
+Item
+.
+Return
+Quiz
+Feedback
+Builder
+create
+Grid
+Validation()
+Returns an instance of a GridValidationBuilder which can be used to set validation on a
+Grid
+Item
+.
+Return
+Grid
+Validation
+Builder
+create
+Paragraph
+Text
+Validation()
+Returns an instance of a ParagraphTextValidationBuilder which can be used to set validation on
+a
+Paragraph
+Text
+Item
+.
+Return
+Paragraph
+Text
+Validation
+Builder
+create
+Text
+Validation()
+Returns an instance of a TextValidationBuilder which can be used to set validation on a
+Text
+Item
+.
+Return
+Text
+Validation
+Builder
+get
+Active
+Form()
+Returns the form to which the script is
+container-bound
+. To interact with forms to which the
+script is not container-bound, use
+open
+By
+Id(id)
+or
+open
+By
+Url(url)
+instead.
+// Get the form to which this script is bound.
+const
+form
+=
+FormApp
+.
+getActiveForm
+();
+Return
+Form
+— the form to which the script is bound, or
+null
+if the script is not bound to a
+    form
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Ui()
+Returns an instance of the form editor's user-interface environment that allows the script to
+add features like menus, dialogs, and sidebars. A script can only interact with the UI for the
+current instance of an open form editor (not the view that a respondent sees), and only if the
+script is
+bound
+to the form. For more
+information, see the guides to
+menus
+and
+dialogs and sidebars
+.
+// Add a custom menu to the active form, including a separator and a sub-menu.
+function
+onOpen
+(
+e
+)
+{
+FormApp
+.
+getUi
+()
+.
+createMenu
+(
+'My Menu'
+)
+.
+addItem
+(
+'My menu item'
+,
+'myFunction'
+)
+.
+addSeparator
+()
+.
+addSubMenu
+(
+FormApp
+.
+getUi
+()
+.
+createMenu
+(
+'My sub-menu'
+)
+.
+addItem
+(
+'One sub-menu item'
+,
+'mySecondFunction'
+)
+.
+addItem
+(
+'Another sub-menu item'
+,
+'myThirdFunction'
+),
+)
+.
+addToUi
+();
+}
+Return
+Ui
+— an instance of this form's user-interface environment
+open
+By
+Id(id)
+Returns the
+Form
+with the specified ID. Throws an exception if the ID is invalid or the
+user does not have permission to open the form.
+// Open a form by ID.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+Parameters
+Name
+Type
+Description
+id
+String
+the ID of the form to open
+Return
+Form
+— the form with the given ID
+Throws
+Error
+— if the given ID is invalid or the user does not have sufficient
+    permissions
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms
+open
+By
+Url(url)
+Returns the
+Form
+with the specified URL. Throws an exception if the URL is invalid or
+the user does not have permission to open the form.
+// Open a form by URL.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/1234567890abcdefghijklmnopqrstuvwxyz_a1b2c3/edit'
+,
+);
+Parameters
+Name
+Type
+Description
+url
+String
+the URL of the form to open
+Return
+Form
+— the form with the given URL
+Throws
+Error
+— if the given URL is invalid or the user does not have sufficient
+    permissions
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms

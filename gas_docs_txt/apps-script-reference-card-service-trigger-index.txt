@@ -1,0 +1,50 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/trigger/index.html
+
+Trigger
+A trigger that runs
+CEL
+expression validation
+widget event actions according to the action rule ID.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+trigger
+=
+CardService
+.
+newTrigger
+().
+setActionRuleId
+(
+"my_action_rule_id"
+);
+Methods
+Method
+Return type
+Brief description
+set
+Action
+Rule
+Id(actionRuleId)
+Trigger
+Sets the action rule id for the trigger.
+Detailed documentation
+set
+Action
+Rule
+Id(actionRuleId)
+Sets the action rule id for the trigger.
+Parameters
+Name
+Type
+Description
+action
+Rule
+Id
+String
+The uuid that uniquely identifies an action.
+Return
+Trigger
+— This object, for chaining.

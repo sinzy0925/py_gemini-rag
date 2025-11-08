@@ -1,0 +1,255 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-draft-action-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+An UpdateDraftActionResponse is used to modify an email draft being edited by a user.
+It can update recipients (To, Cc, Bcc), the subject line, and the body content of the draft.
+Body content can be inserted as either immutable or mutable HTML or plain text.
+The
+printJson()
+method provides a JSON representation of the object for debugging purposes.
+Update
+Draft
+Action
+Response
+Represents an action that updates the email draft that the user is currently editing.
+// An UpdateDraftActionResponse that inserts a list of To recipients into an
+// email draft
+let
+updateDraftActionResponse
+=
+CardService
+.
+newUpdateDraftActionResponseBuilder
+()
+.
+setUpdateToRecipientsAction
+(
+CardService
+.
+newUpdateToRecipientsAction
+().
+addUpdateToRecipients
+([
+'joe@example.com'
+,
+'wen@example.com'
+,
+]),
+)
+.
+build
+();
+// An UpdateDraftActionResponse that inserts a list of Cc recipients into an
+// email draft
+updateDraftActionResponse
+=
+CardService
+.
+newUpdateDraftActionResponseBuilder
+()
+.
+setUpdateCcRecipientsAction
+(
+CardService
+.
+newUpdateCcRecipientsAction
+().
+addUpdateCcRecipients
+([
+'joe@example.com'
+,
+'wen@example.com'
+,
+]),
+)
+.
+build
+()
+// An UpdateDraftActionResponse that inserts a list of Bcc recipients
+// into an email draft
+.
+setUpdateCcRecipientsAction
+(
+CardService
+.
+newUpdateBccRecipientsAction
+().
+addUpdateBccRecipients
+([
+'joe@example.com'
+,
+'wen@example.com'
+,
+]),
+);
+// An UpdateDraftActionResponse that inserts a subject line into an email draft
+updateDraftActionResponse
+=
+CardService
+.
+newUpdateDraftActionResponseBuilder
+()
+.
+setUpdateDraftSubjectAction
+(
+CardService
+.
+newUpdateDraftSubjectAction
+().
+addUpdateSubject
+(
+'example subject'
+,
+),
+)
+.
+build
+();
+// An UpdateDraftActionResponse that inserts non-editable content (a link in
+// this case) into an email draft.
+updateDraftActionResponse
+=
+CardService
+.
+newUpdateDraftActionResponseBuilder
+()
+.
+setUpdateDraftBodyAction
+(
+CardService
+.
+newUpdateDraftBodyAction
+()
+.
+addUpdateContent
+(
+'<a href="https://www.google.com">Google</a>'
+,
+CardService
+.
+ContentType
+.
+IMMUTABLE_HTML
+,
+)
+.
+setUpdateType
+(
+CardService
+.
+UpdateDraftBodyType
+.
+IN_PLACE_INSERT
+),
+)
+.
+build
+();
+// An UpdateDraftActionResponse that inserts a link into an email draft. The
+// added content can be edited further.
+updateDraftActionResponse
+=
+CardService
+.
+newUpdateDraftActionResponseBuilder
+()
+.
+setUpdateDraftBodyAction
+(
+CardService
+.
+newUpdateDraftBodyAction
+()
+.
+addUpdateContent
+(
+'<a href="https://www.google.com">Google</a>'
+,
+CardService
+.
+ContentType
+.
+MUTABLE_HTML
+,
+)
+.
+setUpdateType
+(
+CardService
+.
+UpdateDraftBodyType
+.
+IN_PLACE_INSERT
+),
+)
+.
+build
+();
+// An UpdateDraftActionResponse that inserts multiple values of different types.
+// The example action response inserts two lines next to each other in the email
+// draft, at the cursor position. Each line contains the content added by
+// {@link UpdateDraftActionResponseBuilder#addUpdateContent}.
+updateDraftActionResponse
+=
+CardService
+.
+newUpdateDraftActionResponseBuilder
+()
+.
+setUpdateDraftBodyAction
+(
+CardService
+.
+newUpdateDraftBodyAction
+()
+.
+addUpdateContent
+(
+'<a href="https://www.google.com">Google</a>'
+,
+CardService
+.
+ContentType
+.
+MUTABLE_HTML
+,
+)
+.
+addUpdateContent
+(
+'Above is a google link.'
+,
+CardService
+.
+ContentType
+.
+PLAIN_TEXT
+)
+.
+setUpdateType
+(
+CardService
+.
+UpdateDraftBodyType
+.
+IN_PLACE_INSERT
+),
+)
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String

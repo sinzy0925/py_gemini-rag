@@ -1,0 +1,1356 @@
+Source Path: gas_docs_html/apps-script/reference/slides/text-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Read methods in this class return
+null
+if the corresponding
+TextRange
+spans multiple text runs with different style values.
+To accurately query text styles across multiple text runs, use the
+TextRange.getRuns()
+method.
+Using methods that edit how text fits within a shape will deactivate any autofit settings applied to the text styles.
+The
+TextStyle
+class provides methods to get and set various text formatting properties such as color, font, size, weight, and style options like bold, italic, and underline.
+You can set or remove links on the text using methods like
+setLinkSlide
+,
+setLinkUrl
+, and
+removeLink
+.
+Text
+Style
+The style of text.
+Read methods in this class return
+null
+if the corresponding
+Text
+Range
+spans
+multiple text runs, and those runs have different values for the read method being called. To
+avoid this, query for text styles using the
+Text
+Range
+s returned by the
+Text
+Range.getRuns()
+method.
+If you use methods that edit how text fits within a shape, any autofit settings applied to the
+text styles are deactivated.
+Methods
+Method
+Return type
+Brief description
+get
+Background
+Color()
+Color
+Returns the background color of the text, or
+null
+if there are multiple styles on the
+text.
+get
+Baseline
+Offset()
+Text
+Baseline
+Offset
+Returns the vertical offset of text from its normal position, or
+null
+if there are
+multiple styles on the text.
+get
+Font
+Family()
+String
+Returns the font family of the text, or
+null
+if there are multiple styles on the text.
+get
+Font
+Size()
+Number
+Returns the font size of the text in points, or
+null
+if there are multiple styles on
+the text.
+get
+Font
+Weight()
+Integer
+Returns the font weight of the text, or
+null
+if there are multiple styles on the text.
+get
+Foreground
+Color()
+Color
+Returns the foreground color of the text, or
+null
+if there are multiple styles on the
+text.
+get
+Link()
+Link
+Returns the
+Link
+on the text, or
+null
+if there is no link or if the link is on
+part of the text or if there are multiple links.
+has
+Link()
+Boolean
+Returns
+true
+if there is link on the text,
+false
+if not, or
+null
+if the
+link is on part of the text or there are multiple links.
+is
+Background
+Transparent()
+Boolean
+Returns
+true
+if the background of the text is transparent,
+false
+if not, or
+null
+if there are multiple styles on the text.
+is
+Bold()
+Boolean
+Returns
+true
+if the text is rendered as bold,
+false
+if not, or
+null
+if
+there are multiple styles on the text.
+is
+Italic()
+Boolean
+Returns
+true
+if the text is italicized,
+false
+if not, or
+null
+if there
+are multiple styles on the text.
+is
+Small
+Caps()
+Boolean
+Returns
+true
+if the text is in small capital letters,
+false
+if not, or
+null
+if there are multiple styles on the text.
+is
+Strikethrough()
+Boolean
+Returns
+true
+if the text is struck through,
+false
+if not, or
+null
+if
+there are multiple styles on the text.
+is
+Underline()
+Boolean
+Returns
+true
+if the text is underlined,
+false
+if not, or
+null
+if there
+are multiple styles on the text.
+remove
+Link()
+Text
+Style
+Removes a
+Link
+.
+set
+Background
+Color(color)
+Text
+Style
+Sets the background color of the text.
+set
+Background
+Color(red, green, blue)
+Text
+Style
+Sets the background color of the text to the given RGB values from 0 to 255.
+set
+Background
+Color(hexColor)
+Text
+Style
+Sets the background color of the text to the given hex color string.
+set
+Background
+Color(color)
+Text
+Style
+Sets the background color of the text to the given
+Theme
+Color
+Type
+.
+set
+Background
+Color
+Transparent()
+Text
+Style
+Sets the background color of the text to transparent.
+set
+Baseline
+Offset(offset)
+Text
+Style
+Sets the vertical offset of the text relative to its normal position.
+set
+Bold(bold)
+Text
+Style
+Sets whether the text should be rendered as bold.
+set
+Font
+Family(fontFamily)
+Text
+Style
+Sets the font family of the text .
+set
+Font
+Family
+And
+Weight(fontFamily, fontWeight)
+Text
+Style
+Sets the font family and weight of the text.
+set
+Font
+Size(fontSize)
+Text
+Style
+Sets the font size of the text, in points.
+set
+Foreground
+Color(foregroundColor)
+Text
+Style
+Sets the foreground color of the text.
+set
+Foreground
+Color(red, green, blue)
+Text
+Style
+Sets the foreground color of the text to the given RGB values from 0 to 255.
+set
+Foreground
+Color(hexColor)
+Text
+Style
+Sets the foreground color of the text to the given hex color string.
+set
+Foreground
+Color(color)
+Text
+Style
+Sets the foreground color of the text to the given
+Theme
+Color
+Type
+.
+set
+Italic(italic)
+Text
+Style
+Sets the whether the text is italicized.
+set
+Link
+Slide(slideIndex)
+Text
+Style
+Sets a
+Link
+to the given
+Slide
+using the zero-based index of the slide.
+set
+Link
+Slide(slide)
+Text
+Style
+Sets a
+Link
+to the given
+Slide
+, the link is set by the given slide ID.
+set
+Link
+Slide(slidePosition)
+Text
+Style
+Sets a
+Link
+to the given
+Slide
+using the relative position of the slide.
+set
+Link
+Url(url)
+Text
+Style
+Sets a
+Link
+to the given non-empty URL string.
+set
+Small
+Caps(smallCaps)
+Text
+Style
+Sets whether the text is rendered in small capital letters.
+set
+Strikethrough(strikethrough)
+Text
+Style
+Sets whether the text is struck through.
+set
+Underline(underline)
+Text
+Style
+Sets whether the text is underlined.
+Detailed documentation
+get
+Background
+Color()
+Returns the background color of the text, or
+null
+if there are multiple styles on the
+text.
+Return
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Baseline
+Offset()
+Returns the vertical offset of text from its normal position, or
+null
+if there are
+multiple styles on the text.
+Return
+Text
+Baseline
+Offset
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Font
+Family()
+Returns the font family of the text, or
+null
+if there are multiple styles on the text.
+Return
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Font
+Size()
+Returns the font size of the text in points, or
+null
+if there are multiple styles on
+the text.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Font
+Weight()
+Returns the font weight of the text, or
+null
+if there are multiple styles on the text.
+The weight is a multiple of 100 between 100 and 900, inclusive. This range corresponds to
+the numerical values described in the CSS 2.1 Specification,
+section 15.6
+, with
+non-numerical values disallowed. Weights greater than or equal to 700 are considered bold, in
+which case
+is
+Bold()
+returns
+true
+. The default value is 400
+("normal").
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Foreground
+Color()
+Returns the foreground color of the text, or
+null
+if there are multiple styles on the
+text.
+Return
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Link()
+Returns the
+Link
+on the text, or
+null
+if there is no link or if the link is on
+part of the text or if there are multiple links. Call
+has
+Link()
+to determine whether
+the text has no link.
+const
+shape
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+];
+const
+textLink
+=
+shape
+.
+getText
+().
+getTextStyle
+().
+getLink
+();
+if
+(
+textLink
+!=
+null
+)
+{
+Logger
+.
+log
+(
+`Shape text has a link of type:
+${
+textLink
+.
+getLinkType
+()
+}
+`
+);
+}
+Return
+Link
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+has
+Link()
+Returns
+true
+if there is link on the text,
+false
+if not, or
+null
+if the
+link is on part of the text or there are multiple links.
+Links cannot be set on newline characters. Therefore, if the
+Text
+Range
+contains a
+newline character, this method always returns either
+null
+or
+false
+.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Background
+Transparent()
+Returns
+true
+if the background of the text is transparent,
+false
+if not, or
+null
+if there are multiple styles on the text.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Bold()
+Returns
+true
+if the text is rendered as bold,
+false
+if not, or
+null
+if
+there are multiple styles on the text.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Italic()
+Returns
+true
+if the text is italicized,
+false
+if not, or
+null
+if there
+are multiple styles on the text.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Small
+Caps()
+Returns
+true
+if the text is in small capital letters,
+false
+if not, or
+null
+if there are multiple styles on the text.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Strikethrough()
+Returns
+true
+if the text is struck through,
+false
+if not, or
+null
+if
+there are multiple styles on the text.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Underline()
+Returns
+true
+if the text is underlined,
+false
+if not, or
+null
+if there
+are multiple styles on the text.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+remove
+Link()
+Removes a
+Link
+.
+Removing a link removes the hyperlink foreground color and underline style on the text. If
+possible, these styles are applied to match the text preceding the link.
+const
+textRange
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+].
+getText
+();
+textRange
+.
+getTextStyle
+().
+removeLink
+();
+Return
+Text
+Style
+set
+Background
+Color(color)
+Sets the background color of the text.
+Parameters
+Name
+Type
+Description
+color
+Color
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Background
+Color(red, green, blue)
+Sets the background color of the text to the given RGB values from 0 to 255.
+Parameters
+Name
+Type
+Description
+red
+Integer
+green
+Integer
+blue
+Integer
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Background
+Color(hexColor)
+Sets the background color of the text to the given hex color string.
+The hex string must be in the format '#RRGGBB'. For example, pink would be represented as
+'#FFC0CB'.
+Parameters
+Name
+Type
+Description
+hex
+Color
+String
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Background
+Color(color)
+Sets the background color of the text to the given
+Theme
+Color
+Type
+.
+Parameters
+Name
+Type
+Description
+color
+Theme
+Color
+Type
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Background
+Color
+Transparent()
+Sets the background color of the text to transparent.
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Baseline
+Offset(offset)
+Sets the vertical offset of the text relative to its normal position.
+Parameters
+Name
+Type
+Description
+offset
+Text
+Baseline
+Offset
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Bold(bold)
+Sets whether the text should be rendered as bold.
+Changing the text's boldness updates the font weight used to render the text.
+Parameters
+Name
+Type
+Description
+bold
+Boolean
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Font
+Family(fontFamily)
+Sets the font family of the text .
+Parameters
+Name
+Type
+Description
+font
+Family
+String
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Font
+Family
+And
+Weight(fontFamily, fontWeight)
+Sets the font family and weight of the text.
+The weight is a multiple of 100 between 100 and 900, inclusive. This range corresponds to
+the numerical values described in the CSS 2.1 Specification,
+section 15.6
+, with
+non-numerical values disallowed. Weights greater than or equal to 700 are considered bold, in
+which case
+is
+Bold()
+returns
+true
+. The default value is 400
+("normal").
+Parameters
+Name
+Type
+Description
+font
+Family
+String
+font
+Weight
+Integer
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Font
+Size(fontSize)
+Sets the font size of the text, in points.
+Parameters
+Name
+Type
+Description
+font
+Size
+Number
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Foreground
+Color(foregroundColor)
+Sets the foreground color of the text.
+Parameters
+Name
+Type
+Description
+foreground
+Color
+Color
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Foreground
+Color(red, green, blue)
+Sets the foreground color of the text to the given RGB values from 0 to 255.
+Parameters
+Name
+Type
+Description
+red
+Integer
+green
+Integer
+blue
+Integer
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Foreground
+Color(hexColor)
+Sets the foreground color of the text to the given hex color string.
+The hex string must be in the format '#RRGGBB'. For example, pink would be represented as
+'#FFC0CB'.
+Parameters
+Name
+Type
+Description
+hex
+Color
+String
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Foreground
+Color(color)
+Sets the foreground color of the text to the given
+Theme
+Color
+Type
+.
+Parameters
+Name
+Type
+Description
+color
+Theme
+Color
+Type
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Italic(italic)
+Sets the whether the text is italicized.
+Parameters
+Name
+Type
+Description
+italic
+Boolean
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Link
+Slide(slideIndex)
+Sets a
+Link
+to the given
+Slide
+using the zero-based index of the slide.
+Setting a link changes the style of the text to be underlined and to have a
+Theme
+Color
+Type.HYPERLINK
+foreground color. This can be changed via
+set
+Foreground
+Color(hexColor)
+and
+set
+Underline(underline)
+.
+Since links cannot be set on newline characters, newline characters in the
+Text
+Range
+are ignored.
+// Set a link to the first slide of the presentation.
+const
+presentation
+=
+SlidesApp
+.
+getActivePresentation
+();
+const
+slide
+=
+presentation
+.
+getSlides
+()[
+0
+];
+const
+textRange
+=
+slide
+.
+getShapes
+()[
+0
+].
+getText
+();
+textRange
+.
+getTextStyle
+().
+setLinkSlide
+(
+0
+);
+Parameters
+Name
+Type
+Description
+slide
+Index
+Integer
+The zero-based index to the slide.
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Link
+Slide(slide)
+Sets a
+Link
+to the given
+Slide
+, the link is set by the given slide ID.
+Setting a link changes the style of the text to be underlined and to have a
+Theme
+Color
+Type.HYPERLINK
+foreground color. This can be changed via
+set
+Foreground
+Color(hexColor)
+and
+set
+Underline(underline)
+.
+Since links cannot be set on newline characters, newline characters in the
+Text
+Range
+are ignored.
+// Set a link to the first slide of the presentation.
+const
+presentation
+=
+SlidesApp
+.
+getActivePresentation
+();
+const
+slide
+=
+presentation
+.
+getSlides
+()[
+0
+];
+const
+textRange
+=
+slide
+.
+getShapes
+()[
+0
+].
+getText
+();
+textRange
+.
+getTextStyle
+().
+setLinkSlide
+(
+slide
+);
+Parameters
+Name
+Type
+Description
+slide
+Slide
+The
+Slide
+to be linked.
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Link
+Slide(slidePosition)
+Sets a
+Link
+to the given
+Slide
+using the relative position of the slide.
+Setting a link changes the style of the text to be underlined and to have a
+Theme
+Color
+Type.HYPERLINK
+foreground color. This can be changed via
+set
+Foreground
+Color(hexColor)
+and
+set
+Underline(underline)
+.
+Since links cannot be set on newline characters, newline characters in the
+Text
+Range
+are ignored.
+// Set a link to the first slide of the presentation.
+const
+textRange
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+].
+getText
+();
+textRange
+.
+getTextStyle
+().
+setLinkSlide
+(
+SlidesApp
+.
+SlidePosition
+.
+FIRST_SLIDE
+);
+Parameters
+Name
+Type
+Description
+slide
+Position
+Slide
+Position
+The relative
+Slide
+Position
+.
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Link
+Url(url)
+Sets a
+Link
+to the given non-empty URL string.
+Setting a link changes the style of the text to be underlined and to have a
+Theme
+Color
+Type.HYPERLINK
+foreground color. This can be changed via
+set
+Foreground
+Color(hexColor)
+and
+set
+Underline(underline)
+.
+Since links cannot be set on newline characters, newline characters in the
+Text
+Range
+are ignored.
+// Set a link to the URL.
+const
+textRange
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+].
+getShapes
+()[
+0
+].
+getText
+();
+textRange
+.
+getTextStyle
+().
+setLinkUrl
+(
+'https://slides.google.com'
+);
+Parameters
+Name
+Type
+Description
+url
+String
+The URL string.
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Small
+Caps(smallCaps)
+Sets whether the text is rendered in small capital letters.
+Parameters
+Name
+Type
+Description
+small
+Caps
+Boolean
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Strikethrough(strikethrough)
+Sets whether the text is struck through.
+Parameters
+Name
+Type
+Description
+strikethrough
+Boolean
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Underline(underline)
+Sets whether the text is underlined.
+Parameters
+Name
+Type
+Description
+underline
+Boolean
+Return
+Text
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

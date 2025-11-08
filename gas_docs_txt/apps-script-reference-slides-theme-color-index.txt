@@ -1,0 +1,66 @@
+Source Path: gas_docs_html/apps-script/reference/slides/theme-color/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ThemeColor refers to a color based on an entry in the page's ColorScheme.
+The
+getColorType()
+method returns the type of the color as a ColorType.
+The
+getThemeColorType()
+method returns the theme color type of the color as a ThemeColorType.
+Both methods require specific authorization scopes to be used in scripts.
+Theme
+Color
+A color that refers to an entry in the page's
+Color
+Scheme
+.
+Methods
+Method
+Return type
+Brief description
+get
+Color
+Type()
+Color
+Type
+Get the type of this color.
+get
+Theme
+Color
+Type()
+Theme
+Color
+Type
+Get the theme color type of this color.
+Detailed documentation
+get
+Color
+Type()
+Get the type of this color.
+Return
+Color
+Type
+— The color type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Theme
+Color
+Type()
+Get the theme color type of this color.
+Return
+Theme
+Color
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

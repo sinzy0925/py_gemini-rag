@@ -1,0 +1,21 @@
+Source Path: gas_docs_html/apps-script/reference/slides/text-direction/index.html
+
+Text
+Direction
+The directions text can flow in.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.TextDirection.LEFT_TO_RIGHT
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A text direction that is not supported.
+LEFT_TO_RIGHT
+Enum
+The text goes from left to right.
+RIGHT_TO_LEFT
+Enum
+The text goes from right to left.

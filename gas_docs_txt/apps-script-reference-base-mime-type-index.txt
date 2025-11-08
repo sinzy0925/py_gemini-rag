@@ -1,0 +1,182 @@
+Source Path: gas_docs_html/apps-script/reference/base/mime-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The MimeType enumeration provides access to MIME-type declarations without explicit string typing.
+Methods expecting a MIME type as a string also accept values from the MimeType enumeration if the underlying MIME type is supported.
+MimeType includes properties for various file types such as Google Docs, Images (PNG, JPEG), PDFs, Text files, and Microsoft Office files.
+Mime
+Type
+An enumeration that provides access to MIME-type declarations without typing the strings
+explicitly. Methods that expect a MIME type rendered as a string (for example,
+'image/png'
+) also accept any of the values below, so long as the method supports the
+underlying MIME type.
+// Use MimeType enum to log the name of every Google Doc in the user's Drive.
+const
+docs
+=
+DriveApp
+.
+getFilesByType
+(
+MimeType
+.
+GOOGLE_DOCS
+);
+while
+(
+docs
+.
+hasNext
+())
+{
+const
+doc
+=
+docs
+.
+next
+();
+Logger
+.
+log
+(
+doc
+.
+getName
+());
+}
+// Use plain string to log the size of every PNG in the user's Drive.
+const
+pngs
+=
+DriveApp
+.
+getFilesByType
+(
+'image/png'
+);
+while
+(
+pngs
+.
+hasNext
+())
+{
+const
+png
+=
+pngs
+.
+next
+();
+Logger
+.
+log
+(
+png
+.
+getSize
+());
+}
+Properties
+Property
+Type
+Description
+GOOGLE_APPS_SCRIPT
+Enum
+Representation of MIME type for a Google Apps Script project.
+GOOGLE_DRAWINGS
+Enum
+Representation of MIME type for a Google Drawings file.
+GOOGLE_DOCS
+Enum
+Representation of MIME type for a Google Docs file.
+GOOGLE_FORMS
+Enum
+Representation of MIME type for a Google Forms file.
+GOOGLE_SHEETS
+Enum
+Representation of MIME type for a Google Sheets file.
+GOOGLE_SITES
+Enum
+Representation of MIME type for a Google Sites file.
+GOOGLE_SLIDES
+Enum
+Representation of MIME type for a Google Slides file.
+FOLDER
+Enum
+Representation of MIME type for a Google Drive folder.
+SHORTCUT
+Enum
+Representation of MIME type for a Google Drive shortcut.
+BMP
+Enum
+Representation of MIME type for a BMP image file (typically .bmp).
+GIF
+Enum
+Representation of MIME type for a GIF image file (typically .gif).
+JPEG
+Enum
+Representation of MIME type for a JPEG image file (typically .jpg).
+PNG
+Enum
+Representation of MIME type for a PNG image file (typically .png).
+SVG
+Enum
+Representation of MIME type for an SVG image file (typically .svg).
+PDF
+Enum
+Representation of MIME type for a PDF file (typically .pdf).
+CSS
+Enum
+Representation of MIME type for a CSS text file (typically .css).
+CSV
+Enum
+Representation of MIME type for a CSV text file (typically .csv).
+HTML
+Enum
+Representation of MIME type for an HTML text file (typically .html).
+JAVASCRIPT
+Enum
+Representation of MIME type for a JavaScript text file (typically .js).
+PLAIN_TEXT
+Enum
+Representation of MIME type for a plain text file (typically .txt).
+RTF
+Enum
+Representation of MIME type for a rich text file (typically .rtf).
+OPENDOCUMENT_GRAPHICS
+Enum
+Representation of MIME type for an OpenDocument graphics file (typically .odg).
+OPENDOCUMENT_PRESENTATION
+Enum
+Representation of MIME type for an OpenDocument presentation file (typically .odp).
+OPENDOCUMENT_SPREADSHEET
+Enum
+Representation of MIME type for an OpenDocument spreadsheet file (typically .ods).
+OPENDOCUMENT_TEXT
+Enum
+Representation of MIME type for an OpenDocument word-processing file (typically .odt).
+MICROSOFT_EXCEL
+Enum
+Representation of MIME type for a Microsoft Excel spreadsheet file (typically .xlsx).
+MICROSOFT_EXCEL_LEGACY
+Enum
+Representation of MIME type for a Microsoft Excel legacy file (typically .xls).
+MICROSOFT_POWERPOINT
+Enum
+Representation of MIME type for a Microsoft PowerPoint presentation file (typically .pptx).
+MICROSOFT_POWERPOINT_LEGACY
+Enum
+Representation of MIME type for a Microsoft PowerPoint legacy file (typically .ppt).
+MICROSOFT_WORD
+Enum
+Representation of MIME type for a Microsoft Word document file (typically .docx).
+MICROSOFT_WORD_LEGACY
+Enum
+Representation of MIME type for a Microsoft Word legacy file (typically .doc).
+ZIP
+Enum
+Representation of MIME type for a ZIP archive file (typically .zip).

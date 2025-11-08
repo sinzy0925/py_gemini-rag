@@ -1,0 +1,521 @@
+Source Path: gas_docs_html/apps-script/reference/forms/paragraph-text-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ParagraphTextItem is a question item in Google Forms that allows respondents to enter a block of text.
+ParagraphTextItems can be accessed or created from a Form object.
+When used in a quiz, ParagraphTextItems are graded.
+You can clear validation, create responses, duplicate, get/set feedback, help text, ID, index, points, title, type, required status, and validation for a ParagraphTextItem using its methods.
+Using ParagraphTextItem methods requires specific authorization scopes.
+Paragraph
+Text
+Item
+A question item that allows the respondent to enter a block of text. Items can be accessed or
+created from a
+Form
+. When used in a quiz, these items are graded.
+// Open a form by ID and add a new paragraph text item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addParagraphTextItem
+();
+item
+.
+setTitle
+(
+'What is your address?'
+);
+Methods
+Method
+Return type
+Brief description
+clear
+Validation()
+Paragraph
+Text
+Item
+Removes any data validation for this paragraph text item.
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this paragraph text item.
+duplicate()
+Paragraph
+Text
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Paragraph
+Text
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Paragraph
+Text
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Paragraph
+Text
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Paragraph
+Text
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Paragraph
+Text
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Validation(validation)
+Paragraph
+Text
+Item
+Sets the data validation for this paragraph text item.
+Detailed documentation
+clear
+Validation()
+Removes any data validation for this paragraph text item.
+Return
+Paragraph
+Text
+Item
+— this
+Paragraph
+Text
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Response(response)
+Creates a new
+Item
+Response
+for this paragraph text item.
+Parameters
+Name
+Type
+Description
+response
+String
+an answer to the question posed by the item
+Return
+Item
+Response
+— the item response
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Paragraph
+Text
+Item
+— a duplicate of this
+Paragraph
+Text
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+General
+Feedback()
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+Return
+Quiz
+Feedback
+— the feedback, if any.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Points()
+Returns the point value of a gradeable item.
+Return
+Integer
+— the number of points a question is worth.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Required()
+Determines whether the respondent must answer the question.
+Return
+Boolean
+— whether the respondent must answer the question
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+General
+Feedback(feedback)
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+Parameters
+Name
+Type
+Description
+feedback
+Quiz
+Feedback
+the new feedback
+Return
+Paragraph
+Text
+Item
+— this
+Paragraph
+Text
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Paragraph
+Text
+Item
+— this
+Paragraph
+Text
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Points(points)
+Sets the number of points a gradeable item is worth. The default for new items is 0.
+Parameters
+Name
+Type
+Description
+points
+Integer
+the number of a points a question item is worth
+Return
+Paragraph
+Text
+Item
+— this
+Paragraph
+Text
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Required(enabled)
+Sets whether the respondent must answer the question.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+whether the respondent must answer the question
+Return
+Paragraph
+Text
+Item
+— the current item (for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Paragraph
+Text
+Item
+— this
+Paragraph
+Text
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Validation(validation)
+Sets the data validation for this paragraph text item. Passing in
+null
+or a
+Paragraph
+Text
+Validation
+instance on which no require functions have been called removes any
+prior validation.
+Parameters
+Name
+Type
+Description
+validation
+Paragraph
+Text
+Validation
+a ParagraphTextValidation to apply to this item.
+Return
+Paragraph
+Text
+Item
+— this
+Paragraph
+Text
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

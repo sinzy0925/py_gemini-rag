@@ -1,0 +1,57 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/banding-theme/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+BandingTheme is an enumeration that defines various complementary color themes for spreadsheet banding.
+Each theme consists of complementary colors applied to cells based on banding settings.
+You call an enum by using its parent class, name, and property, such as
+SpreadsheetApp.BandingTheme.LIGHT_GREY
+.
+Several predefined color themes are available as properties of the BandingTheme enum, including LIGHT_GREY, CYAN, GREEN, and others.
+Banding
+Theme
+An enumeration of banding themes. Each theme consists of several complementary colors that are
+applied to different cells based on the banding settings.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.BandingTheme.LIGHT_GREY
+.
+Properties
+Property
+Type
+Description
+LIGHT_GREY
+Enum
+A light grey banding theme.
+CYAN
+Enum
+A cyan banding theme.
+GREEN
+Enum
+A green banding theme.
+YELLOW
+Enum
+A yellow banding theme.
+ORANGE
+Enum
+An orange banding theme.
+BLUE
+Enum
+A blue banding theme.
+TEAL
+Enum
+A teal banding theme.
+GREY
+Enum
+A grey banding theme.
+BROWN
+Enum
+A brown banding theme.
+LIGHT_GREEN
+Enum
+A light green banding theme.
+INDIGO
+Enum
+An indigo banding theme.
+PINK
+Enum
+A pink banding theme.

@@ -1,0 +1,41 @@
+Source Path: gas_docs_html/apps-script/reference/add-ons-response-service/navigation/index.html
+
+Navigation
+A helper object that controls card navigation. See the
+card navigation guide
+for more details.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+push
+Card(card)
+Navigation
+Pushes the given card onto the stack.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+push
+Card(card)
+Pushes the given card onto the stack. Can be chained with other card navigation actions.
+Parameters
+Name
+Type
+Description
+card
+Card
+A card to add to the stack.
+Return
+Navigation
+— This object, for chaining.

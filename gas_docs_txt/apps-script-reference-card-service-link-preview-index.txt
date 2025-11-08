@@ -1,0 +1,235 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/link-preview/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Card action that displays a link preview card and smart chip in the host app.
+Methods include printing JSON, setting the link preview title, setting the preview card, and setting the smart chip title.
+setLinkPreviewTitle
+sets the title above the preview card, or defaults to the preview card header if unset.
+setPreviewCard
+sets the card displaying information about a third-party or non-Google link.
+setTitle
+sets the title in the smart chip for the link preview, or defaults to the preview card header if unset.
+Link
+Preview
+Card action that displays a link preview card and smart chip in the host app. For more
+information, refer to
+Preview links
+with smart chips
+.
+const
+decoratedText
+=
+CardService
+.
+newDecoratedText
+().
+setTopLabel
+(
+'Hello'
+).
+setText
+(
+'Hi!'
+);
+const
+cardSection
+=
+CardService
+.
+newCardSection
+().
+addWidget
+(
+decoratedText
+);
+const
+card
+=
+CardService
+.
+newCardBuilder
+().
+addSection
+(
+cardSection
+).
+build
+();
+const
+linkPreview
+=
+CardService
+.
+newLinkPreview
+().
+setPreviewCard
+(
+card
+).
+setTitle
+(
+'Smart chip title'
+);
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Link
+Preview
+Title(title)
+Link
+Preview
+Sets the title that displays in the link preview above the preview card.
+set
+Preview
+Card(previewCard)
+Link
+Preview
+Sets the card that displays information about a link from a third-party or non-Google service.
+set
+Title(title)
+Link
+Preview
+Sets the title that displays in the smart chip for the link preview.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+set
+Link
+Preview
+Title(title)
+Sets the title that displays in the link preview above the preview card. If unset, the link
+preview displays the header of the
+Preview
+Card
+.
+const
+linkPreview
+=
+CardService
+.
+newLinkPreview
+().
+setLinkPreviewTitle
+(
+'Link preview title'
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The title of the link preview.
+Return
+Link
+Preview
+— This object, for chaining.
+set
+Preview
+Card(previewCard)
+Sets the card that displays information about a link from a third-party or non-Google service.
+const
+decoratedText
+=
+CardService
+.
+newDecoratedText
+().
+setTopLabel
+(
+'Hello'
+).
+setText
+(
+'Hi!'
+);
+const
+cardSection
+=
+CardService
+.
+newCardSection
+().
+addWidget
+(
+decoratedText
+);
+const
+card
+=
+CardService
+.
+newCardBuilder
+().
+addSection
+(
+cardSection
+).
+build
+();
+const
+linkPreview
+=
+CardService
+.
+newLinkPreview
+().
+setPreviewCard
+(
+card
+).
+setTitle
+(
+'Smart chip title'
+);
+Parameters
+Name
+Type
+Description
+preview
+Card
+Card
+The preview card.
+Return
+Link
+Preview
+— This object, for chaining.
+set
+Title(title)
+Sets the title that displays in the smart chip for the link preview. If unset, the smart chip
+displays the header of the
+Preview
+Card
+.
+const
+linkPreview
+=
+CardService
+.
+newLinkPreview
+().
+setTitle
+(
+'Smart chip title'
+);
+Parameters
+Name
+Type
+Description
+title
+String
+The title of the smart chip.
+Return
+Link
+Preview
+— This object, for chaining.

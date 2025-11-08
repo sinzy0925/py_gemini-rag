@@ -1,0 +1,61 @@
+Source Path: gas_docs_html/apps-script/reference/slides/list/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+List
+object represents a list in the text and has methods to retrieve its ID and paragraphs.
+The
+getListId()
+method returns the unique identifier for the list as a string.
+The
+getListParagraphs()
+method returns an array of
+Paragraph
+objects contained within the list.
+Both methods require specific authorization scopes related to accessing presentations.
+List
+A list in the text.
+Methods
+Method
+Return type
+Brief description
+get
+List
+Id()
+String
+Returns the ID of the list.
+get
+List
+Paragraphs()
+Paragraph[]
+Returns all the
+Paragraphs
+in the list.
+Detailed documentation
+get
+List
+Id()
+Returns the ID of the list.
+Return
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+List
+Paragraphs()
+Returns all the
+Paragraphs
+in the list.
+Return
+Paragraph[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

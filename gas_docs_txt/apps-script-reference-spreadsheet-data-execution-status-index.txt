@@ -1,0 +1,121 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-execution-status/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+DataExecutionStatus
+object provides information about the status of a data execution.
+It includes methods to retrieve the error code, error message, execution state, last execution time, and last refreshed time.
+You can also check if the data from the last successful execution was truncated using the
+isTruncated()
+method.
+Data
+Execution
+Status
+The data execution status.
+Methods
+Method
+Return type
+Brief description
+get
+Error
+Code()
+Data
+Execution
+Error
+Code
+Gets the error code of the data execution.
+get
+Error
+Message()
+String
+Gets the error message of the data execution.
+get
+Execution
+State()
+Data
+Execution
+State
+Gets the state of the data execution.
+get
+Last
+Execution
+Time()
+Date
+Gets the time the last data execution completed regardless of the execution state.
+get
+Last
+Refreshed
+Time()
+Date
+Gets the time the data last successfully refreshed.
+is
+Truncated()
+Boolean
+Returns
+true
+if the data from last successful execution is truncated, or
+false
+otherwise.
+Detailed documentation
+get
+Error
+Code()
+Gets the error code of the data execution.
+Return
+Data
+Execution
+Error
+Code
+— The error code.
+get
+Error
+Message()
+Gets the error message of the data execution. The message may be empty.
+Return
+String
+— The error message.
+get
+Execution
+State()
+Gets the state of the data execution.
+Return
+Data
+Execution
+State
+— The execution state.
+get
+Last
+Execution
+Time()
+Gets the time the last data execution completed regardless of the execution state.
+Return
+Date
+— The last execution time, or
+null
+if there has never been a data execution.
+get
+Last
+Refreshed
+Time()
+Gets the time the data last successfully refreshed.
+Return
+Date
+— The last successfully refreshed time, or
+null
+if there is never a successful
+    data execution.
+is
+Truncated()
+Returns
+true
+if the data from last successful execution is truncated, or
+false
+otherwise.
+Return
+Boolean
+—
+True
+if the data from execution is truncated, or
+false
+otherwise.

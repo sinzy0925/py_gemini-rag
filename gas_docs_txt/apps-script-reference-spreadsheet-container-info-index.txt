@@ -1,0 +1,109 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/container-info/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ContainerInfo is used to access and update a chart's position within a sheet.
+The position can be modified using the
+EmbeddedChart.modify()
+function.
+Methods are available to get the anchor column and row, and the X and Y offsets in pixels.
+Container
+Info
+Access the chart's position within a sheet. Can be updated using the
+Embedded
+Chart.modify()
+function.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+chart
+=
+sheet
+.
+getCharts
+()[
+0
+];
+const
+modifiedChart
+=
+chart
+.
+modify
+().
+setPosition
+(
+5
+,
+5
+,
+0
+,
+0
+).
+build
+();
+sheet
+.
+updateChart
+(
+modifiedChart
+);
+Methods
+Method
+Return type
+Brief description
+get
+Anchor
+Column()
+Integer
+The chart's left side is anchored in this column.
+get
+Anchor
+Row()
+Integer
+The chart's top side is anchored in this row.
+get
+Offset
+X()
+Integer
+The chart's upper left hand corner is offset from the anchor column by this many pixels.
+get
+Offset
+Y()
+Integer
+The chart's upper left hand corner is offset from the anchor row by this many pixels.
+Detailed documentation
+get
+Anchor
+Column()
+The chart's left side is anchored in this column.
+Return
+Integer
+— 1-indexed column (that is, column C is 3).
+get
+Anchor
+Row()
+The chart's top side is anchored in this row.
+Return
+Integer
+— 1-indexed row (that is, row 5 returns 5).
+get
+Offset
+X()
+The chart's upper left hand corner is offset from the anchor column by this many pixels.
+Return
+Integer
+— The horizontal offset in pixels for the upper left hand corner of the chart.
+get
+Offset
+Y()
+The chart's upper left hand corner is offset from the anchor row by this many pixels.
+Return
+Integer
+— The vertical offset in pixels for the upper left hand corner of the chart.

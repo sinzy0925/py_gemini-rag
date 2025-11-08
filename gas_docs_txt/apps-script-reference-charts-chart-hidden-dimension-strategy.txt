@@ -1,0 +1,26 @@
+Source Path: gas_docs_html/apps-script/reference/charts/chart-hidden-dimension-strategy.html
+
+Chart
+Hidden
+Dimension
+Strategy
+An enumeration of how hidden dimensions in a source are expressed in a chart.
+To call an enum, you call its parent class, name, and property. For example,
+Charts.ChartHiddenDimensionStrategy.IGNORE_ROWS
+.
+Properties
+Property
+Type
+Description
+IGNORE_BOTH
+Enum
+Default; charts skips any hidden columns and hidden rows.
+IGNORE_ROWS
+Enum
+Charts skips hidden rows only.
+IGNORE_COLUMNS
+Enum
+Charts skips hidden columns only.
+SHOW_BOTH
+Enum
+Charts does not skip hidden columns or hidden rows.

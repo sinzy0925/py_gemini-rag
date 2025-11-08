@@ -1,0 +1,36 @@
+Source Path: gas_docs_html/apps-script/reference/slides/page-range/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A PageRange is a collection of one or more Page instances.
+The getPages() method returns the list of Page instances within the PageRange.
+Using the getPages() method requires specific authorization scopes.
+Page
+Range
+A collection of one or more
+Page
+instances.
+Methods
+Method
+Return type
+Brief description
+get
+Pages()
+Page[]
+Returns the list of
+Page
+instances.
+Detailed documentation
+get
+Pages()
+Returns the list of
+Page
+instances.
+Return
+Page[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

@@ -1,0 +1,100 @@
+Source Path: gas_docs_html/apps-script/reference/forms/feedback-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+FeedbackType is an enum in Google Apps Script representing supported feedback types that can be accessed from FormApp.FeedbackType.
+You access a FeedbackType enum property by calling its parent class, name, and property, like
+FormApp.FeedbackType.CORRECT
+.
+The provided code example demonstrates how to use FeedbackType when adding feedback for correct answers to a list item in a form.
+FeedbackType includes properties like CORRECT, INCORRECT, and GENERAL, which are used to display feedback based on answer correctness or submission.
+DIFFERENT feedback types (CORRECT, INCORRECT, and GENERAL) are applicable to specific question types based on whether they support autograding or are gradeable.
+Feedback
+Type
+An enum representing the supported types of feedback. Feedback types can be accessed from
+Form
+App.FeedbackType
+.
+To call an enum, you call its parent class, name, and property. For example,
+FormApp.FeedbackType.CORRECT
+.
+// Open a form by ID and add a new list item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addListItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+// Set "Dogs" as the correct answer to this question.
+item
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Dogs'
+,
+true
+),
+item
+.
+createChoice
+(
+'Cats'
+,
+false
+),
+]);
+// Add feedback which will be shown for correct responses; ie "Dogs".
+item
+.
+setFeedbackForCorrect
+(
+FormApp
+.
+createFeedback
+().
+setDisplayText
+(
+'Dogs rule, cats drool.'
+).
+build
+(),
+);
+Properties
+Property
+Type
+Description
+CORRECT
+Enum
+Feedback that is automatically displayed to respondents for a question answered correctly.
+Correct feedback can only be attached to a question type that supports autograding (e.g. radio,
+checkbox, select)
+INCORRECT
+Enum
+Feedback that is automatically displayed to respondents for a question answered incorrectly.
+Incorrect feedback can only be attached to a question type that supports autograding (e.g.
+radio, checkbox, select)
+GENERAL
+Enum
+Feedback that is automatically displayed to respondents when they submit their response.
+General feedback can only be attached to question types that do not support auto-grading, but
+are gradeable (ie everything but grid)

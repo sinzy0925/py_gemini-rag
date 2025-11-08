@@ -1,0 +1,44 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-draft-to-recipients-action/index.html
+
+Update
+Draft
+To
+Recipients
+Action
+Updates the To recipients of an email draft.
+Methods
+Method
+Return type
+Brief description
+add
+Update
+To
+Recipients(toRecipientEmails)
+Update
+Draft
+To
+Recipients
+Action
+Updates the To recipients of an email draft.
+Detailed documentation
+add
+Update
+To
+Recipients(toRecipientEmails)
+Updates the To recipients of an email draft.
+Parameters
+Name
+Type
+Description
+to
+Recipient
+Emails
+String[]
+The To recipients to insert to the email draft.
+Return
+Update
+Draft
+To
+Recipients
+Action
+— This object, for chaining.

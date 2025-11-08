@@ -1,0 +1,78 @@
+Source Path: gas_docs_html/apps-script/reference/forms/grid-validation/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+GridValidation is a DataValidation specifically for GridItem in Google Forms.
+It allows setting validation rules like requiring one response per column for a GridItem.
+GridValidation can include custom help text to guide user input.
+Grid
+Validation
+A DataValidation for a
+Grid
+Item
+.
+// Add a grid item to a form and require one response per column.
+const
+form
+=
+FormApp
+.
+create
+(
+'My Form'
+);
+const
+gridItem
+=
+form
+.
+addGridItem
+();
+gridItem
+.
+setTitle
+(
+'Rate your interests'
+)
+.
+setRows
+([
+'Cars'
+,
+'Computers'
+,
+'Celebrities'
+])
+.
+setColumns
+([
+'Boring'
+,
+'So-so'
+,
+'Interesting'
+]);
+const
+gridValidation
+=
+FormApp
+.
+createGridValidation
+()
+.
+setHelpText
+(
+'Select one item per column.'
+)
+.
+requireLimitOneResponsePerColumn
+()
+.
+build
+();
+gridItem
+.
+setValidation
+(
+gridValidation
+);

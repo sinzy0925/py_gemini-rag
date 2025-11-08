@@ -1,0 +1,677 @@
+Source Path: gas_docs_html/apps-script/reference/base/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Base service provides access to user information and controls script logs and dialog boxes in Google Workspace applications.
+The service includes classes for handling data interchange (Blob, BlobSource), user interface elements (Browser, Button, ButtonSet, Menu, PromptResponse, Ui), logging (Logger, console), date and time (Month, Weekday), colors (ColorType, RgbColor), user session information (Session, User), and MIME types (MimeType).
+Several classes, like Browser and Ui, offer methods for displaying various types of dialog boxes and user interface elements.
+The Logger and console classes allow developers to write messages to execution logs and Google Cloud Logging for debugging and monitoring.
+Base
+This service provides access to user information such as email addresses and
+user names. It also controls script logs and dialog boxes in Google Workspace applications.
+Classes
+Name
+Brief description
+Blob
+A data interchange object for Apps Script services.
+Blob
+Source
+Interface for objects that can export their data as a
+Blob
+.
+Browser
+This class provides access to dialog boxes specific to Google Sheets.
+Button
+An enum representing predetermined, localized dialog buttons returned by an
+alert
+or
+Prompt
+Response.getSelectedButton()
+to indicate
+which button in a dialog the user clicked.
+Button
+Set
+An enum representing predetermined, localized sets of one or more dialog buttons that can be
+added to an
+alert
+or a
+prompt
+.
+Color
+Type
+The types of Colors
+Logger
+This class allows the developer to write to the Execution log and to
+Google Cloud Logging
+if the script is associated with
+a
+standard
+Cloud Project
+.
+Menu
+A custom menu in an instance of the user interface for a Google App.
+Mime
+Type
+An enumeration that provides access to MIME-type declarations without typing the strings
+explicitly.
+Month
+An enum representing the months of the year.
+Prompt
+Response
+A response to a
+prompt
+dialog displayed in the
+user-interface environment for a Google App.
+Rgb
+Color
+A color defined by red, green, blue color channels.
+Session
+The Session class provides access to session information, such as the user's email address (in
+some circumstances) and language setting.
+Ui
+An instance of the user-interface environment for a Google App that allows the script to add
+features like menus, dialogs, and sidebars.
+User
+Representation of a user, suitable for scripting.
+Weekday
+An enum representing the days of the week.
+console
+This class allows the developer to write to the Execution log and to
+Google Cloud Logging
+if the script is associated with
+a
+standard
+Cloud Project
+.
+Blob
+Methods
+Method
+Return type
+Brief description
+copy
+Blob()
+Blob
+Returns a copy of this blob.
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Bytes()
+Byte[]
+Gets the data stored in this blob.
+get
+Content
+Type()
+String
+Gets the content type of the bytes in this blob.
+get
+Data
+As
+String()
+String
+Gets the data of this blob as a String with UTF-8 encoding.
+get
+Data
+As
+String(charset)
+String
+Gets the data of this blob as a string with the specified encoding.
+get
+Name()
+String
+Gets the name of this blob.
+is
+Google
+Type()
+Boolean
+Returns whether this blob is a Google Workspace file (Sheets, Docs, etc.).
+set
+Bytes(data)
+Blob
+Sets the data stored in this blob.
+set
+Content
+Type(contentType)
+Blob
+Sets the content type of the bytes in this blob.
+set
+Content
+Type
+From
+Extension()
+Blob
+Sets the content type of the bytes in this blob based on the file extension.
+set
+Data
+From
+String(string)
+Blob
+Sets the data of this blob from a string with UTF-8 encoding.
+set
+Data
+From
+String(string, charset)
+Blob
+Sets the data of this blob from a string with the specified encoding.
+set
+Name(name)
+Blob
+Sets the name of this blob.
+Blob
+Source
+Methods
+Method
+Return type
+Brief description
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+Browser
+Properties
+Property
+Type
+Description
+Buttons
+Button
+Set
+Methods
+Method
+Return type
+Brief description
+input
+Box(prompt)
+String
+Pops up a dialog box with a text input box in the user's browser.
+input
+Box(prompt, buttons)
+String
+Pops up a dialog box with a text input box in the user's browser.
+input
+Box(title, prompt, buttons)
+String
+Pops up a dialog box with a text input box in the user's browser.
+msg
+Box(prompt)
+String
+Pops up a dialog box with the given message and an OK button in the user's browser.
+msg
+Box(prompt, buttons)
+String
+Pops up a dialog box with the given message and specified buttons in the user's browser.
+msg
+Box(title, prompt, buttons)
+String
+Pops up a dialog box with the given title, message and specified buttons in the user's browser.
+Button
+Properties
+Property
+Type
+Description
+CLOSE
+Enum
+The standard close button displayed in every dialog's title bar.
+OK
+Enum
+An "OK" button, indicating that an operation should proceed.
+CANCEL
+Enum
+A "Cancel" button, indicating that an operation should not proceed.
+YES
+Enum
+A "Yes" button, indicating a positive response to a question.
+NO
+Enum
+A "No" button, indicating a negative response to a question.
+Button
+Set
+Properties
+Property
+Type
+Description
+OK
+Enum
+A single "OK" button, indicating an informational message that can only be dismissed.
+OK_CANCEL
+Enum
+An "OK" button and a "Cancel" button, allowing the user to either proceed with or halt an
+operation.
+YES_NO
+Enum
+A "Yes" button and a "No" button, allowing the user to answer a yes/no question.
+YES_NO_CANCEL
+Enum
+A "Yes" button, a "No" button, and a "Cancel" button, allowing the user to either answer a
+yes/no question or halt an operation.
+Color
+Type
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A color type that is not supported.
+RGB
+Enum
+A color defined by red, green, blue color channels.
+THEME
+Enum
+A color that refers to an entry in the theme's color scheme.
+Logger
+Methods
+Method
+Return type
+Brief description
+clear()
+void
+Clears the log.
+get
+Log()
+String
+Returns a complete list of messages in the current log.
+log(data)
+Logger
+Writes the data to the log.
+log(format, values)
+Logger
+Writes a formatted string to the logging console, using the format and values provided.
+Menu
+Methods
+Method
+Return type
+Brief description
+add
+Item(caption, functionName)
+Menu
+Adds an item to the menu.
+add
+Separator()
+Menu
+Adds a visual separator to the menu.
+add
+Sub
+Menu(menu)
+Menu
+Adds a sub-menu to the menu.
+add
+To
+Ui()
+void
+Inserts the menu into the instance of the editor's user interface.
+Mime
+Type
+Properties
+Property
+Type
+Description
+GOOGLE_APPS_SCRIPT
+Enum
+Representation of MIME type for a Google Apps Script project.
+GOOGLE_DRAWINGS
+Enum
+Representation of MIME type for a Google Drawings file.
+GOOGLE_DOCS
+Enum
+Representation of MIME type for a Google Docs file.
+GOOGLE_FORMS
+Enum
+Representation of MIME type for a Google Forms file.
+GOOGLE_SHEETS
+Enum
+Representation of MIME type for a Google Sheets file.
+GOOGLE_SITES
+Enum
+Representation of MIME type for a Google Sites file.
+GOOGLE_SLIDES
+Enum
+Representation of MIME type for a Google Slides file.
+FOLDER
+Enum
+Representation of MIME type for a Google Drive folder.
+SHORTCUT
+Enum
+Representation of MIME type for a Google Drive shortcut.
+BMP
+Enum
+Representation of MIME type for a BMP image file (typically .bmp).
+GIF
+Enum
+Representation of MIME type for a GIF image file (typically .gif).
+JPEG
+Enum
+Representation of MIME type for a JPEG image file (typically .jpg).
+PNG
+Enum
+Representation of MIME type for a PNG image file (typically .png).
+SVG
+Enum
+Representation of MIME type for an SVG image file (typically .svg).
+PDF
+Enum
+Representation of MIME type for a PDF file (typically .pdf).
+CSS
+Enum
+Representation of MIME type for a CSS text file (typically .css).
+CSV
+Enum
+Representation of MIME type for a CSV text file (typically .csv).
+HTML
+Enum
+Representation of MIME type for an HTML text file (typically .html).
+JAVASCRIPT
+Enum
+Representation of MIME type for a JavaScript text file (typically .js).
+PLAIN_TEXT
+Enum
+Representation of MIME type for a plain text file (typically .txt).
+RTF
+Enum
+Representation of MIME type for a rich text file (typically .rtf).
+OPENDOCUMENT_GRAPHICS
+Enum
+Representation of MIME type for an OpenDocument graphics file (typically .odg).
+OPENDOCUMENT_PRESENTATION
+Enum
+Representation of MIME type for an OpenDocument presentation file (typically .odp).
+OPENDOCUMENT_SPREADSHEET
+Enum
+Representation of MIME type for an OpenDocument spreadsheet file (typically .ods).
+OPENDOCUMENT_TEXT
+Enum
+Representation of MIME type for an OpenDocument word-processing file (typically .odt).
+MICROSOFT_EXCEL
+Enum
+Representation of MIME type for a Microsoft Excel spreadsheet file (typically .xlsx).
+MICROSOFT_EXCEL_LEGACY
+Enum
+Representation of MIME type for a Microsoft Excel legacy file (typically .xls).
+MICROSOFT_POWERPOINT
+Enum
+Representation of MIME type for a Microsoft PowerPoint presentation file (typically .pptx).
+MICROSOFT_POWERPOINT_LEGACY
+Enum
+Representation of MIME type for a Microsoft PowerPoint legacy file (typically .ppt).
+MICROSOFT_WORD
+Enum
+Representation of MIME type for a Microsoft Word document file (typically .docx).
+MICROSOFT_WORD_LEGACY
+Enum
+Representation of MIME type for a Microsoft Word legacy file (typically .doc).
+ZIP
+Enum
+Representation of MIME type for a ZIP archive file (typically .zip).
+Month
+Properties
+Property
+Type
+Description
+JANUARY
+Enum
+January (month 1).
+FEBRUARY
+Enum
+February (month 2).
+MARCH
+Enum
+March (month 3).
+APRIL
+Enum
+April (month 4).
+MAY
+Enum
+May (month 5).
+JUNE
+Enum
+June (month 6).
+JULY
+Enum
+July (month 7).
+AUGUST
+Enum
+August (month 8).
+SEPTEMBER
+Enum
+September (month 9).
+OCTOBER
+Enum
+October (month 10).
+NOVEMBER
+Enum
+November (month 11).
+DECEMBER
+Enum
+December (month 12).
+Prompt
+Response
+Methods
+Method
+Return type
+Brief description
+get
+Response
+Text()
+String
+Gets the text that the user entered in the dialog's input field.
+get
+Selected
+Button()
+Button
+Gets the button that the user clicked to dismiss the dialog.
+Rgb
+Color
+Methods
+Method
+Return type
+Brief description
+as
+Hex
+String()
+String
+Returns the color as a CSS-style 7 character hexadecimal string (#rrggbb) or 9 character
+hexadecimal string (#aarrggbb).
+get
+Blue()
+Integer
+The blue channel of this color, as a number from 0 to 255.
+get
+Color
+Type()
+Color
+Type
+Get the type of this color.
+get
+Green()
+Integer
+The green channel of this color, as a number from 0 to 255.
+get
+Red()
+Integer
+The red channel of this color, as a number from 0 to 255.
+Session
+Methods
+Method
+Return type
+Brief description
+get
+Active
+User()
+User
+Gets information about the current user.
+get
+Active
+User
+Locale()
+String
+Gets the language setting of the current user as a string—for example,
+en
+for English.
+get
+Effective
+User()
+User
+Gets information about the user under whose authority the script is running.
+get
+Script
+Time
+Zone()
+String
+Gets the time zone of the script.
+get
+Temporary
+Active
+User
+Key()
+String
+Gets a temporary key that is unique to the active user but does not reveal the user identity.
+Ui
+Properties
+Property
+Type
+Description
+Button
+Button
+An enum representing predetermined, localized dialog buttons returned by an
+alert
+or
+Prompt
+Response.getSelectedButton()
+to indicate
+which button in a dialog the user clicked.
+Button
+Set
+Button
+Set
+An enum representing predetermined, localized sets of one or more dialog buttons that can be
+added to an
+alert
+or a
+prompt
+.
+Methods
+Method
+Return type
+Brief description
+alert(prompt)
+Button
+Opens a dialog box in the user's editor with the given message and an "OK" button.
+alert(prompt, buttons)
+Button
+Opens a dialog box in the user's editor with the given message and set of buttons.
+alert(title, prompt, buttons)
+Button
+Opens a dialog box in the user's editor with the given title, message, and set of buttons.
+create
+Addon
+Menu()
+Menu
+Creates a builder that can be used to insert a sub-menu into the editor's Extensions menu.
+create
+Menu(caption)
+Menu
+Creates a builder that can be used to add a menu to the editor's user interface.
+prompt(prompt)
+Prompt
+Response
+Opens an input dialog box in the user's editor with the given message and an "OK" button.
+prompt(prompt, buttons)
+Prompt
+Response
+Opens an input dialog box in the user's editor with the given message and set of buttons.
+prompt(title, prompt, buttons)
+Prompt
+Response
+Opens an input dialog box in the user's editor with the given title, message, and set of
+buttons.
+show
+Modal
+Dialog(userInterface, title)
+void
+Opens a modal dialog box in the user's editor with custom client-side content.
+show
+Modeless
+Dialog(userInterface, title)
+void
+Opens a modeless dialog box in the user's editor with custom client-side content.
+show
+Sidebar(userInterface)
+void
+Opens a sidebar in the user's editor with custom client-side content.
+User
+Methods
+Method
+Return type
+Brief description
+get
+Email()
+String
+Gets the user's email address, if available.
+Weekday
+Properties
+Property
+Type
+Description
+SUNDAY
+Enum
+Sunday.
+MONDAY
+Enum
+Monday.
+TUESDAY
+Enum
+Tuesday.
+WEDNESDAY
+Enum
+Wednesday.
+THURSDAY
+Enum
+Thursday.
+FRIDAY
+Enum
+Friday.
+SATURDAY
+Enum
+Saturday.
+console
+Methods
+Method
+Return type
+Brief description
+error()
+void
+Outputs a blank ERROR level message to Stackdriver Logging.
+error(formatOrObject, values)
+void
+Outputs an ERROR level message to Stackdriver Logging.
+info()
+void
+Outputs blank INFO level message to Stackdriver Logging.
+info(formatOrObject, values)
+void
+Outputs an INFO level message to Stackdriver Logging.
+log()
+void
+Outputs a blank DEBUG level message to Stackdriver Logging.
+log(formatOrObject, values)
+void
+Outputs a DEBUG level message to Stackdriver Logging.
+time(label)
+void
+Starts a timer you can use to track how long an operation takes.
+time
+End(label)
+void
+Stops a timer that was previously started by calling
+console.time()
+.
+warn()
+void
+Outputs a blank WARNING level message to Stackdriver Logging.
+warn(formatOrObject, values)
+void
+Outputs a WARNING level message to Stackdriver Logging.

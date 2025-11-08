@@ -1,0 +1,192 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-column/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Use the DataSourceColumn class to access and modify data source columns that are connected to a database.
+You can retrieve the associated data source, formula, and name of a data source column.
+You can check if a column has an array dependency or is a calculated column.
+For calculated columns, you can remove the column or set its formula and name.
+Scripts using these methods may require specific authorization scopes.
+Data
+Source
+Column
+Access and modify a data source column.
+Only use this class with data that's connected to a database.
+Methods
+Method
+Return type
+Brief description
+get
+Data
+Source()
+Data
+Source
+Gets the data source associated with the data source column.
+get
+Formula()
+String
+Gets the formula for the data source column.
+get
+Name()
+String
+Gets the name for the data source column.
+has
+Array
+Dependency()
+Boolean
+Returns whether the column has an array dependency.
+is
+Calculated
+Column()
+Boolean
+Returns whether the column is a calculated column.
+remove()
+void
+Removes the data source column.
+set
+Formula(formula)
+Data
+Source
+Column
+Sets the formula for the data source column.
+set
+Name(name)
+Data
+Source
+Column
+Sets the name of the data source column.
+Detailed documentation
+get
+Data
+Source()
+Gets the data source associated with the data source column.
+Return
+Data
+Source
+— The data source.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Formula()
+Gets the formula for the data source column. Returns an empty string if the data source column
+is not a
+calculated column
+.
+Return
+String
+— The formula.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Name()
+Gets the name for the data source column.
+Return
+String
+— The column name.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+has
+Array
+Dependency()
+Returns whether the column has an array dependency.
+Return
+Boolean
+—
+true
+if the column has an array dependency, or
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+is
+Calculated
+Column()
+Returns whether the column is a calculated column.
+Return
+Boolean
+—
+true
+if the column is a calculated column, or
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Removes the data source column.
+Only supported for
+calculated columns
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Formula(formula)
+Sets the formula for the data source column.
+Only supported for
+calculated columns
+.
+Parameters
+Name
+Type
+Description
+formula
+String
+The new formula.
+Return
+Data
+Source
+Column
+— The data source column, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Name(name)
+Sets the name of the data source column.
+Only supported for
+calculated columns
+.
+Parameters
+Name
+Type
+Description
+name
+String
+The name to set.
+Return
+Data
+Source
+Column
+— The data source column, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

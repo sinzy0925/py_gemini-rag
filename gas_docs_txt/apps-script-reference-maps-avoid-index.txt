@@ -1,0 +1,17 @@
+Source Path: gas_docs_html/apps-script/reference/maps/avoid/index.html
+
+Avoid
+An enum representing the types of restrictions to avoid when finding directions.
+To call an enum, you call its parent class, name, and property. For example,
+Maps.Avoid.TOLLS
+.
+Properties
+Property
+Type
+Description
+TOLLS
+Enum
+Avoid tolls.
+HIGHWAYS
+Enum
+Avoid highways.

@@ -1,0 +1,62 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/suggestions-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SuggestionsResponse is a response object used with TextInput widgets that implement autocomplete in Google Workspace add-ons and Google Chat apps.
+It can be created using
+CardService.newSuggestionsResponseBuilder()
+and allows adding multiple suggestions via
+CardService.newSuggestions().addSuggestion()
+.
+The
+printJson()
+method is available for debugging and prints the JSON representation of the object as a string.
+Suggestions
+Response
+A response object that can be returned from a suggestions callback function. This is used with
+Text
+Input
+widgets that implement autocomplete.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+suggestionsResponse
+=
+CardService
+.
+newSuggestionsResponseBuilder
+()
+.
+setSuggestions
+(
+CardService
+.
+newSuggestions
+()
+.
+addSuggestion
+(
+'First suggestion'
+)
+.
+addSuggestion
+(
+'Second suggestion'
+),
+)
+.
+build
+();
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String

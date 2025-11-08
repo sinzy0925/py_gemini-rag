@@ -1,0 +1,177 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/switch/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Switch is a UI element that can be toggled on or off and must be used within a DecoratedText widget.
+Switches are available for Google Workspace add-ons and Google Chat apps.
+Key methods for Switch include setting the control type, field name, on-change action, selected state, and value.
+The setFieldName method is required and identifies the switch in the event object upon UI interaction.
+The setValue method sets the string value sent as form input when the switch is toggled on.
+Switch
+A UI element that supports being toggled on or off. This can only be used within a
+Decorated
+Text
+widget.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+switchDecoratedText
+=
+CardService
+.
+newDecoratedText
+()
+.
+setTopLabel
+(
+'Switch decorated text widget label'
+)
+.
+setText
+(
+'This is a decorated text widget with a switch on the right'
+)
+.
+setWrapText
+(
+true
+)
+.
+setSwitchControl
+(
+CardService
+.
+newSwitch
+()
+.
+setFieldName
+(
+'form_input_switch_key'
+)
+.
+setValue
+(
+'form_input_switch_value'
+)
+.
+setOnChangeAction
+(
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'handleSwitchChange'
+),
+),
+);
+Methods
+Method
+Return type
+Brief description
+set
+Control
+Type(controlType)
+Switch
+Sets the control type of the switch.
+set
+Field
+Name(fieldName)
+Switch
+Sets the key that identifies this switch in the event object that is generated when there is a
+UI interaction.
+set
+On
+Change
+Action(action)
+Switch
+Sets the action to take when the switch is toggled.
+set
+Selected(selected)
+Switch
+Sets whether this switch should start as selected or unselected.
+set
+Value(value)
+Switch
+Sets the value that is sent as the form input when this switch is toggled on.
+Detailed documentation
+set
+Control
+Type(controlType)
+Sets the control type of the switch. Defaults to
+SWITCH
+.
+Parameters
+Name
+Type
+Description
+control
+Type
+Switch
+Control
+Type
+The switch control type.
+Return
+Switch
+— This object, for chaining.
+set
+Field
+Name(fieldName)
+Sets the key that identifies this switch in the event object that is generated when there is a
+UI interaction. Not visible to the user. Required.
+Unlike other form fields, this field name does not need to be unique. The form input values
+for switches using the same field name are returned as an array. The array consists of the
+values for all enabled switches with that field name.
+Parameters
+Name
+Type
+Description
+field
+Name
+String
+The key that is used to identify this switch.
+Return
+Switch
+— This object, for chaining.
+set
+On
+Change
+Action(action)
+Sets the action to take when the switch is toggled.
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to take when the switch is toggled.
+Return
+Switch
+— This object, for chaining.
+set
+Selected(selected)
+Sets whether this switch should start as selected or unselected.
+Parameters
+Name
+Type
+Description
+selected
+Boolean
+The starting switch state setting.
+Return
+Switch
+— This object, for chaining.
+set
+Value(value)
+Sets the value that is sent as the form input when this switch is toggled on.
+Parameters
+Name
+Type
+Description
+value
+String
+The value associated with the name when the switch is on. When this is sent to the
+    form callback, it is always represented as a string.
+Return
+Switch
+— This object, for chaining.

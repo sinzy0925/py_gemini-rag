@@ -1,0 +1,1308 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The XML Service allows scripts to parse, navigate, and programmatically create XML documents.
+It provides classes like Document, Element, and Attribute for working with XML structure.
+The service includes methods for parsing XML strings, creating new XML elements and documents, and formatting XML output.
+You can navigate through XML elements using methods like getRootElement(), getChild(), and getChildren().
+The service supports retrieving and setting text content and attributes of XML nodes.
+XML Service
+This service allows scripts to parse, navigate, and programmatically create
+XML documents.
+// Log the title and labels for the first page of blog posts on
+// Google's The Keyword blog.
+function
+parseXml
+()
+{
+let
+url
+=
+'https://blog.google/rss/'
+;
+let
+xml
+=
+UrlFetchApp
+.
+fetch
+(
+url
+).
+getContentText
+();
+let
+document
+=
+XmlService
+.
+parse
+(
+xml
+);
+let
+root
+=
+document
+.
+getRootElement
+();
+let
+channel
+=
+root
+.
+getChild
+(
+'channel'
+);
+let
+items
+=
+channel
+.
+getChildren
+(
+'item'
+);
+items
+.
+forEach
+(
+item
+=
+>
+{
+let
+title
+=
+item
+.
+getChild
+(
+'title'
+).
+getText
+();
+let
+categories
+=
+item
+.
+getChildren
+(
+'category'
+);
+let
+labels
+=
+categories
+.
+map
+(
+category
+=
+>
+category
+.
+getText
+());
+console
+.
+log
+(
+'%s (%s)'
+,
+title
+,
+labels
+.
+join
+(
+', '
+));
+});
+}
+// Create and log an XML representation of first 10 threads in your Gmail inbox.
+function
+createXml
+()
+{
+let
+root
+=
+XmlService
+.
+createElement
+(
+'threads'
+);
+let
+threads
+=
+GmailApp
+.
+getInboxThreads
+()
+threads
+=
+threads
+.
+slice
+(
+0
+,
+10
+);
+// Just the first 10
+threads
+.
+forEach
+(
+thread
+=
+>
+{
+let
+child
+=
+XmlService
+.
+createElement
+(
+'thread'
+)
+.
+setAttribute
+(
+'messageCount'
+,
+thread
+.
+getMessageCount
+())
+.
+setAttribute
+(
+'isUnread'
+,
+thread
+.
+isUnread
+())
+.
+setText
+(
+thread
+.
+getFirstMessageSubject
+());
+root
+.
+addContent
+(
+child
+);
+});
+let
+document
+=
+XmlService
+.
+createDocument
+(
+root
+);
+let
+xml
+=
+XmlService
+.
+getPrettyFormat
+().
+format
+(
+document
+);
+console
+.
+log
+(
+xml
+);
+}
+Classes
+Name
+Brief description
+Attribute
+A representation of an XML attribute.
+Cdata
+A representation of an XML
+CDATASection
+node.
+Comment
+A representation of an XML
+Comment
+node.
+Content
+A representation of a generic XML node.
+Content
+Type
+An enumeration representing the types of XML content nodes.
+Doc
+Type
+A representation of an XML
+Document
+Type
+node.
+Document
+A representation of an XML document.
+Element
+A representation of an XML
+Element
+node.
+Entity
+Ref
+A representation of an XML
+Entity
+Reference
+node.
+Format
+A formatter for outputting an XML document, with three pre-defined formats that can be further
+customized.
+Namespace
+A representation of an XML namespace.
+Processing
+Instruction
+A representation of an XML
+Processing
+Instruction
+node.
+Text
+A representation of an XML
+Text
+node.
+Xml
+Service
+This service allows scripts to parse, navigate, and programmatically create XML documents.
+Attribute
+Methods
+Method
+Return type
+Brief description
+get
+Name()
+String
+Gets the local name of the attribute.
+get
+Namespace()
+Namespace
+Gets the namespace for the attribute.
+get
+Value()
+String
+Gets the value of the attribute.
+set
+Name(name)
+Attribute
+Sets the local name of the attribute.
+set
+Namespace(namespace)
+Attribute
+Sets the namespace for the attribute.
+set
+Value(value)
+Attribute
+Sets the value of the attribute.
+Cdata
+Methods
+Method
+Return type
+Brief description
+append(text)
+Text
+Appends the given text to any content that already exists in the node.
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Text()
+String
+Gets the text value of the
+Text
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Text(text)
+Text
+Sets the text value of the
+Text
+node.
+Comment
+Methods
+Method
+Return type
+Brief description
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Text()
+String
+Gets the text value of the
+Comment
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Text(text)
+Comment
+Sets the text value of the
+Comment
+node.
+Content
+Methods
+Method
+Return type
+Brief description
+as
+Cdata()
+Cdata
+Casts the node as a
+CDATASection
+node for the purposes of autocomplete.
+as
+Comment()
+Comment
+Casts the node as a
+Comment
+node for the purposes of autocomplete.
+as
+Doc
+Type()
+Doc
+Type
+Casts the node as a
+Document
+Type
+node for the purposes of autocomplete.
+as
+Element()
+Element
+Casts the node as an
+Element
+node for the purposes of autocomplete.
+as
+Entity
+Ref()
+Entity
+Ref
+Casts the node as a
+Entity
+Reference
+node for the purposes of autocomplete.
+as
+Processing
+Instruction()
+Processing
+Instruction
+Casts the node as a
+Processing
+Instruction
+node for the purposes of autocomplete.
+as
+Text()
+Text
+Casts the node as a
+Text
+node for the purposes of autocomplete.
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Type()
+Content
+Type
+Gets the node's content type.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Content
+Type
+Properties
+Property
+Type
+Description
+CDATA
+Enum
+An XML
+CDATASection
+node.
+COMMENT
+Enum
+An XML
+Comment
+node.
+DOCTYPE
+Enum
+An XML
+Document
+Type
+node.
+ELEMENT
+Enum
+An XML
+Element
+node.
+ENTITYREF
+Enum
+An XML
+Entity
+Reference
+node.
+PROCESSINGINSTRUCTION
+Enum
+An XML
+Processing
+Instruction
+node.
+TEXT
+Enum
+An XML
+Text
+node.
+Doc
+Type
+Methods
+Method
+Return type
+Brief description
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Element
+Name()
+String
+Gets the name of the root
+Element
+node specified in the
+Doc
+Type
+declaration.
+get
+Internal
+Subset()
+String
+Gets the internal subset data for the
+Document
+Type
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Public
+Id()
+String
+Gets the public ID of the external subset data for the
+Document
+Type
+node.
+get
+System
+Id()
+String
+Gets the system ID of the external subset data for the
+Document
+Type
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Element
+Name(name)
+Doc
+Type
+Sets the name of the root
+Element
+node to specify in the
+Doc
+Type
+declaration.
+set
+Internal
+Subset(data)
+Doc
+Type
+Sets the internal subset data for the
+Document
+Type
+node.
+set
+Public
+Id(id)
+Doc
+Type
+Sets the public ID of the external subset data for the
+Document
+Type
+node.
+set
+System
+Id(id)
+Doc
+Type
+Sets the system ID of the external subset data for the
+Document
+Type
+node.
+Document
+Methods
+Method
+Return type
+Brief description
+add
+Content(content)
+Document
+Appends the given node to the end of the document.
+add
+Content(index, content)
+Document
+Inserts the given node at the given index among all nodes that are immediate children of the
+document.
+clone
+Content()
+Content[]
+Creates unattached copies of all nodes that are immediate children of the document.
+detach
+Root
+Element()
+Element
+Detaches and returns the document's root
+Element
+node.
+get
+All
+Content()
+Content[]
+Gets all nodes that are immediate children of the document.
+get
+Content(index)
+Content
+Gets the node at the given index among all nodes that are immediate children of the
+document.
+get
+Content
+Size()
+Integer
+Gets the number of nodes that are immediate children of the document.
+get
+Descendants()
+Content[]
+Gets all nodes that are direct or indirect children of the document, in the order they
+appear in the document.
+get
+Doc
+Type()
+Doc
+Type
+Gets the document's
+Doc
+Type
+declaration.
+get
+Root
+Element()
+Element
+Gets the document's root
+Element
+node.
+has
+Root
+Element()
+Boolean
+Determines whether the document has a root
+Element
+node.
+remove
+Content()
+Content[]
+Removes all nodes that are immediate children of the document.
+remove
+Content(content)
+Boolean
+Removes the given node, if the node is an immediate child of the document.
+remove
+Content(index)
+Content
+Removes the node at the given index among all nodes that are immediate children of the
+document.
+set
+Doc
+Type(docType)
+Document
+Sets the document's
+Doc
+Type
+declaration.
+set
+Root
+Element(element)
+Document
+Sets the document's root
+Element
+node.
+Element
+Methods
+Method
+Return type
+Brief description
+add
+Content(content)
+Element
+Appends the given node as the last child of the
+Element
+node.
+add
+Content(index, content)
+Element
+Inserts the given node at the given index among all nodes that are immediate children of the
+Element
+node.
+clone
+Content()
+Content[]
+Creates unattached copies of all nodes that are immediate children of the {@code Element} node.
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+All
+Content()
+Content[]
+Gets all nodes that are immediate children of the {@code Element} node.
+get
+Attribute(name)
+Attribute
+Gets the attribute for this
+Element
+node with the given name and no namespace.
+get
+Attribute(name, namespace)
+Attribute
+Gets the attribute for this
+Element
+node with the given name and namespace.
+get
+Attributes()
+Attribute[]
+Gets all attributes for this
+Element
+node, in the order they appear in the document.
+get
+Child(name)
+Element
+Gets the first
+Element
+node with the given name and no namespace that is an immediate
+child of this
+Element
+node.
+get
+Child(name, namespace)
+Element
+Gets the first
+Element
+node with the given name and namespace that is an immediate
+child of this
+Element
+node.
+get
+Child
+Text(name)
+String
+Gets the text value of the node with the given name and no namespace, if the node is an
+immediate child of the
+Element
+node.
+get
+Child
+Text(name, namespace)
+String
+Gets the text value of the node with the given name and namespace, if the node is an immediate
+child of the
+Element
+node.
+get
+Children()
+Element[]
+Gets all
+Element
+nodes that are immediate children of this
+Element
+node, in the
+order they appear in the document.
+get
+Children(name)
+Element[]
+Gets all
+Element
+nodes with the given name and no namespace that are immediate children
+of this
+Element
+node, in the order they appear in the document.
+get
+Children(name, namespace)
+Element[]
+Gets all
+Element
+nodes with the given name and namespace that are immediate children of
+this
+Element
+node, in the order they appear in the document.
+get
+Content(index)
+Content
+Gets the node at the given index among all nodes that are immediate children of the
+{@code Element} node.
+get
+Content
+Size()
+Integer
+Gets the number of nodes that are immediate children of the {@code Element} node.
+get
+Descendants()
+Content[]
+Gets all nodes that are direct or indirect children of the {@code Element} node, in the order they
+appear in the document.
+get
+Document()
+Document
+Gets the XML document that contains the {@code Element} node.
+get
+Name()
+String
+Gets the local name of the
+Element
+node.
+get
+Namespace()
+Namespace
+Gets the namespace for the
+Element
+node.
+get
+Namespace(prefix)
+Namespace
+Gets the namespace with the given prefix for the
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Qualified
+Name()
+String
+Gets the local name and namespace prefix of the
+Element
+node, in the form
+[namespacePrefix]:[localName]
+.
+get
+Text()
+String
+Gets the text value of the
+Element
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+is
+Ancestor
+Of(other)
+Boolean
+Determines whether this
+Element
+node is a direct or indirect parent of a given
+Element
+node.
+is
+Root
+Element()
+Boolean
+Determines whether the
+Element
+node is the document's root node.
+remove
+Attribute(attribute)
+Boolean
+Removes the given attribute for this
+Element
+node, if such an attribute exists.
+remove
+Attribute(attributeName)
+Boolean
+Removes the attribute for this
+Element
+node with the given name and no namespace, if
+such an attribute exists.
+remove
+Attribute(attributeName, namespace)
+Boolean
+Removes the attribute for this
+Element
+node with the given name and namespace, if such
+an attribute exists.
+remove
+Content()
+Content[]
+Removes all nodes that are immediate children of the {@code Element} node.
+remove
+Content(content)
+Boolean
+Removes the given node, if the node is an immediate child of the {@code Element} node.
+remove
+Content(index)
+Content
+Removes the node at the given index among all nodes that are immediate children of the
+{@code Element} node.
+set
+Attribute(attribute)
+Element
+Sets the given attribute for this
+Element
+node.
+set
+Attribute(name, value)
+Element
+Sets the attribute for this
+Element
+node with the given name, value, and no namespace.
+set
+Attribute(name, value, namespace)
+Element
+Sets the attribute for this
+Element
+node with the given name, value, and namespace.
+set
+Name(name)
+Element
+Sets the local name of the
+Element
+node.
+set
+Namespace(namespace)
+Element
+Sets the namespace for the
+Element
+node.
+set
+Text(text)
+Element
+Sets the text value of the
+Element
+node.
+Entity
+Ref
+Methods
+Method
+Return type
+Brief description
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Name()
+String
+Gets the name of the
+Entity
+Reference
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Public
+Id()
+String
+Gets the public ID of the
+Entity
+Reference
+node.
+get
+System
+Id()
+String
+Gets the system ID of the
+Entity
+Reference
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Name(name)
+Entity
+Ref
+Sets the name of the
+Entity
+Reference
+node.
+set
+Public
+Id(id)
+Entity
+Ref
+Sets the public ID of the
+Entity
+Reference
+node.
+set
+System
+Id(id)
+Entity
+Ref
+Sets the system ID of the
+Entity
+Reference
+node.
+Format
+Methods
+Method
+Return type
+Brief description
+format(document)
+String
+Outputs the given
+Document
+as a formatted string.
+format(element)
+String
+Outputs the given
+Element
+node as a formatted string.
+set
+Encoding(encoding)
+Format
+Sets the character encoding that the formatter should use.
+set
+Indent(indent)
+Format
+Sets the string used to indent child nodes relative to their parents.
+set
+Line
+Separator(separator)
+Format
+Sets the string to insert whenever the formatter would normally insert a line break.
+set
+Omit
+Declaration(omitDeclaration)
+Format
+Sets whether the formatter should omit the XML declaration, such as
+<?xml version="1.0"
+encoding="UTF-8"?>
+.
+set
+Omit
+Encoding(omitEncoding)
+Format
+Sets whether the formatter should omit the encoding in the XML declaration, such as the
+encoding field in
+<?xml version="1.0" encoding="UTF-8"?>
+.
+Namespace
+Methods
+Method
+Return type
+Brief description
+get
+Prefix()
+String
+Gets the prefix for the namespace.
+get
+URI()
+String
+Gets the URI for the namespace.
+Processing
+Instruction
+Methods
+Method
+Return type
+Brief description
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Data()
+String
+Gets the raw data for every instruction in the
+Processing
+Instruction
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Target()
+String
+Gets the target for the
+Processing
+Instruction
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Text
+Methods
+Method
+Return type
+Brief description
+append(text)
+Text
+Appends the given text to any content that already exists in the node.
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Text()
+String
+Gets the text value of the
+Text
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Text(text)
+Text
+Sets the text value of the
+Text
+node.
+Xml
+Service
+Properties
+Property
+Type
+Description
+Content
+Types
+Content
+Type
+An enumeration representing the types of XML content nodes.
+Methods
+Method
+Return type
+Brief description
+create
+Cdata(text)
+Cdata
+Creates an unattached
+CDATASection
+node with the given value.
+create
+Comment(text)
+Comment
+Creates an unattached
+Comment
+node with the given value.
+create
+Doc
+Type(elementName)
+Doc
+Type
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name.
+create
+Doc
+Type(elementName, systemId)
+Doc
+Type
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name, and the given system ID for the external subset data.
+create
+Doc
+Type(elementName, publicId, systemId)
+Doc
+Type
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name, and the given public ID and system ID for the external subset data.
+create
+Document()
+Document
+Creates an empty XML document.
+create
+Document(rootElement)
+Document
+Creates an XML document with the given root
+Element
+node.
+create
+Element(name)
+Element
+Creates an unattached
+Element
+node with the given local name and no namespace.
+create
+Element(name, namespace)
+Element
+Creates an unattached
+Element
+node with the given local name and namespace.
+create
+Text(text)
+Text
+Creates an unattached
+Text
+node with the given value.
+get
+Compact
+Format()
+Format
+Creates a
+Format
+object for outputting a compact XML document.
+get
+Namespace(uri)
+Namespace
+Creates a
+Namespace
+with the given URI.
+get
+Namespace(prefix, uri)
+Namespace
+Creates a
+Namespace
+with the given prefix and URI.
+get
+No
+Namespace()
+Namespace
+Creates a
+Namespace
+that represents the absence of a real namespace.
+get
+Pretty
+Format()
+Format
+Creates a
+Format
+object for outputting a human-readable XML document.
+get
+Raw
+Format()
+Format
+Creates a
+Format
+object for outputting a raw XML document.
+get
+Xml
+Namespace()
+Namespace
+Creates a
+Namespace
+with the standard
+xml
+prefix.
+parse(xml)
+Document
+Creates an
+Document
+from the given XML, without validating the XML.

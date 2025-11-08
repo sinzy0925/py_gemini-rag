@@ -1,0 +1,766 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/boolean-condition/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A
+BooleanCondition
+is accessed within
+ConditionalFormatRules
+and each rule can have one boolean condition.
+A boolean condition contains a boolean criteria and formatting settings that are applied if the criteria evaluates to true for a cell.
+Methods are available to retrieve the background color, font color, bold, italic, strikethrough, and underline settings of a boolean condition.
+Methods also exist to retrieve the criteria type and criteria values of a boolean condition.
+Some methods for getting background and font color strings are deprecated and replaced by methods that return
+Color
+objects.
+Boolean
+Condition
+Access boolean conditions in
+Conditional
+Format
+Rules
+. Each
+conditional format rule may contain a single boolean condition. The boolean condition itself
+contains a boolean criteria (with values) and formatting settings. The criteria is evaluated
+against the content of a cell resulting in either a
+true
+or
+false
+value. If the
+criteria evaluates to
+true
+, the condition's formatting settings are applied to the cell.
+Methods
+Method
+Return type
+Brief description
+get
+Background
+Object()
+Color
+Gets the background color for this boolean condition.
+get
+Bold()
+Boolean
+Returns
+true
+if this boolean condition bolds the text and returns
+false
+if this
+boolean condition removes bolding from the text.
+get
+Criteria
+Type()
+Boolean
+Criteria
+Gets the rule's criteria type as defined in the
+Boolean
+Criteria
+enum.
+get
+Criteria
+Values()
+Object[]
+Gets an array of arguments for the rule's criteria.
+get
+Font
+Color
+Object()
+Color
+Gets the font color for this boolean condition.
+get
+Italic()
+Boolean
+Returns
+true
+if this boolean condition italicises the text and returns
+false
+if
+this boolean condition removes italics from the text.
+get
+Strikethrough()
+Boolean
+Returns
+true
+if this boolean condition strikes through the text and returns
+false
+if this boolean condition removes strikethrough from the text.
+get
+Underline()
+Boolean
+Returns
+true
+if this boolean condition underlines the text and returns
+false
+if
+this boolean condition removes underlining from the text.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+Background()
+String
+Gets the background color string for this boolean condition.
+get
+Font
+Color()
+String
+Gets the font color string for this boolean condition.
+Detailed documentation
+get
+Background
+Object()
+Gets the background color for this boolean condition. Returns
+null
+if not set.
+// Logs the boolean condition background color for each conditional format rule
+// on a sheet.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+for
+(
+const
+rule
+of
+rules
+)
+{
+const
+color
+=
+rule
+.
+getBooleanCondition
+().
+getBackgroundObject
+();
+Logger
+.
+log
+(
+`Background color:
+${
+color
+.
+asRgbColor
+().
+asHexString
+()
+}
+`
+);
+}
+Return
+Color
+— The background color, or
+null
+if not set for this condition.
+get
+Bold()
+Returns
+true
+if this boolean condition bolds the text and returns
+false
+if this
+boolean condition removes bolding from the text. Returns
+null
+if bolding is unaffected.
+// Logs the boolean condition font weight for each conditional format rule on a
+// sheet.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+for
+(
+const
+rule
+of
+rules
+)
+{
+const
+bold
+=
+rule
+.
+getBooleanCondition
+().
+getBold
+();
+Logger
+.
+log
+(
+`Bold:
+${
+bold
+}
+`
+);
+}
+Return
+Boolean
+— whether or not the boolean condition bolds the text, or
+null
+if bolding is
+    unaffected
+get
+Criteria
+Type()
+Gets the rule's criteria type as defined in the
+Boolean
+Criteria
+enum. To get the
+arguments for the criteria, use
+get
+Criteria
+Values()
+. To use these values to create or
+modify a conditional formatting rule, see
+Conditional
+Format
+Rule
+Builder.withCriteria(criteria, args)
+.
+// Log information about the conditional formats on the active sheet that use
+// boolean conditions.
+const
+formats
+=
+SpreadsheetApp
+.
+getActiveSheet
+.
+getConditionalFormats
+();
+SpreadsheetApp
+.
+getActiveSheet
+.
+getConditionalFormats
+().
+forEach
+((
+format
+)
+=
+>
+{
+const
+booleanCondition
+=
+format
+.
+getBooleanCondition
+();
+if
+(
+booleanCondition
+)
+{
+const
+criteria
+=
+booleanCondition
+.
+getCriteriaType
+();
+const
+args
+=
+booleanCondition
+.
+getCriteriaValues
+();
+Logger
+.
+log
+(
+`The conditional format rule is
+${
+criteria
+}
+${
+args
+}
+`
+);
+}
+});
+Return
+Boolean
+Criteria
+— The type of conditional formatting criteria.
+get
+Criteria
+Values()
+Gets an array of arguments for the rule's criteria. To get the criteria type, use
+get
+Criteria
+Type()
+. To use these values to create or modify a conditional formatting rule, see
+Conditional
+Format
+Rule
+Builder.withCriteria(criteria, args)
+.
+// Log information about the conditional formats on the active sheet that use
+// boolean conditions.
+const
+formats
+=
+SpreadsheetApp
+.
+getActiveSheet
+.
+getConditionalFormats
+();
+SpreadsheetApp
+.
+getActiveSheet
+.
+getConditionalFormats
+().
+forEach
+((
+format
+)
+=
+>
+{
+const
+booleanCondition
+=
+format
+.
+getBooleanCondition
+();
+if
+(
+booleanCondition
+)
+{
+const
+criteria
+=
+booleanCondition
+.
+getCriteriaType
+();
+const
+args
+=
+booleanCondition
+.
+getCriteriaValues
+();
+Logger
+.
+log
+(
+`The conditional format rule is
+${
+criteria
+}
+${
+args
+}
+`
+);
+}
+});
+Return
+Object[]
+— An array of arguments appropriate to the rule's criteria type; the number of arguments
+    and their type match the corresponding
+when...()
+method of the
+Conditional
+Format
+Rule
+Builder
+class.
+get
+Font
+Color
+Object()
+Gets the font color for this boolean condition. Returns
+null
+if not set.
+// Logs the boolean condition font color for each conditional format rule on a
+// sheet.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+for
+(
+const
+rule
+of
+rules
+)
+{
+const
+color
+=
+rule
+.
+getBooleanCondition
+().
+getFontColorObject
+();
+Logger
+.
+log
+(
+`Font color:
+${
+color
+.
+asRgbColor
+().
+asHexString
+()
+}
+`
+);
+}
+Return
+Color
+— The font color, or
+null
+if not set for this condition.
+get
+Italic()
+Returns
+true
+if this boolean condition italicises the text and returns
+false
+if
+this boolean condition removes italics from the text. Returns
+null
+if italics are
+unaffected.
+// Logs the boolean condition font style for each conditional format rule on a
+// sheet.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+for
+(
+const
+rule
+of
+rules
+)
+{
+const
+italic
+=
+rule
+.
+getBooleanCondition
+().
+getItalic
+();
+Logger
+.
+log
+(
+`Italic:
+${
+italic
+}
+`
+);
+}
+Return
+Boolean
+— whether or not the boolean condition italicises the text, or
+null
+if
+    italicising is unaffected
+get
+Strikethrough()
+Returns
+true
+if this boolean condition strikes through the text and returns
+false
+if this boolean condition removes strikethrough from the text. Returns
+null
+if
+strikethrough is unaffected.
+// Logs the boolean condition strikethrough setting for each conditional format
+// rule on a sheet.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+for
+(
+const
+rule
+of
+rules
+)
+{
+const
+strikethrough
+=
+rule
+.
+getBooleanCondition
+().
+getStrikethrough
+();
+Logger
+.
+log
+(
+`Strikethrough:
+${
+strikethrough
+}
+`
+);
+}
+Return
+Boolean
+— whether or not the boolean condition strikes through the text, or
+null
+if
+    strikethrough is unaffected
+get
+Underline()
+Returns
+true
+if this boolean condition underlines the text and returns
+false
+if
+this boolean condition removes underlining from the text. Returns
+null
+if underlining
+is unaffected.
+// Logs the boolean condition underline setting for each conditional format rule
+// on a sheet.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+for
+(
+const
+rule
+of
+rules
+)
+{
+const
+underline
+=
+rule
+.
+getBooleanCondition
+().
+getUnderline
+();
+Logger
+.
+log
+(
+`Underline:
+${
+underline
+}
+`
+);
+}
+Return
+Boolean
+— whether or not the boolean condition underlines the text, or
+null
+if
+    underlining is unaffected
+Deprecated methods
+get
+Background()
+Deprecated.
+Replaced by
+get
+Background
+Object()
+Gets the background color string for this boolean condition. Returns
+null
+if not set.
+// Logs the boolean condition background color for each conditional format rule
+// on a sheet.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+for
+(
+const
+rule
+of
+rules
+)
+{
+const
+color
+=
+rule
+.
+getBooleanCondition
+().
+getBackground
+();
+Logger
+.
+log
+(
+`Background color:
+${
+color
+}
+`
+);
+}
+Return
+String
+— The background color string, or
+null
+if not set for this condition.
+get
+Font
+Color()
+Deprecated.
+Replaced by
+get
+Font
+Color
+Object()
+Gets the font color string for this boolean condition. Returns
+null
+if not set.
+// Logs the boolean condition font color for each conditional format rule on a
+// sheet.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+for
+(
+const
+rule
+of
+rules
+)
+{
+Logger
+.
+log
+(
+`Font color:
+${
+rule
+.
+getBooleanCondition
+().
+getFontColor
+()
+}
+`
+);
+}
+Return
+String
+— The font color string, or
+null
+if not set for this condition.

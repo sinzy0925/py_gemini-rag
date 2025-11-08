@@ -1,0 +1,28 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/chip-list-layout/index.html
+
+Chip
+List
+Layout
+An enum that specifies the layout for
+Chip
+List
+.
+WRAPPED
+is the default; chips wrap to the next line if there isn't enough
+horizontal space.
+HORIZONTAL_SCROLLABLE
+chips scroll horizontally if they don't fit
+in the available space.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.ChipListLayout.WRAPPED
+.
+Properties
+Property
+Type
+Description
+WRAPPED
+Enum
+The chip list wraps to the next line if there isn't enough horizontal space. Default.
+HORIZONTAL_SCROLLABLE
+Enum
+The chips scroll horizontally if they don't fit in the available space.

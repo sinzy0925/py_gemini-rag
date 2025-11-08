@@ -1,0 +1,2089 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/spreadsheet-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+SpreadsheetApp
+class is used to access and create Google Sheets files and is the parent class for the Spreadsheet service.
+The
+SpreadsheetApp
+class contains various properties, which are enumerations representing different options or types within a spreadsheet, such as
+AutoFillSeries
+,
+BandingTheme
+, and
+BorderStyle
+.
+The
+SpreadsheetApp
+class offers methods to manage spreadsheets, including creating new spreadsheets, opening existing ones by ID or URL, and controlling data execution for data sources.
+Methods like
+getActive()
+,
+getActiveRange()
+,
+getActiveSheet()
+, and
+getSelection()
+allow scripts to interact with the currently active components of a spreadsheet.
+The
+SpreadsheetApp
+class also provides methods to create builders for various spreadsheet elements like
+CellImage
+,
+Color
+,
+ConditionalFormatRule
+, and
+DataValidation
+.
+Spreadsheet
+App
+Access and create Google Sheets files. This class is the parent class for the
+Spreadsheet service
+.
+Properties
+Property
+Type
+Description
+Auto
+Fill
+Series
+Auto
+Fill
+Series
+An enumeration of the types of series used to calculate auto-filled values.
+Banding
+Theme
+Banding
+Theme
+An enumeration of the possible banding themes.
+Boolean
+Criteria
+Boolean
+Criteria
+An enumeration of conditional formatting boolean criteria.
+Border
+Style
+Border
+Style
+An enumeration of the valid styles for setting borders on a
+Range
+.
+Color
+Type
+Color
+Type
+An enumeration of possible color types.
+Copy
+Paste
+Type
+Copy
+Paste
+Type
+An enumeration of the possible paste types.
+Data
+Execution
+Error
+Code
+Data
+Execution
+Error
+Code
+An enumeration of the possible data execution error codes.
+Data
+Execution
+State
+Data
+Execution
+State
+An enumeration of the possible data execution states.
+Data
+Source
+Parameter
+Type
+Data
+Source
+Parameter
+Type
+An enumeration of the possible data source parameter types.
+Data
+Source
+Refresh
+Scope
+Data
+Source
+Refresh
+Scope
+An enumeration of possible data source refresh scopes.
+Data
+Source
+Type
+Data
+Source
+Type
+An enumeration of the possible data source types.
+Data
+Validation
+Criteria
+Data
+Validation
+Criteria
+An enumeration representing the data validation criteria that can be set on a range.
+Date
+Time
+Grouping
+Rule
+Type
+Date
+Time
+Grouping
+Rule
+Type
+An enumeration of date time grouping rule.
+Developer
+Metadata
+Location
+Type
+Developer
+Metadata
+Location
+Type
+An enumeration of possible developer metadata location types.
+Developer
+Metadata
+Visibility
+Developer
+Metadata
+Visibility
+An enumeration of the possible developer metadata visibilities.
+Dimension
+Dimension
+An enumeration of the possible dimensions of a spreadsheet.
+Direction
+Direction
+A enumeration of the possible directions that one can move within a spreadsheet using the arrow
+keys.
+Frequency
+Type
+Frequency
+Type
+An enumeration of possible frequency types.
+Group
+Control
+Toggle
+Position
+Group
+Control
+Toggle
+Position
+An enumeration of the positions that the group control toggle can be in.
+Interpolation
+Type
+Interpolation
+Type
+An enumeration of conditional format gradient interpolation types.
+Pivot
+Table
+Summarize
+Function
+Pivot
+Table
+Summarize
+Function
+An enumeration of the functions that may be used to summarize values in a pivot table.
+Pivot
+Value
+Display
+Type
+Pivot
+Value
+Display
+Type
+An enumeration of the ways that a pivot value may be displayed.
+Protection
+Type
+Protection
+Type
+An enumeration representing the parts of a spreadsheet that can be protected from edits.
+Recalculation
+Interval
+Recalculation
+Interval
+An enumeration of the possible intervals that can be used in spreadsheet recalculation.
+Relative
+Date
+Relative
+Date
+An enumeration of relative date options for calculating a value to be used in date-based
+Boolean
+Criteria
+.
+Sheet
+Type
+Sheet
+Type
+An enumeration of the different types of sheets that can exist in a spreadsheet.
+Sort
+Order
+Sort
+Order
+An enumeration of sort order.
+Text
+Direction
+Text
+Direction
+An enumeration of valid text directions.
+Text
+To
+Columns
+Delimiter
+Text
+To
+Columns
+Delimiter
+An enumeration of the preset delimiters for split text to columns.
+Theme
+Color
+Type
+Theme
+Color
+Type
+An enumeration of possible theme color types.
+Value
+Type
+Value
+Type
+An enumeration of value types returned by
+Range.getValue()
+and
+Range.getValues()
+from the Range class of the Spreadsheet service. The enumeration values
+listed below are in addition to
+Number
+,
+Boolean
+,
+Date
+, or
+String
+.
+Wrap
+Strategy
+Wrap
+Strategy
+An enumeration of the strategies used for wrapping cells.
+Methods
+Method
+Return type
+Brief description
+create(name)
+Spreadsheet
+Creates a new spreadsheet with the given name.
+create(name, rows, columns)
+Spreadsheet
+Creates a new spreadsheet with the given name and the specified number of rows and columns.
+enable
+All
+Data
+Sources
+Execution()
+void
+Turns data execution on for all types of data sources.
+enable
+Big
+Query
+Execution()
+void
+Turns data execution on for BigQuery data sources.
+enable
+Looker
+Execution()
+void
+Turns data execution on for Looker data sources.
+flush()
+void
+Applies all pending Spreadsheet changes.
+get
+Active()
+Spreadsheet
+Returns the currently active spreadsheet, or
+null
+if there is none.
+get
+Active
+Range()
+Range
+Returns the selected range in the active sheet, or
+null
+if there is no active range.
+get
+Active
+Range
+List()
+Range
+List
+Returns the list of active ranges in the active sheet or
+null
+if there are no ranges
+selected.
+get
+Active
+Sheet()
+Sheet
+Gets the active sheet in a spreadsheet.
+get
+Active
+Spreadsheet()
+Spreadsheet
+Returns the currently active spreadsheet, or
+null
+if there is none.
+get
+Current
+Cell()
+Range
+Returns the current (highlighted) cell that is selected in one of the active ranges in the
+active sheet or
+null
+if there is no current cell.
+get
+Selection()
+Selection
+Returns the current
+Selection
+in the spreadsheet.
+get
+Ui()
+Ui
+Returns an instance of the spreadsheet's user-interface environment that allows the script to
+add features like menus, dialogs, and sidebars.
+new
+Cell
+Image()
+Cell
+Image
+Builder
+Creates a builder for a
+Cell
+Image
+.
+new
+Color()
+Color
+Builder
+Creates a builder for a
+Color
+.
+new
+Conditional
+Format
+Rule()
+Conditional
+Format
+Rule
+Builder
+Creates a builder for a conditional formatting rule.
+new
+Data
+Source
+Spec()
+Data
+Source
+Spec
+Builder
+Creates a builder for a
+Data
+Source
+Spec
+.
+new
+Data
+Validation()
+Data
+Validation
+Builder
+Creates a builder for a data validation rule.
+new
+Filter
+Criteria()
+Filter
+Criteria
+Builder
+Creates a builder for a
+Filter
+Criteria
+.
+new
+Rich
+Text
+Value()
+Rich
+Text
+Value
+Builder
+Creates a builder for a Rich Text value.
+new
+Text
+Style()
+Text
+Style
+Builder
+Creates a builder for a text style.
+open(file)
+Spreadsheet
+Opens the spreadsheet that corresponds to the given File object.
+open
+By
+Id(id)
+Spreadsheet
+Opens the spreadsheet with the given ID.
+open
+By
+Url(url)
+Spreadsheet
+Opens the spreadsheet with the given URL.
+set
+Active
+Range(range)
+Range
+Sets the specified range as the
+active range
+, with the top
+left cell in the range as the
+current cell
+.
+set
+Active
+Range
+List(rangeList)
+Range
+List
+Sets the specified list of ranges as the
+active ranges
+.
+set
+Active
+Sheet(sheet)
+Sheet
+Sets the active sheet in a spreadsheet.
+set
+Active
+Sheet(sheet, restoreSelection)
+Sheet
+Sets the active sheet in a spreadsheet, with the option to restore the most recent selection
+within that sheet.
+set
+Active
+Spreadsheet(newActiveSpreadsheet)
+void
+Sets the active spreadsheet.
+set
+Current
+Cell(cell)
+Range
+Sets the specified cell as the
+current cell
+.
+Detailed documentation
+create(name)
+Creates a new spreadsheet with the given name.
+// The code below creates a new spreadsheet "Finances" and logs the URL for it
+const
+ssNew
+=
+SpreadsheetApp
+.
+create
+(
+'Finances'
+);
+Logger
+.
+log
+(
+ssNew
+.
+getUrl
+());
+Parameters
+Name
+Type
+Description
+name
+String
+The name for the spreadsheet.
+Return
+Spreadsheet
+— a new spreadsheet
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets
+create(name, rows, columns)
+Creates a new spreadsheet with the given name and the specified number of rows and columns.
+// The code below creates a new spreadsheet "Finances" with 50 rows and 5
+// columns and logs the URL for it
+const
+ssNew
+=
+SpreadsheetApp
+.
+create
+(
+'Finances'
+,
+50
+,
+5
+);
+Logger
+.
+log
+(
+ssNew
+.
+getUrl
+());
+Parameters
+Name
+Type
+Description
+name
+String
+The name for the spreadsheet.
+rows
+Integer
+The number of rows for the spreadsheet.
+columns
+Integer
+The number of columns for the spreadsheet.
+Return
+Spreadsheet
+— a new spreadsheet
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets
+enable
+All
+Data
+Sources
+Execution()
+Turns data execution on for all types of data sources.
+Data execution throws an exception if the data source type isn't turned on. Use this method
+to turn data execution on for all data source types.
+// Turns data execution on for all types of data sources.
+SpreadsheetApp
+.
+enableAllDataSourcesExecution
+();
+// Opens the spreadsheet file by its ID. If you created your script from a
+// Google Sheets file, use SpreadsheetApp.getActiveSpreadsheet().
+// TODO(developer): Replace the ID with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openById
+(
+'abc123456'
+);
+// Gets the first data source sheet in the spreadsheet and refreshes the data.
+ss
+.
+getDataSourceSheets
+()[
+0
+].
+refreshData
+();
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/bigquery.readonly
+enable
+Big
+Query
+Execution()
+Turns data execution on for BigQuery data sources.
+Data execution for BigQuery data source throws an exception if not turned on.
+// Turns data execution on for BigQuery data sources.
+SpreadsheetApp
+.
+enableBigQueryExecution
+();
+// Opens the spreadsheet file by its ID. If you created your script from a
+// Google Sheets file, use SpreadsheetApp.getActiveSpreadsheet().
+// TODO(developer): Replace the ID with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openById
+(
+'abc123456'
+);
+// Gets the first data source sheet in the spreadsheet and refreshes the
+// BigQuery data.
+ss
+.
+getDataSourceSheets
+()[
+0
+].
+refreshData
+();
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/bigquery.readonly
+enable
+Looker
+Execution()
+Turns data execution on for Looker data sources.
+Data execution for Looker data source throws an exception if not turned on.
+// Turns data execution on for Looker data sources.
+SpreadsheetApp
+.
+enableLookerExecution
+();
+// Opens the spreadsheet file by its ID. If you created your script from a
+// Google Sheets file, use SpreadsheetApp.getActiveSpreadsheet().
+// TODO(developer): Replace the ID with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openById
+(
+'abc123456'
+);
+// Gets the first data source sheet in the spreadsheet and refreshes the
+// associated Looker data.
+ss
+.
+getDataSourceSheets
+()[
+0
+].
+refreshData
+();
+flush()
+Applies all pending Spreadsheet changes.
+Spreadsheet operations are sometimes bundled together to improve performance, such as when
+doing multiple calls to Range.getValue(). However, sometimes you may want to make sure that all
+pending changes are made right away, for instance to show users data as a script is executing.
+// The code below changes the background color of cells A1 and B1 twenty times.
+// You should be able to see the updates live in the spreadsheet. If flush() is
+// not called, the updates may be applied live or may all be applied at once
+// when the script completes.
+function
+colors
+()
+{
+const
+sheet
+=
+SpreadsheetApp
+.
+getActiveSheet
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+20
+;
+i
+++
+)
+{
+if
+(
+i
+%
+2
+===
+0
+)
+{
+sheet
+.
+getRange
+(
+'A1'
+).
+setBackground
+(
+'green'
+);
+sheet
+.
+getRange
+(
+'B1'
+).
+setBackground
+(
+'red'
+);
+}
+else
+{
+sheet
+.
+getRange
+(
+'A1'
+).
+setBackground
+(
+'red'
+);
+sheet
+.
+getRange
+(
+'B1'
+).
+setBackground
+(
+'green'
+);
+}
+SpreadsheetApp
+.
+flush
+();
+}
+}
+get
+Active()
+Returns the currently active spreadsheet, or
+null
+if there is none.
+Functions that are run in the context of a spreadsheet can get a reference to the
+corresponding Spreadsheet object by calling this function.
+// The code below logs the URL for the active spreadsheet.
+Logger
+.
+log
+(
+SpreadsheetApp
+.
+getActive
+().
+getUrl
+());
+Return
+Spreadsheet
+— the active Spreadsheet object
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Active
+Range()
+Returns the selected range in the active sheet, or
+null
+if there is no active range. If
+multiple ranges are selected this method returns only the last selected range.
+This generally means the range that a user has selected in the active sheet, but in a custom
+function it refers to the cell being actively recalculated.
+// The code below logs the background color for the active range.
+const
+colorObject
+=
+SpreadsheetApp
+.
+getActiveRange
+().
+getBackgroundObject
+();
+// Assume the color has ColorType.RGB.
+Logger
+.
+log
+(
+colorObject
+.
+asRgbColor
+().
+asHexString
+());
+Return
+Range
+— The active range.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Active
+Range
+List()
+Returns the list of active ranges in the active sheet or
+null
+if there are no ranges
+selected. The active range containing the current highlighted cell is placed last in the list.
+If there is a single range selected, this behaves as a
+get
+Active
+Range()
+call.
+// Returns the list of active ranges.
+const
+rangeList
+=
+SpreadsheetApp
+.
+getActiveRangeList
+();
+Return
+Range
+List
+— the list of active ranges
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Active
+Sheet()
+Gets the active sheet in a spreadsheet.
+The active sheet in a spreadsheet is the sheet that is being displayed in the spreadsheet
+UI.
+// The code below logs the name of the active sheet.
+Logger
+.
+log
+(
+SpreadsheetApp
+.
+getActiveSheet
+().
+getName
+());
+Return
+Sheet
+— the active Sheet object
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Active
+Spreadsheet()
+Returns the currently active spreadsheet, or
+null
+if there is none.
+Functions that are run in the context of a spreadsheet can get a reference to the
+corresponding
+Spreadsheet
+object by calling this function.
+// The code below logs the URL for the active spreadsheet.
+Logger
+.
+log
+(
+SpreadsheetApp
+.
+getActiveSpreadsheet
+().
+getUrl
+());
+Return
+Spreadsheet
+— the active Spreadsheet object
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Current
+Cell()
+Returns the current (highlighted) cell that is selected in one of the active ranges in the
+active sheet or
+null
+if there is no current cell.
+// Returns the current highlighted cell in the one of the active ranges.
+const
+currentCell
+=
+SpreadsheetApp
+.
+getCurrentCell
+();
+Return
+Range
+— the current cell
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Selection()
+Returns the current
+Selection
+in the spreadsheet.
+const
+selection
+=
+SpreadsheetApp
+.
+getSelection
+();
+const
+currentCell
+=
+selection
+.
+getCurrentCell
+();
+Return
+Selection
+— the current selection
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Ui()
+Returns an instance of the spreadsheet's user-interface environment that allows the script to
+add features like menus, dialogs, and sidebars. A script can only interact with the UI for the
+current instance of an open spreadsheet, and only if the script is
+bound
+to the spreadsheet. For more information, see
+the guides to
+menus
+and
+dialogs and sidebars
+.
+// Add a custom menu to the active spreadsheet, including a separator and a
+// sub-menu.
+function
+onOpen
+(
+e
+)
+{
+SpreadsheetApp
+.
+getUi
+()
+.
+createMenu
+(
+'My Menu'
+)
+.
+addItem
+(
+'My menu item'
+,
+'myFunction'
+)
+.
+addSeparator
+()
+.
+addSubMenu
+(
+SpreadsheetApp
+.
+getUi
+()
+.
+createMenu
+(
+'My sub-menu'
+)
+.
+addItem
+(
+'One sub-menu item'
+,
+'mySecondFunction'
+)
+.
+addItem
+(
+'Another sub-menu item'
+,
+'myThirdFunction'
+),
+)
+.
+addToUi
+();
+}
+Return
+Ui
+— an instance of this spreadsheet's user-interface environment
+new
+Cell
+Image()
+Creates a builder for a
+Cell
+Image
+.
+// Opens the spreadsheet file by its URL. If you created your script from within
+// a Google Sheets file, you can use SpreadsheetApp.getActiveSpreadsheet()
+// instead.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+// Gets Sheet1 by its name.
+const
+sheet
+=
+ss
+.
+getSheetByName
+(
+'Sheet1'
+);
+// Gets cell A1 on Sheet1.
+const
+range
+=
+sheet
+.
+getRange
+(
+'A1'
+);
+// Builds an image using a source URL.
+const
+cellImage
+=
+SpreadsheetApp
+.
+newCellImage
+()
+.
+setSourceUrl
+(
+'https://www.gstatic.com/images/branding/productlogos/apps_script/v10/web-64dp/logo_apps_script_color_1x_web_64dp.png'
+,
+)
+.
+build
+();
+// Sets the image in cell A1.
+range
+.
+setValue
+(
+cellImage
+);
+Return
+Cell
+Image
+Builder
+— The new builder.
+new
+Color()
+Creates a builder for a
+Color
+.
+const
+rgbColor
+=
+SpreadsheetApp
+.
+newColor
+().
+setRgbColor
+(
+'#FF0000'
+).
+build
+();
+Return
+Color
+Builder
+— The new builder.
+new
+Conditional
+Format
+Rule()
+Creates a builder for a conditional formatting rule.
+// Adds a conditional format rule to a sheet that causes all cells in range
+// A1:B3 to turn red if they contain a number between 1 and 10.
+const
+sheet
+=
+SpreadsheetApp
+.
+getActive
+().
+getActiveSheet
+();
+const
+range
+=
+sheet
+.
+getRange
+(
+'A1:B3'
+);
+const
+rule
+=
+SpreadsheetApp
+.
+newConditionalFormatRule
+()
+.
+whenNumberBetween
+(
+1
+,
+10
+)
+.
+setBackground
+(
+'#FF0000'
+)
+.
+setRanges
+([
+range
+])
+.
+build
+();
+const
+rules
+=
+sheet
+.
+getConditionalFormatRules
+();
+rules
+.
+push
+(
+rule
+);
+sheet
+.
+setConditionalFormatRules
+(
+rules
+);
+Return
+Conditional
+Format
+Rule
+Builder
+— the new builder.
+new
+Data
+Source
+Spec()
+Creates a builder for a
+Data
+Source
+Spec
+.
+// Opens the spreadsheet file by its URL. If you created your script from within
+// a Google Sheets file, you can use SpreadsheetApp.getActiveSpreadsheet()
+// instead.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+// Enables BigQuery.
+SpreadsheetApp
+.
+enableBigQueryExecution
+();
+// Builds a data source specification.
+// TODO (developer): Update the project ID to your own Google Cloud project ID.
+const
+dataSourceSpec
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+()
+.
+asBigQuery
+()
+.
+setProjectId
+(
+'project-id-1'
+)
+.
+setTableProjectId
+(
+'bigquery-public-data'
+)
+.
+setDatasetId
+(
+'ncaa_basketball'
+)
+.
+setTableId
+(
+'mbb_historical_teams_games'
+)
+.
+build
+();
+// Adds the data source and its data to the spreadsheet.
+ss
+.
+insertDataSourceSheet
+(
+dataSourceSpec
+);
+Return
+Data
+Source
+Spec
+Builder
+— The new builder.
+new
+Data
+Validation()
+Creates a builder for a data validation rule.
+const
+cell
+=
+SpreadsheetApp
+.
+getActive
+().
+getRange
+(
+'A1'
+);
+const
+rule
+=
+SpreadsheetApp
+.
+newDataValidation
+()
+.
+requireNumberBetween
+(
+1
+,
+100
+)
+.
+setAllowInvalid
+(
+false
+)
+.
+setHelpText
+(
+'Number must be between 1 and 100.'
+)
+.
+build
+();
+cell
+.
+setDataValidation
+(
+rule
+);
+Return
+Data
+Validation
+Builder
+— The new builder.
+new
+Filter
+Criteria()
+Creates a builder for a
+Filter
+Criteria
+.
+// Opens the spreadsheet file by its URL. If you created your script from within
+// a Google Sheets file, you can use SpreadsheetApp.getActiveSpreadsheet()
+// instead.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+// Gets Sheet1 by its name.
+const
+sheet
+=
+ss
+.
+getSheetByName
+(
+'Sheet1'
+);
+// Sets the range to A1:D20.
+const
+range
+=
+sheet
+.
+getRange
+(
+'A1:D20'
+);
+// Creates a filter and applies it to the specified range.
+range
+.
+createFilter
+();
+// Gets the current filter for the range and creates filter criteria that only
+// shows cells that aren't empty.
+const
+filter
+=
+range
+.
+getFilter
+();
+const
+criteria
+=
+SpreadsheetApp
+.
+newFilterCriteria
+().
+whenCellNotEmpty
+().
+build
+();
+// Sets the criteria to  column C.
+filter
+.
+setColumnFilterCriteria
+(
+3
+,
+criteria
+);
+Return
+Filter
+Criteria
+Builder
+— the new builder
+new
+Rich
+Text
+Value()
+Creates a builder for a Rich Text value.
+// Sets cell A1 to have the text "Hello world", with "Hello" bolded.
+const
+cell
+=
+SpreadsheetApp
+.
+getActive
+().
+getRange
+(
+'A1'
+);
+const
+bold
+=
+SpreadsheetApp
+.
+newTextStyle
+().
+setBold
+(
+true
+).
+build
+();
+const
+value
+=
+SpreadsheetApp
+.
+newRichTextValue
+()
+.
+setText
+(
+'Hello world'
+)
+.
+setTextStyle
+(
+0
+,
+5
+,
+bold
+)
+.
+build
+();
+cell
+.
+setRichTextValue
+(
+value
+);
+Return
+Rich
+Text
+Value
+Builder
+— The new builder.
+new
+Text
+Style()
+Creates a builder for a text style.
+// Sets range A1:B3 to have red, size 22, bolded, underlined text.
+const
+range
+=
+SpreadsheetApp
+.
+getActive
+().
+getRange
+(
+'A1:B3'
+);
+const
+style
+=
+SpreadsheetApp
+.
+newTextStyle
+()
+.
+setForegroundColor
+(
+'red'
+)
+.
+setFontSize
+(
+22
+)
+.
+setBold
+(
+true
+)
+.
+setUnderline
+(
+true
+)
+.
+build
+();
+range
+.
+setTextStyle
+(
+style
+);
+Return
+Text
+Style
+Builder
+— The new builder.
+open(file)
+Opens the spreadsheet that corresponds to the given File object.
+// Get any starred spreadsheets from Google Drive, then open the spreadsheets
+// and log the name of the first sheet within each spreadsheet.
+const
+files
+=
+DriveApp
+.
+searchFiles
+(
+`starred = true and mimeType = "
+${
+MimeType
+.
+GOOGLE_SHEETS
+}
+"`
+,
+);
+while
+(
+files
+.
+hasNext
+())
+{
+const
+spreadsheet
+=
+SpreadsheetApp
+.
+open
+(
+files
+.
+next
+());
+const
+sheet
+=
+spreadsheet
+.
+getSheets
+()[
+0
+];
+Logger
+.
+log
+(
+sheet
+.
+getName
+());
+}
+Parameters
+Name
+Type
+Description
+file
+File
+The file to open.
+Return
+Spreadsheet
+— the spreadsheet
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets
+open
+By
+Id(id)
+Opens the spreadsheet with the given ID. A spreadsheet ID can be extracted from its URL. For
+example, the spreadsheet ID in the URL
+https://docs.google.com/spreadsheets/d/abc1234567/edit#gid=0
+is "abc1234567".
+// The code below opens a spreadsheet using its ID and logs the name for it.
+// Note that the spreadsheet is NOT physically opened on the client side.
+// It is opened on the server only (for modification by the script).
+const
+ss
+=
+SpreadsheetApp
+.
+openById
+(
+'abc1234567'
+);
+Logger
+.
+log
+(
+ss
+.
+getName
+());
+Parameters
+Name
+Type
+Description
+id
+String
+The unique identifier for the spreadsheet.
+Return
+Spreadsheet
+— the Spreadsheet object with the given id
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets
+open
+By
+Url(url)
+Opens the spreadsheet with the given URL. Throws a scripting exception if the URL doesn't exist
+or the user doesn't have permission to access it.
+// Opens a spreadsheet by its URL and logs its name.
+// Note that the spreadsheet doesn't physically open on the client side.
+// It opens on the server only (for modification by the script).
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc1234567/edit'
+,
+);
+console
+.
+log
+(
+ss
+.
+getName
+());
+Parameters
+Name
+Type
+Description
+url
+String
+The URL for the spreadsheet.
+Return
+Spreadsheet
+— The spreadsheet object with the given URL.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets
+set
+Active
+Range(range)
+Sets the specified range as the
+active range
+, with the top
+left cell in the range as the
+current cell
+.
+The spreadsheet UI displays the sheet that contains the chosen range and selects the cells
+defined in the chosen range.
+// The code below sets range C1:D4 in the first sheet as the active range.
+const
+range
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+().
+getSheets
+()[
+0
+].
+getRange
+(
+'C1:D4'
+);
+SpreadsheetApp
+.
+setActiveRange
+(
+range
+);
+const
+selection
+=
+SpreadsheetApp
+.
+getSelection
+();
+// Current cell: C1
+const
+currentCell
+=
+selection
+.
+getCurrentCell
+();
+// Active Range: C1:D4
+const
+activeRange
+=
+selection
+.
+getActiveRange
+();
+Parameters
+Name
+Type
+Description
+range
+Range
+The range to be made the active range.
+Return
+Range
+— the new active Range
+set
+Active
+Range
+List(rangeList)
+Sets the specified list of ranges as the
+active ranges
+. The last
+range in the list is set as the
+active range
+.
+// The code below sets ranges [D4, B2:C4] in the active sheet as the active
+// ranges.
+const
+rangeList
+=
+SpreadsheetApp
+.
+getActiveSheet
+().
+getRanges
+([
+'D4'
+,
+'B2:C4'
+]);
+SpreadsheetApp
+.
+setActiveRangeList
+(
+rangeList
+);
+const
+selection
+=
+SpreadsheetApp
+.
+getSelection
+();
+// Current cell: B2
+const
+currentCell
+=
+selection
+.
+getCurrentCell
+();
+// Active range: B2:C4
+const
+activeRange
+=
+selection
+.
+getActiveRange
+();
+// Active range list: [D4, B2:C4]
+const
+activeRangeList
+=
+selection
+.
+getActiveRangeList
+();
+Parameters
+Name
+Type
+Description
+range
+List
+Range
+List
+The list of ranges to select.
+Return
+Range
+List
+— the newly selected list of ranges
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Active
+Sheet(sheet)
+Sets the active sheet in a spreadsheet. The Google Sheets UI displays the chosen sheet unless
+the sheet belongs to a different spreadsheet.
+// The code below makes the 2nd sheet active in the active spreadsheet.
+const
+spreadsheet
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+();
+SpreadsheetApp
+.
+setActiveSheet
+(
+spreadsheet
+.
+getSheets
+()[
+1
+]);
+Parameters
+Name
+Type
+Description
+sheet
+Sheet
+The new active sheet.
+Return
+Sheet
+— the sheet that has been made the new active sheet
+set
+Active
+Sheet(sheet, restoreSelection)
+Sets the active sheet in a spreadsheet, with the option to restore the most recent selection
+within that sheet. The Google Sheets UI displays the chosen sheet unless the sheet belongs to a
+different spreadsheet.
+const
+spreadsheet
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+();
+const
+firstSheet
+=
+spreadsheet
+.
+getSheets
+()[
+0
+];
+const
+secondSheet
+=
+spreadsheet
+.
+getSheets
+()[
+1
+];
+// Set the first sheet as the active sheet and select the range D4:F4.
+spreadsheet
+.
+setActiveSheet
+(
+firstSheet
+).
+getRange
+(
+'D4:F4'
+).
+activate
+();
+// Switch to the second sheet to do some work.
+spreadsheet
+.
+setActiveSheet
+(
+secondSheet
+);
+// Switch back to first sheet, and restore its selection.
+spreadsheet
+.
+setActiveSheet
+(
+firstSheet
+,
+true
+);
+// The selection of first sheet is restored, and it logs D4:F4
+const
+range
+=
+spreadsheet
+.
+getActiveSheet
+().
+getSelection
+().
+getActiveRange
+();
+Logger
+.
+log
+(
+range
+.
+getA1Notation
+());
+Parameters
+Name
+Type
+Description
+sheet
+Sheet
+The new active sheet.
+restore
+Selection
+Boolean
+If
+true
+, the most recent selection of the new active sheet
+    becomes selected again as the new sheet becomes active; if
+false
+, the new sheet
+    becomes active without changing the current selection.
+Return
+Sheet
+— the new active sheet
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Active
+Spreadsheet(newActiveSpreadsheet)
+Sets the active spreadsheet.
+// The code below makes the spreadsheet with key "1234567890" the active
+// spreadsheet
+const
+ss
+=
+SpreadsheetApp
+.
+openById
+(
+'1234567890'
+);
+SpreadsheetApp
+.
+setActiveSpreadsheet
+(
+ss
+);
+Parameters
+Name
+Type
+Description
+new
+Active
+Spreadsheet
+Spreadsheet
+The Spreadsheet to be made the active spreadsheet.
+set
+Current
+Cell(cell)
+Sets the specified cell as the
+current cell
+.
+If the specified cell is present in an already selected range, then that range becomes the
+active range with the cell as the current cell.
+If the specified cell is not present in any selected range, then the existing selection is
+removed and the cell becomes the current cell and the active range.
+Note:
+The specified
+Range
+must consist of one cell, otherwise this method
+throws an exception.
+// The code below sets the cell B5 in the first sheet as the current cell.
+const
+cell
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+().
+getSheets
+()[
+0
+].
+getRange
+(
+'B5'
+);
+SpreadsheetApp
+.
+setCurrentCell
+(
+cell
+);
+const
+selection
+=
+SpreadsheetApp
+.
+getSelection
+();
+// Current cell: B5
+const
+currentCell
+=
+selection
+.
+getCurrentCell
+();
+Parameters
+Name
+Type
+Description
+cell
+Range
+The cell to set as the current cell.
+Return
+Range
+— the newly set current cell
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

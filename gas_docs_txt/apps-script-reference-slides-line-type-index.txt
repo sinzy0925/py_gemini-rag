@@ -1,0 +1,57 @@
+Source Path: gas_docs_html/apps-script/reference/slides/line-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+LineType represents various line types derived from a subset of ST_ShapeType values in ECMA-376.
+To use an enum, you call its parent class, name, and property, such as
+SlidesApp.LineType.STRAIGHT_CONNECTOR_1
+.
+The available LineType properties include different straight, bent, and curved connectors, as well as a straight line and an unsupported type.
+Line
+Type
+The line types.
+Derived from a subset of the values of the "ST_ShapeType" simple type in section 20.1.10.55 of
+"Office Open XML File Formats - Fundamentals and Markup Language Reference", part 1 of
+ECMA-376 5th
+edition
+.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.LineType.STRAIGHT_CONNECTOR_1
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A line type that is not supported.
+STRAIGHT_CONNECTOR_1
+Enum
+Straight connector 1 form. Corresponds to ECMA-376 ST_ShapeType 'straightConnector1'.
+BENT_CONNECTOR_2
+Enum
+Bent connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector2'.
+BENT_CONNECTOR_3
+Enum
+Bent connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector3'.
+BENT_CONNECTOR_4
+Enum
+Bent connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector4'.
+BENT_CONNECTOR_5
+Enum
+Bent connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector5'.
+CURVED_CONNECTOR_2
+Enum
+Curved connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector2'.
+CURVED_CONNECTOR_3
+Enum
+Curved connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector3'.
+CURVED_CONNECTOR_4
+Enum
+Curved connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector4'.
+CURVED_CONNECTOR_5
+Enum
+Curved connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector5'.
+STRAIGHT_LINE
+Enum
+Straight line. Corresponds to ECMA-376 ST_ShapeType 'line'. This line type is not a connector.

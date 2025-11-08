@@ -1,0 +1,110 @@
+Source Path: gas_docs_html/apps-script/reference/slides/affine-transform/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+AffineTransform uses a 3x3 matrix to transform source coordinates into destination coordinates.
+The transformation involves scaling, shearing, and translation of coordinates.
+The class provides methods to retrieve the individual scaling, shearing, and translation elements.
+An AffineTransform object can be used to create a new AffineTransformBuilder.
+Affine
+Transform
+A 3x3 matrix used to transform source coordinates (x1, y1) into destination coordinates (x2, y2)
+according to matrix multiplication:
+[ x2 ]   [ scaleX shearX translateX ] [ x1 ]
+[ y2 ] = [ shearY scaleY translateY ] [ y1 ]
+[ 1  ]   [   0      0        1      ] [ 1  ]
+After transformation,
+x2 = scaleX * x1 + shearX * y1 + translateX;
+y2 = scaleY * y1 + shearY * x1 + translateY;
+Methods
+Method
+Return type
+Brief description
+get
+Scale
+X()
+Number
+Gets the X coordinate scaling element.
+get
+Scale
+Y()
+Number
+Gets the Y coordinate scaling element.
+get
+Shear
+X()
+Number
+Gets the X coordinate shearing element.
+get
+Shear
+Y()
+Number
+Gets the Y coordinate shearing element.
+get
+Translate
+X()
+Number
+Gets the X coordinate translation element in points.
+get
+Translate
+Y()
+Number
+Gets the Y coordinate translation element in points.
+to
+Builder()
+Affine
+Transform
+Builder
+Returns a new
+Affine
+Transform
+Builder
+based on this transform.
+Detailed documentation
+get
+Scale
+X()
+Gets the X coordinate scaling element.
+Return
+Number
+get
+Scale
+Y()
+Gets the Y coordinate scaling element.
+Return
+Number
+get
+Shear
+X()
+Gets the X coordinate shearing element.
+Return
+Number
+get
+Shear
+Y()
+Gets the Y coordinate shearing element.
+Return
+Number
+get
+Translate
+X()
+Gets the X coordinate translation element in points.
+Return
+Number
+get
+Translate
+Y()
+Gets the Y coordinate translation element in points.
+Return
+Number
+to
+Builder()
+Returns a new
+Affine
+Transform
+Builder
+based on this transform.
+Return
+Affine
+Transform
+Builder

@@ -1,0 +1,233 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/spreadsheet-theme/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SpreadsheetTheme allows access and modification of existing spreadsheet themes.
+You can set a theme on a spreadsheet using
+Spreadsheet.setSpreadsheetTheme(theme)
+.
+Methods are available to get and set concrete colors for theme color types and to get and set the font family of a theme.
+Methods like
+getConcreteColor
+and
+getFontFamily
+return theme properties, while methods like
+setConcreteColor
+and
+setFontFamily
+modify them and return the theme object for chaining.
+Using these methods requires specific authorization scopes related to accessing and modifying spreadsheets.
+Spreadsheet
+Theme
+Access and modify existing themes. To set a theme on a spreadsheet, use
+Spreadsheet.setSpreadsheetTheme(theme)
+.
+Methods
+Method
+Return type
+Brief description
+get
+Concrete
+Color(themeColorType)
+Color
+Returns the concrete
+Color
+for a valid theme color type.
+get
+Font
+Family()
+String
+Returns the font family of the theme, or
+null
+if it's a
+null
+theme.
+get
+Theme
+Colors()
+Theme
+Color
+Type[]
+Returns a list of all possible theme color types for the current theme.
+set
+Concrete
+Color(themeColorType, color)
+Spreadsheet
+Theme
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color.
+set
+Concrete
+Color(themeColorType, red, green, blue)
+Spreadsheet
+Theme
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color in RGB format.
+set
+Font
+Family(fontFamily)
+Spreadsheet
+Theme
+Sets the font family for the theme.
+Detailed documentation
+get
+Concrete
+Color(themeColorType)
+Returns the concrete
+Color
+for a valid theme color type. Throws exception if the theme
+color type is not set in the current theme.
+Parameters
+Name
+Type
+Description
+theme
+Color
+Type
+Theme
+Color
+Type
+Theme color type.
+Return
+Color
+— Concrete color.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Font
+Family()
+Returns the font family of the theme, or
+null
+if it's a
+null
+theme.
+Return
+String
+— The theme font family.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Theme
+Colors()
+Returns a list of all possible theme color types for the current theme.
+Return
+Theme
+Color
+Type[]
+— A list of theme colors.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Concrete
+Color(themeColorType, color)
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color.
+Parameters
+Name
+Type
+Description
+theme
+Color
+Type
+Theme
+Color
+Type
+The theme color type.
+color
+Color
+The color.
+Return
+Spreadsheet
+Theme
+— The theme, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Concrete
+Color(themeColorType, red, green, blue)
+Sets the concrete color associated with the
+Theme
+Color
+Type
+in this color scheme to the
+given color in RGB format.
+Parameters
+Name
+Type
+Description
+theme
+Color
+Type
+Theme
+Color
+Type
+The theme color type.
+red
+Integer
+The value of red channel.
+green
+Integer
+The value of green channel.
+blue
+Integer
+The value of blue channel.
+Return
+Spreadsheet
+Theme
+— The theme, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Font
+Family(fontFamily)
+Sets the font family for the theme.
+Parameters
+Name
+Type
+Description
+font
+Family
+String
+The new theme font family.
+Return
+Spreadsheet
+Theme
+— This theme, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

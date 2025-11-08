@@ -1,0 +1,387 @@
+Source Path: gas_docs_html/apps-script/reference/html/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The HTML service in Apps Script allows applications to return HTML, typically for user interfaces.
+Key classes for working with HTML in Apps Script include HtmlOutput, HtmlService, and HtmlTemplate.
+HtmlOutput objects represent HTML content that can be served from a script and offer methods for managing content, meta tags, and display properties.
+HtmlService is the main service for creating and managing HtmlOutput and HtmlTemplate objects.
+HtmlTemplate allows for dynamically constructing HTML content before evaluating it to an HtmlOutput object.
+HTML
+This service allows Apps Script applications to return HTML, usually as a user interface.
+  If you're new to using this class, we recommend you also see the
+guide to Html Service
+.
+Classes
+Name
+Brief description
+Html
+Output
+An
+Html
+Output
+object that can be served from a script.
+Html
+Output
+Meta
+Tag
+An object that represents a meta tag added to the page by calling
+Html
+Output.addMetaTag(name, content)
+.
+Html
+Service
+Service for returning HTML and other text content from a script.
+Html
+Template
+A template object for dynamically constructing HTML.
+Sandbox
+Mode
+An enum representing the sandbox modes that can be used for client-side
+Html
+Service
+scripts.
+XFrameOptionsMode
+An enum representing the
+X-Frame-Options
+modes that can be used for client-side
+Html
+Service
+scripts.
+Html
+Output
+Methods
+Method
+Return type
+Brief description
+add
+Meta
+Tag(name, content)
+Html
+Output
+Adds a meta tag to the page.
+append(addedContent)
+Html
+Output
+Appends new content to the content of this
+Html
+Output
+.
+append
+Untrusted(addedContent)
+Html
+Output
+Appends new content to the content of this
+Html
+Output
+, using contextual escaping.
+as
+Template()
+Html
+Template
+Returns an
+Html
+Template
+backed by this
+Html
+Output
+.
+clear()
+Html
+Output
+Clears the current content.
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Content()
+String
+Gets the content of this
+Html
+Output
+.
+get
+Favicon
+Url()
+String
+Gets the URL for a favicon link tag added to the page by calling
+set
+Favicon
+Url(iconUrl)
+.
+get
+Height()
+Integer
+Gets the initial height of the
+custom dialog
+in Google
+Docs, Sheets, or Forms.
+get
+Meta
+Tags()
+Html
+Output
+Meta
+Tag[]
+Gets an array of objects that represent meta tags added to the page by calling
+add
+Meta
+Tag(name, content)
+.
+get
+Title()
+String
+Gets the title of the output page.
+get
+Width()
+Integer
+Gets the initial width of the
+custom dialog
+in Google
+Docs, Sheets, or Forms.
+set
+Content(content)
+Html
+Output
+Sets the content of this
+Html
+Output
+.
+set
+Favicon
+Url(iconUrl)
+Html
+Output
+Adds a link tag for a favicon to the page.
+set
+Height(height)
+Html
+Output
+Sets the initial height of the
+custom dialog
+in Google
+Docs, Sheets, or Forms.
+set
+Sandbox
+Mode(mode)
+Html
+Output
+This method now has no effect — previously it set the
+sandbox
+mode
+used for client-side scripts.
+set
+Title(title)
+Html
+Output
+Sets the title of the output page.
+set
+Width(width)
+Html
+Output
+Sets the initial width of a
+custom dialog
+in Google
+Docs, Sheets, or Forms.
+set
+XFrame
+Options
+Mode(mode)
+Html
+Output
+Sets the state of the page's
+X-Frame-Options
+header, which controls clickjacking
+prevention.
+Html
+Output
+Meta
+Tag
+Methods
+Method
+Return type
+Brief description
+get
+Content()
+String
+Gets the content of this meta tag.
+get
+Name()
+String
+Gets the name of this
+Html
+Output
+Meta
+Tag
+.
+Html
+Service
+Properties
+Property
+Type
+Description
+Sandbox
+Mode
+Sandbox
+Mode
+An enum representing the sandbox modes that can be used for client-side
+Html
+Service
+scripts.
+XFrameOptionsMode
+XFrameOptionsMode
+An enum representing the
+X-Frame-Options
+modes that can be used for client-side
+Html
+Service
+scripts.
+Methods
+Method
+Return type
+Brief description
+create
+Html
+Output()
+Html
+Output
+Creates a new
+Html
+Output
+object that can be returned from the script.
+create
+Html
+Output(blob)
+Html
+Output
+Creates a new
+Html
+Output
+object from a
+Blob
+Source
+resource.
+create
+Html
+Output(html)
+Html
+Output
+Creates a new
+Html
+Output
+object that can be returned from the script.
+create
+Html
+Output
+From
+File(filename)
+Html
+Output
+Creates a new
+Html
+Output
+object from a file in the code editor.
+create
+Template(blob)
+Html
+Template
+Creates a new
+Html
+Template
+object from a
+Blob
+Source
+resource.
+create
+Template(html)
+Html
+Template
+Creates a new
+Html
+Template
+object that can be returned from the script.
+create
+Template
+From
+File(filename)
+Html
+Template
+Creates a new
+Html
+Template
+object from a file in the code editor.
+get
+User
+Agent()
+String
+Gets the user-agent string for the current browser.
+Html
+Template
+Methods
+Method
+Return type
+Brief description
+evaluate()
+Html
+Output
+Evaluates this template and returns an
+Html
+Output
+object.
+get
+Code()
+String
+Generates a string of JavaScript code, based on the template file, that can be evaluated.
+get
+Code
+With
+Comments()
+String
+Generates a string of JavaScript code that can be evaluated, with each line of the code
+containing the original line from the template as a comment.
+get
+Raw
+Content()
+String
+Returns the unprocessed content of this template.
+Sandbox
+Mode
+Properties
+Property
+Type
+Description
+EMULATED
+Enum
+A legacy sandbox mode that emulates ECMAScript 5 strict mode using only the features available
+in ECMAScript 3.
+IFRAME
+Enum
+A sandbox mode that uses iframe sandboxing instead of the Caja sandbox technology used by the
+EMULATED
+and
+NATIVE
+modes.
+NATIVE
+Enum
+A sandbox mode that is built on top of ECMAScript 5 strict mode.
+XFrameOptionsMode
+Properties
+Property
+Type
+Description
+ALLOWALL
+Enum
+No
+X-Frame-Options
+header will be set.
+DEFAULT
+Enum
+Sets the default value for the
+X-Frame-Options
+header, which preserves normal security
+assumptions.

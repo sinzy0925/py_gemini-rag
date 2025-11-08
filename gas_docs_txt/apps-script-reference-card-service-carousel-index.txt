@@ -1,0 +1,124 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/carousel/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Carousel displays a list of widgets in a slideshow format with navigation buttons.
+Carousels are available for Google Workspace add-ons and Google Chat apps.
+The
+addCarouselCard(card)
+method is used to add a card to the carousel.
+Carousel
+Carousel, also known as slider, rotates and displays a list of widgets in a slideshow format,
+with buttons navigating to the previous or next widget.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+carousel
+=
+CardService
+.
+newCarousel
+()
+.
+addCarouselCard
+(
+CardService
+.
+newCarouselCard
+().
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'The first text paragraph in carousel'
+)))
+.
+addCarouselCard
+(
+CardService
+.
+newCarouselCard
+().
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'The second text paragraph in carousel'
+)))
+.
+addCarouselCard
+(
+CardService
+.
+newCarouselCard
+().
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'The third text paragraph in carousel'
+)))
+Developer Preview:
+Available as part of the
+Google Workspace Developer Preview Program
+, which grants early access to certain features.
+Methods
+Method
+Return type
+Brief description
+add
+Carousel
+Card(card)
+Carousel
+Adds a carousel card.
+Detailed documentation
+add
+Carousel
+Card(card)
+Adds a carousel card.
+const
+carousel
+=
+CardService
+.
+newCarousel
+()
+.
+addCarouselCard
+(
+CardService
+.
+newCarouselCard
+().
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'The first text paragraph in carousel'
+)));
+Parameters
+Name
+Type
+Description
+card
+Carousel
+Card
+The carousel card to add.
+Return
+Carousel
+— This object, for chaining.

@@ -1,0 +1,155 @@
+Source Path: gas_docs_html/apps-script/reference/language/language-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Language service in Apps Script provides a way to compute automatic translations of text.
+The
+translate()
+method is used to automatically translate text from a source language to a destination language.
+The
+translate()
+method has overloaded versions, one of which accepts an optional
+advancedArgs
+object for specifying options like content type.
+A list of supported language codes is available via a provided link.
+Language
+App
+The Language service provides scripts a way to compute automatic translations of text.
+// The code below will write "Esta es una prueba" to the log.
+const
+spanish
+=
+LanguageApp
+.
+translate
+(
+'This is a test'
+,
+'en'
+,
+'es'
+);
+Logger
+.
+log
+(
+spanish
+);
+Methods
+Method
+Return type
+Brief description
+translate(text, sourceLanguage, targetLanguage)
+String
+Automatically translates some text from a source language to a destination language.
+translate(text, sourceLanguage, targetLanguage, advancedArgs)
+String
+Automatically translates some text from a source language to a destination language.
+Detailed documentation
+translate(text, sourceLanguage, targetLanguage)
+Automatically translates some text from a source language to a destination language.
+// The code below will write "Esta es una prueba" to the log.
+const
+spanish
+=
+LanguageApp
+.
+translate
+(
+'This is a test'
+,
+'en'
+,
+'es'
+);
+Logger
+.
+log
+(
+spanish
+);
+A list of language codes is available
+here
+.
+Parameters
+Name
+Type
+Description
+text
+String
+the text to translate
+source
+Language
+String
+the language code in which text is written. If it is set to the empty
+    string, the source language code will be auto-detected
+target
+Language
+String
+the language code to which the text should be translated
+Return
+String
+— the translated text
+translate(text, sourceLanguage, targetLanguage, advancedArgs)
+Automatically translates some text from a source language to a destination language.
+// The code below will write "Esta es una <strong>prueba</strong>" to the log.
+const
+spanish
+=
+LanguageApp
+.
+translate
+(
+'This is a &lt;strong&gt;test&lt;/strong&gt;'
+,
+'en'
+,
+'es'
+,
+{
+contentType
+:
+'html'
+},
+);
+Logger
+.
+log
+(
+spanish
+);
+A list of language codes is available
+here
+.
+Parameters
+Name
+Type
+Description
+text
+String
+the text to translate
+source
+Language
+String
+the language code in which text is written. If it is set to the empty
+    string, the source language code will be auto-detected
+target
+Language
+String
+the language code to which the text should be translated
+advanced
+Args
+Object
+optional JavaScript object fields
+Advanced parameters
+Name
+Type
+Description
+content
+Type
+String
+the content type of the text; supported values are 'text'
+    (default) and 'html'
+Return
+String
+— the translated text

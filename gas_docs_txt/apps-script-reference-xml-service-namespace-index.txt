@@ -1,0 +1,29 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/namespace/index.html
+
+Namespace
+A representation of an XML namespace.
+Methods
+Method
+Return type
+Brief description
+get
+Prefix()
+String
+Gets the prefix for the namespace.
+get
+URI()
+String
+Gets the URI for the namespace.
+Detailed documentation
+get
+Prefix()
+Gets the prefix for the namespace.
+Return
+String
+— the prefix for the namespace
+get
+URI()
+Gets the URI for the namespace.
+Return
+String
+— the URI for the namespace

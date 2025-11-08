@@ -1,0 +1,856 @@
+Source Path: gas_docs_html/apps-script/reference/forms/item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Item is a generic form item with common properties like title and help text, accessible or created from a Form.
+To work with type-specific properties, check the item's type using
+getType()
+and cast it to the appropriate class using methods like
+asCheckboxItem()
+.
+The documentation provides a list of methods to cast a generic Item to various specific item types, such as
+asCheckboxGridItem()
+,
+asDateItem()
+, and
+asTextItem()
+.
+Methods like
+duplicate()
+,
+getHelpText()
+,
+getId()
+,
+getIndex()
+,
+getTitle()
+,
+getType()
+,
+setHelpText()
+, and
+setTitle()
+are available for operating on the Item object.
+Scripts using these methods often require specific authorization scopes related to Google Forms.
+Item
+A generic form item that contains properties common to all items, such as title and help text.
+Items can be accessed or created from a
+Form
+.
+To operate on type-specific properties, use
+get
+Type()
+to check the item's
+Item
+Type
+, then cast the item to the
+appropriate class using a method like
+as
+Checkbox
+Item()
+.
+// Create a new form and add a text item.
+const
+form
+=
+FormApp
+.
+create
+(
+'Form Name'
+);
+form
+.
+addTextItem
+();
+// Access the text item as a generic item.
+const
+items
+=
+form
+.
+getItems
+();
+const
+item
+=
+items
+[
+0
+];
+// Cast the generic item to the text-item class.
+if
+(
+item
+.
+getType
+()
+===
+'TEXT'
+)
+{
+const
+textItem
+=
+item
+.
+asTextItem
+();
+textItem
+.
+setRequired
+(
+false
+);
+}
+Implementing classes
+Name
+Brief description
+Methods
+Method
+Return type
+Brief description
+as
+Checkbox
+Grid
+Item()
+Checkbox
+Grid
+Item
+Returns the item as a checkbox grid item.
+as
+Checkbox
+Item()
+Checkbox
+Item
+Returns the item as a checkbox item.
+as
+Date
+Item()
+Date
+Item
+Returns the item as a date item.
+as
+Date
+Time
+Item()
+Date
+Time
+Item
+Returns the item as a date-time item.
+as
+Duration
+Item()
+Duration
+Item
+Returns the item as a duration item.
+as
+Grid
+Item()
+Grid
+Item
+Returns the item as a grid item.
+as
+Image
+Item()
+Image
+Item
+Returns the item as an image item.
+as
+List
+Item()
+List
+Item
+Returns the item as a list item.
+as
+Multiple
+Choice
+Item()
+Multiple
+Choice
+Item
+Returns the item as a multiple-choice item.
+as
+Page
+Break
+Item()
+Page
+Break
+Item
+Returns the item as a page-break item.
+as
+Paragraph
+Text
+Item()
+Paragraph
+Text
+Item
+Returns the item as a paragraph-text item.
+as
+Rating
+Item()
+Rating
+Item
+Returns the item as a rating item.
+as
+Scale
+Item()
+Scale
+Item
+Returns the item as a scale item.
+as
+Section
+Header
+Item()
+Section
+Header
+Item
+Returns the item as a section-header item.
+as
+Text
+Item()
+Text
+Item
+Returns the item as a text item.
+as
+Time
+Item()
+Time
+Item
+Returns the item as a time item.
+as
+Video
+Item()
+Video
+Item
+Returns the item as a video item.
+duplicate()
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+set
+Help
+Text(text)
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Title(title)
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Detailed documentation
+as
+Checkbox
+Grid
+Item()
+Returns the item as a checkbox grid item. Throws a scripting exception if the
+Item
+Type
+was not already
+CHECKBOX_GRID
+.
+Return
+Checkbox
+Grid
+Item
+— the checkbox grid item
+Throws
+Error
+— if the item is not a checkbox grid item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Checkbox
+Item()
+Returns the item as a checkbox item. Throws a scripting exception if the
+Item
+Type
+was not already
+CHECKBOX
+.
+Return
+Checkbox
+Item
+— the checkbox item
+Throws
+Error
+— if the item is not a checkbox item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Date
+Item()
+Returns the item as a date item. Throws a scripting exception if the
+Item
+Type
+was not already
+DATE
+.
+Return
+Date
+Item
+— the date item
+Throws
+Error
+— if the item is not a date item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Date
+Time
+Item()
+Returns the item as a date-time item. Throws a scripting exception if the
+Item
+Type
+was not already
+DATETIME
+.
+Return
+Date
+Time
+Item
+— the date-time item
+Throws
+Error
+— if the item is not a date-time item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Duration
+Item()
+Returns the item as a duration item. Throws a scripting exception if the
+Item
+Type
+was not already
+DURATION
+.
+Return
+Duration
+Item
+— the duration item
+Throws
+Error
+— if the item is not a duration item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Grid
+Item()
+Returns the item as a grid item. Throws a scripting exception if the
+Item
+Type
+was not already
+GRID
+.
+Return
+Grid
+Item
+— the grid item
+Throws
+Error
+— if the item is not a grid item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Image
+Item()
+Returns the item as an image item. Throws a scripting exception if the
+Item
+Type
+was not already
+IMAGE
+.
+Return
+Image
+Item
+— the image item
+Throws
+Error
+— if the item is not an image item
+as
+List
+Item()
+Returns the item as a list item. Throws a scripting exception if the
+Item
+Type
+was not already
+LIST
+.
+Return
+List
+Item
+— the list item
+Throws
+Error
+— if the item is not a list item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Multiple
+Choice
+Item()
+Returns the item as a multiple-choice item. Throws a scripting exception if the
+Item
+Type
+was not already
+MULTIPLE_CHOICE
+.
+Return
+Multiple
+Choice
+Item
+— the multiple-choice item
+Throws
+Error
+— if the item is not a multiple choice item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Page
+Break
+Item()
+Returns the item as a page-break item. Throws a scripting exception if the
+Item
+Type
+was not already
+PAGE_BREAK
+.
+Return
+Page
+Break
+Item
+— the page-break item
+Throws
+Error
+— if the item is not a page break item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Paragraph
+Text
+Item()
+Returns the item as a paragraph-text item. Throws a scripting exception if the
+Item
+Type
+was not already
+PARAGRAPH_TEXT
+.
+Return
+Paragraph
+Text
+Item
+— the paragraph-text item
+Throws
+Error
+— if the item is not a paragraph text item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Rating
+Item()
+Returns the item as a rating item. Throws a ScriptingException if the
+Item
+Type
+was not already
+RATING
+.
+// Opens the Forms file by its URL. If you created your script from within a
+// Google Forms file, you can use FormApp.getActiveForm() instead.
+// TODO(developer): Replace the URL with your own.
+const
+form
+=
+FormApp
+.
+openByUrl
+(
+'https://docs.google.com/forms/d/abc123456/edit'
+);
+// Fetch any item which is of type rating.
+const
+item
+=
+form
+.
+getItems
+(
+FormApp
+.
+ItemType
+.
+RATING
+)[
+0
+];
+// Convert the item to a rating item.
+const
+ratingItem
+=
+item
+.
+asRatingItem
+();
+Return
+Rating
+Item
+— The rating item.
+Throws
+Error
+— if the item is not a rating item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Scale
+Item()
+Returns the item as a scale item. Throws a scripting exception if the
+Item
+Type
+was not already
+SCALE
+.
+Return
+Scale
+Item
+— the scale item
+Throws
+Error
+— if the item is not a scale item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Section
+Header
+Item()
+Returns the item as a section-header item. Throws a scripting exception if the
+Item
+Type
+was not already
+SECTION_HEADER
+.
+Return
+Section
+Header
+Item
+— the section-header item
+Throws
+Error
+— if the item is not a section header item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Text
+Item()
+Returns the item as a text item. Throws a scripting exception if the
+Item
+Type
+was not already
+TEXT
+.
+Return
+Text
+Item
+— the text item
+Throws
+Error
+— if the item is not a text item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Time
+Item()
+Returns the item as a time item. Throws a scripting exception if the
+Item
+Type
+was not already
+TIME
+.
+Return
+Time
+Item
+— the time item
+Throws
+Error
+— if the item is not a time item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+as
+Video
+Item()
+Returns the item as a video item. Throws a scripting exception if the
+Item
+Type
+was not already
+VIDEO
+.
+Return
+Video
+Item
+— the video item
+Throws
+Error
+— if the item is not a video item
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Item
+— a duplicate of this
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Item
+— this
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Item
+— this
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

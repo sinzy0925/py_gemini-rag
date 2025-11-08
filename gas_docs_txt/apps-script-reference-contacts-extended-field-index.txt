@@ -1,0 +1,54 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/extended-field/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ExtendedField is deprecated and should be replaced by the People API advanced service.
+ExtendedField is an enum for extended contacts fields.
+It includes deprecated properties for various contact details like hobby, mileage, language, gender, and more.
+Extended
+Field
+Deprecated.
+Instead, use the
+People API advanced
+    service
+An enum for extended contacts fields.
+Deprecated properties
+Property
+Type
+Description
+HOBBY
+Enum
+the contact's hobby
+MILEAGE
+Enum
+the contact's mileage
+LANGUAGE
+Enum
+the contact's language
+GENDER
+Enum
+the contact's gender
+BILLING_INFORMATION
+Enum
+the contact's billing information
+DIRECTORY_SERVER
+Enum
+the contact's directory server
+SENSITIVITY
+Enum
+the contact's sensitivity
+PRIORITY
+Enum
+the contact's priority
+HOME
+Enum
+the contact's home information
+WORK
+Enum
+the contact's work information
+USER
+Enum
+the contact's user information
+OTHER
+Enum
+the contact's other information

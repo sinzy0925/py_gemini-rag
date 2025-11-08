@@ -1,0 +1,3737 @@
+Source Path: gas_docs_html/apps-script/reference/document/text/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Google Apps Script provides methods to manipulate text formatting in Google Docs, including setting font family, size, foreground color, italic, link URL, strikethrough, text alignment, and underline.
+Many text manipulation methods have overloaded versions that can apply the formatting to the entire text element or a specific character range using start and end offsets.
+All discussed methods return the current Text element, allowing for method chaining.
+Scripts using these methods require authorization with either the
+https://www.googleapis.com/auth/documents.currentonly
+or
+https://www.googleapis.com/auth/documents
+scopes.
+The
+setText(text)
+method replaces the entire text content of an element.
+Text
+An element representing a rich text region. All text in a
+Document
+is contained within
+Text
+elements.
+A
+Text
+element can be contained within an
+Equation
+,
+Equation
+Function
+,
+List
+Item
+, or
+Paragraph
+, but cannot itself contain any other element. For more
+information on document structure, see the
+guide to extending Google Docs
+.
+// Gets the body contents of the active tab.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Use editAsText to obtain a single text element containing
+// all the characters in the tab.
+const
+text
+=
+body
+.
+editAsText
+();
+// Insert text at the beginning of the tab.
+text
+.
+insertText
+(
+0
+,
+'Inserted text.\n'
+);
+// Insert text at the end of the tab.
+text
+.
+appendText
+(
+'\nAppended text.'
+);
+// Make the first half of the tab blue.
+text
+.
+setForegroundColor
+(
+0
+,
+text
+.
+getText
+().
+length
+/
+2
+,
+'#00FFFF'
+);
+Methods
+Method
+Return type
+Brief description
+append
+Text(text)
+Text
+Adds the specified text to the end of this text region.
+copy()
+Text
+Returns a detached, deep copy of the current element.
+delete
+Text(startOffset, endOffsetInclusive)
+Text
+Deletes a range of text.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Attributes(offset)
+Object
+Retrieves the attributes at the specified character offset.
+get
+Background
+Color()
+String
+Retrieves the background color setting.
+get
+Background
+Color(offset)
+String
+Retrieves the background color at the specified character offset.
+get
+Font
+Family()
+String
+Retrieves the font family setting.
+get
+Font
+Family(offset)
+String
+Retrieves the font family at the specified character offset.
+get
+Font
+Size()
+Number
+Retrieves the font size setting.
+get
+Font
+Size(offset)
+Number
+Retrieves the font size at the specified character offset.
+get
+Foreground
+Color()
+String
+Retrieves the foreground color setting.
+get
+Foreground
+Color(offset)
+String
+Retrieves the foreground color at the specified character offset.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Link
+Url(offset)
+String
+Retrieves the link URL at the specified character offset.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Text
+Alignment(offset)
+Text
+Alignment
+Gets the text alignment for a single character.
+get
+Text
+Attribute
+Indices()
+Integer[]
+Retrieves the set of text indices that correspond to the start of distinct text formatting
+runs.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Text(offset, text)
+Text
+Inserts the specified text at the given character offset.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+is
+Bold()
+Boolean
+Retrieves the bold setting.
+is
+Bold(offset)
+Boolean
+Retrieves the bold setting at the specified character offset.
+is
+Italic()
+Boolean
+Retrieves the italic setting.
+is
+Italic(offset)
+Boolean
+Retrieves the italic setting at the specified character offset.
+is
+Strikethrough()
+Boolean
+Retrieves the strikethrough setting.
+is
+Strikethrough(offset)
+Boolean
+Retrieves the strikethrough setting at the specified character offset.
+is
+Underline()
+Boolean
+Retrieves the underline setting.
+is
+Underline(offset)
+Boolean
+Retrieves the underline setting at the specified character offset.
+merge()
+Text
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Text
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(startOffset, endOffsetInclusive, attributes)
+Text
+Applies the specified attributes to the given character range.
+set
+Attributes(attributes)
+Text
+Sets the element's attributes.
+set
+Background
+Color(startOffset, endOffsetInclusive, color)
+Text
+Sets the background color for the specified character range.
+set
+Background
+Color(color)
+Text
+Sets the background color.
+set
+Bold(bold)
+Text
+Sets the bold setting.
+set
+Bold(startOffset, endOffsetInclusive, bold)
+Text
+Sets the bold setting for the specified character range.
+set
+Font
+Family(startOffset, endOffsetInclusive, fontFamilyName)
+Text
+Sets the font family for the specified character range.
+set
+Font
+Family(fontFamilyName)
+Text
+Sets the font family.
+set
+Font
+Size(startOffset, endOffsetInclusive, size)
+Text
+Sets the font size for the specified character range.
+set
+Font
+Size(size)
+Text
+Sets the font size.
+set
+Foreground
+Color(startOffset, endOffsetInclusive, color)
+Text
+Sets the foreground color for the specified character range.
+set
+Foreground
+Color(color)
+Text
+Sets the foreground color.
+set
+Italic(italic)
+Text
+Sets the italic setting.
+set
+Italic(startOffset, endOffsetInclusive, italic)
+Text
+Sets the italic setting for the specified character range.
+set
+Link
+Url(startOffset, endOffsetInclusive, url)
+Text
+Sets the link URL for the specified character range.
+set
+Link
+Url(url)
+Text
+Sets the link url.
+set
+Strikethrough(strikethrough)
+Text
+Sets the strikethrough setting.
+set
+Strikethrough(startOffset, endOffsetInclusive, strikethrough)
+Text
+Sets the strikethrough setting for the specified character range.
+set
+Text(text)
+Text
+Sets the text contents.
+set
+Text
+Alignment(startOffset, endOffsetInclusive, textAlignment)
+Text
+Sets the text alignment for a given character range.
+set
+Text
+Alignment(textAlignment)
+Text
+Sets the text alignment.
+set
+Underline(underline)
+Text
+Sets the underline setting.
+set
+Underline(startOffset, endOffsetInclusive, underline)
+Text
+Sets the underline setting for the specified character range.
+Detailed documentation
+append
+Text(text)
+Adds the specified text to the end of this text region.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Adds the text, 'Sample body text,' to the end of the tab body.
+const
+text
+=
+body
+.
+editAsText
+().
+appendText
+(
+'Sample body text'
+);
+Parameters
+Name
+Type
+Description
+text
+String
+The text to append.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+copy()
+Returns a detached, deep copy of the current element.
+Any child elements present in the element are also copied. The new element doesn't have a
+parent.
+Return
+Text
+— The new copy.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+delete
+Text(startOffset, endOffsetInclusive)
+Deletes a range of text.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Deletes the first 10 characters in the body.
+const
+text
+=
+body
+.
+editAsText
+().
+deleteText
+(
+0
+,
+9
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The character offset of the first character to delete.
+end
+Offset
+Inclusive
+Integer
+The character offset of the last character to delete.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+edit
+As
+Text()
+Obtains a
+Text
+version of the current element, for editing.
+Use
+edit
+As
+Text
+for manipulating the elements contents as rich text. The
+edit
+As
+Text
+mode ignores non-text elements (such as
+Inline
+Image
+and
+Horizontal
+Rule
+).
+Child elements fully contained within a deleted text range are removed from the element.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Insert two paragraphs separated by a paragraph containing an
+// horizontal rule.
+body
+.
+insertParagraph
+(
+0
+,
+'An editAsText sample.'
+);
+body
+.
+insertHorizontalRule
+(
+0
+);
+body
+.
+insertParagraph
+(
+0
+,
+'An example.'
+);
+// Delete " sample.\n\n An" removing the horizontal rule in the process.
+body
+.
+editAsText
+().
+deleteText
+(
+14
+,
+25
+);
+Return
+Text
+— a text version of the current element
+find
+Text(searchPattern)
+Searches the contents of the element for the specified text pattern using regular expressions.
+A subset of the JavaScript regular expression features are not fully supported, such as
+capture groups and mode modifiers.
+The provided regular expression pattern is independently matched against each text block
+contained in the current element.
+Parameters
+Name
+Type
+Description
+search
+Pattern
+String
+the pattern to search for
+Return
+Range
+Element
+— a search result indicating the position of the search text, or null if there is no
+    match
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+find
+Text(searchPattern, from)
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+A subset of the JavaScript regular expression features are not fully supported, such as
+capture groups and mode modifiers.
+The provided regular expression pattern is independently matched against each text block
+contained in the current element.
+Parameters
+Name
+Type
+Description
+search
+Pattern
+String
+the pattern to search for
+from
+Range
+Element
+the search result to search from
+Return
+Range
+Element
+— a search result indicating the next position of the search text, or null if there is no
+    match
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Attributes()
+Retrieves the element's attributes.
+The result is an object containing a property for each valid element attribute where each
+property name corresponds to an item in the
+Document
+App.Attribute
+enumeration.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Append a styled paragraph.
+const
+par
+=
+body
+.
+appendParagraph
+(
+'A bold, italicized paragraph.'
+);
+par
+.
+setBold
+(
+true
+);
+par
+.
+setItalic
+(
+true
+);
+// Retrieve the paragraph's attributes.
+const
+atts
+=
+par
+.
+getAttributes
+();
+// Log the paragraph attributes.
+for
+(
+const
+att
+in
+atts
+)
+{
+Logger
+.
+log
+(
+`
+${
+att
+}
+:
+${
+atts
+[
+att
+]
+}
+`
+);
+}
+Return
+Object
+— The element's attributes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Attributes(offset)
+Retrieves the attributes at the specified character offset.
+The result is an object containing a property for each valid text attribute where each
+property name corresponds to an item in the
+Document
+App.Attribute
+enumeration.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Declares style attributes.
+const
+style
+=
+{};
+style
+[
+DocumentApp
+.
+Attribute
+.
+BOLD
+]
+=
+true
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+ITALIC
+]
+=
+true
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_SIZE
+]
+=
+29
+;
+// Sets the style attributes to the tab's body.
+const
+text
+=
+body
+.
+editAsText
+();
+text
+.
+setAttributes
+(
+style
+);
+// Gets the style attributes applied to the eleventh character in the
+// body and logs them to the console.
+const
+attributes
+=
+text
+.
+getAttributes
+(
+10
+);
+console
+.
+log
+(
+attributes
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+Object
+— The element's attributes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Background
+Color()
+Retrieves the background color setting.
+Return
+String
+— the background color, formatted in CSS notation (like
+'#ffffff'
+), or null
+    if the element contains multiple values for this attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Background
+Color(offset)
+Retrieves the background color at the specified character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the background color of the first 3 characters in the body.
+const
+text
+=
+body
+.
+editAsText
+().
+setBackgroundColor
+(
+0
+,
+2
+,
+'#FFC0CB'
+);
+// Gets the background color of the first character in the body.
+const
+backgroundColor
+=
+text
+.
+getBackgroundColor
+(
+0
+);
+// Logs the background color to the console.
+console
+.
+log
+(
+backgroundColor
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+String
+— The background color, formatted in CSS notation (like
+'#ffffff'
+).
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Font
+Family()
+Retrieves the font family setting. The name can be any font from the Font menu in Docs or
+Google Fonts
+, and is case-sensitive. The methods
+get
+Font
+Family()
+and
+set
+Font
+Family(fontFamilyName)
+now use string names for fonts instead of
+the
+Font
+Family
+enum. Although this enum is
+deprecated, it will remain available for compatibility with older scripts.
+Return
+String
+— the font family, or null if the element contains multiple values for this attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Font
+Family(offset)
+Retrieves the font family at the specified character offset. The name can be any font from the
+Font menu in Docs or
+Google Fonts
+, and is
+case-sensitive. The methods
+get
+Font
+Family()
+and
+set
+Font
+Family(fontFamilyName)
+now use string names for fonts instead of the
+Font
+Family
+enum. Although this enum is
+deprecated, it will remain available for compatibility with older scripts.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the font of the first 16 characters to Impact.
+const
+text
+=
+body
+.
+editAsText
+().
+setFontFamily
+(
+0
+,
+15
+,
+'Impact'
+);
+// Gets the font family of the 16th character in the tab body.
+const
+fontFamily
+=
+text
+.
+getFontFamily
+(
+15
+);
+// Logs the font family to the console.
+console
+.
+log
+(
+fontFamily
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+String
+— The font family.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Font
+Size()
+Retrieves the font size setting.
+Return
+Number
+— the font size, or null if the element contains multiple values for this attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Font
+Size(offset)
+Retrieves the font size at the specified character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the font size of the first 13 characters to 15.
+const
+text
+=
+body
+.
+editAsText
+().
+setFontSize
+(
+0
+,
+12
+,
+15
+);
+// Gets the font size of the first character.
+const
+fontSize
+=
+text
+.
+getFontSize
+(
+0
+);
+// Logs the font size to the console.
+console
+.
+log
+(
+fontSize
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+Number
+— The font size.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Foreground
+Color()
+Retrieves the foreground color setting.
+Return
+String
+— the foreground color, formatted in CSS notation (like
+'#ffffff'
+), or null
+    if the element contains multiple values for this attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Foreground
+Color(offset)
+Retrieves the foreground color at the specified character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the foreground color of the first 3 characters in the tab body.
+const
+text
+=
+body
+.
+editAsText
+().
+setForegroundColor
+(
+0
+,
+2
+,
+'#0000FF'
+);
+// Gets the foreground color of the first character in the tab body.
+const
+foregroundColor
+=
+text
+.
+getForegroundColor
+(
+0
+);
+// Logs the foreground color to the console.
+console
+.
+log
+(
+foregroundColor
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+String
+— The foreground color, formatted in CSS notation (like
+'#ffffff'
+).
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Link
+Url()
+Retrieves the link url.
+Return
+String
+— the link url, or null if the element contains multiple values for this attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Link
+Url(offset)
+Retrieves the link URL at the specified character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Applies a link to the first 10 characters in the body.
+const
+text
+=
+body
+.
+editAsText
+().
+setLinkUrl
+(
+0
+,
+9
+,
+'https://www.example.com/'
+);
+// Gets the URL of the link from the first character.
+const
+link
+=
+text
+.
+getLinkUrl
+(
+0
+);
+// Logs the link URL to the console.
+console
+.
+log
+(
+link
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+String
+— The link URL.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Next
+Sibling()
+Retrieves the element's next sibling element.
+The next sibling has the same parent and follows the current element.
+Return
+Element
+— The next sibling element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Parent()
+Retrieves the element's parent element.
+The parent element contains the current element.
+Return
+Container
+Element
+— The parent element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Previous
+Sibling()
+Retrieves the element's previous sibling element.
+The previous sibling has the same parent and precedes the current element.
+Return
+Element
+— The previous sibling element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Text()
+Retrieves the contents of the element as a text string.
+Return
+String
+— the contents of the element as text string
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Text
+Alignment()
+Gets the text alignment. The available types of alignment are
+Document
+App.TextAlignment.NORMAL
+,
+Document
+App.TextAlignment.SUBSCRIPT
+, and
+Document
+App.TextAlignment.SUPERSCRIPT
+.
+Return
+Text
+Alignment
+— the type of text alignment, or
+null
+if the text contains multiple types of text
+    alignments or if the text alignment has never been set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Text
+Alignment(offset)
+Gets the text alignment for a single character. The available types of alignment are
+Document
+App.TextAlignment.NORMAL
+,
+Document
+App.TextAlignment.SUBSCRIPT
+, and
+Document
+App.TextAlignment.SUPERSCRIPT
+.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the text alignment of the tab's body to NORMAL.
+const
+text
+=
+body
+.
+editAsText
+().
+setTextAlignment
+(
+DocumentApp
+.
+TextAlignment
+.
+NORMAL
+);
+// Gets the text alignment of the ninth character.
+const
+alignment
+=
+text
+.
+getTextAlignment
+(
+8
+);
+// Logs the text alignment to the console.
+console
+.
+log
+(
+alignment
+.
+toString
+());
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The offset of the character.
+Return
+Text
+Alignment
+— The type of text alignment, or
+null
+if the text alignment has never been set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Text
+Attribute
+Indices()
+Retrieves the set of text indices that correspond to the start of distinct text formatting
+runs.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Gets the text indices at which text formatting changes.
+const
+indices
+=
+body
+.
+editAsText
+().
+getTextAttributeIndices
+();
+// Logs the indices to the console.
+console
+.
+log
+(
+indices
+.
+toString
+());
+Return
+Integer[]
+— The set of text indices at which text formatting changes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Type()
+Retrieves the element's
+Element
+Type
+.
+Use
+get
+Type()
+to determine the exact type of a given element.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Obtain the first element in the active tab's body.
+const
+firstChild
+=
+body
+.
+getChild
+(
+0
+);
+// Use getType() to determine the element's type.
+if
+(
+firstChild
+.
+getType
+()
+===
+DocumentApp
+.
+ElementType
+.
+PARAGRAPH
+)
+{
+Logger
+.
+log
+(
+'The first element is a paragraph.'
+);
+}
+else
+{
+Logger
+.
+log
+(
+'The first element is not a paragraph.'
+);
+}
+Return
+Element
+Type
+— The element type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+insert
+Text(offset, text)
+Inserts the specified text at the given character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Inserts the text, 'Sample inserted text', at the start of the body content.
+const
+text
+=
+body
+.
+editAsText
+().
+insertText
+(
+0
+,
+'Sample inserted text'
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset at which to insert the text.
+text
+String
+The text to insert.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+At
+Document
+End()
+Determines whether the element is at the end of the
+Document
+.
+Return
+Boolean
+— Whether the element is at the end of the tab.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Bold()
+Retrieves the bold setting.
+Return
+Boolean
+— whether the text is bold, or null if the element contains multiple values for this
+    attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Bold(offset)
+Retrieves the bold setting at the specified character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Bolds the first 4 characters in the tab body.
+const
+text
+=
+body
+.
+editAsText
+().
+setBold
+(
+0
+,
+3
+,
+true
+);
+// Gets whether or not the text is bold.
+const
+bold
+=
+text
+.
+editAsText
+().
+isBold
+(
+0
+);
+// Logs the text's bold setting to the console
+console
+.
+log
+(
+bold
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+Boolean
+— The bold setting.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Italic()
+Retrieves the italic setting.
+Return
+Boolean
+— whether the text is italic, or null if the element contains multiple values for this
+    attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Italic(offset)
+Retrieves the italic setting at the specified character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the first 13 characters of the tab body to italic.
+const
+text
+=
+body
+.
+editAsText
+().
+setItalic
+(
+0
+,
+12
+,
+true
+);
+// Gets whether the fifth character in the tab body is set to
+// italic and logs it to the console.
+const
+italic
+=
+text
+.
+isItalic
+(
+4
+);
+console
+.
+log
+(
+italic
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+Boolean
+— The italic setting.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Strikethrough()
+Retrieves the strikethrough setting.
+Return
+Boolean
+— whether the text is strikethrough, or null if the element contains multiple values for
+    this attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Strikethrough(offset)
+Retrieves the strikethrough setting at the specified character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the first 17 characters of the tab body to strikethrough.
+const
+text
+=
+body
+.
+editAsText
+().
+setStrikethrough
+(
+0
+,
+16
+,
+true
+);
+// Gets whether the first character in the tab body is set to
+// strikethrough and logs it to the console.
+const
+strikethrough
+=
+text
+.
+isStrikethrough
+(
+0
+);
+console
+.
+log
+(
+strikethrough
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+Boolean
+— The strikethrough setting.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Underline()
+Retrieves the underline setting.
+Return
+Boolean
+— whether the text is underlined, or null if the element contains multiple values for
+    this attribute
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Underline(offset)
+Retrieves the underline setting at the specified character offset.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the first 13 characters of the tab body to underline.
+const
+text
+=
+body
+.
+editAsText
+().
+setUnderline
+(
+0
+,
+12
+,
+false
+);
+// Gets whether the first character in the tab body is set to
+// underline and logs it to the console
+const
+underline
+=
+text
+.
+editAsText
+().
+isUnderline
+(
+0
+);
+console
+.
+log
+(
+underline
+);
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The character offset.
+Return
+Boolean
+— The underline setting.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+merge()
+Merges the element with the preceding sibling of the same type.
+Only elements of the same
+Element
+Type
+can be merged. Any child elements contained in
+the current element are moved to the preceding sibling element.
+The current element is removed from the document.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Example 1: Merge paragraphs
+// Append two paragraphs to the document's active tab.
+const
+par1
+=
+body
+.
+appendParagraph
+(
+'Paragraph 1.'
+);
+const
+par2
+=
+body
+.
+appendParagraph
+(
+'Paragraph 2.'
+);
+// Merge the newly added paragraphs into a single paragraph.
+par2
+.
+merge
+();
+// Example 2: Merge table cells
+// Create a two-dimensional array containing the table's cell contents.
+const
+cells
+=
+[
+[
+'Row 1, Cell 1'
+,
+'Row 1, Cell 2'
+],
+[
+'Row 2, Cell 1'
+,
+'Row 2, Cell 2'
+],
+];
+// Build a table from the array.
+const
+table
+=
+body
+.
+appendTable
+(
+cells
+);
+// Get the first row in the table.
+const
+row
+=
+table
+.
+getRow
+(
+0
+);
+// Get the two cells in this row.
+const
+cell1
+=
+row
+.
+getCell
+(
+0
+);
+const
+cell2
+=
+row
+.
+getCell
+(
+1
+);
+// Merge the current cell into its preceding sibling element.
+const
+merged
+=
+cell2
+.
+merge
+();
+Return
+Text
+— The merged element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+remove
+From
+Parent()
+Removes the element from its parent.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Remove all images in the active tab's body.
+const
+imgs
+=
+body
+.
+getImages
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+imgs
+.
+length
+;
+i
+++
+)
+{
+imgs
+[
+i
+].
+removeFromParent
+();
+}
+Return
+Text
+— The removed element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+replace
+Text(searchPattern, replacement)
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+The search pattern is passed as a string, not a JavaScript regular expression object.
+Because of this you'll need to escape any backslashes in the pattern.
+This methods uses Google's
+RE2
+regular
+expression library, which limits the
+supported syntax
+.
+The provided regular expression pattern is independently matched against each text block
+contained in the current element.
+const
+body
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+().
+getBody
+();
+// Clear the text surrounding "Apps Script", with or without text.
+body
+.
+replaceText
+(
+'^.*Apps ?Script.*$'
+,
+'Apps Script'
+);
+Parameters
+Name
+Type
+Description
+search
+Pattern
+String
+the regex pattern to search for
+replacement
+String
+the text to use as replacement
+Return
+Element
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Attributes(startOffset, endOffsetInclusive, attributes)
+Applies the specified attributes to the given character range.
+The specified attributes parameter must be an object where each property name is an item in
+the
+Document
+App.Attribute
+enumeration and each property value is the new value to be
+applied.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Declares style attributes for font size and font family.
+const
+style
+=
+{};
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_SIZE
+]
+=
+20
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_FAMILY
+]
+=
+'Impact'
+;
+// Sets the style attributes to the first 9 characters in the tab's body.
+const
+text
+=
+body
+.
+setAttributes
+(
+0
+,
+8
+,
+style
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+attributes
+Object
+The element's attributes.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Attributes(attributes)
+Sets the element's attributes.
+The specified attributes parameter must be an object where each property name is an item in
+the
+Document
+App.Attribute
+enumeration and each property value is the new value to be
+applied.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+const
+body
+=
+documentTab
+.
+getBody
+();
+// Define a custom paragraph style.
+const
+style
+=
+{};
+style
+[
+DocumentApp
+.
+Attribute
+.
+HORIZONTAL_ALIGNMENT
+]
+=
+DocumentApp
+.
+HorizontalAlignment
+.
+RIGHT
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_FAMILY
+]
+=
+'Calibri'
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+FONT_SIZE
+]
+=
+18
+;
+style
+[
+DocumentApp
+.
+Attribute
+.
+BOLD
+]
+=
+true
+;
+// Append a plain paragraph.
+const
+par
+=
+body
+.
+appendParagraph
+(
+'A paragraph with custom style.'
+);
+// Apply the custom style.
+par
+.
+setAttributes
+(
+style
+);
+Parameters
+Name
+Type
+Description
+attributes
+Object
+The element's attributes.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Background
+Color(startOffset, endOffsetInclusive, color)
+Sets the background color for the specified character range.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the background color of the first 3 characters in the
+// tab body to hex color #0000FF.
+const
+text
+=
+body
+.
+editAsText
+().
+setBackgroundColor
+(
+0
+,
+2
+,
+'#0000FF'
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+color
+String
+The background color, formatted in CSS notation (like
+'#ffffff'
+).
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Background
+Color(color)
+Sets the background color.
+Parameters
+Name
+Type
+Description
+color
+String
+the background color, formatted in CSS notation (like
+'#ffffff'
+)
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Bold(bold)
+Sets the bold setting.
+Parameters
+Name
+Type
+Description
+bold
+Boolean
+the bold setting
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Bold(startOffset, endOffsetInclusive, bold)
+Sets the bold setting for the specified character range.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the first 11 characters in the tab's body to bold.
+const
+text
+=
+body
+.
+editAsText
+().
+setBold
+(
+0
+,
+10
+,
+true
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+bold
+Boolean
+The bold setting.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Font
+Family(startOffset, endOffsetInclusive, fontFamilyName)
+Sets the font family for the specified character range. The name can be any font from the Font
+menu in Docs or
+Google Fonts
+, and is case-sensitive.
+Unrecognized font names will render as Arial. The methods
+get
+Font
+Family(offset)
+and
+set
+Font
+Family(fontFamilyName)
+now use string names for fonts instead of the
+Font
+Family
+enum. Although this enum is
+deprecated, it will remain available for compatibility with older scripts.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the font of the first 4 characters in the tab's body to Roboto.
+const
+text
+=
+body
+.
+editAsText
+().
+setFontFamily
+(
+0
+,
+3
+,
+'Roboto'
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+font
+Family
+Name
+String
+The name of the font family, from the Font menu in Docs or Google Fonts.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Font
+Family(fontFamilyName)
+Sets the font family. The name can be any font from the Font menu in Docs or
+Google Fonts
+, and is case-sensitive. Unrecognized font
+names will render as Arial. The methods
+get
+Font
+Family()
+and
+set
+Font
+Family(fontFamilyName)
+now use string names for fonts instead of the
+Font
+Family
+enum. Although this enum is
+deprecated, it will remain available for compatibility with older scripts.
+Parameters
+Name
+Type
+Description
+font
+Family
+Name
+String
+the name of the font family, from the Font menu in Docs or Google Fonts
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Font
+Size(startOffset, endOffsetInclusive, size)
+Sets the font size for the specified character range.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the size of the first 11 characters in the tab's body to 12.
+const
+text
+=
+body
+.
+editAsText
+().
+setFontSize
+(
+0
+,
+10
+,
+12
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+size
+Number
+The font size.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Font
+Size(size)
+Sets the font size.
+Parameters
+Name
+Type
+Description
+size
+Number
+the font size
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Foreground
+Color(startOffset, endOffsetInclusive, color)
+Sets the foreground color for the specified character range.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the foreground color of the first 2 characters in the
+// tab's body to hex color #FF0000.
+const
+text
+=
+body
+.
+editAsText
+().
+setForegroundColor
+(
+0
+,
+1
+,
+'#FF0000'
+);
+// Gets the foreground color for the second character in the tab's body.
+const
+foregroundColor
+=
+text
+.
+getForegroundColor
+(
+1
+);
+//  Logs the foreground color to the console.
+console
+.
+log
+(
+foregroundColor
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+color
+String
+The foreground color, formatted in CSS notation (like
+'#ffffff'
+).
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Foreground
+Color(color)
+Sets the foreground color.
+Parameters
+Name
+Type
+Description
+color
+String
+the foreground color, formatted in CSS notation (like
+'#ffffff'
+)
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Italic(italic)
+Sets the italic setting.
+Parameters
+Name
+Type
+Description
+italic
+Boolean
+the italic setting
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Italic(startOffset, endOffsetInclusive, italic)
+Sets the italic setting for the specified character range.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the first 11 characters in the tab's body to italic.
+const
+text
+=
+body
+.
+editAsText
+().
+setItalic
+(
+0
+,
+10
+,
+true
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+italic
+Boolean
+The italic setting.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Link
+Url(startOffset, endOffsetInclusive, url)
+Sets the link URL for the specified character range.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Applies a link to the first 11 characters in the body.
+const
+text
+=
+body
+.
+editAsText
+().
+setLinkUrl
+(
+0
+,
+10
+,
+'https://example.com'
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+url
+String
+The link URL.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Link
+Url(url)
+Sets the link url.
+Parameters
+Name
+Type
+Description
+url
+String
+the link url
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Strikethrough(strikethrough)
+Sets the strikethrough setting.
+Parameters
+Name
+Type
+Description
+strikethrough
+Boolean
+the strikethrough setting
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Strikethrough(startOffset, endOffsetInclusive, strikethrough)
+Sets the strikethrough setting for the specified character range.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the first 11 characters in the tab's body to strikethrough.
+const
+text
+=
+body
+.
+editAsText
+().
+setStrikethrough
+(
+0
+,
+10
+,
+true
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+strikethrough
+Boolean
+The strikethrough setting.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Text(text)
+Sets the text contents.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Replaces the contents of the body with the text, 'New body text.'
+const
+text
+=
+body
+.
+editAsText
+().
+setText
+(
+'New body text.'
+);
+Parameters
+Name
+Type
+Description
+text
+String
+The new text contents.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Text
+Alignment(startOffset, endOffsetInclusive, textAlignment)
+Sets the text alignment for a given character range. The available types of alignment are
+Document
+App.TextAlignment.NORMAL
+,
+Document
+App.TextAlignment.SUBSCRIPT
+, and
+Document
+App.TextAlignment.SUPERSCRIPT
+.
+// Make the first character in the first paragraph of the active tab be
+// superscript.
+const
+documentTab
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+();
+const
+text
+=
+documentTab
+.
+getBody
+().
+getParagraphs
+()[
+0
+].
+editAsText
+();
+text
+.
+setTextAlignment
+(
+0
+,
+0
+,
+DocumentApp
+.
+TextAlignment
+.
+SUPERSCRIPT
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The start offset of the character range.
+end
+Offset
+Inclusive
+Integer
+The end offset of the character range (inclusive).
+text
+Alignment
+Text
+Alignment
+The type of text alignment to apply.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Text
+Alignment(textAlignment)
+Sets the text alignment. The available types of alignment are
+Document
+App.TextAlignment.NORMAL
+,
+Document
+App.TextAlignment.SUBSCRIPT
+, and
+Document
+App.TextAlignment.SUPERSCRIPT
+.
+// Make the entire first paragraph in the active tab be superscript.
+const
+documentTab
+=
+DocumentApp
+.
+getActiveDocument
+().
+getActiveTab
+().
+asDocumentTab
+();
+const
+text
+=
+documentTab
+.
+getBody
+().
+getParagraphs
+()[
+0
+].
+editAsText
+();
+text
+.
+setTextAlignment
+(
+DocumentApp
+.
+TextAlignment
+.
+SUPERSCRIPT
+);
+Parameters
+Name
+Type
+Description
+text
+Alignment
+Text
+Alignment
+the type of text alignment to apply
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Underline(underline)
+Sets the underline setting.
+Parameters
+Name
+Type
+Description
+underline
+Boolean
+the underline setting
+Return
+Text
+— the current element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+set
+Underline(startOffset, endOffsetInclusive, underline)
+Sets the underline setting for the specified character range.
+// Opens the Docs file by its URL. If you created your script from within a
+// Google Docs file, you can use DocumentApp.getActiveDocument() instead.
+// TODO(developer): Replace the URL with your own.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/DOCUMENT_ID/edit'
+,
+);
+// Gets the body contents of the tab by its ID.
+// TODO(developer): Replace the ID with your own.
+const
+body
+=
+doc
+.
+getTab
+(
+'123abc'
+).
+asDocumentTab
+().
+getBody
+();
+// Sets the first 11 characters in the tab's body to underline.
+const
+text
+=
+body
+.
+editAsText
+().
+setUnderline
+(
+0
+,
+10
+,
+true
+);
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The text range's start offset.
+end
+Offset
+Inclusive
+Integer
+The text range's end offset.
+underline
+Boolean
+The underline setting.
+Return
+Text
+— The current element.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

@@ -1,0 +1,138 @@
+Source Path: gas_docs_html/apps-script/reference/document/bookmark/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Bookmark object represents a bookmark in a Google Document.
+You can add a bookmark at the cursor position in the active document tab.
+Bookmark objects have methods to get their ID and position, and to remove themselves.
+Bookmark
+An object representing a bookmark.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+documentTab
+=
+doc
+.
+getActiveTab
+().
+asDocumentTab
+();
+// Insert a bookmark at the cursor position (in the active tab) and log its ID.
+const
+cursor
+=
+doc
+.
+getCursor
+();
+const
+bookmark
+=
+documentTab
+.
+addBookmark
+(
+cursor
+);
+Logger
+.
+log
+(
+bookmark
+.
+getId
+());
+Methods
+Method
+Return type
+Brief description
+get
+Id()
+String
+Gets the ID of the
+Bookmark
+.
+get
+Position()
+Position
+Gets the
+Position
+of the
+Bookmark
+within the
+Document
+Tab
+.
+remove()
+void
+Deletes the
+Bookmark
+.
+Detailed documentation
+get
+Id()
+Gets the ID of the
+Bookmark
+. The ID is unique within the
+Document
+Tab
+.
+Return
+String
+— The
+Bookmark
+'s ID, which is unique within the
+Document
+Tab
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Position()
+Gets the
+Position
+of the
+Bookmark
+within the
+Document
+Tab
+. The
+Position
+remains accurate so long as the
+Bookmark
+is not deleted, even if the script
+changes the document structure.
+Return
+Position
+— The position of the
+Bookmark
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+remove()
+Deletes the
+Bookmark
+. Calling this method on a
+Bookmark
+that has already been
+deleted has no effect.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

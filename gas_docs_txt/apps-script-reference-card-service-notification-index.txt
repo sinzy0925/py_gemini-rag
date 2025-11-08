@@ -1,0 +1,86 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/notification/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Notifications are displayed to users after interacting with a UI element.
+Notifications are created using
+CardService.newNotification()
+and can be set with
+setText(text)
+.
+The
+setText(text)
+method is required and sets the string content of the notification.
+Notification
+A notification shown to the user as a response to interacting with a UI element.
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'notificationCallback'
+);
+CardService
+.
+newTextButton
+().
+setText
+(
+'Save'
+).
+setOnClickAction
+(
+action
+);
+// ...
+function
+notificationCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setNotification
+(
+CardService
+.
+newNotification
+().
+setText
+(
+'Some info to display to user'
+),
+)
+.
+build
+();
+}
+Methods
+Method
+Return type
+Brief description
+set
+Text(text)
+Notification
+Sets the text to show in the notification.
+Detailed documentation
+set
+Text(text)
+Sets the text to show in the notification. Required.
+Parameters
+Name
+Type
+Description
+text
+String
+The notification text.
+Return
+Notification
+— This object, for chaining.

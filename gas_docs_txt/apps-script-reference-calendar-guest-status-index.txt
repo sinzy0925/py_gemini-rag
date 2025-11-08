@@ -1,0 +1,27 @@
+Source Path: gas_docs_html/apps-script/reference/calendar/guest-status/index.html
+
+Guest
+Status
+An enum representing the statuses a guest can have for an event.
+To call an enum, you call its parent class, name, and property. For example,
+CalendarApp.GuestStatus.INVITED
+.
+Properties
+Property
+Type
+Description
+INVITED
+Enum
+The guest has been invited, but has not indicated whether they are attending.
+MAYBE
+Enum
+The guest has indicated they might attend.
+NO
+Enum
+The guest has indicated they are not attending.
+OWNER
+Enum
+The guest is the owner of the event.
+YES
+Enum
+The guest has indicated they are attending.

@@ -1,0 +1,18 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/gender/index.html
+
+Gender
+Deprecated.
+Instead, use the
+People API advanced
+    service
+An enum for contact gender.
+Deprecated properties
+Property
+Type
+Description
+MALE
+Enum
+male gender
+FEMALE
+Enum
+female gender

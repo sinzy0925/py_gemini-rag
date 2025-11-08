@@ -1,0 +1,553 @@
+Source Path: gas_docs_html/apps-script/reference/slides/notes-page/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Notes pages in a presentation contain content for handouts, including a shape for speaker notes.
+Each slide in a presentation has a corresponding notes page.
+Only the text within the speaker notes shape on a notes page can be modified.
+Notes pages provide methods to retrieve various page elements like groups, images, lines, shapes, charts, tables, videos, and word art.
+You can find a specific page element by its ID or retrieve placeholder elements by type and index on a notes page.
+Text on a notes page can be replaced using the
+replaceAllText
+method, with an option for case-sensitive matching.
+Notes
+Page
+A notes page in a presentation.
+These pages contain the content for presentation handouts, including a a shape that contains
+the slide's speaker notes. Each slide has one corresponding notes page. Only the text in the
+speaker notes shape can be modified.
+Methods
+Method
+Return type
+Brief description
+get
+Groups()
+Group[]
+Returns the list of
+Group
+objects on the page.
+get
+Images()
+Image[]
+Returns the list of
+Image
+objects on the page.
+get
+Lines()
+Line[]
+Returns the list of
+Line
+objects on the page.
+get
+Object
+Id()
+String
+Gets the unique ID for the page.
+get
+Page
+Element
+By
+Id(id)
+Page
+Element
+Returns the
+Page
+Element
+on the page with the given ID, or
+null
+if none exists.
+get
+Page
+Elements()
+Page
+Element[]
+Returns the list of
+Page
+Element
+objects rendered on the page.
+get
+Placeholder(placeholderType)
+Page
+Element
+Returns the placeholder
+Page
+Element
+object for a specified
+Placeholder
+Type
+or
+null
+if a matching placeholder is not present.
+get
+Placeholder(placeholderType, placeholderIndex)
+Page
+Element
+Returns the placeholder
+Page
+Element
+object for a specified
+Placeholder
+Type
+and
+a placeholder index, or
+null
+if the placeholder is not present.
+get
+Placeholders()
+Page
+Element[]
+Returns the list of placeholder
+Page
+Element
+objects in the page.
+get
+Shapes()
+Shape[]
+Returns the list of
+Shape
+objects on the page.
+get
+Sheets
+Charts()
+Sheets
+Chart[]
+Returns the list of
+Sheets
+Chart
+objects on the page.
+get
+Speaker
+Notes
+Shape()
+Shape
+Gets the shape containing the speaker notes on the page.
+get
+Tables()
+Table[]
+Returns the list of
+Table
+objects on the page.
+get
+Videos()
+Video[]
+Returns the list of
+Video
+objects on the page.
+get
+Word
+Arts()
+Word
+Art[]
+Returns the list of
+Word
+Art
+objects on the page.
+replace
+All
+Text(findText, replaceText)
+Integer
+Replaces all instances of text matching find text with replace text.
+replace
+All
+Text(findText, replaceText, matchCase)
+Integer
+Replaces all instances of text matching find text with replace text.
+Detailed documentation
+get
+Groups()
+Returns the list of
+Group
+objects on the page.
+Return
+Group[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Images()
+Returns the list of
+Image
+objects on the page.
+Return
+Image[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Lines()
+Returns the list of
+Line
+objects on the page.
+Return
+Line[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Object
+Id()
+Gets the unique ID for the page. Object IDs used by pages and page elements share the same
+namespace.
+Return
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Page
+Element
+By
+Id(id)
+Returns the
+Page
+Element
+on the page with the given ID, or
+null
+if none exists.
+Parameters
+Name
+Type
+Description
+id
+String
+The ID of the page element that is being retrieved.
+Return
+Page
+Element
+— The page element with the given ID.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Page
+Elements()
+Returns the list of
+Page
+Element
+objects rendered on the page.
+Return
+Page
+Element[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Placeholder(placeholderType)
+Returns the placeholder
+Page
+Element
+object for a specified
+Placeholder
+Type
+or
+null
+if a matching placeholder is not present.
+If there are multiple placeholders with the same type, it returns the one with minimal
+placeholder index. If there are multiple matching placeholders with the same index, it returns
+the first placeholder from the page's page elements collection.
+const
+slide
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+];
+const
+placeholder
+=
+slide
+.
+getPlaceholder
+(
+SlidesApp
+.
+PlaceholderType
+.
+CENTERED_TITLE
+,
+);
+Parameters
+Name
+Type
+Description
+placeholder
+Type
+Placeholder
+Type
+Return
+Page
+Element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Placeholder(placeholderType, placeholderIndex)
+Returns the placeholder
+Page
+Element
+object for a specified
+Placeholder
+Type
+and
+a placeholder index, or
+null
+if the placeholder is not present.
+If there are multiple placeholders with the same type and index, it returns the first
+placeholder from the page's page elements collection.
+const
+slide
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSlides
+()[
+0
+];
+const
+placeholder
+=
+slide
+.
+getPlaceholder
+(
+SlidesApp
+.
+PlaceholderType
+.
+CENTERED_TITLE
+,
+0
+,
+);
+Parameters
+Name
+Type
+Description
+placeholder
+Type
+Placeholder
+Type
+placeholder
+Index
+Integer
+Return
+Page
+Element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Placeholders()
+Returns the list of placeholder
+Page
+Element
+objects in the page.
+const
+master
+=
+SlidesApp
+.
+getActivePresentation
+().
+getMasters
+()[
+0
+];
+Logger
+.
+log
+(
+`Number of placeholders in the master:
+${
+master
+.
+getPlaceholders
+().
+length
+}
+`
+,
+);
+Return
+Page
+Element[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Shapes()
+Returns the list of
+Shape
+objects on the page.
+Return
+Shape[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Sheets
+Charts()
+Returns the list of
+Sheets
+Chart
+objects on the page.
+Return
+Sheets
+Chart[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Speaker
+Notes
+Shape()
+Gets the shape containing the speaker notes on the page.
+Return
+Shape
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Tables()
+Returns the list of
+Table
+objects on the page.
+Return
+Table[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Videos()
+Returns the list of
+Video
+objects on the page.
+Return
+Video[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Word
+Arts()
+Returns the list of
+Word
+Art
+objects on the page.
+Return
+Word
+Art[]
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+replace
+All
+Text(findText, replaceText)
+Replaces all instances of text matching find text with replace text. The search is case
+insensitive.
+Parameters
+Name
+Type
+Description
+find
+Text
+String
+The text to find.
+replace
+Text
+String
+The text to replace the matched text.
+Return
+Integer
+— the number of occurrences changed
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+replace
+All
+Text(findText, replaceText, matchCase)
+Replaces all instances of text matching find text with replace text.
+Parameters
+Name
+Type
+Description
+find
+Text
+String
+The text to find.
+replace
+Text
+String
+The text to replace the matched text.
+match
+Case
+Boolean
+If
+true
+, the search is case sensitive; if
+false
+, the search is
+    case insensitive.
+Return
+Integer
+— the number of occurrences changed
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

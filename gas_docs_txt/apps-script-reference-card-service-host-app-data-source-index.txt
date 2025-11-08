@@ -1,0 +1,182 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/host-app-data-source/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+HostAppDataSource is used with SelectionInput widgets in multiselect menus to populate items from a Google Workspace application data source.
+This feature is exclusively available for Google Chat apps and cannot be used with Google Workspace add-ons.
+The
+setChatDataSource
+method allows setting the data source from Google Chat.
+Host
+App
+Data
+Source
+For a
+Selection
+Input
+widget that uses a multiselect menu, a data source from a Google
+Workspace application. The data source populates selection items for the multiselect menu.
+const
+chatSpaceDataSource
+=
+CardService
+.
+newChatSpaceDataSource
+().
+setDefaultToCurrentSpace
+(
+true
+);
+const
+chatClientDataSource
+=
+CardService
+.
+newChatClientDataSource
+().
+setSpaceDataSource
+(
+chatSpaceDataSource
+);
+const
+hostAppDataSource
+=
+CardService
+.
+newHostAppDataSource
+().
+setChatDataSource
+(
+chatClientDataSource
+);
+Only available for Google Chat apps and Google Workspace add-ons that extend flows. Not
+available for other Google Workspace add-ons.
+Methods
+Method
+Return type
+Brief description
+set
+Chat
+Data
+Source(chatClientDataSource)
+Host
+App
+Data
+Source
+Sets the data source from Google Chat.
+set
+Workflow
+Data
+Source(workflowDataSource)
+Host
+App
+Data
+Source
+Sets the data source from Google Workspace Flows.
+Detailed documentation
+set
+Chat
+Data
+Source(chatClientDataSource)
+Sets the data source from Google Chat.
+const
+chatSpaceDataSource
+=
+CardService
+.
+newChatSpaceDataSource
+().
+setDefaultToCurrentSpace
+(
+true
+);
+const
+chatClientDataSource
+=
+CardService
+.
+newChatClientDataSource
+().
+setSpaceDataSource
+(
+chatSpaceDataSource
+);
+const
+hostAppDataSource
+=
+CardService
+.
+newHostAppDataSource
+().
+setChatDataSource
+(
+chatClientDataSource
+);
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+Parameters
+Name
+Type
+Description
+chat
+Client
+Data
+Source
+Chat
+Client
+Data
+Source
+The data source to be set.
+Return
+Host
+App
+Data
+Source
+— This object, for chaining.
+set
+Workflow
+Data
+Source(workflowDataSource)
+Sets the data source from Google Workspace Flows.
+Only available through the
+Gemini
+Alpha program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+workflowDataSource
+=
+CardService
+.
+newWorkflowDataSource
+().
+setIncludeVariables
+(
+true
+);
+const
+hostAppDataSource
+=
+CardService
+.
+newHostAppDataSource
+().
+setWorkflowDataSource
+(
+workflowDataSource
+);
+Parameters
+Name
+Type
+Description
+workflow
+Data
+Source
+Workflow
+Data
+Source
+The data source to be set.
+Return
+Host
+App
+Data
+Source
+— This object, for chaining.

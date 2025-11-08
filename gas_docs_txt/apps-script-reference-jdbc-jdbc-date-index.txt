@@ -1,0 +1,230 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-date/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcDate represents a JDBC
+Date
+and its documentation refers to
+java.sql.Date
+.
+It includes methods for comparing dates such as
+after()
+and
+before()
+.
+Methods like
+getDate()
+,
+getMonth()
+,
+getTime()
+, and
+getYear()
+allow retrieval of specific date components.
+You can modify date components using methods like
+setDate()
+,
+setMonth()
+,
+setTime()
+, and
+setYear()
+.
+Jdbc
+Date
+A JDBC
+Date
+. For documentation of this class, see
+java.sql.Date
+.
+Methods
+Method
+Return type
+Brief description
+after(when)
+Boolean
+For documentation of this method, see
+java.sql.Date#after(date)
+.
+before(when)
+Boolean
+For documentation of this method, see
+java.sql.Date#before(date)
+.
+get
+Date()
+Integer
+For documentation of this method, see
+java.sql.Date#getDate()
+.
+get
+Month()
+Integer
+For documentation of this method, see
+java.sql.Date#getMonth()
+.
+get
+Time()
+Integer
+For documentation of this method, see
+java.sql.Date#getTime()
+.
+get
+Year()
+Integer
+For documentation of this method, see
+java.sql.Date#getYear()
+.
+set
+Date(date)
+void
+For documentation of this method, see
+java.sql.Date#setDate(int)
+.
+set
+Month(month)
+void
+For documentation of this method, see
+java.sql.Date#setMonth(int)
+.
+set
+Time(milliseconds)
+void
+For documentation of this method, see
+java.sql.Date#setTime(int)
+.
+set
+Year(year)
+void
+For documentation of this method, see
+java.sql.Date#setYear(int)
+.
+Detailed documentation
+after(when)
+For documentation of this method, see
+java.sql.Date#after(date)
+.
+Parameters
+Name
+Type
+Description
+when
+Jdbc
+Date
+A date to compare to.
+Return
+Boolean
+—
+true
+if and only if this date is strictly later than the provided date;
+false
+otherwise.
+before(when)
+For documentation of this method, see
+java.sql.Date#before(date)
+.
+Parameters
+Name
+Type
+Description
+when
+Jdbc
+Date
+A date to compare to.
+Return
+Boolean
+—
+true
+if and only if this date is strictly earlier than the provided date;
+false
+otherwise.
+get
+Date()
+For documentation of this method, see
+java.sql.Date#getDate()
+.
+Return
+Integer
+— The day of the month represented by this date. The value is between 1 and 31.
+get
+Month()
+For documentation of this method, see
+java.sql.Date#getMonth()
+.
+Return
+Integer
+— The number representing the month that contains or begins with the instant in time
+    represented by this date. The value returned is between 0 and 11, with the value 0
+    representing January.
+get
+Time()
+For documentation of this method, see
+java.sql.Date#getTime()
+.
+Return
+Integer
+— The number of milliseconds since January 1, 1970, 00:00:00 GMT represented by this
+    date.
+get
+Year()
+For documentation of this method, see
+java.sql.Date#getYear()
+.
+Return
+Integer
+— The result of subtracting 1900 from the year that contains or begins with the instant
+    in time represented by this date, as interpreted in the local time zone.
+set
+Date(date)
+For documentation of this method, see
+java.sql.Date#setDate(int)
+.
+Parameters
+Name
+Type
+Description
+date
+Integer
+The day of the month to set. The value is between 1 and 31, modified as needed. For
+    example, if the date was April 30, for example, and the date is set to 31, then it is
+    treated as if it were on May 1, because April has only 30 days.
+set
+Month(month)
+For documentation of this method, see
+java.sql.Date#setMonth(int)
+.
+Parameters
+Name
+Type
+Description
+month
+Integer
+The month value to set. The value returned is between 0 and 11, with the value 0
+    representing January.
+set
+Time(milliseconds)
+For documentation of this method, see
+java.sql.Date#setTime(int)
+.
+Parameters
+Name
+Type
+Description
+milliseconds
+Integer
+The number of milliseconds since January 1, 1970, 00:00:00 GMT, not to
+    exceed the milliseconds representation for the year 8099. A negative number indicates the
+    number of milliseconds before January 1, 1970, 00:00:00 GMT.
+set
+Year(year)
+For documentation of this method, see
+java.sql.Date#setYear(int)
+.
+Parameters
+Name
+Type
+Description
+year
+Integer
+The value to set the year with. This value plus 1900 is the resulting year the date
+    has after this method executes.

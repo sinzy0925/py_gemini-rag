@@ -1,0 +1,71 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-sqlxml/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcSQLXML is a JDBC
+SQLXML
+object with methods for interacting with XML data.
+The
+free()
+method is used for documentation purposes, referring to
+java.sql.SQLXML#free()
+.
+The
+getString()
+method retrieves the string representation of the XML value.
+The
+setString(value)
+method sets the XML value using a string representation.
+Jdbc
+SQLXML
+A JDBC
+SQLXML
+. For documentation of this class, see
+java.sql.SQLXML
+.
+Methods
+Method
+Return type
+Brief description
+free()
+void
+For documentation of this method, see
+java.sql.SQLXML#free()
+.
+get
+String()
+String
+For documentation of this method, see
+java.sql.SQLXML#getString()
+.
+set
+String(value)
+void
+For documentation of this method, see
+java.sql.SQLXML#setString(String)
+.
+Detailed documentation
+free()
+For documentation of this method, see
+java.sql.SQLXML#free()
+.
+get
+String()
+For documentation of this method, see
+java.sql.SQLXML#getString()
+.
+Return
+String
+— The string representation of the XML value designated by this SQLXML instance.
+set
+String(value)
+For documentation of this method, see
+java.sql.SQLXML#setString(String)
+.
+Parameters
+Name
+Type
+Description
+value
+String
+The string representation of the XML value to set.

@@ -1,0 +1,29 @@
+Source Path: gas_docs_html/apps-script/reference/slides/paragraph-alignment/index.html
+
+Paragraph
+Alignment
+The types of text alignment for a paragraph.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.ParagraphAlignment.START
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A paragraph alignment that is not supported.
+START
+Enum
+The paragraph is aligned to the start of the line. Left-aligned for left-to-right text,
+right-aligned otherwise.
+CENTER
+Enum
+The paragraph is centered.
+END
+Enum
+The paragraph is aligned to the end of the line. Right-aligned for left-to-right text,
+left-aligned otherwise.
+JUSTIFIED
+Enum
+The paragraph is justified.

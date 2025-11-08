@@ -1,0 +1,286 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/pivot-value/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PivotValue allows you to access and modify value groups within pivot tables.
+You can retrieve information about a PivotValue such as its display type, formula, associated PivotTable, source data column, and summarization function.
+PivotValue provides methods to modify the display name, set the formula, change how the value is shown, and update the summarization function.
+You can remove a PivotValue from the pivot table using the
+remove()
+method.
+Pivot
+Value
+Access and modify value groups in pivot tables.
+Methods
+Method
+Return type
+Brief description
+get
+Display
+Type()
+Pivot
+Value
+Display
+Type
+Returns the display type describing how this pivot value is currently displayed in the table.
+get
+Formula()
+String
+Returns the formula used to calculate this value.
+get
+Pivot
+Table()
+Pivot
+Table
+Returns the
+Pivot
+Table
+which this value belongs to.
+get
+Source
+Data
+Column()
+Integer
+Returns the number of the source data column the pivot value summarizes.
+get
+Source
+Data
+Source
+Column()
+Data
+Source
+Column
+Returns the data source column the pivot value summarizes.
+get
+Summarized
+By()
+Pivot
+Table
+Summarize
+Function
+Returns this group’s summarization function.
+remove()
+void
+Remove this value from the pivot table.
+set
+Display
+Name(name)
+Pivot
+Value
+Sets the display name for this value in the pivot table.
+set
+Formula(formula)
+Pivot
+Value
+Sets the formula used to calculate this value.
+show
+As(displayType)
+Pivot
+Value
+Displays this value in the pivot table as a function of another value.
+summarize
+By(summarizeFunction)
+Pivot
+Value
+Sets the summarization function.
+Detailed documentation
+get
+Display
+Type()
+Returns the display type describing how this pivot value is currently displayed in the table.
+Return
+Pivot
+Value
+Display
+Type
+— the display type for this pivot value
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Formula()
+Returns the formula used to calculate this value. If this value is not a calculated field this
+method returns
+null
+.
+Return
+String
+— the pivot value for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Pivot
+Table()
+Returns the
+Pivot
+Table
+which this value belongs to.
+Return
+Pivot
+Table
+— the pivot table this value belongs to
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Source
+Data
+Column()
+Returns the number of the source data column the pivot value summarizes. This index is 1-based,
+if this group summarizes source data in column "A" of the spreadsheet this method returns
+1
+.
+Return
+Integer
+— The source data column number.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Source
+Data
+Source
+Column()
+Returns the data source column the pivot value summarizes. Returns
+null
+if the pivot
+table is not a {DataSourcePivotTableApi}.
+Return
+Data
+Source
+Column
+— The source data source column the pivot value summarizes.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Summarized
+By()
+Returns this group’s summarization function.
+Return
+Pivot
+Table
+Summarize
+Function
+— the group's summarization function
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Remove this value from the pivot table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Display
+Name(name)
+Sets the display name for this value in the pivot table.
+Parameters
+Name
+Type
+Description
+name
+String
+The display name to set.
+Return
+Pivot
+Value
+— the pivot value for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Formula(formula)
+Sets the formula used to calculate this value. If this value is not a calculated field this
+method results in an error.
+Parameters
+Name
+Type
+Description
+formula
+String
+The formula to use to calculate this value.
+Return
+Pivot
+Value
+— the pivot value for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+show
+As(displayType)
+Displays this value in the pivot table as a function of another value.
+Parameters
+Name
+Type
+Description
+display
+Type
+Pivot
+Value
+Display
+Type
+The way to display the values.
+Return
+Pivot
+Value
+— the pivot value for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+summarize
+By(summarizeFunction)
+Sets the summarization function.
+Parameters
+Name
+Type
+Description
+summarize
+Function
+Pivot
+Table
+Summarize
+Function
+The function to use to summarize data in this value's source data
+    column.
+Return
+Pivot
+Value
+— the pivot value for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

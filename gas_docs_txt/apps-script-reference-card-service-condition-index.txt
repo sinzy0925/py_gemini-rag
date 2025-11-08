@@ -1,0 +1,97 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/condition/index.html
+
+Condition
+A condition used to run an event action as part of
+CEL
+expression validation
+.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+condition
+=
+CardService
+.
+newCondition
+().
+setActionRuleId
+(
+"CEL_TEXTBOX_SUCCESS_RULE_ID"
+)
+.
+setExpressionDataCondition
+(
+CardService
+.
+newExpressionDataCondition
+()
+.
+setConditionType
+(
+CardService
+.
+ExpressionDataConditionType
+.
+EXPRESSION_EVALUATION_SUCCESS
+));
+Methods
+Method
+Return type
+Brief description
+set
+Action
+Rule
+Id(actionRuleId)
+Condition
+The unique ID of the action rule to run in response to the condition.
+set
+Expression
+Data
+Condition(expressionDataCondition)
+Condition
+Sets the
+CEL
+expression validation
+condition used to determine whether the event action should run.
+Detailed documentation
+set
+Action
+Rule
+Id(actionRuleId)
+The unique ID of the action rule to run in response to the condition.
+Parameters
+Name
+Type
+Description
+action
+Rule
+Id
+String
+The ID that uniquely identifies an event action.
+Return
+Condition
+— This Condition object, for chaining.
+set
+Expression
+Data
+Condition(expressionDataCondition)
+Sets the
+CEL
+expression validation
+condition used to determine whether the event action should run.
+Parameters
+Name
+Type
+Description
+expression
+Data
+Condition
+Expression
+Data
+Condition
+A expression data condition.
+Return
+Condition
+— The Condition object, for chaining.

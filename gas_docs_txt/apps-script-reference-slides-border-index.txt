@@ -1,0 +1,167 @@
+Source Path: gas_docs_html/apps-script/reference/slides/border/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Border class describes the border around an element.
+Methods are available to get and set the dash style, line fill, and weight of the border, as well as check its visibility and set it to transparent.
+Border
+Describes the border around an element.
+Methods
+Method
+Return type
+Brief description
+get
+Dash
+Style()
+Dash
+Style
+Gets the
+Dash
+Style
+of the border.
+get
+Line
+Fill()
+Line
+Fill
+Gets the
+Line
+Fill
+of the border.
+get
+Weight()
+Number
+Gets the thickness of the border in points.
+is
+Visible()
+Boolean
+Gets whether the border is visible or not.
+set
+Dash
+Style(style)
+Border
+Sets the
+Dash
+Style
+of the border.
+set
+Transparent()
+Border
+Sets the border to be transparent.
+set
+Weight(points)
+Border
+Sets the thickness of the border in points.
+Detailed documentation
+get
+Dash
+Style()
+Gets the
+Dash
+Style
+of the border.
+Return
+Dash
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Line
+Fill()
+Gets the
+Line
+Fill
+of the border.
+Return
+Line
+Fill
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Weight()
+Gets the thickness of the border in points. Returns
+null
+if the element does not have a
+border.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Visible()
+Gets whether the border is visible or not.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Dash
+Style(style)
+Sets the
+Dash
+Style
+of the border.
+Setting a
+Dash
+Style
+on a transparent border makes it visible.
+Parameters
+Name
+Type
+Description
+style
+Dash
+Style
+Return
+Border
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Transparent()
+Sets the border to be transparent.
+Return
+Border
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Weight(points)
+Sets the thickness of the border in points.
+Setting a weight on a transparent border makes it visible.
+Parameters
+Name
+Type
+Description
+points
+Number
+Return
+Border
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

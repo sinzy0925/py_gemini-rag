@@ -1,0 +1,388 @@
+Source Path: gas_docs_html/apps-script/reference/html/html-service.html
+
+AI-generated Key Takeaways
+outlined_flag
+HtmlService allows scripts to return HTML and other text content to a browser safely through sanitization.
+Security measures are in place to prevent scripts from directly returning malicious content.
+The service includes properties like
+SandboxMode
+and
+XFrameOptionsMode
+for controlling client-side script behavior and security.
+Methods are available to create
+HtmlOutput
+objects from various sources, including strings, blobs, and files.
+The service also provides methods for creating
+HtmlTemplate
+objects for dynamic content generation.
+Html
+Service
+Service for returning HTML and other text content from a script.
+Due to security considerations, scripts cannot directly return content to a browser. Instead,
+they must sanitize the HTML so that it cannot perform malicious actions. See the description of
+Html
+Output
+for what limitations this implies on what can be returned.
+Properties
+Property
+Type
+Description
+Sandbox
+Mode
+Sandbox
+Mode
+An enum representing the sandbox modes that can be used for client-side
+Html
+Service
+scripts.
+XFrameOptionsMode
+XFrameOptionsMode
+An enum representing the
+X-Frame-Options
+modes that can be used for client-side
+Html
+Service
+scripts.
+Methods
+Method
+Return type
+Brief description
+create
+Html
+Output()
+Html
+Output
+Creates a new
+Html
+Output
+object that can be returned from the script.
+create
+Html
+Output(blob)
+Html
+Output
+Creates a new
+Html
+Output
+object from a
+Blob
+Source
+resource.
+create
+Html
+Output(html)
+Html
+Output
+Creates a new
+Html
+Output
+object that can be returned from the script.
+create
+Html
+Output
+From
+File(filename)
+Html
+Output
+Creates a new
+Html
+Output
+object from a file in the code editor.
+create
+Template(blob)
+Html
+Template
+Creates a new
+Html
+Template
+object from a
+Blob
+Source
+resource.
+create
+Template(html)
+Html
+Template
+Creates a new
+Html
+Template
+object that can be returned from the script.
+create
+Template
+From
+File(filename)
+Html
+Template
+Creates a new
+Html
+Template
+object from a file in the code editor.
+get
+User
+Agent()
+String
+Gets the user-agent string for the current browser.
+Detailed documentation
+create
+Html
+Output()
+Creates a new
+Html
+Output
+object that can be returned from the script.
+const
+output
+=
+HtmlService
+.
+createHtmlOutput
+();
+Return
+Html
+Output
+— the new HtmlOutput object
+create
+Html
+Output(blob)
+Creates a new
+Html
+Output
+object from a
+Blob
+Source
+resource.
+function
+createFromBlob
+(
+blob
+)
+{
+const
+output
+=
+HtmlService
+.
+createHtmlOutput
+(
+blob
+);
+return
+output
+;
+}
+Parameters
+Name
+Type
+Description
+blob
+Blob
+Source
+the object to get HTML out of
+Return
+Html
+Output
+— the new
+Html
+Output
+object
+Throws
+Error
+— if the blob doesn't contain HTML or the HTML is malformed
+create
+Html
+Output(html)
+Creates a new
+Html
+Output
+object that can be returned from the script.
+const
+output
+=
+HtmlService
+.
+createHtmlOutput
+(
+'<b>Hello world!</b>'
+);
+Parameters
+Name
+Type
+Description
+html
+String
+the content to serve
+Return
+Html
+Output
+— the new HtmlOutput object
+Throws
+Error
+— if the html is malformed
+create
+Html
+Output
+From
+File(filename)
+Creates a new
+Html
+Output
+object from a file in the code editor.
+const
+output
+=
+HtmlService
+.
+createHtmlOutputFromFile
+(
+'myPage'
+);
+Parameters
+Name
+Type
+Description
+filename
+String
+the name of the file to use
+Return
+Html
+Output
+— the new
+Html
+Output
+object
+Throws
+Error
+— if the file wasn't found or the HTML in it is malformed
+create
+Template(blob)
+Creates a new
+Html
+Template
+object from a
+Blob
+Source
+resource.
+function
+createFromBlob
+(
+blob
+)
+{
+const
+template
+=
+HtmlService
+.
+createTemplate
+(
+blob
+);
+const
+output
+=
+template
+.
+evaluate
+();
+return
+output
+;
+}
+Parameters
+Name
+Type
+Description
+blob
+Blob
+Source
+The object to get HTML out of.
+Return
+Html
+Template
+— the new
+Html
+Template
+object
+Throws
+Error
+— if the blob doesn't contain HTML
+create
+Template(html)
+Creates a new
+Html
+Template
+object that can be returned from the script.
+const
+template
+=
+HtmlService
+.
+createTemplate
+(
+'<b>The time is &lt;?= new Date() ?&gt;</b>'
+,
+);
+Parameters
+Name
+Type
+Description
+html
+String
+the content of the template
+Return
+Html
+Template
+— the new
+Html
+Template
+object
+create
+Template
+From
+File(filename)
+Creates a new
+Html
+Template
+object from a file in the code editor.
+const
+template
+=
+HtmlService
+.
+createTemplateFromFile
+(
+'myTemplate'
+);
+Parameters
+Name
+Type
+Description
+filename
+String
+the name of the file to use
+Return
+Html
+Template
+— the new
+Html
+Template
+object
+Throws
+Error
+— if the file wasn't found
+get
+User
+Agent()
+Gets the user-agent string for the current browser. Returns
+null
+for most script
+executions if not used in a web app's
+do
+Get()
+or
+do
+Post()
+function.
+Return
+String
+— the user-agent string

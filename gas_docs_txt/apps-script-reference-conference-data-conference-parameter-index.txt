@@ -1,0 +1,93 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/conference-parameter/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A ConferenceParameter is a solution-specific parameter for add-ons that is persisted with conference data.
+ConferenceParameters can be updated or deleted and are passed to the add-on for these operations.
+The setKey method sets the key of the ConferenceParameter, with a maximum length of 50 characters.
+The setValue method sets the value of the ConferenceParameter, with a maximum length of 1024 characters.
+Both setKey and setValue methods return the ConferenceParameter object for chaining.
+Conference
+Parameter
+Solution-specific parameter available fo the add-on's use. This parameter is persisted with the
+conference data and, if an update or delete is needed, is passed to the add-on. Example usage:
+const
+conferenceParameter
+=
+ConferenceDataService
+.
+newConferenceParameter
+()
+.
+setKey
+(
+'meetingId'
+)
+.
+setValue
+(
+'123456'
+);
+Methods
+Method
+Return type
+Brief description
+set
+Key(key)
+Conference
+Parameter
+Sets the key of this
+Conference
+Parameter
+.
+set
+Value(value)
+Conference
+Parameter
+Sets the value of this
+Conference
+Parameter
+.
+Detailed documentation
+set
+Key(key)
+Sets the key of this
+Conference
+Parameter
+. The maximum length for this field is 50
+characters. Required.
+Parameters
+Name
+Type
+Description
+key
+String
+The key to set.
+Return
+Conference
+Parameter
+— this object, for chaining
+Throws
+Error
+— if the provided key is too long.
+set
+Value(value)
+Sets the value of this
+Conference
+Parameter
+. The maximum length for this field is 1024
+characters. Required.
+Parameters
+Name
+Type
+Description
+value
+String
+The value to set.
+Return
+Conference
+Parameter
+— this object, for chaining
+Throws
+Error
+— if the provided value is too long.

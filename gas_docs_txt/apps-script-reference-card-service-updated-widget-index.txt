@@ -1,0 +1,129 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/updated-widget/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+UpdatedWidget is used to provide autocomplete options for multiselect menus in SelectionInput.
+It is only available for Google Chat apps and not Google Workspace add-ons.
+The addItem method is used to add new selectable items to the UpdatedWidget.
+Updated
+Widget
+The response of the updated widget. Used to provide autocomplete options for multiselect menu in
+Selection
+Input
+.
+const
+updatedWidget
+=
+CardService
+.
+newUpdatedWidget
+()
+.
+addItem
+(
+'item_one_title'
+,
+'item_one_value'
+,
+false
+,
+'item_one_uri'
+,
+'item_one_bottom_text'
+,
+)
+.
+addItem
+(
+'item_two_title'
+,
+'item_two_value'
+,
+false
+,
+'item_two_uri'
+,
+'item_two_bottom_text'
+,
+);
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+Methods
+Method
+Return type
+Brief description
+add
+Item(text, value, selected, startIconUri, bottomText)
+Updated
+Widget
+Adds a new item that can be selected.
+Detailed documentation
+add
+Item(text, value, selected, startIconUri, bottomText)
+Adds a new item that can be selected.
+const
+updatedWidget
+=
+CardService
+.
+newUpdatedWidget
+()
+.
+addItem
+(
+'item_one_title'
+,
+'item_one_value'
+,
+false
+,
+'item_one_uri'
+,
+'item_one_bottom_text'
+,
+)
+.
+addItem
+(
+'item_two_title'
+,
+'item_two_value'
+,
+false
+,
+'item_two_uri'
+,
+'item_two_bottom_text'
+,
+);
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+Parameters
+Name
+Type
+Description
+text
+Object
+The text to be shown for this item. Non-string primitive arguments are converted to
+    strings automatically.
+value
+Object
+The form input value that is sent via the callback. Non-string primitive arguments
+    are converted to strings automatically.
+selected
+Boolean
+Whether the item is selected by default. If the selection input only accepts
+    one value (such as for radio buttons or a dropdown menu), only set this field for one item.
+start
+Icon
+Uri
+Object
+For multiselect menus, the URL for the icon displayed next to the item's
+    text field. Supports PNG and JPEG files.
+bottom
+Text
+Object
+For multiselect menus, a text description or label that's displayed below the
+    item's text field.
+Return
+Updated
+Widget
+— This object, for chaining.

@@ -1,0 +1,122 @@
+Source Path: gas_docs_html/apps-script/reference/slides/table-row/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A TableRow represents a row in a table and consists of a list of table cells, identified by its index.
+Methods are available to get a specific cell by index, retrieve the row's index, get the minimum height, find the number of cells, access the parent table, and remove the row.
+Detailed documentation for each method provides information on parameters, return types, and required authorization scopes.
+Table
+Row
+A row in a table. A row consists of a list of table cells. A row is identified by the row index.
+Methods
+Method
+Return type
+Brief description
+get
+Cell(cellIndex)
+Table
+Cell
+Returns the cell at the specified index.
+get
+Index()
+Integer
+Returns the 0-based index of the row.
+get
+Minimum
+Height()
+Number
+Returns the minimum height of the row in points.
+get
+Num
+Cells()
+Integer
+Returns the number of cells in this row.
+get
+Parent
+Table()
+Table
+Returns the table containing the current row.
+remove()
+void
+Removes the table row.
+Detailed documentation
+get
+Cell(cellIndex)
+Returns the cell at the specified index.
+Parameters
+Name
+Type
+Description
+cell
+Index
+Integer
+The 0-based index of the cell to retrieve.
+Return
+Table
+Cell
+— the cell.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Index()
+Returns the 0-based index of the row.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Minimum
+Height()
+Returns the minimum height of the row in points. The actual height depends on the length of the
+content of the cell.
+Return
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Num
+Cells()
+Returns the number of cells in this row.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Parent
+Table()
+Returns the table containing the current row.
+Return
+Table
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+remove()
+Removes the table row.
+If all the cells in the row are merged with other rows, the common rows spanned by these
+cells are removed.
+If no rows remain in the table after this removal, the whole table is removed.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

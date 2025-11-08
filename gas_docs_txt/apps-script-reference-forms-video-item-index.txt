@@ -1,0 +1,433 @@
+Source Path: gas_docs_html/apps-script/reference/forms/video-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+VideoItem is a layout item in Google Forms that displays a video and can be accessed or created from a Form object.
+You can set the title, help text, video URL (using long URL, short URL, or video ID), alignment, and width of a VideoItem.
+Methods are available to get properties like alignment, help text, ID, index, title, type, and width of a VideoItem.
+You can duplicate a VideoItem, which creates a copy and adds it to the end of the form.
+Video
+Item
+A layout item that displays a video. Items can be accessed or created from a
+Form
+.
+// Open a form by ID and add three new video items, using a long URL,
+// a short URL, and a video ID.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+form
+.
+addVideoItem
+()
+.
+setTitle
+(
+'Video Title'
+)
+.
+setHelpText
+(
+'Video Caption'
+)
+.
+setVideoUrl
+(
+'www.youtube.com/watch?v=1234abcdxyz'
+);
+form
+.
+addVideoItem
+()
+.
+setTitle
+(
+'Video Title'
+)
+.
+setHelpText
+(
+'Video Caption'
+)
+.
+setVideoUrl
+(
+'youtu.be/1234abcdxyz'
+);
+form
+.
+addVideoItem
+()
+.
+setTitle
+(
+'Video Title'
+)
+.
+setHelpText
+(
+'Video Caption'
+)
+.
+setVideoUrl
+(
+'1234abcdxyz'
+);
+Methods
+Method
+Return type
+Brief description
+duplicate()
+Video
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Alignment()
+Alignment
+Gets the video's horizontal alignment.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+get
+Width()
+Integer
+Gets the video's width in pixels.
+set
+Alignment(alignment)
+Video
+Item
+Sets the video's horizontal alignment.
+set
+Help
+Text(text)
+Video
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Title(title)
+Video
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Video
+Url(youtubeUrl)
+Video
+Item
+Sets the video itself from a given YouTube URL or YouTube video ID.
+set
+Width(width)
+Video
+Item
+Sets the video's width in pixels.
+Detailed documentation
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Video
+Item
+— a duplicate of this
+Video
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Alignment()
+Gets the video's horizontal alignment.
+Return
+Alignment
+— the horizontal alignment
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Width()
+Gets the video's width in pixels.
+Return
+Integer
+— the width in pixels
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Alignment(alignment)
+Sets the video's horizontal alignment.
+Parameters
+Name
+Type
+Description
+alignment
+Alignment
+the horizontal alignment
+Return
+Video
+Item
+— this
+Video
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Video
+Item
+— this
+Video
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Video
+Item
+— this
+Video
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Video
+Url(youtubeUrl)
+Sets the video itself from a given YouTube URL or YouTube video ID.
+Parameters
+Name
+Type
+Description
+youtube
+Url
+String
+the YouTube URL or ID
+Return
+Video
+Item
+— this
+Video
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Width(width)
+Sets the video's width in pixels. Only the video's width can be set. Height is set
+automatically to maintain the video's proportions.
+Parameters
+Name
+Type
+Description
+width
+Integer
+the width in pixels
+Return
+Video
+Item
+— this
+Video
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

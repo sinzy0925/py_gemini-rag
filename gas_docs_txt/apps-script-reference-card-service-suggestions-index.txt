@@ -1,0 +1,79 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/suggestions/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Suggestions provide autocomplete suggestions for TextInput widgets in Google Workspace add-ons and Google Chat apps.
+You can add individual text suggestions using
+addSuggestion(suggestion)
+or a list of text suggestions using
+addSuggestions(suggestions)
+.
+Suggestions
+Autocomplete suggestions to supplement a
+Text
+Input
+widget.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+textInput
+=
+CardService
+.
+newTextInput
+().
+setSuggestions
+(
+CardService
+.
+newSuggestions
+()
+.
+addSuggestion
+(
+'First suggestion'
+)
+.
+addSuggestion
+(
+'Second suggestion'
+),
+);
+Methods
+Method
+Return type
+Brief description
+add
+Suggestion(suggestion)
+Suggestions
+Add a text suggestion.
+add
+Suggestions(suggestions)
+Suggestions
+Add a list of text suggestions.
+Detailed documentation
+add
+Suggestion(suggestion)
+Add a text suggestion.
+Parameters
+Name
+Type
+Description
+suggestion
+String
+The suggestion text.
+Return
+Suggestions
+— This object, for chaining.
+add
+Suggestions(suggestions)
+Add a list of text suggestions.
+Parameters
+Name
+Type
+Description
+suggestions
+Object[]
+An array of string suggestions.
+Return
+Suggestions
+— This object, for chaining.

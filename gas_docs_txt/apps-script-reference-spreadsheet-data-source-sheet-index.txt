@@ -1,0 +1,659 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-sheet/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Use the DataSourceSheet class to access and modify existing data source sheets linked to a database.
+New data source sheets are created using the Spreadsheet.insertDataSourceSheet(spec) method.
+Key methods include adding and removing filters and sort specs, auto-resizing and setting column widths, retrieving sheet values, and managing data refreshes.
+You can also get the associated data source, the current execution status, or view the data source sheet as a regular sheet object.
+Specific authorization scopes are required for scripts utilizing these methods, primarily related to accessing spreadsheet data.
+Data
+Source
+Sheet
+Access and modify existing data source sheet. To create a new data source sheet, use
+Spreadsheet.insertDataSourceSheet(spec)
+.
+Only use this class with data that's connected to a database.
+Methods
+Method
+Return type
+Brief description
+add
+Filter(columnName, filterCriteria)
+Data
+Source
+Sheet
+Adds a filter applied to the data source sheet.
+as
+Sheet()
+Sheet
+Returns the data source sheet as a regular sheet object.
+auto
+Resize
+Column(columnName)
+Data
+Source
+Sheet
+Auto resizes the width of the specified column.
+auto
+Resize
+Columns(columnNames)
+Data
+Source
+Sheet
+Auto resizes the width of the specified columns.
+cancel
+Data
+Refresh()
+Data
+Source
+Sheet
+Cancels the data refresh associated with this object if it's currently running.
+force
+Refresh
+Data()
+Data
+Source
+Sheet
+Refreshes the data of this object regardless of the current state.
+get
+Column
+Width(columnName)
+Integer
+Returns the width of the specified column.
+get
+Data
+Source()
+Data
+Source
+Gets the data source the object is linked to.
+get
+Filters()
+Data
+Source
+Sheet
+Filter[]
+Returns all filters applied to the data source sheet.
+get
+Sheet
+Values(columnName)
+Object[]
+Returns all the values for the data source sheet for the provided column name.
+get
+Sheet
+Values(columnName, startRow, numRows)
+Object[]
+Returns all the values for the data source sheet for the provided column name from the provided
+start row (based-1) and up to the provided
+num
+Rows
+.
+get
+Sort
+Specs()
+Sort
+Spec[]
+Gets all the sort specs in the data source sheet.
+get
+Status()
+Data
+Execution
+Status
+Gets the data execution status of the object.
+refresh
+Data()
+Data
+Source
+Sheet
+Refreshes the data of the object.
+remove
+Filters(columnName)
+Data
+Source
+Sheet
+Removes all filters applied to the data source sheet column.
+remove
+Sort
+Spec(columnName)
+Data
+Source
+Sheet
+Removes the sort spec on a column in the data source sheet.
+set
+Column
+Width(columnName, width)
+Data
+Source
+Sheet
+Sets the width of the specified column.
+set
+Column
+Widths(columnNames, width)
+Data
+Source
+Sheet
+Sets the width of the specified columns.
+set
+Sort
+Spec(columnName, ascending)
+Data
+Source
+Sheet
+Sets the sort spec on a column in the data source sheet.
+set
+Sort
+Spec(columnName, sortOrder)
+Data
+Source
+Sheet
+Sets the sort spec on a column in the data source sheet.
+wait
+For
+Completion(timeoutInSeconds)
+Data
+Execution
+Status
+Waits until the current execution completes, timing out after the provided number of seconds.
+Detailed documentation
+add
+Filter(columnName, filterCriteria)
+Adds a filter applied to the data source sheet.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The name of the column to apply this filter to.
+filter
+Criteria
+Filter
+Criteria
+The filter criteria to apply.
+Return
+Data
+Source
+Sheet
+— The data source sheet, for method chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+as
+Sheet()
+Returns the data source sheet as a regular sheet object.
+Return
+Sheet
+— The regular sheet.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+auto
+Resize
+Column(columnName)
+Auto resizes the width of the specified column.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The column name.
+Return
+Data
+Source
+Sheet
+— This data source sheet, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+auto
+Resize
+Columns(columnNames)
+Auto resizes the width of the specified columns.
+Parameters
+Name
+Type
+Description
+column
+Names
+String[]
+The list of column names to update.
+Return
+Data
+Source
+Sheet
+— This data source sheet, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+cancel
+Data
+Refresh()
+Cancels the data refresh associated with this object if it's currently running.
+This example shows how to cancel a formula refresh.
+const
+spreadsheet
+=
+SpreadsheetApp
+.
+getActive
+();
+const
+formula
+=
+spreadsheet
+.
+getDataSourceFormulas
+()[
+0
+];
+// Cancel the ongoing refresh on the formula.
+formula
+.
+cancelDataRefresh
+();
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Sheet
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+force
+Refresh
+Data()
+Refreshes the data of this object regardless of the current state. See
+refresh
+Data()
+for
+more details. If you want to cancel a currently running refresh of this object, see
+cancel
+Data
+Refresh()
+.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Sheet
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Column
+Width(columnName)
+Returns the width of the specified column.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The column name.
+Return
+Integer
+— The column's width, or
+null
+if the column uses the default width.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Data
+Source()
+Gets the data source the object is linked to.
+Return
+Data
+Source
+— The data source.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Filters()
+Returns all filters applied to the data source sheet.
+Return
+Data
+Source
+Sheet
+Filter[]
+— An array of all filters applied to the data source sheet.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Sheet
+Values(columnName)
+Returns all the values for the data source sheet for the provided column name.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The data source column name to fetch values for.
+Return
+Object[]
+— A one-dimensional array of values.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Sheet
+Values(columnName, startRow, numRows)
+Returns all the values for the data source sheet for the provided column name from the provided
+start row (based-1) and up to the provided
+num
+Rows
+.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The data source column name to fetch values for.
+start
+Row
+Integer
+The row position to start fetching values from.
+num
+Rows
+Integer
+The number of rows to fetch.
+Return
+Object[]
+— A one-dimensional array of values.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Sort
+Specs()
+Gets all the sort specs in the data source sheet.
+Return
+Sort
+Spec[]
+— A list of sort specs.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Status()
+Gets the data execution status of the object.
+Return
+Data
+Execution
+Status
+— The data execution status.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+refresh
+Data()
+Refreshes the data of the object.
+Throws an exception if currently in
+error
+state. Use
+Data
+Source#updateSpec()
+to update the specification. The method is
+preferred over
+force
+Refresh
+Data()
+to prevent unexpected edits on data source.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Sheet
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove
+Filters(columnName)
+Removes all filters applied to the data source sheet column.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The name of the column to remove filters from.
+Return
+Data
+Source
+Sheet
+— The data source sheet, for method chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove
+Sort
+Spec(columnName)
+Removes the sort spec on a column in the data source sheet.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The name of the column.
+Return
+Data
+Source
+Sheet
+— The data source sheet, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Column
+Width(columnName, width)
+Sets the width of the specified column.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The column name.
+width
+Integer
+The new width for the column.
+Return
+Data
+Source
+Sheet
+— This data source sheet, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Column
+Widths(columnNames, width)
+Sets the width of the specified columns.
+Parameters
+Name
+Type
+Description
+column
+Names
+String[]
+The list of column names to update.
+width
+Integer
+The new width for the columns.
+Return
+Data
+Source
+Sheet
+— This data source sheet, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Sort
+Spec(columnName, ascending)
+Sets the sort spec on a column in the data source sheet.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The name of the column to sort.
+ascending
+Boolean
+If
+true
+, sort the column in ascending order; if
+false
+, sort
+    the column in descending order.
+Return
+Data
+Source
+Sheet
+— The data source sheet, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Sort
+Spec(columnName, sortOrder)
+Sets the sort spec on a column in the data source sheet.
+Parameters
+Name
+Type
+Description
+column
+Name
+String
+The name of the column to sort.
+sort
+Order
+Sort
+Order
+The sort order.
+Return
+Data
+Source
+Sheet
+— The data source sheet, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+wait
+For
+Completion(timeoutInSeconds)
+Waits until the current execution completes, timing out after the provided number of seconds.
+Throws an exception if the execution is not completed when timing out, but does not cancel the
+data execution.
+Parameters
+Name
+Type
+Description
+timeout
+In
+Seconds
+Integer
+The time to wait for data execution, in seconds. The maximum is 300
+    seconds.
+Return
+Data
+Execution
+Status
+— The data execution status.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

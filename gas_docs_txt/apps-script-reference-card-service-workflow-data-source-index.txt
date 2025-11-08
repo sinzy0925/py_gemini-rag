@@ -1,0 +1,155 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/workflow-data-source/index.html
+
+Workflow
+Data
+Source
+For a
+Selection
+Input
+,
+Date
+Time
+Picker
+` or
+Text
+Input
+widget, a data source
+from a Google Workspace flow. The data source populates available options for a widget.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+workflowDataSource
+=
+CardService
+.
+newWorkflowDataSource
+().
+setIncludeVariables
+(
+true
+)
+.
+setType
+(
+CardService
+.
+WorkflowDataSourceType
+.
+USER
+);
+Methods
+Method
+Return type
+Brief description
+set
+Include
+Variables(includeVariables)
+Workflow
+Data
+Source
+Whether to include variables from the previous step in the data source.
+set
+Type(type)
+Workflow
+Data
+Source
+Sets the type of the workflow data source.
+set
+Variable
+Button
+Label(variableButtonLabel)
+Workflow
+Data
+Source
+Sets the label of the variable picker button, which will be displayed after the `+` sign in
+FULL_SIZE button size.
+set
+Variable
+Button
+Size(variableButtonSize)
+Workflow
+Data
+Source
+Sets the size of the variable picker button, Workflow will automatically using COMPACT in side
+panel and FULL_SIZE in other cases if UNSPECIFIED is selected.
+Detailed documentation
+set
+Include
+Variables(includeVariables)
+Whether to include variables from the previous step in the data source.
+Parameters
+Name
+Type
+Description
+include
+Variables
+Boolean
+Whether to include variables in the data source.
+Return
+Workflow
+Data
+Source
+— This object, for chaining.
+set
+Type(type)
+Sets the type of the workflow data source.
+Parameters
+Name
+Type
+Description
+type
+Workflow
+Data
+Source
+Type
+The type of the workflow data source.
+Return
+Workflow
+Data
+Source
+— This object, for chaining.
+set
+Variable
+Button
+Label(variableButtonLabel)
+Sets the label of the variable picker button, which will be displayed after the `+` sign in
+FULL_SIZE button size.
+Parameters
+Name
+Type
+Description
+variable
+Button
+Label
+String
+The label of the variable picker button.
+Return
+Workflow
+Data
+Source
+— This object, for chaining.
+set
+Variable
+Button
+Size(variableButtonSize)
+Sets the size of the variable picker button, Workflow will automatically using COMPACT in side
+panel and FULL_SIZE in other cases if UNSPECIFIED is selected. A COMPACT button will only
+display the `+` sign.
+Parameters
+Name
+Type
+Description
+variable
+Button
+Size
+Variable
+Button
+Size
+The size of the variable picker button.
+Return
+Workflow
+Data
+Source
+— This object, for chaining.

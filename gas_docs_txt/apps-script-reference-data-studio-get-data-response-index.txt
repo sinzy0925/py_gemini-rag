@@ -1,0 +1,214 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/get-data-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+GetDataResponse is a builder used to create a
+getData()
+response for your script project.
+You can add single rows of data using
+addRow()
+or multiple rows using
+addAllRows()
+.
+setFields()
+is used to set the fields of the builder.
+The
+build()
+method validates the object and returns it in the format needed by Data Studio.
+Get
+Data
+Response
+Builder to create a
+get
+Data()
+response for your script project.
+function
+getFields
+()
+{
+//...
+}
+function
+getData
+()
+{
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+return
+cc
+.
+newGetDataResponse
+()
+.
+setFields
+(
+getFields
+())
+.
+addRow
+([
+'3'
+,
+'Foobar.com'
+])
+.
+addRow
+([
+'4'
+,
+'Foobaz.com'
+])
+.
+addRows
+([
+[
+'5'
+,
+'Fizzbuz.com'
+],
+[
+'6'
+,
+'Fizzbaz.com'
+],
+])
+.
+build
+();
+}
+Methods
+Method
+Return type
+Brief description
+add
+All
+Rows(rows)
+Get
+Data
+Response
+Adds multiple rows of data to this
+Get
+Data
+Response
+.
+add
+Row(row)
+Get
+Data
+Response
+Adds a row of data to this
+Get
+Data
+Response
+.
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+set
+Fields(fields)
+Get
+Data
+Response
+Sets the
+Fields
+of the builder.
+set
+Filters
+Applied(filtersApplied)
+Get
+Data
+Response
+Sets the filters applied status for this builder.
+Detailed documentation
+add
+All
+Rows(rows)
+Adds multiple rows of data to this
+Get
+Data
+Response
+.
+Parameters
+Name
+Type
+Description
+rows
+String[][]
+The rows of data to set.
+Return
+Get
+Data
+Response
+— This builder, for chaining.
+add
+Row(row)
+Adds a row of data to this
+Get
+Data
+Response
+.
+Parameters
+Name
+Type
+Description
+row
+String[]
+The row of data to set.
+Return
+Get
+Data
+Response
+— This builder, for chaining.
+build()
+Validates this object and returns it in the format needed by Data Studio.
+Return
+Object
+— The validated
+Get
+Data
+Response
+object.
+set
+Fields(fields)
+Sets the
+Fields
+of the builder.
+Parameters
+Name
+Type
+Description
+fields
+Fields
+The fields to set.
+Return
+Get
+Data
+Response
+— This builder, for chaining.
+set
+Filters
+Applied(filtersApplied)
+Sets the filters applied status for this builder. Set to
+true
+if all filters were
+successfully applied,
+false
+otherwise.
+Parameters
+Name
+Type
+Description
+filters
+Applied
+Boolean
+- The filters applied status to set.
+Return
+Get
+Data
+Response
+— This builder, for chaining.

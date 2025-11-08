@@ -1,0 +1,80 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/border-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+BorderStyle is a class representing a complete border style for widgets.
+BorderStyle enums are accessed through the parent class, name, and property.
+The BorderStyle class includes methods to set the corner radius, stroke color, and type of the border.
+Border
+Style
+A class that represents a complete border style that can be applied to widgets.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.BorderStyle.NO_BORDER
+.
+Methods
+Method
+Return type
+Brief description
+set
+Corner
+Radius(radius)
+Border
+Style
+Sets the corner radius of the border, for example 8.
+set
+Stroke
+Color(color)
+Border
+Style
+Sets the color of the border.
+set
+Type(type)
+Border
+Style
+Sets the type of the border.
+Detailed documentation
+set
+Corner
+Radius(radius)
+Sets the corner radius of the border, for example 8.
+Parameters
+Name
+Type
+Description
+radius
+Integer
+The corner radius to be applied to the border.
+Return
+Border
+Style
+— This object, for chaining.
+set
+Stroke
+Color(color)
+Sets the color of the border.
+Parameters
+Name
+Type
+Description
+color
+String
+The color in #RGB format to be applied to the border.
+Return
+Border
+Style
+— This object, for chaining.
+set
+Type(type)
+Sets the type of the border.
+Parameters
+Name
+Type
+Description
+type
+Border
+Type
+The border type.
+Return
+Border
+Style
+— This object, for chaining.

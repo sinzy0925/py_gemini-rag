@@ -1,0 +1,101 @@
+Source Path: gas_docs_html/apps-script/reference/slides/color/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Color class represents an opaque color.
+The
+asRgbColor()
+method converts the color to an RgbColor.
+The
+asThemeColor()
+method converts the color to a ThemeColor.
+The
+getColorType()
+method gets the type of the color.
+Color
+An opaque color
+Methods
+Method
+Return type
+Brief description
+as
+Rgb
+Color()
+Rgb
+Color
+Converts this color to an
+Rgb
+Color
+.
+as
+Theme
+Color()
+Theme
+Color
+Converts this color to a
+Theme
+Color
+.
+get
+Color
+Type()
+Color
+Type
+Get the type of this color.
+Detailed documentation
+as
+Rgb
+Color()
+Converts this color to an
+Rgb
+Color
+.
+Return
+Rgb
+Color
+Throws
+Error
+— if the color is not an
+Rgb
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+as
+Theme
+Color()
+Converts this color to a
+Theme
+Color
+.
+Return
+Theme
+Color
+Throws
+Error
+— if the color is not a
+Theme
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Color
+Type()
+Get the type of this color.
+Return
+Color
+Type
+— The color type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

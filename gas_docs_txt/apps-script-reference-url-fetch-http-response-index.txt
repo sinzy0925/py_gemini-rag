@@ -1,0 +1,265 @@
+Source Path: gas_docs_html/apps-script/reference/url-fetch/http-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The HTTPResponse class provides methods to access specific information from HTTP responses.
+You can retrieve headers in different formats, get the response body as a blob or byte array, and get the content as a string with or without specifying a charset.
+The response code can also be retrieved to check the HTTP status of the response.
+The UrlFetchApp is related to the HTTPResponse class.
+HTTPResponse
+This class allows users to access specific information on HTTP responses.
+See also
+Url
+Fetch
+App
+Methods
+Method
+Return type
+Brief description
+get
+All
+Headers()
+Object
+Returns an attribute/value map of headers for the HTTP response, with headers that have
+multiple values returned as arrays.
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Content()
+Byte[]
+Gets the raw binary content of an HTTP response.
+get
+Content
+Text()
+String
+Gets the content of an HTTP response encoded as a string.
+get
+Content
+Text(charset)
+String
+Returns the content of an HTTP response encoded as a string of the given charset.
+get
+Headers()
+Object
+Returns an attribute/value map of headers for the HTTP response.
+get
+Response
+Code()
+Integer
+Get the HTTP status code (200 for OK, etc.) of an HTTP response.
+Detailed documentation
+get
+All
+Headers()
+Returns an attribute/value map of headers for the HTTP response, with headers that have
+multiple values returned as arrays.
+// The code below logs the HTTP headers from the response
+// received when fetching the Google home page.
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+'http://www.google.com/'
+);
+Logger
+.
+log
+(
+response
+.
+getAllHeaders
+());
+Return
+Object
+— a JavaScript key/value map of HTTP headers
+get
+As(contentType)
+Return the data inside this object as a blob converted to the specified content type. This
+method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
+assumes that the part of the filename that follows the last period (if any) is an existing
+extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+"ShoppingList.12.25.pdf".
+To view the daily quotas for conversions, see
+Quotas for Google
+Services
+. Newly created Google Workspace domains might be temporarily subject to stricter
+quotas.
+Parameters
+Name
+Type
+Description
+content
+Type
+String
+The MIME type to convert to. For most blobs,
+'application/pdf'
+is
+    the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of
+'image/bmp'
+,
+'image/gif'
+,
+'image/jpeg'
+, or
+'image/png'
+are also
+    valid. For a Google Docs document,
+'text/markdown'
+is also valid.
+Return
+Blob
+— The data as a blob.
+get
+Blob()
+Return the data inside this object as a blob.
+Return
+Blob
+— The data as a blob.
+get
+Content()
+Gets the raw binary content of an HTTP response.
+// The code below logs the value of the first byte of the Google home page.
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+'http://www.google.com/'
+);
+Logger
+.
+log
+(
+response
+.
+getContent
+()[
+0
+]);
+Return
+Byte[]
+— the content as a raw binary array
+get
+Content
+Text()
+Gets the content of an HTTP response encoded as a string.
+// The code below logs the HTML code of the Google home page.
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+'http://www.google.com/'
+);
+Logger
+.
+log
+(
+response
+.
+getContentText
+());
+Return
+String
+— the content of the HTTP response, as a string
+get
+Content
+Text(charset)
+Returns the content of an HTTP response encoded as a string of the given charset.
+// The code below logs the HTML code of the Google home page with the UTF-8
+// charset.
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+'http://www.google.com/'
+);
+Logger
+.
+log
+(
+response
+.
+getContentText
+(
+'UTF-8'
+));
+Parameters
+Name
+Type
+Description
+charset
+String
+a string representing the charset to be used for encoding the HTTP response
+    content
+Return
+String
+— the content of the HTTP response, encoded using the given charset
+get
+Headers()
+Returns an attribute/value map of headers for the HTTP response.
+// The code below logs the HTTP headers from the response
+// received when fetching the Google home page.
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+'http://www.google.com/'
+);
+Logger
+.
+log
+(
+response
+.
+getHeaders
+());
+Return
+Object
+— a JavaScript key/value map of HTTP headers
+get
+Response
+Code()
+Get the HTTP status code (200 for OK, etc.) of an HTTP response.
+// The code below logs the HTTP status code from the response received
+// when fetching the Google home page.
+// It should be 200 if the request succeeded.
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+'http://www.google.com/'
+);
+Logger
+.
+log
+(
+response
+.
+getResponseCode
+());
+Return
+Integer
+— The HTTP response code (for example, 200 for OK).

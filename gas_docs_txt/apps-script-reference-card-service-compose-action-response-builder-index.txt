@@ -1,0 +1,107 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/compose-action-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+ComposeActionResponseBuilder
+is used to build
+ComposeActionResponse
+objects, which are responses to Actions that compose draft messages.
+This builder is not related to compose actions used for extending the Gmail compose UI.
+The
+build()
+method validates and returns the constructed
+ComposeActionResponse
+.
+The
+setGmailDraft(draft)
+method sets the Gmail draft to be used in the response.
+Compose
+Action
+Response
+Builder
+A builder for
+Compose
+Action
+Response
+objects.
+Note
+: This object isn't related to
+compose actions
+that are
+used to
+extend the compose UI
+. Rather,
+this builder creates responses to an
+Action
+that composes draft messages when a specific
+UI element is selected.
+Methods
+Method
+Return type
+Brief description
+build()
+Compose
+Action
+Response
+Builds the current compose action response and validates it.
+set
+Gmail
+Draft(draft)
+Compose
+Action
+Response
+Builder
+Sets the draft
+Gmail
+Message
+created
+using
+Gmail
+Message.createDraftReply(body)
+or
+similar functions.
+Detailed documentation
+build()
+Builds the current compose action response and validates it.
+Return
+Compose
+Action
+Response
+— A validated
+Compose
+Action
+Response
+.
+Throws
+Error
+— if the constructed compose action response isn't valid.
+set
+Gmail
+Draft(draft)
+Sets the draft
+Gmail
+Message
+created
+using
+Gmail
+Message.createDraftReply(body)
+or
+similar functions.
+Parameters
+Name
+Type
+Description
+draft
+Gmail
+Draft
+The
+Gmail
+Draft
+to use.
+Return
+Compose
+Action
+Response
+Builder
+— This object, for chaining.

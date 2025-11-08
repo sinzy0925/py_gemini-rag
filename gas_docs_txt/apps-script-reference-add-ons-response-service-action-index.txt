@@ -1,0 +1,72 @@
+Source Path: gas_docs_html/apps-script/reference/add-ons-response-service/action/index.html
+
+Action
+An action that Google Workspace add-ons that extend Google Workspace Flows can use to render a
+new card.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+link
+=
+AddOnsResponseService
+.
+newLink
+().
+setUrl
+(
+'https://www.google.com'
+);
+const
+action
+=
+AddOnsResponseService
+.
+newAction
+()
+.
+setLink
+(
+link
+);
+const
+renderAction
+=
+AddOnsResponseService
+.
+newRenderActionBuilder
+().
+setAction
+(
+action
+).
+build
+();
+Methods
+Method
+Return type
+Brief description
+add
+Navigation(navigation)
+Action
+Add card navigation to the action.
+Detailed documentation
+add
+Navigation(navigation)
+Add card navigation to the action.
+Parameters
+Name
+Type
+Description
+navigation
+Navigation
+The
+Navigation
+to use.
+Return
+Action
+— This object, for chaining.
+Throws
+Error
+— if the navigation argument is invalid.

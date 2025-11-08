@@ -1,0 +1,129 @@
+Source Path: gemini_api_docs_html/gemini-api/docs/deprecations/index.html
+
+This page lists the known deprecation schedules for Stable (GA) and Preview
+models in the Gemini API. A deprecation announcement means we will no longer
+provide support for that model, and that it will be completely retired, or
+turned off, shortly after the deprecation date.
+Stable Models
+Model
+Public release date
+Deprecation date
+Notes
+Imagen 3
+February 6, 2025
+November 10, 2025
+imagen-3.0-generate-002
+Use Imagen 4.
+Gemini 2.0 Flash
+February 5, 2025
+Earliest February 2026
+Including
+gemini-2.0-flash
+&
+gemini-2.0-flash-001
+Gemini 2.0 Flash-Lite
+February 25, 2025
+Earliest February 2026
+Including
+gemini-2.0-flash-lite
+&
+gemini-2.0-flash-lite-001
+Gemini 2.5 Flash
+June 17, 2025
+Earliest June 2026
+Gemini 2.5 Pro
+June 17, 2025
+Earliest June 2026
+Gemini 2.5 Flash-Lite
+July 22, 2025
+Earliest July 2026
+Gemini 2.5 Flash Image
+October 2, 2025
+Earliest October 2026
+Veo 3
+September 9, 2025
+No deprecation date announced
+Including
+veo-3.0-generate-001
+&
+veo-3.0-fast-generate-001
+Veo 2
+April 9, 2025
+No deprecation date announced
+Imagen 4
+August 14, 2025
+No deprecation date announced
+Including:
+imagen-4.0-generate-001
+imagen-4.0-ultra-generate-001
+imagen-4.0-fast-generate-001
+Preview Models
+Preview models are deprecated with at least 2 weeks notice.
+Preview Model
+Public release date
+Deprecation date
+Notes
+gemini-2.5-flash-preview-native-audio-dialog
+May 20,2025
+October 20, 2025
+Use
+gemini-2.5-flash-native-audio-preview-09-2025
+.
+gemini-2.5-flash-exp-native-audio-thinking-dialog
+May 20, 2025
+October 20, 2025
+Use
+gemini-2.5-flash-native-audio-preview-09-2025
+.
+embedding-001
+&
+embedding-gecko-001
+December 13, 2023
+October 30, 2025
+Use
+gemini-embedding-001
+.
+gemini-2.0-flash-preview-image-generation
+May 7, 2025
+November 12, 2025
+veo-3.0-generate-preview
+&
+veo-3.0-fast-generate-preview
+July 17, 2025
+November 12, 2025
+Use
+veo-3.1-generate-preview
+or
+veo-3.1-fast-generate-preview
+.
+gemini-2.0-flash-live-001
+April 9, 2025
+December 9, 2025
+Retiring half-cascade Live API models in favor of Native Audio.
+gemini-live-2.5-flash-preview
+April 9, 2025
+December 9, 2025
+Retiring half-cascade Live API models in favor of Native Audio.
+gemini-2.5-pro-preview-tts
+May 20, 2025
+No deprecation date announced
+gemini-2.5-flash-preview-tts
+May 20, 2025
+No deprecation date announced
+gemini-2.5-flash-preview-09-2025
+September 25, 2025
+No deprecation date announced
+gemini-2.5-flash-lite-preview-09-2025
+September 25, 2025
+No deprecation date announced
+gemini-2.5-flash-image-preview
+August 26, 2025
+No deprecation date announced
+gemini-2.5-flash-native-audio-preview-09-2025
+September 23, 2025
+No deprecation date announced
+veo-3.1-generate-preview
+&
+veo-3.1-fast-generate-preview
+October 15, 2025
+No deprecation date announced

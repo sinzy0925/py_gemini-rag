@@ -1,0 +1,135 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/carousel-card/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A CarouselCard is a card that can be displayed as a carousel item.
+CarouselCard is available for Google Workspace add-ons and Google Chat apps.
+You can add widgets to the footer or the main body of the CarouselCard using the
+addFooterWidget
+and
+addWidget
+methods respectively.
+Both
+addFooterWidget
+and
+addWidget
+methods return the CarouselCard object for chaining.
+Carousel
+Card
+A card that can be displayed as a carousel item.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+carouselCard
+=
+CardService
+.
+newCarouselCard
+()
+.
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'a text paragraph in the carousel card'
+))
+.
+addFooterWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'a text paragraph in the carousel card footer'
+));
+Developer Preview:
+Available as part of the
+Google Workspace Developer Preview Program
+, which grants early access to certain features.
+Methods
+Method
+Return type
+Brief description
+add
+Footer
+Widget(widget)
+Carousel
+Card
+Adds the given widget to the footer of this carousel card.
+add
+Widget(widget)
+Carousel
+Card
+Adds the given widget to this carousel card.
+Detailed documentation
+add
+Footer
+Widget(widget)
+Adds the given widget to the footer of this carousel card. Widgets are shown in the order they
+were added.
+const
+carouselCard
+=
+CardService
+.
+newCarouselCard
+()
+.
+addFooterWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'a text paragraph in the carousel card footer'
+));
+Parameters
+Name
+Type
+Description
+widget
+Widget
+A widget to add to the footer of the carousel card.
+Return
+Carousel
+Card
+— This object, for chaining.
+add
+Widget(widget)
+Adds the given widget to this carousel card. Widgets are shown in the order they were added.
+const
+carouselCard
+=
+CardService
+.
+newCarouselCard
+()
+.
+addWidget
+(
+CardService
+.
+newTextParagraph
+().
+setText
+(
+'a text paragraph in the carousel card'
+));
+Parameters
+Name
+Type
+Description
+widget
+Widget
+A widget to add to the carousel card.
+Return
+Carousel
+Card
+— This object, for chaining.

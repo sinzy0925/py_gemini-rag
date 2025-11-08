@@ -1,0 +1,157 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/event-action/index.html
+
+Event
+Action
+An EventAction to run when a
+CEL
+expression validation
+condition is met.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+eventAction
+=
+CardService
+.
+newEventAction
+().
+setActionRuleId
+(
+"CEL_TEXTBOX_EVALUATION_RULE_ID"
+)
+.
+setExpressionDataAction
+(
+expressionDataAction
+)
+.
+addPostEventTrigger
+(
+trigger_success
+)
+.
+addPostEventTrigger
+(
+trigger_failure
+);
+Methods
+Method
+Return type
+Brief description
+add
+Post
+Event
+Trigger(trigger)
+Event
+Action
+Adds a
+CEL
+expression validation
+condition to evaluate after the event action runs.
+set
+Action
+Rule
+Id(actionRuleId)
+Event
+Action
+Sets a unique identifier for the event action.
+set
+Common
+Widget
+Action(commonWidgetAction)
+Event
+Action
+Set the common widget action for widgets.
+set
+Expression
+Data
+Action(expressionDataAction)
+Event
+Action
+Sets the
+CEL
+expression validation
+data action for widgets.
+Detailed documentation
+add
+Post
+Event
+Trigger(trigger)
+Adds a
+CEL
+expression validation
+condition to evaluate after the event action runs.
+Parameters
+Name
+Type
+Description
+trigger
+Trigger
+The CEL expression validation trigger to add.
+Return
+Event
+Action
+— The EventAction, for chaining.
+set
+Action
+Rule
+Id(actionRuleId)
+Sets a unique identifier for the event action.
+Parameters
+Name
+Type
+Description
+action
+Rule
+Id
+String
+The unique identifier for the action rule.
+Return
+Event
+Action
+— The EventAction, for chaining.
+set
+Common
+Widget
+Action(commonWidgetAction)
+Set the common widget action for widgets.
+Parameters
+Name
+Type
+Description
+common
+Widget
+Action
+Common
+Widget
+Action
+The common widget action.
+Return
+Event
+Action
+— The EventAction, for chaining.
+set
+Expression
+Data
+Action(expressionDataAction)
+Sets the
+CEL
+expression validation
+data action for widgets.
+Parameters
+Name
+Type
+Description
+expression
+Data
+Action
+Expression
+Data
+Action
+The expression data action.
+Return
+Event
+Action
+— The EventAction, for chaining.

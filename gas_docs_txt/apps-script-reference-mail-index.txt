@@ -1,0 +1,48 @@
+Source Path: gas_docs_html/apps-script/reference/mail/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Mail service allows scripts to send email on a user's behalf.
+Unlike the Gmail Service, the Mail Service cannot access a user's Gmail account.
+The MailApp class is used for sending emails.
+The MailApp class provides methods to send emails and check the remaining daily quota.
+Mail
+This service allows scripts to send email on a user's behalf. See also
+Gmail Service
+. Unlike Gmail Service,
+Mail Service's sole purpose is sending email; it cannot access a user's Gmail
+account.
+Classes
+Name
+Brief description
+Mail
+App
+Sends email.
+Mail
+App
+Methods
+Method
+Return type
+Brief description
+get
+Remaining
+Daily
+Quota()
+Integer
+Returns the number of recipients you can send emails to for the rest of the day.
+send
+Email(message)
+void
+Sends an email message.
+send
+Email(recipient, subject, body)
+void
+Sends an email message.
+send
+Email(recipient, subject, body, options)
+void
+Sends an email message with optional arguments.
+send
+Email(to, replyTo, subject, body)
+void
+Sends an email message.

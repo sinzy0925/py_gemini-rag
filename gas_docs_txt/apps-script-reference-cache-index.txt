@@ -1,0 +1,80 @@
+Source Path: gas_docs_html/apps-script/reference/cache/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Cache service allows a script to temporarily store results that take time to fetch or compute.
+Public caches are for data not dependent on a specific user, while private caches are for user-specific information.
+The Cache class represents a particular cache instance, and the CacheService class provides access to different caches.
+The Cache class provides methods for getting, putting, and removing data from the cache, including setting expiration times and handling multiple key/value pairs.
+The CacheService class provides methods to retrieve specific cache instances scoped to the document, script, or current user.
+Cache
+This service allows a script to temporarily cache results that take time to
+fetch/compute. Public caches are for things that are not dependent on which user
+is accessing your script. Private caches are for things which are user-specific,
+like settings or recent activity.
+Classes
+Name
+Brief description
+Cache
+A reference to a particular cache.
+Cache
+Service
+Cache
+Service allows you to access a cache for short term storage of data.
+Cache
+Methods
+Method
+Return type
+Brief description
+get(key)
+String
+Gets the cached value for the given key, or
+null
+if none is found.
+get
+All(keys)
+Object
+Returns a JavaScript Object containing all key/value pairs found in the cache for an array of
+keys.
+put(key, value)
+void
+Adds a key/value pair to the cache.
+put(key, value, expirationInSeconds)
+void
+Adds a key/value pair to the cache, with an expiration time (in seconds).
+put
+All(values)
+void
+Adds a set of key/value pairs to the cache.
+put
+All(values, expirationInSeconds)
+void
+Adds a set of key/value pairs to the cache, with an expiration time (in seconds).
+remove(key)
+void
+Removes an entry from the cache using the given key.
+remove
+All(keys)
+void
+Removes a set of entries from the cache.
+Cache
+Service
+Methods
+Method
+Return type
+Brief description
+get
+Document
+Cache()
+Cache
+Gets the cache instance scoped to the current document and script.
+get
+Script
+Cache()
+Cache
+Gets the cache instance scoped to the script.
+get
+User
+Cache()
+Cache
+Gets the cache instance scoped to the current user and script.

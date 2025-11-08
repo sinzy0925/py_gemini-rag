@@ -1,0 +1,146 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/field/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The "Field" concept is deprecated and the People API advanced service should be used instead.
+"Field" was an enum used for contact fields.
+A comprehensive list of deprecated properties for contact fields is provided.
+Field
+Deprecated.
+Instead, use the
+People API advanced
+    service
+An enum for contacts fields.
+Deprecated properties
+Property
+Type
+Description
+FULL_NAME
+Enum
+the contact's full name
+GIVEN_NAME
+Enum
+the contact's given (first) name
+MIDDLE_NAME
+Enum
+the contact's middle name
+FAMILY_NAME
+Enum
+the contact's family (last) name
+MAIDEN_NAME
+Enum
+the contact's maiden name
+NICKNAME
+Enum
+the contact's nickname
+SHORT_NAME
+Enum
+the contact's short name
+INITIALS
+Enum
+the contact's initials
+PREFIX
+Enum
+the prefix for the contact's name
+SUFFIX
+Enum
+the suffix for the contact's name
+HOME_EMAIL
+Enum
+the contact's home email address
+WORK_EMAIL
+Enum
+the contact's work email address
+BIRTHDAY
+Enum
+the contact's birthday
+ANNIVERSARY
+Enum
+the contact's anniversary
+HOME_ADDRESS
+Enum
+the contact's home address
+WORK_ADDRESS
+Enum
+the contact's work address
+ASSISTANT_PHONE
+Enum
+the contact's assistant's phone number
+CALLBACK_PHONE
+Enum
+the contact's callback phone number
+MAIN_PHONE
+Enum
+the contact's main phone number
+PAGER
+Enum
+the contact's pager number
+HOME_FAX
+Enum
+the contact's home fax number
+WORK_FAX
+Enum
+the contact's work fax number
+HOME_PHONE
+Enum
+the contact's home phone number
+WORK_PHONE
+Enum
+the contact's work phone number
+MOBILE_PHONE
+Enum
+the contact's mobile phone number
+GOOGLE_VOICE
+Enum
+the contact's Google Voice number
+NOTES
+Enum
+notes about the contact
+GOOGLE_TALK
+Enum
+the contact's Google Talk identifier
+AIM
+Enum
+the contact's AIM identifier
+YAHOO
+Enum
+the contact's Yahoo instant messaging identifier
+SKYPE
+Enum
+the contact's Skype identifier
+QQ
+Enum
+the contact's QQ identifer
+MSN
+Enum
+the contact's MSN identifier
+ICQ
+Enum
+the contact's ICQ identifier
+JABBER
+Enum
+the contact's Jabber identifier
+BLOG
+Enum
+the contact's blog URL
+FTP
+Enum
+the contact's FTP URL
+PROFILE
+Enum
+the contact's profile URL
+HOME_PAGE
+Enum
+the contact's home page URL
+WORK_WEBSITE
+Enum
+the contact's work website URL
+HOME_WEBSITE
+Enum
+the contact's home website URL
+JOB_TITLE
+Enum
+the contact's job title
+COMPANY
+Enum
+the contact's company

@@ -1,0 +1,854 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/xml-service/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The XmlService allows scripts to parse, navigate, and programmatically create XML documents.
+It provides methods to create various XML nodes such as CDATA, Comments, DocTypes, Elements, and Text.
+You can create empty XML documents or documents with a specified root element.
+The service offers different formatting options (Compact, Pretty, Raw) for outputting XML documents.
+You can parse existing XML strings into a Document object for manipulation.
+Xml
+Service
+This service allows scripts to parse, navigate, and programmatically create XML documents.
+// Log the title and labels for the first page of blog posts on the
+// Google Workspace Developer blog.
+function
+parseXml
+()
+{
+const
+url
+=
+'https://gsuite-developers.googleblog.com/atom.xml'
+;
+const
+xml
+=
+UrlFetchApp
+.
+fetch
+(
+url
+).
+getContentText
+();
+const
+document
+=
+XmlService
+.
+parse
+(
+xml
+);
+const
+root
+=
+document
+.
+getRootElement
+();
+const
+atom
+=
+XmlService
+.
+getNamespace
+(
+'http://www.w3.org/2005/Atom'
+);
+const
+entries
+=
+root
+.
+getChildren
+(
+'entry'
+,
+atom
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+entries
+.
+length
+;
+i
+++
+)
+{
+const
+title
+=
+entries
+[
+i
+].
+getChild
+(
+'title'
+,
+atom
+).
+getText
+();
+const
+categoryElements
+=
+entries
+[
+i
+].
+getChildren
+(
+'category'
+,
+atom
+);
+const
+labels
+=
+[];
+for
+(
+let
+j
+=
+0
+;
+j
+<
+categoryElements
+.
+length
+;
+j
+++
+)
+{
+labels
+.
+push
+(
+categoryElements
+[
+j
+].
+getAttribute
+(
+'term'
+).
+getValue
+());
+}
+Logger
+.
+log
+(
+'%s (%s)'
+,
+title
+,
+labels
+.
+join
+(
+', '
+));
+}
+}
+// Create and log an XML representation of the threads in your Gmail inbox.
+function
+createXml
+()
+{
+const
+root
+=
+XmlService
+.
+createElement
+(
+'threads'
+);
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+threads
+.
+length
+;
+i
+++
+)
+{
+const
+child
+=
+XmlService
+.
+createElement
+(
+'thread'
+)
+.
+setAttribute
+(
+'messageCount'
+,
+threads
+[
+i
+].
+getMessageCount
+())
+.
+setAttribute
+(
+'isUnread'
+,
+threads
+[
+i
+].
+isUnread
+())
+.
+setText
+(
+threads
+[
+i
+].
+getFirstMessageSubject
+());
+root
+.
+addContent
+(
+child
+);
+}
+const
+document
+=
+XmlService
+.
+createDocument
+(
+root
+);
+const
+xml
+=
+XmlService
+.
+getPrettyFormat
+().
+format
+(
+document
+);
+Logger
+.
+log
+(
+xml
+);
+}
+Properties
+Property
+Type
+Description
+Content
+Types
+Content
+Type
+An enumeration representing the types of XML content nodes.
+Methods
+Method
+Return type
+Brief description
+create
+Cdata(text)
+Cdata
+Creates an unattached
+CDATASection
+node with the given value.
+create
+Comment(text)
+Comment
+Creates an unattached
+Comment
+node with the given value.
+create
+Doc
+Type(elementName)
+Doc
+Type
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name.
+create
+Doc
+Type(elementName, systemId)
+Doc
+Type
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name, and the given system ID for the external subset data.
+create
+Doc
+Type(elementName, publicId, systemId)
+Doc
+Type
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name, and the given public ID and system ID for the external subset data.
+create
+Document()
+Document
+Creates an empty XML document.
+create
+Document(rootElement)
+Document
+Creates an XML document with the given root
+Element
+node.
+create
+Element(name)
+Element
+Creates an unattached
+Element
+node with the given local name and no namespace.
+create
+Element(name, namespace)
+Element
+Creates an unattached
+Element
+node with the given local name and namespace.
+create
+Text(text)
+Text
+Creates an unattached
+Text
+node with the given value.
+get
+Compact
+Format()
+Format
+Creates a
+Format
+object for outputting a compact XML document.
+get
+Namespace(uri)
+Namespace
+Creates a
+Namespace
+with the given URI.
+get
+Namespace(prefix, uri)
+Namespace
+Creates a
+Namespace
+with the given prefix and URI.
+get
+No
+Namespace()
+Namespace
+Creates a
+Namespace
+that represents the absence of a real namespace.
+get
+Pretty
+Format()
+Format
+Creates a
+Format
+object for outputting a human-readable XML document.
+get
+Raw
+Format()
+Format
+Creates a
+Format
+object for outputting a raw XML document.
+get
+Xml
+Namespace()
+Namespace
+Creates a
+Namespace
+with the standard
+xml
+prefix.
+parse(xml)
+Document
+Creates an
+Document
+from the given XML, without validating the XML.
+Detailed documentation
+create
+Cdata(text)
+Creates an unattached
+CDATASection
+node with the given value.
+Parameters
+Name
+Type
+Description
+text
+String
+the value to set
+Return
+Cdata
+— the newly created
+CDATASection
+node
+create
+Comment(text)
+Creates an unattached
+Comment
+node with the given value.
+Parameters
+Name
+Type
+Description
+text
+String
+the value to set
+Return
+Comment
+— the newly created
+Comment
+node
+create
+Doc
+Type(elementName)
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name.
+Parameters
+Name
+Type
+Description
+element
+Name
+String
+the name of the root
+Element
+node to specify in the
+Doc
+Type
+declaration
+Return
+Doc
+Type
+— the newly created
+Document
+Type
+node
+create
+Doc
+Type(elementName, systemId)
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name, and the given system ID for the external subset data.
+Parameters
+Name
+Type
+Description
+element
+Name
+String
+the name of the root
+Element
+node to specify in the
+Doc
+Type
+declaration
+system
+Id
+String
+the system ID of the external subset data to set
+Return
+Doc
+Type
+— the newly created
+Document
+Type
+node
+create
+Doc
+Type(elementName, publicId, systemId)
+Creates an unattached
+Document
+Type
+node for the root
+Element
+node
+with the given name, and the given public ID and system ID for the external subset data.
+Parameters
+Name
+Type
+Description
+element
+Name
+String
+the name of the root
+Element
+node to specify in the
+Doc
+Type
+declaration
+public
+Id
+String
+the public ID of the external subset data to set
+system
+Id
+String
+the system ID of the external subset data to set
+Return
+Doc
+Type
+— the newly created
+Document
+Type
+node
+create
+Document()
+Creates an empty XML document.
+Return
+Document
+— the newly created document
+create
+Document(rootElement)
+Creates an XML document with the given root
+Element
+node.
+Parameters
+Name
+Type
+Description
+root
+Element
+Element
+the root
+Element
+node to set
+Return
+Document
+— the newly created document
+create
+Element(name)
+Creates an unattached
+Element
+node with the given local name and no namespace.
+Parameters
+Name
+Type
+Description
+name
+String
+the local name to set
+Return
+Element
+— the newly created
+Element
+node
+create
+Element(name, namespace)
+Creates an unattached
+Element
+node with the given local name and namespace.
+Parameters
+Name
+Type
+Description
+name
+String
+the local name to set
+namespace
+Namespace
+the namespace to set
+Return
+Element
+— the newly created
+Element
+node
+create
+Text(text)
+Creates an unattached
+Text
+node with the given value.
+Parameters
+Name
+Type
+Description
+text
+String
+the value to set
+Return
+Text
+— the newly created
+Text
+node
+get
+Compact
+Format()
+Creates a
+Format
+object for outputting a compact XML document. The formatter
+defaults to
+UTF-8
+encoding, no indentation, and no additional line breaks, but includes
+the XML declaration and its encoding.
+// Log an XML document in compact form.
+const
+xml
+=
+'<root><a><b>Text!</b><b>More text!</b></a></root>'
+;
+const
+document
+=
+XmlService
+.
+parse
+(
+xml
+);
+const
+output
+=
+XmlService
+.
+getCompactFormat
+().
+format
+(
+document
+);
+Logger
+.
+log
+(
+output
+);
+Return
+Format
+— the newly created formatter
+get
+Namespace(uri)
+Creates a
+Namespace
+with the given URI.
+Parameters
+Name
+Type
+Description
+uri
+String
+the URI for the namespace
+Return
+Namespace
+— the newly created namespace
+get
+Namespace(prefix, uri)
+Creates a
+Namespace
+with the given prefix and URI.
+Parameters
+Name
+Type
+Description
+prefix
+String
+the prefix for the namespace
+uri
+String
+the URI for the namespace
+Return
+Namespace
+— the newly created namespace
+get
+No
+Namespace()
+Creates a
+Namespace
+that represents the absence of a real namespace.
+Return
+Namespace
+— the newly created namespace
+get
+Pretty
+Format()
+Creates a
+Format
+object for outputting a human-readable XML document. The formatter
+defaults to
+UTF-8
+encoding, two-space indentation,
+\r\n
+line separators after
+every node, and includes the XML declaration and its encoding.
+// Log an XML document in human-readable form.
+const
+xml
+=
+'<root><a><b>Text!</b><b>More text!</b></a></root>'
+;
+const
+document
+=
+XmlService
+.
+parse
+(
+xml
+);
+const
+output
+=
+XmlService
+.
+getPrettyFormat
+().
+format
+(
+document
+);
+Logger
+.
+log
+(
+output
+);
+Return
+Format
+— the newly created formatter
+get
+Raw
+Format()
+Creates a
+Format
+object for outputting a raw XML document. The formatter defaults to
+UTF-8
+encoding, no indentation and no line breaks other than those provided in the XML
+document itself, and includes the XML declaration and its encoding.
+// Log an XML document in raw form.
+const
+xml
+=
+'<root><a><b>Text!</b><b>More text!</b></a></root>'
+;
+const
+document
+=
+XmlService
+.
+parse
+(
+xml
+);
+const
+output
+=
+XmlService
+.
+getRawFormat
+().
+format
+(
+document
+);
+Logger
+.
+log
+(
+output
+);
+Return
+Format
+— the newly created formatter
+get
+Xml
+Namespace()
+Creates a
+Namespace
+with the standard
+xml
+prefix.
+Return
+Namespace
+— the newly created namespace
+parse(xml)
+Creates an
+Document
+from the given XML, without validating the XML.
+const
+xml
+=
+'<root><a><b>Text!</b><b>More text!</b></a></root>'
+;
+const
+doc
+=
+XmlService
+.
+parse
+(
+xml
+);
+Parameters
+Name
+Type
+Description
+xml
+String
+the XML to parse
+Return
+Document
+— the newly created document

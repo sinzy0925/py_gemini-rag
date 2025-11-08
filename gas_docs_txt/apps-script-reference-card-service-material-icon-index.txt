@@ -1,0 +1,223 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/material-icon/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+MaterialIcon is an object that supports all Google Font Icons and is available for Google Workspace add-ons and Google Chat apps.
+You can set the name of the icon using
+setName()
+, which is a required parameter.
+The appearance of the icon can be customized using methods like
+setFill()
+,
+setGrade()
+, and
+setWeight()
+.
+setFill()
+determines if the icon is solid, while
+setGrade()
+and
+setWeight()
+affect the thickness of the icon.
+Material
+Icon
+An object that supports all
+Google Font Icons
+.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+materialIcon
+=
+CardService
+.
+newMaterialIcon
+()
+.
+setName
+(
+'search'
+)
+.
+setFill
+(
+true
+)
+.
+setWeight
+(
+400
+)
+.
+setGrade
+(
+0
+);
+Methods
+Method
+Return type
+Brief description
+set
+Fill(fill)
+Material
+Icon
+Whether the icon renders as filled.
+set
+Grade(grade)
+Material
+Icon
+Weight and grade affect a symbol’s thickness.
+set
+Name(name)
+Material
+Icon
+Sets the name of the icon.
+set
+Weight(weight)
+Material
+Icon
+The stroke weight of the icon.
+Detailed documentation
+set
+Fill(fill)
+Whether the icon renders as filled. Default value is
+false
+.
+To preview different icon settings, go to
+Google
+Font Icons
+and adjust the settings under
+Customize
+.
+const
+materialIcon
+=
+CardService
+.
+newMaterialIcon
+().
+setName
+(
+'search'
+).
+setFill
+(
+true
+);
+Parameters
+Name
+Type
+Description
+fill
+Boolean
+Whether the icon is filled.
+Return
+Material
+Icon
+— This object, for chaining.
+set
+Grade(grade)
+Weight and grade affect a symbol’s thickness. Adjustments to grade are more granular than
+adjustments to weight and have a small impact on the size of the symbol. Choose from {-25, 0,
+200}. If absent, default value is 0. If any other value is specified, the default value is
+used.
+To preview different icon settings, go to
+Google
+Font Icons
+and adjust the settings under
+Customize
+.
+const
+materialIcon
+=
+CardService
+.
+newMaterialIcon
+().
+setName
+(
+'search'
+).
+setGrade
+(
+200
+);
+Parameters
+Name
+Type
+Description
+grade
+Integer
+The icon's grade.
+Return
+Material
+Icon
+— This object, for chaining.
+set
+Name(name)
+Sets the name of the icon. Required.
+The icon name defined in
+Google Font Icon
+, For
+example,
+check_box
+.
+Any invalid names are abandoned and replaced with an empty string and results in the icon
+failing to render.
+const
+materialIcon
+=
+CardService
+.
+newMaterialIcon
+().
+setName
+(
+'search'
+);
+Parameters
+Name
+Type
+Description
+name
+String
+The name of the icon.
+Return
+Material
+Icon
+— This object, for chaining.
+set
+Weight(weight)
+The stroke weight of the icon. Choose from {100, 200, 300, 400, 500, 600, 700}. If absent,
+default value is 400. If any other value is specified, the default value is used.
+To preview different icon settings, go to
+Google
+Font Icons
+and adjust the settings under
+Customize
+.
+const
+materialIcon
+=
+CardService
+.
+newMaterialIcon
+().
+setName
+(
+'search'
+).
+setWeight
+(
+700
+);
+Parameters
+Name
+Type
+Description
+weight
+Integer
+The stroke weight of the icon.
+Return
+Material
+Icon
+— This object, for chaining.

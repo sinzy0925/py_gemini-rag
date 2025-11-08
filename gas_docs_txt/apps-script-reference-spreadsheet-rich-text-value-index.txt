@@ -1,0 +1,205 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/rich-text-value/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+RichTextValue represents cell text with substrings that can have different text styles.
+A "run" is the longest unbroken substring with the same text style.
+The RichTextValue class provides methods to access text content, styling, link URLs, and indices within a cell.
+You can retrieve the text style or link URL for the entire value or a specific range using offset parameters.
+The
+getRuns()
+method splits the Rich Text string into an array of runs based on consistent text styles.
+Rich
+Text
+Value
+A stylized text string used to represent cell text. Substrings of the text can have different
+text styles.
+A
+run
+is the longest unbroken substring having the same text style. For example, the
+sentence, "This
+child
+is carrying
+apples" has 4 runs:
+['This ', 'child ',
+'is carrying ', 'apples']
+.
+Methods
+Method
+Return type
+Brief description
+copy()
+Rich
+Text
+Value
+Builder
+Returns a builder for a Rich Text value initialized with the values of this Rich Text value.
+get
+End
+Index()
+Integer
+Gets the end index of this value in the cell.
+get
+Link
+Url()
+String
+Returns the link URL for this value.
+get
+Link
+Url(startOffset, endOffset)
+String
+Returns the link URL for the text from
+start
+Offset
+to
+end
+Offset
+.
+get
+Runs()
+Rich
+Text
+Value[]
+Returns the Rich Text string split into an array of runs, wherein each run is the longest
+possible substring having a consistent text style.
+get
+Start
+Index()
+Integer
+Gets the start index of this value in the cell.
+get
+Text()
+String
+Returns the text of this value.
+get
+Text
+Style()
+Text
+Style
+Returns the text style of this value.
+get
+Text
+Style(startOffset, endOffset)
+Text
+Style
+Returns the text style of the text from
+start
+Offset
+to
+end
+Offset
+.
+Detailed documentation
+copy()
+Returns a builder for a Rich Text value initialized with the values of this Rich Text value.
+Return
+Rich
+Text
+Value
+Builder
+— A builder for a Rich Text value.
+get
+End
+Index()
+Gets the end index of this value in the cell.
+Return
+Integer
+— The end index of this value in the cell.
+get
+Link
+Url()
+Returns the link URL for this value.
+Return
+String
+— The link URL for this value, or
+null
+if there is no link or if there are
+    multiple different links.
+get
+Link
+Url(startOffset, endOffset)
+Returns the link URL for the text from
+start
+Offset
+to
+end
+Offset
+. Offsets are 0
+based and relative to the cell's text, with the start offset being inclusive and the end offset
+being exclusive.
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The start offset.
+end
+Offset
+Integer
+The end offset.
+Return
+String
+— The link URL for this value, or
+null
+if there is no link or if multiple
+    different links are in the given range.
+get
+Runs()
+Returns the Rich Text string split into an array of runs, wherein each run is the longest
+possible substring having a consistent text style.
+Return
+Rich
+Text
+Value[]
+— An array of runs.
+get
+Start
+Index()
+Gets the start index of this value in the cell.
+Return
+Integer
+— The start index of this value in the cell.
+get
+Text()
+Returns the text of this value.
+Return
+String
+— The text of this value.
+get
+Text
+Style()
+Returns the text style of this value.
+Return
+Text
+Style
+— The text style of this value.
+get
+Text
+Style(startOffset, endOffset)
+Returns the text style of the text from
+start
+Offset
+to
+end
+Offset
+. Offsets are 0
+based and relative to the cell's text, with the start offset being inclusive and the end offset
+being exclusive.
+Parameters
+Name
+Type
+Description
+start
+Offset
+Integer
+The start offset.
+end
+Offset
+Integer
+The end offset.
+Return
+Text
+Style
+— The text style of the given substring of this value.

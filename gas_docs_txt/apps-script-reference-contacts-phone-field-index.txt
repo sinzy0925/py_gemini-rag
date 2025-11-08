@@ -1,0 +1,456 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/phone-field/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PhoneField is deprecated and the People API advanced service should be used instead.
+A PhoneField represents a phone number field within a Contact.
+Methods like getLabel(), isPrimary(), setAsPrimary(), and setLabel() are available for managing PhoneField properties.
+Deprecated methods such as deletePhoneField(), getPhoneNumber(), and setPhoneNumber() should not be used in new scripts.
+All methods require authorization with the
+https://www.google.com/m8/feeds
+scope.
+Phone
+Field
+Deprecated.
+Instead, use the
+People API advanced
+    service
+A phone number field in a Contact.
+Methods
+Method
+Return type
+Brief description
+get
+Label()
+Object
+Gets the label for this field.
+is
+Primary()
+Boolean
+Gets whether this is the primary field value.
+set
+As
+Primary()
+Phone
+Field
+Sets this field to primary.
+set
+Label(field)
+Phone
+Field
+Sets the label of this field.
+set
+Label(label)
+Phone
+Field
+Sets the label of this field.
+Deprecated methods
+Method
+Return type
+Brief description
+delete
+Phone
+Field()
+void
+Deletes this phone number field.
+get
+Phone
+Number()
+String
+Get the phone number for this field.
+set
+Phone
+Number(number)
+Phone
+Field
+Sets the phone number for this field.
+Detailed documentation
+get
+Label()
+Gets the label for this field. This may be a Field, ExtendedField, or a String.
+// Logs the label for all the address fields associated with contact
+// 'John Doe'. This method can be similarly called for any field that has
+// a label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+addressFields
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+addressFields
+[
+i
+].
+getLabel
+());
+}
+Return
+Object
+— the label for this field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+is
+Primary()
+Gets whether this is the primary field value.
+// Logs whether or not the first address field associated with contact
+// 'John Doe' is labeled as primary. This method can be similarly called
+// for any field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+Logger
+.
+log
+(
+addressFields
+[
+0
+].
+isPrimary
+());
+Return
+Boolean
+— whether this is primary
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+As
+Primary()
+Sets this field to primary.
+// Sets the first address field associated with contact 'John Doe'
+// as primary. This method can be similarly called for any field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+addressFields
+[
+0
+].
+setAsPrimary
+();
+Return
+Phone
+Field
+— this FieldValue for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Label(field)
+Sets the label of this field.
+// Sets the label to 'Work' for the first address field associated
+// with contact 'John Doe'. This method can be similarly called for any
+// field that has a label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+addressFields
+[
+0
+].
+setLabel
+(
+ContactsApp
+.
+Field
+.
+WORK_ADDRESS
+);
+Parameters
+Name
+Type
+Description
+field
+Field
+the new standard label
+Return
+Phone
+Field
+— this FieldValue for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Label(label)
+Sets the label of this field.
+// Sets the label to 'Apartment' for the first address field associated
+// with contact 'John Doe'. This method can be similarly called for any
+// field that has a label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+addressFields
+[
+0
+].
+setLabel
+(
+'Apartment'
+);
+Parameters
+Name
+Type
+Description
+label
+String
+the new label for this field
+Return
+Phone
+Field
+— this field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+Deprecated methods
+delete
+Phone
+Field()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes this phone number field.
+// Retrieves and deletes the work phone number field for contact 'John
+// Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+phoneFields
+=
+contacts
+[
+0
+].
+getPhones
+(
+ContactsApp
+.
+Field
+.
+WORK_PHONE
+);
+phoneFields
+[
+0
+].
+deletePhoneField
+();
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Phone
+Number()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get the phone number for this field.
+// Logs the work phone number for contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+phoneFields
+=
+contacts
+[
+0
+].
+getPhones
+(
+ContactsApp
+.
+Field
+.
+WORK_PHONE
+);
+Logger
+.
+log
+(
+phoneFields
+[
+0
+].
+getPhoneNumber
+());
+Return
+String
+— the number as a string
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Phone
+Number(number)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the phone number for this field.
+// Sets the work phone number for contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+phoneFields
+=
+contacts
+[
+0
+].
+getPhones
+(
+ContactsApp
+.
+Field
+.
+WORK_PHONE
+);
+phoneFields
+[
+0
+].
+setPhoneNumber
+(
+'212-555-1234'
+);
+Parameters
+Name
+Type
+Description
+number
+String
+the new number
+Return
+Phone
+Field
+— this field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds

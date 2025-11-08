@@ -1,0 +1,21 @@
+Source Path: gas_docs_html/apps-script/reference/base/color-type.html
+
+Color
+Type
+The types of Colors
+To call an enum, you call its parent class, name, and property. For example,
+Base.ColorType.RGB
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A color type that is not supported.
+RGB
+Enum
+A color defined by red, green, blue color channels.
+THEME
+Enum
+A color that refers to an entry in the theme's color scheme.

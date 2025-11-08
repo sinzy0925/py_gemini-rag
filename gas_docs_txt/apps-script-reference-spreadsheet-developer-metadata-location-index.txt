@@ -1,0 +1,237 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/developer-metadata-location/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The DeveloperMetadataLocation class provides access to information about the location of developer metadata within a spreadsheet.
+You can retrieve the location type of the metadata using the
+getLocationType()
+method.
+Methods like
+getColumn()
+,
+getRow()
+,
+getSheet()
+, and
+getSpreadsheet()
+return the specific location (Range, Sheet, or Spreadsheet) based on the metadata's location type, or
+null
+if it doesn't match.
+Accessing developer metadata location information typically requires authorization with spreadsheet-related scopes.
+Developer
+Metadata
+Location
+Access developer metadata location information.
+Methods
+Method
+Return type
+Brief description
+get
+Column()
+Range
+Returns the
+Range
+for the column location of this metadata, or
+null
+if the
+location type is not
+Developer
+Metadata
+Location
+Type.COLUMN
+.
+get
+Location
+Type()
+Developer
+Metadata
+Location
+Type
+Gets the type of location.
+get
+Row()
+Range
+Returns the
+Range
+for the row location of this metadata, or
+null
+if the
+location type is not
+Developer
+Metadata
+Location
+Type.ROW
+.
+get
+Sheet()
+Sheet
+Returns the
+Sheet
+location of this metadata, or
+null
+if the location type is
+not
+Developer
+Metadata
+Location
+Type.SHEET
+.
+get
+Spreadsheet()
+Spreadsheet
+Returns the
+Spreadsheet
+location of this metadata, or
+null
+if the location
+type is not
+Developer
+Metadata
+Location
+Type.SPREADSHEET
+.
+Detailed documentation
+get
+Column()
+Returns the
+Range
+for the column location of this metadata, or
+null
+if the
+location type is not
+Developer
+Metadata
+Location
+Type.COLUMN
+.
+Return
+Range
+— The
+Range
+for the column location of this metadata, or
+null
+if the
+    location type is not
+Developer
+Metadata
+Location
+Type.COLUMN
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Location
+Type()
+Gets the type of location.
+Return
+Developer
+Metadata
+Location
+Type
+— The location type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Row()
+Returns the
+Range
+for the row location of this metadata, or
+null
+if the
+location type is not
+Developer
+Metadata
+Location
+Type.ROW
+.
+Return
+Range
+— The
+Range
+for the row location of this metadata, or
+null
+if the
+    location type is not
+Developer
+Metadata
+Location
+Type.ROW
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Sheet()
+Returns the
+Sheet
+location of this metadata, or
+null
+if the location type is
+not
+Developer
+Metadata
+Location
+Type.SHEET
+.
+Return
+Sheet
+— The
+Sheet
+location of this metadata, or
+null
+if the location type is
+    not
+Developer
+Metadata
+Location
+Type.SHEET
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Spreadsheet()
+Returns the
+Spreadsheet
+location of this metadata, or
+null
+if the location
+type is not
+Developer
+Metadata
+Location
+Type.SPREADSHEET
+.
+Return
+Spreadsheet
+— The
+Spreadsheet
+location of this metadata, or
+null
+if the location
+    type is not
+Developer
+Metadata
+Location
+Type.SPREADSHEET
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

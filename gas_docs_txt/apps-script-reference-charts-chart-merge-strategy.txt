@@ -1,0 +1,19 @@
+Source Path: gas_docs_html/apps-script/reference/charts/chart-merge-strategy.html
+
+Chart
+Merge
+Strategy
+An enumeration of how multiple ranges in the source are expressed in a chart.
+To call an enum, you call its parent class, name, and property. For example,
+Charts.ChartMergeStrategy.MERGE_COLUMNS
+.
+Properties
+Property
+Type
+Description
+MERGE_COLUMNS
+Enum
+Default. Charts merges the columns of multiple ranges.
+MERGE_ROWS
+Enum
+Charts merges the rows of multiple ranges.

@@ -1,0 +1,796 @@
+Source Path: gas_docs_html/apps-script/reference/forms/rating-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A RatingItem is a question type in Google Forms that allows respondents to provide a rating, and can be graded when used in a quiz.
+You can access or create RatingItems from a Form object using Google Apps Script.
+RatingItems have methods to get and set properties like the rating scale level, rating icon, title, and whether the question is required.
+Methods are available to duplicate a RatingItem or create a response for it.
+Authorization scopes like
+https://www.googleapis.com/auth/forms
+are required to use these methods.
+Rating
+Item
+A question item that allows the respondent to give a rating. Items can be accessed or created
+from a
+Form
+. When used in a quiz, these items are graded.
+// Open a form by ID
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+// Get an existing rating item and access its properties.
+const
+existingRatingItem
+=
+form
+.
+getItems
+(
+FormApp
+.
+ItemType
+.
+RATING
+)[
+0
+].
+asRatingItem
+();
+const
+ratingScaleLevel
+=
+existingRatingItem
+.
+getRatingScaleLevel
+();
+const
+ratingIcon
+=
+existingRatingItem
+.
+getRatingIcon
+();
+// Create a new rating item.
+const
+ratingItem
+=
+form
+.
+addRatingItem
+();
+// Update the rating item's properties via chaining.
+ratingItem
+.
+setRatingScaleLevel
+(
+7
+).
+setRatingIcon
+(
+FormApp
+.
+RatingIconType
+.
+HEART
+);
+Methods
+Method
+Return type
+Brief description
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this rating item.
+duplicate()
+Rating
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Rating
+Icon()
+Rating
+Icon
+Type
+Gets the icon chosen for the rating.
+get
+Rating
+Scale
+Level()
+Integer
+Gets the rating's scale level.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Rating
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Rating
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Rating
+Item
+Sets the number of points a gradeable item is worth.
+set
+Rating
+Icon(ratingIcon)
+Rating
+Item
+Sets the rating's icon.
+set
+Rating
+Scale
+Level(ratingScaleLevel)
+Rating
+Item
+Sets the rating's maximum scale level.
+set
+Required(enabled)
+Rating
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Rating
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Detailed documentation
+create
+Response(response)
+Creates a new
+Item
+Response
+for this rating item.
+Throws a scripting exception if the provided
+response
+is less than
+1
+or
+greater than the value returned by
+get
+Rating
+Scale
+Level()
+.
+// Open a form by ID
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+// Get an existing rating item and create a response for it.
+const
+item
+=
+form
+.
+getItems
+(
+FormApp
+.
+ItemType
+.
+RATING
+)[
+0
+].
+asRatingItem
+();
+const
+response
+=
+item
+.
+createResponse
+(
+5
+);
+Parameters
+Name
+Type
+Description
+response
+Integer
+A value answer for this rating item.
+Return
+Item
+Response
+— The item response.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Rating
+Item
+— a duplicate of this
+Rating
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+General
+Feedback()
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+Return
+Quiz
+Feedback
+— the feedback, if any.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Points()
+Returns the point value of a gradeable item.
+Return
+Integer
+— the number of points a question is worth.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Rating
+Icon()
+Gets the icon chosen for the rating.
+// Open a form by ID
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+// Get an existing rating item and get its rating icon.
+const
+item
+=
+form
+.
+getItems
+(
+FormApp
+.
+ItemType
+.
+RATING
+)[
+0
+].
+asRatingItem
+();
+const
+ratingIcon
+=
+item
+.
+getRatingIcon
+();
+Return
+Rating
+Icon
+Type
+— The rating icon type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Rating
+Scale
+Level()
+Gets the rating's scale level.
+// Open a form by ID
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+// Get an existing rating item and get its rating scale level.
+const
+item
+=
+form
+.
+getItems
+(
+FormApp
+.
+ItemType
+.
+RATING
+)[
+0
+].
+asRatingItem
+();
+const
+ratingScaleLevel
+=
+item
+.
+getRatingScaleLevel
+();
+Return
+Integer
+— The rating scale level.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Required()
+Determines whether the respondent must answer the question.
+Return
+Boolean
+— whether the respondent must answer the question
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+General
+Feedback(feedback)
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+Parameters
+Name
+Type
+Description
+feedback
+Quiz
+Feedback
+the new feedback
+Return
+Rating
+Item
+— this
+Rating
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Rating
+Item
+— this
+Rating
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Points(points)
+Sets the number of points a gradeable item is worth. The default for new items is 0.
+Parameters
+Name
+Type
+Description
+points
+Integer
+the number of a points a question item is worth
+Return
+Rating
+Item
+— this
+Rating
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Rating
+Icon(ratingIcon)
+Sets the rating's icon.
+Throws a scripting exception if the rating icon type is invalid.
+// Open a form by ID
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+// Get an existing rating item and set its rating icon.
+const
+item
+=
+form
+.
+getItems
+(
+FormApp
+.
+ItemType
+.
+RATING
+)[
+0
+].
+asRatingItem
+();
+item
+.
+setRatingIcon
+(
+FormApp
+.
+RatingIconType
+.
+THUMB_UP
+);
+Parameters
+Name
+Type
+Description
+rating
+Icon
+Rating
+Icon
+Type
+The rating icon type.
+Return
+Rating
+Item
+— This
+Rating
+Item
+, for chaining.
+Throws
+Error
+— if the rating icon type is invalid
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Rating
+Scale
+Level(ratingScaleLevel)
+Sets the rating's maximum scale level. The rating's maximum scale level must be between
+3
+and
+10
+, inclusive. A new rating defaults to a rating scale level of
+3
+.
+Throws a scripting exception if the given values are outside the permitted limits.
+// Open a form by ID
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+// Get an existing rating item and set its rating scale level.
+const
+item
+=
+form
+.
+getItems
+(
+FormApp
+.
+ItemType
+.
+RATING
+)[
+0
+].
+asRatingItem
+();
+item
+.
+setRatingScaleLevel
+(
+7
+);
+Parameters
+Name
+Type
+Description
+rating
+Scale
+Level
+Integer
+The rating scale level.
+Return
+Rating
+Item
+— This
+Rating
+Item
+, for chaining.
+Throws
+Error
+— if the rating scale level is invalid
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Required(enabled)
+Sets whether the respondent must answer the question.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+whether the respondent must answer the question
+Return
+Rating
+Item
+— the current item (for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Rating
+Item
+— this
+Rating
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

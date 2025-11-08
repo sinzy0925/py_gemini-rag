@@ -1,0 +1,266 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/card-section/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A CardSection is used in Google Workspace add-ons and Google Chat apps to organize widgets and provide visual separation.
+You can add various widgets to a CardSection using the
+addWidget()
+method, with a limit of 100 widgets per section.
+CardSections can be made collapsible using
+setCollapsible()
+, with the option to customize the collapse control buttons and specify the number of widgets visible when collapsed.
+The section's header can be set using the
+setHeader()
+method.
+Card
+Section
+A card section holds groups of widgets and provides visual separation between them.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+image
+=
+CardService
+.
+newImage
+();
+// Build image ...
+const
+textParagraph
+=
+CardService
+.
+newTextParagraph
+();
+// Build text paragraph ...
+const
+cardSection
+=
+CardService
+.
+newCardSection
+()
+.
+setHeader
+(
+'Section header'
+)
+.
+addWidget
+(
+image
+)
+.
+addWidget
+(
+textParagraph
+);
+Methods
+Method
+Return type
+Brief description
+add
+Widget(widget)
+Card
+Section
+Adds the given widget to this section.
+set
+Collapse
+Control(collapseControl)
+Card
+Section
+Sets the customizable expand and collapse buttons of the section.
+set
+Collapsible(collapsible)
+Card
+Section
+Sets whether the section can be collapsed.
+set
+Header(header)
+Card
+Section
+Sets the header of the section.
+set
+Num
+Uncollapsible
+Widgets(numUncollapsibleWidgets)
+Card
+Section
+Sets the number of widgets that are still shown when this section is collapsed.
+Detailed documentation
+add
+Widget(widget)
+Adds the given widget to this section. Widgets are shown in the order they were added. You
+can't add more than 100 widgets to a card section.
+Parameters
+Name
+Type
+Description
+widget
+Widget
+A widget to add to the section.
+Return
+Card
+Section
+— This object, for chaining.
+set
+Collapse
+Control(collapseControl)
+Sets the customizable expand and collapse buttons of the section. These buttons are shown only
+if the section is collapsible. If this field isn't set, default buttons are used.
+Available for Google Chat apps. In developer preview for Google Workspace add-ons.
+Developer Preview:
+Available as part of the
+Google Workspace Developer Preview Program
+, which grants early access to certain features.
+const
+collapseButton
+=
+CardService
+.
+newTextButton
+()
+.
+setTextButtonStyle
+(
+CardService
+.
+TextButtonStyle
+.
+BORDERLESS
+)
+.
+setText
+(
+'show less'
+);
+const
+expandButton
+=
+CardService
+.
+newImageButton
+()
+.
+setImageButtonStyle
+(
+CardService
+.
+ImageButtonStyle
+.
+FILLED
+)
+.
+setMaterialIcon
+(
+CardService
+.
+newMaterialIcon
+().
+setName
+(
+'bug_report'
+));
+const
+collapsibleSection
+=
+CardService
+.
+newCardSection
+()
+.
+setCollapsible
+(
+true
+)
+.
+setNumUncollapsibleWidgets
+(
+1
+)
+.
+setCollapseControl
+(
+CardService
+.
+newCollapseControl
+()
+.
+setHorizontalAlign
+(
+CardService
+.
+HorizontalAlignment
+.
+CENTER
+)
+.
+setCollapseButton
+(
+collapseButton
+)
+.
+setExpandButton
+(
+expandButton
+),
+);
+Parameters
+Name
+Type
+Description
+collapse
+Control
+Collapse
+Control
+The collapse control setting.
+Return
+Card
+Section
+— This object, for chaining.
+set
+Collapsible(collapsible)
+Sets whether the section can be collapsed.
+Parameters
+Name
+Type
+Description
+collapsible
+Boolean
+The collapsible setting.
+Return
+Card
+Section
+— This object, for chaining.
+set
+Header(header)
+Sets the header of the section. Optional.
+Parameters
+Name
+Type
+Description
+header
+String
+The header text.
+Return
+Card
+Section
+— This object, for chaining.
+set
+Num
+Uncollapsible
+Widgets(numUncollapsibleWidgets)
+Sets the number of widgets that are still shown when this section is collapsed. The widgets
+shown are always the first ones that were added.
+Parameters
+Name
+Type
+Description
+num
+Uncollapsible
+Widgets
+Integer
+The number of widgets to show.
+Return
+Card
+Section
+— This object, for chaining.

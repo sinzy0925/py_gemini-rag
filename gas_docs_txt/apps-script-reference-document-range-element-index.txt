@@ -1,0 +1,222 @@
+Source Path: gas_docs_html/apps-script/reference/document/range-element/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+RangeElement is a wrapper around an Element with possible start and end offsets, useful for representing partial selections within Text elements.
+The getElement() method retrieves the Element corresponding to the RangeElement.
+The getStartOffset() and getEndOffsetInclusive() methods provide the character positions for the start and end of a partial range, returning -1 for non-Text elements or full ranges.
+The isPartial() method indicates whether the RangeElement covers the entire element or just a portion of its characters.
+Range
+Element
+A wrapper around an
+Element
+with a possible start and end offset. These offsets allow a
+range of characters within a
+Text
+element to be represented in search results, document selections, and named ranges.
+Methods
+Method
+Return type
+Brief description
+get
+Element()
+Element
+Gets the
+Element
+that corresponds to this
+Range
+Element
+.
+get
+End
+Offset
+Inclusive()
+Integer
+Gets the position of the end of a partial range within the range element.
+get
+Start
+Offset()
+Integer
+Gets the position of the start of a partial range within the range element.
+is
+Partial()
+Boolean
+Determines whether this range element covers the entire element or a partial selection of the
+element's characters.
+Detailed documentation
+get
+Element()
+Gets the
+Element
+that corresponds to this
+Range
+Element
+.
+const
+rangeElement
+=
+DocumentApp
+.
+getActiveDocument
+().
+getSelection
+().
+getRangeElements
+()[
+0
+];
+// Log debug information about a range element.
+Logger
+.
+log
+(
+`Element type:
+${
+rangeElement
+.
+getElement
+().
+getType
+()
+}
+`
+);
+if
+(
+rangeElement
+.
+isPartial
+())
+{
+Logger
+.
+log
+(
+`The character range begins at
+${
+rangeElement
+.
+getStartOffset
+()
+}
+`
+);
+Logger
+.
+log
+(
+`The character range ends at
+${
+rangeElement
+.
+getEndOffsetInclusive
+()
+}
+`
+,
+);
+}
+else
+{
+Logger
+.
+log
+(
+'The entire range element is included.'
+);
+}
+Return
+Element
+— the element that corresponds to this
+Range
+Element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+End
+Offset
+Inclusive()
+Gets the position of the end of a partial range within the range element. If the element is a
+Text
+element and
+is
+Partial()
+returns
+true
+, the offset is the number of characters before the last
+character in the range (that is, the index of the last character in the range); in any other
+case, this method returns
+-1
+.
+Return
+Integer
+— for
+Text
+elements, the
+    number of character before the last character in the range; for other elements,
+-1
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Start
+Offset()
+Gets the position of the start of a partial range within the range element. If the element is a
+Text
+element and
+is
+Partial()
+returns
+true
+, the offset is the number of characters before the start of
+the range (that is, the index of the first character in the range); in any other case, this
+method returns
+-1
+.
+Return
+Integer
+— for
+Text
+elements, the
+    number of characters before the start of the range; for other elements,
+-1
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+is
+Partial()
+Determines whether this range element covers the entire element or a partial selection of the
+element's characters. The beginning and end of a partial range element's range can be
+determined using
+get
+Start
+Offset()
+and
+get
+End
+Offset
+Inclusive()
+, respectively.
+Return
+Boolean
+—
+true
+if the element is partially included;
+false
+if not
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents

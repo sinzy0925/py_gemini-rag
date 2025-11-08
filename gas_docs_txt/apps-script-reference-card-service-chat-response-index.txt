@@ -1,0 +1,102 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/chat-response/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ChatResponse is the response object for a card message in Google Chat, available only for Google Chat apps.
+You can create a ChatResponse using
+CardService.newChatResponseBuilder()
+, adding text and cards using
+setText()
+and
+addCardsV2()
+.
+The
+printJson()
+method is available for debugging and prints the JSON representation of the ChatResponse object.
+Chat
+Response
+The response object for a card message in Google Chat.
+Only available for Google Chat apps. Not available for Google Workspace add-ons.
+// Creates a card message in Chat.
+const
+cardHeader
+=
+CardService
+.
+newCardHeader
+()
+.
+setTitle
+(
+'Card Header Title'
+)
+.
+setSubtitle
+(
+'Card Header Subtitle'
+);
+const
+card
+=
+CardService
+.
+newCardBuilder
+().
+setHeader
+(
+cardHeader
+).
+build
+();
+const
+chatResponse
+=
+CardService
+.
+newChatResponseBuilder
+()
+.
+setText
+(
+'Example text'
+)
+.
+addCardsV2
+(
+CardService
+.
+newCardWithId
+().
+setCardId
+(
+'card_id'
+).
+setCard
+(
+card
+))
+.
+build
+();
+console
+.
+log
+(
+chatResponse
+.
+printJson
+());
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String

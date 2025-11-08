@@ -1,0 +1,801 @@
+Source Path: gemini_api_docs_html/gemini-api/docs/changelog/index.html
+
+This page documents updates to the Gemini API.
+November 6, 2025
+Launched the File Search API to public preview, enabling developers to
+ground responses in their own data. Read the new
+File Search
+page for more info.
+November 4, 2025
+The following models will be deprecated:
+November 18th:
+gemini-2.5-flash-lite-preview-06-17
+gemini-2.5-flash-preview-05-20
+December 2nd:
+gemini-2.0-flash-thinking-exp
+gemini-2.0-flash-thinking-exp-01-21
+gemini-2.0-flash-thinking-exp-1219
+gemini-2.5-pro-preview-03-25
+gemini-2.5-pro-preview-05-06
+gemini-2.5-pro-preview-06-05
+December 9th:
+gemini-2.0-flash-lite-preview
+gemini-2.0-flash-lite-preview-02-05
+October 29, 2025
+Launched the new
+logging and datasets
+tool for the Gemini API.
+October 20, 2025
+The following Gemini Live API models are now deprecated:
+gemini-2.5-flash-preview-native-audio-dialog
+gemini-2.5-flash-exp-native-audio-thinking-dialog
+You can use
+gemini-2.5-flash-native-audio-preview-09-2025
+instead.
+Deprecation for
+gemini-2.0-flash-live-001
+and
+gemini-live-2.5-flash-preview
+coming December 09, 2025.
+October 17, 2025
+Grounding with Google Maps
+is now
+generally available. For more information, see
+Grounding with Google Maps
+documentation.
+October 15, 2025
+Released
+Veo 3.1 and 3.1 Fast
+models in
+public preview, with new features including:
+Extending Veo-created videos.
+Referencing up to three images to generate a video.
+Providing first and last frame images to generate videos from.
+This launch also added more options for Veo 3 output video durations: 4, 6,
+and 8 seconds.
+Deprecation for
+veo-3.0-generate-preview
+and
+veo-3.0-fast-generate-preview
+coming November 6, 2025.
+October 7, 2025
+Launched
+Gemini 2.5 Computer Use Preview
+October 2, 2025
+Launched Gemini 2.5 Flash Image GA:
+Image Generation with Gemini
+September 29, 2025
+The following Gemini 1.5 models are now deprecated:
+gemini-1.5-pro
+gemini-1.5-flash-8b
+gemini-1.5-flash
+September 25, 2025
+Released Gemini Robotics-ER 1.5 model in preview. See the
+Robotics overview
+to learn about how to use the model for your robotics application.
+Launched following preview models:
+gemini-2.5-flash-preview-09-2025
+gemini-2.5-flash-lite-preview-09-2025
+See the
+Models
+page for details.
+September 23, 2025
+Released
+gemini-2.5-flash-native-audio-preview-09-2025
+,
+a new native audio model for the Live API with improved function calling
+and speech cut off handling. To learn more, see the
+Live API guide
+and
+Gemini 2.5 Flash Native Audio
+.
+September 16, 2025
+The following models will be deprecated in October, 2025:
+embedding-001
+embedding-gecko-001
+gemini-embedding-exp-03-07
+(
+gemini-embedding-exp
+)
+See the
+Embeddings
+page for details on the latest embeddings
+model.
+September 10, 2025
+Released support for the
+Embeddings model in Batch API
+,
+and added Batch API to the
+OpenAI compatibility library
+for even
+easier ways to get started with batch queries.
+September 9, 2025
+Launched Veo 3 and Veo 3 Fast GA, with lower pricing and new options for
+aspect ratios, resolution, and seeding. Read the
+Veo documentation
+for more
+information.
+August 26, 2025
+Launched
+Gemini 2.5 Image Preview
+,
+our latest native image generation model.
+August 18, 2025
+Released
+URL context tool
+to general
+availability (GA), a tool for providing URLs as additional context to
+prompts. Support for using URL context with the
+gemini-2.0-flash
+model
+(available during experimental release) will be discontinued in one week.
+August 14, 2025
+Released Imagen 4 Ultra, Standard and Fast models as generally available
+(GA). To learn more, see the
+Imagen
+page.
+August 7, 2025
+allow_adult
+setting in Image to Video generation are now available in
+restricted regions. See the
+Veo
+page for details.
+July 31, 2025
+Launched image-to-video generation for the Veo 3 Preview model.
+Released Veo 3 Fast Preview model.
+To learn more about Veo 3, visit the
+Veo
+page.
+July 22, 2025
+Released
+gemini-2.5-flash-lite
+, our fast, low-cost, high-performance Gemini
+2.5 model. To learn more, see
+Gemini 2.5
+Flash-Lite
+.
+July 17, 2025
+Launched
+veo-3.0-generate-preview
+, the latest update to Veo introducing
+video with audio generation. To learn more about Veo 3, visit the
+Veo
+page.
+Increased rate limits for Imagen 4 Standard and Ultra. Visit the
+Rate limits
+page for more details.
+July 14, 2025
+Released
+gemini-embedding-001
+, the stable version of our
+text embedding model. To learn more, see
+embeddings
+. The
+gemini-embedding-exp-03-07
+model will be deprecated on August 14, 2025.
+July 7, 2025
+Launched Gemini API Batch Mode. Batch up requests and send them to process
+asynchronously. To learn more, see
+Batch Mode
+.
+June 26, 2025
+The preview models
+gemini-2.5-pro-preview-05-06
+and
+gemini-2.5-pro-preview-03-25
+are now redirecting to
+the latest stable version
+gemini-2.5-pro
+.
+gemini-2.5-pro-exp-03-25
+is deprecated.
+June 24, 2025
+Released Imagen 4 Ultra and Standard Preview models. To learn more, see the
+Image generation
+page.
+June 17, 2025
+Released
+gemini-2.5-pro
+, the stable version of our most powerful
+model, now with adaptive thinking. To learn more, see
+Gemini 2.5 Pro
+and
+Thinking
+.
+gemini-2.5-pro-preview-05-06
+will be redirected to
+gemini-2.5-pro
+on June 26, 2025.
+Released
+gemini-2.5-flash
+, our first stable 2.5 Flash model. To learn
+more, see
+Gemini 2.5 Flash
+.
+gemini-2.5-flash-preview-04-17
+will be deprecated on July 15, 2025.
+Released
+gemini-2.5-flash-lite-preview-06-17
+, a low-cost, high-performance
+Gemini 2.5 model. To learn more, see
+Gemini 2.5 Flash-Lite
+Preview
+.
+June 05, 2025
+Released
+gemini-2.5-pro-preview-06-05
+, a new version of our most powerful
+model, now with adaptive thinking. To learn more, see
+Gemini 2.5 Pro Preview
+and
+Thinking
+.
+gemini-2.5-pro-preview-05-06
+will be redirected to
+gemini-2.5-pro
+on
+June 26, 2025.
+May 20, 2025
+API updates:
+Launched support for
+custom video preprocessing
+using clipping intervals and configurable frame rate sampling.
+Launched multi-tool use, which supports configuring
+code execution
+and
+Grounding with Google Search
+on the same
+generateContent
+request.
+Launched support for
+asynchronous function calls
+in the Live API.
+Launched an experimental
+URL context tool
+for providing URLs as additional context to prompts.
+Model updates:
+Released
+gemini-2.5-flash-preview-05-20
+, a Gemini
+preview
+model optimized for
+price-performance and adaptive thinking. To learn more, see
+Gemini 2.5 Flash Preview
+and
+Thinking
+.
+Released the
+gemini-2.5-pro-preview-tts
+and
+gemini-2.5-flash-preview-tts
+models, which are capable of
+generating speech
+with one or two
+speakers.
+Released the
+lyria-realtime-exp
+model, which
+generates music
+in real time.
+Released
+gemini-2.5-flash-preview-native-audio-dialog
+and
+gemini-2.5-flash-exp-native-audio-thinking-dialog
+,
+new Gemini models for the Live API with native audio output capabilities. To
+learn more, see the
+Live API guide
+and
+Gemini 2.5 Flash Native Audio
+.
+Released
+gemma-3n-e4b-it
+preview, available on
+AI Studio
+and through the Gemini API,
+as part of the
+Gemma 3n
+launch.
+May 7, 2025
+Released
+gemini-2.0-flash-preview-image-generation
+, a preview model for
+generating and editing images. To learn more, see
+Image
+generation
+and
+Gemini 2.0 Flash Preview Image
+Generation
+.
+May 6, 2025
+Released
+gemini-2.5-pro-preview-05-06
+, a new version of our most powerful
+model, with improvements on code and function calling.
+gemini-2.5-pro-preview-03-25
+will automatically point to the new version of the model.
+April 17, 2025
+Released
+gemini-2.5-flash-preview-04-17
+, a Gemini
+preview
+model optimized for
+price-performance and adaptive thinking. To learn more, see
+Gemini 2.5 Flash Preview
+and
+Thinking
+.
+April 16, 2025
+Launched context caching for
+Gemini 2.0 Flash
+.
+April 9, 2025
+Model updates:
+Released
+veo-2.0-generate-001
+, a generally available (GA) text- and
+image-to-video model, capable of generating detailed and artistically
+nuanced videos. To learn more, see the
+Veo docs
+.
+Released
+gemini-2.0-flash-live-001
+, a public preview version of the
+Live API
+model with billing enabled.
+Enhanced Session Management and Reliability
+Session Resumption:
+Keep sessions alive across temporary network
+disruptions. The API now supports server-side session state storage (for
+up to 24 hours) and provides handles (session_resumption) to reconnect
+and resume where you left off.
+Longer Sessions via Context Compression:
+Enable extended
+interactions beyond previous time limits. Configure context window
+compression with a sliding window mechanism to automatically manage
+context length, preventing abrupt terminations due to context limits.
+Graceful Disconnect Notification:
+Receive a
+GoAway
+server
+message indicating when a connection is about to close, allowing for
+graceful handling before termination.
+More Control over Interaction Dynamics
+Configurable Voice Activity Detection (VAD):
+Choose sensitivity
+levels or disable automatic VAD entirely and use new client events
+(
+activityStart
+,
+activityEnd
+) for manual turn control.
+Configurable Interruption Handling:
+Decide whether user input
+should interrupt the model's response.
+Configurable Turn Coverage:
+Choose whether the API processes all
+audio and video input continuously or only captures it when the end-user
+is detected speaking.
+Configurable Media Resolution:
+Optimize for quality or token usage
+by selecting the resolution for input media.
+Richer Output and Features
+Expanded Voice & Language Options:
+Choose from two new voices and
+30 new languages for audio output. The output language is now
+configurable within
+speechConfig
+.
+Text Streaming:
+Receive text responses incrementally as they are
+generated, enabling faster display to the user.
+Token Usage Reporting:
+Gain insights into usage with detailed
+token counts provided in the
+usageMetadata
+field of server messages,
+broken down by modality and prompt or response phases.
+April 4, 2025
+Released
+gemini-2.5-pro-preview-03-25
+, a public preview Gemini 2.5 Pro version
+with billing enabled. You can continue to use
+gemini-2.5-pro-exp-03-25
+on
+the free tier.
+March 25, 2025
+Released
+gemini-2.5-pro-exp-03-25
+, a public experimental Gemini model
+with thinking mode always on by default.
+To learn more, see
+Gemini 2.5 Pro Experimental
+.
+March 12, 2025
+Model updates:
+Launched an experimental
+Gemini 2.0 Flash
+model capable of image generation and editing.
+Released
+gemma-3-27b-it
+, available on
+AI Studio
+and through the Gemini API,
+as part of the
+Gemma 3
+launch.
+API updates:
+Added support for
+YouTube URLs
+as a media source.
+Added support for including an
+inline video
+of less than 20MB.
+March 11, 2025
+SDK updates:
+Released the
+Google Gen AI SDK for TypeScript and JavaScript
+to public preview.
+March 7, 2025
+Model updates:
+Released
+gemini-embedding-exp-03-07
+, an
+experimental
+Gemini-based embeddings model in public preview.
+February 28, 2025
+API updates:
+Support for
+Search as a tool
+added to
+gemini-2.0-pro-exp-02-05
+, an experimental model based on
+Gemini 2.0 Pro.
+February 25, 2025
+Model updates:
+Released
+gemini-2.0-flash-lite
+, a generally available (GA) version of
+Gemini 2.0 Flash-Lite
+,
+which is optimized for speed, scale, and cost efficiency.
+February 19, 2025
+AI Studio updates:
+Support for
+additional regions
+(Kosovo, Greenland and Faroe Islands).
+API updates:
+Support for
+additional regions
+(Kosovo, Greenland and Faroe Islands).
+February 18, 2025
+Model updates:
+Gemini 1.0 Pro is no longer supported. For the list of supported models, see
+Gemini models
+.
+February 11, 2025
+API updates:
+Updates on the
+OpenAI libraries compatibility
+.
+February 6, 2025
+Model updates:
+Released
+imagen-3.0-generate-002
+, a generally available (GA) version of
+Imagen 3 in the Gemini API
+.
+SDK updates:
+Released the
+Google Gen AI SDK for Java
+for public preview.
+February 5, 2025
+Model updates:
+Released
+gemini-2.0-flash-001
+, a generally available (GA) version of
+Gemini 2.0 Flash
+that
+supports text-only output.
+Released
+gemini-2.0-pro-exp-02-05
+,
+an
+experimental
+public
+preview version of Gemini 2.0 Pro.
+Released
+gemini-2.0-flash-lite-preview-02-05
+, an experimental public
+preview
+model
+optimized for cost efficiency.
+API updates:
+Added
+file input and graph output
+support to code execution.
+SDK updates:
+Released the
+Google Gen AI SDK for Python
+to general availability (GA).
+January 21, 2025
+Model updates:
+Released
+gemini-2.0-flash-thinking-exp-01-21
+, the latest preview version of
+the model behind the
+Gemini 2.0 Flash Thinking Model
+.
+December 19, 2024
+Model updates:
+Released Gemini 2.0 Flash Thinking Mode for public preview. Thinking Mode is
+a test-time compute model that lets you see the model's thought process
+while it generates a response, and produces responses with stronger
+reasoning capabilities.
+Read more about Gemini 2.0 Flash Thinking Mode in our
+overview
+page
+.
+December 11, 2024
+Model updates:
+Released
+Gemini 2.0 Flash Experimental
+for public preview. Gemini 2.0 Flash Experimental's partial list of features includes:
+Twice as fast as Gemini 1.5 Pro
+Bidirectional streaming with our Live API
+Multimodal response generation in the form of text, images, and speech
+Built-in tool use with multi-turn reasoning to use features like code
+execution, Search, function calling, and more
+Read more about Gemini 2.0 Flash in our
+overview
+page
+.
+November 21, 2024
+Model updates:
+Released
+gemini-exp-1121
+, an even more powerful experimental Gemini API model.
+Model updates:
+Updated the
+gemini-1.5-flash-latest
+and
+gemini-1.5-flash
+model aliases
+to use
+gemini-1.5-flash-002
+.
+Change to
+top_k
+parameter: The
+gemini-1.5-flash-002
+model supports
+top_k
+values between 1 and 41 (exclusive).
+Values greater than 40 will be changed to 40.
+November 14, 2024
+Model updates:
+Released
+gemini-exp-1114
+, a powerful experimental Gemini API model.
+November 8, 2024
+API updates:
+Added
+support for Gemini
+in the OpenAI libraries / REST API.
+October 31, 2024
+API updates:
+Added
+support for Grounding with Google Search
+.
+October 3, 2024
+Model updates:
+Released
+gemini-1.5-flash-8b-001
+, a stable version of our smallest Gemini
+API model.
+September 24, 2024
+Model updates:
+Released
+gemini-1.5-pro-002
+and
+gemini-1.5-flash-002
+, two new stable
+versions of Gemini 1.5 Pro and 1.5 Flash, for general availability.
+Updated the
+gemini-1.5-pro-latest
+model code to use
+gemini-1.5-pro-002
+and the
+gemini-1.5-flash-latest
+model code to use
+gemini-1.5-flash-002
+.
+Released
+gemini-1.5-flash-8b-exp-0924
+to replace
+gemini-1.5-flash-8b-exp-0827
+.
+Released the
+civic integrity safety filter
+for the Gemini API and AI Studio.
+Released support for two new parameters for Gemini 1.5 Pro and 1.5 Flash in
+Python and NodeJS:
+frequencyPenalty
+and
+presencePenalty
+.
+September 19, 2024
+AI Studio updates:
+Added thumb-up and thumb-down buttons to model responses, to enable users to
+provide feedback on the quality of a response.
+API updates:
+Added support for Google Cloud credits, which can now be used towards
+Gemini API usage.
+September 17, 2024
+AI Studio updates:
+Added an
+Open in Colab
+button that exports a prompt – and the
+code to run it – to a Colab notebook. The feature doesn't yet support
+prompting with tools (JSON mode, function calling, or code execution).
+September 13, 2024
+AI Studio updates:
+Added support for compare mode, which lets you compare responses across
+ models and prompts to find the best fit for your use case.
+August 30, 2024
+Model updates:
+Gemini 1.5 Flash supports
+supplying JSON schema through model configuration
+.
+August 27, 2024
+Model updates:
+Released the following
+experimental models
+:
+gemini-1.5-pro-exp-0827
+gemini-1.5-flash-exp-0827
+gemini-1.5-flash-8b-exp-0827
+August 9, 2024
+API updates:
+Added support for
+PDF processing
+.
+August 5, 2024
+Model updates:
+Fine-tuning support released for Gemini 1.5 Flash.
+August 1, 2024
+Model updates:
+Released
+gemini-1.5-pro-exp-0801
+, a new experimental version of
+Gemini 1.5 Pro
+.
+July 12, 2024
+Model updates:
+Support for Gemini 1.0 Pro Vision removed from Google AI services and tools.
+June 27, 2024
+Model updates:
+General availability release for Gemini 1.5 Pro's 2M context window.
+API updates:
+Added support for
+code execution
+.
+June 18, 2024
+API updates:
+Added support for
+context caching
+.
+June 12, 2024
+Model updates:
+Gemini 1.0 Pro Vision deprecated.
+May 23, 2024
+Model updates:
+Gemini 1.5 Pro
+(
+gemini-1.5-pro-001
+) is generally available (GA).
+Gemini 1.5 Flash
+(
+gemini-1.5-flash-001
+) is generally available (GA).
+May 14, 2024
+API updates:
+Introduced a 2M context window for Gemini 1.5 Pro (waitlist).
+Introduced pay-as-you-go
+billing
+for Gemini 1.0
+Pro, with Gemini 1.5 Pro and Gemini 1.5 Flash billing coming soon.
+Introduced increased rate limits for the upcoming paid tier of Gemini 1.5
+Pro.
+Added built-in video support to the
+File API
+.
+Added plain text support to the
+File API
+.
+Added support for parallel function calling, which returns more than one
+call at a time.
+May 10, 2024
+Model updates:
+Released
+Gemini 1.5 Flash
+(
+gemini-1.5-flash-latest
+) in preview.
+April 9, 2024
+Model updates:
+Released
+Gemini 1.5 Pro
+(
+gemini-1.5-pro-latest
+) in preview.
+Released a new text embedding model,
+text-embeddings-004
+, which supports
+elastic embedding
+sizes under 768.
+API updates:
+Released the
+File API
+for temporarily storing
+media files for use in prompting.
+Added support for prompting with text, image, and audio data, also
+known as
+multimodal
+prompting. To learn more, see
+Prompting with media
+.
+Released
+System instructions
+in
+beta.
+Added
+Function calling mode
+,
+which defines the execution behavior for function calling.
+Added support for the
+response_mime_type
+configuration option, which lets
+you request responses in
+JSON format
+.
+March 19, 2024
+Model updates:
+Added support for
+tuning Gemini 1.0 Pro
+in Google AI Studio or with the Gemini API.
+December 13 2023
+Model updates:
+gemini-pro: New text model for a wide variety of tasks. Balances capability
+and efficiency.
+gemini-pro-vision: New multimodal model for a wide variety of tasks.
+Balances capability and efficiency.
+embedding-001: New embeddings model.
+aqa: A new specially tuned model that is trained to answer questions
+  using text passages for grounding generated answers.
+See
+Gemini models
+for more details.
+API version updates:
+v1: The stable API channel.
+v1beta: Beta channel. This channel has features that may be under
+development.
+See
+the API versions topic
+for more details.
+API updates:
+GenerateContent
+is a single unified endpoint for chat and text.
+Streaming available through the
+StreamGenerateContent
+method.
+Multimodal capability: Image is a new supported modality
+New beta features:
+Function Calling
+Semantic Retriever
+Attributed Question Answering (AQA)
+Updated candidate count: Gemini models only return 1 candidate.
+Different Safety Settings and SafetyRating categories. See
+safety settings
+for more details.
+Tuning models is not yet supported for Gemini models (Work in progress).

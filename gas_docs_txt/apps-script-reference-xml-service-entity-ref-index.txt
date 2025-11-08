@@ -1,0 +1,224 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/entity-ref/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+EntityRef represents an XML EntityReference node.
+It provides methods to get and set the name, public ID, and system ID of the node.
+You can detach an EntityRef node from its parent element.
+You can get the text value of all child nodes.
+Entity
+Ref
+A representation of an XML
+Entity
+Reference
+node.
+Methods
+Method
+Return type
+Brief description
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Name()
+String
+Gets the name of the
+Entity
+Reference
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Public
+Id()
+String
+Gets the public ID of the
+Entity
+Reference
+node.
+get
+System
+Id()
+String
+Gets the system ID of the
+Entity
+Reference
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Name(name)
+Entity
+Ref
+Sets the name of the
+Entity
+Reference
+node.
+set
+Public
+Id(id)
+Entity
+Ref
+Sets the public ID of the
+Entity
+Reference
+node.
+set
+System
+Id(id)
+Entity
+Ref
+Sets the system ID of the
+Entity
+Reference
+node.
+Detailed documentation
+detach()
+Detaches the node from its parent
+Element
+node. If the node does not have a parent,
+this method has no effect.
+Return
+Content
+— the detached node
+get
+Name()
+Gets the name of the
+Entity
+Reference
+node.
+Return
+String
+— the name of the
+Entity
+Reference
+node
+get
+Parent
+Element()
+Gets the node's parent
+Element
+node. If the node does not have a parent, this method
+returns
+null
+.
+Return
+Element
+— the parent
+Element
+node
+get
+Public
+Id()
+Gets the public ID of the
+Entity
+Reference
+node. If the node does not have a public ID,
+this method returns
+null
+.
+Return
+String
+— the public ID of the
+Entity
+Reference
+node, or
+null
+if it has none
+get
+System
+Id()
+Gets the system ID of the
+Entity
+Reference
+node. If the node does not have a system ID,
+this method returns
+null
+.
+Return
+String
+— the system ID of the
+Entity
+Reference
+node, or
+null
+if it has none
+get
+Value()
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Return
+String
+— the text value of all nodes that are direct or indirect children of the node
+set
+Name(name)
+Sets the name of the
+Entity
+Reference
+node.
+Parameters
+Name
+Type
+Description
+name
+String
+the name to set
+Return
+Entity
+Ref
+— the
+Entity
+Reference
+node, for chaining
+set
+Public
+Id(id)
+Sets the public ID of the
+Entity
+Reference
+node.
+Parameters
+Name
+Type
+Description
+id
+String
+the public ID to set
+Return
+Entity
+Ref
+— the
+Entity
+Reference
+node, for chaining
+set
+System
+Id(id)
+Sets the system ID of the
+Entity
+Reference
+node.
+Parameters
+Name
+Type
+Description
+id
+String
+the system ID to set
+Return
+Entity
+Ref
+— the
+Entity
+Reference
+node, for chaining

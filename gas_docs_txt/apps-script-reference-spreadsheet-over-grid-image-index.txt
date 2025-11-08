@@ -1,0 +1,716 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/over-grid-image/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+OverGridImage represents an image placed over the grid in a spreadsheet.
+You can assign a function to an OverGridImage and retrieve or set its alt text, anchor cell, and dimensions.
+Methods are available to remove or replace an OverGridImage with a new image from a BlobSource or URL.
+The deprecated getUrl() method for OverGridImage may not return a URL for newly inserted images.
+Over
+Grid
+Image
+Represents an image over the grid in a spreadsheet.
+Methods
+Method
+Return type
+Brief description
+assign
+Script(functionName)
+Over
+Grid
+Image
+Assigns the function with the specified function name to this image.
+get
+Alt
+Text
+Description()
+String
+Returns the alt text description for this image.
+get
+Alt
+Text
+Title()
+String
+Returns the alt text title for this image.
+get
+Anchor
+Cell()
+Range
+Returns the cell where an image is anchored.
+get
+Anchor
+Cell
+XOffset()
+Integer
+Returns the horizontal pixel offset from the anchor cell.
+get
+Anchor
+Cell
+YOffset()
+Integer
+Returns the vertical pixel offset from the anchor cell.
+get
+Height()
+Integer
+Returns the actual height of this image in pixels.
+get
+Inherent
+Height()
+Integer
+Returns the inherent height of this image in pixels.
+get
+Inherent
+Width()
+Integer
+Returns the inherent height of this image in pixels.
+get
+Script()
+String
+Returns the name of the function assigned to this image.
+get
+Sheet()
+Sheet
+Returns the sheet this image appears on.
+get
+Width()
+Integer
+Returns the actual width of this image in pixels.
+remove()
+void
+Deletes this image from the spreadsheet.
+replace(blob)
+Over
+Grid
+Image
+Replaces this image with the one specified by the provided
+Blob
+Source
+.
+replace(url)
+Over
+Grid
+Image
+Replaces this image with the one from the specified URL.
+reset
+Size()
+Over
+Grid
+Image
+Resets this image to its inherent dimensions.
+set
+Alt
+Text
+Description(description)
+Over
+Grid
+Image
+Sets the alt-text description for this image.
+set
+Alt
+Text
+Title(title)
+Over
+Grid
+Image
+Sets the alt text title for this image.
+set
+Anchor
+Cell(cell)
+Over
+Grid
+Image
+Sets the cell where an image is anchored.
+set
+Anchor
+Cell
+XOffset(offset)
+Over
+Grid
+Image
+Sets the horizontal pixel offset from the anchor cell.
+set
+Anchor
+Cell
+YOffset(offset)
+Over
+Grid
+Image
+Sets the vertical pixel offset from the anchor cell.
+set
+Height(height)
+Over
+Grid
+Image
+Sets the actual height of this image in pixels.
+set
+Width(width)
+Over
+Grid
+Image
+Sets the actual width of this image in pixels.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+Url()
+String
+Gets the image's source URL.
+Detailed documentation
+assign
+Script(functionName)
+Assigns the function with the specified function name to this image.
+Parameters
+Name
+Type
+Description
+function
+Name
+String
+The name of the function being specified. This must be a public top level
+    function, not one ending in underscore such as
+private
+Function_
+.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Alt
+Text
+Description()
+Returns the alt text description for this image.
+Return
+String
+— The alt text description.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Alt
+Text
+Title()
+Returns the alt text title for this image.
+Return
+String
+— The alt text title.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Anchor
+Cell()
+Returns the cell where an image is anchored.
+Return
+Range
+— The anchor cell.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Anchor
+Cell
+XOffset()
+Returns the horizontal pixel offset from the anchor cell.
+Return
+Integer
+— The horizontal pixel offset.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Anchor
+Cell
+YOffset()
+Returns the vertical pixel offset from the anchor cell.
+Return
+Integer
+— The vertical pixel offset.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Height()
+Returns the actual height of this image in pixels.
+// Logs the height of all images in a spreadsheet
+const
+images
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+().
+getImages
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+images
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+images
+[
+i
+].
+getHeight
+());
+}
+Return
+Integer
+— The height of the image in pixels.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Inherent
+Height()
+Returns the inherent height of this image in pixels.
+Return
+Integer
+— The inherent height in pixels.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Inherent
+Width()
+Returns the inherent height of this image in pixels.
+Return
+Integer
+— The inherent width in pixels.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Script()
+Returns the name of the function assigned to this image.
+Return
+String
+— The name of the function.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Sheet()
+Returns the sheet this image appears on.
+// Logs the parent sheet of all images in a spreadsheet
+const
+images
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+().
+getImages
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+images
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+images
+[
+i
+].
+getSheet
+());
+}
+Return
+Sheet
+— The sheet the image appears on.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Width()
+Returns the actual width of this image in pixels.
+// Logs the width of all images in a spreadsheet
+const
+images
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+().
+getImages
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+images
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+images
+[
+i
+].
+getWidth
+());
+}
+Return
+Integer
+— The width of the image in pixels.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Deletes this image from the spreadsheet. Any further operation on the image results in a script
+error.
+// Deletes all images in a spreadsheet
+const
+images
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+().
+getImages
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+images
+.
+length
+;
+i
+++
+)
+{
+images
+[
+i
+].
+remove
+();
+}
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+replace(blob)
+Replaces this image with the one specified by the provided
+Blob
+Source
+. The maximum
+supported blob size is 2MB.
+Parameters
+Name
+Type
+Description
+blob
+Blob
+Source
+The new image as a Blob.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+replace(url)
+Replaces this image with the one from the specified URL.
+Parameters
+Name
+Type
+Description
+url
+String
+The URL of the new image.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+reset
+Size()
+Resets this image to its inherent dimensions.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Alt
+Text
+Description(description)
+Sets the alt-text description for this image.
+Parameters
+Name
+Type
+Description
+description
+String
+The new alt text description for the image.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Alt
+Text
+Title(title)
+Sets the alt text title for this image.
+Parameters
+Name
+Type
+Description
+title
+String
+The new alt text title for the image.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Anchor
+Cell(cell)
+Sets the cell where an image is anchored.
+Parameters
+Name
+Type
+Description
+cell
+Range
+The new anchor cell.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Anchor
+Cell
+XOffset(offset)
+Sets the horizontal pixel offset from the anchor cell.
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The new horizonal pixel offset.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Anchor
+Cell
+YOffset(offset)
+Sets the vertical pixel offset from the anchor cell.
+Parameters
+Name
+Type
+Description
+offset
+Integer
+The new vertical pixel offset.
+Return
+Over
+Grid
+Image
+— This image, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Height(height)
+Sets the actual height of this image in pixels.
+Parameters
+Name
+Type
+Description
+height
+Integer
+The desired height in pixels.
+Return
+Over
+Grid
+Image
+— The image for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Width(width)
+Sets the actual width of this image in pixels.
+Parameters
+Name
+Type
+Description
+width
+Integer
+The desired width in pixels.
+Return
+Over
+Grid
+Image
+— The image for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+Deprecated methods
+get
+Url()
+Deprecated.
+For most newly inserted images, the source URL is unavailable.
+Gets the image's source URL. Returns an empty string if the URL is unavailable. For most newly
+inserted images, the source URL is unavailable regardless how the image is inserted.
+Return
+String
+— The image's source URL if available; returns an empty string otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

@@ -1,0 +1,6 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/widget.html
+
+Widget
+Base class for all widgets that can be added to a
+Card
+.

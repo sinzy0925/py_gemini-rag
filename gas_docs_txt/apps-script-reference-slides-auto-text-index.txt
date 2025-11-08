@@ -1,0 +1,94 @@
+Source Path: gas_docs_html/apps-script/reference/slides/auto-text/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+AutoText is a dynamic text element that changes over time, like a slide number.
+The
+getAutoTextType()
+method returns the type of auto text.
+The
+getIndex()
+method returns the index of the auto text.
+The
+getRange()
+method returns a
+TextRange
+spanning the auto text.
+These methods require specific authorization scopes.
+Auto
+Text
+An element of text that is dynamically replaced with content that can change over time, such as a
+slide number.
+Methods
+Method
+Return type
+Brief description
+get
+Auto
+Text
+Type()
+Auto
+Text
+Type
+Returns the type of auto text.
+get
+Index()
+Integer
+Returns the index of the auto text.
+get
+Range()
+Text
+Range
+Returns a
+Text
+Range
+spanning the auto text.
+Detailed documentation
+get
+Auto
+Text
+Type()
+Returns the type of auto text. Returns
+null
+if the auto text has been deleted.
+Return
+Auto
+Text
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Index()
+Returns the index of the auto text. Returns
+null
+if the auto text has been deleted.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Range()
+Returns a
+Text
+Range
+spanning the auto text. Returns
+null
+if the auto text has
+been deleted.
+Return
+Text
+Range
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

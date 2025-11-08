@@ -1,0 +1,369 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-spec/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DataSourceSpec allows access to the general settings of an existing data source spec.
+Use
+as...()
+methods to access data source specs for specific types like BigQuery or Looker.
+This class should only be used with data connected to a database.
+You can create a
+DataSourceSpecBuilder
+based on an existing spec's settings using the
+copy()
+method.
+You can retrieve the parameters and the type of the data source spec using
+getParameters()
+and
+getType()
+.
+Data
+Source
+Spec
+Access the general settings of an existing data source spec. To access data source spec for
+certain type, use
+as...()
+method. To create a new data source spec, use
+Spreadsheet
+App.newDataSourceSpec()
+.
+Only use this class with data that's connected to a database.
+This example shows how to get information from a BigQuery data source spec.
+const
+dataSourceTable
+=
+SpreadsheetApp
+.
+getActive
+()
+.
+getSheetByName
+(
+'Data Sheet 1'
+)
+.
+getDataSourceTables
+()[
+0
+];
+const
+spec
+=
+dataSourceTable
+.
+getDataSource
+().
+getSpec
+();
+if
+(
+spec
+.
+getType
+()
+===
+SpreadsheetApp
+.
+DataSourceType
+.
+BIGQUERY
+)
+{
+const
+bqSpec
+=
+spec
+.
+asBigQuery
+();
+Logger
+.
+log
+(
+'Project ID: %s\n'
+,
+bqSpec
+.
+getProjectId
+());
+Logger
+.
+log
+(
+'Raw query string: %s\n'
+,
+bqSpec
+.
+getRawQuery
+());
+}
+This example shows how to get information from a Looker data source spec. Using
+as
+Looker()
+returns a
+Looker
+Data
+Source
+Spec
+object.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+().
+asLooker
+();
+if
+(
+spec
+.
+getType
+()
+===
+SpreadsheetApp
+.
+DataSourceType
+.
+LOOKER
+)
+{
+const
+lookerSpec
+=
+spec
+.
+asLooker
+();
+Logger
+.
+log
+(
+'Looker instance URL: %s\n'
+,
+lookerSpec
+.
+getInstanceUrl
+());
+}
+Methods
+Method
+Return type
+Brief description
+as
+Big
+Query()
+Big
+Query
+Data
+Source
+Spec
+Gets the spec for BigQuery data source.
+as
+Looker()
+Looker
+Data
+Source
+Spec
+Gets the spec for Looker data source.
+copy()
+Data
+Source
+Spec
+Builder
+Creates a
+Data
+Source
+Spec
+Builder
+based on this data source's settings.
+get
+Parameters()
+Data
+Source
+Parameter[]
+Gets the parameters of the data source.
+get
+Type()
+Data
+Source
+Type
+Gets the type of the data source.
+Detailed documentation
+as
+Big
+Query()
+Gets the spec for BigQuery data source.
+Return
+Big
+Query
+Data
+Source
+Spec
+— The BigQuery data source spec.
+as
+Looker()
+Gets the spec for Looker data source.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+().
+asLooker
+();
+Return
+Looker
+Data
+Source
+Spec
+— The Looker data source spec.
+copy()
+Creates a
+Data
+Source
+Spec
+Builder
+based on this data source's settings.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+newSpec
+=
+spec
+.
+copy
+();
+Return
+Data
+Source
+Spec
+Builder
+— The builder.
+get
+Parameters()
+Gets the parameters of the data source.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+parameters
+=
+spec
+.
+getParameters
+();
+This method is only available for BigQuery data sources.
+Return
+Data
+Source
+Parameter[]
+— The parameter list.
+get
+Type()
+Gets the type of the data source.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+type
+=
+spec
+.
+getType
+();
+Return
+Data
+Source
+Type
+— The data source type.

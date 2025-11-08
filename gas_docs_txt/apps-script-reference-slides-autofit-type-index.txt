@@ -1,0 +1,24 @@
+Source Path: gas_docs_html/apps-script/reference/slides/autofit-type/index.html
+
+Autofit
+Type
+The autofit types.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.AutofitType.TEXT_AUTOFIT
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+An autofit type that is not supported.
+NONE
+Enum
+Autofit isn't applied.
+TEXT_AUTOFIT
+Enum
+Shrinks the text on overflow.
+SHAPE_AUTOFIT
+Enum
+Resizes the shape to fit the text.

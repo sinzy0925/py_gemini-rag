@@ -1,0 +1,2035 @@
+Source Path: gas_docs_html/apps-script/reference/charts/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Charts service facilitates server-side chart creation using Google Charts Tools, whereas client-side rendering utilizes the Google Charts API.
+An example is provided illustrating the process of creating a data table, populating an area chart, and displaying it as an image.
+The documentation details various classes and methods for building different chart types such as Area, Bar, Column, Line, Pie, and Scatter charts, as well as data table and text style objects.
+Supported chart types are listed, including Timeline, Area, Bar, Bubble, Candlestick, Column, Combo, Gauge, Geo, Histogram, Radar, Line, Org, Pie, Scatter, Sparkline, Stepped Area, Table, Treemap, and Waterfall charts.
+Enums are defined for handling hidden data, merging data ranges, specifying column types, setting curve and point styles, defining legend positions, handling string matching in filters, setting orientation, and specifying picker values layout.
+Charts
+This service allows users to create charts using
+Google Charts Tools
+and render them server side.
+If you want to render charts in a web browser, use the
+Google Charts API
+instead.
+This example creates a basic data table, populates an area chart with the data,
+and adds it to a web page as an image:
+function
+doGet
+()
+{
+var
+data
+=
+Charts
+.
+newDataTable
+()
+.
+addColumn
+(
+Charts
+.
+ColumnType
+.
+STRING
+,
+'Month'
+)
+.
+addColumn
+(
+Charts
+.
+ColumnType
+.
+NUMBER
+,
+'In Store'
+)
+.
+addColumn
+(
+Charts
+.
+ColumnType
+.
+NUMBER
+,
+'Online'
+)
+.
+addRow
+([
+'January'
+,
+10
+,
+1
+])
+.
+addRow
+([
+'February'
+,
+12
+,
+1
+])
+.
+addRow
+([
+'March'
+,
+20
+,
+2
+])
+.
+addRow
+([
+'April'
+,
+25
+,
+3
+])
+.
+addRow
+([
+'May'
+,
+30
+,
+4
+])
+.
+build
+();
+var
+chart
+=
+Charts
+.
+newAreaChart
+()
+.
+setDataTable
+(
+data
+)
+.
+setStacked
+()
+.
+setRange
+(
+0
+,
+40
+)
+.
+setTitle
+(
+'Sales per Month'
+)
+.
+build
+();
+var
+htmlOutput
+=
+HtmlService
+.
+createHtmlOutput
+()
+.
+setTitle
+(
+'My Chart'
+);
+var
+imageData
+=
+Utilities
+.
+base64Encode
+(
+chart
+.
+getAs
+(
+'image/png'
+)
+.
+getBytes
+());
+var
+imageUrl
+=
+"data:image/png;base64,"
++
+encodeURI
+(
+imageData
+);
+htmlOutput
+.
+append
+(
+"Render chart server side: <br/>"
+);
+htmlOutput
+.
+append
+(
+"<img border=
+\"
+1
+\"
+src=
+\"
+"
++
+imageUrl
++
+"
+\"
+>
+"
+);
+return
+htmlOutput
+;
+}
+Classes
+Name
+Brief description
+Area
+Chart
+Builder
+Builder for area charts.
+Bar
+Chart
+Builder
+Builder for bar charts.
+Chart
+A Chart object, which can be converted to a static image.
+Chart
+Hidden
+Dimension
+Strategy
+An enumeration of how hidden dimensions in a source are expressed in a chart.
+Chart
+Merge
+Strategy
+An enumeration of how multiple ranges in the source are expressed in a chart.
+Chart
+Options
+Exposes options currently configured for a
+Chart
+, such as height, color, etc.
+Chart
+Type
+Chart types supported by the Charts service.
+Charts
+Entry point for creating Charts in scripts.
+Column
+Chart
+Builder
+Builder for column charts.
+Column
+Type
+An enumeration of the valid data types for columns in a
+Data
+Table
+.
+Curve
+Style
+An enumeration of the styles for curves in a chart.
+Data
+Table
+A Data Table to be used in charts.
+Data
+Table
+Builder
+Builder of DataTable objects.
+Data
+Table
+Source
+Interface for objects that can represent their data as a
+Data
+Table
+.
+Data
+View
+Definition
+A data view definition for visualizing chart data.
+Data
+View
+Definition
+Builder
+Builder for
+Data
+View
+Definition
+objects.
+Line
+Chart
+Builder
+Builder for line charts.
+Match
+Type
+An enumeration of how a string value should be matched.
+Number
+Range
+Filter
+Builder
+A builder for number range filter controls.
+Orientation
+An enumeration of the orientation of an object.
+Picker
+Values
+Layout
+An enumeration of how to display selected values in picker widget.
+Pie
+Chart
+Builder
+A builder for pie charts.
+Point
+Style
+An enumeration of the styles of points in a line.
+Position
+An enumeration of legend positions within a chart.
+Scatter
+Chart
+Builder
+Builder for scatter charts.
+String
+Filter
+Builder
+A builder for string filter controls.
+Table
+Chart
+Builder
+A builder for table charts.
+Text
+Style
+A text style configuration object.
+Text
+Style
+Builder
+A builder used to create
+Text
+Style
+objects.
+Area
+Chart
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+reverse
+Categories()
+Area
+Chart
+Builder
+Reverses the drawing of series in the domain axis.
+set
+Background
+Color(cssValue)
+Area
+Chart
+Builder
+Sets the background color for the chart.
+set
+Colors(cssValues)
+Area
+Chart
+Builder
+Sets the colors for the lines in the chart.
+set
+Data
+Source
+Url(url)
+Area
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Area
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Area
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Area
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Area
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+Legend
+Position(position)
+Area
+Chart
+Builder
+Sets the position of the legend with respect to the chart.
+set
+Legend
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the text style of the chart legend.
+set
+Option(option, value)
+Area
+Chart
+Builder
+Sets advanced options for this chart.
+set
+Point
+Style(style)
+Area
+Chart
+Builder
+Sets the style for points in the line.
+set
+Range(start, end)
+Area
+Chart
+Builder
+Sets the range for the chart.
+set
+Stacked()
+Area
+Chart
+Builder
+Uses stacked lines, meaning that line and bar values are stacked (accumulated).
+set
+Title(chartTitle)
+Area
+Chart
+Builder
+Sets the title of the chart.
+set
+Title
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the text style of the chart title.
+set
+XAxis
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the horizontal axis text style.
+set
+XAxis
+Title(title)
+Area
+Chart
+Builder
+Adds a title to the horizontal axis.
+set
+XAxis
+Title
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the horizontal axis title text style.
+set
+YAxis
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the vertical axis text style.
+set
+YAxis
+Title(title)
+Area
+Chart
+Builder
+Adds a title to the vertical axis.
+set
+YAxis
+Title
+Text
+Style(textStyle)
+Area
+Chart
+Builder
+Sets the vertical axis title text style.
+use
+Log
+Scale()
+Area
+Chart
+Builder
+Makes the range axis into a logarithmic scale (requires all values to be positive).
+Bar
+Chart
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+reverse
+Categories()
+Bar
+Chart
+Builder
+Reverses the drawing of series in the domain axis.
+reverse
+Direction()
+Bar
+Chart
+Builder
+Reverses the direction in which the bars grow along the horizontal axis.
+set
+Background
+Color(cssValue)
+Bar
+Chart
+Builder
+Sets the background color for the chart.
+set
+Colors(cssValues)
+Bar
+Chart
+Builder
+Sets the colors for the lines in the chart.
+set
+Data
+Source
+Url(url)
+Bar
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Bar
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Bar
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Bar
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Bar
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+Legend
+Position(position)
+Bar
+Chart
+Builder
+Sets the position of the legend with respect to the chart.
+set
+Legend
+Text
+Style(textStyle)
+Bar
+Chart
+Builder
+Sets the text style of the chart legend.
+set
+Option(option, value)
+Bar
+Chart
+Builder
+Sets advanced options for this chart.
+set
+Range(start, end)
+Bar
+Chart
+Builder
+Sets the range for the chart.
+set
+Stacked()
+Bar
+Chart
+Builder
+Uses stacked lines, meaning that line and bar values are stacked (accumulated).
+set
+Title(chartTitle)
+Bar
+Chart
+Builder
+Sets the title of the chart.
+set
+Title
+Text
+Style(textStyle)
+Bar
+Chart
+Builder
+Sets the text style of the chart title.
+set
+XAxis
+Text
+Style(textStyle)
+Bar
+Chart
+Builder
+Sets the horizontal axis text style.
+set
+XAxis
+Title(title)
+Bar
+Chart
+Builder
+Adds a title to the horizontal axis.
+set
+XAxis
+Title
+Text
+Style(textStyle)
+Bar
+Chart
+Builder
+Sets the horizontal axis title text style.
+set
+YAxis
+Text
+Style(textStyle)
+Bar
+Chart
+Builder
+Sets the vertical axis text style.
+set
+YAxis
+Title(title)
+Bar
+Chart
+Builder
+Adds a title to the vertical axis.
+set
+YAxis
+Title
+Text
+Style(textStyle)
+Bar
+Chart
+Builder
+Sets the vertical axis title text style.
+use
+Log
+Scale()
+Bar
+Chart
+Builder
+Makes the range axis into a logarithmic scale (requires all values to be positive).
+Chart
+Methods
+Method
+Return type
+Brief description
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Options()
+Chart
+Options
+Returns the options for this chart, such as height, colors, and axes.
+Chart
+Hidden
+Dimension
+Strategy
+Properties
+Property
+Type
+Description
+IGNORE_BOTH
+Enum
+Default; charts skips any hidden columns and hidden rows.
+IGNORE_ROWS
+Enum
+Charts skips hidden rows only.
+IGNORE_COLUMNS
+Enum
+Charts skips hidden columns only.
+SHOW_BOTH
+Enum
+Charts does not skip hidden columns or hidden rows.
+Chart
+Merge
+Strategy
+Properties
+Property
+Type
+Description
+MERGE_COLUMNS
+Enum
+Default.
+MERGE_ROWS
+Enum
+Charts merges the rows of multiple ranges.
+Chart
+Options
+Methods
+Method
+Return type
+Brief description
+get(option)
+Object
+Returns a configured option for this chart.
+get
+Or
+Default(option)
+Object
+Returns a configured option for this chart.
+Chart
+Type
+Properties
+Property
+Type
+Description
+TIMELINE
+Enum
+Timeline chart.
+AREA
+Enum
+Area chart
+BAR
+Enum
+Bar chart
+BUBBLE
+Enum
+Bubble chart.
+CANDLESTICK
+Enum
+Candlestick chart.
+COLUMN
+Enum
+Column chart
+COMBO
+Enum
+Combo chart
+GAUGE
+Enum
+Gauge chart.
+GEO
+Enum
+Geo chart.
+HISTOGRAM
+Enum
+Histogram
+RADAR
+Enum
+Radar chart.
+LINE
+Enum
+Line chart
+ORG
+Enum
+Org chart.
+PIE
+Enum
+Pie chart
+SCATTER
+Enum
+Scatter chart
+SPARKLINE
+Enum
+Sparkline chart.
+STEPPED_AREA
+Enum
+Stepped area chart.
+TABLE
+Enum
+Table chart
+TREEMAP
+Enum
+Treemap chart.
+WATERFALL
+Enum
+Waterfall chart.
+Charts
+Properties
+Property
+Type
+Description
+Chart
+Hidden
+Dimension
+Strategy
+Chart
+Hidden
+Dimension
+Strategy
+An enumeration of how hidden dimensions in a source are expressed in a chart.
+Chart
+Merge
+Strategy
+Chart
+Merge
+Strategy
+An enumeration of how multiple ranges in the source are expressed in a chart.
+Chart
+Type
+Chart
+Type
+An enumeration of chart types supported by the Charts service.
+Column
+Type
+Column
+Type
+An enumeration of the valid data types for columns in a
+Data
+Table
+.
+Curve
+Style
+Curve
+Style
+An enumeration of the styles for curves in a chart.
+Point
+Style
+Point
+Style
+An enumeration of the styles of points in a line.
+Position
+Position
+An enumeration of legend positions within a chart.
+Methods
+Method
+Return type
+Brief description
+new
+Area
+Chart()
+Area
+Chart
+Builder
+Starts building an area chart, as described in the
+Google Chart
+Tools
+documentation.
+new
+Bar
+Chart()
+Bar
+Chart
+Builder
+Starts building a bar chart, as described in the
+Google Chart
+Tools
+documentation.
+new
+Column
+Chart()
+Column
+Chart
+Builder
+Starts building a column chart, as described in the
+Google Chart
+Tools
+documentation.
+new
+Data
+Table()
+Data
+Table
+Builder
+Creates an empty data table, which can have its values set manually.
+new
+Data
+View
+Definition()
+Data
+View
+Definition
+Builder
+Creates a new data view definition.
+new
+Line
+Chart()
+Line
+Chart
+Builder
+Starts building a line chart, as described in the
+Google Chart
+Tools
+documentation.
+new
+Pie
+Chart()
+Pie
+Chart
+Builder
+Starts building a pie chart, as described in the
+Google Chart
+Tools
+documentation.
+new
+Scatter
+Chart()
+Scatter
+Chart
+Builder
+Starts building a scatter chart, as described in the
+Google Chart
+Tools
+documentation.
+new
+Table
+Chart()
+Table
+Chart
+Builder
+Starts building a table chart, as described in the
+Google Chart
+Tools
+documentation.
+new
+Text
+Style()
+Text
+Style
+Builder
+Creates a new text style builder.
+Column
+Chart
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+reverse
+Categories()
+Column
+Chart
+Builder
+Reverses the drawing of series in the domain axis.
+set
+Background
+Color(cssValue)
+Column
+Chart
+Builder
+Sets the background color for the chart.
+set
+Colors(cssValues)
+Column
+Chart
+Builder
+Sets the colors for the lines in the chart.
+set
+Data
+Source
+Url(url)
+Column
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Column
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Column
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Column
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Column
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+Legend
+Position(position)
+Column
+Chart
+Builder
+Sets the position of the legend with respect to the chart.
+set
+Legend
+Text
+Style(textStyle)
+Column
+Chart
+Builder
+Sets the text style of the chart legend.
+set
+Option(option, value)
+Column
+Chart
+Builder
+Sets advanced options for this chart.
+set
+Range(start, end)
+Column
+Chart
+Builder
+Sets the range for the chart.
+set
+Stacked()
+Column
+Chart
+Builder
+Uses stacked lines, meaning that line and bar values are stacked (accumulated).
+set
+Title(chartTitle)
+Column
+Chart
+Builder
+Sets the title of the chart.
+set
+Title
+Text
+Style(textStyle)
+Column
+Chart
+Builder
+Sets the text style of the chart title.
+set
+XAxis
+Text
+Style(textStyle)
+Column
+Chart
+Builder
+Sets the horizontal axis text style.
+set
+XAxis
+Title(title)
+Column
+Chart
+Builder
+Adds a title to the horizontal axis.
+set
+XAxis
+Title
+Text
+Style(textStyle)
+Column
+Chart
+Builder
+Sets the horizontal axis title text style.
+set
+YAxis
+Text
+Style(textStyle)
+Column
+Chart
+Builder
+Sets the vertical axis text style.
+set
+YAxis
+Title(title)
+Column
+Chart
+Builder
+Adds a title to the vertical axis.
+set
+YAxis
+Title
+Text
+Style(textStyle)
+Column
+Chart
+Builder
+Sets the vertical axis title text style.
+use
+Log
+Scale()
+Column
+Chart
+Builder
+Makes the range axis into a logarithmic scale (requires all values to be positive).
+Column
+Type
+Properties
+Property
+Type
+Description
+DATE
+Enum
+Corresponds to date values.
+NUMBER
+Enum
+Corresponds to number values.
+STRING
+Enum
+Corresponds to string values.
+Curve
+Style
+Properties
+Property
+Type
+Description
+NORMAL
+Enum
+Straight lines without curve.
+SMOOTH
+Enum
+The angles of the line are smoothed.
+Data
+Table
+Data
+Table
+Builder
+Methods
+Method
+Return type
+Brief description
+add
+Column(type, label)
+Data
+Table
+Builder
+Adds a column to the data table.
+add
+Row(values)
+Data
+Table
+Builder
+Adds a row to the data table.
+build()
+Data
+Table
+Builds and returns a data table.
+set
+Value(row, column, value)
+Data
+Table
+Builder
+Sets a specific value in the table.
+Data
+Table
+Source
+Methods
+Method
+Return type
+Brief description
+get
+Data
+Table()
+Data
+Table
+Return the data inside this object as a DataTable.
+Data
+View
+Definition
+Data
+View
+Definition
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Data
+View
+Definition
+Builds and returns the data view definition object that was built using this builder.
+set
+Columns(columns)
+Data
+View
+Definition
+Builder
+Sets the indexes of the columns to include in the data view as well as specifying role-column
+information.
+Line
+Chart
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+reverse
+Categories()
+Line
+Chart
+Builder
+Reverses the drawing of series in the domain axis.
+set
+Background
+Color(cssValue)
+Line
+Chart
+Builder
+Sets the background color for the chart.
+set
+Colors(cssValues)
+Line
+Chart
+Builder
+Sets the colors for the lines in the chart.
+set
+Curve
+Style(style)
+Line
+Chart
+Builder
+Sets the style to use for curves in the chart.
+set
+Data
+Source
+Url(url)
+Line
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Line
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Line
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Line
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Line
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+Legend
+Position(position)
+Line
+Chart
+Builder
+Sets the position of the legend with respect to the chart.
+set
+Legend
+Text
+Style(textStyle)
+Line
+Chart
+Builder
+Sets the text style of the chart legend.
+set
+Option(option, value)
+Line
+Chart
+Builder
+Sets advanced options for this chart.
+set
+Point
+Style(style)
+Line
+Chart
+Builder
+Sets the style for points in the line.
+set
+Range(start, end)
+Line
+Chart
+Builder
+Sets the range for the chart.
+set
+Title(chartTitle)
+Line
+Chart
+Builder
+Sets the title of the chart.
+set
+Title
+Text
+Style(textStyle)
+Line
+Chart
+Builder
+Sets the text style of the chart title.
+set
+XAxis
+Text
+Style(textStyle)
+Line
+Chart
+Builder
+Sets the horizontal axis text style.
+set
+XAxis
+Title(title)
+Line
+Chart
+Builder
+Adds a title to the horizontal axis.
+set
+XAxis
+Title
+Text
+Style(textStyle)
+Line
+Chart
+Builder
+Sets the horizontal axis title text style.
+set
+YAxis
+Text
+Style(textStyle)
+Line
+Chart
+Builder
+Sets the vertical axis text style.
+set
+YAxis
+Title(title)
+Line
+Chart
+Builder
+Adds a title to the vertical axis.
+set
+YAxis
+Title
+Text
+Style(textStyle)
+Line
+Chart
+Builder
+Sets the vertical axis title text style.
+use
+Log
+Scale()
+Line
+Chart
+Builder
+Makes the range axis into a logarithmic scale (requires all values to be positive).
+Match
+Type
+Properties
+Property
+Type
+Description
+EXACT
+Enum
+Match exact values only
+PREFIX
+Enum
+Match prefixes starting from the beginning of the value
+ANY
+Enum
+Match any substring
+Methods
+Method
+Return type
+Brief description
+get
+Name()
+String
+Returns the name of the match type to be used in the options JSON.
+Number
+Range
+Filter
+Builder
+Methods
+Method
+Return type
+Brief description
+set
+Max
+Value(maxValue)
+Number
+Range
+Filter
+Builder
+Sets the maximum allowed value for the range lower extent.
+set
+Min
+Value(minValue)
+Number
+Range
+Filter
+Builder
+Sets the minimum allowed value for the range lower extent.
+set
+Orientation(orientation)
+Number
+Range
+Filter
+Builder
+Sets the slider orientation.
+set
+Show
+Range
+Values(showRangeValues)
+Number
+Range
+Filter
+Builder
+Sets whether to have labels next to the slider displaying extents of the selected range.
+set
+Ticks(ticks)
+Number
+Range
+Filter
+Builder
+Sets the number of ticks (fixed positions in a range bar) a number range filter slider thumbs
+can fall in.
+Orientation
+Properties
+Property
+Type
+Description
+HORIZONTAL
+Enum
+Horizontal orientation.
+VERTICAL
+Enum
+Vertical orientation.
+Picker
+Values
+Layout
+Properties
+Property
+Type
+Description
+ASIDE
+Enum
+Selected values display in a single text line next to the value picker widget.
+BELOW
+Enum
+Selected values display in a single text line below the widget.
+BELOW_WRAPPING
+Enum
+Similar to below, but entries that cannot fit in the picker wrap to a new line.
+BELOW_STACKED
+Enum
+Selected values display in a column below the widget.
+Pie
+Chart
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+reverse
+Categories()
+Pie
+Chart
+Builder
+Reverses the drawing of series in the domain axis.
+set3D()
+Pie
+Chart
+Builder
+Sets the chart to be three-dimensional.
+set
+Background
+Color(cssValue)
+Pie
+Chart
+Builder
+Sets the background color for the chart.
+set
+Colors(cssValues)
+Pie
+Chart
+Builder
+Sets the colors for the lines in the chart.
+set
+Data
+Source
+Url(url)
+Pie
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Pie
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Pie
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Pie
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Pie
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+Legend
+Position(position)
+Pie
+Chart
+Builder
+Sets the position of the legend with respect to the chart.
+set
+Legend
+Text
+Style(textStyle)
+Pie
+Chart
+Builder
+Sets the text style of the chart legend.
+set
+Option(option, value)
+Pie
+Chart
+Builder
+Sets advanced options for this chart.
+set
+Title(chartTitle)
+Pie
+Chart
+Builder
+Sets the title of the chart.
+set
+Title
+Text
+Style(textStyle)
+Pie
+Chart
+Builder
+Sets the text style of the chart title.
+Point
+Style
+Properties
+Property
+Type
+Description
+NONE
+Enum
+Do not display line points.
+TINY
+Enum
+Use tiny line points.
+MEDIUM
+Enum
+Use medium sized line points.
+LARGE
+Enum
+Use large sized line points.
+HUGE
+Enum
+Use largest sized line points.
+Position
+Properties
+Property
+Type
+Description
+TOP
+Enum
+Above the chart.
+RIGHT
+Enum
+To the right of the chart.
+BOTTOM
+Enum
+Below the chart.
+NONE
+Enum
+No legend is displayed.
+Scatter
+Chart
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+set
+Background
+Color(cssValue)
+Scatter
+Chart
+Builder
+Sets the background color for the chart.
+set
+Colors(cssValues)
+Scatter
+Chart
+Builder
+Sets the colors for the lines in the chart.
+set
+Data
+Source
+Url(url)
+Scatter
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Scatter
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Scatter
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Scatter
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Scatter
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+Legend
+Position(position)
+Scatter
+Chart
+Builder
+Sets the position of the legend with respect to the chart.
+set
+Legend
+Text
+Style(textStyle)
+Scatter
+Chart
+Builder
+Sets the text style of the chart legend.
+set
+Option(option, value)
+Scatter
+Chart
+Builder
+Sets advanced options for this chart.
+set
+Point
+Style(style)
+Scatter
+Chart
+Builder
+Sets the style for points in the line.
+set
+Title(chartTitle)
+Scatter
+Chart
+Builder
+Sets the title of the chart.
+set
+Title
+Text
+Style(textStyle)
+Scatter
+Chart
+Builder
+Sets the text style of the chart title.
+set
+XAxis
+Log
+Scale()
+Scatter
+Chart
+Builder
+Makes the horizontal axis into a logarithmic scale (requires all values to be positive).
+set
+XAxis
+Range(start, end)
+Scatter
+Chart
+Builder
+Sets the range for the horizontal axis of the chart.
+set
+XAxis
+Text
+Style(textStyle)
+Scatter
+Chart
+Builder
+Sets the horizontal axis text style.
+set
+XAxis
+Title(title)
+Scatter
+Chart
+Builder
+Adds a title to the horizontal axis.
+set
+XAxis
+Title
+Text
+Style(textStyle)
+Scatter
+Chart
+Builder
+Sets the horizontal axis title text style.
+set
+YAxis
+Log
+Scale()
+Scatter
+Chart
+Builder
+Makes the vertical axis into a logarithmic scale (requires all values to be positive).
+set
+YAxis
+Range(start, end)
+Scatter
+Chart
+Builder
+Sets the range for the vertical axis of the chart.
+set
+YAxis
+Text
+Style(textStyle)
+Scatter
+Chart
+Builder
+Sets the vertical axis text style.
+set
+YAxis
+Title(title)
+Scatter
+Chart
+Builder
+Adds a title to the vertical axis.
+set
+YAxis
+Title
+Text
+Style(textStyle)
+Scatter
+Chart
+Builder
+Sets the vertical axis title text style.
+String
+Filter
+Builder
+Methods
+Method
+Return type
+Brief description
+set
+Case
+Sensitive(caseSensitive)
+String
+Filter
+Builder
+Sets whether matching should be case sensitive or not.
+set
+Match
+Type(matchType)
+String
+Filter
+Builder
+Sets whether the control should match exact values only (
+Match
+Type.EXACT
+), prefixes
+starting from the beginning of the value (
+Match
+Type.PREFIX
+), or any substring
+(
+Match
+Type.ANY
+).
+set
+Realtime
+Trigger(realtimeTrigger)
+String
+Filter
+Builder
+Sets whether the control should match any time a key is pressed or only when the input field
+'changes' (loss of focus or pressing the Enter key).
+Table
+Chart
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Chart
+Builds the chart.
+enable
+Paging(enablePaging)
+Table
+Chart
+Builder
+Sets whether to enable paging through the data.
+enable
+Paging(pageSize)
+Table
+Chart
+Builder
+Enables paging and sets the number of rows in each page.
+enable
+Paging(pageSize, startPage)
+Table
+Chart
+Builder
+Enables paging, sets the number of rows in each page and the first table page to display (page
+numbers are zero based).
+enable
+Rtl
+Table(rtlEnabled)
+Table
+Chart
+Builder
+Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing the
+column order of the table, so that column zero is the right-most column, and the last column is
+the left-most column.
+enable
+Sorting(enableSorting)
+Table
+Chart
+Builder
+Sets whether to sort columns when the user clicks a column heading.
+set
+Data
+Source
+Url(url)
+Table
+Chart
+Builder
+Sets the data source URL that is used to pull data in from an external source, such as Google
+Sheets.
+set
+Data
+Table(tableBuilder)
+Table
+Chart
+Builder
+Sets the data table to use for the chart using a DataTableBuilder.
+set
+Data
+Table(table)
+Table
+Chart
+Builder
+Sets the data table which contains the lines for the chart, as well as the X-axis labels.
+set
+Data
+View
+Definition(dataViewDefinition)
+Table
+Chart
+Builder
+Sets the data view definition to use for the chart.
+set
+Dimensions(width, height)
+Table
+Chart
+Builder
+Sets the dimensions for the chart.
+set
+First
+Row
+Number(number)
+Table
+Chart
+Builder
+Sets the row number for the first row in the data table.
+set
+Initial
+Sorting
+Ascending(column)
+Table
+Chart
+Builder
+Sets the index of the column according to which the table should be initially sorted
+(ascending).
+set
+Initial
+Sorting
+Descending(column)
+Table
+Chart
+Builder
+Sets the index of the column according to which the table should be initially sorted
+(descending).
+set
+Option(option, value)
+Table
+Chart
+Builder
+Sets advanced options for this chart.
+show
+Row
+Number
+Column(showRowNumber)
+Table
+Chart
+Builder
+Sets whether to show the row number as the first column of the table.
+use
+Alternating
+Row
+Style(alternate)
+Table
+Chart
+Builder
+Sets whether alternating color style is assigned to odd and even rows of a table chart.
+Text
+Style
+Methods
+Method
+Return type
+Brief description
+get
+Color()
+String
+Gets the color of the text style.
+get
+Font
+Name()
+String
+Gets the font name of the text style.
+get
+Font
+Size()
+Number
+Gets the font size of the text style.
+Text
+Style
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Text
+Style
+Builds and returns a text style configuration object that was built using this builder.
+set
+Color(cssValue)
+Text
+Style
+Builder
+Sets the color of the text style.
+set
+Font
+Name(fontName)
+Text
+Style
+Builder
+Sets the font name of the text style.
+set
+Font
+Size(fontSize)
+Text
+Style
+Builder
+Sets the font size of the text style.

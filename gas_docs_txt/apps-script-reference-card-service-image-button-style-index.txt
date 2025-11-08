@@ -1,0 +1,35 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/image-button-style/index.html
+
+Image
+Button
+Style
+An enum that specifies the style for
+Image
+Button
+.
+BORDERLESS
+is the default; it renders a simple image button with no border.
+FILLED
+buttons have a background color you can set with
+Image
+Button
+.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.ImageButtonStyle.BORDERLESS
+.
+Properties
+Property
+Type
+Description
+BORDERLESS
+Enum
+Image button with no border. Default.
+OUTLINED
+Enum
+Image button with clear background.
+FILLED
+Enum
+Image button with colored background.
+FILLED_TONAL
+Enum
+Image button with an alternative middle ground between filled and outlined buttons.

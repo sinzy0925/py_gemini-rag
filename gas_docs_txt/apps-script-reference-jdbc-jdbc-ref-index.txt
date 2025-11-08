@@ -1,0 +1,79 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-ref/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcRef is a JDBC
+Ref
+object.
+It has methods to get the base type name and the referenced object, as well as set the referenced object.
+Detailed documentation for its methods can be found in the
+java.sql.Ref
+class.
+Jdbc
+Ref
+A JDBC
+Ref
+. For documentation of this class, see
+java.sql.Ref
+.
+Methods
+Method
+Return type
+Brief description
+get
+Base
+Type
+Name()
+String
+For documentation of this method, see
+java.sql.Ref#getBaseTypeName()
+.
+get
+Object()
+Object
+For documentation of this method, see
+java.sql.Ref#getObject()
+.
+set
+Object(object)
+void
+For documentation of this method, see
+java.sql.Ref#setObject(Object)
+.
+Detailed documentation
+get
+Base
+Type
+Name()
+For documentation of this method, see
+java.sql.Ref#getBaseTypeName()
+.
+Return
+String
+— The fully-qualified SQL name of the SQL structured type this
+Jdbc
+Ref
+references.
+get
+Object()
+For documentation of this method, see
+java.sql.Ref#getObject()
+.
+Return
+Object
+— The object that this
+Jdbc
+Ref
+references.
+set
+Object(object)
+For documentation of this method, see
+java.sql.Ref#setObject(Object)
+.
+Parameters
+Name
+Type
+Description
+object
+Object
+The object to set as the refernence target.

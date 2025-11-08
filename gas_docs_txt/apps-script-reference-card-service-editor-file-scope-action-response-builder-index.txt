@@ -1,0 +1,109 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/editor-file-scope-action-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+EditorFileScopeActionResponseBuilder
+is used to build
+EditorFileScopeActionResponse
+objects.
+The
+build()
+method constructs the
+EditorFileScopeActionResponse
+.
+The
+requestFileScopeForActiveDocument()
+method requests the
+drive.file
+scope for the active Editor document.
+Requesting the
+drive.file
+scope requires adding it to the add-on's manifest.
+Editor
+File
+Scope
+Action
+Response
+Builder
+A builder for
+Editor
+File
+Scope
+Action
+Response
+objects.
+Methods
+Method
+Return type
+Brief description
+build()
+Editor
+File
+Scope
+Action
+Response
+Builds the current Editor action response.
+request
+File
+Scope
+For
+Active
+Document()
+Editor
+File
+Scope
+Action
+Response
+Builder
+Requests the
+drive.file
+scope for the current active Editor document.
+Detailed documentation
+build()
+Builds the current Editor action response.
+Return
+Editor
+File
+Scope
+Action
+Response
+— A validated
+Editor
+File
+Scope
+Action
+Response
+.
+request
+File
+Scope
+For
+Active
+Document()
+Requests the
+drive.file
+scope for the current active Editor document.
+// Display a permissions dialog to the user, requesting `drive.file` scope for
+// the current document on behalf of this add-on.
+CardService
+.
+newEditorFileScopeActionResponseBuilder
+()
+.
+requestFileScopeForActiveDocument
+()
+.
+build
+();
+Note: To call this method, you must add the
+drive.file
+scope to the add-on's
+manifest.
+Return
+Editor
+File
+Scope
+Action
+Response
+Builder
+— This object, for chaining.

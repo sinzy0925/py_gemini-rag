@@ -1,0 +1,160 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/conference-error/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ConferenceError represents an error that occurred in a conferencing add-on.
+You can set the error type of a ConferenceError using
+setConferenceErrorType()
+.
+If the error type is AUTHENTICATION, you can set an authentication URL using
+setAuthenticationUrl()
+.
+Conference
+Error
+Error that occurred in a conferencing add-on. Example usage:
+const
+conferenceError
+=
+ConferenceDataService
+.
+newConferenceError
+().
+setConferenceErrorType
+(
+ConferenceDataService
+.
+ConferenceErrorType
+.
+PERMANENT
+,
+);
+Example with authentication:
+const
+state
+=
+ScriptApp
+.
+newStateToken
+()
+.
+withMethod
+(
+'myLoginCallbackFunction'
+)
+.
+withTimeout
+(
+3600
+)
+.
+createToken
+();
+const
+authenticationUrl
+=
+`https://script.google.com/a/google.com/d/
+${
+ScriptApp
+.
+getScriptId
+()
+}
+/usercallback?state=
+${
+state
+}
+`
+;
+const
+conferenceError
+=
+ConferenceDataService
+.
+newConferenceError
+()
+.
+setConferenceErrorType
+(
+ConferenceDataService
+.
+ConferenceErrorType
+.
+AUTHENTICATION
+,
+)
+.
+setAuthenticationUrl
+(
+authenticationUrl
+);
+Methods
+Method
+Return type
+Brief description
+set
+Authentication
+Url(authenticationUrl)
+Conference
+Error
+If the error type is
+AUTHENTICATION
+, the add-on must
+provide a URL calling back into the add-on to allow users to log in.
+set
+Conference
+Error
+Type(conferenceErrorType)
+Conference
+Error
+Sets the error type of this
+Conference
+Error
+.
+Detailed documentation
+set
+Authentication
+Url(authenticationUrl)
+If the error type is
+AUTHENTICATION
+, the add-on must
+provide a URL calling back into the add-on to allow users to log in. The maximum length for
+this field is 1800 characters.
+Parameters
+Name
+Type
+Description
+authentication
+Url
+String
+The authentication URL to set.
+Return
+Conference
+Error
+— this object, for chaining
+Throws
+Error
+— if the provided URL is not a valid http/https URL or is too
+    long.
+set
+Conference
+Error
+Type(conferenceErrorType)
+Sets the error type of this
+Conference
+Error
+.
+Parameters
+Name
+Type
+Description
+conference
+Error
+Type
+Conference
+Error
+Type
+The type of error to set.
+Return
+Conference
+Error
+— this object, for chaining

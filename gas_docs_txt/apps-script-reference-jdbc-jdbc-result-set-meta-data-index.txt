@@ -1,0 +1,684 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-result-set-meta-data/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcResultSetMetaData provides metadata about a JDBC ResultSet.
+It includes methods to retrieve information about columns such as their name, type, size, and nullability.
+You can determine properties like whether a column is auto-incrementing, case-sensitive, or writable.
+Each method is linked to its corresponding documentation in
+java.sql.ResultSetMetaData
+.
+Most methods require authorization with the
+https://www.googleapis.com/auth/script.external_request
+scope.
+Jdbc
+Result
+Set
+Meta
+Data
+A JDBC
+Result
+Set
+Meta
+Data
+. For documentation of this class, see
+java.sql.ResultSetMetaData
+.
+Methods
+Method
+Return type
+Brief description
+get
+Catalog
+Name(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getCatalogName(int)
+.
+get
+Column
+Class
+Name(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnClassName(int)
+.
+get
+Column
+Count()
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnCount()
+.
+get
+Column
+Display
+Size(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnDisplaySize(int)
+.
+get
+Column
+Label(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnLabel(int)
+.
+get
+Column
+Name(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnName(int)
+.
+get
+Column
+Type(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnType(int)
+.
+get
+Column
+Type
+Name(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnTypeName(int)
+.
+get
+Precision(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getPrecision(int)
+.
+get
+Scale(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getScale(int)
+.
+get
+Schema
+Name(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getSchemaName(int)
+.
+get
+Table
+Name(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getTableName(int)
+.
+is
+Auto
+Increment(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isAutoIncrement(int)
+.
+is
+Case
+Sensitive(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isCaseSensitive(int)
+.
+is
+Currency(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isCurrency(int)
+.
+is
+Definitely
+Writable(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isDefinitelyWritable(int)
+.
+is
+Nullable(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#isNullable(int)
+.
+is
+Read
+Only(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isReadOnly(int)
+.
+is
+Searchable(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isSearchable(int)
+.
+is
+Signed(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isSigned(int)
+.
+is
+Writable(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isWritable(int)
+.
+Detailed documentation
+get
+Catalog
+Name(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getCatalogName(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+String
+— The catalog name for the table in the designated column, or an empty string if not
+    applicable.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Column
+Class
+Name(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnClassName(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+String
+— The fully-qualified name of the class of the designated column's values.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Column
+Count()
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnCount()
+.
+Return
+Integer
+— The number of columns in this result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Column
+Display
+Size(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnDisplaySize(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Integer
+— The maximum number of characters allowed as the width of the designated columns.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Column
+Label(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnLabel(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+String
+— The designated column's suggested title, usually specifed by a SQL
+AS
+clause.
+    Returns the same as
+get
+Column
+Name(column)
+if an
+AS
+is not specified.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Column
+Name(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnName(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+String
+— The designated column's name.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Column
+Type(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnType(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Integer
+— The
+SQL
+    type
+of the designated column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Column
+Type
+Name(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnTypeName(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+String
+— The designated column's database-specific type name. Returns the fully-qualifed type
+    name if this is a user-defined type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Precision(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getPrecision(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Integer
+— The maximum column size for the given column. For numeric data, this is the maximum
+    precision. For character data, this is the length in characters. For datetime data, this is
+    the length in characters of the string representation (assuming the maximum allowed
+    precision of the fractional seconds component). For binary data, this is the length in
+    bytes. For the
+ROWID
+datatype, this is the length in bytes. Returns 0 for types
+    where the column size is not applicable.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Scale(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getScale(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Integer
+— The designated columns's number of digits to right of the decimal point. Returns 0 for
+    data types where the scale is not applicable.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Schema
+Name(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getSchemaName(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+String
+— The table schema of the designated column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+get
+Table
+Name(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#getTableName(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+String
+— The table name of the designated column, or an empty string if not applicable.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Auto
+Increment(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isAutoIncrement(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Boolean
+—
+true
+if the specified column is automatically numbered;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Case
+Sensitive(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isCaseSensitive(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Boolean
+—
+true
+if the specified column is case-sensitive;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Currency(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isCurrency(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Boolean
+—
+true
+if the specified column is a cash value;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Definitely
+Writable(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isDefinitelyWritable(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Boolean
+—
+true
+if writes to the designated column definitely succeed;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Nullable(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isNullable(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Integer
+— The nullability status of the specified column, which is
+Jdbc.ResultSetMetaData.columnNoNulls
+,
+Jdbc.ResultSetMetaData.columnNullable
+, or
+Jdbc.ResultSetMetaData.columnNullableUnknown
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Read
+Only(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isReadOnly(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Boolean
+—
+true
+if the designated column is definitely non-writable;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Searchable(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isSearchable(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Boolean
+—
+true
+if a where clause can use the specified column;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Signed(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isSigned(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Boolean
+—
+true
+if the values in the specified column are signed numbers;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+is
+Writable(column)
+For documentation of this method, see
+java.sql.ResultSetMetaData#isWritable(int)
+.
+Parameters
+Name
+Type
+Description
+column
+Integer
+The index of the column to examine (the first column is 1, the second is 2, and
+    so on).
+Return
+Boolean
+—
+true
+if it is possible to write to the designated column;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request

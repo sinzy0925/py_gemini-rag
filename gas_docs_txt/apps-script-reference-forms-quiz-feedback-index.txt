@@ -1,0 +1,94 @@
+Source Path: gas_docs_html/apps-script/reference/forms/quiz-feedback/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+QuizFeedback is a bean implementation of Feedback containing properties like display text and links.
+Feedback can be added to gradeable Form items.
+The
+getLinkUrls()
+method gets a list of URLs associated with the Feedback.
+The
+getText()
+method gets the Feedback's display text.
+Quiz
+Feedback
+The bean implementation of a Feedback, which contains properties common to all feedback, such as
+display text or links.
+Feedback can be added to gradeable
+Form
+items.
+// Setting feedback which should be automatically shown when a user responds to
+// a question incorrectly.
+const
+form
+=
+FormApp
+.
+create
+(
+'My Form'
+);
+const
+textItem
+=
+form
+.
+addTextItem
+().
+setTitle
+(
+'Re-hydrating dried fruit is an example of what?'
+);
+const
+feedback
+=
+FormApp
+.
+createFeedback
+()
+.
+setDisplayText
+(
+'Good answer, but not quite right.  Please review chapter 4 before next time.'
+,
+)
+.
+addLink
+(
+'http://wikipedia.com/osmosis'
+);
+textItem
+.
+setFeedbackForIncorrect
+(
+feedback
+);
+Methods
+Method
+Return type
+Brief description
+get
+Link
+Urls()
+String[]
+Gets a list of the URLs associated with the Feedback.
+get
+Text()
+String
+Gets the Feedback's display text.
+Detailed documentation
+get
+Link
+Urls()
+Gets a list of the URLs associated with the Feedback. These are displayed to the user as a list
+of helpful links.
+Return
+String[]
+— a list of the URLs associated with the Feedback
+get
+Text()
+Gets the Feedback's display text. This text is shown to the user after they've submitted a
+response.
+Return
+String
+— the Feedback's text

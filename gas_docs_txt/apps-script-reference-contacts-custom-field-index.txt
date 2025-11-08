@@ -1,0 +1,405 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/custom-field/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+CustomField
+class is deprecated and users should use the People API advanced service instead.
+Custom fields represent a custom data entry for a contact.
+While some methods like
+getLabel()
+and
+setLabel(label)
+are still available, many methods for managing custom fields are deprecated.
+Deprecated methods for
+CustomField
+include
+deleteCustomField()
+,
+getValue()
+,
+setLabel(field)
+, and
+setValue(value)
+.
+Custom
+Field
+Deprecated.
+Instead, use the
+People API advanced
+    service
+A custom field in a Contact.
+Methods
+Method
+Return type
+Brief description
+get
+Label()
+Object
+Gets the label for this field.
+set
+Label(label)
+Custom
+Field
+Sets the label of this field.
+Deprecated methods
+Method
+Return type
+Brief description
+delete
+Custom
+Field()
+void
+Deletes this field.
+get
+Value()
+Object
+Gets the value of the field.
+set
+Label(field)
+Custom
+Field
+Sets the label of this field.
+set
+Value(value)
+Custom
+Field
+Sets the value of this field.
+Detailed documentation
+get
+Label()
+Gets the label for this field. This may be a Field, ExtendedField, or a String.
+// Logs the label for all the address fields associated with contact
+// 'John Doe'. This method can be similarly called for any field that has
+// a label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+addressFields
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+addressFields
+[
+i
+].
+getLabel
+());
+}
+Return
+Object
+— the label for this field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Label(label)
+Sets the label of this field.
+// Sets the label to 'Apartment' for the first address field associated
+// with contact 'John Doe'. This method can be similarly called for any
+// field that has a label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addressFields
+=
+contacts
+[
+0
+].
+getAddresses
+();
+addressFields
+[
+0
+].
+setLabel
+(
+'Apartment'
+);
+Parameters
+Name
+Type
+Description
+label
+String
+the new label for this field
+Return
+Custom
+Field
+— this field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+Deprecated methods
+delete
+Custom
+Field()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes this field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+fields
+=
+contacts
+[
+0
+].
+getCustomFields
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+fields
+.
+length
+;
+i
+++
+)
+{
+if
+(
+fields
+[
+i
+].
+getLabel
+()
+===
+'foo'
+)
+{
+fields
+[
+i
+].
+deleteCustomField
+();
+}
+}
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Value()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the value of the field.
+// Logs the value of all the custom fields for contact 'John Doe'
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+fields
+=
+contacts
+[
+0
+].
+getCustomFields
+();
+for
+(
+const
+i
+in
+fields
+)
+{
+Logger
+.
+log
+(
+fields
+[
+i
+].
+getValue
+());
+}
+Return
+Object
+— the value stored in the field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Label(field)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the label of this field.
+// Sets the first custom field associated with contact 'John Doe' to use 'Mail
+// application' as a label, with 'Gmail' as the value.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+field
+=
+contacts
+[
+0
+].
+getCustomFields
+()[
+0
+];
+field
+.
+setLabel
+(
+'Mail application'
+);
+field
+.
+setValue
+(
+'Gmail'
+);
+Parameters
+Name
+Type
+Description
+field
+Extended
+Field
+the new standard label
+Return
+Custom
+Field
+— this field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Value(value)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the value of this field.
+// Sets the first custom field associated with contact 'John Doe' to use 'Mail
+// application' as a label, with 'Gmail' as the value.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+field
+=
+contacts
+[
+0
+].
+getCustomFields
+()[
+0
+];
+field
+.
+setLabel
+(
+'Mail application'
+);
+field
+.
+setValue
+(
+'Gmail'
+);
+Parameters
+Name
+Type
+Description
+value
+Object
+the new value
+Return
+Custom
+Field
+— this field, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds

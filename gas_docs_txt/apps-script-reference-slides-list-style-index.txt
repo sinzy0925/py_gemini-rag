@@ -1,0 +1,179 @@
+Source Path: gas_docs_html/apps-script/reference/slides/list-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ListStyle represents the list styling for a range of text.
+Methods are available to apply a list preset, get the glyph, retrieve the list the text belongs to, get the nesting level, check if the text is in a list, and remove the text from a list.
+Applying a list preset applies the style to overlapping paragraphs, removing leading tabs and potentially adding the paragraphs to a preceding list if applicable.
+Authorization with specific scopes is required for scripts using these ListStyle methods.
+List
+Style
+The list styling for a range of text.
+Methods
+Method
+Return type
+Brief description
+apply
+List
+Preset(listPreset)
+List
+Style
+Applies the specified
+List
+Preset
+to all of the paragraphs that overlap with the text.
+get
+Glyph()
+String
+Returns the rendered glyph for the text.
+get
+List()
+List
+Returns the
+List
+the text is in, or
+null
+if none of the text is in a list, or
+part of the text is in a list, or the text is in multiple lists.
+get
+Nesting
+Level()
+Integer
+Returns the 0-based nesting level of the text.
+is
+In
+List()
+Boolean
+Returns
+true
+if the text is in exactly one list,
+false
+if none of the text is
+in a list, and
+null
+if only some of the text is in a list or if the text is in multiple
+lists.
+remove
+From
+List()
+List
+Style
+Removes the paragraphs that overlap with the text from any lists.
+Detailed documentation
+apply
+List
+Preset(listPreset)
+Applies the specified
+List
+Preset
+to all of the paragraphs that overlap with the text.
+The nesting level of each paragraph is determined by counting leading tabs in front of each
+paragraph. To avoid excess space between the glyphs and the corresponding paragraph, these
+leading tabs are removed by this method.
+If the paragraph immediately before paragraphs being updated is in a
+List
+with a
+matching list preset and the paragraphs being updated are not already in a different list, the
+paragraphs being updated are added to that preceding list.
+Parameters
+Name
+Type
+Description
+list
+Preset
+List
+Preset
+Return
+List
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Glyph()
+Returns the rendered glyph for the text. Returns
+null
+if the text spans more than one
+paragraph or the text is not in a list.
+Return
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+List()
+Returns the
+List
+the text is in, or
+null
+if none of the text is in a list, or
+part of the text is in a list, or the text is in multiple lists. Call
+is
+In
+List()
+to
+determine whether the text is in a list.
+Return
+List
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Nesting
+Level()
+Returns the 0-based nesting level of the text. Returns
+null
+if the text is not in a
+list or there are mixed values.
+Return
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+In
+List()
+Returns
+true
+if the text is in exactly one list,
+false
+if none of the text is
+in a list, and
+null
+if only some of the text is in a list or if the text is in multiple
+lists.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+remove
+From
+List()
+Removes the paragraphs that overlap with the text from any lists.
+The nesting level of each paragraph is visually preserved by adding indent to the start of
+the corresponding paragraph.
+Return
+List
+Style
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

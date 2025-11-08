@@ -1,0 +1,616 @@
+Source Path: gas_docs_html/apps-script/reference/slides/selection/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Selection object represents the current selection in an active presentation.
+You can get the currently active page, selected page elements, selected pages in the filmstrip, selected table cells, or selected text range using methods like
+getCurrentPage()
+,
+getPageElementRange()
+,
+getPageRange()
+,
+getTableCellRange()
+, and
+getTextRange()
+.
+The type of the current selection can be determined using the
+getSelectionType()
+method.
+Selection
+The user's selection in the active presentation.
+const
+selection
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSelection
+();
+const
+currentPage
+=
+selection
+.
+getCurrentPage
+();
+const
+selectionType
+=
+selection
+.
+getSelectionType
+();
+Methods
+Method
+Return type
+Brief description
+get
+Current
+Page()
+Page
+Returns the currently active
+Page
+or
+null
+if there is no active page.
+get
+Page
+Element
+Range()
+Page
+Element
+Range
+Returns the
+Page
+Element
+Range
+collection of
+Page
+Element
+instances that are
+selected or
+null
+if there are no
+Page
+Element
+instances selected.
+get
+Page
+Range()
+Page
+Range
+Returns the
+Page
+Range
+a collection of
+Page
+instances in the flimstrip that are
+selected or
+null
+if the selection is not of type
+Selection
+Type.PAGE
+.
+get
+Selection
+Type()
+Selection
+Type
+Returns the
+Selection
+Type
+.
+get
+Table
+Cell
+Range()
+Table
+Cell
+Range
+Returns the
+Table
+Cell
+Range
+collection of
+Table
+Cell
+instances that are selected
+or
+null
+if there are no
+Table
+Cell
+instances selected.
+get
+Text
+Range()
+Text
+Range
+Returns the
+Text
+Range
+that is selected or
+null
+if the selection is not of type
+Selection
+Type.TEXT
+.
+Detailed documentation
+get
+Current
+Page()
+Returns the currently active
+Page
+or
+null
+if there is no active page.
+const
+selection
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSelection
+();
+const
+currentPage
+=
+selection
+.
+getCurrentPage
+();
+if
+(
+currentPage
+!=
+null
+)
+{
+Logger
+.
+log
+(
+`Selected current active page ID:
+${
+currentPage
+.
+getObjectId
+()
+}
+`
+);
+}
+Return
+Page
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Page
+Element
+Range()
+Returns the
+Page
+Element
+Range
+collection of
+Page
+Element
+instances that are
+selected or
+null
+if there are no
+Page
+Element
+instances selected.
+const
+selection
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSelection
+();
+const
+selectionType
+=
+selection
+.
+getSelectionType
+();
+if
+(
+selectionType
+===
+SlidesApp
+.
+SelectionType
+.
+PAGE_ELEMENT
+)
+{
+const
+currentPage
+=
+selection
+.
+getCurrentPage
+();
+const
+pageElements
+=
+selection
+.
+getPageElementRange
+().
+getPageElements
+();
+Logger
+.
+log
+(
+`Number of page elements selected:
+${
+pageElements
+.
+length
+}
+`
+);
+}
+Return
+Page
+Element
+Range
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Page
+Range()
+Returns the
+Page
+Range
+a collection of
+Page
+instances in the flimstrip that are
+selected or
+null
+if the selection is not of type
+Selection
+Type.PAGE
+.
+const
+selection
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSelection
+();
+const
+selectionType
+=
+selection
+.
+getSelectionType
+();
+if
+(
+selectionType
+===
+SlidesApp
+.
+SelectionType
+.
+PAGE
+)
+{
+const
+pageRange
+=
+selection
+.
+getPageRange
+();
+Logger
+.
+log
+(
+`Number of pages in the flimstrip selected:
+${
+pageRange
+.
+getPages
+().
+length
+}
+`
+,
+);
+}
+Return
+Page
+Range
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Selection
+Type()
+Returns the
+Selection
+Type
+.
+const
+selection
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSelection
+();
+const
+selectionType
+=
+selection
+.
+getSelectionType
+();
+if
+(
+selectionType
+===
+SlidesApp
+.
+SelectionType
+.
+CURRENT_PAGE
+)
+{
+const
+currentPage
+=
+selection
+.
+getCurrentPage
+();
+Logger
+.
+log
+(
+`Selected current active page ID:
+${
+currentPage
+.
+getObjectId
+()
+}
+`
+);
+}
+Return
+Selection
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Table
+Cell
+Range()
+Returns the
+Table
+Cell
+Range
+collection of
+Table
+Cell
+instances that are selected
+or
+null
+if there are no
+Table
+Cell
+instances selected.
+const
+selection
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSelection
+();
+const
+selectionType
+=
+selection
+.
+getSelectionType
+();
+if
+(
+selectionType
+===
+SlidesApp
+.
+SelectionType
+.
+TABLE_CELL
+)
+{
+const
+currentPage
+=
+selection
+.
+getCurrentPage
+();
+const
+tableCells
+=
+selection
+.
+getTableCellRange
+().
+getTableCells
+();
+const
+table
+=
+tableCells
+[
+0
+].
+getParentTable
+();
+Logger
+.
+log
+(
+`Number of table cells selected:
+${
+tableCells
+.
+length
+}
+`
+);
+}
+Return
+Table
+Cell
+Range
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Text
+Range()
+Returns the
+Text
+Range
+that is selected or
+null
+if the selection is not of type
+Selection
+Type.TEXT
+.
+The
+Text
+Range
+represents two scenarios:
+1. Range of text selected. For example if a shape has text "Hello", and "He" is selected,
+the returned range has
+Text
+Range.getStartIndex()
+= 0, and
+Text
+Range.getEndIndex()
+=
+2.
+2. Cursor position. For example if a shape has text "Hello", and cursor is after "H",
+("H|ello"), the returned range has
+Text
+Range.getStartIndex()
+= 1 and
+Text
+Range.getEndIndex()
+= 1.
+const
+selection
+=
+SlidesApp
+.
+getActivePresentation
+().
+getSelection
+();
+const
+selectionType
+=
+selection
+.
+getSelectionType
+();
+if
+(
+selectionType
+===
+SlidesApp
+.
+SelectionType
+.
+TEXT
+)
+{
+const
+currentPage
+=
+selection
+.
+getCurrentPage
+();
+const
+pageElement
+=
+selection
+.
+getPageElementRange
+().
+getPageElements
+()[
+0
+];
+const
+textRange
+=
+selection
+.
+getTextRange
+();
+Logger
+.
+log
+(
+`Text selected:
+${
+textRange
+.
+asString
+()
+}
+`
+);
+}
+Return
+Text
+Range
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

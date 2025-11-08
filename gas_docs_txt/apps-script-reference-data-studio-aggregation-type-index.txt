@@ -1,0 +1,59 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/aggregation-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+AggregationType is an enum in Apps Script that defines aggregation types for a Field.
+You access enum values through its parent class, name, and property, like
+DataStudioApp.AggregationType.AVG
+.
+Available aggregation types include AVG, COUNT, COUNT_DISTINCT, MAX, MIN, SUM, and AUTO.
+The
+AUTO
+property is used for calculated fields referencing an aggregated field.
+The
+NO_AGGREGATION
+property is deprecated and should be replaced with
+AUTO
+.
+Aggregation
+Type
+An enum that defines the aggregation types that can be set for a
+Field
+.
+To call an enum, you call its parent class, name, and property. For example,
+DataStudioApp.AggregationType.AVG
+.
+Properties
+Property
+Type
+Description
+AVG
+Enum
+Average.
+COUNT
+Enum
+Count.
+COUNT_DISTINCT
+Enum
+Count Distinct.
+MAX
+Enum
+Max.
+MIN
+Enum
+Min.
+SUM
+Enum
+Sum.
+AUTO
+Enum
+Auto. Use Auto for calculated fields which reference an aggregated field.
+Deprecated properties
+Property
+Type
+Description
+NO_AGGREGATION
+Enum
+DEPRECATED: Use
+AUTO
+instead. No aggregation.

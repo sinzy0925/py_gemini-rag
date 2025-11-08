@@ -1,0 +1,755 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/key-value/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+This class is deprecated and should not be used in new scripts; instead, use DecoratedText.
+You can set an authorization action that opens a URL to the authorization flow when the object is clicked.
+You can set an action that composes a draft email when the object is clicked.
+You can set an action that executes or opens a URL in a tab when the object is clicked.
+You can set a URL to be opened directly when the object is clicked.
+Key
+Value
+Deprecated.
+This class is deprecated and should not be used in new scripts.
+This class is deprecated. Instead, use
+Decorated
+Text
+.
+Methods
+Method
+Return type
+Brief description
+set
+Authorization
+Action(action)
+Key
+Value
+Sets an authorization action that opens a URL to the authorization flow when the object is
+clicked.
+set
+Compose
+Action(action, composedEmailType)
+Key
+Value
+Sets an action that composes a draft email when the object is clicked.
+set
+On
+Click
+Action(action)
+Key
+Value
+Sets an action that executes when the object is clicked.
+set
+On
+Click
+Open
+Link
+Action(action)
+Key
+Value
+Sets an action that opens a URL in a tab when the object is clicked.
+set
+Open
+Link(openLink)
+Key
+Value
+Sets a URL to be opened when the object is clicked.
+Deprecated methods
+Method
+Return type
+Brief description
+set
+Bottom
+Label(text)
+Key
+Value
+Sets the label text to be used as the key.
+set
+Button(button)
+Key
+Value
+Sets the
+Button
+that is displayed to the right of the context.
+set
+Content(text)
+Key
+Value
+Sets the text to be used as the value.
+set
+Icon(icon)
+Key
+Value
+Sets the icon to be used as the key.
+set
+Icon
+Alt
+Text(altText)
+Key
+Value
+Sets the alternative text for the icon.
+set
+Icon
+Url(url)
+Key
+Value
+Sets the URL of the icon to be used as the key.
+set
+Multiline(multiline)
+Key
+Value
+Sets whether the value text should be displayed on a single line or multiple lines.
+set
+Switch(switchToSet)
+Key
+Value
+Sets the
+Switch
+that is displayed to the right of the content.
+set
+Top
+Label(text)
+Key
+Value
+Sets the label text to be used as the key.
+Detailed documentation
+set
+Authorization
+Action(action)
+Sets an authorization action that opens a URL to the authorization flow when the object is
+clicked. This opens the URL in a new window. When the user finishes the authorization flow and
+returns to the application, the add-on reloads.
+A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+// ...
+const
+action
+=
+CardService
+.
+newAuthorizationAction
+().
+setAuthorizationUrl
+(
+'url'
+);
+CardService
+.
+newTextButton
+().
+setText
+(
+'Authorize'
+).
+setAuthorizationAction
+(
+action
+);
+Parameters
+Name
+Type
+Description
+action
+Authorization
+Action
+The object that specifies the authorization action to take when this element is
+    clicked.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Compose
+Action(action, composedEmailType)
+Sets an action that composes a draft email when the object is clicked. A UI object can only
+have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Compose
+Action
+Response
+object configured using
+Compose
+Action
+Response
+Builder.setGmailDraft(draft)
+.
+Note
+: This method doesn't set a
+compose action
+that is
+used to
+extend the compose UI
+.
+Rather, this method connects this UI element to an
+Action
+that
+composes draft messages
+in Apps Script that are
+opened in Gmail when the action completes.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'composeEmailCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Compose Email'
+)
+.
+setComposeAction
+(
+action
+,
+CardService
+.
+ComposedEmailType
+.
+REPLY_AS_DRAFT
+);
+// ...
+function
+composeEmailCallback
+(
+e
+)
+{
+const
+thread
+=
+GmailApp
+.
+getThreadById
+(
+e
+.
+threadId
+);
+const
+draft
+=
+thread
+.
+createDraftReply
+(
+'This is a reply'
+);
+return
+CardService
+.
+newComposeActionResponseBuilder
+()
+.
+setGmailDraft
+(
+draft
+)
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The object that specifies the compose action to take when this element is
+    clicked.
+composed
+Email
+Type
+Composed
+Email
+Type
+An enum value that specifies whether the composed draft is a
+    standalone or reply draft.
+Return
+Key
+Value
+— This object, for chaining.
+set
+On
+Click
+Action(action)
+Sets an action that executes when the object is clicked. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Action
+Response
+object.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'notificationCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Create notification'
+)
+.
+setOnClickAction
+(
+action
+);
+// ...
+function
+notificationCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setNotification
+(
+CardService
+.
+newNotification
+().
+setText
+(
+'Some info to display to user'
+),
+)
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to take when this element is clicked.
+Return
+Key
+Value
+— This object, for chaining.
+set
+On
+Click
+Open
+Link
+Action(action)
+Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
+URL needs to be built or when you need to take other actions in addition to creating the
+Open
+Link
+object. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Action
+Response
+object configured using
+Action
+Response
+Builder.setOpenLink(openLink)
+.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'openLinkCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Open Link'
+)
+.
+setOnClickOpenLinkAction
+(
+action
+);
+// ...
+function
+openLinkCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setOpenLink
+(
+CardService
+.
+newOpenLink
+().
+setUrl
+(
+'https://www.google.com'
+))
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The object that specifies the open link action to take when this element is
+    clicked.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Open
+Link(openLink)
+Sets a URL to be opened when the object is clicked. Use this function when the URL is already
+known and only needs to be opened. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+,
+or
+set
+Compose
+Action(action, composedEmailType)
+set.
+Parameters
+Name
+Type
+Description
+open
+Link
+Open
+Link
+An
+Open
+Link
+object describing the URL to open.
+Return
+Key
+Value
+— This object, for chaining.
+Deprecated methods
+set
+Bottom
+Label(text)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the label text to be used as the key. Displayed below the text-content.
+Parameters
+Name
+Type
+Description
+text
+String
+The label text. Note: It doesn't support
+basic HTML formatting
+.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Button(button)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the
+Button
+that is displayed to the right of the context. A
+Key
+Value
+can
+only support one button, one switch or one icon.
+Parameters
+Name
+Type
+Description
+button
+Button
+The button to add.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Content(text)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the text to be used as the value. Supports
+basic HTML formatting
+. Required.
+Parameters
+Name
+Type
+Description
+text
+String
+The text content for this widget.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Icon(icon)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the icon to be used as the key.
+Parameters
+Name
+Type
+Description
+icon
+Icon
+One of the predefined
+Icon
+values.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Icon
+Alt
+Text(altText)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the alternative text for the icon.
+Parameters
+Name
+Type
+Description
+alt
+Text
+String
+The alternative text for the icon.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Icon
+Url(url)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the URL of the icon to be used as the key.
+Parameters
+Name
+Type
+Description
+url
+String
+The URL address of a hosted image to use as an icon.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Multiline(multiline)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets whether the value text should be displayed on a single line or multiple lines.
+Parameters
+Name
+Type
+Description
+multiline
+Boolean
+The multiline setting.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Switch(switchToSet)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the
+Switch
+that is displayed to the right of the content. A
+Key
+Value
+can
+only support one button, one switch or one icon.
+Parameters
+Name
+Type
+Description
+switch
+To
+Set
+Switch
+The switch to add.
+Return
+Key
+Value
+— This object, for chaining.
+set
+Top
+Label(text)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the label text to be used as the key. Displayed above the text-content.
+Parameters
+Name
+Type
+Description
+text
+String
+The label text. Note: It doesn't support
+basic HTML formatting
+.
+Return
+Key
+Value
+— This object, for chaining.

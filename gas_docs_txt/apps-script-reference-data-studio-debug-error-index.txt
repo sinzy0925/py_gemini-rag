@@ -1,0 +1,71 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/debug-error/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DebugError is an error only visible to connector admins.
+The
+setText()
+method is used to set the error text which is only shown to admins.
+The
+throwException()
+method triggers the debug error to be thrown.
+Debug
+Error
+An error that is only visible to admins of the connector.
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+cc
+.
+newDebugError
+().
+setText
+(
+'This is the debug error text.'
+).
+throwException
+();
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Text(text)
+Debug
+Error
+Sets the text of the debug error, which is only shown to admins.
+throw
+Exception()
+void
+Triggers this exception to be thrown.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+set
+Text(text)
+Sets the text of the debug error, which is only shown to admins.
+Parameters
+Name
+Type
+Description
+text
+String
+The error text.
+Return
+Debug
+Error
+— This object, for chaining.
+throw
+Exception()
+Triggers this exception to be thrown.

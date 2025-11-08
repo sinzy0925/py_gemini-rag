@@ -1,0 +1,534 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/slicer/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Slicer in Google Sheets is used to filter data ranges, charts, and pivot tables non-collaboratively.
+You can access and modify existing slicers using the methods provided by this class.
+New slicers can be created using the
+Sheet.insertSlicer(range, anchorRowPos, anchorColPos)
+method.
+Methods are available to get and set properties of a slicer such as background color, range, title, and filter criteria.
+You can check if a slicer is applied to pivot tables and also set this property using the provided methods.
+Slicer
+Represents a
+slicer
+, which is used
+to filter ranges, charts and pivot tables in a non-collaborative manner. This class contains
+methods to access and modify existing slicers. To create a new slicer, use
+Sheet.insertSlicer(range, anchorRowPos, anchorColPos)
+.
+Methods
+Method
+Return type
+Brief description
+get
+Background
+Color
+Object()
+Color
+Return the background
+Color
+of the slicer.
+get
+Column
+Position()
+Integer
+Returns the column position (relative to the data range of the slicer) on which the filter is
+applied in the slicer, or
+null
+if the column position is not set.
+get
+Container
+Info()
+Container
+Info
+Gets information about where the slicer is positioned in the sheet.
+get
+Filter
+Criteria()
+Filter
+Criteria
+Returns the filter criteria of the slicer, or
+null
+if the filter criteria is not set.
+get
+Range()
+Range
+Gets the data range on which the slicer is applied to.
+get
+Title()
+String
+Returns the title of the slicer.
+get
+Title
+Horizontal
+Alignment()
+String
+Gets the horizontal alignment of the title.
+get
+Title
+Text
+Style()
+Text
+Style
+Returns the text style of the slicer's title.
+is
+Applied
+To
+Pivot
+Tables()
+Boolean
+Returns whether the given slicer is applied to pivot tables.
+remove()
+void
+Deletes the slicer.
+set
+Apply
+To
+Pivot
+Tables(applyToPivotTables)
+Slicer
+Sets if the given slicer should be applied to pivot tables in the worksheet.
+set
+Background
+Color(color)
+Slicer
+Sets the background color of the slicer.
+set
+Background
+Color
+Object(color)
+Slicer
+Sets the background
+Color
+of the slicer.
+set
+Column
+Filter
+Criteria(columnPosition, filterCriteria)
+Slicer
+Sets the column index and filtering criteria of the slicer.
+set
+Position(anchorRowPos, anchorColPos, offsetX, offsetY)
+Slicer
+Sets the position where the slicer appears on the sheet.
+set
+Range(rangeApi)
+Slicer
+Sets the data range on which the slicer is applied.
+set
+Title(title)
+Slicer
+Sets the title of the slicer.
+set
+Title
+Horizontal
+Alignment(horizontalAlignment)
+Slicer
+Sets the horizontal alignment of the title in the slicer.
+set
+Title
+Text
+Style(textStyle)
+Slicer
+Sets the text style of the slicer.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+Background
+Color()
+String
+Returns the background color of the slicer in CSS notation (such as '#ffffff').
+Detailed documentation
+get
+Background
+Color
+Object()
+Return the background
+Color
+of the slicer.
+Return
+Color
+— The background color of this slicer. Returns
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Column
+Position()
+Returns the column position (relative to the data range of the slicer) on which the filter is
+applied in the slicer, or
+null
+if the column position is not set. This should be
+1-indexed position of the column similar to filter.
+Return
+Integer
+— The column position of this slicer.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Container
+Info()
+Gets information about where the slicer is positioned in the sheet.
+Return
+Container
+Info
+— An object containing the slicer's container position.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Filter
+Criteria()
+Returns the filter criteria of the slicer, or
+null
+if the filter criteria is not set.
+Return
+Filter
+Criteria
+— The filter criteria of this slicer.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Range()
+Gets the data range on which the slicer is applied to.
+Return
+Range
+— The slicer range.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Title()
+Returns the title of the slicer.
+Return
+String
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Title
+Horizontal
+Alignment()
+Gets the horizontal alignment of the title.
+Return
+String
+— The horizontal alignment of this slicer's title.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Title
+Text
+Style()
+Returns the text style of the slicer's title.
+Return
+Text
+Style
+— The text style of this slicer's title.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+is
+Applied
+To
+Pivot
+Tables()
+Returns whether the given slicer is applied to pivot tables.
+Return
+Boolean
+—
+true
+if this slicer is applied to pivot tables, otherwise
+false
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Deletes the slicer.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Apply
+To
+Pivot
+Tables(applyToPivotTables)
+Sets if the given slicer should be applied to pivot tables in the worksheet.
+Parameters
+Name
+Type
+Description
+apply
+To
+Pivot
+Tables
+Boolean
+Specifies whether this slicer should apply to pivot tables.
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Background
+Color(color)
+Sets the background color of the slicer. A
+null
+value resets the background color.
+Parameters
+Name
+Type
+Description
+color
+String
+The new background color of this slicer in CSS notation (such as '#ffffff').
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Background
+Color
+Object(color)
+Sets the background
+Color
+of the slicer. A
+null
+value resets the background
+color.
+Parameters
+Name
+Type
+Description
+color
+Color
+The new background color of this slicer.
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Column
+Filter
+Criteria(columnPosition, filterCriteria)
+Sets the column index and filtering criteria of the slicer. A
+null
+value resets the
+slicer filter.
+Parameters
+Name
+Type
+Description
+column
+Position
+Integer
+The new column position of this slicer.
+filter
+Criteria
+Filter
+Criteria
+The new filter criteria of this slicer.
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Position(anchorRowPos, anchorColPos, offsetX, offsetY)
+Sets the position where the slicer appears on the sheet. The anchor row and column position
+indices are 1-indexed.
+Parameters
+Name
+Type
+Description
+anchor
+Row
+Pos
+Integer
+The slicer's top side is anchored in this row.
+anchor
+Col
+Pos
+Integer
+The slicer's top side is anchored in this col.
+offsetX
+Integer
+The horizontal offset from cell corner in pixels.
+offsetY
+Integer
+The vertical offset from cell corner in pixels.
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Range(rangeApi)
+Sets the data range on which the slicer is applied.
+Parameters
+Name
+Type
+Description
+range
+Api
+Range
+The new range for this slicer.
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Title(title)
+Sets the title of the slicer. An empty title resets the title to default value.
+Parameters
+Name
+Type
+Description
+title
+String
+The new title of this slicer.
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Title
+Horizontal
+Alignment(horizontalAlignment)
+Sets the horizontal alignment of the title in the slicer. A
+null
+value resets the
+alignment.
+Parameters
+Name
+Type
+Description
+horizontal
+Alignment
+String
+The new horizontal alignment of this slicer's title.
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Title
+Text
+Style(textStyle)
+Sets the text style of the slicer.
+Parameters
+Name
+Type
+Description
+text
+Style
+Text
+Style
+The new text style of the slicer's title.
+Return
+Slicer
+— This slicer, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+Deprecated methods
+get
+Background
+Color()
+Deprecated.
+Replaced by
+get
+Background
+Color
+Object()
+Returns the background color of the slicer in CSS notation (such as '#ffffff').
+Return
+String
+— The background color of this slicer. Returns
+null
+if no color is set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

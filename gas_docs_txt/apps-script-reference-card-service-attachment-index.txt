@@ -1,0 +1,134 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/attachment/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+Attachment
+object represents an attachment created by an add-on for use in Google extensibility products.
+You can create a new attachment using
+CardService.newAttachment()
+.
+The
+Attachment
+object provides methods to set the resource URL, title, MIME type, and icon URL.
+Methods like
+setIconUrl
+,
+setMimeType
+,
+setResourceUrl
+, and
+setTitle
+are available to configure the attachment.
+Attachment
+Represents an attachment created by an add-on. This can be used within the context of different
+Google extensibility products to generate new attachments, such as for Calendar events.
+const
+attachment
+=
+CardService
+.
+newAttachment
+()
+.
+setResourceUrl
+(
+'https://fakeresourceurl.com'
+)
+.
+setTitle
+(
+'Attachment title'
+)
+.
+setMimeType
+(
+'text/html'
+)
+.
+setIconUrl
+(
+'https://fakeresourceurl.com/iconurl.png'
+);
+Methods
+Method
+Return type
+Brief description
+set
+Icon
+Url(iconUrl)
+Attachment
+Sets the icon URL for the attachment.
+set
+Mime
+Type(mimeType)
+Attachment
+Sets the MIME type for the attachment.
+set
+Resource
+Url(resourceUrl)
+Attachment
+Sets the resource URL for the attachment.
+set
+Title(title)
+Attachment
+Sets the title for the attachment.
+Detailed documentation
+set
+Icon
+Url(iconUrl)
+Sets the icon URL for the attachment.
+Parameters
+Name
+Type
+Description
+icon
+Url
+String
+The URL address of the attachment icon.
+Return
+Attachment
+— This object, for chaining.
+set
+Mime
+Type(mimeType)
+Sets the MIME type for the attachment.
+Parameters
+Name
+Type
+Description
+mime
+Type
+String
+The MIME type of the content in the attachment resource.
+Return
+Attachment
+— This object, for chaining.
+set
+Resource
+Url(resourceUrl)
+Sets the resource URL for the attachment.
+Parameters
+Name
+Type
+Description
+resource
+Url
+String
+The URL address of a resource.
+Return
+Attachment
+— This object, for chaining.
+set
+Title(title)
+Sets the title for the attachment.
+Parameters
+Name
+Type
+Description
+title
+String
+The title of the attachment.
+Return
+Attachment
+— This object, for chaining.

@@ -1,0 +1,3951 @@
+Source Path: gas_docs_html/apps-script/reference/gmail/gmail-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+GmailApp
+class in Google Apps Script provides methods to interact with Gmail, managing threads, messages, and labels.
+Key functionalities include managing drafts, retrieving threads and messages by various criteria, and handling labels.
+You can use
+GmailApp
+to get unread counts, mark items as read/unread or important/unimportant, and move items to different folders like trash, archive, inbox, or spam.
+The service allows refreshing item states from Gmail, searching threads using queries, and sending emails with various options including attachments and HTML bodies.
+Most methods return a
+GmailApp
+object or specific Gmail objects, and all methods require authorization with the
+https://mail.google.com/
+scope.
+Gmail
+App
+Provides access to Gmail threads, messages, and labels.
+Methods
+Method
+Return type
+Brief description
+create
+Draft(recipient, subject, body)
+Gmail
+Draft
+Creates a draft email message.
+create
+Draft(recipient, subject, body, options)
+Gmail
+Draft
+Creates a draft email message with optional arguments.
+create
+Label(name)
+Gmail
+Label
+Create a new user label of the given name.
+delete
+Label(label)
+Gmail
+App
+Deletes the specified label.
+get
+Aliases()
+String[]
+Gets a list of the emails that are set up as aliases for this account in Gmail.
+get
+Draft(draftId)
+Gmail
+Draft
+Retrieve an email message draft by ID.
+get
+Draft
+Messages()
+Gmail
+Message[]
+Retrieves all draft messages.
+get
+Drafts()
+Gmail
+Draft[]
+Gets all Gmail draft messages.
+get
+Inbox
+Threads()
+Gmail
+Thread[]
+Retrieves all Inbox threads irrespective of labels.
+get
+Inbox
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of Inbox threads irrespective of labels.
+get
+Inbox
+Unread
+Count()
+Integer
+Gets the number of unread threads in the inbox.
+get
+Message
+By
+Id(id)
+Gmail
+Message
+Gets a message by ID.
+get
+Messages
+For
+Thread(thread)
+Gmail
+Message[]
+Retrieve all messages in the specified thread.
+get
+Messages
+For
+Threads(threads)
+Gmail
+Message[][]
+Retrieve all messages in the specified threads.
+get
+Priority
+Inbox
+Threads()
+Gmail
+Thread[]
+Retrieves all Priority Inbox threads irrespective of labels.
+get
+Priority
+Inbox
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of Priority Inbox threads irrespective of labels.
+get
+Priority
+Inbox
+Unread
+Count()
+Integer
+Gets the number of unread threads in the Priority Inbox.
+get
+Spam
+Threads()
+Gmail
+Thread[]
+Retrieves all spam threads irrespective of labels.
+get
+Spam
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of spam threads irrespective of labels.
+get
+Spam
+Unread
+Count()
+Integer
+Gets the number of unread threads that are spam.
+get
+Starred
+Threads()
+Gmail
+Thread[]
+Retrieves all starred threads irrespective of labels.
+get
+Starred
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of starred threads irrespective of labels.
+get
+Starred
+Unread
+Count()
+Integer
+Gets the number of unread threads that are starred.
+get
+Thread
+By
+Id(id)
+Gmail
+Thread
+Gets a thread by ID.
+get
+Trash
+Threads()
+Gmail
+Thread[]
+Retrieves all trash threads irrespective of labels.
+get
+Trash
+Threads(start, max)
+Gmail
+Thread[]
+Retrieves a range of trash threads irrespective of labels.
+get
+User
+Label
+By
+Name(name)
+Gmail
+Label
+Retrieves a label given the label name.
+get
+User
+Labels()
+Gmail
+Label[]
+Retrieves a list of user-created labels.
+mark
+Message
+Read(message)
+Gmail
+App
+Marks this message read and forces the message to refresh.
+mark
+Message
+Unread(message)
+Gmail
+App
+Marks this message unread and forces the message to refresh.
+mark
+Messages
+Read(messages)
+Gmail
+App
+Marks these messages read and forces the messages to refresh.
+mark
+Messages
+Unread(messages)
+Gmail
+App
+Marks these messages unread and forces the messages to refresh.
+mark
+Thread
+Important(thread)
+Gmail
+App
+Marks this thread as important and forces the thread to refresh.
+mark
+Thread
+Read(thread)
+Gmail
+App
+Marks this thread as read and forces the thread to refresh.
+mark
+Thread
+Unimportant(thread)
+Gmail
+App
+Marks this thread as unimportant and forces the thread to refresh.
+mark
+Thread
+Unread(thread)
+Gmail
+App
+Marks this thread unread and forces the thread to refresh.
+mark
+Threads
+Important(threads)
+Gmail
+App
+Marks these threads as important and forces the threads to refresh.
+mark
+Threads
+Read(threads)
+Gmail
+App
+Marks these threads as read and forces the threads to refresh.
+mark
+Threads
+Unimportant(threads)
+Gmail
+App
+Marks these threads as unimportant and forces the threads to refresh.
+mark
+Threads
+Unread(threads)
+Gmail
+App
+Marks these threads as unread and forces the threads to refresh.
+move
+Message
+To
+Trash(message)
+Gmail
+App
+Moves the message to the trash and forces the message to refresh.
+move
+Messages
+To
+Trash(messages)
+Gmail
+App
+Moves the specified messages to the trash and forces the messages to refresh.
+move
+Thread
+To
+Archive(thread)
+Gmail
+App
+Moves this thread to the archive and forces the thread to refresh.
+move
+Thread
+To
+Inbox(thread)
+Gmail
+App
+Moves this thread to the inbox and forces the thread to refresh.
+move
+Thread
+To
+Spam(thread)
+Gmail
+App
+Moves this thread to spam and forces the thread to refresh.
+move
+Thread
+To
+Trash(thread)
+Gmail
+App
+Moves this thread to the trash and forces the thread to refresh.
+move
+Threads
+To
+Archive(threads)
+Gmail
+App
+Moves these threads to the archive and forces the threads to refresh.
+move
+Threads
+To
+Inbox(threads)
+Gmail
+App
+Moves these threads to the inbox and forces the threads to refresh.
+move
+Threads
+To
+Spam(threads)
+Gmail
+App
+Moves these threads to spam and forces the threads to refresh.
+move
+Threads
+To
+Trash(threads)
+Gmail
+App
+Moves these threads to the trash and forces the threads to refresh.
+refresh
+Message(message)
+Gmail
+App
+Reloads the message and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+refresh
+Messages(messages)
+Gmail
+App
+Reloads the messages and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+refresh
+Thread(thread)
+Gmail
+App
+Reloads the thread and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+refresh
+Threads(threads)
+Gmail
+App
+Reloads the threads and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+search(query)
+Gmail
+Thread[]
+Search Gmail with the given query.
+search(query, start, max)
+Gmail
+Thread[]
+Search Gmail with the given query.
+send
+Email(recipient, subject, body)
+Gmail
+App
+Sends an email message.
+send
+Email(recipient, subject, body, options)
+Gmail
+App
+Sends an email message with optional arguments.
+set
+Current
+Message
+Access
+Token(accessToken)
+void
+Sets the
+current message
+access token
+that enables the script to access the current
+Gmail
+Message
+properties.
+star
+Message(message)
+Gmail
+App
+Adds a star to this message and forces the message to refresh.
+star
+Messages(messages)
+Gmail
+App
+Adds stars to these messages and forces the messages to refresh.
+unstar
+Message(message)
+Gmail
+App
+Removes a star from this message and forces the message to refresh.
+unstar
+Messages(messages)
+Gmail
+App
+Removes stars from these messages and forces the messages to refresh.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+Chat
+Threads()
+Gmail
+Thread[]
+Gets all classic Google Hangouts threads and Google Chat threads until Google switches all
+users of classic Hangouts to Chat later this year.
+get
+Chat
+Threads(start, max)
+Gmail
+Thread[]
+Gets a range of classic Google Hangouts threads and Google Chat threads until Google switches
+all users of classic Hangouts to Chat later this year.
+Detailed documentation
+create
+Draft(recipient, subject, body)
+Creates a draft email message. The size of the email (including headers) is
+quota limited
+.
+// The code below creates a draft email with the current date and time.
+const
+now
+=
+new
+Date
+();
+GmailApp
+.
+createDraft
+(
+'mike@example.com'
+,
+'current time'
+,
+`The time is:
+${
+now
+.
+toString
+()
+}
+`
+,
+);
+Parameters
+Name
+Type
+Description
+recipient
+String
+comma separated list of email addresses
+subject
+String
+subject of the email
+body
+String
+body of the email
+Return
+Gmail
+Draft
+— the newly created GmailDraft
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+create
+Draft(recipient, subject, body, options)
+create
+Draft(recipient, subject, body, options)
+Creates a draft email message with optional arguments. The email can contain plain text or an
+HTML body. The size of the email (including headers, but excluding attachments) is
+quota limited
+.
+// Create a draft email with a file from Google Drive attached as a PDF.
+const
+file
+=
+DriveApp
+.
+getFileById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+GmailApp
+.
+createDraft
+(
+'mike@example.com'
+,
+'Attachment example'
+,
+'Please see attached file.'
+,
+{
+attachments
+:
+[
+file
+.
+getAs
+(
+MimeType
+.
+PDF
+)],
+name
+:
+'Automatic Emailer Script'
+,
+},
+);
+Parameters
+Name
+Type
+Description
+recipient
+String
+the addresses of the recipient
+subject
+String
+the subject line
+body
+String
+the body of the email
+options
+Object
+a JavaScript object that specifies advanced parameters, as listed below
+Advanced parameters
+Name
+Type
+Description
+attachments
+Blob
+Source[]
+an
+    array of files to send with the email
+bcc
+String
+a comma-separated list of email addresses to BCC
+cc
+String
+a comma-separated list of email addresses to CC
+from
+String
+the address that the email should be sent from, which must be one
+    of the values returned by
+get
+Aliases()
+html
+Body
+String
+if set, devices capable of rendering HTML will use it instead
+    of the required body argument; you can add an optional
+inline
+Images
+field in HTML
+    body if you have inlined images for your email
+inline
+Images
+Object
+a JavaScript object containing a mapping from image key
+    (
+String
+) to image data (
+Blob
+Source
+); this assumes that the
+html
+Body
+parameter is used and contains references to these images in the format
+<img src="cid:imageKey" />
+name
+String
+the name of the sender of the email (default: the user's name)
+reply
+To
+String
+an email address to use as the default reply-to address
+    (default: the user's email address)
+Return
+Gmail
+Draft
+— the newly created GmailDraft
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+create
+Draft(recipient, subject, body)
+create
+Label(name)
+Create a new user label of the given name.
+// Creates the label @FOO and logs label: FOO
+Logger
+.
+log
+(
+`label:
+${
+GmailApp
+.
+createLabel
+(
+'FOO'
+)
+}
+`
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the new label
+Return
+Gmail
+Label
+— the newly created label
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+delete
+Label(label)
+delete
+Label(label)
+Deletes the specified label.
+// Have to get the label by name first
+const
+label
+=
+GmailApp
+.
+getUserLabelByName
+(
+'FOO'
+);
+GmailApp
+.
+deleteLabel
+(
+label
+);
+Parameters
+Name
+Type
+Description
+label
+Gmail
+Label
+the label to delete
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+create
+Label(name)
+get
+Aliases()
+Gets a list of the emails that are set up as aliases for this account in Gmail.
+You can send a message from any of these aliases by using the "from" optional argument.
+// Log the aliases for this Gmail account and send an email as the first one.
+const
+me
+=
+Session
+.
+getActiveUser
+().
+getEmail
+();
+const
+aliases
+=
+GmailApp
+.
+getAliases
+();
+Logger
+.
+log
+(
+aliases
+);
+if
+(
+aliases
+.
+length
+>
+0
+)
+{
+GmailApp
+.
+sendEmail
+(
+me
+,
+'From an alias'
+,
+'A message from an alias!'
+,
+{
+from
+:
+aliases
+[
+0
+],
+});
+}
+else
+{
+GmailApp
+.
+sendEmail
+(
+me
+,
+'No aliases found'
+,
+'You have no aliases.'
+);
+}
+Return
+String[]
+— an array of aliases for this account
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+send
+Email(recipient, subject, body, options)
+get
+Draft(draftId)
+Retrieve an email message draft by ID.
+Use this in conjunction with getId() on Gmail drafts.
+// Get the first draft message in your drafts folder
+const
+draft
+=
+GmailApp
+.
+getDrafts
+()[
+0
+];
+// Get its ID
+const
+draftId
+=
+draft
+.
+getId
+();
+// Now fetch the same draft using that ID.
+const
+draftById
+=
+GmailApp
+.
+getDraft
+(
+draftId
+);
+// Should always log true as they should be the same message
+Logger
+.
+log
+(
+draft
+.
+getMessage
+().
+getSubject
+()
+===
+draftById
+.
+getMessage
+().
+getSubject
+(),
+);
+Parameters
+Name
+Type
+Description
+draft
+Id
+String
+the ID of the draft to retrieve
+Return
+Gmail
+Draft
+— the draft with the given ID
+Throws
+Error
+— if no draft with the given ID can be found
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Draft
+Messages()
+Retrieves all draft messages.
+// Logs the number of draft messages
+const
+drafts
+=
+GmailApp
+.
+getDraftMessages
+();
+Logger
+.
+log
+(
+drafts
+.
+length
+);
+Return
+Gmail
+Message[]
+— an array of draft Gmail messages
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Drafts()
+Gets all Gmail draft messages.
+const
+drafts
+=
+GmailApp
+.
+getDrafts
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+drafts
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+drafts
+[
+i
+].
+getId
+());
+}
+Return
+Gmail
+Draft[]
+— an array of Gmail draft messages
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Inbox
+Threads()
+Retrieves all Inbox threads irrespective of labels.
+This call will fail when the size of all threads is too large for the system to handle.
+Where the thread size is unknown, and potentially very large, please use the 'paged' call, and
+specify ranges of the threads to retrieve in each call.
+// Log the subject lines of your Inbox
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+threads
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+threads
+[
+i
+].
+getFirstMessageSubject
+());
+}
+Return
+Gmail
+Thread[]
+— an array of Gmail threads in the Inbox
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Inbox
+Threads(start, max)
+Retrieves a range of Inbox threads irrespective of labels.
+// Log the subject lines of up to the first 50 emails in your Inbox
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+50
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+threads
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+threads
+[
+i
+].
+getFirstMessageSubject
+());
+}
+Parameters
+Name
+Type
+Description
+start
+Integer
+the index of the first thread to retrieve
+max
+Integer
+the maximum number of threads to retrieve
+Return
+Gmail
+Thread[]
+— an array of Gmail threads in the Inbox
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Inbox
+Unread
+Count()
+Gets the number of unread threads in the inbox.
+Logger
+.
+log
+(
+`Messages unread in inbox:
+${
+GmailApp
+.
+getInboxUnreadCount
+()
+}
+`
+);
+Return
+Integer
+— the number of threads in the inbox that have unread messages
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Message
+By
+Id(id)
+Gets a message by ID.
+Use this in conjunction with getId() on Gmail messages.
+// Get the first message in the first thread of your inbox
+const
+message
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+].
+getMessages
+()[
+0
+];
+// Get its ID
+const
+messageId
+=
+message
+.
+getId
+();
+// Now fetch the same message using that ID.
+const
+messageById
+=
+GmailApp
+.
+getMessageById
+(
+messageId
+);
+// Should always log true as they should be the same message
+Logger
+.
+log
+(
+message
+.
+getSubject
+()
+===
+messageById
+.
+getSubject
+());
+Parameters
+Name
+Type
+Description
+id
+String
+the ID of the message to retrieve
+Return
+Gmail
+Message
+— the message with the given ID
+Throws
+Error
+— if no message with the given ID can be found
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Thread
+By
+Id(id)
+get
+Messages
+For
+Thread(thread)
+Retrieve all messages in the specified thread.
+// Log all the subject lines in the first thread of your inbox
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+messages
+=
+GmailApp
+.
+getMessagesForThread
+(
+thread
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+messages
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+`subject:
+${
+messages
+[
+i
+].
+getSubject
+()
+}
+`
+);
+}
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread of messages to retrieve
+Return
+Gmail
+Message[]
+— array of messages corresponding to this thread
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Messages
+For
+Threads(threads)
+get
+Messages
+For
+Threads(threads)
+Retrieve all messages in the specified threads.
+// Log the subject lines of all messages in the first two threads of your inbox
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+2
+);
+const
+messages
+=
+GmailApp
+.
+getMessagesForThreads
+(
+thread
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+messages
+.
+length
+;
+i
+++
+)
+{
+for
+(
+let
+j
+=
+0
+;
+j
+<
+messages
+[
+i
+].
+length
+;
+j
+++
+)
+{
+Logger
+.
+log
+(
+`subject:
+${
+messages
+[
+i
+][
+j
+].
+getSubject
+()
+}
+`
+);
+}
+}
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+the threads of messages to retrieve
+Return
+Gmail
+Message[][]
+— an array of arrays of messages, where each item in the outer array corresponds to a
+    thread and the inner array contains the messages in that thread
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Messages
+For
+Thread(thread)
+get
+Priority
+Inbox
+Threads()
+Retrieves all Priority Inbox threads irrespective of labels.
+This call will fail when the size of all threads is too large for the system to handle.
+Where the thread size is unknown, and potentially very large, please use the 'paged' call, and
+specify ranges of the threads to retrieve in each call.
+Logger
+.
+log
+(
+`# of messages in your Priority Inbox:
+${
+GmailApp
+.
+getPriorityInboxThreads
+().
+length
+}
+`
+,
+);
+Return
+Gmail
+Thread[]
+— an array of Gmail threads in the Priority Inbox
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Priority
+Inbox
+Threads(start, max)
+Retrieves a range of Priority Inbox threads irrespective of labels.
+// Will log some number 2 or less
+Logger
+.
+log
+(
+`# of messages in your Priority Inbox:
+${
+GmailApp
+.
+getPriorityInboxThreads
+(
+0
+,
+2
+).
+length
+}
+`
+,
+);
+Parameters
+Name
+Type
+Description
+start
+Integer
+the index of the first thread to retrieve
+max
+Integer
+the maximum number of threads to retrieve
+Return
+Gmail
+Thread[]
+— an array of Gmail threads in the Priority Inbox
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Priority
+Inbox
+Unread
+Count()
+Gets the number of unread threads in the Priority Inbox.
+Logger
+.
+log
+(
+`Number of unread emails in your Priority Inbox :
+${
+GmailApp
+.
+getPriorityInboxUnreadCount
+()
+}
+`
+,
+);
+Return
+Integer
+— the number of threads in the Priority Inbox that have unread messages
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Spam
+Threads()
+Retrieves all spam threads irrespective of labels.
+This call will fail when the size of all threads is too large for the system to handle.
+Where the thread size is unknown, and potentially very large, please use the 'paged' call, and
+specify ranges of the threads to retrieve in each call.
+Logger
+.
+log
+(
+`# of total spam threads:
+${
+GmailApp
+.
+getSpamThreads
+().
+length
+}
+`
+);
+Return
+Gmail
+Thread[]
+— an array of Gmail threads in the spam folder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Spam
+Threads(start, max)
+Retrieves a range of spam threads irrespective of labels.
+// Will log a number at most 5
+Logger
+.
+log
+(
+`# of total spam threads:
+${
+GmailApp
+.
+getSpamThreads
+(
+0
+,
+5
+).
+length
+}
+`
+);
+Parameters
+Name
+Type
+Description
+start
+Integer
+the index of the first thread to retrieve
+max
+Integer
+the maximum number of threads to retrieve
+Return
+Gmail
+Thread[]
+— an array of Gmail threads in the spam folder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Spam
+Unread
+Count()
+Gets the number of unread threads that are spam.
+// Unless you actually read stuff in your spam folder, this should be the same
+// as the number of messages in your spam folder.
+Logger
+.
+log
+(
+`# unread threads that are spam:
+${
+GmailApp
+.
+getSpamUnreadCount
+()
+}
+`
+);
+Return
+Integer
+— the number spam threads that have unread messages
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Starred
+Threads()
+Retrieves all starred threads irrespective of labels.
+This call will fail when the size of all threads is too large for the system to handle.
+Where the thread size is unknown, and potentially very large, please use the 'paged' call, and
+specify ranges of the threads to retrieve in each call.
+// Logs the number of starred threads
+Logger
+.
+log
+(
+`# Starred threads:
+${
+GmailApp
+.
+getStarredThreads
+().
+length
+}
+`
+);
+Return
+Gmail
+Thread[]
+— an array of starred Gmail threads
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Starred
+Threads(start, max)
+Retrieves a range of starred threads irrespective of labels.
+// Logs the number of starred threads to a maximum of 5
+Logger
+.
+log
+(
+`# Starred threads:
+${
+GmailApp
+.
+getStarredThreads
+(
+0
+,
+5
+).
+length
+}
+`
+);
+Parameters
+Name
+Type
+Description
+start
+Integer
+the index of the first thread to retrieve
+max
+Integer
+the maximum number of threads to retrieve
+Return
+Gmail
+Thread[]
+— an array of starred Gmail threads
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Starred
+Unread
+Count()
+Gets the number of unread threads that are starred.
+Logger
+.
+log
+(
+`# unread and starred:
+${
+GmailApp
+.
+getStarredUnreadCount
+()
+}
+`
+);
+Return
+Integer
+— the number of starred threads that have unread messages
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Thread
+By
+Id(id)
+Gets a thread by ID.
+Use this in conjunction with getId() on Gmail threads.
+// Gets the first inbox thread.
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// Gets the same thread by ID.
+const
+threadById
+=
+GmailApp
+.
+getThreadById
+(
+firstThread
+.
+getId
+());
+// Verifies that they are the same.
+console
+.
+log
+(
+firstThread
+.
+getFirstMessageSubject
+()
+===
+threadById
+.
+getFirstMessageSubject
+(),
+);
+Parameters
+Name
+Type
+Description
+id
+String
+The ID of the thread to retrieve.
+Return
+Gmail
+Thread
+— The thread with the given ID or
+null
+if not found.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+get
+Message
+By
+Id(id)
+get
+Trash
+Threads()
+Retrieves all trash threads irrespective of labels.
+This call will fail when the size of all threads is too large for the system to handle.
+Where the thread size is unknown, and potentially very large, please use the 'paged' call, and
+specify ranges of the threads to retrieve in each call.
+Logger
+.
+log
+(
+`# of total trash threads:
+${
+GmailApp
+.
+getTrashThreads
+().
+length
+}
+`
+);
+Return
+Gmail
+Thread[]
+— an array of Gmail threads in the trash
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Trash
+Threads(start, max)
+Retrieves a range of trash threads irrespective of labels.
+// Will log a number at most 5
+Logger
+.
+log
+(
+`# of total trash threads:
+${
+GmailApp
+.
+getTrashThreads
+(
+0
+,
+5
+).
+length
+}
+`
+,
+);
+Parameters
+Name
+Type
+Description
+start
+Integer
+the index of the first thread to retrieve
+max
+Integer
+the maximum number of threads to retrieve
+Return
+Gmail
+Thread[]
+— an array of Gmail threads in the trash
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+User
+Label
+By
+Name(name)
+Retrieves a label given the label name.
+const
+labelObject
+=
+GmailApp
+.
+getUserLabelByName
+(
+'myLabel'
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the label to retrieve
+Return
+Gmail
+Label
+— the Gmail label with the given name
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+User
+Labels()
+Retrieves a list of user-created labels.
+// Logs all of the names of your labels
+const
+labels
+=
+GmailApp
+.
+getUserLabels
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+labels
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+`label:
+${
+labels
+[
+i
+].
+getName
+()
+}
+`
+);
+}
+Return
+Gmail
+Label[]
+— array of user created labels
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+mark
+Message
+Read(message)
+Marks this message read and forces the message to refresh.
+// Mark the first message in the first thread of your inbox as read
+const
+message
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+].
+getMessages
+()[
+0
+];
+GmailApp
+.
+markMessageRead
+(
+message
+);
+Parameters
+Name
+Type
+Description
+message
+Gmail
+Message
+the message to mark as read
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Message
+Unread(message)
+mark
+Message
+Unread(message)
+Marks this message unread and forces the message to refresh.
+// Mark the first message in the first thread of your inbox as unread
+const
+message
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+].
+getMessages
+()[
+0
+];
+GmailApp
+.
+markMessageUnread
+(
+message
+);
+Parameters
+Name
+Type
+Description
+message
+Gmail
+Message
+the message to mark as unread
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Message
+Read(message)
+mark
+Messages
+Read(messages)
+Marks these messages read and forces the messages to refresh.
+// Mark first three messages in the first inbox thread as read.
+// Assumes that the first inbox thread has 3 messages in it.
+const
+threadMessages
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+].
+getMessages
+();
+const
+messages
+=
+[
+threadMessages
+[
+0
+],
+threadMessages
+[
+1
+],
+threadMessages
+[
+2
+]];
+GmailApp
+.
+markMessagesRead
+(
+messages
+);
+Parameters
+Name
+Type
+Description
+messages
+Gmail
+Message[]
+an array of messages to mark as read
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Messages
+Unread(messages)
+mark
+Messages
+Unread(messages)
+Marks these messages unread and forces the messages to refresh.
+// Mark first three messages in the first inbox thread as unread.
+// Assumes that the first inbox thread has 3 messages in it
+const
+threadMessages
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+].
+getMessages
+();
+const
+messages
+=
+[
+threadMessages
+[
+0
+],
+threadMessages
+[
+1
+],
+threadMessages
+[
+2
+]];
+GmailApp
+.
+markMessagesUnread
+(
+messages
+);
+Parameters
+Name
+Type
+Description
+messages
+Gmail
+Message[]
+an array of messages to mark as unread
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Messages
+Read(messages)
+mark
+Thread
+Important(thread)
+Marks this thread as important and forces the thread to refresh.
+// Marks first inbox thread as important
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+GmailApp
+.
+markThreadImportant
+(
+thread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to mark as important
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Thread
+Unimportant(thread)
+mark
+Thread
+Read(thread)
+Marks this thread as read and forces the thread to refresh.
+// Marks first inbox thread as read
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+GmailApp
+.
+markThreadRead
+(
+thread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to mark as read
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Thread
+Unread(thread)
+mark
+Thread
+Unimportant(thread)
+Marks this thread as unimportant and forces the thread to refresh.
+// Marks first inbox thread as unimportant
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+GmailApp
+.
+markThreadUnimportant
+(
+thread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to mark as unimportant
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Thread
+Important(thread)
+mark
+Thread
+Unread(thread)
+Marks this thread unread and forces the thread to refresh.
+// Marks first inbox thread as unread
+const
+thread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+GmailApp
+.
+markThreadUnread
+(
+thread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to mark as unread
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Thread
+Read(thread)
+mark
+Threads
+Important(threads)
+Marks these threads as important and forces the threads to refresh.
+// Marks first two threads in inbox as important
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+2
+);
+GmailApp
+.
+markThreadsImportant
+(
+threads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+an array of threads to mark as important
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Threads
+Unimportant(threads)
+mark
+Threads
+Read(threads)
+Marks these threads as read and forces the threads to refresh.
+// Marks first two threads in inbox as read
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+2
+);
+GmailApp
+.
+markThreadsRead
+(
+threads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+an array of threads to mark as read
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Threads
+Unread(threads)
+mark
+Threads
+Unimportant(threads)
+Marks these threads as unimportant and forces the threads to refresh.
+// Marks first two threads in inbox as unimportant
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+2
+);
+GmailApp
+.
+markThreadsUnimportant
+(
+threads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+an array of threads to mark as unimportant
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Threads
+Important(threads)
+mark
+Threads
+Unread(threads)
+Marks these threads as unread and forces the threads to refresh.
+// Marks first two threads in inbox as unread
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+2
+);
+GmailApp
+.
+markThreadsUnread
+(
+threads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+an array of threads to mark as unread
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+mark
+Threads
+Read(threads)
+move
+Message
+To
+Trash(message)
+Moves the message to the trash and forces the message to refresh.
+// Move the first message in your inbox to trash
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+firstMessage
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+GmailApp
+.
+moveMessageToTrash
+(
+firstMessage
+);
+Parameters
+Name
+Type
+Description
+message
+Gmail
+Message
+the message to be trashed
+Return
+Gmail
+App
+— the Gmail service (useful for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Messages
+To
+Trash(messages)
+move
+Messages
+To
+Trash(messages)
+Moves the specified messages to the trash and forces the messages to refresh.
+// Move first two messages in your inbox to trash
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+messages
+=
+firstThread
+.
+getMessages
+();
+const
+toDelete
+=
+[
+messages
+[
+0
+],
+messages
+[
+1
+]];
+GmailApp
+.
+moveMessagesToTrash
+(
+toDelete
+);
+Parameters
+Name
+Type
+Description
+messages
+Gmail
+Message[]
+the messages to be trashed
+Return
+Gmail
+App
+— the Gmail service (useful for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Message
+To
+Trash(message)
+move
+Thread
+To
+Archive(thread)
+Moves this thread to the archive and forces the thread to refresh.
+// Archive the first thread in your inbox
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+GmailApp
+.
+moveThreadToArchive
+(
+firstThread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to be archive
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Thread
+To
+Inbox(thread)
+move
+Thread
+To
+Spam(thread)
+move
+Thread
+To
+Trash(thread)
+move
+Thread
+To
+Inbox(thread)
+Moves this thread to the inbox and forces the thread to refresh.
+// Find a thread not already in your inbox
+const
+thread
+=
+GmailApp
+.
+search
+(
+'-in:inbox'
+)[
+0
+];
+// Get the first one
+GmailApp
+.
+moveThreadToInbox
+(
+thread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to be moved to the inbox
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Thread
+To
+Trash(thread)
+move
+Thread
+To
+Spam(thread)
+move
+Thread
+To
+Archive(thread)
+move
+Thread
+To
+Spam(thread)
+Moves this thread to spam and forces the thread to refresh.
+// Tag first thread in inbox as spam
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+GmailApp
+.
+moveThreadToSpam
+(
+firstThread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to be moved to spam
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Thread
+To
+Trash(thread)
+move
+Thread
+To
+Inbox(thread)
+move
+Thread
+To
+Archive(thread)
+move
+Thread
+To
+Trash(thread)
+Moves this thread to the trash and forces the thread to refresh.
+// Move first thread in inbox to trash
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+GmailApp
+.
+moveThreadToTrash
+(
+firstThread
+);
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to be trashed
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Thread
+To
+Inbox(thread)
+move
+Thread
+To
+Spam(thread)
+move
+Thread
+To
+Archive(thread)
+move
+Threads
+To
+Archive(threads)
+Moves these threads to the archive and forces the threads to refresh.
+// Move first two threads in your inbox to the archive
+const
+firstTwoThreads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+2
+);
+GmailApp
+.
+moveThreadsToArchive
+(
+firstTwoThreads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+an array of threads to be archived
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Threads
+To
+Inbox(threads)
+move
+Threads
+To
+Spam(threads)
+move
+Threads
+To
+Trash(threads)
+move
+Threads
+To
+Inbox(threads)
+Moves these threads to the inbox and forces the threads to refresh.
+// Find two threads not already in your inbox
+const
+firstTwoThreads
+=
+GmailApp
+.
+search
+(
+'-in:inbox'
+,
+0
+,
+2
+);
+GmailApp
+.
+moveThreadsToInbox
+(
+firstTwoThreads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+an array of threads to be moved to the inbox
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Threads
+To
+Trash(threads)
+move
+Threads
+To
+Spam(threads)
+move
+Threads
+To
+Archive(threads)
+move
+Threads
+To
+Spam(threads)
+Moves these threads to spam and forces the threads to refresh.
+// Move first two threads in your inbox to spam
+const
+firstTwoThreads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+2
+);
+GmailApp
+.
+moveThreadsToSpam
+(
+firstTwoThreads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+an array of threads to be moved to spam
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Threads
+To
+Inbox(threads)
+move
+Threads
+To
+Trash(threads)
+move
+Threads
+To
+Archive(threads)
+move
+Threads
+To
+Trash(threads)
+Moves these threads to the trash and forces the threads to refresh.
+// Move first two threads in your inbox to trash
+const
+firstTwoThreads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+2
+);
+GmailApp
+.
+moveThreadsToTrash
+(
+firstTwoThreads
+);
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+an array of threads to be trashed
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+move
+Threads
+To
+Inbox(threads)
+move
+Threads
+To
+Spam(threads)
+move
+Threads
+To
+Archive(threads)
+refresh
+Message(message)
+Reloads the message and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+firstMessage
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+// ...Do something that may take a while here....
+GmailApp
+.
+refreshMessage
+(
+firstMessage
+);
+// ...Do more stuff with firstMessage...
+Parameters
+Name
+Type
+Description
+message
+Gmail
+Message
+the message to be refreshed
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+refresh
+Messages(messages)
+refresh
+Messages(messages)
+Reloads the messages and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+coupleOfMessages
+=
+firstThread
+.
+getMessages
+().
+slice
+(
+0
+,
+2
+);
+// ...Do something that may take a while here....
+GmailApp
+.
+refreshMessages
+(
+coupleOfMessages
+);
+// ...Do more stuff with coupleOfMessages...
+Parameters
+Name
+Type
+Description
+messages
+Gmail
+Message[]
+the messages to be refreshed
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+refresh
+Message(message)
+refresh
+Thread(thread)
+Reloads the thread and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+// ...Do something that may take a while here....
+GmailApp
+.
+refreshThread
+(
+firstThread
+);
+// ... Do more stuff with the thread ...
+Parameters
+Name
+Type
+Description
+thread
+Gmail
+Thread
+the thread to be refreshed
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+refresh
+Threads(threads)
+refresh
+Threads(threads)
+Reloads the threads and associated state from Gmail (useful in case the labels, read state,
+etc., have changed).
+const
+threads
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+3
+);
+// ...Do something that may take a while here....
+GmailApp
+.
+refreshThreads
+(
+threads
+);
+// ... Do more stuff with threads ...
+Parameters
+Name
+Type
+Description
+threads
+Gmail
+Thread[]
+the threads to be refreshed
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+refresh
+Thread(thread)
+search(query)
+Search Gmail with the given query.
+This call will fail when the size of all threads is too large for the system to handle.
+Where the thread size is unknown, and potentially very large, please use the 'paged' call, and
+specify ranges of the threads to retrieve in each call.
+// Find starred messages with subject IMPORTANT
+const
+threads
+=
+GmailApp
+.
+search
+(
+'is:starred subject:"IMPORTANT"'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the search query, as you would type it into Gmail
+Return
+Gmail
+Thread[]
+— an array of Gmail threads matching this query
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+search(query, start, max)
+Search Gmail with the given query.
+// Find starred messages with subject IMPORTANT and return second batch of 10.
+// Assumes there are at least 11 of them, otherwise this will return an empty
+// array.
+const
+threads
+=
+GmailApp
+.
+search
+(
+'is:starred subject:"IMPORTANT"'
+,
+10
+,
+10
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the search query, as you would type it into Gmail
+start
+Integer
+the index of the starting thread
+max
+Integer
+the maximum number of threads to return
+Return
+Gmail
+Thread[]
+— an array of Gmail threads matching this query
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+send
+Email(recipient, subject, body)
+Sends an email message. The size of the email (including headers) is
+quota limited
+.
+// The code below will send an email with the current date and time.
+const
+now
+=
+new
+Date
+();
+GmailApp
+.
+sendEmail
+(
+'mike@example.com'
+,
+'current time'
+,
+`The time is:
+${
+now
+.
+toString
+()
+}
+`
+,
+);
+Parameters
+Name
+Type
+Description
+recipient
+String
+comma separated list of email addresses
+subject
+String
+subject of the email (250 characters maximum)
+body
+String
+body of the email
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+send
+Email(recipient, subject, body, options)
+send
+Email(recipient, subject, body, options)
+Sends an email message with optional arguments. The email can contain plain text or an HTML
+body. The size of the email (including headers, but excluding attachments) is
+quota limited
+.
+// Send an email with a file from Google Drive attached as a PDF.
+const
+file
+=
+DriveApp
+.
+getFileById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+GmailApp
+.
+sendEmail
+(
+'mike@example.com'
+,
+'Attachment example'
+,
+'Please see the attached file.'
+,
+{
+attachments
+:
+[
+file
+.
+getAs
+(
+MimeType
+.
+PDF
+)],
+name
+:
+'Automatic Emailer Script'
+,
+},
+);
+Parameters
+Name
+Type
+Description
+recipient
+String
+the addresses of the recipient
+subject
+String
+the subject line (250 characters maximum)
+body
+String
+the body of the email
+options
+Object
+a JavaScript object that specifies advanced parameters, as listed below
+Advanced parameters
+Name
+Type
+Description
+attachments
+Blob
+Source[]
+an
+    array of files to send with the email
+bcc
+String
+a comma-separated list of email addresses to BCC
+cc
+String
+a comma-separated list of email addresses to CC
+from
+String
+the address that the email should be sent from, which must be one
+    of the values returned by
+get
+Aliases()
+html
+Body
+String
+if set, devices capable of rendering HTML will use it instead
+    of the required body argument; you can add an optional
+inline
+Images
+field in HTML
+    body if you have inlined images for your email
+inline
+Images
+Object
+a JavaScript object containing a mapping from image key
+    (
+String
+) to image data (
+Blob
+Source
+); this assumes that the
+html
+Body
+parameter is used and contains references to these images in the format
+<img src="cid:imageKey" />
+name
+String
+the name of the sender of the email (default: the user's name)
+no
+Reply
+Boolean
+true
+if the email should be sent from a generic
+    no-reply email address to discourage recipients from responding to emails; this option is
+    only possible for Google Workspace accounts, not Gmail users
+reply
+To
+String
+an email address to use as the default reply-to address
+    (default: the user's email address)
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+send
+Email(recipient, subject, body)
+set
+Current
+Message
+Access
+Token(accessToken)
+Sets the
+current message
+access token
+that enables the script to access the current
+Gmail
+Message
+properties.
+Only
+Google Workspace add-on
+projects using Gmail
+current message scopes
+require this method.
+function
+handleAddonActionEvent
+(
+e
+)
+{
+GmailApp
+.
+setCurrentMessageAccessToken
+(
+e
+.
+messageMetadata
+.
+accessToken
+);
+const
+mailMessage
+=
+GmailApp
+.
+getMessageById
+(
+e
+.
+messageMetadata
+.
+messageId
+);
+// Do something with mailMessage
+}
+Parameters
+Name
+Type
+Description
+access
+Token
+String
+the temporary access token obtained from a Gmail add-on
+action event object
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+star
+Message(message)
+Adds a star to this message and forces the message to refresh.
+// Stars the first message in the first thread in your inbox
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+GmailApp
+.
+starMessage
+(
+message
+);
+Parameters
+Name
+Type
+Description
+message
+Gmail
+Message
+the message to star
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+star
+Messages(messages)
+star
+Messages(messages)
+Adds stars to these messages and forces the messages to refresh.
+// Stars the first three messages in the first thread in your inbox
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+coupleOfMessages
+=
+firstThread
+.
+getMessages
+().
+slice
+(
+0
+,
+3
+);
+GmailApp
+.
+starMessages
+(
+coupleOfMessages
+);
+Parameters
+Name
+Type
+Description
+messages
+Gmail
+Message[]
+an array of messages to star
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+star
+Message(message)
+unstar
+Message(message)
+Removes a star from this message and forces the message to refresh.
+// Unstars the first message in the first thread in your inbox
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+message
+=
+firstThread
+.
+getMessages
+()[
+0
+];
+GmailApp
+.
+unstarMessage
+(
+message
+);
+Parameters
+Name
+Type
+Description
+message
+Gmail
+Message
+the message to unstar
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+unstar
+Messages(messages)
+unstar
+Messages(messages)
+Removes stars from these messages and forces the messages to refresh.
+// Unstars the first three messages in the first thread in your inbox
+const
+firstThread
+=
+GmailApp
+.
+getInboxThreads
+(
+0
+,
+1
+)[
+0
+];
+const
+coupleOfMessages
+=
+firstThread
+.
+getMessages
+().
+slice
+(
+0
+,
+3
+);
+GmailApp
+.
+unstarMessages
+(
+coupleOfMessages
+);
+Parameters
+Name
+Type
+Description
+messages
+Gmail
+Message[]
+an array of messages to unstar
+Return
+Gmail
+App
+— the Gmail service, useful for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+See also
+unstar
+Message(message)
+Deprecated methods
+get
+Chat
+Threads()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all classic Google Hangouts threads and Google Chat threads until Google switches all
+users of classic Hangouts to Chat later this year. To learn more, see
+Learn
+about the switch from classic Hangouts to Google Chat
+.
+This call fails when the size of all threads is too large for the system to handle. Where
+the thread size is unknown, and potentially very large, use the 'paged' call, and specify
+ranges of the threads to retrieve in each call.
+const
+threads
+=
+GmailApp
+.
+getChatThreads
+();
+Logger
+.
+log
+(
+`# of chat threads:
+${
+threads
+.
+length
+}
+`
+);
+Return
+Gmail
+Thread[]
+— An array of chat threads from Gmail.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/
+get
+Chat
+Threads(start, max)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets a range of classic Google Hangouts threads and Google Chat threads until Google switches
+all users of classic Hangouts to Chat later this year. To learn more, see
+Learn
+about the switch from classic Hangouts to Google Chat
+.
+// Get first 50 chat threads
+const
+threads
+=
+GmailApp
+.
+getChatThreads
+(
+0
+,
+50
+);
+// Will log no more than 50.0
+Logger
+.
+log
+(
+threads
+.
+length
+);
+Logger
+.
+log
+(
+threads
+[
+0
+].
+getFirstMessageSubject
+());
+Parameters
+Name
+Type
+Description
+start
+Integer
+the index of the first thread to retrieve
+max
+Integer
+the maximum number of threads to retrieve
+Return
+Gmail
+Thread[]
+— an array of chat Gmail threads
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+or appropriate scopes from the
+related REST API
+:
+https://mail.google.com/

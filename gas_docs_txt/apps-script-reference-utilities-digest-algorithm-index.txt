@@ -1,0 +1,30 @@
+Source Path: gas_docs_html/apps-script/reference/utilities/digest-algorithm/index.html
+
+Digest
+Algorithm
+Selector of Digest algorithm.
+To call an enum, you call its parent class, name, and property. For example,
+Utilities.DigestAlgorithm.MD2
+.
+Properties
+Property
+Type
+Description
+MD2
+Enum
+MD2 algorithm
+MD5
+Enum
+MD5 algorithm
+SHA_1
+Enum
+SHA-1 algorithm
+SHA_256
+Enum
+SHA-256 algorithm
+SHA_384
+Enum
+SHA-384 algorithm
+SHA_512
+Enum
+SHA-512 algorithm

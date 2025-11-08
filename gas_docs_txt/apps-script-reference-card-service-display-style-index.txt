@@ -1,0 +1,30 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/display-style/index.html
+
+Display
+Style
+An enum that defines the display style of card.
+Display
+Style.REPLACE
+means that the card is shown by replacing the view of top card in
+the card stack.
+Display
+Style.PEEK
+mean that the header of the card appears at the bottom of the
+sidebar, partially covering the current top card of the stack. Clicking the header pops the card
+into the card stack. If the card has no header, a generated header is used instead.
+Display
+Style
+only works for card returned from contextual trigger function.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.DisplayStyle.PEEK
+.
+Properties
+Property
+Type
+Description
+PEEK
+Enum
+Show the card header at the bottom of add-on content over existing content.
+REPLACE
+Enum
+Show the card by replacing existing content.

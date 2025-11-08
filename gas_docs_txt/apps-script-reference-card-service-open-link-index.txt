@@ -1,0 +1,184 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/open-link/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+OpenLink represents an action to open a link with options.
+It is available for Google Workspace add-ons and Google Chat apps.
+OpenLink can be configured to open links in an overlay or full screen, and to reload the add-on or do nothing when closed.
+Add-ons cannot detect window state or update if a link has the Cross-Origin-Opener-Policy (COOP) header enabled when trying to reload.
+Key methods for OpenLink include
+setOnClose
+,
+setOpenAs
+, and
+setUrl
+.
+Open
+Link
+Represents an action to open a link with some options.
+Available for Google Workspace add-ons and Google Chat apps.
+// A button that opens as a link in an overlay and
+// requires a reload when closed.
+const
+button
+=
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'This button opens a link in an overlay window'
+)
+.
+setOpenLink
+(
+CardService
+.
+newOpenLink
+()
+.
+setUrl
+(
+'https://www.google.com'
+)
+.
+setOpenAs
+(
+CardService
+.
+OpenAs
+.
+OVERLAY
+)
+.
+setOnClose
+(
+CardService
+.
+OnClose
+.
+RELOAD_ADD_ON
+),
+);
+// An action response that opens a link in full screen and
+// requires no action when closed.
+const
+actionResponse
+=
+CardService
+.
+newActionResponseBuilder
+()
+.
+setOpenLink
+(
+CardService
+.
+newOpenLink
+()
+.
+setUrl
+(
+'https://www.google.com'
+)
+.
+setOpenAs
+(
+CardService
+.
+OpenAs
+.
+FULL_SIZE
+)
+.
+setOnClose
+(
+CardService
+.
+OnClose
+.
+NOTHING
+),
+)
+.
+build
+();
+Note:
+To reload add-ons after closing a link, don't use a link with
+Cross-Origin-Opener-Policy (COOP) header enabled. If COOP is enabled in a link, add-ons can't
+detect the window state, and the add-on card doesn't update.
+Methods
+Method
+Return type
+Brief description
+set
+On
+Close(onClose)
+Open
+Link
+Sets the behavior of the URL action when the URL window or tab is closed.
+set
+Open
+As(openAs)
+Open
+Link
+Sets the behavior of URL when it is opened.
+set
+Url(url)
+Open
+Link
+Sets the URL to be opened.
+Detailed documentation
+set
+On
+Close(onClose)
+Sets the behavior of the URL action when the URL window or tab is closed.
+Parameters
+Name
+Type
+Description
+on
+Close
+On
+Close
+The closing setting.
+Return
+Open
+Link
+— This object, for chaining.
+set
+Open
+As(openAs)
+Sets the behavior of URL when it is opened.
+Parameters
+Name
+Type
+Description
+open
+As
+Open
+As
+The opening setting.
+Return
+Open
+Link
+— This object, for chaining.
+set
+Url(url)
+Sets the URL to be opened. The URL must match a prefix
+whitelisted in
+the manifest
+.
+Parameters
+Name
+Type
+Description
+url
+String
+The URL to open.
+Return
+Open
+Link
+— This object, for chaining.

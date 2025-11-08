@@ -1,0 +1,424 @@
+Source Path: gas_docs_html/apps-script/reference/script/trigger-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TriggerBuilder is a generic builder used for creating script triggers in Apps Script.
+It provides methods to create trigger builders for specific Google services such as Documents, Forms, Spreadsheets, and Calendar.
+TriggerBuilder also allows the creation of time-based triggers using the
+timeBased()
+method.
+Each method returns a specialized builder for the respective service or time-based triggers.
+Creating triggers requires appropriate authorization scopes depending on the service being used.
+Trigger
+Builder
+A generic builder for script triggers.
+Methods
+Method
+Return type
+Brief description
+for
+Document(document)
+Document
+Trigger
+Builder
+Creates and returns a
+Document
+Trigger
+Builder
+tied to the given document.
+for
+Document(key)
+Document
+Trigger
+Builder
+Creates and returns a
+Document
+Trigger
+Builder
+tied to the document with the given ID.
+for
+Form(form)
+Form
+Trigger
+Builder
+Creates and returns a
+Form
+Trigger
+Builder
+tied to the given form.
+for
+Form(key)
+Form
+Trigger
+Builder
+Creates and returns a
+Form
+Trigger
+Builder
+tied to the form with the given ID.
+for
+Spreadsheet(sheet)
+Spreadsheet
+Trigger
+Builder
+Creates and returns a
+Spreadsheet
+Trigger
+Builder
+tied to the given spreadsheet.
+for
+Spreadsheet(key)
+Spreadsheet
+Trigger
+Builder
+Creates and returns a
+Spreadsheet
+Trigger
+Builder
+tied to the spreadsheet with the given
+ID.
+for
+User
+Calendar(emailId)
+Calendar
+Trigger
+Builder
+Returns a builder for building calendar triggers.
+time
+Based()
+Clock
+Trigger
+Builder
+Creates and returns a
+Clock
+Trigger
+Builder
+for building time-based triggers.
+Detailed documentation
+for
+Document(document)
+Creates and returns a
+Document
+Trigger
+Builder
+tied to the given document.
+Script
+App
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forDocument
+(
+DocumentApp
+.
+getActiveDocument
+())
+.
+onOpen
+()
+.
+create
+();
+Parameters
+Name
+Type
+Description
+document
+Document
+the document
+Return
+Document
+Trigger
+Builder
+— the new DocumentTriggerBuilder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+for
+Document(key)
+Creates and returns a
+Document
+Trigger
+Builder
+tied to the document with the given ID.
+Script
+App
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forDocument
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+)
+.
+onOpen
+()
+.
+create
+();
+Parameters
+Name
+Type
+Description
+key
+String
+the ID for the document
+Return
+Document
+Trigger
+Builder
+— the new DocumentTriggerBuilder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+for
+Form(form)
+Creates and returns a
+Form
+Trigger
+Builder
+tied to the given form.
+Script
+App
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forForm
+(
+FormApp
+.
+getActiveForm
+())
+.
+onFormSubmit
+()
+.
+create
+();
+Parameters
+Name
+Type
+Description
+form
+Form
+the form
+Return
+Form
+Trigger
+Builder
+— the new FormTriggerBuilder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+for
+Form(key)
+Creates and returns a
+Form
+Trigger
+Builder
+tied to the form with the given ID.
+Script
+App
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forForm
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+)
+.
+onFormSubmit
+()
+.
+create
+();
+Parameters
+Name
+Type
+Description
+key
+String
+the ID for the form
+Return
+Form
+Trigger
+Builder
+— the new FormTriggerBuilder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+for
+Spreadsheet(sheet)
+Creates and returns a
+Spreadsheet
+Trigger
+Builder
+tied to the given spreadsheet.
+Script
+App
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forSpreadsheet
+(
+SpreadsheetApp
+.
+getActive
+())
+.
+onEdit
+()
+.
+create
+();
+Parameters
+Name
+Type
+Description
+sheet
+Spreadsheet
+the spreadsheet
+Return
+Spreadsheet
+Trigger
+Builder
+— the new SpreadsheetTriggerBuilder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+for
+Spreadsheet(key)
+Creates and returns a
+Spreadsheet
+Trigger
+Builder
+tied to the spreadsheet with the given
+ID.
+Script
+App
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forSpreadsheet
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+)
+.
+onEdit
+()
+.
+create
+();
+Parameters
+Name
+Type
+Description
+key
+String
+the ID for the spreadsheet
+Return
+Spreadsheet
+Trigger
+Builder
+— the new SpreadsheetTriggerBuilder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+for
+User
+Calendar(emailId)
+Returns a builder for building calendar triggers.
+Parameters
+Name
+Type
+Description
+email
+Id
+String
+email ID of the user calendar the trigger monitors.
+Return
+Calendar
+Trigger
+Builder
+— The new CalendarTriggerBuilder.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.readonly
+https://www.googleapis.com/auth/calendar.events
+https://www.googleapis.com/auth/calendar.events.readonly
+https://www.google.com/calendar/feeds
+time
+Based()
+Creates and returns a
+Clock
+Trigger
+Builder
+for building time-based triggers.
+Script
+App
+.
+newTrigger
+(
+'myFunction'
+).
+timeBased
+().
+atDate
+(
+2013
+,
+10
+,
+31
+).
+create
+();
+Return
+Clock
+Trigger
+Builder
+— the new ClockTriggerBuilder
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp

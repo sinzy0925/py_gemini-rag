@@ -1,0 +1,84 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/image-crop-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ImageCropStyle is a class used to apply crop styles to image components in Apps Script, as images cannot be sized or resized directly.
+The class provides methods to set the aspect ratio and the crop type of an image.
+The
+setAspectRatio(ratio)
+method sets the aspect ratio when using the
+RECTANGLE_CUSTOM
+crop type, requiring a positive numerical value.
+The
+setImageCropType(type)
+method sets the crop type for the image, defaulting to
+SQUARE
+.
+Image
+Crop
+Style
+A class that represents a crop style that can be applied to image components. You can't set the
+size of an image or resize it, but you can crop the image.
+Methods
+Method
+Return type
+Brief description
+set
+Aspect
+Ratio(ratio)
+Image
+Crop
+Style
+Sets the aspect ratio to use if the crop type is
+RECTANGLE_CUSTOM
+.
+set
+Image
+Crop
+Type(type)
+Image
+Crop
+Style
+Sets the crop type for the image.
+Detailed documentation
+set
+Aspect
+Ratio(ratio)
+Sets the aspect ratio to use if the crop type is
+RECTANGLE_CUSTOM
+. The ratio must
+be a positive value.
+Parameters
+Name
+Type
+Description
+ratio
+Number
+The ratio to apply.
+Return
+Image
+Crop
+Style
+— This object, for chaining.
+Throws
+Error
+— if the input is negative or zero.
+set
+Image
+Crop
+Type(type)
+Sets the crop type for the image. Default is SQUARE.
+Parameters
+Name
+Type
+Description
+type
+Image
+Crop
+Type
+The crop type.
+Return
+Image
+Crop
+Style
+— This object, for chaining.

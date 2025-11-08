@@ -1,0 +1,563 @@
+Source Path: gas_docs_html/apps-script/reference/forms/text-validation-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextValidationBuilder is a DataValidationBuilder used for creating text validation rules in forms.
+It provides methods to require text items to be numbers, within specific ranges, or matching/not matching patterns.
+You can also require text items to be email addresses, URLs, or have a specific length.
+The builder allows chaining methods to apply multiple validation rules.
+Text
+Validation
+Builder
+A DataValidationBuilder for a
+Text
+Validation
+.
+// Add a text item to a form and require it to be a number within a range.
+const
+form
+=
+FormApp
+.
+create
+(
+'My form'
+);
+const
+textItem
+=
+form
+.
+addTextItem
+().
+setTitle
+(
+'Pick a number between 1 and 100?'
+);
+const
+textValidation
+=
+FormApp
+.
+createTextValidation
+()
+.
+setHelpText
+(
+'Input was not a number between 1 and 100.'
+)
+.
+requireNumberBetween
+(
+1
+,
+100
+)
+.
+build
+();
+textItem
+.
+setValidation
+(
+textValidation
+);
+Methods
+Method
+Return type
+Brief description
+require
+Number()
+Text
+Validation
+Builder
+Requires text item to be a number.
+require
+Number
+Between(start, end)
+Text
+Validation
+Builder
+Requires text item to be a number between start and end, inclusive.
+require
+Number
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires text item to be a number equal to value specified.
+require
+Number
+Greater
+Than(number)
+Text
+Validation
+Builder
+Requires text item to be a number greater than the value specified.
+require
+Number
+Greater
+Than
+Or
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires text item to be a number greater than or equal to the value specified.
+require
+Number
+Less
+Than(number)
+Text
+Validation
+Builder
+Requires text item to be a number less than the value specified.
+require
+Number
+Less
+Than
+Or
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires text item to be a number less than or equal to the value specified.
+require
+Number
+Not
+Between(start, end)
+Text
+Validation
+Builder
+Requires text item to be a number not between start and end, inclusive.
+require
+Number
+Not
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires text item to be a number not equal to the value specified.
+require
+Text
+Contains
+Pattern(pattern)
+Text
+Validation
+Builder
+Requires response to contain pattern.
+require
+Text
+Does
+Not
+Contain
+Pattern(pattern)
+Text
+Validation
+Builder
+Requires response to not contain pattern.
+require
+Text
+Does
+Not
+Match
+Pattern(pattern)
+Text
+Validation
+Builder
+Requires response to not match pattern.
+require
+Text
+Is
+Email()
+Text
+Validation
+Builder
+Requires text item to be an email address.
+require
+Text
+Is
+Url()
+Text
+Validation
+Builder
+Requires text item to be a URL.
+require
+Text
+Length
+Greater
+Than
+Or
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires response length to be greater than or equal to value.
+require
+Text
+Length
+Less
+Than
+Or
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires response length to be less than value.
+require
+Text
+Matches
+Pattern(pattern)
+Text
+Validation
+Builder
+Requires response to match pattern.
+require
+Whole
+Number()
+Text
+Validation
+Builder
+Requires text item to be a whole number.
+Detailed documentation
+require
+Number()
+Requires text item to be a number.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Number
+Between(start, end)
+Requires text item to be a number between start and end, inclusive.
+Parameters
+Name
+Type
+Description
+start
+Number
+the lower bounds of the inclusive range
+end
+Number
+the upper bounds of the inclusive range
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Number
+Equal
+To(number)
+Requires text item to be a number equal to value specified.
+Parameters
+Name
+Type
+Description
+number
+Number
+the value which the item must be equal to.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Number
+Greater
+Than(number)
+Requires text item to be a number greater than the value specified.
+Parameters
+Name
+Type
+Description
+number
+Number
+the value which the item must be greater than.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Number
+Greater
+Than
+Or
+Equal
+To(number)
+Requires text item to be a number greater than or equal to the value specified.
+Parameters
+Name
+Type
+Description
+number
+Number
+the value which the item must be greater than or equal to.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Number
+Less
+Than(number)
+Requires text item to be a number less than the value specified.
+Parameters
+Name
+Type
+Description
+number
+Number
+the value which the item must be greater than.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Number
+Less
+Than
+Or
+Equal
+To(number)
+Requires text item to be a number less than or equal to the value specified.
+Parameters
+Name
+Type
+Description
+number
+Number
+the value which the item must be less than or equal to.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Number
+Not
+Between(start, end)
+Requires text item to be a number not between start and end, inclusive.
+Parameters
+Name
+Type
+Description
+start
+Number
+the lower bounds of the inclusive range
+end
+Number
+the upper bounds of the inclusive range
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Number
+Not
+Equal
+To(number)
+Requires text item to be a number not equal to the value specified.
+Parameters
+Name
+Type
+Description
+number
+Number
+the value which the item must not be equal to.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Text
+Contains
+Pattern(pattern)
+Requires response to contain pattern.
+Parameters
+Name
+Type
+Description
+pattern
+String
+text must contain pattern
+Return
+Text
+Validation
+Builder
+— this for chaining
+require
+Text
+Does
+Not
+Contain
+Pattern(pattern)
+Requires response to not contain pattern.
+Parameters
+Name
+Type
+Description
+pattern
+String
+text must not contain pattern
+Return
+Text
+Validation
+Builder
+— this for chaining
+require
+Text
+Does
+Not
+Match
+Pattern(pattern)
+Requires response to not match pattern.
+Parameters
+Name
+Type
+Description
+pattern
+String
+text must not match pattern
+Return
+Text
+Validation
+Builder
+— this for chaining
+require
+Text
+Is
+Email()
+Requires text item to be an email address.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Text
+Is
+Url()
+Requires text item to be a URL.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining
+require
+Text
+Length
+Greater
+Than
+Or
+Equal
+To(number)
+Requires response length to be greater than or equal to value.
+Parameters
+Name
+Type
+Description
+number
+Integer
+paragraph text length must be greater than this value
+Return
+Text
+Validation
+Builder
+— this for chaining
+require
+Text
+Length
+Less
+Than
+Or
+Equal
+To(number)
+Requires response length to be less than value.
+Parameters
+Name
+Type
+Description
+number
+Integer
+paragraph text length must be less than or equal to this value
+Return
+Text
+Validation
+Builder
+— this for chaining
+require
+Text
+Matches
+Pattern(pattern)
+Requires response to match pattern.
+Parameters
+Name
+Type
+Description
+pattern
+String
+text must match pattern
+Return
+Text
+Validation
+Builder
+— this for chaining
+require
+Whole
+Number()
+Requires text item to be a whole number.
+Return
+Text
+Validation
+Builder
+— this
+Text
+Validation
+, for chaining

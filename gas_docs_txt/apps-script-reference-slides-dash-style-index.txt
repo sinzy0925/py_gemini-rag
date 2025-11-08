@@ -1,0 +1,54 @@
+Source Path: gas_docs_html/apps-script/reference/slides/dash-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DashStyle defines the types of dashes used to render linear geometry.
+These values are based on the "ST_PresetLineDashVal" simple type in the ECMA-376 standard.
+Enum properties like
+SOLID
+,
+DOT
+, and
+DASH
+represent different dash styles.
+You call an enum using its parent class, name, and property, such as
+SlidesApp.DashStyle.DOT
+.
+Dash
+Style
+The kinds of dashes with which linear geometry can be rendered. These values are based on the
+"ST_PresetLineDashVal" simple type described in section 20.1.10.48 of "Office Open XML File
+Formats - Fundamentals and Markup Language Reference", part 1 of
+ECMA-376 5th
+edition
+.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.DashStyle.DOT
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A dash style that is not supported.
+SOLID
+Enum
+Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default
+dash style.
+DOT
+Enum
+Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
+DASH
+Enum
+Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
+DASH_DOT
+Enum
+Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'.
+LONG_DASH
+Enum
+Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'.
+LONG_DASH_DOT
+Enum
+Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value
+'lgDashDot'.

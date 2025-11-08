@@ -1,0 +1,258 @@
+Source Path: gas_docs_html/apps-script/reference/optimization/linear-optimization-service/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The LinearOptimizationService is used to model and solve linear and mixed-integer linear programs.
+You can add variables with upper and lower bounds using
+addVariable()
+.
+Constraints on linear expressions of variables can be added using
+addConstraint()
+.
+The objective function to maximize or minimize can be set using
+setObjectiveCoefficient()
+and
+setMaximization()
+/
+setMinimization()
+.
+The
+createEngine()
+method is used to create an instance of a linear optimization engine.
+Linear
+Optimization
+Service
+The linear optimization service, used to model and solve linear and mixed-integer linear
+programs. The example below solves the following linear program:
+Two variables,
+x
+and
+y
+:
+0 ≤ x ≤ 10
+0 ≤ y ≤ 5
+Constraints:
+0 ≤ 2 * x + 5 * y ≤ 10
+0 ≤ 10 * x + 3 * y ≤ 20
+Objective:
+Maximize
+x + y
+const
+engine
+=
+LinearOptimizationService
+.
+createEngine
+();
+// Add variables, constraints and define the objective using addVariable(),
+// addConstraint(), etc. Add two variables, 0 <= x <= 10 and 0 <= y <= 5
+engine
+.
+addVariable
+(
+'x'
+,
+0
+,
+10
+);
+engine
+.
+addVariable
+(
+'y'
+,
+0
+,
+5
+);
+// Create the constraint: 0 <= 2 * x + 5 * y <= 10
+let
+constraint
+=
+engine
+.
+addConstraint
+(
+0
+,
+10
+);
+constraint
+.
+setCoefficient
+(
+'x'
+,
+2
+);
+constraint
+.
+setCoefficient
+(
+'y'
+,
+5
+);
+// Create the constraint: 0 <= 10 * x + 3 * y <= 20
+constraint
+=
+engine
+.
+addConstraint
+(
+0
+,
+20
+);
+constraint
+.
+setCoefficient
+(
+'x'
+,
+10
+);
+constraint
+.
+setCoefficient
+(
+'y'
+,
+3
+);
+// Set the objective to be x + y
+engine
+.
+setObjectiveCoefficient
+(
+'x'
+,
+1
+);
+engine
+.
+setObjectiveCoefficient
+(
+'y'
+,
+1
+);
+// Engine should maximize the objective.
+engine
+.
+setMaximization
+();
+// Solve the linear program
+const
+solution
+=
+engine
+.
+solve
+();
+if
+(
+!
+solution
+.
+isValid
+())
+{
+Logger
+.
+log
+(
+`No solution
+${
+solution
+.
+getStatus
+()
+}
+`
+);
+}
+else
+{
+Logger
+.
+log
+(
+`Value of x:
+${
+solution
+.
+getVariableValue
+(
+'x'
+)
+}
+`
+);
+Logger
+.
+log
+(
+`Value of y:
+${
+solution
+.
+getVariableValue
+(
+'y'
+)
+}
+`
+);
+}
+Properties
+Property
+Type
+Description
+Status
+Status
+Status of the solver.
+Variable
+Type
+Variable
+Type
+Type of variables created by the solver.
+Methods
+Method
+Return type
+Brief description
+create
+Engine()
+Linear
+Optimization
+Engine
+Creates an engine to to solve linear programs (potentially mixed-integer programs).
+Detailed documentation
+create
+Engine()
+Creates an engine to to solve linear programs (potentially mixed-integer programs).
+// Creates a linear optimization engine.
+const
+engine
+=
+LinearOptimizationService
+.
+createEngine
+();
+engine
+.
+addVariable
+(
+'x'
+,
+0
+,
+10
+);
+// ...
+Return
+Linear
+Optimization
+Engine
+— a linear optimization engine

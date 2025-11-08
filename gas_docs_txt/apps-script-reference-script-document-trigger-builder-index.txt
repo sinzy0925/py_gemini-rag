@@ -1,0 +1,67 @@
+Source Path: gas_docs_html/apps-script/reference/script/document-trigger-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DocumentTriggerBuilder is used to build document triggers.
+The
+create()
+method creates and returns the new trigger.
+The
+onOpen()
+method specifies a trigger that fires when a document is opened.
+Document
+Trigger
+Builder
+A builder for document triggers.
+Methods
+Method
+Return type
+Brief description
+create()
+Trigger
+Creates and returns the new trigger.
+on
+Open()
+Document
+Trigger
+Builder
+Specifies a trigger that will fire when the document is opened.
+Detailed documentation
+create()
+Creates and returns the new trigger.
+Return
+Trigger
+— The new trigger.
+on
+Open()
+Specifies a trigger that will fire when the document is opened.
+const
+document
+=
+DocumentApp
+.
+getActiveDocument
+();
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+).
+forDocument
+(
+document
+).
+onOpen
+().
+create
+();
+Return
+Document
+Trigger
+Builder
+— This
+Document
+Trigger
+Builder
+, for chaining.

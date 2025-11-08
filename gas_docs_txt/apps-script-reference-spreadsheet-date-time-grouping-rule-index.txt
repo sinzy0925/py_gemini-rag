@@ -1,0 +1,39 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/date-time-grouping-rule/index.html
+
+Date
+Time
+Grouping
+Rule
+Access an existing date-time grouping rule.
+To set a rule on
+Pivot
+Group
+, use
+Pivot
+Group.setDateTimeGroupingRule(dateTimeGroupingRuleType)
+.
+Methods
+Method
+Return type
+Brief description
+get
+Rule
+Type()
+Date
+Time
+Grouping
+Rule
+Type
+Gets the type of the date-time grouping rule.
+Detailed documentation
+get
+Rule
+Type()
+Gets the type of the date-time grouping rule.
+Return
+Date
+Time
+Grouping
+Rule
+Type
+— The rule type.

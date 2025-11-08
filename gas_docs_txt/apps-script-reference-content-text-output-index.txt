@@ -1,0 +1,171 @@
+Source Path: gas_docs_html/apps-script/reference/content/text-output/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextOutput is an object served from a script that displays content on googleusercontent.com due to security limitations, rather than directly returning text to the browser.
+You can create a TextOutput with simple text content using ContentService.createTextOutput() in a function like doGet().
+TextOutput supports serving various content types including JSON, RSS, and XML through methods on ContentService.
+Key methods include appending, clearing, downloading as a file, getting/setting content, and getting/setting the mime type of the served content.
+Text
+Output
+A TextOutput object that can be served from a script.
+Due to security considerations, scripts cannot directly return text content to a browser.
+Instead, the browser is redirected to googleusercontent.com, which will display it without any
+further sanitization or manipulation.
+You can return text content like this:
+function
+doGet
+()
+{
+return
+ContentService
+.
+createTextOutput
+(
+'hello world!'
+);
+}
+There are also methods to serve JSON, RSS, and XML as TextOutputs; see the corresponding methods
+on
+Content
+Service
+.
+Methods
+Method
+Return type
+Brief description
+append(addedContent)
+Text
+Output
+Appends new content to the content that will be served.
+clear()
+Text
+Output
+Clears the current content.
+download
+As
+File(filename)
+Text
+Output
+Tells browsers to download rather than display this content.
+get
+Content()
+String
+Gets the content that will be served.
+get
+File
+Name()
+String
+Returns the file name to download this file as, or null if it should be displayed rather than
+downloaded.
+get
+Mime
+Type()
+Mime
+Type
+Get the mime type this content will be served with.
+set
+Content(content)
+Text
+Output
+Sets the content that will be served.
+set
+Mime
+Type(mimeType)
+Text
+Output
+Sets the mime type for content that will be served.
+Detailed documentation
+append(addedContent)
+Appends new content to the content that will be served.
+Parameters
+Name
+Type
+Description
+added
+Content
+String
+the content to append
+Return
+Text
+Output
+— this TextOutput itself, useful for chaining
+clear()
+Clears the current content.
+Return
+Text
+Output
+— this TextOutput itself, useful for chaining
+download
+As
+File(filename)
+Tells browsers to download rather than display this content.
+Some browsers will ignore this setting. Setting this to null will clear it back to the
+default behavior of displaying rather than downloading.
+Parameters
+Name
+Type
+Description
+filename
+String
+the filename to tell the browser to use
+Return
+Text
+Output
+— the TextOutput object, useful for chaining
+Throws
+Error
+— if the filename contains illegal characters
+get
+Content()
+Gets the content that will be served.
+Return
+String
+— the content that will be served
+get
+File
+Name()
+Returns the file name to download this file as, or null if it should be displayed rather than
+downloaded.
+Return
+String
+— the file name
+get
+Mime
+Type()
+Get the mime type this content will be served with.
+Return
+Mime
+Type
+— the mime type this will be served with
+set
+Content(content)
+Sets the content that will be served.
+Parameters
+Name
+Type
+Description
+content
+String
+the content to serve
+Return
+Text
+Output
+— this TextOutput itself, useful for chaining
+set
+Mime
+Type(mimeType)
+Sets the mime type for content that will be served. The default is plain text.
+Parameters
+Name
+Type
+Description
+mime
+Type
+Mime
+Type
+the mime type
+Return
+Text
+Output
+— this TextOutput itself, useful for chaining

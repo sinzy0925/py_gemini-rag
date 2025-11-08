@@ -1,0 +1,314 @@
+Source Path: gas_docs_html/apps-script/reference/utilities/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Utilities service provides various functions for handling string encoding/decoding, date formatting, and JSON manipulation.
+It includes classes for specifying character sets, digest algorithms, MAC algorithms, and RSA algorithms.
+The Utilities class offers methods for tasks such as base-64 encoding/decoding, computing digests and signatures, formatting and parsing dates, working with Blobs, and managing compressed data.
+Utilities
+This service provides utilities for string encoding/decoding, date
+formatting, JSON manipulation, and other miscellaneous tasks.
+Classes
+Name
+Brief description
+Charset
+A typesafe enum for character sets.
+Digest
+Algorithm
+Selector of Digest algorithm.
+Mac
+Algorithm
+Selector of MAC algorithm
+Rsa
+Algorithm
+Selector of RSA algorithm
+Utilities
+This service provides utilities for string encoding/decoding, date formatting, JSON manipulation,
+and other miscellaneous tasks.
+Charset
+Properties
+Property
+Type
+Description
+US_ASCII
+Enum
+UTF_8
+Enum
+Digest
+Algorithm
+Properties
+Property
+Type
+Description
+MD2
+Enum
+MD2 algorithm
+MD5
+Enum
+MD5 algorithm
+SHA_1
+Enum
+SHA-1 algorithm
+SHA_256
+Enum
+SHA-256 algorithm
+SHA_384
+Enum
+SHA-384 algorithm
+SHA_512
+Enum
+SHA-512 algorithm
+Mac
+Algorithm
+Properties
+Property
+Type
+Description
+HMAC_MD5
+Enum
+HMAC_SHA_1
+Enum
+HMAC_SHA_256
+Enum
+HMAC_SHA_384
+Enum
+HMAC_SHA_512
+Enum
+Rsa
+Algorithm
+Properties
+Property
+Type
+Description
+RSA_SHA_1
+Enum
+RSA_SHA_256
+Enum
+Utilities
+Properties
+Property
+Type
+Description
+Charset
+Charset
+Digest
+Algorithm
+Digest
+Algorithm
+Mac
+Algorithm
+Mac
+Algorithm
+Rsa
+Algorithm
+Rsa
+Algorithm
+Methods
+Method
+Return type
+Brief description
+base64Decode(encoded)
+Byte[]
+Decodes a base-64 encoded string into a UTF-8 byte array.
+base64Decode(encoded, charset)
+Byte[]
+Decodes a base-64 encoded string into a byte array in a specific character set.
+base64DecodeWebSafe(encoded)
+Byte[]
+Decodes a base-64 web-safe encoded string into a UTF-8 byte array.
+base64DecodeWebSafe(encoded, charset)
+Byte[]
+Decodes a base-64 web-safe encoded string into a byte array in a specific character set.
+base64Encode(data)
+String
+Generates a base-64 encoded string from the given byte array.
+base64Encode(data)
+String
+Generates a base-64 encoded string from the given string.
+base64Encode(data, charset)
+String
+Generates a base-64 encoded string from the given string in a specific character set.
+base64EncodeWebSafe(data)
+String
+Generates a base-64 web-safe encoded string from the given byte array.
+base64EncodeWebSafe(data)
+String
+Generates a base-64 web-safe encoded string from the given string.
+base64EncodeWebSafe(data, charset)
+String
+Generates a base-64 web-safe encoded string from the given string in a specific character set.
+compute
+Digest(algorithm, value)
+Byte[]
+Compute a digest using the specified algorithm on the specified
+Byte[]
+value.
+compute
+Digest(algorithm, value)
+Byte[]
+Compute a digest using the specified algorithm on the specified
+String
+value.
+compute
+Digest(algorithm, value, charset)
+Byte[]
+Compute a digest using the specified algorithm on the specified
+String
+value with the
+given character set.
+compute
+Hmac
+Sha256Signature(value, key)
+Byte[]
+Signs the provided value using HMAC-SHA256 with the given key.
+compute
+Hmac
+Sha256Signature(value, key)
+Byte[]
+Signs the provided value using HMAC-SHA256 with the given key.
+compute
+Hmac
+Sha256Signature(value, key, charset)
+Byte[]
+Signs the provided value using HMAC-SHA256 with the given key and character set.
+compute
+Hmac
+Signature(algorithm, value, key)
+Byte[]
+Compute a message authentication code using the specified algorithm on the specified key and
+value.
+compute
+Hmac
+Signature(algorithm, value, key)
+Byte[]
+Compute a message authentication code using the specified algorithm on the specified key and
+value.
+compute
+Hmac
+Signature(algorithm, value, key, charset)
+Byte[]
+Compute a message authentication code using the specified algorithm on the specified key and
+value.
+compute
+Rsa
+Sha1Signature(value, key)
+Byte[]
+Signs the provided value using RSA-SHA1 with the given key.
+compute
+Rsa
+Sha1Signature(value, key, charset)
+Byte[]
+Signs the provided value using RSA-SHA1 with the given key and charset.
+compute
+Rsa
+Sha256Signature(value, key)
+Byte[]
+Signs the provided value using RSA-SHA256 with the given key.
+compute
+Rsa
+Sha256Signature(value, key, charset)
+Byte[]
+Signs the provided value using RSA-SHA256 with the given key.
+compute
+Rsa
+Signature(algorithm, value, key)
+Byte[]
+Signs the provided value using the specified RSA algorithm with the given key.
+compute
+Rsa
+Signature(algorithm, value, key, charset)
+Byte[]
+Signs the provided value using the specified RSA algorithm with the given key and charset.
+format
+Date(date, timeZone, format)
+String
+Formats date according to specification described in Java SE SimpleDateFormat class.
+format
+String(template, args)
+String
+Performs
+sprintf
+-like string formatting using '%'-style format strings.
+get
+Uuid()
+String
+Get a UUID as a string (equivalent to using the
+java.util.UUID.randomUUID()
+method).
+gzip(blob)
+Blob
+gzip
+-compresses the provided
+Blob
+data and returns it in a new
+Blob
+object.
+gzip(blob, name)
+Blob
+gzip
+-compresses the provided
+Blob
+data and returns it in a new
+Blob
+object.
+new
+Blob(data)
+Blob
+Create a new Blob object from a byte array.
+new
+Blob(data, contentType)
+Blob
+Create a new Blob object from a byte array and content type.
+new
+Blob(data, contentType, name)
+Blob
+Create a new Blob object from a byte array, content type, and name.
+new
+Blob(data)
+Blob
+Create a new Blob object from a string.
+new
+Blob(data, contentType)
+Blob
+Create a new Blob object from a string and content type.
+new
+Blob(data, contentType, name)
+Blob
+Create a new Blob object from a string, content type, and name.
+parse
+Csv(csv)
+String[][]
+Returns a tabular 2D array representation of a CSV string.
+parse
+Csv(csv, delimiter)
+String[][]
+Returns a tabular 2D array representation of a CSV string using a custom delimiter.
+parse
+Date(date, timeZone, format)
+Date
+Parses the provided string date according to the specification described in the Java Standard
+Edition
+Simple
+Date
+Format
+class.
+sleep(milliseconds)
+void
+Sleeps for specified number of milliseconds.
+ungzip(blob)
+Blob
+Uncompresses a
+Blob
+object and returns a
+Blob
+containing the uncompressed
+data.
+unzip(blob)
+Blob[]
+Takes a Blob representing a zip file and returns its component files.
+zip(blobs)
+Blob
+Creates a new Blob object that is a zip file containing the data from the Blobs passed in.
+zip(blobs, name)
+Blob
+Creates a new Blob object that is a zip file containing the data from the Blobs passed in.

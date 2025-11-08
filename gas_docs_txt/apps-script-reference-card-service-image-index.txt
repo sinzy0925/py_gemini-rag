@@ -1,0 +1,611 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/image/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Image widget displays a single image and is available for Google Workspace add-ons and Google Chat apps.
+You must set the alternative text for accessibility using
+setAltText(altText)
+and the image URL using
+setImageUrl(url)
+.
+You can define various actions to occur when the image is clicked, including setting authorization actions, composing emails, executing custom actions, or opening links.
+An image object can only have one click action defined from the available methods.
+Image
+A widget that shows a single image. For information about cropping images, see
+Image
+Crop
+Style
+.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+image
+=
+CardService
+.
+newImage
+()
+.
+setAltText
+(
+'A nice image'
+)
+.
+setImageUrl
+(
+'https://image.png'
+);
+Methods
+Method
+Return type
+Brief description
+set
+Alt
+Text(altText)
+Image
+Sets the alternative text of the image for accessibility.
+set
+Authorization
+Action(action)
+Image
+Sets an authorization action that opens a URL to the authorization flow when the object is
+clicked.
+set
+Compose
+Action(action, composedEmailType)
+Image
+Sets an action that composes a draft email when the object is clicked.
+set
+Image
+Url(url)
+Image
+Sets the image to use by providing its URL or data string.
+set
+On
+Click
+Action(action)
+Image
+Sets an action that executes when the object is clicked.
+set
+On
+Click
+Open
+Link
+Action(action)
+Image
+Sets an action that opens a URL in a tab when the object is clicked.
+set
+Open
+Link(openLink)
+Image
+Sets a URL to be opened when the object is clicked.
+Detailed documentation
+set
+Alt
+Text(altText)
+Sets the alternative text of the image for accessibility. Required.
+Parameters
+Name
+Type
+Description
+alt
+Text
+String
+The alternative text to assign to this image.
+Return
+Image
+— This object, for chaining.
+set
+Authorization
+Action(action)
+Sets an authorization action that opens a URL to the authorization flow when the object is
+clicked. This opens the URL in a new window. When the user finishes the authorization flow and
+returns to the application, the add-on reloads.
+A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+// ...
+const
+action
+=
+CardService
+.
+newAuthorizationAction
+().
+setAuthorizationUrl
+(
+'url'
+);
+CardService
+.
+newTextButton
+().
+setText
+(
+'Authorize'
+).
+setAuthorizationAction
+(
+action
+);
+Parameters
+Name
+Type
+Description
+action
+Authorization
+Action
+The object that specifies the authorization action to take when this element is
+    clicked.
+Return
+Image
+— This object, for chaining.
+set
+Compose
+Action(action, composedEmailType)
+Sets an action that composes a draft email when the object is clicked. A UI object can only
+have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Compose
+Action
+Response
+object configured using
+Compose
+Action
+Response
+Builder.setGmailDraft(draft)
+.
+Note
+: This method doesn't set a
+compose action
+that is
+used to
+extend the compose UI
+.
+Rather, this method connects this UI element to an
+Action
+that
+composes draft messages
+in Apps Script that are
+opened in Gmail when the action completes.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'composeEmailCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Compose Email'
+)
+.
+setComposeAction
+(
+action
+,
+CardService
+.
+ComposedEmailType
+.
+REPLY_AS_DRAFT
+);
+// ...
+function
+composeEmailCallback
+(
+e
+)
+{
+const
+thread
+=
+GmailApp
+.
+getThreadById
+(
+e
+.
+threadId
+);
+const
+draft
+=
+thread
+.
+createDraftReply
+(
+'This is a reply'
+);
+return
+CardService
+.
+newComposeActionResponseBuilder
+()
+.
+setGmailDraft
+(
+draft
+)
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The object that specifies the compose action to take when this element is
+    clicked.
+composed
+Email
+Type
+Composed
+Email
+Type
+An enum value that specifies whether the composed draft is a
+    standalone or reply draft.
+Return
+Image
+— This object, for chaining.
+set
+Image
+Url(url)
+Sets the image to use by providing its URL or data string. Required.
+The provided URL can either be a publicly accessible URL or a base64 encoded image string.
+To obtain the latter, you can use the following code to create an encoded image string from an
+image in your Google Drive, then store that string for later use with
+set
+Image
+Url(url)
+. This method prevents the need for your add-on to access a publicly
+available image URL:
+// The following assumes you have the image to use in Google Drive and have its
+// ID.
+const
+imageBytes
+=
+DriveApp
+.
+getFileById
+(
+'123abc'
+).
+getBlob
+().
+getBytes
+();
+const
+encodedImageURL
+=
+`data:image/jpeg;base64,
+${
+Utilities
+.
+base64Encode
+(
+imageBytes
+)
+}
+`
+;
+// You can store encodeImageURL and use it as a parameter to
+// Image.setImageUrl(url).
+Parameters
+Name
+Type
+Description
+url
+String
+The URL address of a hosted image to use, or an encoded image string.
+Return
+Image
+— This object, for chaining.
+set
+On
+Click
+Action(action)
+Sets an action that executes when the object is clicked. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Action
+Response
+object.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'notificationCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Create notification'
+)
+.
+setOnClickAction
+(
+action
+);
+// ...
+function
+notificationCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setNotification
+(
+CardService
+.
+newNotification
+().
+setText
+(
+'Some info to display to user'
+),
+)
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to take when this element is clicked.
+Return
+Image
+— This object, for chaining.
+set
+On
+Click
+Open
+Link
+Action(action)
+Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
+URL needs to be built or when you need to take other actions in addition to creating the
+Open
+Link
+object. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+, or
+set
+Compose
+Action(action, composedEmailType)
+set.
+The
+Action
+parameter must specify a callback function that returns a
+Action
+Response
+object configured using
+Action
+Response
+Builder.setOpenLink(openLink)
+.
+// ...
+const
+action
+=
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'openLinkCallback'
+);
+CardService
+.
+newTextButton
+()
+.
+setText
+(
+'Open Link'
+)
+.
+setOnClickOpenLinkAction
+(
+action
+);
+// ...
+function
+openLinkCallback
+()
+{
+return
+CardService
+.
+newActionResponseBuilder
+()
+.
+setOpenLink
+(
+CardService
+.
+newOpenLink
+().
+setUrl
+(
+'https://www.google.com'
+))
+.
+build
+();
+}
+Parameters
+Name
+Type
+Description
+action
+Action
+The object that specifies the open link action to take when this element is
+    clicked.
+Return
+Image
+— This object, for chaining.
+set
+Open
+Link(openLink)
+Sets a URL to be opened when the object is clicked. Use this function when the URL is already
+known and only needs to be opened. A UI object can only have one of
+set
+Open
+Link(openLink)
+,
+set
+On
+Click
+Action(action)
+,
+set
+On
+Click
+Open
+Link
+Action(action)
+,
+set
+Authorization
+Action(action)
+,
+or
+set
+Compose
+Action(action, composedEmailType)
+set.
+Parameters
+Name
+Type
+Description
+open
+Link
+Open
+Link
+An
+Open
+Link
+object describing the URL to open.
+Return
+Image
+— This object, for chaining.

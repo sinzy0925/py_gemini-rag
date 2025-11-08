@@ -1,0 +1,36 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-row-id/index.html
+
+Jdbc
+Row
+Id
+A JDBC
+Row
+Id
+. For documentation of this class, see
+java.sql.RowId
+.
+Methods
+Method
+Return type
+Brief description
+get
+Bytes()
+Byte[]
+For documentation of this method, see
+java.sql.RowId#getBytes()
+.
+Detailed documentation
+get
+Bytes()
+For documentation of this method, see
+java.sql.RowId#getBytes()
+.
+Return
+Byte[]
+— The bytes representing the
+ROWID
+represented by this
+Jdbc
+Row
+Id
+.

@@ -1,0 +1,33 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/selection-input-type/index.html
+
+Selection
+Input
+Type
+The format of the items that users can select. Different options support different types of
+interactions. For example, users can select multiple checkboxes, but can only select one item
+from a dropdown menu.
+Each selection input supports one type of selection. Mixing checkboxes and switches, for
+example, isn't supported.
+Available for Google Chat apps and Google Workspace add-ons.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.SelectionInput.CHECK_BOX
+.
+Properties
+Property
+Type
+Description
+CHECK_BOX
+Enum
+Checkbox input style. Default.
+RADIO_BUTTON
+Enum
+Radio button input style. At most one item in the group can be selected.
+DROPDOWN
+Enum
+Dropdown menu selection input style.
+SWITCH
+Enum
+A set of switches. Users can turn on one or more switches.
+MULTI_SELECT
+Enum
+A multiselect menu for static or dynamic data.

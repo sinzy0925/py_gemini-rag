@@ -1,0 +1,134 @@
+Source Path: gas_docs_html/apps-script/reference/content/content-service/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ContentService allows you to serve text content from a script, for example, by publishing the script as a web app.
+When serving content through a web app, the browser URL will differ from the original script URL for security reasons.
+The
+createTextOutput()
+method is used to create a
+TextOutput
+object which can serve text content.
+The
+createTextOutput(content)
+method allows you to create a
+TextOutput
+object with initial content.
+Content
+Service
+Service for returning text content from a script.
+You can serve up text in various forms. For example, publish this script as a web app.
+function
+doGet
+()
+{
+return
+ContentService
+.
+createTextOutput
+(
+'Hello World'
+);
+}
+When visiting the web app URL you will see "Hello World" in the browser. Due to security
+considerations, scripts cannot directly return content to a browser. Instead, they must serve the
+content from a different URL. This is why the URL in the browser for output created via this web
+app will be different than the original script URL.
+Properties
+Property
+Type
+Description
+Mime
+Type
+Mime
+Type
+Methods
+Method
+Return type
+Brief description
+create
+Text
+Output()
+Text
+Output
+Create a new
+Text
+Output
+object.
+create
+Text
+Output(content)
+Text
+Output
+Create a new
+Text
+Output
+object that can serve the given content.
+Detailed documentation
+create
+Text
+Output()
+Create a new
+Text
+Output
+object.
+function
+doGet
+()
+{
+const
+output
+=
+ContentService
+.
+createTextOutput
+();
+output
+.
+append
+(
+'Hello world!'
+);
+return
+output
+;
+}
+Return
+Text
+Output
+— the new TextOutput object.
+create
+Text
+Output(content)
+Create a new
+Text
+Output
+object that can serve the given content.
+function
+doGet
+()
+{
+const
+output
+=
+ContentService
+.
+createTextOutput
+(
+'Hello world!'
+);
+return
+output
+;
+}
+Parameters
+Name
+Type
+Description
+content
+String
+the content to serve.
+Return
+Text
+Output
+— the new TextOutput object.

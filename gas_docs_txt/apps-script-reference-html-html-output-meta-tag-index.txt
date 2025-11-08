@@ -1,0 +1,93 @@
+Source Path: gas_docs_html/apps-script/reference/html/html-output-meta-tag/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+HtmlOutputMetaTag represents a meta tag added to a page using HtmlOutput.addMetaTag().
+The getContent() method retrieves the content of the meta tag.
+The getName() method retrieves the name of the HtmlOutputMetaTag.
+Html
+Output
+Meta
+Tag
+An object that represents a meta tag added to the page by calling
+Html
+Output.addMetaTag(name, content)
+.
+const
+output
+=
+HtmlService
+.
+createHtmlOutput
+(
+'<b>Hello, world!</b>'
+);
+output
+.
+addMetaTag
+(
+'viewport'
+,
+'width=device-width, initial-scale=1'
+);
+const
+tags
+=
+output
+.
+getMetaTags
+();
+Logger
+.
+log
+(
+'<meta name="%s" content="%s"/>'
+,
+tags
+[
+0
+].
+getName
+(),
+tags
+[
+0
+].
+getContent
+(),
+);
+Methods
+Method
+Return type
+Brief description
+get
+Content()
+String
+Gets the content of this meta tag.
+get
+Name()
+String
+Gets the name of this
+Html
+Output
+Meta
+Tag
+.
+Detailed documentation
+get
+Content()
+Gets the content of this meta tag.
+Return
+String
+— the content of this meta tag.
+get
+Name()
+Gets the name of this
+Html
+Output
+Meta
+Tag
+.
+Return
+String
+— the name of this meta tag.

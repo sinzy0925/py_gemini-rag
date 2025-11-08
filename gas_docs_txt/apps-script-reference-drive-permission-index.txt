@@ -1,0 +1,133 @@
+Source Path: gas_docs_html/apps-script/reference/drive/permission/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+Permission
+enum represents the permissions granted to users for accessing files or folders in Google Drive.
+Permissions can be accessed using
+DriveApp.Permission
+.
+The
+Permission
+enum includes properties like
+VIEW
+,
+EDIT
+,
+COMMENT
+,
+OWNER
+,
+ORGANIZER
+,
+FILE_ORGANIZER
+, and
+NONE
+, each defining a specific level of access or role.
+Some
+Permission
+values like
+OWNER
+,
+ORGANIZER
+,
+FILE_ORGANIZER
+, and
+NONE
+(unless combined with
+Access.ANYONE
+) can be returned to indicate current permissions but cannot be set directly using
+setSharing
+.
+Permission
+An enum representing the permissions granted to users who can access a file or folder, besides
+any individual users who have been explicitly given access. These properties can be accessed from
+Drive
+App.Permission
+.
+To call an enum, you call its parent class, name, and property. For example,
+DriveApp.Permission.VIEW
+.
+// Creates a folder that anyone on the Internet can read from and write to.
+// (Domain administrators can prohibit this setting for Google Workspace users.)
+const
+folder
+=
+DriveApp
+.
+createFolder
+(
+'Shared Folder'
+);
+folder
+.
+setSharing
+(
+DriveApp
+.
+Access
+.
+ANYONE
+,
+DriveApp
+.
+Permission
+.
+EDIT
+);
+Properties
+Property
+Type
+Description
+VIEW
+Enum
+Users who can access the file or folder are able only to view it or copy it. Passing this value
+to
+File.setSharing(accessType, permissionType)
+throws an exception if the type of file
+does not support it.
+EDIT
+Enum
+Users who can access the file or folder are able to edit it. Unless
+File.setShareableByEditors(shareable)
+is set to
+false
+, users can also change the sharing
+settings. Passing this value to
+File.setSharing(accessType, permissionType)
+throws an
+exception if the type of file does not support it.
+COMMENT
+Enum
+Users who can access the file or folder are able only to view it, copy it, or comment on it.
+Passing this value to
+File.setSharing(accessType, permissionType)
+throws an exception if
+the type of file does not support it.
+OWNER
+Enum
+The user owns the file or folder. This value can be returned, but passing it to
+File.setSharing(accessType, permissionType)
+throws an exception.
+ORGANIZER
+Enum
+Users who can organize files and folders within a shared drive. This value can be returned, but
+passing it to
+File.setSharing(accessType, permissionType)
+throws an exception.
+FILE_ORGANIZER
+Enum
+Users who can edit, trash, and move content within a shared drive. This value can be returned,
+but passing it to
+File.setSharing(accessType, permissionType)
+throws an exception.
+NONE
+Enum
+The user does not have any permissions for the file or folder. This value can be returned, but
+passing it to
+File.setSharing(accessType, permissionType)
+throws an exception unless it
+is set in combination with
+Access.ANYONE
+.

@@ -1,0 +1,276 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/doc-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DocType represents an XML DocumentType node.
+It provides methods to get and set various properties of the DocType, such as the element name, internal and external subset data, and its parent element.
+The
+detach()
+method removes the DocType node from its parent.
+Doc
+Type
+A representation of an XML
+Document
+Type
+node.
+Methods
+Method
+Return type
+Brief description
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Element
+Name()
+String
+Gets the name of the root
+Element
+node specified in the
+Doc
+Type
+declaration.
+get
+Internal
+Subset()
+String
+Gets the internal subset data for the
+Document
+Type
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Public
+Id()
+String
+Gets the public ID of the external subset data for the
+Document
+Type
+node.
+get
+System
+Id()
+String
+Gets the system ID of the external subset data for the
+Document
+Type
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Element
+Name(name)
+Doc
+Type
+Sets the name of the root
+Element
+node to specify in the
+Doc
+Type
+declaration.
+set
+Internal
+Subset(data)
+Doc
+Type
+Sets the internal subset data for the
+Document
+Type
+node.
+set
+Public
+Id(id)
+Doc
+Type
+Sets the public ID of the external subset data for the
+Document
+Type
+node.
+set
+System
+Id(id)
+Doc
+Type
+Sets the system ID of the external subset data for the
+Document
+Type
+node.
+Detailed documentation
+detach()
+Detaches the node from its parent
+Element
+node. If the node does not have a parent,
+this method has no effect.
+Return
+Content
+— the detached node
+get
+Element
+Name()
+Gets the name of the root
+Element
+node specified in the
+Doc
+Type
+declaration.
+Return
+String
+— the name of the root
+Element
+node specified in the
+Doc
+Type
+declaration
+get
+Internal
+Subset()
+Gets the internal subset data for the
+Document
+Type
+node.
+Return
+String
+— the internal subset data
+get
+Parent
+Element()
+Gets the node's parent
+Element
+node. If the node does not have a parent, this method
+returns
+null
+.
+Return
+Element
+— the parent
+Element
+node
+get
+Public
+Id()
+Gets the public ID of the external subset data for the
+Document
+Type
+node.
+Return
+String
+— the public ID of the external subset data
+get
+System
+Id()
+Gets the system ID of the external subset data for the
+Document
+Type
+node.
+Return
+String
+— the system ID of the external subset data
+get
+Value()
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Return
+String
+— the text value of all nodes that are direct or indirect children of the node
+set
+Element
+Name(name)
+Sets the name of the root
+Element
+node to specify in the
+Doc
+Type
+declaration.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the root
+Element
+node to specify in the
+Doc
+Type
+declaration
+Return
+Doc
+Type
+— the
+Document
+Type
+node, for chaining
+set
+Internal
+Subset(data)
+Sets the internal subset data for the
+Document
+Type
+node.
+Parameters
+Name
+Type
+Description
+data
+String
+the internal subset data to set
+Return
+Doc
+Type
+— the
+Document
+Type
+node, for chaining
+set
+Public
+Id(id)
+Sets the public ID of the external subset data for the
+Document
+Type
+node.
+Parameters
+Name
+Type
+Description
+id
+String
+the public ID of the external subset data to set
+Return
+Doc
+Type
+— the
+Document
+Type
+node, for chaining
+set
+System
+Id(id)
+Sets the system ID of the external subset data for the
+Document
+Type
+node.
+Parameters
+Name
+Type
+Description
+id
+String
+the system ID of the external subset data to set
+Return
+Doc
+Type
+— the
+Document
+Type
+node, for chaining

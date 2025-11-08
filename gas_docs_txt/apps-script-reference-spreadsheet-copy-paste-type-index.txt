@@ -1,0 +1,42 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/copy-paste-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CopyPasteType is an enumeration of possible special paste types.
+To call an enum, you call its parent class, name, and property.
+Properties include options like pasting values, formulas, formats, and more, with variations like excluding borders or pasting only specific elements.
+Copy
+Paste
+Type
+An enumeration of possible special paste types.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.CopyPasteType.PASTE_NORMAL
+.
+Properties
+Property
+Type
+Description
+PASTE_NORMAL
+Enum
+Paste values, formulas, formats and merges.
+PASTE_NO_BORDERS
+Enum
+Paste values, formulas, formats and merges but without borders.
+PASTE_FORMAT
+Enum
+Paste the format only.
+PASTE_FORMULA
+Enum
+Paste the formulas only.
+PASTE_DATA_VALIDATION
+Enum
+Paste the data validation only.
+PASTE_VALUES
+Enum
+Paste the values ONLY without formats, formulas or merges.
+PASTE_CONDITIONAL_FORMATTING
+Enum
+Paste the color rules only.
+PASTE_COLUMN_WIDTHS
+Enum
+Paste the column widths only.

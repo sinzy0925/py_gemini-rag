@@ -1,0 +1,48 @@
+Source Path: gas_docs_html/apps-script/reference/script/calendar-trigger-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CalendarTriggerBuilder is used to build calendar triggers.
+The
+create()
+method creates and returns the trigger.
+The
+onEventUpdated()
+method specifies a trigger that fires when a calendar entry is created, updated, or deleted.
+Calendar
+Trigger
+Builder
+Builder for calendar triggers.
+Methods
+Method
+Return type
+Brief description
+create()
+Trigger
+Creates the trigger and returns it.
+on
+Event
+Updated()
+Calendar
+Trigger
+Builder
+Specifies a trigger that fires when a calendar entry is created, updated, or deleted.
+Detailed documentation
+create()
+Creates the trigger and returns it.
+Return
+Trigger
+— The new trigger.
+on
+Event
+Updated()
+Specifies a trigger that fires when a calendar entry is created, updated, or deleted.
+Return
+Calendar
+Trigger
+Builder
+— This
+Calendar
+Trigger
+Builder
+, for chaining.

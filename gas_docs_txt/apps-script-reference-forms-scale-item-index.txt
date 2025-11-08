@@ -1,0 +1,599 @@
+Source Path: gas_docs_html/apps-script/reference/forms/scale-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A ScaleItem is a question item in Google Forms that allows respondents to select one option from a numbered sequence of radio buttons.
+ScaleItems can be created and accessed from a Form object and are graded when used in a quiz.
+Key methods for ScaleItems include setting bounds, labels, title, help text, required status, and point values, as well as creating responses and duplicating the item.
+Scale
+Item
+A question item that allows the respondent to choose one option from a numbered sequence of radio
+buttons. Items can be accessed or created from a
+Form
+. When used in a quiz, these items
+are graded.
+// Open a form by ID and add a new scale item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addScaleItem
+();
+item
+.
+setTitle
+(
+'Pick a number between 1 and 10'
+).
+setBounds
+(
+1
+,
+10
+);
+Methods
+Method
+Return type
+Brief description
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this scale item.
+duplicate()
+Scale
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Left
+Label()
+String
+Gets the label for the scale's lower bound, if any.
+get
+Lower
+Bound()
+Integer
+Gets the scale's lower bound.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Right
+Label()
+String
+Gets the label for the scale's upper bound, if any.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+get
+Upper
+Bound()
+Integer
+Gets the scale's upper bound.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Bounds(lower, upper)
+Scale
+Item
+Sets the scale's lower and upper bounds.
+set
+General
+Feedback(feedback)
+Scale
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Scale
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Labels(lower, upper)
+Scale
+Item
+Sets labels for the scale's lower and upper bounds.
+set
+Points(points)
+Scale
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Scale
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Scale
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Detailed documentation
+create
+Response(response)
+Creates a new
+Item
+Response
+for this scale item. Throws an exception if the
+response
+argument is outside the bounds set for the item.
+Parameters
+Name
+Type
+Description
+response
+Integer
+a value answer for this scale item
+Return
+Item
+Response
+— the item response
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Scale
+Item
+— a duplicate of this
+Scale
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+General
+Feedback()
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+Return
+Quiz
+Feedback
+— the feedback, if any.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Left
+Label()
+Gets the label for the scale's lower bound, if any.
+Return
+String
+— the label for the scale's lower bound
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Lower
+Bound()
+Gets the scale's lower bound.
+Return
+Integer
+— the scale's lower bound
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Points()
+Returns the point value of a gradeable item.
+Return
+Integer
+— the number of points a question is worth.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Right
+Label()
+Gets the label for the scale's upper bound, if any.
+Return
+String
+— the label for the scale's upper bound
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Upper
+Bound()
+Gets the scale's upper bound.
+Return
+Integer
+— the scale's upper bound
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Required()
+Determines whether the respondent must answer the question.
+Return
+Boolean
+— whether the respondent must answer the question
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Bounds(lower, upper)
+Sets the scale's lower and upper bounds. The lower bound must be
+0
+or
+1
+. The
+upper bound must be between
+3
+and
+10
+, inclusive. A new scale defaults to a
+lower bound of
+1
+and an upper bound of
+5
+.
+Throws a scripting exception if the given values are outside the permitted limits. Decimals
+are truncated to the preceding integer.
+Parameters
+Name
+Type
+Description
+lower
+Integer
+the new lower bound
+upper
+Integer
+the new upper bound
+Return
+Scale
+Item
+— this
+Scale
+Item
+, for chaining
+Throws
+Error
+— if the lower or upper bound is invalid
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+General
+Feedback(feedback)
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+Parameters
+Name
+Type
+Description
+feedback
+Quiz
+Feedback
+the new feedback
+Return
+Scale
+Item
+— this
+Scale
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Scale
+Item
+— this
+Scale
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Labels(lower, upper)
+Sets labels for the scale's lower and upper bounds.
+Parameters
+Name
+Type
+Description
+lower
+String
+the new label for the lower bound
+upper
+String
+the new label for the upper bound
+Return
+Scale
+Item
+— this
+Scale
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Points(points)
+Sets the number of points a gradeable item is worth. The default for new items is 0.
+Parameters
+Name
+Type
+Description
+points
+Integer
+the number of a points a question item is worth
+Return
+Scale
+Item
+— this
+Scale
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Required(enabled)
+Sets whether the respondent must answer the question.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+whether the respondent must answer the question
+Return
+Scale
+Item
+— the current item (for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Scale
+Item
+— this
+Scale
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

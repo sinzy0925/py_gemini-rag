@@ -1,0 +1,25 @@
+Source Path: gas_docs_html/apps-script/reference/charts/picker-values-layout/index.html
+
+Picker
+Values
+Layout
+An enumeration of how to display selected values in picker widget.
+To call an enum, you call its parent class, name, and property. For example,
+Charts.PickerValuesLayout.ASIDE
+.
+Properties
+Property
+Type
+Description
+ASIDE
+Enum
+Selected values display in a single text line next to the value picker widget.
+BELOW
+Enum
+Selected values display in a single text line below the widget.
+BELOW_WRAPPING
+Enum
+Similar to below, but entries that cannot fit in the picker wrap to a new line.
+BELOW_STACKED
+Enum
+Selected values display in a column below the widget.

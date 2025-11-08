@@ -1,0 +1,333 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/date-time-picker/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The DateTimePicker is an input field for selecting a date and time, supporting form submission validation.
+It is available for Google Workspace add-ons and Google Chat apps.
+Key methods include setting the field name, defining an action on change, setting the time zone offset, setting the title, and setting the default value in milliseconds since the epoch.
+Date
+Time
+Picker
+An input field that allows users to input a date and time.
+Supports form submission validation. When
+Action.setAllWidgetsAreRequired(allWidgetsAreRequired)
+is set to
+true
+or this widget is specified through
+Action.addRequiredWidget(requiredWidget)
+, the submission
+action is blocked unless a value is selected.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+dateTimePicker
+=
+CardService
+.
+newDateTimePicker
+()
+.
+setTitle
+(
+'Enter the date and time.'
+)
+.
+setFieldName
+(
+'date_time_field'
+)
+// Set default value as Jan 1, 2018, 3:00 AM UTC. Either a number or
+// string is acceptable.
+.
+setValueInMsSinceEpoch
+(
+1514775600
+)
+// EDT time is 5 hours behind UTC.
+.
+setTimeZoneOffsetInMins
+(
+-
+5
+*
+60
+)
+.
+setOnChangeAction
+(
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'handleDateTimeChange'
+),
+);
+Methods
+Method
+Return type
+Brief description
+set
+Field
+Name(fieldName)
+Date
+Time
+Picker
+Sets the field name that identifies this picker in the event object that is generated when
+there is a UI interaction.
+set
+Host
+App
+Data
+Source(hostAppDataSource)
+Date
+Time
+Picker
+In a Google Workspace flow, lets
+input
+variables
+accept datetime outputs from other steps in the flow.
+set
+On
+Change
+Action(action)
+Date
+Time
+Picker
+Sets an
+Action
+that the script performs whenever the picker input changes.
+set
+Time
+Zone
+Offset
+In
+Mins(timeZoneOffsetMins)
+Date
+Time
+Picker
+Sets the number of minutes that the time zone should be offset from UTC.
+set
+Title(title)
+Date
+Time
+Picker
+Sets the title displayed above the input field.
+set
+Value
+In
+Ms
+Since
+Epoch(valueMsEpoch)
+Date
+Time
+Picker
+Sets the prefilled value to be set in the input field.
+set
+Value
+In
+Ms
+Since
+Epoch(valueMsEpoch)
+Date
+Time
+Picker
+Sets the prefilled value to be set in the input field.
+Detailed documentation
+set
+Field
+Name(fieldName)
+Sets the field name that identifies this picker in the event object that is generated when
+there is a UI interaction. The field name is visible to the user. Required; the specified field
+name must be unique.
+Parameters
+Name
+Type
+Description
+field
+Name
+String
+The name to assign to this input.
+Return
+Date
+Time
+Picker
+— This picker, for chaining.
+set
+Host
+App
+Data
+Source(hostAppDataSource)
+In a Google Workspace flow, lets
+input
+variables
+accept datetime outputs from other steps in the flow. For example, receive the
+time a gmail message was sent or the date on which a calendar event is scheduled.
+Only available through the
+Gemini
+Alpha program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+workflowDataSource
+=
+CardService
+.
+newWorkflowDataSource
+().
+setIncludeVariables
+(
+true
+);
+const
+hostAppDataSource
+=
+CardService
+.
+newHostAppDataSource
+().
+setWorkflowDataSource
+(
+workflowDataSource
+);
+const
+dateTimePicker
+=
+CardService
+.
+newDateTimePicker
+()
+.
+setTitle
+(
+'Enter the date and time.'
+)
+.
+setFieldName
+(
+'date_time_field'
+)
+.
+setHostAppDataSource
+(
+hostAppDataSource
+);
+Parameters
+Name
+Type
+Description
+host
+App
+Data
+Source
+Host
+App
+Data
+Source
+The data source.
+Return
+Date
+Time
+Picker
+— This picker, for chaining.
+set
+On
+Change
+Action(action)
+Sets an
+Action
+that the script performs whenever the picker input changes.
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to take.
+Return
+Date
+Time
+Picker
+— This picker, for chaining.
+set
+Time
+Zone
+Offset
+In
+Mins(timeZoneOffsetMins)
+Sets the number of minutes that the time zone should be offset from UTC. If set, the date and
+time is displayed in the specified time zone. If not set, the time is displayed in the user's
+time zone.
+Parameters
+Name
+Type
+Description
+time
+Zone
+Offset
+Mins
+Integer
+The number of minutes that the time zone is offset from UTC.
+Return
+Date
+Time
+Picker
+— This picker, for chaining.
+set
+Title(title)
+Sets the title displayed above the input field.
+Parameters
+Name
+Type
+Description
+title
+String
+The input field title.
+Return
+Date
+Time
+Picker
+— This picker, for chaining.
+set
+Value
+In
+Ms
+Since
+Epoch(valueMsEpoch)
+Sets the prefilled value to be set in the input field.
+Parameters
+Name
+Type
+Description
+value
+Ms
+Epoch
+Number
+The default value placed in the input as a number, in milliseconds since
+    the epoch. It is always represented as a string in the form callback parameters.
+Return
+Date
+Time
+Picker
+— This picker, for chaining.
+set
+Value
+In
+Ms
+Since
+Epoch(valueMsEpoch)
+Sets the prefilled value to be set in the input field.
+Parameters
+Name
+Type
+Description
+value
+Ms
+Epoch
+String
+The default value placed in the input as a string, in milliseconds since
+    the epoch. It is always represented as a string in the form callback parameters.
+Return
+Date
+Time
+Picker
+— This picker, for chaining.

@@ -1,0 +1,4068 @@
+Source Path: gas_docs_html/apps-script/reference/forms/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Google Forms service allows scripts to create, access, and modify Google Forms.
+An example script demonstrates creating a form with various item types, publishing it, and sharing it.
+The documentation lists numerous classes within the Forms service, including items, responses, validation builders, and enums.
+Detailed information on properties and methods is provided for many of the listed classes, outlining their specific functionalities.
+Forms
+This service allows scripts to create, access, and modify Google Forms.
+//
+Create
+a
+new
+unpublished
+form
+,
+then
+add
+a
+checkbox
+question
+,
+a
+multiple
+choice
+question
+,
+//
+a
+page
+break
+,
+then
+a
+date
+question
+and
+a
+grid
+of
+questions
+,
+then
+publish
+the
+form
+and
+share
+//
+with
+responders
+.
+var
+form
+=
+FormApp
+.
+create
+(
+'New Form'
+,
+/*
+isPublished
+=
+*/
+false
+);
+var
+item
+=
+form
+.
+addCheckboxItem
+();
+item
+.
+setTitle
+(
+'What condiments would you like on your hot dog?'
+);
+item
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Ketchup'
+),
+item
+.
+createChoice
+(
+'Mustard'
+),
+item
+.
+createChoice
+(
+'Relish'
+)
+]);
+form
+.
+addMultipleChoiceItem
+()
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+)
+.
+setChoiceValues
+([
+'Cats'
+,
+'Dogs'
+])
+.
+showOtherOption
+(
+true
+);
+form
+.
+addPageBreakItem
+()
+.
+setTitle
+(
+'Getting to know you'
+);
+form
+.
+addDateItem
+()
+.
+setTitle
+(
+'When were you born?'
+);
+form
+.
+addGridItem
+()
+.
+setTitle
+(
+'Rate your interests'
+)
+.
+setRows
+([
+'Cars'
+,
+'Computers'
+,
+'Celebrities'
+])
+.
+setColumns
+([
+'Boring'
+,
+'So-so'
+,
+'Interesting'
+]);
+form
+.
+setPublished
+(
+true
+);
+form
+.
+addPublishedReaders
+([
+'user@example.com'
+,
+'group@example.com'
+]);
+Logger
+.
+log
+(
+'Published URL: '
++
+form
+.
+getPublishedUrl
+());
+Logger
+.
+log
+(
+'Editor URL: '
++
+form
+.
+getEditUrl
+());
+Classes
+Name
+Brief description
+Alignment
+An enum representing the supported types of image alignment.
+Checkbox
+Grid
+Item
+A question item, presented as a grid of columns and rows, that allows the respondent to select
+multiple choices per row from a sequence of checkboxes.
+Checkbox
+Grid
+Validation
+A DataValidation for a
+Checkbox
+Grid
+Item
+.
+Checkbox
+Grid
+Validation
+Builder
+A DataValidationBuilder for a
+Checkbox
+Grid
+Validation
+.
+Checkbox
+Item
+A question item that allows the respondent to select one or more checkboxes, as well as an
+optional "other" field.
+Checkbox
+Validation
+A DataValidation for a
+Checkbox
+Item
+.
+Checkbox
+Validation
+Builder
+A DataValidationBuilder for a
+Checkbox
+Validation
+.
+Choice
+A single choice associated with a type of
+Item
+that supports choices, like
+Checkbox
+Item
+,
+List
+Item
+, or
+Multiple
+Choice
+Item
+.
+Date
+Item
+A question item that allows the respondent to indicate a date.
+Date
+Time
+Item
+A question item that allows the respondent to indicate a date and time.
+Destination
+Type
+An enum representing the supported types of form-response destinations.
+Duration
+Item
+A question item that allows the respondent to indicate a length of time.
+Feedback
+Type
+An enum representing the supported types of feedback.
+Form
+A form that contains overall properties and items.
+Form
+App
+Allows a script to open an existing
+Form
+or create a new one.
+Form
+Response
+A response to the form as a whole.
+Grid
+Item
+A question item, presented as a grid of columns and rows, that allows the respondent to select
+one choice per row from a sequence of radio buttons.
+Grid
+Validation
+A DataValidation for a
+Grid
+Item
+.
+Grid
+Validation
+Builder
+A DataValidationBuilder for a
+Grid
+Validation
+.
+Image
+Item
+A layout item that displays an image.
+Item
+A generic form item that contains properties common to all items, such as title and help text.
+Item
+Response
+A response to one question item within a form.
+Item
+Type
+An enum representing the supported types of form items.
+List
+Item
+A question item that allows the respondent to select one choice from a drop-down list.
+Multiple
+Choice
+Item
+A question item that allows the respondent to select one choice from a list of radio buttons or
+an optional "other" field.
+Page
+Break
+Item
+A layout item that marks the start of a page.
+Page
+Navigation
+Type
+An enum representing the supported types of page navigation.
+Paragraph
+Text
+Item
+A question item that allows the respondent to enter a block of text.
+Paragraph
+Text
+Validation
+A DataValidation for a
+Paragraph
+Text
+Item
+.
+Paragraph
+Text
+Validation
+Builder
+A DataValidationBuilder for a
+Paragraph
+Text
+Validation
+.
+Quiz
+Feedback
+The bean implementation of a Feedback, which contains properties common to all feedback, such as
+display text or links.
+Quiz
+Feedback
+Builder
+The base FeedbackBuilder that contains setters for properties common to all feedback, such as
+display text.
+Rating
+Icon
+Type
+An enum representing the supported types of rating icons.
+Rating
+Item
+A question item that allows the respondent to give a rating.
+Scale
+Item
+A question item that allows the respondent to choose one option from a numbered sequence of radio
+buttons.
+Section
+Header
+Item
+A layout item that visually indicates the start of a section.
+Text
+Item
+A question item that allows the respondent to enter a single line of text.
+Text
+Validation
+A DataValidation for a
+Text
+Item
+.
+Text
+Validation
+Builder
+A DataValidationBuilder for a
+Text
+Validation
+.
+Time
+Item
+A question item that allows the respondent to indicate a time of day.
+Video
+Item
+A layout item that displays a video.
+Alignment
+Properties
+Property
+Type
+Description
+LEFT
+Enum
+Align the image to the left side of the form.
+CENTER
+Enum
+Align the image to the center of the form.
+RIGHT
+Enum
+Align the image to the right side of the form.
+Checkbox
+Grid
+Item
+Methods
+Method
+Return type
+Brief description
+clear
+Validation()
+Checkbox
+Grid
+Item
+Removes any data validation for this grid item.
+create
+Response(responses)
+Item
+Response
+Creates a new
+Item
+Response
+for this checkbox grid item.
+duplicate()
+Checkbox
+Grid
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Columns()
+String[]
+Gets the values for every column in the grid.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Rows()
+String[]
+Gets the values for every row in the grid.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Columns(columns)
+Checkbox
+Grid
+Item
+Sets the columns of the grid based on an array of values.
+set
+Help
+Text(text)
+Checkbox
+Grid
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Required(enabled)
+Checkbox
+Grid
+Item
+Sets whether the respondent must answer the question.
+set
+Rows(rows)
+Checkbox
+Grid
+Item
+Sets the rows of the grid based on an array of values.
+set
+Title(title)
+Checkbox
+Grid
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Validation(validation)
+Checkbox
+Grid
+Item
+Sets the data validation for this checkbox grid item.
+Checkbox
+Grid
+Validation
+Checkbox
+Grid
+Validation
+Builder
+Methods
+Method
+Return type
+Brief description
+require
+Limit
+One
+Response
+Per
+Column()
+Checkbox
+Grid
+Validation
+Builder
+Requires limit of one response per column for a grid item.
+Checkbox
+Item
+Methods
+Method
+Return type
+Brief description
+clear
+Validation()
+Checkbox
+Item
+Removes any data validation for this checkbox item.
+create
+Choice(value)
+Choice
+Creates a new choice.
+create
+Choice(value, isCorrect)
+Choice
+Creates a new choice.
+create
+Response(responses)
+Item
+Response
+Creates a new
+Item
+Response
+for this checkbox item.
+duplicate()
+Checkbox
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Choices()
+Choice[]
+Gets all choices for an item.
+get
+Feedback
+For
+Correct()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond correctly to a question.
+get
+Feedback
+For
+Incorrect()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond incorrectly to a question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+has
+Other
+Option()
+Boolean
+Determines whether the item has an "other" option.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Choice
+Values(values)
+Checkbox
+Item
+Sets the choices for an item from an array of strings.
+set
+Choices(choices)
+Checkbox
+Item
+Sets an array of choices for an item.
+set
+Feedback
+For
+Correct(feedback)
+Checkbox
+Item
+Sets the feedback to be shown to respondents when they respond correctly to a question.
+set
+Feedback
+For
+Incorrect(feedback)
+Checkbox
+Item
+Sets the feedback to be shown to respondents when they respond incorrectly to a question.
+set
+Help
+Text(text)
+Checkbox
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Checkbox
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Checkbox
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Checkbox
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Validation(validation)
+Checkbox
+Item
+Sets the data validation for this checkbox item.
+show
+Other
+Option(enabled)
+Checkbox
+Item
+Sets whether the item has an "other" option.
+Checkbox
+Validation
+Checkbox
+Validation
+Builder
+Methods
+Method
+Return type
+Brief description
+require
+Select
+At
+Least(number)
+Checkbox
+Validation
+Builder
+Require at least this many choices to be selected.
+require
+Select
+At
+Most(number)
+Checkbox
+Validation
+Builder
+Require at most this many choices to be selected.
+require
+Select
+Exactly(number)
+Checkbox
+Validation
+Builder
+Require exactly this many choices to be selected.
+Choice
+Methods
+Method
+Return type
+Brief description
+get
+Goto
+Page()
+Page
+Break
+Item
+Gets the
+Page
+Break
+Item
+set as a
+GO_TO_PAGE
+destination
+if the responder selects this choice and completes the current page.
+get
+Page
+Navigation
+Type()
+Page
+Navigation
+Type
+Gets the
+Page
+Navigation
+Type
+that occurs if the responder selects this choice and
+completes the current page.
+get
+Value()
+String
+Gets the choice's value, which respondents see as a label when viewing the form.
+is
+Correct
+Answer()
+Boolean
+Gets whether the choice is a correct answer for the question.
+Date
+Item
+Methods
+Method
+Return type
+Brief description
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this date item.
+duplicate()
+Date
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+includes
+Year()
+Boolean
+Determines whether the date item includes a year option.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Date
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Date
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Includes
+Year(enableYear)
+Date
+Item
+Sets whether the date item includes a year setting.
+set
+Points(points)
+Date
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Date
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Date
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Date
+Time
+Item
+Methods
+Method
+Return type
+Brief description
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this date-time item.
+duplicate()
+Date
+Time
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+includes
+Year()
+Boolean
+Determines whether the date item includes a year option.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Date
+Time
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Date
+Time
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Includes
+Year(enableYear)
+Date
+Time
+Item
+Sets whether the date item includes a year setting.
+set
+Points(points)
+Date
+Time
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Date
+Time
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Date
+Time
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Destination
+Type
+Properties
+Property
+Type
+Description
+SPREADSHEET
+Enum
+A Google Sheets spreadsheet as a destination for form responses.
+Duration
+Item
+Methods
+Method
+Return type
+Brief description
+create
+Response(hours, minutes, seconds)
+Item
+Response
+Creates a new
+Item
+Response
+for this date item.
+duplicate()
+Duration
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Duration
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Duration
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Duration
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Duration
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Duration
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Feedback
+Type
+Properties
+Property
+Type
+Description
+CORRECT
+Enum
+Feedback that is automatically displayed to respondents for a question answered correctly.
+INCORRECT
+Enum
+Feedback that is automatically displayed to respondents for a question answered incorrectly.
+GENERAL
+Enum
+Feedback that is automatically displayed to respondents when they submit their response.
+Form
+Methods
+Method
+Return type
+Brief description
+add
+Checkbox
+Grid
+Item()
+Checkbox
+Grid
+Item
+Appends a new question item, presented as a grid of columns and rows, that allows the
+respondent to select multiple choices per row from a sequence of checkboxes.
+add
+Checkbox
+Item()
+Checkbox
+Item
+Appends a new question item that allows the respondent to select one or more checkboxes, as
+well as an optional "other" field.
+add
+Date
+Item()
+Date
+Item
+Appends a new question item that allows the respondent to indicate a date.
+add
+Date
+Time
+Item()
+Date
+Time
+Item
+Appends a new question item that allows the respondent to indicate a date and time.
+add
+Duration
+Item()
+Duration
+Item
+Appends a new question item that allows the respondent to indicate a length of time.
+add
+Editor(emailAddress)
+Form
+Adds the given user to the list of editors for the
+Form
+.
+add
+Editor(user)
+Form
+Adds the given user to the list of editors for the
+Form
+.
+add
+Editors(emailAddresses)
+Form
+Adds the given array of users to the list of editors for the
+Form
+.
+add
+Grid
+Item()
+Grid
+Item
+Appends a new question item, presented as a grid of columns and rows, that allows the
+respondent to select one choice per row from a sequence of radio buttons.
+add
+Image
+Item()
+Image
+Item
+Appends a new layout item that displays an image.
+add
+List
+Item()
+List
+Item
+Appends a new question item that allows the respondent to select one choice from a dropdown
+list.
+add
+Multiple
+Choice
+Item()
+Multiple
+Choice
+Item
+Adds a new question item that allows the respondent to select one choice from a list of radio
+buttons or an optional "other" field.
+add
+Page
+Break
+Item()
+Page
+Break
+Item
+Adds a new layout item that marks the start of a page.
+add
+Paragraph
+Text
+Item()
+Paragraph
+Text
+Item
+Adds a new question item that allows the respondent to enter a block of text.
+add
+Published
+Reader(emailAddress)
+Form
+Adds the given user to the list of responders for the
+Form
+.
+add
+Published
+Reader(user)
+Form
+Adds the given user to the list of responders for the
+Form
+.
+add
+Published
+Readers(emailAddresses)
+Form
+Adds the given array of users to the list of responders for the
+Form
+.
+add
+Rating
+Item()
+Rating
+Item
+Appends a new question item that allows the respondent to give a rating.
+add
+Scale
+Item()
+Scale
+Item
+Appends a new question item that allows the respondent to choose one option from a numbered
+sequence of radio buttons.
+add
+Section
+Header
+Item()
+Section
+Header
+Item
+Appends a new layout item that visually indicates the start of a section.
+add
+Text
+Item()
+Text
+Item
+Appends a new question item that allows the respondent to enter a single line of text.
+add
+Time
+Item()
+Time
+Item
+Appends a new question item that allows the respondent to indicate a time of day.
+add
+Video
+Item()
+Video
+Item
+Appends a new layout item that displays a video.
+can
+Edit
+Response()
+Boolean
+Determines whether the form displays a link to edit a response after submitting it.
+collects
+Email()
+Boolean
+Determines whether the form collects respondents' email addresses.
+create
+Response()
+Form
+Response
+Creates a new response to the form.
+delete
+All
+Responses()
+Form
+Deletes all submitted responses from the form's response store.
+delete
+Item(index)
+void
+Deletes the item at a given index among all the items in the form.
+delete
+Item(item)
+void
+Deletes the given item.
+delete
+Response(responseId)
+Form
+Deletes a single response from the form's response store.
+get
+Confirmation
+Message()
+String
+Gets the form's confirmation message.
+get
+Custom
+Closed
+Form
+Message()
+String
+Gets the custom message that is displayed if the form is not accepting responses, or an empty
+string if no custom message is set.
+get
+Description()
+String
+Gets the form's description.
+get
+Destination
+Id()
+String
+Gets the ID of the form's response destination.
+get
+Destination
+Type()
+Destination
+Type
+Gets the type of the form's response destination.
+get
+Edit
+Url()
+String
+Gets the URL that can be used to access the form's edit mode.
+get
+Editors()
+User[]
+Gets the list of editors for this
+Form
+.
+get
+Id()
+String
+Gets the ID of the form.
+get
+Item
+By
+Id(id)
+Item
+Gets the item with a given ID.
+get
+Items()
+Item[]
+Gets an array of all items in the form.
+get
+Items(itemType)
+Item[]
+Gets an array of all items of a given type.
+get
+Published
+Readers()
+User[]
+Gets the list of responders for this
+Form
+.
+get
+Published
+Url()
+String
+Gets the URL that can be used to respond to the form.
+get
+Response(responseId)
+Form
+Response
+Gets a single form response based on its response ID.
+get
+Responses()
+Form
+Response[]
+Gets an array of all of the form's responses.
+get
+Responses(timestamp)
+Form
+Response[]
+Gets an array of all of the form's responses after a given date and time.
+get
+Shuffle
+Questions()
+Boolean
+Determines whether the order of the questions on each page of the form is randomized.
+get
+Summary
+Url()
+String
+Gets the URL that can be used to view a summary of the form's responses.
+get
+Title()
+String
+Gets the form's title.
+has
+Limit
+One
+Response
+Per
+User()
+Boolean
+Determines whether the form allows only one response per respondent.
+has
+Progress
+Bar()
+Boolean
+Determines whether the form displays a progress bar.
+has
+Respond
+Again
+Link()
+Boolean
+Determines whether the form displays a link to submit another response after a respondent
+completes the form.
+is
+Accepting
+Responses()
+Boolean
+Determines whether the form is currently accepting responses.
+is
+Published()
+Boolean
+Determines whether the form is published.
+is
+Publishing
+Summary()
+Boolean
+Determines whether the form displays a link to view a summary of responses after a respondent
+completes the form.
+is
+Quiz()
+Boolean
+Determines whether the form is a quiz.
+move
+Item(from, to)
+Item
+Moves an item at a given index among all the items in the form to another given index.
+move
+Item(item, toIndex)
+Item
+Moves a given item to a given index among all the items in the form.
+remove
+Destination()
+Form
+Unlinks the form from its current response destination.
+remove
+Editor(emailAddress)
+Form
+Removes the given user from the list of editors for the
+Form
+.
+remove
+Editor(user)
+Form
+Removes the given user from the list of editors for the
+Form
+.
+remove
+Published
+Reader(emailAddress)
+Form
+Removes the given user from the list of responders for the
+Form
+.
+remove
+Published
+Reader(user)
+Form
+Removes the given user from the list of responders for the
+Form
+.
+set
+Accepting
+Responses(enabled)
+Form
+Sets whether the form is currently accepting responses.
+set
+Allow
+Response
+Edits(enabled)
+Form
+Sets whether the form displays a link to edit a response after submitting it.
+set
+Collect
+Email(collect)
+Form
+Sets whether the form collects respondents' email addresses.
+set
+Confirmation
+Message(message)
+Form
+Sets the form's confirmation message.
+set
+Custom
+Closed
+Form
+Message(message)
+Form
+Sets the message to display if the form is not accepting responses.
+set
+Description(description)
+Form
+Sets the form's description.
+set
+Destination(type, id)
+Form
+Sets the destination where form responses are saved.
+set
+Is
+Quiz(enabled)
+Form
+Sets whether the form is a quiz.
+set
+Limit
+One
+Response
+Per
+User(enabled)
+Form
+Sets whether the form allows only one response per respondent.
+set
+Progress
+Bar(enabled)
+Form
+Sets whether the form has a progress bar.
+set
+Published(enabled)
+Form
+Sets whether the form is published.
+set
+Publishing
+Summary(enabled)
+Form
+Sets whether the form displays a link to view a summary of responses after a respondent submits
+the form.
+set
+Show
+Link
+To
+Respond
+Again(enabled)
+Form
+Sets whether the form displays a link to submit another response after a respondent completes
+the form.
+set
+Shuffle
+Questions(shuffle)
+Form
+Sets whether the order of the questions on each page of the form is randomized.
+set
+Title(title)
+Form
+Sets the form's title.
+shorten
+Form
+Url(url)
+String
+Converts a long URL for a form to a short URL.
+submit
+Grades(responses)
+Form
+Submits grades for the given FormResponses.
+supports
+Advanced
+Responder
+Permissions()
+Boolean
+Determines whether the form supports publishing.
+Form
+App
+Properties
+Property
+Type
+Description
+Alignment
+Alignment
+An enumeration of types of image alignment.
+Destination
+Type
+Destination
+Type
+An enumeration of types of destinations that can store form responses.
+Feedback
+Type
+Feedback
+Type
+An enumeration of types of form
+Feedbacks
+.
+Item
+Type
+Item
+Type
+An enumeration of types of form
+Items
+.
+Page
+Navigation
+Type
+Page
+Navigation
+Type
+An enumeration of possible behaviors for navigating pages.
+Rating
+Icon
+Type
+Rating
+Icon
+Type
+An enumeration of rating icon types
+Rating
+Icons
+Methods
+Method
+Return type
+Brief description
+create(title)
+Form
+Creates and returns a new
+Form
+.
+create(title, isPublished)
+Form
+Creates and returns a new
+Form
+in the requested publish state.
+create
+Checkbox
+Grid
+Validation()
+Checkbox
+Grid
+Validation
+Builder
+Returns an instance of a CheckboxGridValidationBuilder which can be used to set validation on a
+Checkbox
+Grid
+Item
+.
+create
+Checkbox
+Validation()
+Checkbox
+Validation
+Builder
+Returns an instance of a CheckboxValidationBuilder which can be used to set validation on a
+Checkbox
+Item
+.
+create
+Feedback()
+Quiz
+Feedback
+Builder
+Returns an instance of a QuizFeedbackBuilder which can be used to set feedback on a gradeable
+Item
+.
+create
+Grid
+Validation()
+Grid
+Validation
+Builder
+Returns an instance of a GridValidationBuilder which can be used to set validation on a
+Grid
+Item
+.
+create
+Paragraph
+Text
+Validation()
+Paragraph
+Text
+Validation
+Builder
+Returns an instance of a ParagraphTextValidationBuilder which can be used to set validation on
+a
+Paragraph
+Text
+Item
+.
+create
+Text
+Validation()
+Text
+Validation
+Builder
+Returns an instance of a TextValidationBuilder which can be used to set validation on a
+Text
+Item
+.
+get
+Active
+Form()
+Form
+Returns the form to which the script is
+container-bound
+.
+get
+Ui()
+Ui
+Returns an instance of the form editor's user-interface environment that allows the script to
+add features like menus, dialogs, and sidebars.
+open
+By
+Id(id)
+Form
+Returns the
+Form
+with the specified ID.
+open
+By
+Url(url)
+Form
+Returns the
+Form
+with the specified URL.
+Form
+Response
+Methods
+Method
+Return type
+Brief description
+get
+Edit
+Response
+Url()
+String
+Generates a URL that can be used to edit a response that has already been submitted.
+get
+Gradable
+Item
+Responses()
+Item
+Response[]
+Gets all item responses contained in a form response, in the same order that the items appear
+in the form.
+get
+Gradable
+Response
+For
+Item(item)
+Item
+Response
+Gets the item response contained in a form response for a given item.
+get
+Id()
+String
+Gets the ID of the form response.
+get
+Item
+Responses()
+Item
+Response[]
+Gets all item responses contained in a form response, in the same order that the items appear
+in the form.
+get
+Respondent
+Email()
+String
+Gets the email address of the person who submitted a response, if the
+Form.setCollectEmail(collect)
+setting is enabled.
+get
+Response
+For
+Item(item)
+Item
+Response
+Gets the item response contained in this form response for a given item.
+get
+Timestamp()
+Date
+Gets the timestamp for a form response submission.
+submit()
+Form
+Response
+Submits the response.
+to
+Prefilled
+Url()
+String
+Generates a URL for the form in which the answers are pre-filled based on the answers in this
+form response.
+with
+Item
+Grade(gradedResponse)
+Form
+Response
+Adds the given item response's grades to a form response.
+with
+Item
+Response(response)
+Form
+Response
+Adds the given item response to a form response.
+Grid
+Item
+Methods
+Method
+Return type
+Brief description
+clear
+Validation()
+Grid
+Item
+Removes any data validation for this grid item.
+create
+Response(responses)
+Item
+Response
+Creates a new
+Item
+Response
+for this grid item.
+duplicate()
+Grid
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Columns()
+String[]
+Gets the values for every column in the grid.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Rows()
+String[]
+Gets the values for every row in the grid.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Columns(columns)
+Grid
+Item
+Sets the columns of the grid based on an array of values.
+set
+Help
+Text(text)
+Grid
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Required(enabled)
+Grid
+Item
+Sets whether the respondent must answer the question.
+set
+Rows(rows)
+Grid
+Item
+Sets the rows of the grid based on an array of values.
+set
+Title(title)
+Grid
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Validation(validation)
+Grid
+Item
+Sets the data validation for this grid item.
+Grid
+Validation
+Grid
+Validation
+Builder
+Methods
+Method
+Return type
+Brief description
+require
+Limit
+One
+Response
+Per
+Column()
+Grid
+Validation
+Builder
+Requires limit of one response per column for a grid item.
+Image
+Item
+Methods
+Method
+Return type
+Brief description
+duplicate()
+Image
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Alignment()
+Alignment
+Gets the image's horizontal alignment.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Image()
+Blob
+Gets the image that is currently assigned to the item.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+get
+Width()
+Integer
+Gets the image's width in pixels.
+set
+Alignment(alignment)
+Image
+Item
+Sets the image's horizontal alignment.
+set
+Help
+Text(text)
+Image
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Image(image)
+Image
+Item
+Sets the image itself.
+set
+Title(title)
+Image
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Width(width)
+Image
+Item
+Sets the image's width in pixels.
+Item
+Methods
+Method
+Return type
+Brief description
+as
+Checkbox
+Grid
+Item()
+Checkbox
+Grid
+Item
+Returns the item as a checkbox grid item.
+as
+Checkbox
+Item()
+Checkbox
+Item
+Returns the item as a checkbox item.
+as
+Date
+Item()
+Date
+Item
+Returns the item as a date item.
+as
+Date
+Time
+Item()
+Date
+Time
+Item
+Returns the item as a date-time item.
+as
+Duration
+Item()
+Duration
+Item
+Returns the item as a duration item.
+as
+Grid
+Item()
+Grid
+Item
+Returns the item as a grid item.
+as
+Image
+Item()
+Image
+Item
+Returns the item as an image item.
+as
+List
+Item()
+List
+Item
+Returns the item as a list item.
+as
+Multiple
+Choice
+Item()
+Multiple
+Choice
+Item
+Returns the item as a multiple-choice item.
+as
+Page
+Break
+Item()
+Page
+Break
+Item
+Returns the item as a page-break item.
+as
+Paragraph
+Text
+Item()
+Paragraph
+Text
+Item
+Returns the item as a paragraph-text item.
+as
+Rating
+Item()
+Rating
+Item
+Returns the item as a rating item.
+as
+Scale
+Item()
+Scale
+Item
+Returns the item as a scale item.
+as
+Section
+Header
+Item()
+Section
+Header
+Item
+Returns the item as a section-header item.
+as
+Text
+Item()
+Text
+Item
+Returns the item as a text item.
+as
+Time
+Item()
+Time
+Item
+Returns the item as a time item.
+as
+Video
+Item()
+Video
+Item
+Returns the item as a video item.
+duplicate()
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+set
+Help
+Text(text)
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Title(title)
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Item
+Response
+Methods
+Method
+Return type
+Brief description
+get
+Feedback()
+Object
+Gets the feedback that was given for the respondent's submitted answer.
+get
+Item()
+Item
+Gets the question item that this response answers.
+get
+Response()
+Object
+Gets the answer that the respondent submitted.
+get
+Score()
+Object
+Gets the score for the respondent's submitted answer.
+set
+Feedback(feedback)
+Item
+Response
+Sets the feedback that should be displayed for the respondent's submitted answer.
+set
+Score(score)
+Item
+Response
+Sets the score for the respondent's submitted answer.
+Item
+Type
+Properties
+Property
+Type
+Description
+CHECKBOX
+Enum
+A question item that allows the respondent to select one or more checkboxes, as well as an
+optional "other" field.
+CHECKBOX_GRID
+Enum
+A question item, presented as a grid of columns and rows, that allows the respondent to select
+multiple choices per row from a sequence of checkboxes.
+DATE
+Enum
+A question item that allows the respondent to indicate a date.
+DATETIME
+Enum
+A question item that allows the respondent to indicate a date and time.
+DURATION
+Enum
+A question item that allows the respondent to indicate a length of time.
+GRID
+Enum
+A question item, presented as a grid of columns and rows, that allows the respondent to select
+one choice per row from a sequence of radio buttons.
+IMAGE
+Enum
+A layout item that displays an image.
+LIST
+Enum
+A question item that allows the respondent to select one choice from a drop-down list.
+MULTIPLE_CHOICE
+Enum
+A question item that allows the respondent to select one choice from a list of radio buttons or
+an optional "other" field.
+PAGE_BREAK
+Enum
+A layout item that marks the start of a page.
+PARAGRAPH_TEXT
+Enum
+A question item that allows the respondent to enter a block of text.
+RATING
+Enum
+A question item that allows the respondent to give a rating.
+SCALE
+Enum
+A question item that allows the respondent to choose one option from a numbered sequence of
+radio buttons.
+SECTION_HEADER
+Enum
+A layout item that visually indicates the start of a section.
+TEXT
+Enum
+A question item that allows the respondent to enter a single line of text.
+TIME
+Enum
+A question item that allows the respondent to indicate a time of day.
+VIDEO
+Enum
+A layout item that displays a YouTube video.
+FILE_UPLOAD
+Enum
+A question item that lets the respondent upload a file.
+UNSUPPORTED
+Enum
+An item that is currently not supported through APIs.
+List
+Item
+Methods
+Method
+Return type
+Brief description
+create
+Choice(value)
+Choice
+Creates a new choice.
+create
+Choice(value, isCorrect)
+Choice
+Creates a new choice.
+create
+Choice(value, navigationItem)
+Choice
+Creates a new choice with a page-navigation option that jumps to a given page-break item.
+create
+Choice(value, navigationType)
+Choice
+Creates a new choice with a page-navigation option.
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this list item.
+duplicate()
+List
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Choices()
+Choice[]
+Gets all choices for an item.
+get
+Feedback
+For
+Correct()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond correctly to a question.
+get
+Feedback
+For
+Incorrect()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond incorrectly to a question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Choice
+Values(values)
+List
+Item
+Sets the choices for an item from an array of strings.
+set
+Choices(choices)
+List
+Item
+Sets an array of choices for an item.
+set
+Feedback
+For
+Correct(feedback)
+List
+Item
+Sets the feedback to be shown to respondents when they respond correctly to a question.
+set
+Feedback
+For
+Incorrect(feedback)
+List
+Item
+Sets the feedback to be shown to respondents when they respond incorrectly to a question.
+set
+Help
+Text(text)
+List
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+List
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+List
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+List
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Multiple
+Choice
+Item
+Methods
+Method
+Return type
+Brief description
+create
+Choice(value)
+Choice
+Creates a new choice.
+create
+Choice(value, isCorrect)
+Choice
+Creates a new choice.
+create
+Choice(value, navigationItem)
+Choice
+Creates a new choice with a page-navigation option that jumps to a given page-break item.
+create
+Choice(value, navigationType)
+Choice
+Creates a new choice with a page-navigation option.
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this multiple-choice item.
+duplicate()
+Multiple
+Choice
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Choices()
+Choice[]
+Gets all choices for an item.
+get
+Feedback
+For
+Correct()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond correctly to a question.
+get
+Feedback
+For
+Incorrect()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond incorrectly to a question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+has
+Other
+Option()
+Boolean
+Determines whether the item has an "other" option.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Choice
+Values(values)
+Multiple
+Choice
+Item
+Sets the choices for an item from an array of strings.
+set
+Choices(choices)
+Multiple
+Choice
+Item
+Sets an array of choices for an item.
+set
+Feedback
+For
+Correct(feedback)
+Multiple
+Choice
+Item
+Sets the feedback to be shown to respondents when they respond correctly to a question.
+set
+Feedback
+For
+Incorrect(feedback)
+Multiple
+Choice
+Item
+Sets the feedback to be shown to respondents when they respond incorrectly to a question.
+set
+Help
+Text(text)
+Multiple
+Choice
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Multiple
+Choice
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Multiple
+Choice
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Multiple
+Choice
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+show
+Other
+Option(enabled)
+Multiple
+Choice
+Item
+Sets whether the item has an "other" option.
+Page
+Break
+Item
+Methods
+Method
+Return type
+Brief description
+duplicate()
+Page
+Break
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Go
+To
+Page()
+Page
+Break
+Item
+Gets the
+Page
+Break
+Item
+that the form will jump to after completing the page before this
+page break (that is, upon reaching this page break by normal linear progression through the
+form).
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Page
+Navigation
+Type()
+Page
+Navigation
+Type
+Gets the type of page navigation that occurs after completing the page before this page break
+(that is, upon reaching this page break by normal linear progression through the form).
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+set
+Go
+To
+Page(goToPageItem)
+Page
+Break
+Item
+Sets the page to jump to after completing the page before this page break (that is, upon
+reaching this page break by normal linear progression through the form).
+set
+Go
+To
+Page(navigationType)
+Page
+Break
+Item
+Sets the type of page navigation that occurs after completing the page before this page break
+(that is, upon reaching this page break by normal linear progression through the form).
+set
+Help
+Text(text)
+Page
+Break
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Title(title)
+Page
+Break
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Page
+Navigation
+Type
+Properties
+Property
+Type
+Description
+CONTINUE
+Enum
+Continue to the next page of the form after completing the current page.
+GO_TO_PAGE
+Enum
+Jump to a specified page of the form after completing the current page.
+RESTART
+Enum
+Restart the form from the beginning, without clearing answers entered so far, after completing
+the current page.
+SUBMIT
+Enum
+Submit the form response after completing the current page.
+Paragraph
+Text
+Item
+Methods
+Method
+Return type
+Brief description
+clear
+Validation()
+Paragraph
+Text
+Item
+Removes any data validation for this paragraph text item.
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this paragraph text item.
+duplicate()
+Paragraph
+Text
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Paragraph
+Text
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Paragraph
+Text
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Paragraph
+Text
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Paragraph
+Text
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Paragraph
+Text
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Validation(validation)
+Paragraph
+Text
+Item
+Sets the data validation for this paragraph text item.
+Paragraph
+Text
+Validation
+Paragraph
+Text
+Validation
+Builder
+Methods
+Method
+Return type
+Brief description
+require
+Text
+Contains
+Pattern(pattern)
+Paragraph
+Text
+Validation
+Builder
+Requires response to contain pattern.
+require
+Text
+Does
+Not
+Contain
+Pattern(pattern)
+Paragraph
+Text
+Validation
+Builder
+Requires response to not contain pattern.
+require
+Text
+Does
+Not
+Match
+Pattern(pattern)
+Paragraph
+Text
+Validation
+Builder
+Requires response to not match pattern.
+require
+Text
+Length
+Greater
+Than
+Or
+Equal
+To(number)
+Paragraph
+Text
+Validation
+Builder
+Requires response length to be greater than or equal to value.
+require
+Text
+Length
+Less
+Than
+Or
+Equal
+To(number)
+Paragraph
+Text
+Validation
+Builder
+Requires response length to be less than value.
+require
+Text
+Matches
+Pattern(pattern)
+Paragraph
+Text
+Validation
+Builder
+Requires response to match pattern.
+Quiz
+Feedback
+Methods
+Method
+Return type
+Brief description
+get
+Link
+Urls()
+String[]
+Gets a list of the URLs associated with the Feedback.
+get
+Text()
+String
+Gets the Feedback's display text.
+Quiz
+Feedback
+Builder
+Methods
+Method
+Return type
+Brief description
+add
+Link(url)
+Quiz
+Feedback
+Builder
+Adds a link to the feedback's supplemental material.
+add
+Link(url, displayText)
+Quiz
+Feedback
+Builder
+Adds a link to the feedback's supplemental material.
+build()
+Quiz
+Feedback
+Builds a Feedback of the corresponding type for this builder.
+copy()
+Quiz
+Feedback
+Builder
+Returns a copy of this builder.
+set
+Text(text)
+Quiz
+Feedback
+Builder
+Sets the feedback text.
+Rating
+Icon
+Type
+Properties
+Property
+Type
+Description
+STAR
+Enum
+A star icon.
+HEART
+Enum
+A heart icon.
+THUMB_UP
+Enum
+A thumb up icon.
+Rating
+Item
+Methods
+Method
+Return type
+Brief description
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this rating item.
+duplicate()
+Rating
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Rating
+Icon()
+Rating
+Icon
+Type
+Gets the icon chosen for the rating.
+get
+Rating
+Scale
+Level()
+Integer
+Gets the rating's scale level.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Rating
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Rating
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Rating
+Item
+Sets the number of points a gradeable item is worth.
+set
+Rating
+Icon(ratingIcon)
+Rating
+Item
+Sets the rating's icon.
+set
+Rating
+Scale
+Level(ratingScaleLevel)
+Rating
+Item
+Sets the rating's maximum scale level.
+set
+Required(enabled)
+Rating
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Rating
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Scale
+Item
+Methods
+Method
+Return type
+Brief description
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this scale item.
+duplicate()
+Scale
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Left
+Label()
+String
+Gets the label for the scale's lower bound, if any.
+get
+Lower
+Bound()
+Integer
+Gets the scale's lower bound.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Right
+Label()
+String
+Gets the label for the scale's upper bound, if any.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+get
+Upper
+Bound()
+Integer
+Gets the scale's upper bound.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Bounds(lower, upper)
+Scale
+Item
+Sets the scale's lower and upper bounds.
+set
+General
+Feedback(feedback)
+Scale
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Scale
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Labels(lower, upper)
+Scale
+Item
+Sets labels for the scale's lower and upper bounds.
+set
+Points(points)
+Scale
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Scale
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Scale
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Section
+Header
+Item
+Methods
+Method
+Return type
+Brief description
+duplicate()
+Section
+Header
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+set
+Help
+Text(text)
+Section
+Header
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Title(title)
+Section
+Header
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Text
+Item
+Methods
+Method
+Return type
+Brief description
+clear
+Validation()
+Text
+Item
+Removes any data validation for this text item.
+create
+Response(response)
+Item
+Response
+Creates a new
+Item
+Response
+for this text item.
+duplicate()
+Text
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Text
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Text
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Text
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Text
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Text
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Validation(validation)
+Text
+Item
+Sets the data validation for this text item.
+Text
+Validation
+Text
+Validation
+Builder
+Methods
+Method
+Return type
+Brief description
+require
+Number()
+Text
+Validation
+Builder
+Requires text item to be a number.
+require
+Number
+Between(start, end)
+Text
+Validation
+Builder
+Requires text item to be a number between start and end, inclusive.
+require
+Number
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires text item to be a number equal to value specified.
+require
+Number
+Greater
+Than(number)
+Text
+Validation
+Builder
+Requires text item to be a number greater than the value specified.
+require
+Number
+Greater
+Than
+Or
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires text item to be a number greater than or equal to the value specified.
+require
+Number
+Less
+Than(number)
+Text
+Validation
+Builder
+Requires text item to be a number less than the value specified.
+require
+Number
+Less
+Than
+Or
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires text item to be a number less than or equal to the value specified.
+require
+Number
+Not
+Between(start, end)
+Text
+Validation
+Builder
+Requires text item to be a number not between start and end, inclusive.
+require
+Number
+Not
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires text item to be a number not equal to the value specified.
+require
+Text
+Contains
+Pattern(pattern)
+Text
+Validation
+Builder
+Requires response to contain pattern.
+require
+Text
+Does
+Not
+Contain
+Pattern(pattern)
+Text
+Validation
+Builder
+Requires response to not contain pattern.
+require
+Text
+Does
+Not
+Match
+Pattern(pattern)
+Text
+Validation
+Builder
+Requires response to not match pattern.
+require
+Text
+Is
+Email()
+Text
+Validation
+Builder
+Requires text item to be an email address.
+require
+Text
+Is
+Url()
+Text
+Validation
+Builder
+Requires text item to be a URL.
+require
+Text
+Length
+Greater
+Than
+Or
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires response length to be greater than or equal to value.
+require
+Text
+Length
+Less
+Than
+Or
+Equal
+To(number)
+Text
+Validation
+Builder
+Requires response length to be less than value.
+require
+Text
+Matches
+Pattern(pattern)
+Text
+Validation
+Builder
+Requires response to match pattern.
+require
+Whole
+Number()
+Text
+Validation
+Builder
+Requires text item to be a whole number.
+Time
+Item
+Methods
+Method
+Return type
+Brief description
+create
+Response(hour, minute)
+Item
+Response
+Creates a new
+Item
+Response
+for this time item.
+duplicate()
+Time
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+General
+Feedback()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond to a gradeable question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+General
+Feedback(feedback)
+Time
+Item
+Sets the feedback to be shown to respondents when they respond to a gradeable question that
+doesn't have a correct or incorrect answer (ie questions that require manual grading).
+set
+Help
+Text(text)
+Time
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Time
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Time
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Time
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Video
+Item
+Methods
+Method
+Return type
+Brief description
+duplicate()
+Video
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Alignment()
+Alignment
+Gets the video's horizontal alignment.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+get
+Width()
+Integer
+Gets the video's width in pixels.
+set
+Alignment(alignment)
+Video
+Item
+Sets the video's horizontal alignment.
+set
+Help
+Text(text)
+Video
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Title(title)
+Video
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Video
+Url(youtubeUrl)
+Video
+Item
+Sets the video itself from a given YouTube URL or YouTube video ID.
+set
+Width(width)
+Video
+Item
+Sets the video's width in pixels.

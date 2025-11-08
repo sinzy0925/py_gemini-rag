@@ -1,0 +1,79 @@
+Source Path: gemini_api_docs_html/gemini-api/docs/logs-policy/index.html
+
+This page outlines the storage and management of
+Gemini API logs
+, which are developer-owned
+API data from supported Gemini API calls for projects with billing enabled. Logs
+encompass the entire process from a user's request to the model's response.
+1. Data that can be shared
+As a project owner you have the choice to opt-in to logging of Gemini API calls,
+for your own use or for feedback and sharing with Google to help us continually
+improve our models.
+With logging enabled, you can help us build AI systems that continue to be
+valuable for developers across various fields and use cases by choosing to
+contribute the following data for product improvements and model training:
+Datasets:
+Use the Logs and Datasets interface of Google AI Studio to
+choose logs (requests, responses, metadata etc.) of interest from
+supported Gemini API calls; contributed through inclusion in datasets, with the
+option to opt-out during dataset creation.
+Feedback:
+When reviewing logs, you can provide feedback; including thumbs
+up/down ratings and any written comments you provide.
+When you share a dataset with Google, your logs in that dataset, including
+requests and responses, will be processed in accordance with our
+Terms
+for
+"
+Unpaid Services
+,"
+meaning the dataset may be used to develop and improve Google
+products, services, and machine learning technologies, including improving and
+training our models.
+Do not include personal, sensitive, or confidential
+information.
+Note:
+Options are dependent on your location.
+2. How we use your data
+Logs will expire after 55 days by default. They will become unavailable
+after this period. Datasets can be created to retain logs of interest or value
+beyond this period for downstream use cases and optional contribution to model
+improvements. Logs stored in datasets do not have set expiry dates, however each
+project has a default storage limit of up to 1,000 logs.
+By default, because logging is only available for billing-enabled projects,
+prompts and responses within logs are not used for product improvement or
+development, in accordance with our
+Terms
+on data use.
+If you choose to share datasets of your logs with Google, those datasets will be
+used as real-world demonstration data to better understand the diversity of
+domains and contexts AI systems and applications are used in. This data may be
+used to improve model quality, and inform the training and evaluation of future
+models and services. This data is processed in accordance with our data use
+terms for
+Unpaid Services
+.
+Accordingly, human reviewers may read, annotate, and process the API inputs and
+outputs you share. Before data is used for model improvement, Google takes steps
+to protect user privacy as part of this process. This includes disconnecting
+this data from your Google Account, API key, and Cloud project before reviewers
+see or annotate it.
+3. Data permissions
+By opting-in to contributing API data, you confirm that you have the necessary
+permissions for Google to process and use the data as described in this
+documentation.
+Please do not contribute logs containing sensitive,
+confidential, or proprietary information obtained through the paid service
+.
+The license you grant to Google under the "
+Submission of Content
+"
+section in the API Terms also extends, to the extent required under applicable
+law for our use, to any content (e.g., prompts, including associated system
+instructions, cached content, and files such as images, videos, or documents)
+you submit to the Services and to any generated responses.
+4. Data sharing and feedback
+You can help us advance the frontier of AI research, the Gemini API and Google
+AI Studio by opting in to share your data as examples, enabling us to
+continually improve our models across various contexts and build AI systems that
+continue to be valuable to developers across various fields and use cases.

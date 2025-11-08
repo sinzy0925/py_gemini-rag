@@ -1,0 +1,231 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/text-style/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextStyle defines the rendered style of text in a cell and can have a corresponding RichTextValue.
+If a RichTextValue spans multiple text runs with different style values, a method attempting to read that style will return
+null
+.
+To avoid getting
+null
+when querying text styles, use the RichTextValue.getRuns() method.
+TextStyle provides methods to retrieve font properties like family, size, color, and boolean states for bold, italic, strikethrough, and underline.
+The getForegroundColor() method is deprecated and has been replaced by getForegroundColorObject().
+Text
+Style
+The rendered style of text in a cell.
+Text styles can have a corresponding
+Rich
+Text
+Value
+. If the
+Rich
+Text
+Value
+spans multiple text runs that have different values for a given text style read
+method, the method returns
+null
+. To avoid this, query for text styles using the Rich Text
+values returned by the
+Rich
+Text
+Value.getRuns()
+method.
+Methods
+Method
+Return type
+Brief description
+copy()
+Text
+Style
+Builder
+Creates a text style builder initialized with the values of this text style.
+get
+Font
+Family()
+String
+Gets the font family of the text.
+get
+Font
+Size()
+Integer
+Gets the font size of the text in points.
+get
+Foreground
+Color
+Object()
+Color
+Gets the font color of the text.
+is
+Bold()
+Boolean
+Gets whether or not the text is bold.
+is
+Italic()
+Boolean
+Gets whether or not the cell is italic.
+is
+Strikethrough()
+Boolean
+Gets whether or not the cell has strikethrough.
+is
+Underline()
+Boolean
+Gets whether or not the cell is underlined.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+Foreground
+Color()
+String
+Gets the font color of the text.
+Detailed documentation
+copy()
+Creates a text style builder initialized with the values of this text style.
+Return
+Text
+Style
+Builder
+— A builder from this text style.
+get
+Font
+Family()
+Gets the font family of the text. Returns
+null
+if the font family isn't set or the
+corresponding
+Rich
+Text
+Value
+has multiple runs with different font
+families.
+Return
+String
+— The font family of the text (for example, "Arial") or
+null
+.
+get
+Font
+Size()
+Gets the font size of the text in points. Returns
+null
+if the font size isn't set or
+the corresponding
+Rich
+Text
+Value
+has multiple runs with different font
+sizes.
+Return
+Integer
+— The font size of the text or
+null
+.
+get
+Foreground
+Color
+Object()
+Gets the font color of the text. Returns
+null
+if the font color isn't set or the
+corresponding
+Rich
+Text
+Value
+has multiple runs with different font
+colors.
+Return
+Color
+— The font color of the text or
+null
+.
+is
+Bold()
+Gets whether or not the text is bold. Returns
+null
+if bold isn't set or the
+corresponding
+Rich
+Text
+Value
+has multiple runs with different bold
+settings.
+Return
+Boolean
+— Whether or not the cell is bold, or
+null
+.
+is
+Italic()
+Gets whether or not the cell is italic. Returns
+null
+if italic isn't set or the
+corresponding
+Rich
+Text
+Value
+has multiple runs with different italic
+settings.
+Return
+Boolean
+— Whether or not the cell is italic, or
+null
+.
+is
+Strikethrough()
+Gets whether or not the cell has strikethrough. Returns
+null
+if strikethrough isn't set
+or the corresponding
+Rich
+Text
+Value
+has multiple runs with different
+strikethrough settings.
+Return
+Boolean
+— Whether or not the cell has strikethrough, or
+null
+.
+is
+Underline()
+Gets whether or not the cell is underlined. Returns
+null
+if underline isn't set or the
+corresponding
+Rich
+Text
+Value
+has multiple runs with different underline
+settings.
+Return
+Boolean
+— Whether or not the cell is underlined, or
+null
+.
+Deprecated methods
+get
+Foreground
+Color()
+Deprecated.
+Replaced by
+get
+Foreground
+Color
+Object()
+Gets the font color of the text. Returns
+null
+if the font color isn't set or the
+corresponding
+Rich
+Text
+Value
+has multiple runs with different font
+colors.
+Return
+String
+— The font color of the text as a hex CSS value (for example, "#ff0000") or
+null
+.

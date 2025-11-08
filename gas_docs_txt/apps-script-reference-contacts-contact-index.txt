@@ -1,0 +1,3547 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/contact/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+All methods described, including those for getting and setting various contact details like names, addresses, phone numbers, URLs, and user-defined fields, are marked as deprecated and should not be used in new scripts.
+These deprecated methods require authorization with the
+https://www.google.com/m8/feeds
+scope to function.
+Contact
+Deprecated.
+Instead, use the
+People API advanced
+    service
+A Contact contains the name, address, and various contact details of a contact.
+Deprecated methods
+Method
+Return type
+Brief description
+add
+Address(label, address)
+Address
+Field
+Adds an address to the contact with either a standard or custom label.
+add
+Company(company, title)
+Company
+Field
+Adds a company to the contact.
+add
+Custom
+Field(label, content)
+Custom
+Field
+Adds a custom field to the contact with either an extended or custom label.
+add
+Date(label, month, day, year)
+Date
+Field
+Adds a date to the contact with either an standard or custom label.
+add
+Email(label, address)
+Email
+Field
+Add an email address with a standard label (home, work, etc.) or a custom label
+{
+@
+code
+// The code below retrieves a contact named "John Doe" and adds the email
+// address "j.doe@example.com" to the ContactsApp.Field.HOME_EMAIL label.
+add
+IM(label, address)
+IMField
+Adds an IM address to the contact with either a standard or custom label.
+add
+Phone(label, number)
+Phone
+Field
+Adds a phone number to the contact with either a standard or custom label.
+add
+To
+Group(group)
+Contact
+Adds this contact to the given contact group.
+add
+Url(label, url)
+Url
+Field
+Adds a URL to the contact with either a standard or custom label.
+delete
+Contact()
+void
+Deletes this contact.
+get
+Addresses()
+Address
+Field[]
+Gets all the addresses for this contact.
+get
+Addresses(label)
+Address
+Field[]
+Gets all the addresses for this contact matching a particular field.
+get
+Companies()
+Company
+Field[]
+Gets all the companies for this contact.
+get
+Contact
+Groups()
+Contact
+Group[]
+Gets all the contact groups that contain this contact.
+get
+Custom
+Fields()
+Custom
+Field[]
+Gets all the custom fields for this contact.
+get
+Custom
+Fields(label)
+Custom
+Field[]
+Gets all the custom fields for this contact matching a particular field.
+get
+Dates()
+Date
+Field[]
+Gets all the dates for this contact.
+get
+Dates(label)
+Date
+Field[]
+Gets all the dates for this contact matching a particular field.
+get
+Email
+Addresses()
+String[]
+Gets a list of the email addresses available for this Contact.
+get
+Emails()
+Email
+Field[]
+Gets the email addresses of this contact.
+get
+Emails(label)
+Email
+Field[]
+Gets the email addresses for this contact matching a particular field.
+get
+Family
+Name()
+String
+Gets the family name (last name) of the contact as a string.
+get
+Full
+Name()
+String
+Gets the full name (given name and last name) of the contact as a string.
+get
+Given
+Name()
+String
+Gets the given name (first name) of the contact as a string.
+get
+Home
+Address()
+String
+Gets the home address of this Contact, or empty string if none exists.
+get
+Home
+Fax()
+String
+Gets the home fax number of this Contact or empty string if none exists.
+get
+Home
+Phone()
+String
+Gets the home phone number of this Contact or empty string if none exists.
+get
+IMs()
+IMField[]
+Gets all the IM addresses for this contact.
+get
+IMs(label)
+IMField[]
+Gets all the IM addresses for this contact matching a particular field.
+get
+Id()
+String
+Returns the unique id of this contact.
+get
+Initials()
+String
+Gets the contact's initials.
+get
+Last
+Updated()
+Date
+Gets the date this contact was last updated.
+get
+Maiden
+Name()
+String
+Gets the maiden name of the contact as a string.
+get
+Middle
+Name()
+String
+Gets the middle name of the contact as a string.
+get
+Mobile
+Phone()
+String
+Gets the mobile phone number of this Contact or empty string if none exists.
+get
+Nickname()
+String
+Gets the nickname of the contact as a string.
+get
+Notes()
+String
+Gets the notes associated with this contact, or an empty string if there are no notes.
+get
+Pager()
+String
+Gets the pager phone number of this Contact or empty string if none exists.
+get
+Phones()
+Phone
+Field[]
+Gets all the phone numbers for this contact.
+get
+Phones(label)
+Phone
+Field[]
+Gets all the phone numbers for this contact matching a particular field.
+get
+Prefix()
+String
+Gets the prefix to the contact's name.
+get
+Primary
+Email()
+String
+Gets the primary email address of the contact as a string.
+get
+Short
+Name()
+String
+Gets the short name of the contact as a string.
+get
+Suffix()
+String
+Gets the suffix to the contact's name.
+get
+Urls()
+Url
+Field[]
+Gets all the URLs for this contact.
+get
+Urls(label)
+Url
+Field[]
+Gets all the URLs for this contact matching a particular field.
+get
+User
+Defined
+Field(key)
+String
+Gets the user defined value associated with the given key.
+get
+User
+Defined
+Fields()
+Object
+Gets all the user defined fields for this Contact and returns them as the properties of a
+JavaScript Object.
+get
+Work
+Address()
+String
+Gets the work address of this Contact, or empty string if none exists.
+get
+Work
+Fax()
+String
+Gets the work fax number of this Contact or empty string if none exists.
+get
+Work
+Phone()
+String
+Gets the work phone number of this Contact or empty string if none exists.
+remove
+From
+Group(group)
+Contact
+Removes this contact from the given contact group.
+set
+Family
+Name(familyName)
+Contact
+Sets the family name (last name) of the contact.
+set
+Full
+Name(fullName)
+Contact
+Sets the full name (given name and last name) of the contact.
+set
+Given
+Name(givenName)
+Contact
+Sets the given name (first name) of the contact.
+set
+Home
+Address(addr)
+void
+Sets the home address of this Contact.
+set
+Home
+Fax(phone)
+void
+Sets the home fax number of this Contact.
+set
+Home
+Phone(phone)
+void
+Sets the home phone number of this Contact.
+set
+Initials(initials)
+Contact
+Sets the contact's initials.
+set
+Maiden
+Name(maidenName)
+Contact
+Sets the maiden name of the contact.
+set
+Middle
+Name(middleName)
+Contact
+Sets the middle name of the contact.
+set
+Mobile
+Phone(phone)
+void
+Sets the mobile phone number of this Contact.
+set
+Nickname(nickname)
+Contact
+Sets the nickname of the contact.
+set
+Notes(notes)
+Contact
+Sets the notes associated with this contact.
+set
+Pager(phone)
+void
+Sets the pager number of this Contact.
+set
+Prefix(prefix)
+Contact
+Sets the prefix to the contact's name.
+set
+Primary
+Email(primaryEmail)
+void
+Sets the primary email address of this Contact.
+set
+Short
+Name(shortName)
+Contact
+Sets the short name of the contact.
+set
+Suffix(suffix)
+Contact
+Sets the suffix to the contact's name.
+set
+User
+Defined
+Field(key, value)
+void
+Sets a single user defined field for this Contact, to be stored with a given key.
+set
+User
+Defined
+Fields(o)
+void
+Sets the user defined fields for this Contact with the properties of the given Object.
+set
+Work
+Address(addr)
+void
+Sets the work address of this Contact.
+set
+Work
+Fax(phone)
+void
+Sets the work fax number of this Contact.
+set
+Work
+Phone(phone)
+void
+Sets the work phone number of this Contact.
+Deprecated methods
+add
+Address(label, address)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds an address to the contact with either a standard or custom label.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and adds the address
+// "123 Main St, Some City, NY 10011" with the ContactsApp.Field.WORK_ADDRESS
+// label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+address
+=
+contacts
+[
+0
+].
+addAddress
+(
+ContactsApp
+.
+Field
+.
+WORK_ADDRESS
+,
+'123 Main St, Some City, NY 10011'
+,
+);
+Parameters
+Name
+Type
+Description
+label
+Object
+the label of the new address, either from ContactsApp.Field or a custom string
+address
+String
+the new address
+Return
+Address
+Field
+— the newly created field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Addresses()
+add
+Company(company, title)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds a company to the contact.
+// The code below retrieves a contact named "John Doe" and adds the company
+// "Google" and the job title "Product Manager".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+url
+=
+contacts
+[
+0
+].
+addCompany
+(
+'Google'
+,
+'Product Manager'
+);
+Parameters
+Name
+Type
+Description
+company
+String
+the name of the company to add to this contact
+title
+String
+the job title associated with this contact for this company
+Return
+Company
+Field
+— the newly created field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Companies()
+add
+Custom
+Field(label, content)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds a custom field to the contact with either an extended or custom label.
+The label can be either from ContactsApp.ExtendedField or a custom label string.
+// The code below retrieves a contact named "John Doe" and adds the custom field
+// ContactsApp.ExtendedField.HOBBY with the value "hiking".
+// Note that ContactsApp.ExtendedField.HOBBY is not the same as a custom field
+// named 'HOBBY'.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+contacts
+[
+0
+].
+addCustomField
+(
+ContactsApp
+.
+ExtendedField
+.
+HOBBY
+,
+'hiking'
+);
+Parameters
+Name
+Type
+Description
+label
+Object
+the label of the new address, either from ContactsApp.ExtendedField or a custom
+    string
+content
+Object
+the value to store in the custom field
+Return
+Custom
+Field
+— the newly created field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Custom
+Fields()
+add
+Date(label, month, day, year)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds a date to the contact with either an standard or custom label.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and adds a
+// ContactsApp.ExtendedField.BIRTHDAY with the value "April 19, 1950".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+birthday
+=
+contacts
+[
+0
+].
+addDate
+(
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+,
+ContactsApp
+.
+Month
+.
+APRIL
+,
+19
+,
+1950
+,
+);
+Parameters
+Name
+Type
+Description
+label
+Object
+the label of the new date, either from ContactsApp.Field or a custom string
+month
+Month
+the month, from ContactApps.Month
+day
+Integer
+the day
+year
+Integer
+the year
+Return
+Date
+Field
+— the newly created date
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Dates()
+add
+Email(label, address)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Add an email address with a standard label (home, work, etc.) or a custom label
+// The code below retrieves a contact named "John Doe" and adds the email
+// address "j.doe@example.com" to the ContactsApp.Field.HOME_EMAIL label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+emailField
+=
+contacts
+[
+0
+].
+addEmail
+(
+ContactsApp
+.
+Field
+.
+HOME_EMAIL
+,
+'j.doe@example.com'
+,
+);
+Parameters
+Name
+Type
+Description
+label
+Object
+the label of the new email, either from ContactsApp.Field or a custom string
+address
+String
+the new email address
+Return
+Email
+Field
+— the newly added field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+add
+IM(label, address)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds an IM address to the contact with either a standard or custom label.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and adds the IM address
+// "ChatWithJohn" with the ContactsApp.Field.AIM label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+email
+=
+contacts
+[
+0
+].
+addIM
+(
+ContactsApp
+.
+Field
+.
+AIM
+,
+'ChatWithJohn'
+);
+Parameters
+Name
+Type
+Description
+label
+Object
+the label of the new IM address, either from ContactsApp.Field or a custom string
+address
+String
+the new IM address
+Return
+IMField
+— the newly created field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+IMs()
+add
+Phone(label, number)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds a phone number to the contact with either a standard or custom label.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and adds the phone number
+// "212-555-1234" with the ContactsApp.Field.WORK_PHONE label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+phone
+=
+contacts
+[
+0
+].
+addPhone
+(
+ContactsApp
+.
+Field
+.
+WORK_PHONE
+,
+'212-555-1234'
+,
+);
+Parameters
+Name
+Type
+Description
+label
+Object
+the label of the new phone number, either from ContactsApp.Field or a custom
+    string
+number
+String
+the new phone number
+Return
+Phone
+Field
+— the newly created field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Phones()
+add
+To
+Group(group)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds this contact to the given contact group.
+// The code below creates a new contact and then adds it to the contact group
+// named "Work Friends"
+let
+contact
+=
+ContactsApp
+.
+createContact
+(
+'John'
+,
+'Doe'
+,
+'john.doe@example.com'
+);
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+contact
+=
+contact
+.
+addToGroup
+(
+group
+);
+Parameters
+Name
+Type
+Description
+group
+Contact
+Group
+the contact group to add this contact to
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+remove
+From
+Group(group)
+add
+Url(label, url)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds a URL to the contact with either a standard or custom label.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and adds the URL
+// "http://www.example.com" with the ContactsApp.Field.WORK_WEBSITE label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+url
+=
+contacts
+[
+0
+].
+addUrl
+(
+ContactsApp
+.
+Field
+.
+WORK_WEBSITE
+,
+'http://www.example.com'
+,
+);
+Parameters
+Name
+Type
+Description
+label
+Object
+the label of the new address, either from ContactsApp.Field or a custom string
+url
+String
+the new URL
+Return
+Url
+Field
+— the newly created field
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Urls()
+delete
+Contact()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes this contact.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+deleteContact
+();
+}
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Addresses()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the addresses for this contact.
+// The code below logs the addresses of all the contacts whose names contain
+// "John Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getAddresses
+());
+}
+Return
+Address
+Field[]
+— a list of addresses
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Address(label, address)
+get
+Addresses(label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the addresses for this contact matching a particular field.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and logs the addresses
+// associated with that contact that are in the ContactsApp.Field.WORK_ADDRESS
+// label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+addresses
+=
+contacts
+[
+0
+].
+getAddresses
+(
+ContactsApp
+.
+Field
+.
+WORK_ADDRESS
+);
+for
+(
+const
+i
+in
+addresses
+)
+{
+Logger
+.
+log
+(
+addresses
+[
+i
+].
+getAddress
+());
+}
+Parameters
+Name
+Type
+Description
+label
+Object
+the label to match, either from ContactsApp.Field or a custom string
+Return
+Address
+Field[]
+— a list of addresses
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Address(label, address)
+get
+Companies()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the companies for this contact.
+// The code below logs the company names of all the contacts whose names contain
+// "John Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+const
+companies
+=
+contacts
+[
+i
+].
+getCompanies
+();
+for
+(
+const
+j
+in
+companies
+)
+{
+Logger
+.
+log
+(
+companies
+[
+j
+].
+getCompanyName
+());
+}
+}
+Return
+Company
+Field[]
+— a list of companies
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Company(company, title)
+get
+Contact
+Groups()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the contact groups that contain this contact.
+// The code below gets a contact named "John Doe" and retrieves all the contact
+// groups that the contact belongs to
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+groups
+=
+contacts
+[
+0
+].
+getContactGroups
+();
+Return
+Contact
+Group[]
+— the groups containing this contact
+See also
+add
+To
+Group(group)
+get
+Custom
+Fields()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the custom fields for this contact.
+// The code below retrieves a contact named "John Doe" and logs the custom
+// fields associated with that contact
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+fields
+=
+contacts
+[
+0
+].
+getCustomFields
+();
+for
+(
+const
+i
+in
+fields
+)
+{
+Logger
+.
+log
+(
+fields
+[
+i
+].
+getValue
+());
+}
+Return
+Custom
+Field[]
+— a list of custom fields
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Custom
+Field(label, content)
+get
+Custom
+Fields(label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the custom fields for this contact matching a particular field.
+The label can be either a standard label from ContactsApp.ExtendedField or a custom label
+string.
+// The code below retrieves a contact named "John Doe" and logs the custom
+// fields associated with that contact that are in the
+// ContactsApp.ExtendedField.HOBBY label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+hobbies
+=
+contacts
+[
+0
+].
+getCustomFields
+(
+ContactsApp
+.
+ExtendedField
+.
+HOBBY
+);
+for
+(
+const
+i
+in
+hobbies
+)
+{
+Logger
+.
+log
+(
+hobbies
+[
+i
+].
+getValue
+());
+}
+Parameters
+Name
+Type
+Description
+label
+Object
+the label to match, either from ContactsApp.ExtendedField or a custom string
+Return
+Custom
+Field[]
+— a list of custom fields
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Custom
+Field(label, content)
+get
+Dates()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the dates for this contact.
+// The code below retrieves a contact named "John Doe" and logs the label of the
+// date associated with that contact
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+dates
+=
+contacts
+[
+0
+].
+getDates
+();
+for
+(
+const
+i
+in
+dates
+)
+{
+Logger
+.
+log
+(
+dates
+[
+i
+].
+getLabel
+());
+}
+Return
+Date
+Field[]
+— a list of dates
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Date(label, month, day, year)
+get
+Dates(label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the dates for this contact matching a particular field.
+The label can be either a standard label from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and logs the day of the
+// month associated with that contact that are in the ContactsApp.Field.BIRTHDAY
+// label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+birthdays
+=
+contacts
+[
+0
+].
+getDates
+(
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+);
+for
+(
+const
+i
+in
+birthdays
+)
+{
+Logger
+.
+log
+(
+birthdays
+[
+i
+].
+getDay
+());
+}
+Parameters
+Name
+Type
+Description
+label
+Object
+the label to match, either from ContactsApp.Field or a custom string
+Return
+Date
+Field[]
+— a list of dates
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Date(label, month, day, year)
+get
+Email
+Addresses()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets a list of the email addresses available for this Contact.
+Return
+String[]
+— a list of email addresses available for this Contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Emails()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the email addresses of this contact.
+// The code below retrieves a contact named "John Doe" and logs the email
+// addresses associated with that contact
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+emails
+=
+contacts
+[
+0
+].
+getEmails
+();
+for
+(
+const
+i
+in
+emails
+)
+{
+Logger
+.
+log
+(
+emails
+[
+i
+].
+getAddress
+());
+}
+Return
+Email
+Field[]
+— the list of email addresses for the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Email(label, address)
+get
+Emails(label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the email addresses for this contact matching a particular field.
+The label can be either a standard label from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and logs the email
+// addresses associated with that contact that are in the
+// ContactsApp.Field.HOME_EMAIL label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+emails
+=
+contacts
+[
+0
+].
+getEmails
+(
+ContactsApp
+.
+Field
+.
+HOME_EMAIL
+);
+for
+(
+const
+i
+in
+emails
+)
+{
+Logger
+.
+log
+(
+emails
+[
+i
+].
+getAddress
+());
+}
+Parameters
+Name
+Type
+Description
+label
+Object
+the label to match, either from ContactsApp.Field or a custom string
+Return
+Email
+Field[]
+— the list of email addresses for the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Email(label, address)
+get
+Family
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the family name (last name) of the contact as a string.
+// The code below logs the family name of all the contacts whose names contain
+// "John"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getFamilyName
+());
+}
+Return
+String
+— the family name of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Family
+Name(familyName)
+get
+Full
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the full name (given name and last name) of the contact as a string.
+// The code below logs the full name of all the contacts whose names contain
+// "John"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getFullName
+());
+}
+Return
+String
+— the full name of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Full
+Name(fullName)
+get
+Given
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the given name (first name) of the contact as a string.
+// The code below logs the given name of all the contacts whose names contain
+// "Smith"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Smith'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getGivenName
+());
+}
+Return
+String
+— the given name of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Given
+Name(givenName)
+get
+Home
+Address()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the home address of this Contact, or empty string if none exists.
+Return
+String
+— the home address of this Contact, or empty string if none exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Home
+Fax()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the home fax number of this Contact or empty string if none exists.
+Return
+String
+— the home fax number of this Contact or empty string if none exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Home
+Phone()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the home phone number of this Contact or empty string if none exists.
+Return
+String
+— the home phone number of this Contact or empty string if none exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+IMs()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the IM addresses for this contact.
+// The code below logs the IM addresses of all the contacts whose names contain
+// "John Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getIMs
+());
+}
+Return
+IMField[]
+— a list of IM addresses
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+IM(label, address)
+get
+IMs(label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the IM addresses for this contact matching a particular field.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and logs the IM addresses
+// associated with that contact that are in the ContactsApp.Field.GOOGLE_TALK
+// label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+imAddresses
+=
+contacts
+[
+0
+].
+getIMs
+(
+ContactsApp
+.
+Field
+.
+GOOGLE_TALK
+);
+for
+(
+const
+i
+in
+imAddresses
+)
+{
+Logger
+.
+log
+(
+imAddresses
+[
+i
+].
+getAddress
+());
+}
+Parameters
+Name
+Type
+Description
+label
+Object
+the label to match, either from ContactsApp.Field or a custom string
+Return
+IMField[]
+— a list of IM addresses
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+IM(label, address)
+get
+Id()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Returns the unique id of this contact.
+const
+contact
+=
+ContactsApp
+.
+createContact
+(
+'John'
+,
+'Doe'
+,
+'john.doe@example.com'
+,
+);
+const
+id
+=
+contact
+.
+getId
+();
+Return
+String
+— the id of this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Initials()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the contact's initials.
+// The code below logs the initials of all the contacts whose names contain
+// "John Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getInitials
+());
+}
+Return
+String
+— the initials of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Initials(initials)
+get
+Last
+Updated()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the date this contact was last updated.
+// The code below logs the last updated date of all the contacts whose names
+// contain "John Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getLastUpdated
+());
+}
+Return
+Date
+— the date this contact was last updated
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Maiden
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the maiden name of the contact as a string.
+// The code below logs the maiden name of all the contacts whose names contain
+// "Jane"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Jane'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getMaidenName
+());
+}
+Return
+String
+— the maiden name of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Maiden
+Name(maidenName)
+get
+Middle
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the middle name of the contact as a string.
+// The code below logs the middle name of all the contacts whose names contain
+// "Smith"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Smith'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getMiddleName
+());
+}
+Return
+String
+— the middle name of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Middle
+Name(middleName)
+get
+Mobile
+Phone()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the mobile phone number of this Contact or empty string if none exists.
+Return
+String
+— the mobile phone number of this Contact or empty string if none exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Nickname()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the nickname of the contact as a string.
+// The code below logs the nickname of all the contacts whose names contain
+// "John Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getNickname
+());
+}
+Return
+String
+— the nickname of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Nickname(nickname)
+get
+Notes()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the notes associated with this contact, or an empty string if there are no notes.
+// The code below logs the notes of all the contacts whose names contain "John
+// Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getNotes
+());
+}
+Return
+String
+— the notes associated with this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Notes(notes)
+get
+Pager()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the pager phone number of this Contact or empty string if none exists.
+Return
+String
+— the pager phone number of this Contact or empty string if none exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Phones()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the phone numbers for this contact.
+// The code below logs the phone numbers of all the contacts whose names contain
+// "John Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getPhones
+());
+}
+Return
+Phone
+Field[]
+— a list of phone numbers
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Phone(label, number)
+get
+Phones(label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the phone numbers for this contact matching a particular field.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and logs the phone
+// numbers associated with that contact that are in the
+// ContactsApp.Field.WORK_PHONE label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+phones
+=
+contacts
+[
+0
+].
+getPhones
+(
+ContactsApp
+.
+Field
+.
+WORK_PHONE
+);
+for
+(
+const
+i
+in
+phones
+)
+{
+Logger
+.
+log
+(
+phones
+[
+i
+].
+getPhoneNumber
+());
+}
+Parameters
+Name
+Type
+Description
+label
+Object
+the label to match, either from ContactsApp.Field or a custom string
+Return
+Phone
+Field[]
+— a list of phone numbers
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Phone(label, number)
+get
+Prefix()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the prefix to the contact's name.
+// The code below logs the prefix of all the contacts whose names contain "John
+// Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getPrefix
+());
+}
+Return
+String
+— the prefix of the contact's name
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Prefix(prefix)
+get
+Primary
+Email()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the primary email address of the contact as a string.
+// The code below logs the primary email address of all the contacts whose names
+// contain "John Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getPrimaryEmail
+());
+}
+Return
+String
+— the primary email address of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Short
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the short name of the contact as a string.
+// The code below logs the short name of all the contacts whose names contain
+// "Johnathan"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Johnathan'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getShortName
+());
+}
+Return
+String
+— the short name of the contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Short
+Name(shortName)
+get
+Suffix()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the suffix to the contact's name.
+// The code below logs the suffix of all the contacts whose names contain "John
+// Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getSuffix
+());
+}
+Return
+String
+— the suffix of the contact's name
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Suffix(suffix)
+get
+Urls()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the URLs for this contact.
+// The code below logs the URLs of all the contacts whose names contain "John
+// Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+Logger
+.
+log
+(
+contacts
+[
+i
+].
+getUrls
+());
+}
+Return
+Url
+Field[]
+— a list of URLs
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Url(label, url)
+get
+Urls(label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the URLs for this contact matching a particular field.
+The label can be either from ContactsApp.Field or a custom label string.
+// The code below retrieves a contact named "John Doe" and logs the URLs
+// associated with that contact that are in the ContactsApp.Field.WORK_WEBSITE
+// label.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+urls
+=
+contacts
+[
+0
+].
+getUrls
+(
+ContactsApp
+.
+Field
+.
+WORK_WEBSITE
+);
+for
+(
+const
+i
+in
+urls
+)
+{
+Logger
+.
+log
+(
+urls
+[
+i
+].
+getAddress
+());
+}
+Parameters
+Name
+Type
+Description
+label
+Object
+the label to match, either from ContactsApp.Field or a custom string
+Return
+Url
+Field[]
+— a list of URLs
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Url(label, url)
+get
+User
+Defined
+Field(key)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the user defined value associated with the given key.
+Parameters
+Name
+Type
+Description
+key
+String
+the key can be any basic type (String, int, etc.)
+Return
+String
+— the user defined content that has been stored with this key
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+User
+Defined
+Fields()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the user defined fields for this Contact and returns them as the properties of a
+JavaScript Object.
+Return
+Object
+— the user defined fields for this Contact, as properties of a JavaScript Object
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Work
+Address()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the work address of this Contact, or empty string if none exists.
+Return
+String
+— the work address of this Contact, or empty string if none exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Work
+Fax()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the work fax number of this Contact or empty string if none exists.
+Return
+String
+— the work fax number of this Contact or empty string if none exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Work
+Phone()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the work phone number of this Contact or empty string if none exists.
+Return
+String
+— the work phone number of this Contact or empty string if none exists
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+remove
+From
+Group(group)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Removes this contact from the given contact group.
+// The code below gets all the contacts named "John Doe" and then removes each
+// of them from the "Work Friends" contact group
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+]
+=
+contacts
+[
+i
+].
+removeFromGroup
+(
+group
+);
+}
+Parameters
+Name
+Type
+Description
+group
+Contact
+Group
+the contact group to remove this contact from
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+To
+Group(group)
+set
+Family
+Name(familyName)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the family name (last name) of the contact.
+// The code below changes the family name of all the contacts whose names are
+// "John Doe" to "Doe-Smith"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setFamilyName
+(
+'Doe-Smith'
+);
+}
+Parameters
+Name
+Type
+Description
+family
+Name
+String
+the new family name of the contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Family
+Name()
+set
+Full
+Name(fullName)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the full name (given name and last name) of the contact.
+// The code below changes the full name of all the contacts whose names are
+// "John Doe" to "Johnny Doe"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setFullName
+(
+'Johnny Doe'
+);
+}
+Parameters
+Name
+Type
+Description
+full
+Name
+String
+the new full name of the contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Full
+Name()
+set
+Given
+Name(givenName)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the given name (first name) of the contact.
+// The code below changes the given name of all the contacts whose names are
+// "John Doe" to "Johnny"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setGivenName
+(
+'Johnny'
+);
+}
+Parameters
+Name
+Type
+Description
+given
+Name
+String
+the new given name of the contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Given
+Name()
+set
+Home
+Address(addr)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the home address of this Contact.
+Parameters
+Name
+Type
+Description
+addr
+String
+the home address to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Home
+Fax(phone)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the home fax number of this Contact.
+Parameters
+Name
+Type
+Description
+phone
+String
+the home fax number to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Home
+Phone(phone)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the home phone number of this Contact.
+Parameters
+Name
+Type
+Description
+phone
+String
+the home phone number to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Initials(initials)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the contact's initials.
+// The code below sets the initials of all the contacts whose names are
+// "Johnathan Doe" to "JD"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Johnathan Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setInitials
+(
+'JD'
+);
+}
+Parameters
+Name
+Type
+Description
+initials
+String
+the new initials of the contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Initials()
+set
+Maiden
+Name(maidenName)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the maiden name of the contact.
+// The code below changes the maiden name of all the contacts whose names are
+// "Jane Doe" to "Smith"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Jane Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setMaidenName
+(
+'Smith'
+);
+}
+Parameters
+Name
+Type
+Description
+maiden
+Name
+String
+the new maiden name of the contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Maiden
+Name()
+set
+Middle
+Name(middleName)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the middle name of the contact.
+// The code below changes the middle name of all the contacts whose names are
+// "John Doe" to "Danger"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setMiddleName
+(
+'Danger'
+);
+}
+Parameters
+Name
+Type
+Description
+middle
+Name
+String
+the new middle name of the contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Middle
+Name()
+set
+Mobile
+Phone(phone)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the mobile phone number of this Contact.
+Parameters
+Name
+Type
+Description
+phone
+String
+the mobile phone number to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Nickname(nickname)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the nickname of the contact.
+// The code below changes the nickname of all the contacts whose names are "John
+// Doe" to "JohnnyD"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setNickname
+(
+'JohnnyD'
+);
+}
+Parameters
+Name
+Type
+Description
+nickname
+String
+the new nickname of the contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Nickname()
+set
+Notes(notes)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the notes associated with this contact.
+// The code below sets the notes of all the contacts whose names are "John Doe"
+// to "Met him at the hackathon"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setNotes
+(
+'Met him at the hackathon'
+);
+}
+Parameters
+Name
+Type
+Description
+notes
+String
+the notes to be stored for this contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Notes()
+set
+Pager(phone)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the pager number of this Contact.
+Parameters
+Name
+Type
+Description
+phone
+String
+the pager number to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Prefix(prefix)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the prefix to the contact's name.
+// The code below sets the prefix of all the contacts whose names are "Johnathan
+// Doe" to "Mr"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Johnathan Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setPrefix
+(
+'Mr'
+);
+}
+Parameters
+Name
+Type
+Description
+prefix
+String
+the new prefix of the contact's name
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Prefix()
+set
+Primary
+Email(primaryEmail)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the primary email address of this Contact.
+Parameters
+Name
+Type
+Description
+primary
+Email
+String
+the primary email address to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Short
+Name(shortName)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the short name of the contact.
+// The code below changes the short name of all the contacts whose names are
+// "Johnathan Doe" to "John"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Johnathan Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setShortName
+(
+'John'
+);
+}
+Parameters
+Name
+Type
+Description
+short
+Name
+String
+the new short name of the contact
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Short
+Name()
+set
+Suffix(suffix)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the suffix to the contact's name.
+// The code below sets the suffix of all the contacts whose names are "Johnathan
+// Doe" to "Jr"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'Johnathan Doe'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+contacts
+[
+i
+].
+setSuffix
+(
+'Jr'
+);
+}
+Parameters
+Name
+Type
+Description
+suffix
+String
+the new suffix of the contact's name
+Return
+Contact
+— this contact
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Suffix()
+set
+User
+Defined
+Field(key, value)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets a single user defined field for this Contact, to be stored with a given key.
+Parameters
+Name
+Type
+Description
+key
+String
+the key can be any basic type (String, int, etc.)
+value
+String
+the value can be any basic type (String, int, etc.)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+User
+Defined
+Fields(o)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the user defined fields for this Contact with the properties of the given Object.
+Parameters
+Name
+Type
+Description
+o
+Object
+an Object with one or more properties in the form {key: value}
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Work
+Address(addr)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the work address of this Contact.
+Parameters
+Name
+Type
+Description
+addr
+String
+the work address to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Work
+Fax(phone)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the work fax number of this Contact.
+Parameters
+Name
+Type
+Description
+phone
+String
+the work fax number to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Work
+Phone(phone)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the work phone number of this Contact.
+Parameters
+Name
+Type
+Description
+phone
+String
+the work phone number to set
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds

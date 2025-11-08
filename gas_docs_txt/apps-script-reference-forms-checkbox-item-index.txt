@@ -1,0 +1,922 @@
+Source Path: gas_docs_html/apps-script/reference/forms/checkbox-item/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CheckboxItem allows respondents to select one or more checkboxes with an optional "other" field.
+You can add a new checkbox item to a form using
+form.addCheckboxItem()
+.
+Methods are available to manage choices, feedback, help text, and validation for the checkbox item.
+You can set the title and options for the checkbox item using methods like
+setTitle()
+and
+setChoices()
+.
+Checkbox items can be set as required and configured to show an "other" option.
+Checkbox
+Item
+A question item that allows the respondent to select one or more checkboxes, as well as an
+optional "other" field. Items can be accessed or created from a
+Form
+. When used in a
+quiz, these items are autograded.
+// Open a form by ID and add a new checkbox item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addCheckboxItem
+();
+item
+.
+setTitle
+(
+'What condiments would you like on your hot dog?'
+)
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Ketchup'
+),
+item
+.
+createChoice
+(
+'Mustard'
+),
+item
+.
+createChoice
+(
+'Relish'
+),
+])
+.
+showOtherOption
+(
+true
+);
+Methods
+Method
+Return type
+Brief description
+clear
+Validation()
+Checkbox
+Item
+Removes any data validation for this checkbox item.
+create
+Choice(value)
+Choice
+Creates a new choice.
+create
+Choice(value, isCorrect)
+Choice
+Creates a new choice.
+create
+Response(responses)
+Item
+Response
+Creates a new
+Item
+Response
+for this checkbox item.
+duplicate()
+Checkbox
+Item
+Creates a copy of this item and appends it to the end of the form.
+get
+Choices()
+Choice[]
+Gets all choices for an item.
+get
+Feedback
+For
+Correct()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond correctly to a question.
+get
+Feedback
+For
+Incorrect()
+Quiz
+Feedback
+Returns the feedback that is shown to respondents when they respond incorrectly to a question.
+get
+Help
+Text()
+String
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+get
+Id()
+Integer
+Gets the item's unique identifier.
+get
+Index()
+Integer
+Gets the index of the item among all the items in the form.
+get
+Points()
+Integer
+Returns the point value of a gradeable item.
+get
+Title()
+String
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+get
+Type()
+Item
+Type
+Gets the item's type, represented as an
+Item
+Type
+.
+has
+Other
+Option()
+Boolean
+Determines whether the item has an "other" option.
+is
+Required()
+Boolean
+Determines whether the respondent must answer the question.
+set
+Choice
+Values(values)
+Checkbox
+Item
+Sets the choices for an item from an array of strings.
+set
+Choices(choices)
+Checkbox
+Item
+Sets an array of choices for an item.
+set
+Feedback
+For
+Correct(feedback)
+Checkbox
+Item
+Sets the feedback to be shown to respondents when they respond correctly to a question.
+set
+Feedback
+For
+Incorrect(feedback)
+Checkbox
+Item
+Sets the feedback to be shown to respondents when they respond incorrectly to a question.
+set
+Help
+Text(text)
+Checkbox
+Item
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+set
+Points(points)
+Checkbox
+Item
+Sets the number of points a gradeable item is worth.
+set
+Required(enabled)
+Checkbox
+Item
+Sets whether the respondent must answer the question.
+set
+Title(title)
+Checkbox
+Item
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+set
+Validation(validation)
+Checkbox
+Item
+Sets the data validation for this checkbox item.
+show
+Other
+Option(enabled)
+Checkbox
+Item
+Sets whether the item has an "other" option.
+Detailed documentation
+clear
+Validation()
+Removes any data validation for this checkbox item.
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Choice(value)
+Creates a new choice.
+Parameters
+Name
+Type
+Description
+value
+String
+the choice's value, which respondents see as a label when viewing the form
+Return
+Choice
+— the new choice
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Choice(value, isCorrect)
+Creates a new choice.
+Parameters
+Name
+Type
+Description
+value
+String
+the choice's value, which respondents see as a label when viewing the form
+is
+Correct
+Boolean
+whether the choice is a correct answer
+Return
+Choice
+— the new choice
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+create
+Response(responses)
+Creates a new
+Item
+Response
+for this checkbox item. The argument
+responses
+is a
+String[]
+array containing values that need to be checked. Throws an exception if any
+value does not match a valid choice for this item, unless
+show
+Other
+Option(enabled)
+is set to
+true
+.
+Parameters
+Name
+Type
+Description
+responses
+String[]
+an array of valid answers for this multiple-choice item
+Return
+Item
+Response
+— the item response
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+duplicate()
+Creates a copy of this item and appends it to the end of the form.
+Return
+Checkbox
+Item
+— a duplicate of this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Choices()
+Gets all choices for an item.
+Return
+Choice[]
+— an array of choices
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Feedback
+For
+Correct()
+Returns the feedback that is shown to respondents when they respond correctly to a question.
+Return
+Quiz
+Feedback
+— the feedback, if any.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Feedback
+For
+Incorrect()
+Returns the feedback that is shown to respondents when they respond incorrectly to a question.
+Return
+Quiz
+Feedback
+— the feedback, if any.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Help
+Text()
+Gets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Return
+String
+— the item's help text or description text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Id()
+Gets the item's unique identifier.
+Return
+Integer
+— the item's ID
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Index()
+Gets the index of the item among all the items in the form.
+Return
+Integer
+— the index of the item
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Points()
+Returns the point value of a gradeable item.
+Return
+Integer
+— the number of points a question is worth.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Title()
+Gets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Return
+String
+— the item's title or header text
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+get
+Type()
+Gets the item's type, represented as an
+Item
+Type
+.
+Return
+Item
+Type
+— the item's type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+has
+Other
+Option()
+Determines whether the item has an "other" option.
+Return
+Boolean
+—
+true
+if the item has an "other" option;
+false
+if not
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+is
+Required()
+Determines whether the respondent must answer the question.
+Return
+Boolean
+— whether the respondent must answer the question
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Choice
+Values(values)
+Sets the choices for an item from an array of strings. Throws an exception if the given array
+is empty.
+// Open a form by ID and add a new list item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addListItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+item
+.
+setChoiceValues
+([
+'Dogs'
+,
+'Cats'
+]);
+Parameters
+Name
+Type
+Description
+values
+String[]
+the array of choice values, which respondents see as labels when viewing the form
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Choices(choices)
+Sets an array of choices for an item. Throws an exception if the given array is empty or
+contains a
+null
+element.
+// Open a form by ID and add a new list item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addListItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+item
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Cats'
+),
+item
+.
+createChoice
+(
+'Dogs'
+)]);
+Parameters
+Name
+Type
+Description
+choices
+Choice[]
+an array of choices
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Throws
+Error
+— if the given array is
+null
+, empty, or contains a
+null
+element
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Feedback
+For
+Correct(feedback)
+Sets the feedback to be shown to respondents when they respond correctly to a question.
+// Open a form by ID and add a new list item.
+const
+form
+=
+FormApp
+.
+openById
+(
+'1234567890abcdefghijklmnopqrstuvwxyz'
+);
+const
+item
+=
+form
+.
+addListItem
+();
+item
+.
+setTitle
+(
+'Do you prefer cats or dogs?'
+);
+// Set "Dogs" as the correct answer to this question.
+item
+.
+setChoices
+([
+item
+.
+createChoice
+(
+'Dogs'
+,
+true
+),
+item
+.
+createChoice
+(
+'Cats'
+,
+false
+),
+]);
+// Add feedback which will be shown for correct responses; ie "Dogs".
+item
+.
+setFeedbackForCorrect
+(
+FormApp
+.
+createFeedback
+().
+setDisplayText
+(
+'Dogs rule, cats drool.'
+).
+build
+(),
+);
+Parameters
+Name
+Type
+Description
+feedback
+Quiz
+Feedback
+the new feedback. A null value will clear the feedback.
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Feedback
+For
+Incorrect(feedback)
+Sets the feedback to be shown to respondents when they respond incorrectly to a question.
+Parameters
+Name
+Type
+Description
+feedback
+Quiz
+Feedback
+the new feedback
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Help
+Text(text)
+Sets the item's help text (sometimes called description text for layout items like
+Image
+Items
+,
+Page
+Break
+Items
+, and
+Section
+Header
+Items
+).
+Parameters
+Name
+Type
+Description
+text
+String
+the new help text
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Points(points)
+Sets the number of points a gradeable item is worth. The default for new items is 0.
+Parameters
+Name
+Type
+Description
+points
+Integer
+the number of a points a question item is worth
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Required(enabled)
+Sets whether the respondent must answer the question.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+whether the respondent must answer the question
+Return
+Checkbox
+Item
+— the current item (for chaining)
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Title(title)
+Sets the item's title (sometimes called header text, in the case of a
+Section
+Header
+Item
+).
+Parameters
+Name
+Type
+Description
+title
+String
+the new title or header text
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+set
+Validation(validation)
+Sets the data validation for this checkbox item. Passing in null or a validation without any
+require functions called will remove any prior validation.
+Parameters
+Name
+Type
+Description
+validation
+Checkbox
+Validation
+a CheckboxValidation to apply to this item.
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms
+show
+Other
+Option(enabled)
+Sets whether the item has an "other" option. The default for a new
+Checkbox
+Item
+or
+Multiple
+Choice
+Item
+is
+false
+.
+Parameters
+Name
+Type
+Description
+enabled
+Boolean
+true
+if the item has an "other" option;
+false
+if not
+Return
+Checkbox
+Item
+— this
+Checkbox
+Item
+, for chaining
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/forms.currentonly
+https://www.googleapis.com/auth/forms

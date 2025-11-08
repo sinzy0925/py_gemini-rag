@@ -1,0 +1,29 @@
+Source Path: gas_docs_html/apps-script/reference/slides/line-category/index.html
+
+Line
+Category
+The line category.
+The exact
+Line
+Type
+created is determined based on the category and how it's routed to
+connect to other page elements.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.LineCategory.STRAIGHT
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A line category that is not supported.
+STRAIGHT
+Enum
+Straight connectors, including straight connector 1.
+BENT
+Enum
+Bent connectors, including bent connector 2 to 5.
+CURVED
+Enum
+Curved connectors, including curved connector 2 to 5.

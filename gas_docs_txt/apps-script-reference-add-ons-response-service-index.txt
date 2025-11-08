@@ -1,0 +1,177 @@
+Source Path: gas_docs_html/apps-script/reference/add-ons-response-service/index.html
+
+Add
+Ons Response Service
+This service allows scripts to configure and build Google Workspace add-ons that extend Google Workspace flows.
+Classes
+Name
+Brief description
+Action
+An action that Google Workspace add-ons that extend Google Workspace Flows can use to render a
+new card.
+Add
+Ons
+Response
+Service
+Add
+Ons
+Response
+Service provides the ability to create responses for Google Workspace add-ons that
+extend Google Workspace Flows.
+Modify
+Card
+A builder for
+Modify
+Card
+objects that changes and updates an existing card's
+interface by passing the
+Modify
+Card
+object to a
+Action
+.
+Navigation
+A helper object that controls card navigation.
+Render
+Action
+Renders or updates a card by performing an
+Action
+in response to a user interaction.
+Render
+Action
+Builder
+A builder for
+Render
+Action
+objects.
+Action
+Methods
+Method
+Return type
+Brief description
+add
+Navigation(navigation)
+Action
+Add card navigation to the action.
+Add
+Ons
+Response
+Service
+Methods
+Method
+Return type
+Brief description
+new
+Action()
+Action
+Creates a new
+Action
+.
+new
+Navigation()
+Navigation
+Creates a new
+Navigation
+.
+new
+Render
+Action
+Builder()
+Render
+Action
+Builder
+Creates a new
+Render
+Action
+Builder
+.
+Modify
+Card
+Methods
+Method
+Return type
+Brief description
+set
+Insert
+Section(insertSection)
+Modify
+Card
+Sets the insert section for this action.
+set
+Insert
+Widget(insertWidget)
+Modify
+Card
+Sets the insert widget for this action.
+set
+Remove
+Section(removeSection)
+Modify
+Card
+Sets the remove section for this action.
+set
+Remove
+Widget(removeWidget)
+Modify
+Card
+Sets the remove widget for this action.
+set
+Replace
+Section(replaceSection)
+Modify
+Card
+Sets the replace section for this action.
+set
+Replace
+Widget(replaceWidget)
+Modify
+Card
+Sets the replace widget for this action.
+Navigation
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+push
+Card(card)
+Navigation
+Pushes the given card onto the stack.
+Render
+Action
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+Render
+Action
+Builder
+Methods
+Method
+Return type
+Brief description
+build()
+Render
+Action
+Builds the current render action and validates it.
+set
+Action(action)
+Render
+Action
+Builder
+Sets the action that add-ons can use to update the UI to the render action.
+set
+Host
+App
+Action(hostAppAction)
+Render
+Action
+Builder
+Sets the host app action handled by individual host apps to the render action.

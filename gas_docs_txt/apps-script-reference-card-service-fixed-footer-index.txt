@@ -1,0 +1,104 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/fixed-footer/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A FixedFooter is a component shown at the bottom of a Card, available for Google Workspace add-ons and Google Chat apps.
+It can have a primary button, which must be a filled text button, and optionally a secondary button, which must be an outlined text button and is only shown if a primary button is set.
+Fixed
+Footer
+The fixed footer shown at the bottom of a
+Card
+.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+fixedFooter
+=
+CardService
+.
+newFixedFooter
+().
+setPrimaryButton
+(
+CardService
+.
+newTextButton
+().
+setText
+(
+'help'
+).
+setOpenLink
+(
+CardService
+.
+newOpenLink
+().
+setUrl
+(
+'http://www.google.com'
+)),
+);
+Methods
+Method
+Return type
+Brief description
+set
+Primary
+Button(button)
+Fixed
+Footer
+Set the primary button in the fixed footer.
+set
+Secondary
+Button(button)
+Fixed
+Footer
+Set the secondary button in the fixed footer.
+Detailed documentation
+set
+Primary
+Button(button)
+Set the primary button in the fixed footer. The primary button must be a
+Text
+Button
+Style.FILLED
+button. If the background color is unset for the primary button, the
+button uses the primary color defined in the add-on
+manifest
+.
+Parameters
+Name
+Type
+Description
+button
+Text
+Button
+The button to add.
+Return
+Fixed
+Footer
+— This object, for chaining.
+set
+Secondary
+Button(button)
+Set the secondary button in the fixed footer. The secondary button must be a
+Text
+Button
+Style.OUTLINED
+button. This method does nothing if
+set
+Primary
+Button(button)
+isn't called to set the primary button.
+Parameters
+Name
+Type
+Description
+button
+Text
+Button
+The button to add.
+Return
+Fixed
+Footer
+— This object, for chaining.

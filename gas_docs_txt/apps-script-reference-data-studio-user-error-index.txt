@@ -1,0 +1,97 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/user-error/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A UserError is an error shown to users of the connector.
+You can set the text of the error shown to users and a different debug text shown only to admins.
+The
+throwException()
+method is used to trigger the exception.
+User
+Error
+An error that is shown to users of the connector.
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+cc
+.
+newUserError
+()
+.
+setText
+(
+'This is the debug error text.'
+)
+.
+setDebugText
+(
+'This text is only shown to admins.'
+)
+.
+throwException
+();
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Debug
+Text(text)
+User
+Error
+Sets the text of the debug error, which is only shown to admins.
+set
+Text(text)
+User
+Error
+Sets the text of the user error.
+throw
+Exception()
+void
+Triggers this exception to be thrown.
+Detailed documentation
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+set
+Debug
+Text(text)
+Sets the text of the debug error, which is only shown to admins.
+Parameters
+Name
+Type
+Description
+text
+String
+The error text.
+Return
+User
+Error
+— This object, for chaining.
+set
+Text(text)
+Sets the text of the user error.
+Parameters
+Name
+Type
+Description
+text
+String
+The error text.
+Return
+User
+Error
+— This object, for chaining.
+throw
+Exception()
+Triggers this exception to be thrown.

@@ -1,0 +1,89 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/validation/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Validation object defines the validation rule for an attached widget.
+Validation is available for Google Chat apps and Google Workspace add-ons.
+The
+setCharacterLimit
+method sets the maximum number of characters allowed in a widget.
+The
+setInputType
+method sets the type of input expected for a widget.
+Validation
+An object that defines the validation rule for the widget that it is attached to.
+Available for Google Chat apps and Google Workspace add-ons.
+const
+validation
+=
+CardService
+.
+newValidation
+().
+setCharacterLimit
+(
+'10'
+).
+setInputType
+(
+CardService
+.
+InputType
+.
+TEXT
+);
+Methods
+Method
+Return type
+Brief description
+set
+Character
+Limit(characterLimit)
+Validation
+Sets the character limit of the widget.
+set
+Input
+Type(inputType)
+Validation
+Sets the input type of the widget.
+Detailed documentation
+set
+Character
+Limit(characterLimit)
+Sets the character limit of the widget.
+Available for Google Chat apps and Google Workspace add-ons.
+Parameters
+Name
+Type
+Description
+character
+Limit
+Integer
+The character limit to set. Note that this restriction is only effective
+    for
+Text
+Input
+and is ignored for other widgets.
+Return
+Validation
+— This object, for chaining.
+set
+Input
+Type(inputType)
+Sets the input type of the widget.
+Available for Google Chat apps and Google Workspace add-ons.
+Parameters
+Name
+Type
+Description
+input
+Type
+Input
+Type
+The
+Input
+Type
+to set.
+Return
+Validation
+— This object, for chaining.

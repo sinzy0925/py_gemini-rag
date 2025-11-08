@@ -1,0 +1,680 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/looker-data-source-spec-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+LookerDataSourceSpecBuilder is used to create a new Looker Data Source Spec builder in Apps Script.
+You can build a data source specification from the builder's settings using the
+build()
+method.
+The builder provides methods to get and set the Looker explore name, instance URL, and model name.
+You can manage parameters using methods like
+getParameters()
+,
+removeAllParameters()
+, and
+removeParameter()
+.
+Looker
+Data
+Source
+Spec
+Builder
+The builder for
+Looker
+Data
+Source
+Spec
+Builder
+.
+This example shows how to create a new Looker Data Source Spec builder.
+const
+lookerDataSourceSpecBuilder
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+().
+asLooker
+();
+Methods
+Method
+Return type
+Brief description
+build()
+Data
+Source
+Spec
+Builds a data source specification from the settings in this builder.
+copy()
+Data
+Source
+Spec
+Builder
+Creates a
+Data
+Source
+Spec
+Builder
+based on this data source's settings.
+get
+Explore
+Name()
+String
+Gets the name of the Looker explore in the model.
+get
+Instance
+Url()
+String
+Gets the URL of the Looker instance.
+get
+Model
+Name()
+String
+Gets the name of the Looker model in the instance.
+get
+Parameters()
+Data
+Source
+Parameter[]
+Gets the parameters of the data source.
+get
+Type()
+Data
+Source
+Type
+Gets the type of the data source.
+remove
+All
+Parameters()
+Looker
+Data
+Source
+Spec
+Builder
+Removes all the parameters.
+remove
+Parameter(parameterName)
+Looker
+Data
+Source
+Spec
+Builder
+Removes the specified parameter.
+set
+Explore
+Name(exploreName)
+Looker
+Data
+Source
+Spec
+Builder
+Sets the explore name in the Looker model.
+set
+Instance
+Url(instanceUrl)
+Looker
+Data
+Source
+Spec
+Builder
+Sets the instance URL for Looker.
+set
+Model
+Name(modelName)
+Looker
+Data
+Source
+Spec
+Builder
+Sets the Looker model name in the Looker instance.
+set
+Parameter
+From
+Cell(parameterName, sourceCell)
+Looker
+Data
+Source
+Spec
+Builder
+Adds a parameter, or if the parameter with the name exists, updates its source cell for data
+source spec builders of type
+Data
+Source
+Type.BIGQUERY
+.
+Detailed documentation
+build()
+Builds a data source specification from the settings in this builder. Must use
+as...()
+to specify a data source type before building.
+The following code sample builds a BigQuery DataSource Spec.
+const
+bigQueryDataSourceSpec
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+().
+asBigQuery
+();
+// TODO(developer): Replace with the required dataset, project and table IDs.
+bigQueryDataSourceSpec
+.
+setDatasetId
+(
+'my data set id'
+);
+bigQueryDataSourceSpec
+.
+setProjectId
+(
+'my project id'
+);
+bigQueryDataSourceSpec
+.
+setTableId
+(
+'my table id'
+);
+bigQueryDataSourceSpec
+.
+build
+();
+The following code sample builds a Looker DataSource Spec.
+const
+lookerDataSourceSpecBuilder
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+().
+asLooker
+();
+const
+lookerSpec
+=
+lookerDataSourceSpecBuilder
+.
+setExploreName
+(
+'my explore name'
+)
+.
+setInstanceUrl
+(
+'my instance url'
+)
+.
+setModelName
+(
+'my model name'
+)
+.
+build
+();
+Return
+Data
+Source
+Spec
+— The data source specification.
+copy()
+Creates a
+Data
+Source
+Spec
+Builder
+based on this data source's settings.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+newSpec
+=
+spec
+.
+copy
+();
+Return
+Data
+Source
+Spec
+Builder
+— The builder.
+get
+Explore
+Name()
+Gets the name of the Looker explore in the model.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+lookerDataSourceSpec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+().
+asLooker
+();
+const
+exploreName
+=
+lookerDataSourceSpec
+.
+getExploreName
+();
+Logger
+.
+log
+(
+exploreName
+);
+Return
+String
+— The name of the Looker explore.
+get
+Instance
+Url()
+Gets the URL of the Looker instance.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+lookerDataSourceSpec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+().
+asLooker
+();
+const
+instanceUrl
+=
+lookerDataSourceSpec
+.
+getInstanceUrl
+();
+Logger
+.
+log
+(
+instanceUrl
+);
+Return
+String
+— The URL of the Looker instance.
+get
+Model
+Name()
+Gets the name of the Looker model in the instance.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+lookerDataSourceSpec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+().
+asLooker
+();
+const
+modelName
+=
+lookerDataSourceSpec
+.
+getModelName
+();
+Logger
+.
+log
+(
+modelName
+);
+Return
+String
+— The name of the Looker model.
+get
+Parameters()
+Gets the parameters of the data source.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+parameters
+=
+spec
+.
+getParameters
+();
+This method is only available for BigQuery data sources.
+Return
+Data
+Source
+Parameter[]
+— The parameter list.
+get
+Type()
+Gets the type of the data source.
+// TODO(developer): Replace the URL with your own.
+const
+ss
+=
+SpreadsheetApp
+.
+openByUrl
+(
+'https://docs.google.com/spreadsheets/d/abc123456/edit'
+,
+);
+const
+spec
+=
+ss
+.
+getDataSources
+()[
+0
+].
+getSpec
+();
+const
+type
+=
+spec
+.
+getType
+();
+Return
+Data
+Source
+Type
+— The data source type.
+remove
+All
+Parameters()
+Removes all the parameters.
+const
+specBuilder
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+();
+specBuilder
+.
+removeAllParameters
+();
+Return
+Looker
+Data
+Source
+Spec
+Builder
+— The builder, for chaining.
+remove
+Parameter(parameterName)
+Removes the specified parameter.
+const
+specBuilder
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+();
+specBuilder
+.
+removeParameter
+(
+'x'
+);
+Parameters
+Name
+Type
+Description
+parameter
+Name
+String
+The name of the parameter to remove.
+Return
+Looker
+Data
+Source
+Spec
+Builder
+— The builder, for chaining.
+set
+Explore
+Name(exploreName)
+Sets the explore name in the Looker model.
+const
+lookerDataSourceSpecBuilder
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+().
+asLooker
+();
+// TODO(developer): replace explore name with your own
+lookerDataSourceSpecBuilder
+.
+setExploreName
+(
+'my explore name'
+);
+Parameters
+Name
+Type
+Description
+explore
+Name
+String
+The explore name in the selected Looker model.
+Return
+Looker
+Data
+Source
+Spec
+Builder
+— This builder, for chaining.
+set
+Instance
+Url(instanceUrl)
+Sets the instance URL for Looker.
+const
+lookerDataSourceSpecBuilder
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+().
+asLooker
+();
+// TODO(developer): replace instance url with your own
+lookerDataSourceSpecBuilder
+.
+setInstanceUrl
+(
+'my instance url'
+);
+Parameters
+Name
+Type
+Description
+instance
+Url
+String
+The URL of the Looker instance.
+Return
+Looker
+Data
+Source
+Spec
+Builder
+— The builder, for chaining.
+set
+Model
+Name(modelName)
+Sets the Looker model name in the Looker instance.
+const
+lookerDataSourceSpecBuilder
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+().
+asLooker
+();
+// TODO(developer): replace model name with your own
+lookerDataSourceSpecBuilder
+.
+setModelName
+(
+'my model name'
+);
+Parameters
+Name
+Type
+Description
+model
+Name
+String
+The model name in the Looker instance.
+Return
+Looker
+Data
+Source
+Spec
+Builder
+— The builder, for chaining.
+set
+Parameter
+From
+Cell(parameterName, sourceCell)
+Adds a parameter, or if the parameter with the name exists, updates its source cell for data
+source spec builders of type
+Data
+Source
+Type.BIGQUERY
+.
+This method is only available for BigQuery data sources.
+const
+specBuilder
+=
+SpreadsheetApp
+.
+newDataSourceSpec
+().
+asBigQuery
+();
+specBuilder
+.
+setParameterFromCell
+(
+'x'
+,
+'A1'
+);
+const
+bigQuerySpec
+=
+specBuilder
+.
+build
+();
+Parameters
+Name
+Type
+Description
+parameter
+Name
+String
+The parameter name.
+source
+Cell
+String
+The source cell, as specified in A1 notation.
+Return
+Looker
+Data
+Source
+Spec
+Builder
+— The builder, for chaining.

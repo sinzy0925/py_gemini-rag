@@ -1,0 +1,33 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/auth-type/index.html
+
+Auth
+Type
+An enum that defines the authentication types that can be set for a connector.
+To call an enum, you call its parent class, name, and property. For example,
+DataStudioApp.AuthType.OAUTH2
+.
+Properties
+Property
+Type
+Description
+NONE
+Enum
+No authorization needed.
+OAUTH2
+Enum
+OAuth2 authorization needed.
+USER_PASS
+Enum
+Username and password credentials needed.
+PATH_USER_PASS
+Enum
+Username, path, and password needed.
+PATH_KEY
+Enum
+Path and key needed.
+KEY
+Enum
+API Key or Token needed.
+USER_TOKEN
+Enum
+Username and token needed.

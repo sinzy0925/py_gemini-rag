@@ -1,0 +1,56 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/suggestions-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+SuggestionsResponseBuilder is used to build SuggestionsResponse objects.
+It is available for Google Workspace add-ons and Google Chat apps.
+It has methods to build the suggestions response and set the suggestions used in autocomplete in text fields.
+Suggestions
+Response
+Builder
+A builder for
+Suggestions
+Response
+objects.
+Available for Google Workspace add-ons and Google Chat apps.
+Methods
+Method
+Return type
+Brief description
+build()
+Suggestions
+Response
+Builds the current suggestions response and validates it.
+set
+Suggestions(suggestions)
+Suggestions
+Response
+Builder
+Sets the suggestions used in auto complete in text fields.
+Detailed documentation
+build()
+Builds the current suggestions response and validates it.
+Return
+Suggestions
+Response
+— A validated SuggestionsResponse.
+Throws
+Error
+— if the constructed suggestions response isn't valid.
+set
+Suggestions(suggestions)
+Sets the suggestions used in auto complete in text fields.
+Parameters
+Name
+Type
+Description
+suggestions
+Suggestions
+The
+Suggestions
+to use.
+Return
+Suggestions
+Response
+Builder
+— This object.

@@ -1,0 +1,338 @@
+Source Path: gas_docs_html/apps-script/reference/document/document-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Document service allows for creating and opening editable Google Documents using Apps Script.
+You can create a new document with a specified name or open an existing document by its ID or URL.
+The service provides access to various properties representing document formatting and structure enumerations.
+Methods are available to get the active document to which a script is bound or to interact with the document's user interface for custom features.
+Document
+App
+The document service creates and opens
+Documents
+that can be edited.
+// Open a document by ID.
+// TODO(developer): Replace the ID with your own.
+let
+doc
+=
+DocumentApp
+.
+openById
+(
+'DOCUMENT_ID'
+);
+// Create and open a document.
+doc
+=
+DocumentApp
+.
+create
+(
+'Document Name'
+);
+Properties
+Property
+Type
+Description
+Attribute
+Attribute
+The
+Attribute
+enumeration.
+Element
+Type
+Element
+Type
+The
+Element
+Type
+enumeration.
+Font
+Family
+Font
+Family
+The
+Font
+Family
+enumeration.
+Glyph
+Type
+Glyph
+Type
+The
+Glyph
+Type
+enumeration.
+Horizontal
+Alignment
+Horizontal
+Alignment
+The
+Horizontal
+Alignment
+enumeration.
+Paragraph
+Heading
+Paragraph
+Heading
+The
+Paragraph
+Heading
+enumeration.
+Positioned
+Layout
+Positioned
+Layout
+The
+Positioned
+Layout
+enumeration.
+Text
+Alignment
+Text
+Alignment
+The
+Text
+Alignment
+enumeration.
+Vertical
+Alignment
+Vertical
+Alignment
+The
+Vertical
+Alignment
+enumeration.
+Methods
+Method
+Return type
+Brief description
+create(name)
+Document
+Creates and returns a new document.
+get
+Active
+Document()
+Document
+Returns the document to which the script is
+container-bound
+.
+get
+Ui()
+Ui
+Returns an instance of the document's user-interface environment that allows the script to add
+features like menus, dialogs, and sidebars.
+open
+By
+Id(id)
+Document
+Returns the document with the specified ID.
+open
+By
+Url(url)
+Document
+Opens and returns the document with the specified URL.
+Detailed documentation
+create(name)
+Creates and returns a new document.
+// Create and open a new document.
+const
+doc
+=
+DocumentApp
+.
+create
+(
+'Document Name'
+);
+Parameters
+Name
+Type
+Description
+name
+String
+The new document's name.
+Return
+Document
+— The new document instance.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents
+get
+Active
+Document()
+Returns the document to which the script is
+container-bound
+. To interact with document to which
+the script is not container-bound, use
+open
+By
+Id(id)
+or
+open
+By
+Url(url)
+instead.
+// Get the document to which this script is bound.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+Return
+Document
+— the document instance
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents.currentonly
+https://www.googleapis.com/auth/documents
+get
+Ui()
+Returns an instance of the document's user-interface environment that allows the script to add
+features like menus, dialogs, and sidebars. A script can only interact with the UI for the
+current instance of an open document, and only if the script is
+bound
+to the document. For more information, see the
+guides to
+menus
+and
+dialogs and sidebars
+.
+// Add a custom menu to the active document, including a separator and a
+// sub-menu.
+function
+onOpen
+(
+e
+)
+{
+DocumentApp
+.
+getUi
+()
+.
+createMenu
+(
+'My Menu'
+)
+.
+addItem
+(
+'My menu item'
+,
+'myFunction'
+)
+.
+addSeparator
+()
+.
+addSubMenu
+(
+DocumentApp
+.
+getUi
+()
+.
+createMenu
+(
+'My sub-menu'
+)
+.
+addItem
+(
+'One sub-menu item'
+,
+'mySecondFunction'
+)
+.
+addItem
+(
+'Another sub-menu item'
+,
+'myThirdFunction'
+),
+)
+.
+addToUi
+();
+}
+Return
+Ui
+— an instance of this document's user-interface environment
+open
+By
+Id(id)
+Returns the document with the specified ID. If the script is container-bound to the document,
+use
+get
+Active
+Document()
+instead.
+// Open a document by ID.
+// TODO(developer): Replace the ID with your own.
+const
+doc
+=
+DocumentApp
+.
+openById
+(
+'DOCUMENT_ID'
+);
+Parameters
+Name
+Type
+Description
+id
+String
+The ID of the document to open.
+Return
+Document
+— The document instance.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents
+open
+By
+Url(url)
+Opens and returns the document with the specified URL. If the script is container-bound to the
+document, use
+get
+Active
+Document()
+instead.
+// Open a document by URL.
+const
+doc
+=
+DocumentApp
+.
+openByUrl
+(
+'https://docs.google.com/document/d/1234567890abcdefghijklmnopqrstuvwxyz_a1b2c3/edit'
+,
+);
+Parameters
+Name
+Type
+Description
+url
+String
+the URL of the document to open
+Return
+Document
+— the document instance
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/documents

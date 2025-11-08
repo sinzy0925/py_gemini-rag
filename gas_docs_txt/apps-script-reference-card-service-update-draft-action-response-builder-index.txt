@@ -1,0 +1,239 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-draft-action-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+UpdateDraftActionResponseBuilder is used to build UpdateDraftActionResponse objects.
+This builder allows setting actions to update the Bcc, body, Cc, subject, and To recipients of an email draft.
+The
+build()
+method finalizes and validates the constructed response.
+Update
+Draft
+Action
+Response
+Builder
+A builder for
+Update
+Draft
+Action
+Response
+objects.
+Methods
+Method
+Return type
+Brief description
+build()
+Update
+Draft
+Action
+Response
+Builds the current update draft action response and validates it.
+set
+Update
+Draft
+Bcc
+Recipients
+Action(updateDraftBccRecipientsAction)
+Update
+Draft
+Action
+Response
+Builder
+Sets an action that updates the email Bcc recipients of a draft.
+set
+Update
+Draft
+Body
+Action(updateDraftBodyAction)
+Update
+Draft
+Action
+Response
+Builder
+Set an action that updates the email body of a draft.
+set
+Update
+Draft
+Cc
+Recipients
+Action(updateDraftCcRecipientsAction)
+Update
+Draft
+Action
+Response
+Builder
+Sets an action that updates the Cc recipients of a draft.
+set
+Update
+Draft
+Subject
+Action(updateDraftSubjectAction)
+Update
+Draft
+Action
+Response
+Builder
+Sets an action that updates the subject line of a draft.
+set
+Update
+Draft
+To
+Recipients
+Action(updateDraftToRecipientsAction)
+Update
+Draft
+Action
+Response
+Builder
+Sets an action that updates the To recipients of a draft.
+Detailed documentation
+build()
+Builds the current update draft action response and validates it.
+Return
+Update
+Draft
+Action
+Response
+— A validated draft action response.
+Throws
+Error
+— if the constructed UpdateDraftActionResponse isn't valid.
+set
+Update
+Draft
+Bcc
+Recipients
+Action(updateDraftBccRecipientsAction)
+Sets an action that updates the email Bcc recipients of a draft.
+Parameters
+Name
+Type
+Description
+update
+Draft
+Bcc
+Recipients
+Action
+Update
+Draft
+Bcc
+Recipients
+Action
+The action that updates the draft Bcc recipients.
+Return
+Update
+Draft
+Action
+Response
+Builder
+— This object, for chaining.
+set
+Update
+Draft
+Body
+Action(updateDraftBodyAction)
+Set an action that updates the email body of a draft.
+Parameters
+Name
+Type
+Description
+update
+Draft
+Body
+Action
+Update
+Draft
+Body
+Action
+The action that updates the draft body.
+Return
+Update
+Draft
+Action
+Response
+Builder
+— This object, for chaining.
+set
+Update
+Draft
+Cc
+Recipients
+Action(updateDraftCcRecipientsAction)
+Sets an action that updates the Cc recipients of a draft.
+Parameters
+Name
+Type
+Description
+update
+Draft
+Cc
+Recipients
+Action
+Update
+Draft
+Cc
+Recipients
+Action
+The action that updates the draft Cc recipients.
+Return
+Update
+Draft
+Action
+Response
+Builder
+— This object, for chaining.
+set
+Update
+Draft
+Subject
+Action(updateDraftSubjectAction)
+Sets an action that updates the subject line of a draft.
+Parameters
+Name
+Type
+Description
+update
+Draft
+Subject
+Action
+Update
+Draft
+Subject
+Action
+The action that updates the subject line.
+Return
+Update
+Draft
+Action
+Response
+Builder
+— This object, for chaining.
+set
+Update
+Draft
+To
+Recipients
+Action(updateDraftToRecipientsAction)
+Sets an action that updates the To recipients of a draft.
+Parameters
+Name
+Type
+Description
+update
+Draft
+To
+Recipients
+Action
+Update
+Draft
+To
+Recipients
+Action
+The action that updates the To recipients.
+Return
+Update
+Draft
+Action
+Response
+Builder
+— This object, for chaining.

@@ -1,0 +1,252 @@
+Source Path: gas_docs_html/apps-script/reference/optimization/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The linear optimization service is used to model and solve linear and mixed-integer linear programs.
+Key classes for this service include
+LinearOptimizationConstraint
+,
+LinearOptimizationEngine
+,
+LinearOptimizationService
+, and
+LinearOptimizationSolution
+.
+The
+LinearOptimizationEngine
+is used to build the linear program model by adding constraints and variables, and setting the optimization direction.
+The
+LinearOptimizationSolution
+provides methods to retrieve the objective value, the status of the solution, and the values of the variables.
+The
+Status
+property indicates the result of the solve operation, such as
+OPTIMAL
+,
+FEASIBLE
+, or
+INFEASIBLE
+.
+Optimization
+The linear optimization service, used to model and solve linear and mixed-integer linear
+programs.
+Classes
+Name
+Brief description
+Linear
+Optimization
+Constraint
+Object storing a linear constraint of the form
+lower
+Bound ≤ Sum(a(i) x(i)) ≤ upperBound
+where
+lower
+Bound
+and
+upper
+Bound
+are constants,
+a(i)
+are constant
+coefficients and
+x(i)
+are variables (unknowns).
+Linear
+Optimization
+Engine
+The engine used to model and solve a linear program.
+Linear
+Optimization
+Service
+The linear optimization service, used to model and solve linear and mixed-integer linear
+programs.
+Linear
+Optimization
+Solution
+The solution of a linear program.
+Status
+Status of the solution.
+Variable
+Type
+Type of variables created by the engine.
+Linear
+Optimization
+Constraint
+Methods
+Method
+Return type
+Brief description
+set
+Coefficient(variableName, coefficient)
+Linear
+Optimization
+Constraint
+Sets the coefficient of a variable in the constraint.
+Linear
+Optimization
+Engine
+Methods
+Method
+Return type
+Brief description
+add
+Constraint(lowerBound, upperBound)
+Linear
+Optimization
+Constraint
+Adds a new linear constraint in the model.
+add
+Constraints(lowerBounds, upperBounds, variableNames, coefficients)
+Linear
+Optimization
+Engine
+Adds constraints in batch to the model.
+add
+Variable(name, lowerBound, upperBound)
+Linear
+Optimization
+Engine
+Adds a new continuous variable to the model.
+add
+Variable(name, lowerBound, upperBound, type)
+Linear
+Optimization
+Engine
+Adds a new variable to the model.
+add
+Variable(name, lowerBound, upperBound, type, objectiveCoefficient)
+Linear
+Optimization
+Engine
+Adds a new variable to the model.
+add
+Variables(names, lowerBounds, upperBounds, types, objectiveCoefficients)
+Linear
+Optimization
+Engine
+Adds variables in batch to the model.
+set
+Maximization()
+Linear
+Optimization
+Engine
+Sets the optimization direction to maximizing the linear objective function.
+set
+Minimization()
+Linear
+Optimization
+Engine
+Sets the optimization direction to minimizing the linear objective function.
+set
+Objective
+Coefficient(variableName, coefficient)
+Linear
+Optimization
+Engine
+Sets the coefficient of a variable in the linear objective function.
+solve()
+Linear
+Optimization
+Solution
+Solves the current linear program with the default deadline of 30 seconds.
+solve(seconds)
+Linear
+Optimization
+Solution
+Solves the current linear program.
+Linear
+Optimization
+Service
+Properties
+Property
+Type
+Description
+Status
+Status
+Status of the solver.
+Variable
+Type
+Variable
+Type
+Type of variables created by the solver.
+Methods
+Method
+Return type
+Brief description
+create
+Engine()
+Linear
+Optimization
+Engine
+Creates an engine to to solve linear programs (potentially mixed-integer programs).
+Linear
+Optimization
+Solution
+Methods
+Method
+Return type
+Brief description
+get
+Objective
+Value()
+Number
+Gets the value of the objective function in the current solution.
+get
+Status()
+Status
+Gets the status of the solution.
+get
+Variable
+Value(variableName)
+Number
+Gets the value of a variable in the solution created by the last call to
+Linear
+Optimization
+Engine.solve()
+.
+is
+Valid()
+Boolean
+Determines whether the solution is either feasible or optimal.
+Status
+Properties
+Property
+Type
+Description
+OPTIMAL
+Enum
+Status when an optimal solution has been found.
+FEASIBLE
+Enum
+Status when a feasible (not necessarily optimal) solution has been found.
+INFEASIBLE
+Enum
+Status when the current model is unfeasible (has no solution).
+UNBOUNDED
+Enum
+Status when the current model is unbound.
+ABNORMAL
+Enum
+Status when it failed to find a solution for unexpected reasons.
+MODEL_INVALID
+Enum
+Status when the model is invalid.
+NOT_SOLVED
+Enum
+Status when
+Linear
+Optimization
+Engine.solve()
+has not been called yet.
+Variable
+Type
+Properties
+Property
+Type
+Description
+INTEGER
+Enum
+Type of variable that can only take integer values.
+CONTINUOUS
+Enum
+Type of variable that can take any real value.

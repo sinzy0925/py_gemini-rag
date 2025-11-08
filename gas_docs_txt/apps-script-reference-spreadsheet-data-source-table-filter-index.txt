@@ -1,0 +1,145 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-table-filter/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Access and modify existing data source table filters using the
+DataSourceTableFilter
+class.
+This class is exclusively for use with data connected to a database.
+Methods allow you to get the associated data source column and table, retrieve or set the filter criteria, and remove the filter.
+Data
+Source
+Table
+Filter
+Access and modify an existing data source table filter. To create a new data source table filter,
+use
+Data
+Source
+Table.addFilter(columnName, filterCriteria)
+.
+Only use this class with data that's connected to a database.
+Methods
+Method
+Return type
+Brief description
+get
+Data
+Source
+Column()
+Data
+Source
+Column
+Returns the data source column this filter applies to.
+get
+Data
+Source
+Table()
+Data
+Source
+Table
+Returns the
+Data
+Source
+Table
+that this filter belongs to.
+get
+Filter
+Criteria()
+Filter
+Criteria
+Returns the filter criteria for this filter.
+remove()
+void
+Removes this filter from the data source object.
+set
+Filter
+Criteria(filterCriteria)
+Data
+Source
+Table
+Filter
+Sets the filter criteria for this filter.
+Detailed documentation
+get
+Data
+Source
+Column()
+Returns the data source column this filter applies to.
+Return
+Data
+Source
+Column
+— The data source column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Data
+Source
+Table()
+Returns the
+Data
+Source
+Table
+that this filter belongs to.
+Return
+Data
+Source
+Table
+— The data source table, to which this filter belongs.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Filter
+Criteria()
+Returns the filter criteria for this filter.
+Return
+Filter
+Criteria
+— The filter criteria for this filter.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Removes this filter from the data source object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Filter
+Criteria(filterCriteria)
+Sets the filter criteria for this filter.
+Parameters
+Name
+Type
+Description
+filter
+Criteria
+Filter
+Criteria
+The filter criteria to set.
+Return
+Data
+Source
+Table
+Filter
+— The filter for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

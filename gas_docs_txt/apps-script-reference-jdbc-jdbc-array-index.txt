@@ -1,0 +1,181 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-array/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcArray represents a JDBC
+Array
+and provides methods for interacting with SQL array values.
+Methods like
+getArray()
+and
+getArray(index, count)
+retrieve elements of the SQL array.
+Information about the base type of the array elements can be obtained using
+getBaseType()
+and
+getBaseTypeName()
+.
+The
+getResultSet()
+and
+getResultSet(index, count)
+methods return a
+JdbcResultSet
+containing array elements.
+Jdbc
+Array
+A JDBC
+Array
+. For documentation of this class, see
+java.sql.Array
+.
+Methods
+Method
+Return type
+Brief description
+free()
+void
+For documentation of this method, see
+java.sql.Array#free()
+.
+get
+Array()
+Object
+For documentation of this method, see
+java.sql.Array#getArray()
+get
+Array(index, count)
+Object
+For documentation of this method, see
+java.sql.Array#getArray(long, int)
+.
+get
+Base
+Type()
+Integer
+For documentation of this method, see
+java.sql.Array#getBaseType()
+.
+get
+Base
+Type
+Name()
+String
+For documentation of this method, see
+java.sql.Array#getBaseTypeName()
+.
+get
+Result
+Set()
+Jdbc
+Result
+Set
+For documentation of this method, see
+java.sql.Array#getResultSet()
+.
+get
+Result
+Set(index, count)
+Jdbc
+Result
+Set
+For documentation of this method, see
+java.sql.Array#getResultSet(long, int)
+.
+Detailed documentation
+free()
+For documentation of this method, see
+java.sql.Array#free()
+.
+get
+Array()
+For documentation of this method, see
+java.sql.Array#getArray()
+Return
+Object
+— An object containing the ordered elements of the SQL array value.
+get
+Array(index, count)
+For documentation of this method, see
+java.sql.Array#getArray(long, int)
+.
+Parameters
+Name
+Type
+Description
+index
+Integer
+The array index of the first element to retrieve, where the first element has an
+    index of 1.
+count
+Integer
+The number of successive SQL array elements to retrieve.
+Return
+Object
+— An object containing up to the specified number of consecutive SQL array elements.
+get
+Base
+Type()
+For documentation of this method, see
+java.sql.Array#getBaseType()
+.
+Return
+Integer
+— The
+type
+    code
+for the elements in this array.
+get
+Base
+Type
+Name()
+For documentation of this method, see
+java.sql.Array#getBaseTypeName()
+.
+Return
+String
+— The database-specific name for the built-in base type or else the fully-qualified SQL
+    type name for a base type that is a UDT.
+get
+Result
+Set()
+For documentation of this method, see
+java.sql.Array#getResultSet()
+.
+Return
+Jdbc
+Result
+Set
+— The
+Jdbc
+Result
+Set
+containing one row for each of the elements in the array
+    designated by this Array object, with the rows in ascending order based on the indices.
+get
+Result
+Set(index, count)
+For documentation of this method, see
+java.sql.Array#getResultSet(long, int)
+.
+Parameters
+Name
+Type
+Description
+index
+Integer
+The array index of the first element to retrieve, where the first element has an
+    index of 1.
+count
+Integer
+The number of successive SQL array elements to retrieve.
+Return
+Jdbc
+Result
+Set
+— A
+Jdbc
+Result
+Set
+containing up to the specified number of consecutive SQL array
+    elements.

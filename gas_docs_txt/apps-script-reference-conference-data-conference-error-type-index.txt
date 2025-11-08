@@ -1,0 +1,40 @@
+Source Path: gas_docs_html/apps-script/reference/conference-data/conference-error-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ConferenceErrorType is an enum defining error types for ConferenceError.
+You access its properties by calling the parent class, name, and property.
+It includes properties for various authentication, permission, solution, permanent, temporary, and unknown errors.
+Conference
+Error
+Type
+Enum that defines the types of errors that you can specify in a
+Conference
+Error
+.
+To call an enum, you call its parent class, name, and property. For example,
+ConferenceDataService.ConferenceErrorType.AUTHENTICATION
+.
+Properties
+Property
+Type
+Description
+AUTHENTICATION
+Enum
+An authentication error during conference data generation.
+CONFERENCE_SOLUTION_FORBIDDEN
+Enum
+The user is not allowed to use the selected conference solution (but might be allowed to use
+other solutions offered by the add-on).
+PERMANENT
+Enum
+A permanent error during conference data generation.
+PERMISSION_DENIED
+Enum
+The user isn't allowed to perform an action in the third-party conferencing system.
+TEMPORARY
+Enum
+A temporary error during conference data generation.
+UNKNOWN
+Enum
+An unknown error during conference data generation.

@@ -1,0 +1,223 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/config/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Config contains the configuration entries for a connector, defining the questions asked when adding a new connector.
+The
+build()
+method validates the Config object and returns it in the format needed by Data Studio.
+Config offers methods to create various configuration entry types like checkbox, info, select multiple, select single, text area, and text input.
+Methods like
+setDateRangeRequired()
+and
+setIsSteppedConfig()
+allow for setting specific behaviors for the connector configuration.
+Config
+Contains the configuration entries for a connector. These configuration entries define what
+questions are asked when adding a new connector.
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+const
+config
+=
+cc
+.
+getConfig
+();
+const
+info_entry
+=
+config
+.
+newInfo
+().
+setId
+(
+'info_id'
+).
+setHelpText
+(
+'This connector can connect to multiple data endpoints.'
+);
+Methods
+Method
+Return type
+Brief description
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+new
+Checkbox()
+Checkbox
+Returns a new checkbox configuration entry.
+new
+Info()
+Info
+Returns a new info configuration entry.
+new
+Option
+Builder()
+Option
+Builder
+Returns a new options builder.
+new
+Select
+Multiple()
+Select
+Multiple
+Returns a new select multiple configuration entry.
+new
+Select
+Single()
+Select
+Single
+Returns a new select single configuration entry.
+new
+Text
+Area()
+Text
+Area
+Returns a new text area configuration entry.
+new
+Text
+Input()
+Text
+Input
+Returns a new text input configuration entry.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Date
+Range
+Required(dateRangeRequired)
+Config
+If
+true
+, a date range is provided for getData() requests.
+set
+Is
+Stepped
+Config(isSteppedConfig)
+Config
+If
+true
+,
+get
+Config()
+is called again with the current user configuration.
+Detailed documentation
+build()
+Validates this object and returns it in the format needed by Data Studio.
+Return
+Object
+— The validated
+Config
+object.
+new
+Checkbox()
+Returns a new checkbox configuration entry.
+Return
+Checkbox
+— A new checkbox configuration entry.
+new
+Info()
+Returns a new info configuration entry.
+Return
+Info
+— A new info configuration entry.
+new
+Option
+Builder()
+Returns a new options builder.
+Return
+Option
+Builder
+— A new options builder.
+new
+Select
+Multiple()
+Returns a new select multiple configuration entry.
+Return
+Select
+Multiple
+— A new select multiple configuration entry.
+new
+Select
+Single()
+Returns a new select single configuration entry.
+Return
+Select
+Single
+— A new select single configuration entry.
+new
+Text
+Area()
+Returns a new text area configuration entry.
+Return
+Text
+Area
+— A new text area configuration entry.
+new
+Text
+Input()
+Returns a new text input configuration entry.
+Return
+Text
+Input
+— A new text input configuration entry.
+print
+Json()
+Prints the JSON representation of this object. This is for debugging only.
+Return
+String
+set
+Date
+Range
+Required(dateRangeRequired)
+If
+true
+, a date range is provided for getData() requests.
+Parameters
+Name
+Type
+Description
+date
+Range
+Required
+Boolean
+Whether or not a date range should be provided to
+get
+Data()
+requests.
+Return
+Config
+— This builder, for chaining.
+set
+Is
+Stepped
+Config(isSteppedConfig)
+If
+true
+,
+get
+Config()
+is called again with the current user configuration.
+Parameters
+Name
+Type
+Description
+is
+Stepped
+Config
+Boolean
+The stepped config status to set.
+Return
+Config
+— This builder, for chaining.

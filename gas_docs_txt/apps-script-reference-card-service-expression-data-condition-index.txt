@@ -1,0 +1,66 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/expression-data-condition/index.html
+
+Expression
+Data
+Condition
+Represents a
+CEL
+expression validation
+result.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+expressionDataCondition
+=
+CardService
+.
+newExpressionDataCondition
+()
+.
+setConditionType
+(
+CardService
+.
+ExpressionDataConditionType
+.
+EXPRESSION_EVALUATION_SUCCESS
+);
+Methods
+Method
+Return type
+Brief description
+set
+Condition
+Type(type)
+Expression
+Data
+Condition
+Sets condition type for a
+CEL
+expression validation
+to indicate whether the expression evaluated successfully.
+Detailed documentation
+set
+Condition
+Type(type)
+Sets condition type for a
+CEL
+expression validation
+to indicate whether the expression evaluated successfully.
+Parameters
+Name
+Type
+Description
+type
+Expression
+Data
+Condition
+Type
+The type of the expression data condition.
+Return
+Expression
+Data
+Condition
+— This object, for chaining.

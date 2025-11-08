@@ -1,0 +1,28 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/visibility/index.html
+
+Visibility
+An enum that represents the visibility state of the widgets.
+Visibility.VISIBLE
+means that the widget is being displayed and is visible.
+Visibility.HIDDEN
+means that the widget is not displayed and is invisible.
+To call an enum, call its parent class, name, and property. For example,
+CardService.Visibility.VISIBLE
+.
+Only available through the
+Gemini Alpha
+program
+for Google Workspace add-ons that extend Google Workspace Flows.
+Properties
+Property
+Type
+Description
+VISIBLE
+Enum
+The UI element is visible.
+HIDDEN
+Enum
+The UI element is invisible.
+VISIBILITY_UNSPECIFIED
+Enum
+The UI element is unspecified. Do not use.

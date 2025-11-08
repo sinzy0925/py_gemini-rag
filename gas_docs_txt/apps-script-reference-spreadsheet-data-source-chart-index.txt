@@ -1,0 +1,223 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/data-source-chart/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The DataSourceChart class is used to access and modify existing data source charts linked to a BigQuery database.
+You can cancel a running data refresh using
+cancelDataRefresh()
+or force a refresh regardless of state with
+forceRefreshData()
+.
+The
+getDataSource()
+method retrieves the linked data source and
+getStatus()
+provides the current data execution status.
+refreshData()
+initiates a data refresh and
+waitForCompletion(timeoutInSeconds)
+waits for the current execution to finish within a specified time limit.
+Data
+Source
+Chart
+Access and modify an existing data source chart.
+Only use this class with data that's connected to a BigQuery database.
+Methods
+Method
+Return type
+Brief description
+cancel
+Data
+Refresh()
+Data
+Source
+Chart
+Cancels the data refresh associated with this object if it's currently running.
+force
+Refresh
+Data()
+Data
+Source
+Chart
+Refreshes the data of this object regardless of the current state.
+get
+Data
+Source()
+Data
+Source
+Gets the data source the object is linked to.
+get
+Status()
+Data
+Execution
+Status
+Gets the data execution status of the object.
+refresh
+Data()
+Data
+Source
+Chart
+Refreshes the data of the object.
+wait
+For
+Completion(timeoutInSeconds)
+Data
+Execution
+Status
+Waits until the current execution completes, timing out after the provided number of seconds.
+Detailed documentation
+cancel
+Data
+Refresh()
+Cancels the data refresh associated with this object if it's currently running.
+This example shows how to cancel a formula refresh.
+const
+spreadsheet
+=
+SpreadsheetApp
+.
+getActive
+();
+const
+formula
+=
+spreadsheet
+.
+getDataSourceFormulas
+()[
+0
+];
+// Cancel the ongoing refresh on the formula.
+formula
+.
+cancelDataRefresh
+();
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Chart
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+force
+Refresh
+Data()
+Refreshes the data of this object regardless of the current state. See
+refresh
+Data()
+for
+more details. If you want to cancel a currently running refresh of this object, see
+cancel
+Data
+Refresh()
+.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Chart
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Data
+Source()
+Gets the data source the object is linked to.
+Return
+Data
+Source
+— The data source.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Status()
+Gets the data execution status of the object.
+Return
+Data
+Execution
+Status
+— The data execution status.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+refresh
+Data()
+Refreshes the data of the object.
+Throws an exception if currently in
+error
+state. Use
+Data
+Source#updateSpec()
+to update the specification. The method is
+preferred over
+force
+Refresh
+Data()
+to prevent unexpected edits on data source.
+Throws an exception if the data source type is not enabled. Use
+Spreadsheet
+App#enable...Execution()
+methods to enable data execution for specific data source
+type.
+Return
+Data
+Source
+Chart
+— The data object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+wait
+For
+Completion(timeoutInSeconds)
+Waits until the current execution completes, timing out after the provided number of seconds.
+Throws an exception if the execution is not completed when timing out, but does not cancel the
+data execution.
+Parameters
+Name
+Type
+Description
+timeout
+In
+Seconds
+Integer
+The time to wait for data execution, in seconds. The maximum is 300
+    seconds.
+Return
+Data
+Execution
+Status
+— The data execution status.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

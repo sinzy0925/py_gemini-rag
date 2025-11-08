@@ -1,0 +1,49 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/expression-data-condition-type/index.html
+
+Expression
+Data
+Condition
+Type
+Represents whether the
+CEL
+expression
+evaluated successfully.
+Only available through the
+Gemini
+Alpha program
+for Google Workspace add-ons that extend Google Workspace Flows.
+const
+expressionDataCondition
+=
+CardService
+.
+newExpressionDataCondition
+()
+.
+setConditionType
+(
+CardService
+.
+ExpressionDataConditionType
+.
+EXPRESSION_EVALUATION_SUCCESS
+);
+Properties
+Property
+Type
+Description
+CONDITION_TYPE_UNSPECIFIED
+Enum
+The unspecified condition type.
+EXPRESSION_EVALUATION_SUCCESS
+Enum
+The
+CEL
+expression
+evaluated to a successful result.
+EXPRESSION_EVALUATION_FAILURE
+Enum
+The
+CEL
+expression
+evaluated to a failure result.

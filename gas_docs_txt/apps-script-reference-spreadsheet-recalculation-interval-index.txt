@@ -1,0 +1,21 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/recalculation-interval/index.html
+
+Recalculation
+Interval
+An enumeration representing the possible intervals used in spreadsheet recalculation.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.RecalculationInterval.ON_CHANGE
+.
+Properties
+Property
+Type
+Description
+ON_CHANGE
+Enum
+Recalculate only when values are changed.
+MINUTE
+Enum
+Recalculate when values are changed, and every minute.
+HOUR
+Enum
+Recalculate when values are changed, and every hour.

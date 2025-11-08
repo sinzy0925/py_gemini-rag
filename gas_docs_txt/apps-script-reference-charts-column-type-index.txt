@@ -1,0 +1,24 @@
+Source Path: gas_docs_html/apps-script/reference/charts/column-type/index.html
+
+Column
+Type
+An enumeration of the valid data types for columns in a
+Data
+Table
+.
+To call an enum, you call its parent class, name, and property. For example,
+Charts.ColumnType.DATE
+.
+Properties
+Property
+Type
+Description
+DATE
+Enum
+Corresponds to date values.
+NUMBER
+Enum
+Corresponds to number values.
+STRING
+Enum
+Corresponds to string values.

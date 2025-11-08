@@ -1,0 +1,81 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/drive-items-selected-action-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The DriveItemsSelectedActionResponseBuilder is used to create DriveItemsSelectedActionResponse objects.
+The
+build()
+method finalizes and returns the Drive action response object.
+The
+requestFileScope(itemId)
+method allows the response to request file scope for a specific Drive item.
+Drive
+Items
+Selected
+Action
+Response
+Builder
+A builder for
+Drive
+Items
+Selected
+Action
+Response
+objects.
+Methods
+Method
+Return type
+Brief description
+build()
+Drive
+Items
+Selected
+Action
+Response
+Builds the current Drive action response.
+request
+File
+Scope(itemId)
+Drive
+Items
+Selected
+Action
+Response
+Builder
+Specifies that the response requests file scope for the contextually-relevant item in Drive.
+Detailed documentation
+build()
+Builds the current Drive action response.
+Return
+Drive
+Items
+Selected
+Action
+Response
+— A validated
+Drive
+Items
+Selected
+Action
+Response
+.
+request
+File
+Scope(itemId)
+Specifies that the response requests file scope for the contextually-relevant item in Drive.
+Parameters
+Name
+Type
+Description
+item
+Id
+String
+ID of the Drive item to request file scope for.
+Return
+Drive
+Items
+Selected
+Action
+Response
+Builder
+— This object, for chaining.

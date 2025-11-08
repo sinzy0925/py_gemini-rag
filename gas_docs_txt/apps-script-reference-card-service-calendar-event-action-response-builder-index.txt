@@ -1,0 +1,135 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/calendar-event-action-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CalendarEventActionResponseBuilder is a builder for CalendarEventActionResponse objects.
+Methods like addAttachments, addAttendees, and setConferenceData specify actions to take on a Calendar event when a UI action is triggered.
+The build method validates and creates the CalendarEventActionResponse object.
+Calendar
+Event
+Action
+Response
+Builder
+A builder for
+Calendar
+Event
+Action
+Response
+objects.
+Methods
+Method
+Return type
+Brief description
+add
+Attachments(attachments)
+Calendar
+Event
+Action
+Response
+Builder
+Specifies that the response should add the attachments to the Calendar event when the
+associated UI action is taken.
+add
+Attendees(emails)
+Calendar
+Event
+Action
+Response
+Builder
+Specifies that the response should add the indicated attendees to the Calendar event when the
+associated UI action is taken.
+build()
+Calendar
+Event
+Action
+Response
+Builds the current Calendar event action response and validates it.
+set
+Conference
+Data(conferenceData)
+Calendar
+Event
+Action
+Response
+Builder
+Specifies that the response should set the indicated conference data to the Calendar event when
+the associated UI action is taken.
+Detailed documentation
+add
+Attachments(attachments)
+Specifies that the response should add the attachments to the Calendar event when the
+associated UI action is taken.
+Parameters
+Name
+Type
+Description
+attachments
+Attachment[]
+An array of
+Attachment
+s to add.
+Return
+Calendar
+Event
+Action
+Response
+Builder
+— This object, for chaining.
+add
+Attendees(emails)
+Specifies that the response should add the indicated attendees to the Calendar event when the
+associated UI action is taken.
+Parameters
+Name
+Type
+Description
+emails
+String[]
+An array of email addresses to add to the event.
+Return
+Calendar
+Event
+Action
+Response
+Builder
+— This object, for chaining.
+Throws
+Error
+— If too many attendees have been added.
+build()
+Builds the current Calendar event action response and validates it.
+Return
+Calendar
+Event
+Action
+Response
+— A validated
+Calendar
+Event
+Action
+Response
+.
+Throws
+Error
+— If the constructed Calendar event action response isn't valid.
+set
+Conference
+Data(conferenceData)
+Specifies that the response should set the indicated conference data to the Calendar event when
+the associated UI action is taken.
+Parameters
+Name
+Type
+Description
+conference
+Data
+Conference
+Data
+Conference data to set to the event, created by an add on.
+Return
+Calendar
+Event
+Action
+Response
+Builder
+— This object, for chaining.

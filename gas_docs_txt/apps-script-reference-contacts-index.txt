@@ -1,0 +1,293 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Contacts service is deprecated and users should instead use the People API advanced service.
+This service allows scripts to access and modify Google Contacts for both individuals and groups.
+The documentation lists various classes related to contacts and their fields, such as AddressField, CompanyField, Contact, and ContactGroup.
+Several methods are documented for accessing and modifying information within these contact field classes, such as
+getAddress()
+,
+getLabel()
+,
+setAddress()
+, and
+setLabel()
+.
+Contacts
+Deprecated.
+Instead, use the
+People API
+    advanced service
+This service allows scripts to access and modify Google Contacts, both for
+individual contacts and for groups.
+Classes
+Name
+Brief description
+Address
+Field
+Address field in a contact.
+Company
+Field
+Company field in a Contact.
+Contact
+A Contact contains the name, address, and various contact details of a contact.
+Contact
+Group
+A ContactGroup is is a group of contacts.
+Contacts
+App
+This class allows users to access their own Google Contacts and create, remove, and update
+contacts listed therein.
+Custom
+Field
+A custom field in a Contact.
+Date
+Field
+A date field in a Contact.
+Email
+Field
+An email field in a Contact.
+Extended
+Field
+An enum for extended contacts fields.
+Field
+An enum for contacts fields.
+Gender
+An enum for contact gender.
+IMField
+An instant messaging field in a Contact.
+Phone
+Field
+A phone number field in a Contact.
+Priority
+An enum for contact priority.
+Sensitivity
+An enum for contact sensitivity.
+Url
+Field
+A URL field in a Contact.
+Address
+Field
+Methods
+Method
+Return type
+Brief description
+get
+Address()
+String
+Get the address for this field.
+get
+Label()
+Object
+Gets the label for this field.
+is
+Primary()
+Boolean
+Gets whether this is the primary field value.
+set
+Address(address)
+Address
+Field
+Sets the address of this field.
+set
+As
+Primary()
+Address
+Field
+Sets this field to primary.
+set
+Label(field)
+Address
+Field
+Sets the label of this field.
+set
+Label(label)
+Address
+Field
+Sets the label of this field.
+Company
+Field
+Contact
+Contact
+Group
+Contacts
+App
+Custom
+Field
+Methods
+Method
+Return type
+Brief description
+get
+Label()
+Object
+Gets the label for this field.
+set
+Label(label)
+Custom
+Field
+Sets the label of this field.
+Date
+Field
+Methods
+Method
+Return type
+Brief description
+get
+Label()
+Object
+Gets the label for this field.
+set
+Label(label)
+Date
+Field
+Sets the label of this field.
+Email
+Field
+Methods
+Method
+Return type
+Brief description
+get
+Address()
+String
+Get the address for this field.
+get
+Label()
+Object
+Gets the label for this field.
+is
+Primary()
+Boolean
+Gets whether this is the primary field value.
+set
+Address(address)
+Email
+Field
+Sets the address of this field.
+set
+As
+Primary()
+Email
+Field
+Sets this field to primary.
+set
+Label(field)
+Email
+Field
+Sets the label of this field.
+set
+Label(label)
+Email
+Field
+Sets the label of this field.
+Extended
+Field
+Field
+Gender
+IMField
+Methods
+Method
+Return type
+Brief description
+get
+Address()
+String
+Get the address for this field.
+get
+Label()
+Object
+Gets the label for this field.
+is
+Primary()
+Boolean
+Gets whether this is the primary field value.
+set
+Address(address)
+IMField
+Sets the address of this field.
+set
+As
+Primary()
+IMField
+Sets this field to primary.
+set
+Label(field)
+IMField
+Sets the label of this field.
+set
+Label(label)
+IMField
+Sets the label of this field.
+Phone
+Field
+Methods
+Method
+Return type
+Brief description
+get
+Label()
+Object
+Gets the label for this field.
+is
+Primary()
+Boolean
+Gets whether this is the primary field value.
+set
+As
+Primary()
+Phone
+Field
+Sets this field to primary.
+set
+Label(field)
+Phone
+Field
+Sets the label of this field.
+set
+Label(label)
+Phone
+Field
+Sets the label of this field.
+Priority
+Sensitivity
+Url
+Field
+Methods
+Method
+Return type
+Brief description
+get
+Address()
+String
+Get the address for this field.
+get
+Label()
+Object
+Gets the label for this field.
+is
+Primary()
+Boolean
+Gets whether this is the primary field value.
+set
+Address(address)
+Url
+Field
+Sets the address of this field.
+set
+As
+Primary()
+Url
+Field
+Sets this field to primary.
+set
+Label(field)
+Url
+Field
+Sets the label of this field.
+set
+Label(label)
+Url
+Field
+Sets the label of this field.

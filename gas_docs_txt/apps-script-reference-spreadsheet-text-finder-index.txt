@@ -1,0 +1,340 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/text-finder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+TextFinder is used to find or replace text within a range, sheet, or spreadsheet with customizable search options.
+Key methods include finding all matches, navigating through matches, getting the current match, and replacing text.
+Search behavior can be configured to ignore diacritics, match case, match entire cells, or search within formulas.
+TextFinder allows starting a search from a specific range and supports using regular expressions.
+Text
+Finder
+Find or replace text within a range, sheet or spreadsheet. Can also specify search options.
+Methods
+Method
+Return type
+Brief description
+find
+All()
+Range[]
+Returns all cells matching the search criteria.
+find
+Next()
+Range
+Returns the next cell matching the search criteria.
+find
+Previous()
+Range
+Returns the previous cell matching the search criteria.
+get
+Current
+Match()
+Range
+Returns the current cell matching the search criteria.
+ignore
+Diacritics(ignoreDiacritics)
+Text
+Finder
+If
+true
+, configures the search to ignore diacritics while matching; otherwise the
+search matches diacritics.
+match
+Case(matchCase)
+Text
+Finder
+If
+true
+, configures the search to match the search text's case exactly, otherwise the
+search defaults to case-insensitive matching.
+match
+Entire
+Cell(matchEntireCell)
+Text
+Finder
+If
+true
+, configures the search to match the entire contents of a cell; otherwise, the
+search defaults to partial matching.
+match
+Formula
+Text(matchFormulaText)
+Text
+Finder
+If
+true
+, configures the search to return matches that appear within formula text;
+otherwise cells with formulas are considered based on their displayed value.
+replace
+All
+With(replaceText)
+Integer
+Replaces all matches with the specified text.
+replace
+With(replaceText)
+Integer
+Replaces the search text in the currently matched cell with the specified text and returns the
+number of occurrences replaced.
+start
+From(startRange)
+Text
+Finder
+Configures the search to start searching immediately after the specified cell range.
+use
+Regular
+Expression(useRegEx)
+Text
+Finder
+If
+true
+, configures the search to interpret the search string as a regular expression;
+otherwise the search interprets the search string as normal text.
+Detailed documentation
+find
+All()
+Returns all cells matching the search criteria.
+Return
+Range[]
+— All the matching cells.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+find
+Next()
+Returns the next cell matching the search criteria.
+Return
+Range
+— The next matching cell, or
+null
+if there are no previous matches.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+find
+Previous()
+Returns the previous cell matching the search criteria.
+Return
+Range
+— The previous matching cell, or
+null
+if there are no previous matches.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Current
+Match()
+Returns the current cell matching the search criteria.
+Return
+Range
+— The current matching cell, or
+null
+if there are no further matches.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+ignore
+Diacritics(ignoreDiacritics)
+If
+true
+, configures the search to ignore diacritics while matching; otherwise the
+search matches diacritics. A diacritic is a sign, such as an accent or cedilla, which when
+written above or below a letter indicates a difference in pronunciation from the same letter
+when unmarked or differently marked.
+Parameters
+Name
+Type
+Description
+ignore
+Diacritics
+Boolean
+Whether the search considers diacritics.
+Return
+Text
+Finder
+— This text finder, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+match
+Case(matchCase)
+If
+true
+, configures the search to match the search text's case exactly, otherwise the
+search defaults to case-insensitive matching.
+Parameters
+Name
+Type
+Description
+match
+Case
+Boolean
+Whether the matching is case-sensitive.
+Return
+Text
+Finder
+— This text finder, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+match
+Entire
+Cell(matchEntireCell)
+If
+true
+, configures the search to match the entire contents of a cell; otherwise, the
+search defaults to partial matching.
+Parameters
+Name
+Type
+Description
+match
+Entire
+Cell
+Boolean
+Whether the entire cell is matched.
+Return
+Text
+Finder
+— This text finder, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+match
+Formula
+Text(matchFormulaText)
+If
+true
+, configures the search to return matches that appear within formula text;
+otherwise cells with formulas are considered based on their displayed value.
+Parameters
+Name
+Type
+Description
+match
+Formula
+Text
+Boolean
+Whether the search examines formula text.
+Return
+Text
+Finder
+— This text finder, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+replace
+All
+With(replaceText)
+Replaces all matches with the specified text. Returns the number of occurrences replaced, which
+may be different from the number of matched cells.
+Parameters
+Name
+Type
+Description
+replace
+Text
+String
+The text that replaces the text in the matched cells.
+Return
+Integer
+— The number of occurrences replaced.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+replace
+With(replaceText)
+Replaces the search text in the currently matched cell with the specified text and returns the
+number of occurrences replaced.
+Parameters
+Name
+Type
+Description
+replace
+Text
+String
+The text that replaces the content in the currently matched cell.
+Return
+Integer
+— The number of occurrences replaced.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+start
+From(startRange)
+Configures the search to start searching immediately after the specified cell range.
+Parameters
+Name
+Type
+Description
+start
+Range
+Range
+The cell range after which the search should start.
+Return
+Text
+Finder
+— This text finder, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+use
+Regular
+Expression(useRegEx)
+If
+true
+, configures the search to interpret the search string as a regular expression;
+otherwise the search interprets the search string as normal text. For more details on how to
+use regular expressions, refer to the
+Find and replace support page.
+Parameters
+Name
+Type
+Description
+use
+Reg
+Ex
+Boolean
+Whether to interpret the search string as a regular expression.
+Return
+Text
+Finder
+— This text finder, for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

@@ -1,0 +1,183 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/columns/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Columns widget displays up to 2 columns in a card or dialog, where widgets can be added to each column and appear in the order specified.
+The height of both columns is determined by the taller column, and rows or widget alignment between columns cannot be defined.
+Columns are displayed side-by-side, and their width can be customized, with the second column wrapping below the first on narrower screens at specific pixel widths for web, iOS, and Android devices.
+This feature is available for Google Chat apps and Google Workspace add-ons, specifically in dialogs displayed from email drafts and the Add attachment menu in Google Calendar events.
+The
+addColumn(column)
+method adds up to two child columns to the Columns widget, and the
+setWrapStyle(wrapStyle)
+method controls how the columns resize based on screen width.
+Columns
+The
+Columns
+widget displays up to 2 columns in a card or dialog. You can add widgets to
+each
+Column
+; the widgets appear in the order that they are specified. For an example in
+Google Chat apps, see
+Columns
+.
+The height of each column is determined by the taller column. For example, if the first column
+is taller than the second column, both columns have the height of the first column. Because each
+column can contain a different number of widgets, you can't define rows or align widgets between
+the columns.
+Columns are displayed side-by-side. You can customize the width of each column using the
+Horizontal
+Size
+Style
+field. If the user's screen width is too narrow, the second column
+wraps below the first:
+On web, the second column wraps if the screen width is less than or equal to 480 pixels.
+On iOS devices, the second column wraps if the screen width is less than or equal to 300
+      pt.
+On Android devices, the second column wraps if the screen width is less than or equal to
+      320 dp.
+Available for Google Chat apps and Google Workspace add-ons. The add-on UIs that support
+columns include:
+The dialog displayed when users open the add-on from an email draft.
+The dialog displayed when users open the add-on from the
+Add attachment
+menu in a
+      Google Calendar event.
+// Build a column that is aligned in the center and fills the space:
+const
+column
+=
+CardService
+.
+newColumn
+()
+.
+setHorizontalSizeStyle
+(
+CardService
+.
+HorizontalSizeStyle
+.
+FILL_AVAILABLE_SPACE
+)
+.
+setHorizontalAlignment
+(
+CardService
+.
+HorizontalAlignment
+.
+CENTER
+)
+.
+setVerticalAlignment
+(
+CardService
+.
+VerticalAlignment
+.
+CENTER
+);
+const
+columns
+=
+CardService
+.
+newColumns
+().
+addColumn
+(
+column
+).
+setWrapStyle
+(
+CardService
+.
+WrapStyle
+.
+WRAP
+);
+Methods
+Method
+Return type
+Brief description
+add
+Column(column)
+Columns
+Adds a
+Column
+to the Columns widget.
+set
+Wrap
+Style(wrapStyle)
+Columns
+Sets the wrap style of the columns, controls how the column resizes based on screen width.
+Detailed documentation
+add
+Column(column)
+Adds a
+Column
+to the Columns widget. Columns are displayed in the order in which
+they're added. You can add up to two columns.
+const
+columns
+=
+CardService
+.
+newColumns
+().
+addColumn
+(
+CardService
+.
+newColumn
+());
+Parameters
+Name
+Type
+Description
+column
+Column
+A child column to add to the Columns widget.
+Return
+Columns
+— This object, for chaining.
+set
+Wrap
+Style(wrapStyle)
+Sets the wrap style of the columns, controls how the column resizes based on screen width.
+const
+columns
+=
+CardService
+.
+newColumns
+()
+.
+addColumn
+(
+CardService
+.
+newColumn
+())
+.
+setWrapStyle
+(
+CardService
+.
+WrapStyle
+.
+WRAP
+);
+Parameters
+Name
+Type
+Description
+wrap
+Style
+Wrap
+Style
+The wrap style to set for the columns.
+Return
+Columns
+— This object, for chaining.

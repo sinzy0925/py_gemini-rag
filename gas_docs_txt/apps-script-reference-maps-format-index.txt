@@ -1,0 +1,31 @@
+Source Path: gas_docs_html/apps-script/reference/maps/format/index.html
+
+Format
+An enum representing the format of the map image.
+To call an enum, you call its parent class, name, and property. For example,
+Maps.Format.PNG
+.
+See also
+Google Static Maps API
+Properties
+Property
+Type
+Description
+PNG
+Enum
+8-bit PNG format.
+PNG8
+Enum
+8-bit PNG format.
+PNG32
+Enum
+32-bit PNG format.
+GIF
+Enum
+GIF format.
+JPG
+Enum
+JPEG format.
+JPG_BASELINE
+Enum
+Non-progressive JPEG format.

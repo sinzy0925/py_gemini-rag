@@ -1,0 +1,21 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/priority/index.html
+
+Priority
+Deprecated.
+Instead, use the
+People API advanced
+    service
+An enum for contact priority.
+Deprecated properties
+Property
+Type
+Description
+HIGH
+Enum
+high priority
+LOW
+Enum
+low priority
+NORMAL
+Enum
+normal priority

@@ -1,0 +1,18 @@
+Source Path: gas_docs_html/apps-script/reference/charts/curve-style/index.html
+
+Curve
+Style
+An enumeration of the styles for curves in a chart.
+To call an enum, you call its parent class, name, and property. For example,
+Charts.CurveStyle.NORMAL
+.
+Properties
+Property
+Type
+Description
+NORMAL
+Enum
+Straight lines without curve.
+SMOOTH
+Enum
+The angles of the line are smoothed.

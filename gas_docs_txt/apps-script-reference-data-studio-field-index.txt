@@ -1,0 +1,516 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/field/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A Field object contains data-related information and its properties determine how it's used in Data Studio.
+You can create a new field using
+fields.newDimension()
+or similar methods.
+Field objects have methods to get and set various properties like ID, name, description, type, and aggregation.
+Methods starting with
+get
+retrieve the current value of a field property.
+Methods starting with
+set
+modify the value of a field property and return the Field object for chaining.
+Field
+Contains field-related data. Its properties determine how the field is used in Data Studio.
+const
+cc
+=
+DataStudioApp
+.
+createCommunityConnector
+();
+const
+fields
+=
+cc
+.
+getFields
+();
+const
+field1
+=
+fields
+.
+newDimension
+()
+.
+setId
+(
+'field1_id'
+)
+.
+setName
+(
+'Field 1 ID'
+)
+.
+setDescription
+(
+'The first field.'
+)
+.
+setType
+(
+cc
+.
+FieldType
+.
+YEAR_MONTH
+)
+.
+setGroup
+(
+'DATETIME'
+);
+Methods
+Method
+Return type
+Brief description
+get
+Aggregation()
+Aggregation
+Type
+Returns the
+Aggregation
+Type
+of this
+Field
+.
+get
+Description()
+String
+Returns the description of this
+Field
+.
+get
+Formula()
+String
+Returns the formula of this
+Field
+.
+get
+Group()
+String
+Returns the group of this
+Field
+.
+get
+Id()
+String
+Returns the ID of this
+Field
+.
+get
+Is
+Reaggregatable()
+Boolean
+Returns
+true
+if this field can be reaggregated,
+false
+otherwise.
+get
+Name()
+String
+Returns the name of this
+Field
+.
+get
+Type()
+Field
+Type
+Returns the
+Field
+Type
+of this
+Field
+.
+is
+Default()
+Boolean
+Returns
+true
+if this
+Field
+is the default metric or dimension.
+is
+Dimension()
+Boolean
+Returns
+true
+if this field is a dimension.
+is
+Hidden()
+Boolean
+Returns
+true
+if this
+Field
+is hidden.
+is
+Metric()
+Boolean
+Returns
+true
+if this field is a metric.
+set
+Aggregation(aggregation)
+Field
+Sets the aggregation type of this
+Field
+.
+set
+Description(description)
+Field
+Sets the description of this
+Field
+.
+set
+Formula(formula)
+Field
+Sets the formula of this
+Field
+.
+set
+Group(group)
+Field
+Sets the group of this
+Field
+.
+set
+Id(id)
+Field
+Sets the ID of this
+Field
+.
+set
+Is
+Hidden(isHidden)
+Field
+Sets the hidden status of this
+Field
+.
+set
+Is
+Reaggregatable(isReaggregatable)
+Field
+Sets the reaggregation-permitted status for a
+Field
+.
+set
+Name(name)
+Field
+Sets the name of this
+Field
+.
+set
+Type(type)
+Field
+Sets the
+Field
+Type
+of this
+Field
+.
+Detailed documentation
+get
+Aggregation()
+Returns the
+Aggregation
+Type
+of this
+Field
+.
+Aggregation
+Type
+determines
+how Data Studio combines similar data into dimensions.
+Return
+Aggregation
+Type
+— The aggregationType for this field.
+get
+Description()
+Returns the description of this
+Field
+. Descriptions are short explanations of a field's
+purpose.
+Return
+String
+— The description for this field.
+get
+Formula()
+Returns the formula of this
+Field
+. Formulas define a data transformation that Data
+Studio runs at query-time.
+Return
+String
+— The formula for this field.
+get
+Group()
+Returns the group of this
+Field
+. Fields collected into a group are presented together
+in the Data Studio UI.
+Return
+String
+— The group for this field.
+get
+Id()
+Returns the ID of this
+Field
+. IDs are unique per set of fields and are used in formulas
+to refer to fields.
+Return
+String
+— The ID for this field.
+get
+Is
+Reaggregatable()
+Returns
+true
+if this field can be reaggregated,
+false
+otherwise.
+Return
+Boolean
+—
+true
+if this field can be reaggregated,
+false
+otherwise.
+get
+Name()
+Returns the name of this
+Field
+. Names are shown to the user to distinguish fields.
+Return
+String
+— The name for this field.
+get
+Type()
+Returns the
+Field
+Type
+of this
+Field
+.
+Return
+Field
+Type
+— The type for this field.
+is
+Default()
+Returns
+true
+if this
+Field
+is the default metric or dimension.
+Return
+Boolean
+—
+true
+if this
+Field
+is the default metric or dimension;
+false
+otherwise.
+is
+Dimension()
+Returns
+true
+if this field is a dimension.
+Return
+Boolean
+—
+true
+if this field is a dimension; returns
+false
+otherwise.
+is
+Hidden()
+Returns
+true
+if this
+Field
+is hidden. You can use hidden fields in formulas,
+but not in charts. You cannot hide fields containing formulas.
+Return
+Boolean
+—
+true
+if this
+Field
+is hidden;
+false
+otherwise.
+is
+Metric()
+Returns
+true
+if this field is a metric.
+Return
+Boolean
+—
+true
+if this field is a metric; returns
+false
+otherwise.
+set
+Aggregation(aggregation)
+Sets the aggregation type of this
+Field
+.
+Aggregation
+Type
+determines how Data
+Studio combines similar data into dimensions. This throws an error if called on a metric.
+Parameters
+Name
+Type
+Description
+aggregation
+Aggregation
+Type
+The aggregation type to set.
+Return
+Field
+— This builder, for chaining.
+set
+Description(description)
+Sets the description of this
+Field
+. Descriptions are short explanations of a field's
+purpose.
+Parameters
+Name
+Type
+Description
+description
+String
+The description to set.
+Return
+Field
+— This builder, for chaining.
+set
+Formula(formula)
+Sets the formula of this
+Field
+. Formulas define a data transformation that Data Studio
+runs at query-time.
+Parameters
+Name
+Type
+Description
+formula
+String
+The formula to set.
+Return
+Field
+— This builder, for chaining.
+set
+Group(group)
+Sets the group of this
+Field
+. Fields collected into a group are presented together in
+the Data Studio UI.
+Parameters
+Name
+Type
+Description
+group
+String
+The group to set.
+Return
+Field
+— This builder, for chaining.
+set
+Id(id)
+Sets the ID of this
+Field
+. IDs are unique per set of fields and are used in formulas to
+refer to fields.
+Parameters
+Name
+Type
+Description
+id
+String
+The ID to set.
+Return
+Field
+— This builder, for chaining.
+set
+Is
+Hidden(isHidden)
+Sets the hidden status of this
+Field
+. You can use hidden fields in formulas, but not in
+charts. You cannot hide fields containing formulas.
+Parameters
+Name
+Type
+Description
+is
+Hidden
+Boolean
+The hidden status to set.
+Return
+Field
+— This builder, for chaining.
+set
+Is
+Reaggregatable(isReaggregatable)
+Sets the reaggregation-permitted status for a
+Field
+. Attempting to set an aggregation
+type on a field that can't be reaggregated results in an error.
+Parameters
+Name
+Type
+Description
+is
+Reaggregatable
+Boolean
+The reaggregation-permitted status to set.
+Return
+Field
+— This builder, for chaining.
+set
+Name(name)
+Sets the name of this
+Field
+. Names are shown to the user to distinguish fields.
+Parameters
+Name
+Type
+Description
+name
+String
+The name to set.
+Return
+Field
+— This builder, for chaining.
+set
+Type(type)
+Sets the
+Field
+Type
+of this
+Field
+.
+Parameters
+Name
+Type
+Description
+type
+Field
+Type
+The type to set.
+Return
+Field
+— This builder, for chaining.

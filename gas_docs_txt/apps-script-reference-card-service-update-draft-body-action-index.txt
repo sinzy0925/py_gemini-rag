@@ -1,0 +1,96 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-draft-body-action/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+UpdateDraftBodyAction is used to update the body of an email draft.
+The
+addUpdateContent
+method adds specified content to the draft body with a defined content type.
+The
+setUpdateType
+method determines how the content update is applied to the draft body, such as inserting at the start, end, or cursor.
+Update
+Draft
+Body
+Action
+Updates the email draft body.
+Methods
+Method
+Return type
+Brief description
+add
+Update
+Content(content, contentType)
+Update
+Draft
+Body
+Action
+Adds the specified content to the draft body.
+set
+Update
+Type(updateType)
+Update
+Draft
+Body
+Action
+Sets the
+Update
+Draft
+Body
+Type
+of this update action on the draft body.
+Detailed documentation
+add
+Update
+Content(content, contentType)
+Adds the specified content to the draft body. The type of the
+content
+is specified by
+Content
+Type
+.
+Parameters
+Name
+Type
+Description
+content
+String
+The content to insert to the email draft.
+content
+Type
+Content
+Type
+The content type of the content to be inserted.
+Return
+Update
+Draft
+Body
+Action
+— This object, for chaining.
+set
+Update
+Type(updateType)
+Sets the
+Update
+Draft
+Body
+Type
+of this update action on the draft body. For example,
+inserting content at the start, end, or cursor position of the draft body.
+Parameters
+Name
+Type
+Description
+update
+Type
+Update
+Draft
+Body
+Type
+The type of update to be performed on an email draft.
+Return
+Update
+Draft
+Body
+Action
+— This object, for chaining.

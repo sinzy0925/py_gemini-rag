@@ -1,0 +1,94 @@
+Source Path: gas_docs_html/apps-script/reference/base/button-set/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ButtonSet is an enum in Apps Script for creating predetermined, localized sets of dialog buttons for alerts and prompts.
+You can determine which button a user clicks by using the Button class in conjunction with ButtonSet.
+Enum properties are accessed by calling the parent class, name, and property, such as
+Base.ButtonSet.OK
+.
+Common ButtonSet properties include OK, OK_CANCEL, YES_NO, and YES_NO_CANCEL, each offering different combinations of buttons for various dialog scenarios.
+Button
+Set
+An enum representing predetermined, localized sets of one or more dialog buttons that can be
+added to an
+alert
+or a
+prompt
+. To determine which button the user clicked,
+use
+Button
+.
+To call an enum, you call its parent class, name, and property. For example,
+Base.ButtonSet.OK
+.
+// Display a dialog box with a message and "Yes" and "No" buttons.
+const
+ui
+=
+DocumentApp
+.
+getUi
+();
+const
+response
+=
+ui
+.
+alert
+(
+'Are you sure you want to continue?'
+,
+ui
+.
+ButtonSet
+.
+YES_NO
+,
+);
+// Process the user's response.
+if
+(
+response
+===
+ui
+.
+Button
+.
+YES
+)
+{
+Logger
+.
+log
+(
+'The user clicked "Yes."'
+);
+}
+else
+{
+Logger
+.
+log
+(
+'The user clicked "No" or the dialog\'s close button.'
+);
+}
+Properties
+Property
+Type
+Description
+OK
+Enum
+A single "OK" button, indicating an informational message that can only be dismissed.
+OK_CANCEL
+Enum
+An "OK" button and a "Cancel" button, allowing the user to either proceed with or halt an
+operation.
+YES_NO
+Enum
+A "Yes" button and a "No" button, allowing the user to answer a yes/no question.
+YES_NO_CANCEL
+Enum
+A "Yes" button, a "No" button, and a "Cancel" button, allowing the user to either answer a
+yes/no question or halt an operation.

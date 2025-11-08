@@ -1,0 +1,63 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-savepoint/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcSavepoint is a JDBC
+Savepoint
+with documentation available at
+java.sql.Savepoint
+.
+The
+getSavepointId()
+method returns the numeric ID of the savepoint as an
+Integer
+.
+The
+getSavepointName()
+method returns the name of the savepoint as a
+String
+.
+Jdbc
+Savepoint
+A JDBC
+Savepoint
+. For documentation of this class, see
+java.sql.Savepoint
+.
+Methods
+Method
+Return type
+Brief description
+get
+Savepoint
+Id()
+Integer
+For documentation of this method, see
+java.sql.Savepoint#getSavepointId()
+.
+get
+Savepoint
+Name()
+String
+For documentation of this method, see
+java.sql.Savepoint#getSavepointName()
+.
+Detailed documentation
+get
+Savepoint
+Id()
+For documentation of this method, see
+java.sql.Savepoint#getSavepointId()
+.
+Return
+Integer
+— The numeric ID of this savepoint.
+get
+Savepoint
+Name()
+For documentation of this method, see
+java.sql.Savepoint#getSavepointName()
+.
+Return
+String
+— The name of this savepoint.

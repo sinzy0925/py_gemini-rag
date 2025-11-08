@@ -1,0 +1,426 @@
+Source Path: gas_docs_html/apps-script/reference/slides/page-background/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+You can retrieve the picture or solid fill of a page background using
+getPictureFill()
+or
+getSolidFill()
+, which return
+null
+if the background type doesn't match.
+The type of the page background can be obtained with the
+getType()
+method.
+You can check if the page background is visible using the
+isVisible()
+method.
+Page backgrounds can be set to a picture from a blob source or a URL using the
+setPictureFill()
+methods.
+Solid color backgrounds can be set using
+setSolidFill()
+with various color representations, including Color objects, RGB values, hex strings, or ThemeColorType, with optional alpha transparency.
+The page background can be set to transparent using the
+setTransparent()
+method.
+Page
+Background
+Describes the page's background
+Methods
+Method
+Return type
+Brief description
+get
+Picture
+Fill()
+Picture
+Fill
+Get the stretched picture fill of this background, or
+null
+if the background fill type
+is not
+Page
+Background
+Type.PICTURE
+.
+get
+Solid
+Fill()
+Solid
+Fill
+Get the solid fill of this background, or
+null
+if the background fill type is not
+Page
+Background
+Type.SOLID
+.
+get
+Type()
+Page
+Background
+Type
+Get the type of this page background.
+is
+Visible()
+Boolean
+Whether the background is visible.
+set
+Picture
+Fill(blobSource)
+void
+Sets an image from the specified image blob as the page background.
+set
+Picture
+Fill(imageUrl)
+void
+Sets the image at the provided URL as the page background.
+set
+Solid
+Fill(color)
+void
+Sets the solid fill to the given
+Color
+.
+set
+Solid
+Fill(color, alpha)
+void
+Sets the solid fill to the given alpha and
+Color
+.
+set
+Solid
+Fill(red, green, blue)
+void
+Sets the solid fill to the given RGB values.
+set
+Solid
+Fill(red, green, blue, alpha)
+void
+Sets the solid fill to the given alpha and RGB values.
+set
+Solid
+Fill(hexString)
+void
+Sets the solid fill to the given hex color string.
+set
+Solid
+Fill(hexString, alpha)
+void
+Sets the solid fill to the given alpha and hex color string.
+set
+Solid
+Fill(color)
+void
+Sets the solid fill to the given
+Theme
+Color
+Type
+.
+set
+Solid
+Fill(color, alpha)
+void
+Sets the solid fill to the given alpha and
+Theme
+Color
+Type
+.
+set
+Transparent()
+void
+Sets the background to transparent.
+Detailed documentation
+get
+Picture
+Fill()
+Get the stretched picture fill of this background, or
+null
+if the background fill type
+is not
+Page
+Background
+Type.PICTURE
+.
+Return
+Picture
+Fill
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Solid
+Fill()
+Get the solid fill of this background, or
+null
+if the background fill type is not
+Page
+Background
+Type.SOLID
+.
+Return
+Solid
+Fill
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+get
+Type()
+Get the type of this page background.
+Return
+Page
+Background
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+is
+Visible()
+Whether the background is visible.
+Return
+Boolean
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Picture
+Fill(blobSource)
+Sets an image from the specified image blob as the page background. The image is stretched to
+match the dimensions of the page.
+Inserting the image fetches it from the
+Blob
+Source
+once and a copy is stored for
+display inside the presentation. Images must be less than 50MB in size, cannot exceed 25
+megapixels, and must be in either in PNG, JPEG, or GIF format.
+Parameters
+Name
+Type
+Description
+blob
+Source
+Blob
+Source
+The image data.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Picture
+Fill(imageUrl)
+Sets the image at the provided URL as the page background. The image is stretched to match the
+dimensions of the page.
+Inserting the image fetches it from the URL once and a copy is stored for display inside the
+presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be
+in either in PNG, JPEG, or GIF format.
+The provided URL must be publicly accessible and no larger than 2kB. The URL itself is saved
+with the image and exposed via
+Picture
+Fill.getSourceUrl()
+.
+Parameters
+Name
+Type
+Description
+image
+Url
+String
+The URL to download the image from.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color)
+Sets the solid fill to the given
+Color
+.
+Parameters
+Name
+Type
+Description
+color
+Color
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color, alpha)
+Sets the solid fill to the given alpha and
+Color
+.
+Parameters
+Name
+Type
+Description
+color
+Color
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(red, green, blue)
+Sets the solid fill to the given RGB values.
+Parameters
+Name
+Type
+Description
+red
+Integer
+green
+Integer
+blue
+Integer
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(red, green, blue, alpha)
+Sets the solid fill to the given alpha and RGB values.
+Parameters
+Name
+Type
+Description
+red
+Integer
+green
+Integer
+blue
+Integer
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(hexString)
+Sets the solid fill to the given hex color string.
+The hex string must be in the format '#RRGGBB'. For example, pink is represented as
+'#FFC0CB'.
+Parameters
+Name
+Type
+Description
+hex
+String
+String
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(hexString, alpha)
+Sets the solid fill to the given alpha and hex color string.
+The hex string must be in the format '#RRGGBB'. For example, pink is represented as
+'#FFC0CB'.
+Parameters
+Name
+Type
+Description
+hex
+String
+String
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color)
+Sets the solid fill to the given
+Theme
+Color
+Type
+.
+Parameters
+Name
+Type
+Description
+color
+Theme
+Color
+Type
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Solid
+Fill(color, alpha)
+Sets the solid fill to the given alpha and
+Theme
+Color
+Type
+.
+Parameters
+Name
+Type
+Description
+color
+Theme
+Color
+Type
+alpha
+Number
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations
+set
+Transparent()
+Sets the background to transparent.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/presentations.currentonly
+https://www.googleapis.com/auth/presentations

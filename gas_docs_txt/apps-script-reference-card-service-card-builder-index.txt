@@ -1,0 +1,228 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/card-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+CardBuilder is used to build Card objects.
+You can add card actions and sections to a Card using the builder.
+The build() method finalizes and validates the Card object.
+Various methods allow setting the card's display style, footer, header, name, and peek card header.
+Card
+Builder
+A builder for
+Card
+objects.
+Methods
+Method
+Return type
+Brief description
+add
+Card
+Action(cardAction)
+Card
+Builder
+Adds a
+Card
+Action
+to this Card.
+add
+Section(section)
+Card
+Builder
+Adds a section to this card.
+build()
+Card
+Builds the current card and validates it.
+set
+Display
+Style(displayStyle)
+Card
+Builder
+Sets the display style for this card.
+set
+Fixed
+Footer(fixedFooter)
+Card
+Builder
+Sets a fixed footer for this card.
+set
+Header(cardHeader)
+Card
+Builder
+Sets the header for this card.
+set
+Name(name)
+Card
+Builder
+Sets the name for this card.
+set
+Peek
+Card
+Header(peekCardHeader)
+Card
+Builder
+Sets the peek card header.
+Detailed documentation
+add
+Card
+Action(cardAction)
+Adds a
+Card
+Action
+to this Card.
+Parameters
+Name
+Type
+Description
+card
+Action
+Card
+Action
+The
+Card
+Action
+to use.
+Return
+Card
+Builder
+— This object, for chaining.
+add
+Section(section)
+Adds a section to this card. You can't add more than 100 sections to a card.
+Parameters
+Name
+Type
+Description
+section
+Card
+Section
+The
+Card
+Section
+to use.
+Return
+Card
+Builder
+— This object, for chaining.
+build()
+Builds the current card and validates it.
+Return
+Card
+— A validated card.
+Throws
+Error
+— if the constructed card isn't valid.
+set
+Display
+Style(displayStyle)
+Sets the display style for this card.
+If the display style is set to
+Display
+Style.REPLACE
+, the card is shown by replacing
+the view of top card in the card stack.
+If the display style is set to
+Display
+Style.PEEK
+, the header of the card appears at
+the bottom of the sidebar, partially covering the current top card of the stack. Clicking the
+header pops the card into the card stack. If the card has no header, a generated header is used
+instead.
+Display
+Style
+only works for card returned from contextual trigger function.
+Parameters
+Name
+Type
+Description
+display
+Style
+Display
+Style
+The
+Display
+Style
+to set.
+Return
+Card
+Builder
+— This object, for chaining.
+set
+Fixed
+Footer(fixedFooter)
+Sets a fixed footer for this card.
+Parameters
+Name
+Type
+Description
+fixed
+Footer
+Fixed
+Footer
+The
+Fixed
+Footer
+to use.
+Return
+Card
+Builder
+— This object, for chaining.
+set
+Header(cardHeader)
+Sets the header for this card.
+Parameters
+Name
+Type
+Description
+card
+Header
+Card
+Header
+The
+Card
+Header
+to use.
+Return
+Card
+Builder
+— This object, for chaining.
+set
+Name(name)
+Sets the name for this card. The name can be used for
+navigation
+.
+Parameters
+Name
+Type
+Description
+name
+String
+The name.
+Return
+Card
+Builder
+— This object, for chaining.
+set
+Peek
+Card
+Header(peekCardHeader)
+Sets the peek card header.
+The peek card is set on the first card returned from a contextual trigger function. It is
+used as a descriptive placeholder widget so that users can navigate from a homepage stack to
+the contextual stack.
+Parameters
+Name
+Type
+Description
+peek
+Card
+Header
+Card
+Header
+The
+Card
+Header
+to set.
+Return
+Card
+Builder
+— This object, for chaining.

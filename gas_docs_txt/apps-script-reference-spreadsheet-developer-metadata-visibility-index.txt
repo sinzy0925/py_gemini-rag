@@ -1,0 +1,21 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/developer-metadata-visibility/index.html
+
+Developer
+Metadata
+Visibility
+An enumeration of the types of developer metadata visibility.
+To call an enum, you call its parent class, name, and property. For example,
+SpreadsheetApp.DeveloperMetadataVisibility.DOCUMENT
+.
+Properties
+Property
+Type
+Description
+DOCUMENT
+Enum
+Document-visible metadata is accessible from any developer project with access to the document.
+PROJECT
+Enum
+Project-visible metadata is only visible to and accessible by the developer project that
+created the metadata. Do not use project-visible developer metadata as a security mechanism or
+to store secrets. It can be exposed to users with view access to the document.

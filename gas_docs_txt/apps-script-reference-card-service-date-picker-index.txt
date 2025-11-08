@@ -1,0 +1,187 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/date-picker/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+DatePicker is an input field for selecting a date in Google Workspace add-ons and Google Chat apps.
+Key methods include setting the field name, title, and default value, as well as defining an action when the input changes.
+The
+setValueInMsSinceEpoch
+method can accept the default date value as either a number or a string representing milliseconds since the epoch.
+Date
+Picker
+An input field that allows inputing a date.
+Available for Google Workspace add-ons and Google Chat apps.
+const
+dateTimePicker
+=
+CardService
+.
+newDatePicker
+()
+.
+setTitle
+(
+'Enter the date.'
+)
+.
+setFieldName
+(
+'date_field'
+)
+// Set default value as Jan 1, 2018 UTC. Either a number or string is
+// acceptable.
+.
+setValueInMsSinceEpoch
+(
+1514775600
+)
+.
+setOnChangeAction
+(
+CardService
+.
+newAction
+().
+setFunctionName
+(
+'handleDateTimeChange'
+),
+);
+Methods
+Method
+Return type
+Brief description
+set
+Field
+Name(fieldName)
+Date
+Picker
+Sets the field name that identifies this picker in the event object that is generated when
+there is a UI interaction.
+set
+On
+Change
+Action(action)
+Date
+Picker
+Sets an
+Action
+that the script performs whenever the picker input changes.
+set
+Title(title)
+Date
+Picker
+Sets the title displayed above the input field.
+set
+Value
+In
+Ms
+Since
+Epoch(valueMsEpoch)
+Date
+Picker
+Sets the prefilled value to be set in the input field.
+set
+Value
+In
+Ms
+Since
+Epoch(valueMsEpoch)
+Date
+Picker
+Sets the prefilled value to be set in the input field.
+Detailed documentation
+set
+Field
+Name(fieldName)
+Sets the field name that identifies this picker in the event object that is generated when
+there is a UI interaction. The field name is visible to the user. Required; the specified field
+name must be unique.
+Parameters
+Name
+Type
+Description
+field
+Name
+String
+The name to assign to this input.
+Return
+Date
+Picker
+— This picker, for chaining.
+set
+On
+Change
+Action(action)
+Sets an
+Action
+that the script performs whenever the picker input changes.
+Parameters
+Name
+Type
+Description
+action
+Action
+The action to take.
+Return
+Date
+Picker
+— This picker, for chaining.
+set
+Title(title)
+Sets the title displayed above the input field.
+Parameters
+Name
+Type
+Description
+title
+String
+The input field title.
+Return
+Date
+Picker
+— This picker, for chaining.
+set
+Value
+In
+Ms
+Since
+Epoch(valueMsEpoch)
+Sets the prefilled value to be set in the input field.
+Parameters
+Name
+Type
+Description
+value
+Ms
+Epoch
+Number
+The default value placed in the input as a number, in milliseconds since
+    the epoch. Only the date of the epoch time is used, and the time of the epoch time is
+    discarded. It is always represented as a string in the form callback parameters.
+Return
+Date
+Picker
+— This picker, for chaining.
+set
+Value
+In
+Ms
+Since
+Epoch(valueMsEpoch)
+Sets the prefilled value to be set in the input field.
+Parameters
+Name
+Type
+Description
+value
+Ms
+Epoch
+String
+The default value placed in the input as a string, in milliseconds since
+    the epoch. Only the date of the epoch time is used, and the time of the epoch time is
+    discarded. It is always represented as a string in the form callback parameters.
+Return
+Date
+Picker
+— This picker, for chaining.

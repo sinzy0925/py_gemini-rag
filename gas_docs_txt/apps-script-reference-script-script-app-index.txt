@@ -1,0 +1,991 @@
+Source Path: gas_docs_html/apps-script/reference/script/script-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+ScriptApp
+class in Google Apps Script allows users to manage script publishing and triggers.
+ScriptApp
+provides properties to identify authorization status, event types, and installation sources of scripts.
+You can use
+ScriptApp
+methods to create, delete, and retrieve installable triggers associated with a script or specific documents, forms, or spreadsheets.
+ScriptApp
+includes methods to get authorization information, access tokens, identity tokens, and the script project's unique ID.
+The class also allows invalidating script authorization and controlling web app publishing.
+Script
+App
+Access and manipulate script publishing and triggers. This class allows users to create script
+triggers and control publishing the script as a service.
+Properties
+Property
+Type
+Description
+Auth
+Mode
+Auth
+Mode
+An enumeration that identifies which categories of authorized services Apps Script is able to
+execute through a triggered function.
+Authorization
+Status
+Authorization
+Status
+An enumeration denoting the authorization status of a script.
+Event
+Type
+Event
+Type
+An enumeration denoting the type of triggered event.
+Installation
+Source
+Installation
+Source
+An enumeration denoting how the script was installed to the user as an add-on.
+Trigger
+Source
+Trigger
+Source
+An enumeration denoting the source of the event that causes the trigger to fire.
+Week
+Day
+Weekday
+An enumeration representing the days of the week.
+Methods
+Method
+Return type
+Brief description
+delete
+Trigger(trigger)
+void
+Removes the given trigger so it no longer runs.
+get
+Authorization
+Info(authMode)
+Authorization
+Info
+Gets an object that checks if the user has granted authorization for all the script
+requirements.
+get
+Authorization
+Info(authMode, oAuthScopes)
+Authorization
+Info
+Gets an object that checks if the user has granted authorization for the requested scopes.
+get
+Identity
+Token()
+String
+Gets an
+Open
+ID Connect
+identity token for the
+effective user, if the
+openid
+scope has been granted.
+get
+Installation
+Source()
+Installation
+Source
+Returns an enum value that indicates how the script came to be installed as an add-on for the
+current user (for example, whether the user installed it personally through the Chrome Web
+Store, or whether a domain administrator installed it for all users).
+get
+OAuth
+Token()
+String
+Gets the OAuth 2.0
+access
+token
+for the effective user.
+get
+Project
+Triggers()
+Trigger[]
+Gets all installable triggers associated with the current project and current user.
+get
+Script
+Id()
+String
+Gets the script project's unique ID.
+get
+Service()
+Service
+Gets an object used to control publishing the script as a web app.
+get
+User
+Triggers(document)
+Trigger[]
+Gets all installable triggers owned by this user in the given document, for this script or
+add-on only.
+get
+User
+Triggers(form)
+Trigger[]
+Gets all installable triggers owned by this user in the given form, for this script or add-on
+only.
+get
+User
+Triggers(spreadsheet)
+Trigger[]
+Gets all installable triggers owned by this user in the given spreadsheet, for this script or
+add-on only.
+invalidate
+Auth()
+void
+Invalidates the authorization the effective user has to execute the current script.
+new
+State
+Token()
+State
+Token
+Builder
+Creates a builder for a state token that can be used in a callback API (like an OAuth flow).
+new
+Trigger(functionName)
+Trigger
+Builder
+Begins the process of creating an installable trigger that, when fired, calls a given function.
+require
+All
+Scopes(authMode)
+void
+Validates if the user has granted consent for all of the scopes requested by the script.
+require
+Scopes(authMode, oAuthScopes)
+void
+Validates if the user has granted consent for the requested scopes.
+Deprecated methods
+Method
+Return type
+Brief description
+get
+Project
+Key()
+String
+Gets the project key of the current script.
+get
+Script
+Triggers()
+Trigger[]
+Gets all installable triggers associated with the current project and current user.
+Detailed documentation
+delete
+Trigger(trigger)
+Removes the given trigger so it no longer runs.
+// Deletes all triggers in the current project.
+const
+triggers
+=
+ScriptApp
+.
+getProjectTriggers
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+triggers
+.
+length
+;
+i
+++
+)
+{
+ScriptApp
+.
+deleteTrigger
+(
+triggers
+[
+i
+]);
+}
+Parameters
+Name
+Type
+Description
+trigger
+Trigger
+The trigger to delete.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+get
+Authorization
+Info(authMode)
+Gets an object that checks if the user has granted authorization for all the script
+requirements. The object also provides an authorization URL for users to grant those
+permissions, in case any of the script requirements are not authorized.
+Some script executions can start without a user's consent for all required scopes used by
+the script. The information in this object lets you control access to sections of code that
+require certain scopes and request authorization of those scopes for subsequent executions.
+const
+authInfo
+=
+ScriptApp
+.
+getAuthorizationInfo
+(
+ScriptApp
+.
+AuthMode
+.
+FULL
+);
+const
+status
+=
+authInfo
+.
+getAuthorizationStatus
+();
+const
+url
+=
+authInfo
+.
+getAuthorizationUrl
+();
+Parameters
+Name
+Type
+Description
+auth
+Mode
+Auth
+Mode
+The authorization mode for which authorization information is requested; in
+    almost all cases, the value for
+auth
+Mode
+should be
+Script
+App.getAuthorizationInfo(ScriptApp.AuthMode.FULL)
+, since no other authorization mode
+    requires that users grant authorization.
+Return
+Authorization
+Info
+— An object that can provide information about the user's authorization status.
+get
+Authorization
+Info(authMode, oAuthScopes)
+Gets an object that checks if the user has granted authorization for the requested scopes. The
+object also provides an authorization URL for users to grant those permissions, in case any of
+the requested scopes are not authorized.
+Some script executions can start without a user's consent for all required scopes used by
+the script. The information in this object lets you control access to sections of code that
+require certain scopes and request authorization of those scopes for subsequent executions.
+Scopes that are invalid or not
+required
+by
+the script lead to an error.
+const
+authInfo
+=
+ScriptApp
+.
+getAuthorizationInfo
+(
+ScriptApp
+.
+AuthMode
+.
+FULL
+,
+[
+'https://www.googleapis.com/auth/documents'
+,
+'https://www.googleapis.com/auth/presentations'
+,
+]);
+const
+status
+=
+authInfo
+.
+getAuthorizationStatus
+();
+const
+url
+=
+authInfo
+.
+getAuthorizationUrl
+();
+Parameters
+Name
+Type
+Description
+auth
+Mode
+Auth
+Mode
+The authorization mode for which authorization information is requested; in
+    almost all cases, the value for
+auth
+Mode
+should be
+Script
+App.AuthMode.FULL
+,
+    since no other authorization mode requires that users grant authorization.
+oAuthScopes
+String[]
+The OAuth scopes for which authorization information is requested.
+Return
+Authorization
+Info
+— An object that provides information about the user's authorization status and an
+    authorization URL in case some consents are missing.
+get
+Identity
+Token()
+Gets an
+Open
+ID Connect
+identity token for the
+effective user, if the
+openid
+scope has been granted. This scope is not included
+by default, and you must add it as an
+explicit scope
+in the manifest
+file to request it. Include the scopes
+https://www.googleapis.com/auth/userinfo.email
+or
+https://www.googleapis.com/auth/userinfo.profile
+to return additional
+user information in the token.
+The returned ID token is an encoded
+JSON Web Token (JWT)
+, and
+it must be decoded to extract information from it. The following examples shows how to decode
+the token and extract the effective user's Google profile ID.
+const
+idToken
+=
+ScriptApp
+.
+getIdentityToken
+();
+const
+body
+=
+idToken
+.
+split
+(
+'.'
+)[
+1
+];
+const
+decoded
+=
+Utilities
+.
+newBlob
+(
+Utilities
+.
+base64Decode
+(
+body
+),
+)
+.
+getDataAsString
+();
+const
+payload
+=
+JSON
+.
+parse
+(
+decoded
+);
+Logger
+.
+log
+(
+`Profile ID:
+${
+payload
+.
+sub
+}
+`
+);
+See the
+Open
+ID Connect
+documentation for the full list of fields (claims) returned.
+Return
+String
+— The identity token if available; otherwise
+null
+.
+get
+Installation
+Source()
+Returns an enum value that indicates how the script came to be installed as an add-on for the
+current user (for example, whether the user installed it personally through the Chrome Web
+Store, or whether a domain administrator installed it for all users).
+Return
+Installation
+Source
+— The source of installation.
+get
+OAuth
+Token()
+Gets the OAuth 2.0
+access
+token
+for the effective user. If the script's OAuth scopes are sufficient to authorize
+another Google API that normally requires its own OAuth flow (like
+Google Picker
+), scripts can bypass the
+second authorization prompt by passing this token instead. The token expires after a time (a
+few minutes at minimum); scripts should handle authorization failures and call this method to
+obtain a fresh token when needed.
+The token returned by this method only includes scopes that the script currently needs.
+Scopes that were previously authorized but are no longer used by the script are not included in
+the returned token. If additional OAuth scopes are needed beyond what the script itself
+requires, they can be
+specified
+in the script's
+manifest file.
+You can use this method to call Google APIs that Apps Script doesn't directly support. Pass
+the returned token in the `Authorization` header of an HTTP request using
+Url
+Fetch
+App.fetch(url, params)
+.
+const
+url
+=
+'https://www.googleapis.com/drive/v3/files'
+;
+const
+method
+=
+'GET'
+;
+const
+headers
+=
+{
+Authorization
+:
+'Bearer '
++
+ScriptApp
+.
+getOAuthToken
+(),
+};
+const
+response
+=
+UrlFetchApp
+.
+fetch
+(
+url
+,
+{
+method
+,
+headers
+,
+});
+Return
+String
+— A string representation of the OAuth 2.0 token.
+get
+Project
+Triggers()
+Gets all installable triggers associated with the current project and current user.
+Logger
+.
+log
+(
+`Current project has
+${
+ScriptApp
+.
+getProjectTriggers
+().
+length
+}
+triggers.`
+,
+);
+Return
+Trigger[]
+— An array of the current user's triggers associated with this project.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+get
+Script
+Id()
+Gets the script project's unique ID. This is the preferred method to get the unique identifier
+for the script project as opposed to
+get
+Project
+Key()
+. This ID can be used in all places
+where project key was previously provided.
+Return
+String
+— The script project's ID.
+get
+Service()
+Gets an object used to control publishing the script as a web app.
+// Get the URL of the published web app.
+const
+url
+=
+ScriptApp
+.
+getService
+().
+getUrl
+();
+Return
+Service
+— An object used to observe and control publishing the script as a web app.
+get
+User
+Triggers(document)
+Gets all installable triggers owned by this user in the given document, for this script or
+add-on only. This method cannot be used to see the triggers attached to other scripts.
+const
+doc
+=
+DocumentApp
+.
+getActiveDocument
+();
+const
+triggers
+=
+ScriptApp
+.
+getUserTriggers
+(
+doc
+);
+// Log the handler function for the first trigger in the array.
+Logger
+.
+log
+(
+triggers
+[
+0
+].
+getHandlerFunction
+());
+Parameters
+Name
+Type
+Description
+document
+Document
+A Google Docs file that may contain installable triggers.
+Return
+Trigger[]
+— An array of triggers owned by this user in the given document.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+get
+User
+Triggers(form)
+Gets all installable triggers owned by this user in the given form, for this script or add-on
+only. This method cannot be used to see the triggers attached to other scripts.
+const
+form
+=
+FormApp
+.
+getActiveForm
+();
+const
+triggers
+=
+ScriptApp
+.
+getUserTriggers
+(
+form
+);
+// Log the trigger source for the first trigger in the array.
+Logger
+.
+log
+(
+triggers
+[
+0
+].
+getTriggerSource
+());
+Parameters
+Name
+Type
+Description
+form
+Form
+A Google Forms file that may contain installable triggers.
+Return
+Trigger[]
+— An array of triggers owned by this user in the given form.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+get
+User
+Triggers(spreadsheet)
+Gets all installable triggers owned by this user in the given spreadsheet, for this script or
+add-on only. This method cannot be used to see the triggers attached to other scripts.
+const
+ss
+=
+SpreadsheetApp
+.
+getActiveSpreadsheet
+();
+const
+triggers
+=
+ScriptApp
+.
+getUserTriggers
+(
+ss
+);
+// Log the event type for the first trigger in the array.
+Logger
+.
+log
+(
+triggers
+[
+0
+].
+getEventType
+());
+Parameters
+Name
+Type
+Description
+spreadsheet
+Spreadsheet
+A Google Sheets file that may contain installable triggers.
+Return
+Trigger[]
+— An array of triggers owned by this user in the given spreadsheet.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+invalidate
+Auth()
+Invalidates the authorization the effective user has to execute the current script. Used to
+invalidate any permissions for the current script. This is especially useful for functions
+tagged as one-shot authorization. Since one-shot authorization functions can only be called the
+first run after the script has acquired authorization, if you wish to perform an action
+afterwards, you must revoke any authorization the script had, so the user can see the
+authorization dialog again.
+Script
+App
+.
+invalidateAuth
+();
+Throws
+Error
+— when invalidation fails
+new
+State
+Token()
+Creates a builder for a state token that can be used in a callback API (like an OAuth flow).
+// Generate a callback URL, given the name of a callback function. The script
+// does not need to be published as a web app; the /usercallback URL suffix
+// replaces /edit in any script's URL.
+function
+getCallbackURL
+(
+callbackFunction
+)
+{
+// IMPORTANT: Replace string below with the URL from your script, minus the
+// /edit at the end.
+const
+scriptUrl
+=
+'https://script.google.com/macros/d/1234567890abcdefghijklmonpqrstuvwxyz'
+;
+const
+urlSuffix
+=
+'/usercallback?state='
+;
+const
+stateToken
+=
+ScriptApp
+.
+newStateToken
+()
+.
+withMethod
+(
+callbackFunction
+)
+.
+withTimeout
+(
+120
+)
+.
+createToken
+();
+return
+scriptUrl
++
+urlSuffix
++
+stateToken
+;
+}
+In most OAuth2 flows, the
+state
+token is passed to the authorization endpoint
+directly (not as part of the callback URL), and the authorization endpoint then passes it as
+part of the callback URL.
+For example:
+The script redirects the user to OAuth2 authorize URL:
+https://accounts.google.com/o/oauth2/auth?state=token_generated_with_this_method&callback_uri=https://script.google.com/macros/d/1234567890abcdefghijklmonpqrstuvwxyz/usercallback&other_oauth2_parameters
+The user clicks authorize, and the OAuth2 authorization page redirects the user back to
+https://script.google.com/macros/d/1234567890abcdefghijklmonpqrstuvwxyz/usercallback?state=token_generated_with_this_method&other_params_that_include_tokens_or_grants
+The above redirect (back to
+http://script.google.com/...
+), causes the browser
+      request to
+/usercallback
+, which invokes the method specified by
+State
+Token
+Builder.withMethod(method)
+.
+Return
+State
+Token
+Builder
+— An object used to continue the state-token-building process.
+new
+Trigger(functionName)
+Begins the process of creating an installable trigger that, when fired, calls a given function.
+// Creates an edit trigger for a spreadsheet identified by ID.
+ScriptApp
+.
+newTrigger
+(
+'myFunction'
+)
+.
+forSpreadsheet
+(
+'1234567890abcdefghijklmnopqrstuvwxyz_a1b2c3'
+)
+.
+onEdit
+()
+.
+create
+();
+Before creating a trigger, verify that the associated function has all the necessary
+OAuth permissions
+Parameters
+Name
+Type
+Description
+function
+Name
+String
+The function to call when the trigger fires. You can use functions from
+    included libraries, such as
+Library.libFunction1
+.
+Return
+Trigger
+Builder
+— An object used to continue the trigger-building process.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp
+require
+All
+Scopes(authMode)
+Validates if the user has granted consent for all of the scopes requested by the script. Use
+this method if an execution flow relies on all of the scopes that a script requests. If any
+consents are missing, then this method ends the current execution and renders an authorization
+prompt to request the missing consents.
+This method only works when users run the script from a surface that supports granular
+consent, for example, from within the Apps Script IDE. When the script is run with missing
+consents from an unsupported surface, such as a Google Workspace add-on, the script renders an
+authorization prompt at the start of the execution to request all the scopes.
+Script
+App
+.
+requireAllScopes
+(
+ScriptApp
+.
+AuthMode
+.
+FULL
+);
+Parameters
+Name
+Type
+Description
+auth
+Mode
+Auth
+Mode
+The authorization mode for which script scopes needs to be evaluated, in almost
+    all cases, the value for
+auth
+Mode
+should be
+Script
+App.AuthMode.FULL
+, since
+    no other authorization mode requires that users grant authorization.
+require
+Scopes(authMode, oAuthScopes)
+Validates if the user has granted consent for the requested scopes. Use this method if an
+execution flow relies on one or more services. If any of the specified consents are missing,
+then this method ends the current execution and renders an authorization prompt to request the
+missing consents. Scopes that are invalid or not
+required
+by
+the script lead to an error.
+This method only works when users run the script from a surface that supports granular
+consent, for example, from within the Apps Script IDE. When the script is run with missing
+consents from an unsupported surface, such as a Google Workspace add-on, the script renders an
+authorization prompt at the start of the execution to request all the scopes.
+Script
+App
+.
+requireScopes
+(
+ScriptApp
+.
+AuthMode
+.
+FULL
+,
+[
+'https://www.googleapis.com/auth/documents'
+,
+'https://www.googleapis.com/auth/presentations'
+,
+]);
+Parameters
+Name
+Type
+Description
+auth
+Mode
+Auth
+Mode
+The authorization mode for which requested scopes needs to be evaluated, in
+    almost all cases, the value for
+auth
+Mode
+should be
+Script
+App.AuthMode.FULL
+,
+    since no other authorization mode requires that users grant authorization.
+oAuthScopes
+String[]
+The OAuth scopes that are required to complete the given execution flow.
+Deprecated methods
+get
+Project
+Key()
+Deprecated.
+use
+get
+Script
+Id()
+instead.
+Gets the project key of the current script. The project key is a unique identifier for scripts
+and used to compose the callback URL used in conjunction with
+new
+State
+Token()
+.
+When called in a
+library
+, this returns the
+project key of the outer-most script being executed.
+Return
+String
+— The project key of the current script.
+get
+Script
+Triggers()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all installable triggers associated with the current project and current user.
+Logger
+.
+log
+(
+`Current script has
+${
+ScriptApp
+.
+getScriptTriggers
+().
+length
+}
+triggers.`
+,
+);
+Return
+Trigger[]
+— An array of the current user's triggers associated with this project.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.scriptapp

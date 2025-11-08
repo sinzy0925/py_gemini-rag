@@ -1,0 +1,47 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/input-type/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+InputType is an enum that defines the input type of a widget.
+It has properties like TEXT, INTEGER, FLOAT, and EMAIL, each accepting a specific type of input.
+You call an enum by its parent class, name, and property, like
+CardService.InputType.INTEGER
+.
+Input
+Type
+An enum that defines the input type of the widget.
+Input
+Type.TEXT
+means that the input accepts regular text including all characters.
+Input
+Type.INTEGER
+means that the input accepts an integer.
+Input
+Type.FLOAT
+means that the input accepts a floating-point number.
+Input
+Type.EMAIL
+means that the input accepts an email address.
+To call an enum, you call its parent class, name, and property. For example,
+CardService.InputType.INTEGER
+.
+Developer Preview:
+Available as part of the
+Google Workspace Developer Preview Program
+, which grants early access to certain features.
+Properties
+Property
+Type
+Description
+TEXT
+Enum
+Accept regular text.
+INTEGER
+Enum
+Accept an integer.
+FLOAT
+Enum
+Accept a floating-point number.
+EMAIL
+Enum
+Accept an email address.

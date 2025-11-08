@@ -1,0 +1,153 @@
+Source Path: gas_docs_html/apps-script/reference/spreadsheet/pivot-filter/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PivotFilter is used to access and modify pivot table filters.
+You can get or set the filter criteria for a pivot filter.
+You can retrieve the pivot table or source data column associated with the filter.
+A pivot filter can be removed from the pivot table.
+Pivot
+Filter
+Access and modify pivot table filters.
+Methods
+Method
+Return type
+Brief description
+get
+Filter
+Criteria()
+Filter
+Criteria
+Returns the filter criteria for this pivot filter.
+get
+Pivot
+Table()
+Pivot
+Table
+Returns the
+Pivot
+Table
+that this filter belongs to.
+get
+Source
+Data
+Column()
+Integer
+Returns the number of the source data column this filter operates on.
+get
+Source
+Data
+Source
+Column()
+Data
+Source
+Column
+Returns the data source column the filter operates on.
+remove()
+void
+Removes this pivot filter from the pivot table.
+set
+Filter
+Criteria(filterCriteria)
+Pivot
+Filter
+Sets the filter criteria for this pivot filter.
+Detailed documentation
+get
+Filter
+Criteria()
+Returns the filter criteria for this pivot filter.
+Return
+Filter
+Criteria
+— The filter criteria for this pivot filter.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Pivot
+Table()
+Returns the
+Pivot
+Table
+that this filter belongs to.
+Return
+Pivot
+Table
+— The pivot table this filter belongs to.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Source
+Data
+Column()
+Returns the number of the source data column this filter operates on. These indices are
+1-based, for example if this filter applies to data in column A of the spreadsheet this method
+returns "1."
+Return
+Integer
+— The number of the source data column this filter applies to.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+get
+Source
+Data
+Source
+Column()
+Returns the data source column the filter operates on. Returns
+null
+if the pivot table
+is not a {DataSourcePivotTableApi}.
+Return
+Data
+Source
+Column
+— The data source column the filter operates on.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+remove()
+Removes this pivot filter from the pivot table.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets
+set
+Filter
+Criteria(filterCriteria)
+Sets the filter criteria for this pivot filter.
+Parameters
+Name
+Type
+Description
+filter
+Criteria
+Filter
+Criteria
+The filter criteria to set.
+Return
+Pivot
+Filter
+— The pivot filter for chaining.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/spreadsheets.currentonly
+https://www.googleapis.com/auth/spreadsheets

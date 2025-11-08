@@ -1,0 +1,1901 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/contacts-app/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+ContactsApp is a deprecated class for accessing and managing Google Contacts.
+Users can create, remove, and update their contacts using this class.
+The recommended alternative is the People API advanced service.
+Deprecated properties and methods are listed for reference.
+Contacts
+App
+Deprecated.
+Instead, use the
+People API advanced
+    service
+This class allows users to access their own Google Contacts and create, remove, and update
+contacts listed therein.
+Deprecated properties
+Property
+Type
+Description
+Extended
+Field
+Extended
+Field
+Field
+Field
+Gender
+Gender
+Month
+Month
+Priority
+Priority
+Sensitivity
+Sensitivity
+Deprecated methods
+Method
+Return type
+Brief description
+create
+Contact(givenName, familyName, email)
+Contact
+Creates a new contact.
+create
+Contact
+Group(name)
+Contact
+Group
+Creates a contact group with the given name
+// The code below creates a new contact group named "Work Friends"
+const
+group
+=
+ContactsApp
+.
+createContactGroup
+(
+'Work Friends'
+);
+delete
+Contact(contact)
+void
+Deletes the contact.
+delete
+Contact
+Group(group)
+void
+Deletes the contact group
+// The code below creates deletes the contact group named "Work Friends"
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+ContactsApp
+.
+deleteContactGroup
+(
+group
+);
+find
+By
+Email
+Address(email)
+Contact
+Finds a Contact with the given email address.
+find
+Contact
+Group(name)
+Contact
+Group
+Finds a contact group of the given name.
+get
+All
+Contacts()
+Contact[]
+Get all the contacts belonging to this user.
+get
+Contact(emailAddress)
+Contact
+Gets a contact by the email address.
+get
+Contact
+By
+Id(id)
+Contact
+Gets the contact with this id.
+get
+Contact
+Group(name)
+Contact
+Group
+Gets a contact group with the given name, or returns null if no such contact group is found.
+get
+Contact
+Group
+By
+Id(id)
+Contact
+Group
+Gets a contact group with the given id, or returns null if no such contact group is found.
+get
+Contact
+Groups()
+Contact
+Group[]
+Gets the complete list of the user's contact groups.
+get
+Contacts()
+Contact[]
+Gets all of the user's contacts.
+get
+Contacts
+By
+Address(query)
+Contact[]
+Get contacts matching an address.
+get
+Contacts
+By
+Address(query, label)
+Contact[]
+Get contacts matching an address, limited to a specific field.
+get
+Contacts
+By
+Address(query, label)
+Contact[]
+Get contacts matching an address, limited to the specified custom address label.
+get
+Contacts
+By
+Company(query)
+Contact[]
+Get contacts matching the company field.
+get
+Contacts
+By
+Custom
+Field(query, label)
+Contact[]
+Get contacts matching a given value in a custom field.
+get
+Contacts
+By
+Date(month, day, label)
+Contact[]
+Get contacts matching a given month and day for a particular standard field.
+get
+Contacts
+By
+Date(month, day, year, label)
+Contact[]
+Get contacts matching a given month, day, and year for a particular standard field.
+get
+Contacts
+By
+Date(month, day, year, label)
+Contact[]
+Get contacts matching a given month, day, and year for a particular custom field.
+get
+Contacts
+By
+Date(month, day, label)
+Contact[]
+Get contacts matching a given month and day for a particular custom field.
+get
+Contacts
+By
+Email
+Address(query)
+Contact[]
+Get contacts matching an email address.
+get
+Contacts
+By
+Email
+Address(query, label)
+Contact[]
+Get contacts matching an email address, limited to a specific field.
+get
+Contacts
+By
+Email
+Address(query, label)
+Contact[]
+Get contacts matching an email address, limited to the specified custom email address label.
+get
+Contacts
+By
+Group(group)
+Contact[]
+Get the contacts in a given ContactGroup.
+get
+Contacts
+By
+IM(query)
+Contact[]
+Get contacts matching an instant messaging address.
+get
+Contacts
+By
+IM(query, label)
+Contact[]
+Get contacts matching an instant messaging address, limited to a specific field.
+get
+Contacts
+By
+IM(query, label)
+Contact[]
+Get contacts matching an instant messaging address, limited to the specified custom instant
+messaging label.
+get
+Contacts
+By
+Job
+Title(query)
+Contact[]
+Get contacts matching the job title field.
+get
+Contacts
+By
+Name(query)
+Contact[]
+Get contacts matching a name.
+get
+Contacts
+By
+Name(query, label)
+Contact[]
+Get contacts matching a name, limited to a specific field.
+get
+Contacts
+By
+Notes(query)
+Contact[]
+Get contacts matching the notes field.
+get
+Contacts
+By
+Phone(query)
+Contact[]
+Get contacts matching a phone number.
+get
+Contacts
+By
+Phone(query, label)
+Contact[]
+Get contacts matching a phone number, limited to a specific field.
+get
+Contacts
+By
+Phone(query, label)
+Contact[]
+Get contacts matching a phone number, limited to the specified custom phone number label.
+get
+Contacts
+By
+Url(query)
+Contact[]
+Get contacts matching a URL.
+get
+Contacts
+By
+Url(query, label)
+Contact[]
+Get contacts matching a URL, limited to a specific field.
+get
+Contacts
+By
+Url(query, label)
+Contact[]
+Get contacts matching a URL, limited to the specified custom URL label.
+Deprecated methods
+create
+Contact(givenName, familyName, email)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Creates a new contact.
+// The code below creates a new contact with the name "John Doe" and the email
+// address "john.doe@example.com".
+const
+contact
+=
+ContactsApp
+.
+createContact
+(
+'John'
+,
+'Doe'
+,
+'john.doe@example.com'
+,
+);
+Parameters
+Name
+Type
+Description
+given
+Name
+String
+the first name of the contact
+family
+Name
+String
+the last name of the contact
+email
+String
+the email address of the contact
+Return
+Contact
+— the newly created Contact object
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+delete
+Contact(contact)
+create
+Contact
+Group(name)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Creates a contact group with the given name
+// The code below creates a new contact group named "Work Friends"
+const
+group
+=
+ContactsApp
+.
+createContactGroup
+(
+'Work Friends'
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the new contact group
+Return
+Contact
+Group
+— the newly created contact group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+delete
+Contact
+Group(group)
+delete
+Contact(contact)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes the contact.
+// The code below retrieves a contact with the email address
+// "john.doe@example.com" and then deletes that contact.
+const
+contact
+=
+ContactsApp
+.
+getContact
+(
+'john.doe@example.com'
+);
+ContactsApp
+.
+deleteContact
+(
+contact
+);
+Parameters
+Name
+Type
+Description
+contact
+Contact
+the contact to be deleted
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+create
+Contact(givenName, familyName, email)
+delete
+Contact
+Group(group)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes the contact group
+// The code below creates deletes the contact group named "Work Friends"
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+ContactsApp
+.
+deleteContactGroup
+(
+group
+);
+Parameters
+Name
+Type
+Description
+group
+Contact
+Group
+the contact group to delete
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+create
+Contact
+Group(name)
+find
+By
+Email
+Address(email)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Finds a Contact with the given email address.
+Parameters
+Name
+Type
+Description
+email
+String
+the email address of the contact to be found
+Return
+Contact
+— the Contact containing that email address
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+find
+Contact
+Group(name)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Finds a contact group of the given name.
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the contact group to find
+Return
+Contact
+Group
+— the contact group matching the given name
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+All
+Contacts()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get all the contacts belonging to this user.
+Return
+Contact[]
+— all the contacts for this user
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Contact(emailAddress)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets a contact by the email address.
+If multiple contacts share the same email address, the method favors those contacts who have
+marked the email address as primary; if none of the contacts had the email address marked as
+primary or multiple contacts had the email address marked as primary, then it returns the first
+result in the sorted contacts order.
+// The code below retrieves a contact with the email address
+// "john.doe@example.com".
+const
+contact
+=
+ContactsApp
+.
+getContact
+(
+'john.doe@example.com'
+);
+Parameters
+Name
+Type
+Description
+email
+Address
+String
+the email address of the contact
+Return
+Contact
+— the contact containing that email address
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contacts()
+get
+Contact
+By
+Id(id)
+get
+Contact
+By
+Id(id)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the contact with this id.
+// The code below retrieves the contact with the id
+// "http://www.google.com/m8/feeds/contacts/john.doe%40example.com/base/7c86afde08d34ca5"
+const
+id
+=
+'http://www.google.com/m8/feeds/contacts/john.doe%40example.com/base/7c86afde08d34c'
+;
+const
+contact
+=
+ContactsApp
+.
+getContactById
+(
+id
+);
+Parameters
+Name
+Type
+Description
+id
+String
+the id of the contact to retrieve
+Return
+Contact
+— the matching contact or null
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contact
+Group(name)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets a contact group with the given name, or returns null if no such contact group is found.
+// The code below returns the contact group with the name "Work Friends"
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the name of the contact group to match
+Return
+Contact
+Group
+— the matching contact group or null if no matching contact group is found
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact
+Groups()
+get
+Contact
+Group
+By
+Id(id)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets a contact group with the given id, or returns null if no such contact group is found.
+// The code below returns the contact group with the id
+// "http://www.google.com/m8/feeds/groups/john.doe%40example.com/base/54eefbb093fdecb"
+const
+id
+=
+'http://www.google.com/m8/feeds/groups/john.doe%40example.com/base/54eefbb093fdecb'
+;
+const
+group
+=
+ContactsApp
+.
+getContactGroupById
+(
+id
+);
+Parameters
+Name
+Type
+Description
+id
+String
+the id of the contact group to match
+Return
+Contact
+Group
+— the matching contact group or null if no matching contact group is found
+See also
+get
+Contact
+Groups()
+get
+Contact
+Groups()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the complete list of the user's contact groups.
+A user can have a list of Contacts, and potentially a list of Contact Groups also. Each
+Contact Group can contain Contacts. This method returns a list of all the Contact Groups.
+// The retrieves all the contract groups for the user and then logs the group
+// name of each contact group.
+const
+groups
+=
+ContactsApp
+.
+getContactGroups
+();
+for
+(
+let
+i
+=
+0
+;
+i
+<
+groups
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+groups
+[
+i
+].
+getName
+());
+}
+Return
+Contact
+Group[]
+— an array of the user's contact groups
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact
+Group(name)
+get
+Contacts()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all of the user's contacts.
+// The code below will retrieve all the user's contacts
+const
+contacts
+=
+ContactsApp
+.
+getContacts
+();
+Return
+Contact[]
+— an array of all the user's contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Address(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an address.
+// The code below returns an array of contacts where the contact's address
+// contains "San Francisco'.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByAddress
+(
+'San Francisco'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's addresses
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Address(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an address, limited to a specific field.
+// The code below returns an array of contacts where the contact's address
+// contains "San Francisco" in the Home address field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByAddress
+(
+'San Francisco'
+,
+ContactsApp
+.
+Field
+.
+HOME_ADDRESS
+,
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's addresses
+label
+Field
+the field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Address(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an address, limited to the specified custom address label.
+// The code below returns an array of contacts where the contact's address
+// contains "San Francisco" in a custom address label (created by the user)
+// called "vacation".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByAddress
+(
+'San Francisco'
+,
+'vacation'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's addresses with the specified custom address
+    label
+label
+String
+the custom address label to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Company(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching the company field.
+// The code below returns an array of contacts where the contact's company field
+// contains "Google".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByCompany
+(
+'Google'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's company field
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Custom
+Field(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a given value in a custom field.
+The custom field can be specified by a String or as one of the ContactsApp.ExtendedField
+values.
+// The code below returns an array of contacts where the contact's custom field
+// named "Favorite Sport" contains "tennis".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByCustomField
+(
+'tennis'
+,
+'Favorite Sport'
+,
+);
+Parameters
+Name
+Type
+Description
+query
+Object
+the string to search for in contact's custom field
+label
+Extended
+Field
+the custom field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Date(month, day, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a given month and day for a particular standard field.
+// The code below returns an array of contacts where the contact's "Birthday"
+// field contains April for the month and 19 for the day.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByDate
+(
+ContactsApp
+.
+Month
+.
+APRIL
+,
+19
+,
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+,
+);
+Parameters
+Name
+Type
+Description
+month
+Month
+the month to match, as one of the values from ContactsApp.Month
+day
+Integer
+the day to match
+label
+Field
+the field to search within, from ContactsApp.Field
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Date(month, day, year, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a given month, day, and year for a particular standard field.
+// The code below returns an array of contacts where the contact's "Birthday"
+// field contains April for the month, 19 for the day, and 1950 for the year.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByDate
+(
+ContactsApp
+.
+Month
+.
+APRIL
+,
+19
+,
+1950
+,
+ContactsApp
+.
+Field
+.
+BIRTHDAY
+,
+);
+Parameters
+Name
+Type
+Description
+month
+Month
+the month to match, as one of the values from ContactsApp.Month
+day
+Integer
+the day to match
+year
+Integer
+the year to match, can be null
+label
+Field
+the field to search within, from ContactsApp.Field
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Date(month, day, year, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a given month, day, and year for a particular custom field.
+// The code below returns an array of contacts where the contact's custom "Start
+// Date" field contains April for the month, 19 for the day, and 2011 for the
+// year.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByDate
+(
+ContactsApp
+.
+Month
+.
+APRIL
+,
+19
+,
+2011
+,
+'Start Date'
+,
+);
+Parameters
+Name
+Type
+Description
+month
+Month
+the month to match, as one of the values from ContactsApp.Month
+day
+Integer
+the day to match
+year
+Integer
+the year to match, can be null
+label
+String
+the custom field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Date(month, day, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a given month and day for a particular custom field.
+// The code below returns an array of contacts where the contact's custom "Start
+// Date" field contains April for the month and 19 for the day.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByDate
+(
+ContactsApp
+.
+Month
+.
+APRIL
+,
+19
+,
+'Start Date'
+,
+);
+Parameters
+Name
+Type
+Description
+month
+Month
+the month to match, as one of the values from ContactsApp.Month
+day
+Integer
+the day to match
+label
+String
+the custom field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Email
+Address(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an email address.
+// The code below returns an array of contacts where the contact's email address
+// contains "john.doe@example.com'.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByEmailAddress
+(
+'john.doe@example.com'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact email addresses
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Email
+Address(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an email address, limited to a specific field.
+// The code below returns an array of contacts where the contact's email address
+// contains "john.doe@example.com" in the Home email field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByEmailAddress
+(
+'john.doe@example.com'
+,
+ContactsApp
+.
+Field
+.
+HOME_EMAIL
+,
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact email addresses
+label
+Field
+the field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Email
+Address(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an email address, limited to the specified custom email address label.
+// The code below returns an array of contacts where the contact's email address
+// contains "john.doe@example.com" in a custom email address label (created by
+// the user) called "alternate".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByEmailAddress
+(
+'john.doe@example.com'
+,
+'alternate'
+,
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact email addresses with the specified custom
+    email address label
+label
+String
+the custom email address label to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Group(group)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get the contacts in a given ContactGroup.
+// The code below returns an array of contacts in the ContactGroup with the name
+// "Work Friends".
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+const
+contacts
+=
+ContactsApp
+.
+getContactsByGroup
+(
+group
+);
+Parameters
+Name
+Type
+Description
+group
+Contact
+Group
+the group of contacts
+Return
+Contact[]
+— an array of contacts in the given group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+IM(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an instant messaging address.
+// The code below returns an array of contacts where the contact's instant
+// messaging address contains "ChatWithJohnDoe" in any instant messaging field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByIM
+(
+'ChatWithJohnDoe'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's instant messaging addresses
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+IM(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an instant messaging address, limited to a specific field.
+// The code below returns an array of contacts where the contact's instant
+// messaging address contains "ChatWithJohnDoe" in the AIM instant messaging
+// field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByIM
+(
+'ChatWithJohnDoe'
+,
+ContactsApp
+.
+Field
+.
+AIM
+,
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's instant messaging addresses
+label
+Field
+the field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+IM(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching an instant messaging address, limited to the specified custom instant
+messaging label.
+// The code below returns an array of contacts where the contact's instant
+// messaging address contains "ChatWithJohnDoe" in a custom instant messaging
+// label (created by the user) called "eBuddy".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByIM
+(
+'ChatWithJohnDoe'
+,
+'eBuddy'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's instant messaging addresses with the
+    specified custom instant messaging label
+label
+String
+the custom instant messaging label to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Job
+Title(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching the job title field.
+// The code below returns an array of contacts where the contact's job title
+// field contains "Product Manager".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByJobTitle
+(
+'Product Manager'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's job title field
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Name(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a name.
+// The code below returns an array of contacts where the contact name contains
+// "John"
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact names
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Name(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a name, limited to a specific field.
+// The code below returns an array of contacts where the contact name contains
+// "John" in the Given Name field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John'
+,
+ContactsApp
+.
+Field
+.
+GIVEN_NAME
+,
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact names
+label
+Field
+the field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Notes(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching the notes field.
+// The code below returns an array of contacts where the contact's notes field
+// contains "sent birthday card".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByNotes
+(
+'sent birthday card'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's notes field
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Phone(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a phone number.
+This method will expand out lettered phone numbers, so if you search for '212-555-CODE' and
+you have '212-555-2633' in your contacts or vice versa, the method will find the appropriate
+contact.
+// The code below returns an array of contacts where the contact's phone number
+// contains "212-555-1234' in any phone number field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByPhone
+(
+'212-555-1234'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's phone numbers
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Phone(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a phone number, limited to a specific field.
+This method will expand out lettered phone numbers, so if you search for '212-555-CODE' and
+you have '212-555-2633' in your contacts or vice versa, the method will find the appropriate
+contact.
+// The code below returns an array of contacts where the contact's phone number
+// contains "212-555-1234" in the Home phone number field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByPhone
+(
+'212-555-1234'
+,
+ContactsApp
+.
+Field
+.
+HOME_PHONE
+,
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's phone numbers
+label
+Field
+the field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Phone(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a phone number, limited to the specified custom phone number label.
+This method will expand out lettered phone numbers, so if you search for '212-555-CODE' and
+you have '212-555-2633' in your contacts or vice versa, the method will find the appropriate
+contact.
+// The code below returns an array of contacts where the contact's phone number
+// contains "212-555-1234" in a custom phone number label (created by the user)
+// called "alternate".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByPhone
+(
+'212-555-1234'
+,
+'alternate'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's phone numbers with the specified custom
+    phone number label
+label
+String
+the custom phone number label to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Url(query)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a URL.
+// The code below returns an array of contacts where the contact's URL contains
+// "www.example.com' in any URL field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByUrl
+(
+'www.example.com'
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's URLs
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Url(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a URL, limited to a specific field.
+// The code below returns an array of contacts where the contact's URL contains
+// "www.example.com" in the Work URL field.
+const
+contacts
+=
+ContactsApp
+.
+getContactsByUrl
+(
+'www.example.com'
+,
+ContactsApp
+.
+Field
+.
+WORK_WEBSITE
+,
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's URLs
+label
+Field
+the field to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)
+get
+Contacts
+By
+Url(query, label)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Get contacts matching a URL, limited to the specified custom URL label.
+// The code below returns an array of contacts where the contact's URL contains
+// "www.example.com" in a custom URL label (created by the user) called
+// "alternate work".
+const
+contacts
+=
+ContactsApp
+.
+getContactsByUrl
+(
+'www.example.com'
+,
+'alternate work'
+,
+);
+Parameters
+Name
+Type
+Description
+query
+String
+the string to search for in contact's URLs with the specified custom URL label
+label
+String
+the custom URL label to search within
+Return
+Contact[]
+— an array of matching contacts
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Contact(emailAddress)

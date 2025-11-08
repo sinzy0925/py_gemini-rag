@@ -1,0 +1,16 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/grid-item-layout/index.html
+
+Grid
+Item
+Layout
+An enum that defines the image and text style of a GridItem.
+Properties
+Property
+Type
+Description
+TEXT_BELOW
+Enum
+The title and subtitle are shown below the grid item's image.
+TEXT_ABOVE
+Enum
+The title and subtitle are shown above the grid item's image.

@@ -1,0 +1,56 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/authorization-action/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+AuthorizationAction
+sends the user to the specified
+AuthorizationUrl
+when clicked.
+The
+setAuthorizationUrl(authorizationUrl)
+method is used to define the URL the user will be directed to from the authorization prompt.
+This method requires a
+String
+parameter for the authorization URL and returns the
+AuthorizationAction
+object for chaining.
+Authorization
+Action
+An authorization action that will send the user to the AuthorizationUrl when clicked.
+Card
+Service
+.
+newAuthorizationAction
+().
+setAuthorizationUrl
+(
+'http://google.com/'
+);
+Methods
+Method
+Return type
+Brief description
+set
+Authorization
+Url(authorizationUrl)
+Authorization
+Action
+Sets the authorization URL that user is taken to from the authorization prompt.
+Detailed documentation
+set
+Authorization
+Url(authorizationUrl)
+Sets the authorization URL that user is taken to from the authorization prompt. Required.
+Parameters
+Name
+Type
+Description
+authorization
+Url
+String
+The authorization URL to set.
+Return
+Authorization
+Action
+— This object, for chaining.

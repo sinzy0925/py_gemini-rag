@@ -1,0 +1,503 @@
+Source Path: gas_docs_html/apps-script/reference/contacts/contact-group/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The
+ContactGroup
+class is deprecated and should be replaced by the People API advanced service.
+A ContactGroup represents a group of contacts.
+The methods associated with ContactGroup, such as adding or removing contacts, deleting groups, and getting group information, are also deprecated.
+Contact
+Group
+Deprecated.
+Instead, use the
+People API advanced
+    service
+A ContactGroup is is a group of contacts.
+Deprecated methods
+Method
+Return type
+Brief description
+add
+Contact(contact)
+Contact
+Group
+Adds the given contact to this group
+// The code below creates a new contact and adds it to the "Work Friends"
+// contact group
+const
+contact
+=
+ContactsApp
+.
+createContact
+(
+'John'
+,
+'Doe'
+,
+'john.doe@example.com'
+,
+);
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+group
+.
+addContact
+(
+contact
+);
+delete
+Group()
+void
+Deletes this contact group.
+get
+Contacts()
+Contact[]
+Gets all the contacts in this contact group.
+get
+Group
+Name()
+String
+Returns the name of this group.
+get
+Id()
+String
+Gets the id of this contact group.
+get
+Name()
+String
+Gets the name of this contact group.
+is
+System
+Group()
+Boolean
+Gets a boolean value to determine whether this contact group is a system group (undeletable) or
+not.
+remove
+Contact(contact)
+Contact
+Group
+Removes the given contact from this group
+// The code below retrieves all the contacts named "John Doe' and removes them
+// from the "Work Friends" contact group
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+group
+.
+removeContact
+(
+contacts
+[
+i
+]);
+}
+set
+Group
+Name(name)
+void
+Sets the name of this group.
+set
+Name(name)
+Contact
+Group
+Sets the name of this contact group.
+Deprecated methods
+add
+Contact(contact)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Adds the given contact to this group
+// The code below creates a new contact and adds it to the "Work Friends"
+// contact group
+const
+contact
+=
+ContactsApp
+.
+createContact
+(
+'John'
+,
+'Doe'
+,
+'john.doe@example.com'
+,
+);
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+group
+.
+addContact
+(
+contact
+);
+Parameters
+Name
+Type
+Description
+contact
+Contact
+the contact to be added to the group
+Return
+Contact
+Group
+— this contact group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+remove
+Contact(contact)
+delete
+Group()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Deletes this contact group.
+Deletes non-system groups only; system groups cannot be deleted.
+// The code below retrieves a contact group named "Work Friends" and deletes it
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+group
+.
+deleteGroup
+();
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+is
+System
+Group()
+get
+Contacts()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets all the contacts in this contact group.
+// The code below retrieves all the contacts in the group named "Work Friends"
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+const
+contacts
+=
+group
+.
+getContacts
+();
+Return
+Contact[]
+— the contacts in this group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Group
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Returns the name of this group.
+Return
+String
+— the name of this group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Id()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the id of this contact group.
+// The code below retrieves a contact group named "Work Friends" and gets its id
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+const
+id
+=
+group
+.
+getId
+();
+Return
+String
+— the id of this group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+get
+Name()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets the name of this contact group.
+// The code below creates a new contact group and then retrieves its name
+const
+group
+=
+ContactsApp
+.
+createContactGroup
+(
+'Work Friends'
+);
+const
+name
+=
+group
+.
+getName
+();
+Return
+String
+— this name of this contact group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+set
+Name(name)
+is
+System
+Group()
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Gets a boolean value to determine whether this contact group is a system group (undeletable) or
+not.
+Systems groups are a set of groups that are predefined in Google Contacts, such as "My
+Contacts", "Family", "Coworkers", etc. The name of a system group usually contains the words
+"System Group".
+// The code below retrieves two contact groups, then logs whether or not
+// each is a system group.
+const
+myGroup
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+const
+systemGroup
+=
+ContactsApp
+.
+getContactGroup
+(
+'System Group: Coworkers'
+);
+Logger
+.
+log
+(
+myGroup
+.
+isSystemGroup
+());
+// Returns false, if the group exists.
+Logger
+.
+log
+(
+systemGroup
+.
+isSystemGroup
+());
+// Returns true.
+Return
+Boolean
+— whether or not this contact group is a system group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+remove
+Contact(contact)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Removes the given contact from this group
+// The code below retrieves all the contacts named "John Doe' and removes them
+// from the "Work Friends" contact group
+const
+contacts
+=
+ContactsApp
+.
+getContactsByName
+(
+'John Doe'
+);
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+for
+(
+const
+i
+in
+contacts
+)
+{
+group
+.
+removeContact
+(
+contacts
+[
+i
+]);
+}
+Parameters
+Name
+Type
+Description
+contact
+Contact
+the contact to be removed from the group
+Return
+Contact
+Group
+— this contact group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+add
+Contact(contact)
+set
+Group
+Name(name)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the name of this group.
+Parameters
+Name
+Type
+Description
+name
+String
+the name to set for this group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+set
+Name(name)
+Deprecated.
+This function is deprecated and should not be used in new scripts.
+Sets the name of this contact group.
+// The code below retrieves the contact group named "Work Friends" and renames
+// it to "Work Buddies"
+const
+group
+=
+ContactsApp
+.
+getContactGroup
+(
+'Work Friends'
+);
+group
+.
+setName
+(
+'Work Buddies'
+);
+Parameters
+Name
+Type
+Description
+name
+String
+the new name for the contact group
+Return
+Contact
+Group
+— this contact group
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.google.com/m8/feeds
+See also
+get
+Name()

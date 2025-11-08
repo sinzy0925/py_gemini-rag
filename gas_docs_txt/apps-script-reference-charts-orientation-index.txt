@@ -1,0 +1,17 @@
+Source Path: gas_docs_html/apps-script/reference/charts/orientation/index.html
+
+Orientation
+An enumeration of the orientation of an object.
+To call an enum, you call its parent class, name, and property. For example,
+Charts.Orientation.HORIZONTAL
+.
+Properties
+Property
+Type
+Description
+HORIZONTAL
+Enum
+Horizontal orientation.
+VERTICAL
+Enum
+Vertical orientation.

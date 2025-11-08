@@ -1,0 +1,1397 @@
+Source Path: gas_docs_html/apps-script/reference/data-studio/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Data Studio service allows scripts to access and modify Data Studio Community Connectors.
+It provides classes and methods for interacting with various aspects of Data Studio connectors, including configuration, fields, authentication, and data retrieval.
+Enums are defined for aggregation types, authentication types, BigQuery parameter types, and field types.
+Builders are available for creating responses for authentication type, data, schema, and set credentials requests.
+Error handling can be implemented using DebugError for admin-only errors and UserError for errors visible to users.
+Data Studio
+This service allows scripts to access and modify Data Studio
+Community
+    Connectors
+.
+Classes
+Name
+Brief description
+Aggregation
+Type
+An enum that defines the aggregation types that can be set for a
+Field
+.
+Auth
+Type
+An enum that defines the authentication types that can be set for a connector.
+Big
+Query
+Config
+A configuration object for a native BigQuery connector.
+Big
+Query
+Parameter
+Type
+An enum that defines the BigQuery parameter types that you can set.
+Checkbox
+Contains checkbox information for the config.
+Community
+Connector
+Community
+Connector enables scripts to access builders and utilities to help with development of
+Community Connectors for Data Studio.
+Config
+Contains the configuration entries for a connector.
+Data
+Studio
+App
+Data
+Studio
+App allows scripts to interact with developer-oriented features for Data Studio.
+Debug
+Error
+An error that is only visible to admins of the connector.
+Field
+Contains field-related data.
+Field
+Type
+An enum that defines the types that can be set for a
+Field
+.
+Fields
+Contains a set of
+Field
+s for a community connector.
+Get
+Auth
+Type
+Response
+Builder to create a
+get
+Auth
+Type()
+response for your script project.
+Get
+Data
+Response
+Builder to create a
+get
+Data()
+response for your script project.
+Get
+Schema
+Response
+Builder to create a
+get
+Schema()
+response for your script project.
+Info
+Contains info data for the config.
+Option
+Builder
+A builder for creating options for
+Select
+Single
+s and
+Select
+Multiple
+s.
+Select
+Multiple
+Contains select multiple information for the config.
+Select
+Single
+Contains select single information for the config.
+Set
+Credentials
+Response
+Builder to create a
+set
+Credentials()
+response for your script project.
+Text
+Area
+Contains text area information for the config.
+Text
+Input
+Contains text input information for the config.
+User
+Error
+An error that is shown to users of the connector.
+Aggregation
+Type
+Properties
+Property
+Type
+Description
+AVG
+Enum
+Average.
+COUNT
+Enum
+Count.
+COUNT_DISTINCT
+Enum
+Count Distinct.
+MAX
+Enum
+Max.
+MIN
+Enum
+Min.
+SUM
+Enum
+Sum.
+AUTO
+Enum
+Auto.
+Auth
+Type
+Properties
+Property
+Type
+Description
+NONE
+Enum
+No authorization needed.
+OAUTH2
+Enum
+OAuth2 authorization needed.
+USER_PASS
+Enum
+Username and password credentials needed.
+PATH_USER_PASS
+Enum
+Username, path, and password needed.
+PATH_KEY
+Enum
+Path and key needed.
+KEY
+Enum
+API Key or Token needed.
+USER_TOKEN
+Enum
+Username and token needed.
+Big
+Query
+Config
+Methods
+Method
+Return type
+Brief description
+add
+Query
+Parameter(name, type, value)
+Big
+Query
+Config
+Adds a query parameter to this
+Big
+Query
+Config
+.
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Access
+Token(accessToken)
+Big
+Query
+Config
+Sets the access token of this
+Big
+Query
+Config
+.
+set
+Billing
+Project
+Id(billingProjectId)
+Big
+Query
+Config
+Sets the billing project ID of this
+Big
+Query
+Config
+.
+set
+Query(query)
+Big
+Query
+Config
+Sets the SQL query of this
+Big
+Query
+Config
+.
+set
+Use
+Standard
+Sql(useStandardSql)
+Big
+Query
+Config
+Determines if the query is interpreted as standard or legacy SQL.
+Big
+Query
+Parameter
+Type
+Properties
+Property
+Type
+Description
+STRING
+Enum
+String.
+INT64
+Enum
+64-bit integer.
+BOOL
+Enum
+Boolean.
+FLOAT64
+Enum
+64-bit floating point number.
+Checkbox
+Methods
+Method
+Return type
+Brief description
+set
+Allow
+Override(allowOverride)
+Checkbox
+Enables overriding for this config entry.
+set
+Help
+Text(helpText)
+Checkbox
+Sets the help text for this configuration entry.
+set
+Id(id)
+Checkbox
+Sets the unique ID for this configuration entry.
+set
+Is
+Dynamic(isDynamic)
+Checkbox
+Sets the dynamic status for this configuration entry.
+set
+Name(name)
+Checkbox
+Sets the display name for this configuration entry.
+Community
+Connector
+Properties
+Property
+Type
+Description
+Aggregation
+Type
+Aggregation
+Type
+The
+Aggregation
+Type
+enumeration.
+Auth
+Type
+Auth
+Type
+The
+Auth
+Type
+enumeration.
+Big
+Query
+Parameter
+Type
+Big
+Query
+Parameter
+Type
+The
+Big
+Query
+Parameter
+Type
+enumeration.
+Field
+Type
+Field
+Type
+The
+Field
+Type
+enumeration.
+Methods
+Method
+Return type
+Brief description
+get
+Config()
+Config
+Returns a
+Config
+object.
+get
+Fields()
+Fields
+Returns a
+Fields
+object.
+new
+Auth
+Type
+Response()
+Get
+Auth
+Type
+Response
+Returns a new
+Get
+Auth
+Type
+Response
+object.
+new
+Big
+Query
+Config()
+Big
+Query
+Config
+Returns a new
+Big
+Query
+Config
+object.
+new
+Debug
+Error()
+Debug
+Error
+Returns a new
+Debug
+Error
+object.
+new
+Get
+Data
+Response()
+Get
+Data
+Response
+Returns a new
+Get
+Data
+Response
+object.
+new
+Get
+Schema
+Response()
+Get
+Schema
+Response
+Returns a new
+Get
+Schema
+Response
+object.
+new
+Set
+Credentials
+Response()
+Set
+Credentials
+Response
+Returns a new
+Set
+Credentials
+Response
+object.
+new
+User
+Error()
+User
+Error
+Returns a new
+User
+Error
+object.
+Config
+Methods
+Method
+Return type
+Brief description
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+new
+Checkbox()
+Checkbox
+Returns a new checkbox configuration entry.
+new
+Info()
+Info
+Returns a new info configuration entry.
+new
+Option
+Builder()
+Option
+Builder
+Returns a new options builder.
+new
+Select
+Multiple()
+Select
+Multiple
+Returns a new select multiple configuration entry.
+new
+Select
+Single()
+Select
+Single
+Returns a new select single configuration entry.
+new
+Text
+Area()
+Text
+Area
+Returns a new text area configuration entry.
+new
+Text
+Input()
+Text
+Input
+Returns a new text input configuration entry.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Date
+Range
+Required(dateRangeRequired)
+Config
+If
+true
+, a date range is provided for getData() requests.
+set
+Is
+Stepped
+Config(isSteppedConfig)
+Config
+If
+true
+,
+get
+Config()
+is called again with the current user configuration.
+Data
+Studio
+App
+Methods
+Method
+Return type
+Brief description
+create
+Community
+Connector()
+Community
+Connector
+Creates a new Community Connector.
+Debug
+Error
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Text(text)
+Debug
+Error
+Sets the text of the debug error, which is only shown to admins.
+throw
+Exception()
+void
+Triggers this exception to be thrown.
+Field
+Methods
+Method
+Return type
+Brief description
+get
+Aggregation()
+Aggregation
+Type
+Returns the
+Aggregation
+Type
+of this
+Field
+.
+get
+Description()
+String
+Returns the description of this
+Field
+.
+get
+Formula()
+String
+Returns the formula of this
+Field
+.
+get
+Group()
+String
+Returns the group of this
+Field
+.
+get
+Id()
+String
+Returns the ID of this
+Field
+.
+get
+Is
+Reaggregatable()
+Boolean
+Returns
+true
+if this field can be reaggregated,
+false
+otherwise.
+get
+Name()
+String
+Returns the name of this
+Field
+.
+get
+Type()
+Field
+Type
+Returns the
+Field
+Type
+of this
+Field
+.
+is
+Default()
+Boolean
+Returns
+true
+if this
+Field
+is the default metric or dimension.
+is
+Dimension()
+Boolean
+Returns
+true
+if this field is a dimension.
+is
+Hidden()
+Boolean
+Returns
+true
+if this
+Field
+is hidden.
+is
+Metric()
+Boolean
+Returns
+true
+if this field is a metric.
+set
+Aggregation(aggregation)
+Field
+Sets the aggregation type of this
+Field
+.
+set
+Description(description)
+Field
+Sets the description of this
+Field
+.
+set
+Formula(formula)
+Field
+Sets the formula of this
+Field
+.
+set
+Group(group)
+Field
+Sets the group of this
+Field
+.
+set
+Id(id)
+Field
+Sets the ID of this
+Field
+.
+set
+Is
+Hidden(isHidden)
+Field
+Sets the hidden status of this
+Field
+.
+set
+Is
+Reaggregatable(isReaggregatable)
+Field
+Sets the reaggregation-permitted status for a
+Field
+.
+set
+Name(name)
+Field
+Sets the name of this
+Field
+.
+set
+Type(type)
+Field
+Sets the
+Field
+Type
+of this
+Field
+.
+Field
+Type
+Properties
+Property
+Type
+Description
+YEAR
+Enum
+Year in the format of YYYY such as 2017.
+YEAR_QUARTER
+Enum
+Year and quarter in the format of YYYYQ such as 20171.
+YEAR_MONTH
+Enum
+Year and month in the format of YYYYMM such as 201703.
+YEAR_WEEK
+Enum
+Year and week in the format of YYYYww such as 201707.
+YEAR_MONTH_DAY
+Enum
+Year, month, and day in the format of YYYYMMDD such as 20170317.
+YEAR_MONTH_DAY_HOUR
+Enum
+Year, month, day, and hour in the format of YYYYMMDDHH such as 2017031703.
+YEAR_MONTH_DAY_MINUTE
+Enum
+Year, month, day, hour, and minute in the format of YYYYMMDDHHmm such as 201703170230.
+YEAR_MONTH_DAY_SECOND
+Enum
+Year, month, day, hour, minute, and second in the format of YYYYMMDDHHmmss such as
+20170317023017.
+QUARTER
+Enum
+Quarter in the format of 1, 2, 3, or 4).
+MONTH
+Enum
+Month in the format of MM such as 03.
+WEEK
+Enum
+Week in the format of ww such as 07.
+MONTH_DAY
+Enum
+Month and day in the format of MMDD such as 0317.
+DAY_OF_WEEK
+Enum
+A number in the range of [0,6] with 0 representing Sunday.
+DAY
+Enum
+Day in the format of DD such as 17.
+HOUR
+Enum
+Hour in the format of HH such as 13.
+MINUTE
+Enum
+Minute in the format of mm such as 12.
+DURATION
+Enum
+A duration of time in seconds.
+COUNTRY
+Enum
+A country such as United States.
+COUNTRY_CODE
+Enum
+A country code such as US.
+CONTINENT
+Enum
+A continent such as Americas.
+CONTINENT_CODE
+Enum
+A continent code such as 019.
+SUB_CONTINENT
+Enum
+A sub-continent such as North America.
+SUB_CONTINENT_CODE
+Enum
+A sub-continent code such as 003.
+REGION
+Enum
+A region such as California.
+REGION_CODE
+Enum
+A region code such as CA.
+CITY
+Enum
+A city such as Mountain View.
+CITY_CODE
+Enum
+A city code such as 1014044.
+METRO
+Enum
+A metro such as San Francisco-Oakland-San Jose CA.
+METRO_CODE
+Enum
+A metro code such as 200807.
+LATITUDE_LONGITUDE
+Enum
+A latitude longitude pair such as 51.5074, -0.1278.
+NUMBER
+Enum
+A decimal number.
+PERCENT
+Enum
+Decimal percentage (can be over 1.0).
+TEXT
+Enum
+Free-form text.
+BOOLEAN
+Enum
+A
+true
+or
+false
+boolean value.
+URL
+Enum
+A URL as text such as https://google.com.
+HYPERLINK
+Enum
+A hyperlink.
+IMAGE
+Enum
+An image.
+IMAGE_LINK
+Enum
+An image link.
+CURRENCY_AED
+Enum
+Currency from AED.
+CURRENCY_ALL
+Enum
+Currency from ALL.
+CURRENCY_ARS
+Enum
+Currency from ARS.
+CURRENCY_AUD
+Enum
+Currency from AUD.
+CURRENCY_BDT
+Enum
+Currency from BDT.
+CURRENCY_BGN
+Enum
+Currency from BGN.
+CURRENCY_BOB
+Enum
+Currency from BOB.
+CURRENCY_BRL
+Enum
+Currency from BRL.
+CURRENCY_CAD
+Enum
+Currency from CAD.
+CURRENCY_CDF
+Enum
+Currency from CDF.
+CURRENCY_CHF
+Enum
+Currency from CHF.
+CURRENCY_CLP
+Enum
+Currency from CLP.
+CURRENCY_CNY
+Enum
+Currency from CNY.
+CURRENCY_COP
+Enum
+Currency from COP.
+CURRENCY_CRC
+Enum
+Currency from CRC.
+CURRENCY_CZK
+Enum
+Currency from CZK.
+CURRENCY_DKK
+Enum
+Currency from DKK.
+CURRENCY_DOP
+Enum
+Currency from DOP.
+CURRENCY_EGP
+Enum
+Currency from EGP.
+CURRENCY_ETB
+Enum
+Currency from ETB.
+CURRENCY_EUR
+Enum
+Currency from EUR.
+CURRENCY_GBP
+Enum
+Currency from GBP.
+CURRENCY_HKD
+Enum
+Currency from HKD.
+CURRENCY_HRK
+Enum
+Currency from HRK.
+CURRENCY_HUF
+Enum
+Currency from HUF.
+CURRENCY_IDR
+Enum
+Currency from IDR.
+CURRENCY_ILS
+Enum
+Currency from ILS.
+CURRENCY_INR
+Enum
+Currency from INR.
+CURRENCY_IRR
+Enum
+Currency from IRR.
+CURRENCY_ISK
+Enum
+Currency from ISK.
+CURRENCY_JMD
+Enum
+Currency from JMD.
+CURRENCY_JPY
+Enum
+Currency from JPY.
+CURRENCY_KRW
+Enum
+Currency from KRW.
+CURRENCY_LKR
+Enum
+Currency from LKR.
+CURRENCY_LTL
+Enum
+Currency from LTL.
+CURRENCY_MNT
+Enum
+Currency from MNT.
+CURRENCY_MVR
+Enum
+Currency from MVR.
+CURRENCY_MXN
+Enum
+Currency from MXN.
+CURRENCY_MYR
+Enum
+Currency from MYR.
+CURRENCY_NGN
+Enum
+Currency from NGN.
+CURRENCY_NOK
+Enum
+Currency from NOK.
+CURRENCY_NZD
+Enum
+Currency from NZD.
+CURRENCY_PAB
+Enum
+Currency from PAB.
+CURRENCY_PEN
+Enum
+Currency from PEN.
+CURRENCY_PHP
+Enum
+Currency from PHP.
+CURRENCY_PKR
+Enum
+Currency from PKR.
+CURRENCY_PLN
+Enum
+Currency from PLN.
+CURRENCY_RON
+Enum
+Currency from RON.
+CURRENCY_RSD
+Enum
+Currency from RSD.
+CURRENCY_RUB
+Enum
+Currency from RUB.
+CURRENCY_SAR
+Enum
+Currency from SAR.
+CURRENCY_SEK
+Enum
+Currency from SEK.
+CURRENCY_SGD
+Enum
+Currency from SGD.
+CURRENCY_THB
+Enum
+Currency from THB.
+CURRENCY_TRY
+Enum
+Currency from TRY.
+CURRENCY_TWD
+Enum
+Currency from TWD.
+CURRENCY_TZS
+Enum
+Currency from TZS.
+CURRENCY_UAH
+Enum
+Currency from UAH.
+CURRENCY_USD
+Enum
+Currency from USD.
+CURRENCY_UYU
+Enum
+Currency from UYU.
+CURRENCY_VEF
+Enum
+Currency from VEF.
+CURRENCY_VND
+Enum
+Currency from VND.
+CURRENCY_YER
+Enum
+Currency from YER.
+CURRENCY_ZAR
+Enum
+Currency from ZAR.
+Fields
+Methods
+Method
+Return type
+Brief description
+as
+Array()
+Field[]
+Returns a view of this object as an array.
+build()
+Object[]
+Validates this object and returns it in the format needed by Data Studio.
+for
+Ids(ids)
+Fields
+Returns a new
+Fields
+object filtered to
+Field
+s with an ID in
+ids
+.
+get
+Default
+Dimension()
+Field
+Returns the default dimension to be used for the set of fields.
+get
+Default
+Metric()
+Field
+Returns the default metric to be used for the set of fields.
+get
+Field
+By
+Id(fieldId)
+Field
+Returns a field with a given ID, or
+null
+if no field with that ID is in this
+Fields
+object.
+new
+Dimension()
+Field
+Returns a new dimension
+Field
+.
+new
+Metric()
+Field
+Returns a new metric
+Field
+.
+set
+Default
+Dimension(fieldId)
+void
+Sets the default dimension to be used for the set of fields.
+set
+Default
+Metric(fieldId)
+void
+Sets the default metric to be used for the set of fields.
+Get
+Auth
+Type
+Response
+Methods
+Method
+Return type
+Brief description
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Auth
+Type(authType)
+Get
+Auth
+Type
+Response
+Sets the
+Auth
+Type
+of the builder.
+set
+Help
+Url(helpUrl)
+Get
+Auth
+Type
+Response
+Sets the help URL of the builder.
+Get
+Data
+Response
+Methods
+Method
+Return type
+Brief description
+add
+All
+Rows(rows)
+Get
+Data
+Response
+Adds multiple rows of data to this
+Get
+Data
+Response
+.
+add
+Row(row)
+Get
+Data
+Response
+Adds a row of data to this
+Get
+Data
+Response
+.
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+set
+Fields(fields)
+Get
+Data
+Response
+Sets the
+Fields
+of the builder.
+set
+Filters
+Applied(filtersApplied)
+Get
+Data
+Response
+Sets the filters applied status for this builder.
+Get
+Schema
+Response
+Methods
+Method
+Return type
+Brief description
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Fields(fields)
+Get
+Schema
+Response
+Sets the
+Fields
+of the builder.
+Info
+Methods
+Method
+Return type
+Brief description
+set
+Id(id)
+Info
+Sets the unique ID for this configuration entry.
+set
+Text(text)
+Info
+Sets the text for this configuration entry.
+Option
+Builder
+Methods
+Method
+Return type
+Brief description
+set
+Label(label)
+Option
+Builder
+Sets the label of this option builder.
+set
+Value(value)
+Option
+Builder
+Sets the value of this option builder.
+Select
+Multiple
+Methods
+Method
+Return type
+Brief description
+add
+Option(optionBuilder)
+Select
+Multiple
+Adds a new select option.
+set
+Allow
+Override(allowOverride)
+Select
+Multiple
+Enables overriding for this config entry.
+set
+Help
+Text(helpText)
+Select
+Multiple
+Sets the help text for this configuration entry.
+set
+Id(id)
+Select
+Multiple
+Sets the unique ID for this configuration entry.
+set
+Is
+Dynamic(isDynamic)
+Select
+Multiple
+Sets the dynamic status for this configuration entry.
+set
+Name(name)
+Select
+Multiple
+Sets the display name for this configuration entry.
+Select
+Single
+Methods
+Method
+Return type
+Brief description
+add
+Option(optionBuilder)
+Select
+Single
+Adds a new select option.
+set
+Allow
+Override(allowOverride)
+Select
+Single
+Enables overriding for this config entry.
+set
+Help
+Text(helpText)
+Select
+Single
+Sets the help text for this configuration entry.
+set
+Id(id)
+Select
+Single
+Sets the unique ID for this configuration entry.
+set
+Is
+Dynamic(isDynamic)
+Select
+Single
+Sets the dynamic status for this configuration entry.
+set
+Name(name)
+Select
+Single
+Sets the display name for this configuration entry.
+Set
+Credentials
+Response
+Methods
+Method
+Return type
+Brief description
+build()
+Object
+Validates this object and returns it in the format needed by Data Studio.
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Is
+Valid(isValid)
+Set
+Credentials
+Response
+Sets the valid status of this
+Set
+Credentials
+Response
+.
+Text
+Area
+Methods
+Method
+Return type
+Brief description
+set
+Allow
+Override(allowOverride)
+Text
+Area
+Enables overriding for this config entry.
+set
+Help
+Text(helpText)
+Text
+Area
+Sets the help text for this configuration entry.
+set
+Id(id)
+Text
+Area
+Sets the unique ID for this configuration entry.
+set
+Is
+Dynamic(isDynamic)
+Text
+Area
+Sets the dynamic status for this configuration entry.
+set
+Name(name)
+Text
+Area
+Sets the display name for this configuration entry.
+set
+Placeholder(placeholder)
+Text
+Area
+Sets the placeholder text for this configuration entry.
+Text
+Input
+Methods
+Method
+Return type
+Brief description
+set
+Allow
+Override(allowOverride)
+Text
+Input
+Enables overriding for this config entry.
+set
+Help
+Text(helpText)
+Text
+Input
+Sets the help text for this configuration entry.
+set
+Id(id)
+Text
+Input
+Sets the unique ID for this configuration entry.
+set
+Is
+Dynamic(isDynamic)
+Text
+Input
+Sets the dynamic status for this configuration entry.
+set
+Name(name)
+Text
+Input
+Sets the display name for this configuration entry.
+set
+Placeholder(placeholder)
+Text
+Input
+Sets the placeholder text for this configuration entry.
+User
+Error
+Methods
+Method
+Return type
+Brief description
+print
+Json()
+String
+Prints the JSON representation of this object.
+set
+Debug
+Text(text)
+User
+Error
+Sets the text of the debug error, which is only shown to admins.
+set
+Text(text)
+User
+Error
+Sets the text of the user error.
+throw
+Exception()
+void
+Triggers this exception to be thrown.

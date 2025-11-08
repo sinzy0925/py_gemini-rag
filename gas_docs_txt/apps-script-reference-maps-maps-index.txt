@@ -1,0 +1,247 @@
+Source Path: gas_docs_html/apps-script/reference/maps/maps/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Maps service allows for finding directions, geocoding, sampling elevation, and creating static map images.
+It includes properties for DirectionFinder and StaticMap enums.
+Key methods include decoding and encoding polylines, creating new instances of DirectionFinder, ElevationSampler, Geocoder, and StaticMap, and setting authentication for Google Maps APIs Premium Plan accounts.
+Maps
+Allows for direction finding, geocoding, elevation sampling and the creation of static map
+images.
+Properties
+Property
+Type
+Description
+Direction
+Finder
+Direction
+Finder
+Enums
+Static
+Map
+Static
+Map
+Enums
+Methods
+Method
+Return type
+Brief description
+decode
+Polyline(polyline)
+Number[]
+Decodes an encoded polyline string back into an array of points.
+encode
+Polyline(points)
+String
+Encodes an array of points into a string.
+new
+Direction
+Finder()
+Direction
+Finder
+Creates a new DirectionFinder object.
+new
+Elevation
+Sampler()
+Elevation
+Sampler
+Creates an ElevationSampler object.
+new
+Geocoder()
+Geocoder
+Creates a new Geocoder object.
+new
+Static
+Map()
+Static
+Map
+Creates a new StaticMap object.
+set
+Authentication(clientId, signingKey)
+void
+Enables the use of an externally established
+Google Maps APIs Premium Plan
+account,
+to leverage additional
+quota
+allowances
+.
+Detailed documentation
+decode
+Polyline(polyline)
+Decodes an encoded polyline string back into an array of points.
+// Decodes a string representation of the latitudes and longitudes of
+// Minneapolis and Milwaukee respectively.
+const
+polyline
+=
+'qvkpG`qhxPbgyI_zq_@'
+;
+const
+points
+=
+Maps
+.
+decodePolyline
+(
+polyline
+);
+for
+(
+let
+i
+=
+0
+;
+i
+<
+points
+.
+length
+;
+i
++=
+2
+)
+{
+Logger
+.
+log
+(
+'%s, %s'
+,
+points
+[
+i
+],
+points
+[
+i
++
+1
+]);
+}
+Parameters
+Name
+Type
+Description
+polyline
+String
+An encoded polyline to decode.
+Return
+Number[]
+— An array of latitude longitude pairs (lat0, long0, lat1, long1, ...).
+See also
+Encoded Polyline Format
+encode
+Polyline(points)
+Encodes an array of points into a string.
+// The latitudes and longitudes of New York and Boston respectively.
+const
+points
+=
+[
+40.77
+,
+-
+73.97
+,
+42.34
+,
+-
+71.04
+];
+const
+polyline
+=
+Maps
+.
+encodePolyline
+(
+points
+);
+Parameters
+Name
+Type
+Description
+points
+Number[]
+An array of latitude/longitude pairs to encode.
+Return
+String
+— An encoded string representing those points.
+See also
+Encoded Polyline Format
+new
+Direction
+Finder()
+Creates a new DirectionFinder object.
+Return
+Direction
+Finder
+— A new direction finder object.
+new
+Elevation
+Sampler()
+Creates an ElevationSampler object.
+Return
+Elevation
+Sampler
+— A new elevation sampler object.
+new
+Geocoder()
+Creates a new Geocoder object.
+Return
+Geocoder
+— A new geocoder object.
+new
+Static
+Map()
+Creates a new StaticMap object.
+Return
+Static
+Map
+— A new static map object.
+set
+Authentication(clientId, signingKey)
+Enables the use of an externally established
+Google Maps APIs Premium Plan
+account,
+to leverage additional
+quota
+allowances
+. Your client ID and signing key can be obtained from the Google Enterprise
+Support Portal. Set these values to
+null
+to go back to using the default quota
+allowances.
+Note
+: This method doesn't work with API keys. Additionally,
+please note that Premium Plan is no longer available for new customers. If you don't already
+have a Premium Plan license, please don't call
+set
+Authentication(clientId, signingKey)
+. You are able to use
+the
+Maps
+methods with the default quota allowances.
+Maps
+.
+setAuthentication
+(
+'gme-123456789'
+,
+'VhSEZvOXVSdnlxTnpJcUE'
+);
+Parameters
+Name
+Type
+Description
+client
+Id
+String
+A client identifier.
+signing
+Key
+String
+A private signing key.

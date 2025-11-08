@@ -1,0 +1,129 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/chip-list/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+A ChipList holds a set of Chip objects displayed in a row, wrapping to the next line or allowing horizontal scrolling.
+It is available for Google Chat apps and in developer preview for Google Workspace add-ons.
+Key methods include
+addChip(chip)
+to add chips and
+setLayout(layout)
+to set the display layout.
+Chip
+List
+Holds a set of
+Chip
+objects that are displayed in a row, wrapping to the next line to
+horizontal scrollable.
+Available for Google Chat apps. In developer preview for Google Workspace add-ons.
+Developer Preview:
+Available as part of the
+Google Workspace Developer Preview Program
+, which grants early access to certain features.
+const
+chip
+=
+CardService
+.
+newChip
+();
+// Finish building the text chip...
+const
+chipList
+=
+CardService
+.
+newChipList
+()
+.
+setLayout
+(
+CardService
+.
+ChipListLayout
+.
+WRAPPED
+)
+.
+addChip
+(
+chip
+);
+Methods
+Method
+Return type
+Brief description
+add
+Chip(chip)
+Chip
+List
+Adds a chip.
+set
+Layout(layout)
+Chip
+List
+Sets the chip list layout.
+Detailed documentation
+add
+Chip(chip)
+Adds a chip.
+Parameters
+Name
+Type
+Description
+chip
+Chip
+The chip to add.
+Return
+Chip
+List
+— This object, for chaining.
+set
+Layout(layout)
+Sets the chip list layout. If unset, it defaults to
+Chip
+List
+Layout.WRAPPED
+layout.
+const
+chip
+=
+CardService
+.
+newChip
+();
+// Finish building the text chip...
+const
+chipList
+=
+CardService
+.
+newChipList
+()
+.
+setLayout
+(
+CardService
+.
+ChipListLayout
+.
+HORIZONTAL_SCROLLABLE
+)
+.
+addChip
+(
+chip
+);
+Parameters
+Name
+Type
+Description
+layout
+Chip
+List
+Layout
+The chip list layout.
+Return
+Chip
+List
+— This object, for chaining.

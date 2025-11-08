@@ -1,0 +1,18 @@
+Source Path: gas_docs_html/apps-script/reference/optimization/variable-type/index.html
+
+Variable
+Type
+Type of variables created by the engine.
+To call an enum, you call its parent class, name, and property. For example,
+LinearOptimizationService.VariableType.INTEGER
+.
+Properties
+Property
+Type
+Description
+INTEGER
+Enum
+Type of variable that can only take integer values.
+CONTINUOUS
+Enum
+Type of variable that can take any real value.

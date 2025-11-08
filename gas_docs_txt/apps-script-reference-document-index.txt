@@ -1,0 +1,6413 @@
+Source Path: gas_docs_html/apps-script/reference/document/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Google Apps Script Document service allows programmatic creation, access, and modification of Google Docs files.
+DocumentApp
+is the main class for creating and opening documents, while the
+Document
+class manages the document as a whole.
+The service provides numerous classes to represent document elements, such as
+Body
+,
+Paragraph
+,
+Table
+, and
+Text
+, each with methods for manipulation.
+Attributes like font size, color, and alignment can be controlled using the
+Attribute
+enumeration.
+The
+Element
+class serves as a base for all document components, offering general methods for accessing properties and navigating the document structure.
+Document
+This service allows scripts to create, access, and modify Google Docs files.
+//
+Open
+a
+document
+by
+ID
+.
+var
+doc
+=
+DocumentApp
+.
+openById
+(
+'DOCUMENT_ID'
+);
+//
+Create
+and
+open
+a
+document
+.
+doc
+=
+DocumentApp
+.
+create
+(
+'Document Name'
+);
+Classes
+Name
+Brief description
+Attribute
+An enumeration of the element attributes.
+Body
+The content of a tab in a Google Docs document.
+Bookmark
+An object representing a bookmark.
+Container
+Element
+A generic element that may contain other elements.
+Date
+An element representing a formatted date
+Document
+A document, containing one or more
+Tab
+objects, each of which contains rich text and
+elements such as tables and lists.
+Document
+App
+The document service creates and opens
+Documents
+that can be edited.
+Document
+Tab
+A document tab, containing rich text and elements such as tables and lists.
+Element
+A generic element.
+Element
+Type
+An enumeration of all the element types.
+Equation
+An element representing a mathematical expression.
+Equation
+Function
+An element representing a function in a mathematical
+Equation
+.
+Equation
+Function
+Argument
+Separator
+An element representing a function separator in a mathematical
+Equation
+.
+Equation
+Symbol
+An element representing a symbol in a mathematical
+Equation
+.
+Font
+Family
+An enumeration of the supported fonts.
+Footer
+Section
+An element representing a footer section.
+Footnote
+An element representing a footnote.
+Footnote
+Section
+An element representing a footnote section.
+Glyph
+Type
+An enumeration of the supported glyph types.
+Header
+Section
+An element representing a header section.
+Horizontal
+Alignment
+An enumeration of the supported horizontal alignment types.
+Horizontal
+Rule
+An element representing an horizontal rule.
+Inline
+Drawing
+An element representing an embedded drawing.
+Inline
+Image
+An element representing an embedded image.
+List
+Item
+An element representing a list item.
+Named
+Range
+A
+Range
+that has a name and ID to allow later retrieval.
+Page
+Break
+An element representing a page break.
+Paragraph
+An element representing a paragraph.
+Paragraph
+Heading
+An enumeration of the standard paragraph headings.
+Person
+An element representing a link to a person.
+Position
+A reference to a location in the document tab, relative to a specific element.
+Positioned
+Image
+Fixed position image anchored to a
+Paragraph
+.
+Positioned
+Layout
+An enumeration that specifies how to lay out a
+Positioned
+Image
+in relation to surrounding
+text.
+Range
+A range of elements in a document.
+Range
+Builder
+A builder used to construct
+Range
+objects from document elements.
+Range
+Element
+A wrapper around an
+Element
+with a possible start and end offset.
+Rich
+Link
+An element representing a link to a Google resource, such as a Drive file or a YouTube video.
+Tab
+A tab within a Google Docs document.
+Tab
+Type
+An enumeration of all the tab types.
+Table
+An element representing a table.
+Table
+Cell
+An element representing a table cell.
+Table
+Of
+Contents
+An element containing a table of contents.
+Table
+Row
+An element representing a table row.
+Text
+An element representing a rich text region.
+Text
+Alignment
+An enumeration of the type of text alignments.
+Unsupported
+Element
+An element representing a region that is unknown or cannot be affected by a script, such as a
+page number.
+Vertical
+Alignment
+An enumeration of the supported vertical alignment types.
+Attribute
+Properties
+Property
+Type
+Description
+BACKGROUND_COLOR
+Enum
+The background color of an element (Paragraph, Table, etc) or document.
+BOLD
+Enum
+The font weight setting, for rich text.
+BORDER_COLOR
+Enum
+The border color, for table elements.
+BORDER_WIDTH
+Enum
+The border width in points, for table elements.
+CODE
+Enum
+The code contents, for equation elements.
+FONT_FAMILY
+Enum
+The font family setting, for rich text.
+FONT_SIZE
+Enum
+The font size setting in points, for rich text.
+FOREGROUND_COLOR
+Enum
+The foreground color setting, for rich text.
+HEADING
+Enum
+The heading type, for paragraph elements (for example,
+Document
+App.ParagraphHeading.HEADING1
+).
+HEIGHT
+Enum
+The height setting, for image elements.
+HORIZONTAL_ALIGNMENT
+Enum
+The horizontal alignment, for paragraph elements (for example,
+Document
+App.HorizontalAlignment.CENTER
+).
+INDENT_END
+Enum
+The end indentation setting in points, for paragraph elements.
+INDENT_FIRST_LINE
+Enum
+The first line indentation setting in points, for paragraph elements.
+INDENT_START
+Enum
+The start indentation setting in points, for paragraph elements.
+ITALIC
+Enum
+The font style setting, for rich text.
+GLYPH_TYPE
+Enum
+The glyph type, for list item elements.
+LEFT_TO_RIGHT
+Enum
+The text direction setting, for rich text.
+LINE_SPACING
+Enum
+The line spacing setting as a multiplier, for paragraph elements.
+LINK_URL
+Enum
+The link URL, for rich text.
+LIST_ID
+Enum
+The ID of the encompassing list, for list item elements.
+MARGIN_BOTTOM
+Enum
+The bottom margin setting in points, for paragraph elements.
+MARGIN_LEFT
+Enum
+The left margin setting in points, for paragraph elements.
+MARGIN_RIGHT
+Enum
+The right margin setting in points, for paragraph elements.
+MARGIN_TOP
+Enum
+The top margin setting in points, for paragraph elements.
+NESTING_LEVEL
+Enum
+The item nesting level, for list item elements.
+MINIMUM_HEIGHT
+Enum
+The minimum height setting in points, for table row elements.
+PADDING_BOTTOM
+Enum
+The bottom padding setting in points, for table cell elements.
+PADDING_LEFT
+Enum
+The left padding setting in points, for table cell elements.
+PADDING_RIGHT
+Enum
+The right padding setting in points, for table cell elements.
+PADDING_TOP
+Enum
+The top padding setting in points, for table cell elements.
+PAGE_HEIGHT
+Enum
+The page height setting in points, for documents.
+PAGE_WIDTH
+Enum
+The page width setting in points, for documents.
+SPACING_AFTER
+Enum
+The bottom spacing setting in points, for paragraph elements.
+SPACING_BEFORE
+Enum
+The top spacing setting in points, for paragraph elements.
+STRIKETHROUGH
+Enum
+The strike-through setting, for rich text.
+UNDERLINE
+Enum
+The underline setting, for rich text.
+VERTICAL_ALIGNMENT
+Enum
+The vertical alignment setting, for table cell elements.
+WIDTH
+Enum
+The width setting, for table cell and image elements.
+Body
+Methods
+Method
+Return type
+Brief description
+append
+Horizontal
+Rule()
+Horizontal
+Rule
+Creates and appends a new
+Horizontal
+Rule
+.
+append
+Image(image)
+Inline
+Image
+Creates and appends a new
+Inline
+Image
+from the specified image blob.
+append
+Image(image)
+Inline
+Image
+Appends the given
+Inline
+Image
+.
+append
+List
+Item(listItem)
+List
+Item
+Appends the given
+List
+Item
+.
+append
+List
+Item(text)
+List
+Item
+Creates and appends a new
+List
+Item
+containing the specified text contents.
+append
+Page
+Break()
+Page
+Break
+Creates and appends a new
+Page
+Break
+.
+append
+Page
+Break(pageBreak)
+Page
+Break
+Appends the given
+Page
+Break
+.
+append
+Paragraph(paragraph)
+Paragraph
+Appends the given
+Paragraph
+.
+append
+Paragraph(text)
+Paragraph
+Creates and appends a new
+Paragraph
+containing the specified text contents.
+append
+Table()
+Table
+Creates and appends a new
+Table
+.
+append
+Table(cells)
+Table
+Appends a new
+Table
+containing a
+Table
+Cell
+for each specified string value.
+append
+Table(table)
+Table
+Appends the given
+Table
+.
+clear()
+Body
+Clears the contents of the element.
+copy()
+Body
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Heading
+Attributes(paragraphHeading)
+Object
+Retrieves the set of attributes for the provided
+Paragraph
+Heading
+.
+get
+Images()
+Inline
+Image[]
+Retrieves all the
+Inline
+Images
+contained in the section.
+get
+List
+Items()
+List
+Item[]
+Retrieves all the
+List
+Items
+contained in the section.
+get
+Margin
+Bottom()
+Number
+Retrieves the bottom margin, in points.
+get
+Margin
+Left()
+Number
+Retrieves the left margin, in points.
+get
+Margin
+Right()
+Number
+Retrieves the right margin.
+get
+Margin
+Top()
+Number
+Retrieves the top margin.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Page
+Height()
+Number
+Retrieves the page height, in points.
+get
+Page
+Width()
+Number
+Retrieves the page width, in points.
+get
+Paragraphs()
+Paragraph[]
+Retrieves all the
+Paragraphs
+contained in the section (including
+List
+Items
+).
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Tables()
+Table[]
+Retrieves all the
+Tables
+contained in the section.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Horizontal
+Rule(childIndex)
+Horizontal
+Rule
+Creates and inserts a new
+Horizontal
+Rule
+at the specified index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Creates and inserts an
+Inline
+Image
+from the specified image blob, at the specified
+index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Inserts the given
+Inline
+Image
+at the specified index.
+insert
+List
+Item(childIndex, listItem)
+List
+Item
+Inserts the given
+List
+Item
+at the specified index.
+insert
+List
+Item(childIndex, text)
+List
+Item
+Creates and inserts a new
+List
+Item
+at the specified index, containing the specified
+text contents.
+insert
+Page
+Break(childIndex)
+Page
+Break
+Creates and inserts a new
+Page
+Break
+at the specified index.
+insert
+Page
+Break(childIndex, pageBreak)
+Page
+Break
+Inserts the given
+Page
+Break
+at the specified index.
+insert
+Paragraph(childIndex, paragraph)
+Paragraph
+Inserts the given
+Paragraph
+at the specified index.
+insert
+Paragraph(childIndex, text)
+Paragraph
+Creates and inserts a new
+Paragraph
+at the specified index, containing the specified
+text contents.
+insert
+Table(childIndex)
+Table
+Creates and inserts a new
+Table
+at the specified index.
+insert
+Table(childIndex, cells)
+Table
+Creates and inserts a new
+Table
+containing the specified cells, at the specified index.
+insert
+Table(childIndex, table)
+Table
+Inserts the given
+Table
+at the specified index.
+remove
+Child(child)
+Body
+Removes the specified child element.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Body
+Sets the element's attributes.
+set
+Heading
+Attributes(paragraphHeading, attributes)
+Body
+Sets the attributes for the provided
+Paragraph
+Heading
+.
+set
+Margin
+Bottom(marginBottom)
+Body
+Sets the bottom margin, in points.
+set
+Margin
+Left(marginLeft)
+Body
+Sets the left margin, in points.
+set
+Margin
+Right(marginRight)
+Body
+Sets the right margin, in points.
+set
+Margin
+Top(marginTop)
+Body
+Sets the top margin.
+set
+Page
+Height(pageHeight)
+Body
+Sets the page height, in points.
+set
+Page
+Width(pageWidth)
+Body
+Sets the page width, in points.
+set
+Text(text)
+Body
+Sets the contents as plain text.
+set
+Text
+Alignment(textAlignment)
+Body
+Sets the text alignment.
+Bookmark
+Methods
+Method
+Return type
+Brief description
+get
+Id()
+String
+Gets the ID of the
+Bookmark
+.
+get
+Position()
+Position
+Gets the
+Position
+of the
+Bookmark
+within the
+Document
+Tab
+.
+remove()
+void
+Deletes the
+Bookmark
+.
+Container
+Element
+Methods
+Method
+Return type
+Brief description
+as
+Body()
+Body
+Returns the current element as a
+Body
+.
+as
+Equation()
+Equation
+Returns the current element as an
+Equation
+.
+as
+Footer
+Section()
+Footer
+Section
+Returns the current element as a
+Footer
+Section
+.
+as
+Footnote
+Section()
+Footnote
+Section
+Returns the current element as a
+Footnote
+Section
+.
+as
+Header
+Section()
+Header
+Section
+Returns the current element as a
+Header
+Section
+.
+as
+List
+Item()
+List
+Item
+Returns the current element as a
+List
+Item
+.
+as
+Paragraph()
+Paragraph
+Returns the current element as a
+Paragraph
+.
+as
+Table()
+Table
+Returns the current element as a
+Table
+.
+as
+Table
+Cell()
+Table
+Cell
+Returns the current element as a
+Table
+Cell
+.
+as
+Table
+Of
+Contents()
+Table
+Of
+Contents
+Returns the current element as a
+Table
+Of
+Contents
+.
+as
+Table
+Row()
+Table
+Row
+Returns the current element as a
+Table
+Row
+.
+clear()
+Container
+Element
+Clears the contents of the element.
+copy()
+Container
+Element
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Container
+Element
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Container
+Element
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Container
+Element
+Sets the element's attributes.
+set
+Link
+Url(url)
+Container
+Element
+Sets the link url.
+set
+Text
+Alignment(textAlignment)
+Container
+Element
+Sets the text alignment.
+Date
+Methods
+Method
+Return type
+Brief description
+copy()
+Date
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Display
+Text()
+String
+Returns the display value that's rendered in the document.
+get
+Locale()
+String
+Returns the date's locale used for the display value.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Timestamp()
+Date
+Returns the timestamp associated with the date.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Date
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Date
+Removes the element from its parent.
+set
+Attributes(attributes)
+Date
+Sets the element's attributes.
+Document
+Methods
+Method
+Return type
+Brief description
+add
+Bookmark(position)
+Bookmark
+Adds a
+Bookmark
+at the given
+Position
+to the first tab or, for scripts that are
+bound
+to a document, the active tab.
+add
+Editor(emailAddress)
+Document
+Adds the given user to the list of editors for the
+Document
+.
+add
+Editor(user)
+Document
+Adds the given user to the list of editors for the
+Document
+.
+add
+Editors(emailAddresses)
+Document
+Adds the given array of users to the list of editors for the
+Document
+.
+add
+Footer()
+Footer
+Section
+Adds a footer section, if none exists, to the first tab or, for scripts that are
+bound
+to a document, the active tab.
+add
+Header()
+Header
+Section
+Adds a header section, if none exists, to the first tab or, for scripts that are
+bound
+to a document, the active tab.
+add
+Named
+Range(name, range)
+Named
+Range
+Adds a
+Named
+Range
+, which is a
+Range
+that has a name and ID to use for
+later retrieval, in the first tab or, for scripts that are
+bound
+to a document, the active tab.
+add
+Viewer(emailAddress)
+Document
+Adds the given user to the list of viewers for the
+Document
+.
+add
+Viewer(user)
+Document
+Adds the given user to the list of viewers for the
+Document
+.
+add
+Viewers(emailAddresses)
+Document
+Adds the given array of users to the list of viewers for the
+Document
+.
+get
+Active
+Tab()
+Tab
+Gets the user's currently active
+Tab
+in the document.
+get
+As(contentType)
+Blob
+Retrieves the current
+Document
+contents as a blob of the specified type.
+get
+Blob()
+Blob
+Retrieves the current
+Document
+contents as a blob.
+get
+Body()
+Body
+Retrieves the first tab's
+Body
+or, for scripts that are
+bound
+to a document, the active tab's
+Document
+Body
+Section
+.
+get
+Bookmark(id)
+Bookmark
+Gets the
+Bookmark
+with the given ID in the first tab or, for scripts that are
+bound
+to a document, the active tab.
+get
+Bookmarks()
+Bookmark[]
+Gets all
+Bookmark
+objects in the first tab or, for scripts that are
+bound
+to a document, the active tab.
+get
+Cursor()
+Position
+Gets the user's cursor in the active tab.
+get
+Editors()
+User[]
+Gets the list of editors for this
+Document
+.
+get
+Footer()
+Footer
+Section
+Retrieves the first tab's footer section or, for scripts that are
+bound
+to a document, the active tab's footer
+section.
+get
+Footnotes()
+Footnote[]
+Retrieves all the
+Footnote
+elements in the first tab's body or, for scripts that are
+bound
+to a document, the active tab's body.
+get
+Header()
+Header
+Section
+Retrieves the first tab's header section or, for scripts that are
+bound
+to a document, the active tab's header
+section.
+get
+Id()
+String
+Retrieves the document's unique identifier.
+get
+Language()
+String
+Gets the document's language code.
+get
+Name()
+String
+Retrieves the title of the document.
+get
+Named
+Range
+By
+Id(id)
+Named
+Range
+Gets the
+Named
+Range
+with the given ID in the first tab or, for scripts that are
+bound
+to a document, the active tab.
+get
+Named
+Ranges()
+Named
+Range[]
+Gets all
+Named
+Range
+objects in the first tab or, for scripts that are
+bound
+to a document, the active tab.
+get
+Named
+Ranges(name)
+Named
+Range[]
+Gets all
+Named
+Range
+objects with the given name in the first tab or, for scripts that
+are
+bound
+to a document, the active tab.
+get
+Selection()
+Range
+Gets the user's selection in the active tab.
+get
+Supported
+Language
+Codes()
+String[]
+Gets all language codes that are supported in Google Docs files.
+get
+Tab(tabId)
+Tab
+Gets the
+Tab
+with the specified ID.
+get
+Tabs()
+Tab[]
+Gets all unnested
+Tab
+s that are part of the document.
+get
+Url()
+String
+Retrieves the URL to access the current document.
+get
+Viewers()
+User[]
+Gets the list of viewers and commenters for this
+Document
+.
+new
+Position(element, offset)
+Position
+Creates a new
+Position
+, which is a reference to a location in the tab, relative to a
+specific element in the first tab or, for scripts that are
+bound
+to a document, the active tab.
+new
+Range()
+Range
+Builder
+Creates a builder used to construct
+Range
+objects from tab elements in the
+first tab or, for scripts that are
+bound
+to a
+document, the active tab.
+remove
+Editor(emailAddress)
+Document
+Removes the given user from the list of editors for the
+Document
+.
+remove
+Editor(user)
+Document
+Removes the given user from the list of editors for the
+Document
+.
+remove
+Viewer(emailAddress)
+Document
+Removes the given user from the list of viewers and commenters for the
+Document
+.
+remove
+Viewer(user)
+Document
+Removes the given user from the list of viewers and commenters for the
+Document
+.
+save
+And
+Close()
+void
+Saves the current
+Document
+.
+set
+Active
+Tab(tabId)
+void
+Sets the user's selected
+Tab
+in the current document to the tab with the specified ID.
+set
+Cursor(position)
+Document
+Sets the user's cursor, given a
+Position
+.
+set
+Language(languageCode)
+Document
+Sets the document's language code.
+set
+Name(name)
+Document
+Sets the document title.
+set
+Selection(range)
+Document
+Sets the user's selection in the active tab, given a
+Range
+.
+Document
+App
+Properties
+Property
+Type
+Description
+Attribute
+Attribute
+The
+Attribute
+enumeration.
+Element
+Type
+Element
+Type
+The
+Element
+Type
+enumeration.
+Font
+Family
+Font
+Family
+The
+Font
+Family
+enumeration.
+Glyph
+Type
+Glyph
+Type
+The
+Glyph
+Type
+enumeration.
+Horizontal
+Alignment
+Horizontal
+Alignment
+The
+Horizontal
+Alignment
+enumeration.
+Paragraph
+Heading
+Paragraph
+Heading
+The
+Paragraph
+Heading
+enumeration.
+Positioned
+Layout
+Positioned
+Layout
+The
+Positioned
+Layout
+enumeration.
+Text
+Alignment
+Text
+Alignment
+The
+Text
+Alignment
+enumeration.
+Vertical
+Alignment
+Vertical
+Alignment
+The
+Vertical
+Alignment
+enumeration.
+Methods
+Method
+Return type
+Brief description
+create(name)
+Document
+Creates and returns a new document.
+get
+Active
+Document()
+Document
+Returns the document to which the script is
+container-bound
+.
+get
+Ui()
+Ui
+Returns an instance of the document's user-interface environment that allows the script to add
+features like menus, dialogs, and sidebars.
+open
+By
+Id(id)
+Document
+Returns the document with the specified ID.
+open
+By
+Url(url)
+Document
+Opens and returns the document with the specified URL.
+Document
+Tab
+Methods
+Method
+Return type
+Brief description
+add
+Bookmark(position)
+Bookmark
+Adds a
+Bookmark
+at the given
+Position
+.
+add
+Footer()
+Footer
+Section
+Adds a tab footer section, if none exists.
+add
+Header()
+Header
+Section
+Adds a tab header section, if none exists.
+add
+Named
+Range(name, range)
+Named
+Range
+Adds a
+Named
+Range
+, which is a
+Range
+that has a name and ID to use for
+later retrieval.
+get
+Body()
+Body
+Retrieves the tab's
+Body
+.
+get
+Bookmark(id)
+Bookmark
+Gets the
+Bookmark
+with the given ID.
+get
+Bookmarks()
+Bookmark[]
+Gets all
+Bookmark
+objects in the tab.
+get
+Footer()
+Footer
+Section
+Retrieves the tab's footer section, if one exists.
+get
+Footnotes()
+Footnote[]
+Retrieves all the
+Footnote
+elements in the tab's body.
+get
+Header()
+Header
+Section
+Retrieves the tab's header section, if one exists.
+get
+Named
+Range
+By
+Id(id)
+Named
+Range
+Gets the
+Named
+Range
+with the given ID.
+get
+Named
+Ranges()
+Named
+Range[]
+Gets all
+Named
+Range
+objects in the tab.
+get
+Named
+Ranges(name)
+Named
+Range[]
+Gets all
+Named
+Range
+objects in the tab with the given name.
+new
+Position(element, offset)
+Position
+Creates a new
+Position
+, which is a reference to a location in the tab, relative to a
+specific element.
+new
+Range()
+Range
+Builder
+Creates a builder used to construct
+Range
+objects from tab elements.
+Element
+Methods
+Method
+Return type
+Brief description
+as
+Body()
+Body
+Returns the current element as a
+Body
+.
+as
+Date()
+Date
+Returns the current element as a
+Date
+.
+as
+Equation()
+Equation
+Returns the current element as an
+Equation
+.
+as
+Equation
+Function()
+Equation
+Function
+Returns the current element as a
+Equation
+Function
+.
+as
+Equation
+Function
+Argument
+Separator()
+Equation
+Function
+Argument
+Separator
+Returns the current element as a
+Equation
+Function
+Argument
+Separator
+.
+as
+Equation
+Symbol()
+Equation
+Symbol
+Returns the current element as a
+Equation
+Symbol
+.
+as
+Footer
+Section()
+Footer
+Section
+Returns the current element as a
+Footer
+Section
+.
+as
+Footnote()
+Footnote
+Returns the current element as a
+Footnote
+.
+as
+Footnote
+Section()
+Footnote
+Section
+Returns the current element as a
+Footnote
+Section
+.
+as
+Header
+Section()
+Header
+Section
+Returns the current element as a
+Header
+Section
+.
+as
+Horizontal
+Rule()
+Horizontal
+Rule
+Returns the current element as a
+Horizontal
+Rule
+.
+as
+Inline
+Drawing()
+Inline
+Drawing
+Returns the current element as a
+Inline
+Drawing
+.
+as
+Inline
+Image()
+Inline
+Image
+Returns the current element as a
+Inline
+Image
+.
+as
+List
+Item()
+List
+Item
+Returns the current element as a
+List
+Item
+.
+as
+Page
+Break()
+Page
+Break
+Returns the current element as a
+Page
+Break
+.
+as
+Paragraph()
+Paragraph
+Returns the current element as a
+Paragraph
+.
+as
+Person()
+Person
+Returns the current element as a
+Person
+.
+as
+Rich
+Link()
+Rich
+Link
+Returns the current element as a
+Rich
+Link
+, for example, a link to a Google Sheets file.
+as
+Table()
+Table
+Returns the current element as a
+Table
+.
+as
+Table
+Cell()
+Table
+Cell
+Returns the current element as a
+Table
+Cell
+.
+as
+Table
+Of
+Contents()
+Table
+Of
+Contents
+Returns the current element as a
+Table
+Of
+Contents
+.
+as
+Table
+Row()
+Table
+Row
+Returns the current element as a
+Table
+Row
+.
+as
+Text()
+Text
+Returns the current element as a
+Text
+.
+copy()
+Element
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Element
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Element
+Removes the element from its parent.
+set
+Attributes(attributes)
+Element
+Sets the element's attributes.
+Element
+Type
+Properties
+Property
+Type
+Description
+BODY_SECTION
+Enum
+The type corresponding to the
+Body
+element.
+COMMENT_SECTION
+Enum
+The type corresponding to the
+Comment
+Section
+element.
+DATE
+Enum
+The type corresponding to the
+Date
+element.
+EQUATION
+Enum
+The type corresponding to the
+Equation
+element.
+EQUATION_FUNCTION
+Enum
+The type corresponding to the
+Equation
+Function
+element.
+EQUATION_FUNCTION_ARGUMENT_SEPARATOR
+Enum
+The type corresponding to the
+Equation
+Function
+Argument
+Separator
+element.
+EQUATION_SYMBOL
+Enum
+The type corresponding to the
+Equation
+Symbol
+element.
+RICH_LINK
+Enum
+The type corresponding to the
+Rich
+Link
+element.
+FOOTER_SECTION
+Enum
+The type corresponding to the
+Footer
+Section
+element.
+FOOTNOTE
+Enum
+The type corresponding to the
+Footnote
+element.
+FOOTNOTE_SECTION
+Enum
+The type corresponding to the
+Footnote
+Section
+element.
+HEADER_SECTION
+Enum
+The type corresponding to the
+Header
+Section
+element.
+HORIZONTAL_RULE
+Enum
+The type corresponding to the
+Horizontal
+Rule
+element.
+INLINE_DRAWING
+Enum
+The type corresponding to the
+Inline
+Drawing
+element.
+INLINE_IMAGE
+Enum
+The type corresponding to the
+Inline
+Image
+element.
+LIST_ITEM
+Enum
+The type corresponding to the
+List
+Item
+element.
+PAGE_BREAK
+Enum
+The type corresponding to the
+Page
+Break
+element.
+PARAGRAPH
+Enum
+The type corresponding to the
+Paragraph
+element.
+PERSON
+Enum
+The type corresponding to the
+Person
+element.
+TABLE
+Enum
+The type corresponding to the
+Table
+element.
+TABLE_CELL
+Enum
+The type corresponding to the
+Table
+Cell
+element.
+TABLE_OF_CONTENTS
+Enum
+The type corresponding to the
+Table
+Of
+Contents
+element.
+TABLE_ROW
+Enum
+The type corresponding to the
+Table
+Row
+element.
+TEXT
+Enum
+The type corresponding to the
+Text
+element.
+UNSUPPORTED
+Enum
+The type corresponding to
+Unsupported
+Element
+.
+Equation
+Methods
+Method
+Return type
+Brief description
+clear()
+Equation
+Clears the contents of the element.
+copy()
+Equation
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Equation
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Equation
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Equation
+Sets the element's attributes.
+set
+Link
+Url(url)
+Equation
+Sets the link url.
+set
+Text
+Alignment(textAlignment)
+Equation
+Sets the text alignment.
+Equation
+Function
+Methods
+Method
+Return type
+Brief description
+clear()
+Equation
+Function
+Clears the contents of the element.
+copy()
+Equation
+Function
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Code()
+String
+Retrieves the code corresponding to the equation function.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Equation
+Function
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Equation
+Function
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Equation
+Function
+Sets the element's attributes.
+set
+Link
+Url(url)
+Equation
+Function
+Sets the link url.
+set
+Text
+Alignment(textAlignment)
+Equation
+Function
+Sets the text alignment.
+Equation
+Function
+Argument
+Separator
+Methods
+Method
+Return type
+Brief description
+copy()
+Equation
+Function
+Argument
+Separator
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Equation
+Function
+Argument
+Separator
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Equation
+Function
+Argument
+Separator
+Removes the element from its parent.
+set
+Attributes(attributes)
+Equation
+Function
+Argument
+Separator
+Sets the element's attributes.
+Equation
+Symbol
+Methods
+Method
+Return type
+Brief description
+copy()
+Equation
+Symbol
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Code()
+String
+Retrieves the code corresponding to the equation symbol.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Equation
+Symbol
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Equation
+Symbol
+Removes the element from its parent.
+set
+Attributes(attributes)
+Equation
+Symbol
+Sets the element's attributes.
+Font
+Family
+Footer
+Section
+Methods
+Method
+Return type
+Brief description
+append
+Horizontal
+Rule()
+Horizontal
+Rule
+Creates and appends a new
+Horizontal
+Rule
+.
+append
+Image(image)
+Inline
+Image
+Creates and appends a new
+Inline
+Image
+from the specified image blob.
+append
+Image(image)
+Inline
+Image
+Appends the given
+Inline
+Image
+.
+append
+List
+Item(listItem)
+List
+Item
+Appends the given
+List
+Item
+.
+append
+List
+Item(text)
+List
+Item
+Creates and appends a new
+List
+Item
+containing the specified text contents.
+append
+Paragraph(paragraph)
+Paragraph
+Appends the given
+Paragraph
+.
+append
+Paragraph(text)
+Paragraph
+Creates and appends a new
+Paragraph
+containing the specified text contents.
+append
+Table()
+Table
+Creates and appends a new
+Table
+.
+append
+Table(cells)
+Table
+Appends a new
+Table
+containing a
+Table
+Cell
+for each specified string value.
+append
+Table(table)
+Table
+Appends the given
+Table
+.
+clear()
+Footer
+Section
+Clears the contents of the element.
+copy()
+Footer
+Section
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Images()
+Inline
+Image[]
+Retrieves all the
+Inline
+Images
+contained in the section.
+get
+List
+Items()
+List
+Item[]
+Retrieves all the
+List
+Items
+contained in the section.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Paragraphs()
+Paragraph[]
+Retrieves all the
+Paragraphs
+contained in the section (including
+List
+Items
+).
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Tables()
+Table[]
+Retrieves all the
+Tables
+contained in the section.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Horizontal
+Rule(childIndex)
+Horizontal
+Rule
+Creates and inserts a new
+Horizontal
+Rule
+at the specified index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Creates and inserts an
+Inline
+Image
+from the specified image blob, at the specified
+index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Inserts the given
+Inline
+Image
+at the specified index.
+insert
+List
+Item(childIndex, listItem)
+List
+Item
+Inserts the given
+List
+Item
+at the specified index.
+insert
+List
+Item(childIndex, text)
+List
+Item
+Creates and inserts a new
+List
+Item
+at the specified index, containing the specified
+text contents.
+insert
+Paragraph(childIndex, paragraph)
+Paragraph
+Inserts the given
+Paragraph
+at the specified index.
+insert
+Paragraph(childIndex, text)
+Paragraph
+Creates and inserts a new
+Paragraph
+at the specified index, containing the specified
+text contents.
+insert
+Table(childIndex)
+Table
+Creates and inserts a new
+Table
+at the specified index.
+insert
+Table(childIndex, cells)
+Table
+Creates and inserts a new
+Table
+containing the specified cells, at the specified index.
+insert
+Table(childIndex, table)
+Table
+Inserts the given
+Table
+at the specified index.
+remove
+Child(child)
+Footer
+Section
+Removes the specified child element.
+remove
+From
+Parent()
+Footer
+Section
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Footer
+Section
+Sets the element's attributes.
+set
+Text(text)
+Footer
+Section
+Sets the contents as plain text.
+set
+Text
+Alignment(textAlignment)
+Footer
+Section
+Sets the text alignment.
+Footnote
+Methods
+Method
+Return type
+Brief description
+copy()
+Footnote
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Footnote
+Contents()
+Footnote
+Section
+Retrieves the contents of the footnote element.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+remove
+From
+Parent()
+Footnote
+Removes the element from its parent.
+set
+Attributes(attributes)
+Footnote
+Sets the element's attributes.
+Footnote
+Section
+Methods
+Method
+Return type
+Brief description
+append
+Paragraph(paragraph)
+Paragraph
+Appends the given
+Paragraph
+.
+append
+Paragraph(text)
+Paragraph
+Creates and appends a new
+Paragraph
+containing the specified text contents.
+clear()
+Footnote
+Section
+Clears the contents of the element.
+copy()
+Footnote
+Section
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Paragraphs()
+Paragraph[]
+Retrieves all the
+Paragraphs
+contained in the section (including
+List
+Items
+).
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Paragraph(childIndex, paragraph)
+Paragraph
+Inserts the given
+Paragraph
+at the specified index.
+insert
+Paragraph(childIndex, text)
+Paragraph
+Creates and inserts a new
+Paragraph
+at the specified index, containing the specified
+text contents.
+remove
+Child(child)
+Footnote
+Section
+Removes the specified child element.
+remove
+From
+Parent()
+Footnote
+Section
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Footnote
+Section
+Sets the element's attributes.
+set
+Text(text)
+Footnote
+Section
+Sets the contents as plain text.
+set
+Text
+Alignment(textAlignment)
+Footnote
+Section
+Sets the text alignment.
+Glyph
+Type
+Properties
+Property
+Type
+Description
+BULLET
+Enum
+The default bullet, circular and filled.
+HOLLOW_BULLET
+Enum
+A hollow bullet.
+SQUARE_BULLET
+Enum
+A square bullet.
+NUMBER
+Enum
+A number based bullet.
+LATIN_UPPER
+Enum
+A latin, uppercase bullet.
+LATIN_LOWER
+Enum
+A latin, lowercase bullet.
+ROMAN_UPPER
+Enum
+A roman numeral, uppercase bullet.
+ROMAN_LOWER
+Enum
+A roman numeral, lowercase bullet.
+Header
+Section
+Methods
+Method
+Return type
+Brief description
+append
+Horizontal
+Rule()
+Horizontal
+Rule
+Creates and appends a new
+Horizontal
+Rule
+.
+append
+Image(image)
+Inline
+Image
+Creates and appends a new
+Inline
+Image
+from the specified image blob.
+append
+Image(image)
+Inline
+Image
+Appends the given
+Inline
+Image
+.
+append
+List
+Item(listItem)
+List
+Item
+Appends the given
+List
+Item
+.
+append
+List
+Item(text)
+List
+Item
+Creates and appends a new
+List
+Item
+containing the specified text contents.
+append
+Paragraph(paragraph)
+Paragraph
+Appends the given
+Paragraph
+.
+append
+Paragraph(text)
+Paragraph
+Creates and appends a new
+Paragraph
+containing the specified text contents.
+append
+Table()
+Table
+Creates and appends a new
+Table
+.
+append
+Table(cells)
+Table
+Appends a new
+Table
+containing a
+Table
+Cell
+for each specified string value.
+append
+Table(table)
+Table
+Appends the given
+Table
+.
+clear()
+Header
+Section
+Clears the contents of the element.
+copy()
+Header
+Section
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Images()
+Inline
+Image[]
+Retrieves all the
+Inline
+Images
+contained in the section.
+get
+List
+Items()
+List
+Item[]
+Retrieves all the
+List
+Items
+contained in the section.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Paragraphs()
+Paragraph[]
+Retrieves all the
+Paragraphs
+contained in the section (including
+List
+Items
+).
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Tables()
+Table[]
+Retrieves all the
+Tables
+contained in the section.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Horizontal
+Rule(childIndex)
+Horizontal
+Rule
+Creates and inserts a new
+Horizontal
+Rule
+at the specified index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Creates and inserts an
+Inline
+Image
+from the specified image blob, at the specified
+index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Inserts the given
+Inline
+Image
+at the specified index.
+insert
+List
+Item(childIndex, listItem)
+List
+Item
+Inserts the given
+List
+Item
+at the specified index.
+insert
+List
+Item(childIndex, text)
+List
+Item
+Creates and inserts a new
+List
+Item
+at the specified index, containing the specified
+text contents.
+insert
+Paragraph(childIndex, paragraph)
+Paragraph
+Inserts the given
+Paragraph
+at the specified index.
+insert
+Paragraph(childIndex, text)
+Paragraph
+Creates and inserts a new
+Paragraph
+at the specified index, containing the specified
+text contents.
+insert
+Table(childIndex)
+Table
+Creates and inserts a new
+Table
+at the specified index.
+insert
+Table(childIndex, cells)
+Table
+Creates and inserts a new
+Table
+containing the specified cells, at the specified index.
+insert
+Table(childIndex, table)
+Table
+Inserts the given
+Table
+at the specified index.
+remove
+Child(child)
+Header
+Section
+Removes the specified child element.
+remove
+From
+Parent()
+Header
+Section
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Header
+Section
+Sets the element's attributes.
+set
+Text(text)
+Header
+Section
+Sets the contents as plain text.
+set
+Text
+Alignment(textAlignment)
+Header
+Section
+Sets the text alignment.
+Horizontal
+Alignment
+Properties
+Property
+Type
+Description
+LEFT
+Enum
+The left-alignment option.
+CENTER
+Enum
+The center-alignment option.
+RIGHT
+Enum
+The right-alignment option.
+JUSTIFY
+Enum
+The justify-alignment option.
+Horizontal
+Rule
+Methods
+Method
+Return type
+Brief description
+copy()
+Horizontal
+Rule
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+remove
+From
+Parent()
+Horizontal
+Rule
+Removes the element from its parent.
+set
+Attributes(attributes)
+Horizontal
+Rule
+Sets the element's attributes.
+Inline
+Drawing
+Methods
+Method
+Return type
+Brief description
+copy()
+Inline
+Drawing
+Returns a detached, deep copy of the current element.
+get
+Alt
+Description()
+String
+Returns the drawing's alternate description.
+get
+Alt
+Title()
+String
+Returns the drawing's alternate title.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Inline
+Drawing
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Inline
+Drawing
+Removes the element from its parent.
+set
+Alt
+Description(description)
+Inline
+Drawing
+Sets the drawing's alternate description.
+set
+Alt
+Title(title)
+Inline
+Drawing
+Sets the drawing's alternate title.
+set
+Attributes(attributes)
+Inline
+Drawing
+Sets the element's attributes.
+Inline
+Image
+Methods
+Method
+Return type
+Brief description
+copy()
+Inline
+Image
+Returns a detached, deep copy of the current element.
+get
+Alt
+Description()
+String
+Returns the image's alternate description.
+get
+Alt
+Title()
+String
+Returns the image's alternate title.
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Height()
+Integer
+Retrieves the image's height, in pixels.
+get
+Link
+Url()
+String
+Retrieves the link URL.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+get
+Width()
+Integer
+Retrieves the image's width, in pixels.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Inline
+Image
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Inline
+Image
+Removes the element from its parent.
+set
+Alt
+Description(description)
+Inline
+Image
+Sets the image's alternate description.
+set
+Alt
+Title(title)
+Inline
+Image
+Sets the image's alternate title.
+set
+Attributes(attributes)
+Inline
+Image
+Sets the element's attributes.
+set
+Height(height)
+Inline
+Image
+Sets the image's height, in pixels.
+set
+Link
+Url(url)
+Inline
+Image
+Sets the link URL.
+set
+Width(width)
+Inline
+Image
+Sets the image's width, in pixels.
+List
+Item
+Methods
+Method
+Return type
+Brief description
+add
+Positioned
+Image(image)
+Positioned
+Image
+Creates and inserts a new
+Positioned
+Image
+from the specified image blob.
+append
+Horizontal
+Rule()
+Horizontal
+Rule
+Creates and appends a new
+Horizontal
+Rule
+.
+append
+Inline
+Image(image)
+Inline
+Image
+Creates and appends a new
+Inline
+Image
+from the specified image blob.
+append
+Inline
+Image(image)
+Inline
+Image
+Appends the given
+Inline
+Image
+.
+append
+Page
+Break()
+Page
+Break
+Creates and appends a new
+Page
+Break
+.
+append
+Page
+Break(pageBreak)
+Page
+Break
+Appends the given
+Page
+Break
+.
+append
+Text(text)
+Text
+Creates and appends a new
+Text
+element with the specified contents.
+append
+Text(text)
+Text
+Appends the given
+Text
+element.
+clear()
+List
+Item
+Clears the contents of the element.
+copy()
+List
+Item
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Alignment()
+Horizontal
+Alignment
+Retrieves the
+Horizontal
+Alignment
+.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Glyph
+Type()
+Glyph
+Type
+Retrieves the list item's
+Glyph
+Type
+.
+get
+Heading()
+Paragraph
+Heading
+Retrieves the
+Paragraph
+Heading
+.
+get
+Indent
+End()
+Number
+Retrieves the end indentation, in points.
+get
+Indent
+First
+Line()
+Number
+Retrieves the first line indentation, in points.
+get
+Indent
+Start()
+Number
+Retrieves the start indentation.
+get
+Line
+Spacing()
+Number
+Retrieves the line spacing, in points.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+List
+Id()
+String
+Retrieves the list ID.
+get
+Nesting
+Level()
+Integer
+Retrieves the list item's nesting level.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Positioned
+Image(id)
+Positioned
+Image
+Gets a
+Positioned
+Image
+by the image's ID.
+get
+Positioned
+Images()
+Positioned
+Image[]
+Gets all
+Positioned
+Image
+objects anchored to the paragraph.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Spacing
+After()
+Number
+Retrieves the spacing after the element, in points.
+get
+Spacing
+Before()
+Number
+Retrieves the spacing before the element, in points.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Horizontal
+Rule(childIndex)
+Horizontal
+Rule
+Creates and inserts a
+Horizontal
+Rule
+at the specified index.
+insert
+Inline
+Image(childIndex, image)
+Inline
+Image
+Creates and inserts a new
+Inline
+Image
+from the specified image blob, at the specified
+index.
+insert
+Inline
+Image(childIndex, image)
+Inline
+Image
+Inserts the given
+Inline
+Image
+at the specified index.
+insert
+Page
+Break(childIndex)
+Page
+Break
+Creates and inserts a new
+Page
+Break
+at the specified index.
+insert
+Page
+Break(childIndex, pageBreak)
+Page
+Break
+Inserts the given
+Page
+Break
+at the specified index.
+insert
+Text(childIndex, text)
+Text
+Creates and inserts a new text element at the specified index.
+insert
+Text(childIndex, text)
+Text
+Inserts the given
+Text
+element at the specified index, with the specified text
+contents.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+is
+Left
+To
+Right()
+Boolean
+Retrieves the left-to-right setting.
+merge()
+List
+Item
+Merges the element with the preceding sibling of the same type.
+remove
+Child(child)
+List
+Item
+Removes the specified child element.
+remove
+From
+Parent()
+List
+Item
+Removes the element from its parent.
+remove
+Positioned
+Image(id)
+Boolean
+Removes a
+Positioned
+Image
+by the image's ID.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Alignment(alignment)
+List
+Item
+Sets the
+Horizontal
+Alignment
+.
+set
+Attributes(attributes)
+List
+Item
+Sets the element's attributes.
+set
+Glyph
+Type(glyphType)
+List
+Item
+Sets the list item's
+Glyph
+Type
+.
+set
+Heading(heading)
+List
+Item
+Sets the
+Paragraph
+Heading
+.
+set
+Indent
+End(indentEnd)
+List
+Item
+Sets the end indentation, in points.
+set
+Indent
+First
+Line(indentFirstLine)
+List
+Item
+Sets the first line indentation, in points.
+set
+Indent
+Start(indentStart)
+List
+Item
+Sets the start indentation, in points.
+set
+Left
+To
+Right(leftToRight)
+List
+Item
+Sets the left-to-right setting.
+set
+Line
+Spacing(multiplier)
+List
+Item
+Sets the line spacing, as a quantity indicating the number of lines to use for spacing.
+set
+Link
+Url(url)
+List
+Item
+Sets the link url.
+set
+List
+Id(listItem)
+List
+Item
+Sets the list ID.
+set
+Nesting
+Level(nestingLevel)
+List
+Item
+Sets the list item's nesting level.
+set
+Spacing
+After(spacingAfter)
+List
+Item
+Sets the spacing after the element, in points.
+set
+Spacing
+Before(spacingBefore)
+List
+Item
+Sets the spacing before the element, in points.
+set
+Text(text)
+void
+Sets the contents of the list item as text.
+set
+Text
+Alignment(textAlignment)
+List
+Item
+Sets the text alignment.
+Named
+Range
+Methods
+Method
+Return type
+Brief description
+get
+Id()
+String
+Gets the ID of this
+Named
+Range
+.
+get
+Name()
+String
+Gets the name of this
+Named
+Range
+.
+get
+Range()
+Range
+Gets the range of elements associated with this
+Named
+Range
+.
+remove()
+void
+Removes this
+Named
+Range
+from the tab.
+Page
+Break
+Methods
+Method
+Return type
+Brief description
+copy()
+Page
+Break
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+remove
+From
+Parent()
+Page
+Break
+Removes the element from its parent.
+set
+Attributes(attributes)
+Page
+Break
+Sets the element's attributes.
+Paragraph
+Methods
+Method
+Return type
+Brief description
+add
+Positioned
+Image(image)
+Positioned
+Image
+Creates and inserts a new
+Positioned
+Image
+from the specified image blob.
+append
+Horizontal
+Rule()
+Horizontal
+Rule
+Creates and appends a new
+Horizontal
+Rule
+.
+append
+Inline
+Image(image)
+Inline
+Image
+Creates and appends a new
+Inline
+Image
+from the specified image blob.
+append
+Inline
+Image(image)
+Inline
+Image
+Appends the given
+Inline
+Image
+.
+append
+Page
+Break()
+Page
+Break
+Creates and appends a new
+Page
+Break
+.
+append
+Page
+Break(pageBreak)
+Page
+Break
+Appends the given
+Page
+Break
+.
+append
+Text(text)
+Text
+Creates and appends a new
+Text
+element with the specified contents.
+append
+Text(text)
+Text
+Appends the given
+Text
+element.
+clear()
+Paragraph
+Clears the contents of the element.
+copy()
+Paragraph
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Alignment()
+Horizontal
+Alignment
+Retrieves the
+Horizontal
+Alignment
+.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Heading()
+Paragraph
+Heading
+Retrieves the
+Paragraph
+Heading
+.
+get
+Indent
+End()
+Number
+Retrieves the end indentation, in points.
+get
+Indent
+First
+Line()
+Number
+Retrieves the first line indentation, in points.
+get
+Indent
+Start()
+Number
+Retrieves the start indentation.
+get
+Line
+Spacing()
+Number
+Retrieves the line spacing, in points.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Positioned
+Image(id)
+Positioned
+Image
+Gets a
+Positioned
+Image
+by the image's ID.
+get
+Positioned
+Images()
+Positioned
+Image[]
+Gets all
+Positioned
+Image
+objects anchored to the paragraph.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Spacing
+After()
+Number
+Retrieves the spacing after the element, in points.
+get
+Spacing
+Before()
+Number
+Retrieves the spacing before the element, in points.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Horizontal
+Rule(childIndex)
+Horizontal
+Rule
+Creates and inserts a
+Horizontal
+Rule
+at the specified index.
+insert
+Inline
+Image(childIndex, image)
+Inline
+Image
+Creates and inserts a new
+Inline
+Image
+from the specified image blob, at the specified
+index.
+insert
+Inline
+Image(childIndex, image)
+Inline
+Image
+Inserts the given
+Inline
+Image
+at the specified index.
+insert
+Page
+Break(childIndex)
+Page
+Break
+Creates and inserts a new
+Page
+Break
+at the specified index.
+insert
+Page
+Break(childIndex, pageBreak)
+Page
+Break
+Inserts the given
+Page
+Break
+at the specified index.
+insert
+Text(childIndex, text)
+Text
+Creates and inserts a new text element at the specified index.
+insert
+Text(childIndex, text)
+Text
+Inserts the given
+Text
+element at the specified index, with the specified text
+contents.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+is
+Left
+To
+Right()
+Boolean
+Retrieves the left-to-right setting.
+merge()
+Paragraph
+Merges the element with the preceding sibling of the same type.
+remove
+Child(child)
+Paragraph
+Removes the specified child element.
+remove
+From
+Parent()
+Paragraph
+Removes the element from its parent.
+remove
+Positioned
+Image(id)
+Boolean
+Removes a
+Positioned
+Image
+by the image's ID.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Alignment(alignment)
+Paragraph
+Sets the
+Horizontal
+Alignment
+.
+set
+Attributes(attributes)
+Paragraph
+Sets the element's attributes.
+set
+Heading(heading)
+Paragraph
+Sets the
+Paragraph
+Heading
+.
+set
+Indent
+End(indentEnd)
+Paragraph
+Sets the end indentation, in points.
+set
+Indent
+First
+Line(indentFirstLine)
+Paragraph
+Sets the first line indentation, in points.
+set
+Indent
+Start(indentStart)
+Paragraph
+Sets the start indentation, in points.
+set
+Left
+To
+Right(leftToRight)
+Paragraph
+Sets the left-to-right setting.
+set
+Line
+Spacing(multiplier)
+Paragraph
+Sets the line spacing, as a quantity indicating the number of lines to use for spacing.
+set
+Link
+Url(url)
+Paragraph
+Sets the link url.
+set
+Spacing
+After(spacingAfter)
+Paragraph
+Sets the spacing after the element, in points.
+set
+Spacing
+Before(spacingBefore)
+Paragraph
+Sets the spacing before the element, in points.
+set
+Text(text)
+void
+Sets the contents of the paragraph as text.
+set
+Text
+Alignment(textAlignment)
+Paragraph
+Sets the text alignment.
+Paragraph
+Heading
+Properties
+Property
+Type
+Description
+NORMAL
+Enum
+The heading option for normal text.
+HEADING1
+Enum
+The highest heading option.
+HEADING2
+Enum
+The second heading option.
+HEADING3
+Enum
+The third heading option
+HEADING4
+Enum
+The fourth heading option.
+HEADING5
+Enum
+The fifth heading option.
+HEADING6
+Enum
+The lowest heading option.
+TITLE
+Enum
+The title heading option.
+SUBTITLE
+Enum
+The subtitle heading option.
+Person
+Methods
+Method
+Return type
+Brief description
+copy()
+Person
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Email()
+String
+Returns the person's email address.
+get
+Name()
+String
+Returns the person's display name, if set.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Person
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Person
+Removes the element from its parent.
+set
+Attributes(attributes)
+Person
+Sets the element's attributes.
+Position
+Methods
+Method
+Return type
+Brief description
+get
+Element()
+Element
+Gets the element that contains this
+Position
+.
+get
+Offset()
+Integer
+Gets this
+Position
+'s relative location within the element that contains it.
+get
+Surrounding
+Text()
+Text
+Creates an artificial
+Text
+element that represents the text and formatting of the
+Paragraph
+or
+List
+Item
+that contains the
+Position
+, either directly or through a chain of child elements.
+get
+Surrounding
+Text
+Offset()
+Integer
+Gets the offset of this
+Position
+within the
+Text
+element returned by
+get
+Surrounding
+Text()
+.
+insert
+Bookmark()
+Bookmark
+Creates and inserts a new
+Bookmark
+at this
+Position
+.
+insert
+Inline
+Image(image)
+Inline
+Image
+Creates and inserts a new
+Inline
+Image
+at this
+Position
+from the specified image
+blob.
+insert
+Text(text)
+Text
+Inserts the specified text at this
+Position
+.
+Positioned
+Image
+Methods
+Method
+Return type
+Brief description
+get
+As(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+get
+Blob()
+Blob
+Return the data inside this object as a blob.
+get
+Height()
+Integer
+Retrieves the image's height, in pixels.
+get
+Id()
+String
+Gets the image's ID.
+get
+Layout()
+Positioned
+Layout
+Gets an enum value that represents how the image is laid out.
+get
+Left
+Offset()
+Number
+Gets the image's offset, in points, from the paragraph's left.
+get
+Paragraph()
+Paragraph
+Gets the
+Paragraph
+the image is anchored to.
+get
+Top
+Offset()
+Number
+Gets the image's offset, in points, from the paragraph's top.
+get
+Width()
+Integer
+Retrieves the image's width, in pixels.
+set
+Height(height)
+Positioned
+Image
+Sets the image's height, in pixels.
+set
+Layout(layout)
+Positioned
+Image
+Sets the definition of how the image is laid out.
+set
+Left
+Offset(offset)
+Positioned
+Image
+Sets the image's offset, in points, from the paragraph's left.
+set
+Top
+Offset(offset)
+Positioned
+Image
+Sets the image's offset, in points, from the paragraph's top.
+set
+Width(width)
+Positioned
+Image
+Sets the image's width, in pixels.
+Positioned
+Layout
+Properties
+Property
+Type
+Description
+ABOVE_TEXT
+Enum
+The image is positioned above the text.
+BREAK_BOTH
+Enum
+The image breaks the text on the left and right.
+BREAK_LEFT
+Enum
+The image breaks the text on the left.
+BREAK_RIGHT
+Enum
+The image breaks the text on the right.
+WRAP_TEXT
+Enum
+The image is wrapped by text.
+Range
+Methods
+Method
+Return type
+Brief description
+get
+Range
+Elements()
+Range
+Element[]
+Gets all elements in this
+Range
+, including any partial
+Text
+elements (for example, in the case
+of a selection that includes only part of a
+Text
+element).
+Range
+Builder
+Methods
+Method
+Return type
+Brief description
+add
+Element(element)
+Range
+Builder
+Adds an entire
+Element
+to this
+Range
+Builder
+.
+add
+Element(textElement, startOffset, endOffsetInclusive)
+Range
+Builder
+Adds a partial
+Text
+element to this
+Range
+Builder
+.
+add
+Elements
+Between(startElement, endElementInclusive)
+Range
+Builder
+Adds two entire elements, and all elements between them, to this
+Range
+Builder
+.
+add
+Elements
+Between(startTextElement, startOffset, endTextElementInclusive, endOffsetInclusive)
+Range
+Builder
+Adds two partial
+Text
+elements, and all elements between them, to the
+Range
+Builder
+.
+add
+Range(range)
+Range
+Builder
+Adds the contents of another
+Range
+to this
+Range
+Builder
+.
+build()
+Range
+Constructs a
+Range
+from the settings applied to the builder.
+get
+Range
+Elements()
+Range
+Element[]
+Gets all elements in this
+Range
+, including any partial
+Text
+elements (for example, in the case
+of a selection that includes only part of a
+Text
+element).
+Range
+Element
+Methods
+Method
+Return type
+Brief description
+get
+Element()
+Element
+Gets the
+Element
+that corresponds to this
+Range
+Element
+.
+get
+End
+Offset
+Inclusive()
+Integer
+Gets the position of the end of a partial range within the range element.
+get
+Start
+Offset()
+Integer
+Gets the position of the start of a partial range within the range element.
+is
+Partial()
+Boolean
+Determines whether this range element covers the entire element or a partial selection of the
+element's characters.
+Rich
+Link
+Methods
+Method
+Return type
+Brief description
+copy()
+Rich
+Link
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Mime
+Type()
+String
+Returns the
+MIME type
+of
+the link, which is available when the item is a link to a Drive file and
+null
+otherwise.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Title()
+String
+Returns the link's displayed title.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+get
+Url()
+String
+Returns the URL of the resource.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Rich
+Link
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Rich
+Link
+Removes the element from its parent.
+set
+Attributes(attributes)
+Rich
+Link
+Sets the element's attributes.
+Tab
+Methods
+Method
+Return type
+Brief description
+as
+Document
+Tab()
+Document
+Tab
+Retrieves the tab contents as a
+Document
+Tab
+.
+get
+Child
+Tabs()
+Tab[]
+Retrieves the child tabs nested within this tab.
+get
+Id()
+String
+Retrieves the ID of the tab.
+get
+Index()
+Integer
+Retrieves the 0-based index of the tab within the parent.
+get
+Title()
+String
+Retrieves the title of the tab.
+get
+Type()
+Tab
+Type
+Retrieves the type of tab.
+Tab
+Type
+Properties
+Property
+Type
+Description
+DOCUMENT_TAB
+Enum
+The type corresponding to
+Document
+Tab
+.
+Table
+Methods
+Method
+Return type
+Brief description
+append
+Table
+Row()
+Table
+Row
+Creates and appends a new
+Table
+Row
+.
+append
+Table
+Row(tableRow)
+Table
+Row
+Appends the given
+Table
+Row
+.
+clear()
+Table
+Clears the contents of the element.
+copy()
+Table
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Border
+Color()
+String
+Retrieves the border color.
+get
+Border
+Width()
+Number
+Retrieves the border width, in points.
+get
+Cell(rowIndex, cellIndex)
+Table
+Cell
+Retrieves the
+Table
+Cell
+at the specified row and cell indices.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Column
+Width(columnIndex)
+Number
+Retrieves the width of the specified table column, in points.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Num
+Rows()
+Integer
+Retrieves the number of
+Table
+Rows
+.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Row(rowIndex)
+Table
+Row
+Retrieves the
+Table
+Row
+at the specified row index.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Table
+Row(childIndex)
+Table
+Row
+Creates and inserts a new
+Table
+Row
+at the specified index.
+insert
+Table
+Row(childIndex, tableRow)
+Table
+Row
+Inserts the given
+Table
+Row
+at the specified index.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+remove
+Child(child)
+Table
+Removes the specified child element.
+remove
+From
+Parent()
+Table
+Removes the element from its parent.
+remove
+Row(rowIndex)
+Table
+Row
+Removes the
+Table
+Row
+at the specified row index.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Table
+Sets the element's attributes.
+set
+Border
+Color(color)
+Table
+Sets the border color.
+set
+Border
+Width(width)
+Table
+Sets the border width, in points.
+set
+Column
+Width(columnIndex, width)
+Table
+Sets the width of the specified column, in points.
+set
+Link
+Url(url)
+Table
+Sets the link url.
+set
+Text
+Alignment(textAlignment)
+Table
+Sets the text alignment.
+Table
+Cell
+Methods
+Method
+Return type
+Brief description
+append
+Horizontal
+Rule()
+Horizontal
+Rule
+Creates and appends a new
+Horizontal
+Rule
+.
+append
+Image(image)
+Inline
+Image
+Creates and appends a new
+Inline
+Image
+from the specified image blob.
+append
+Image(image)
+Inline
+Image
+Appends the given
+Inline
+Image
+.
+append
+List
+Item(listItem)
+List
+Item
+Appends the given
+List
+Item
+.
+append
+List
+Item(text)
+List
+Item
+Creates and appends a new
+List
+Item
+.
+append
+Paragraph(paragraph)
+Paragraph
+Appends the given
+Paragraph
+.
+append
+Paragraph(text)
+Paragraph
+Creates and appends a new
+Paragraph
+.
+append
+Table()
+Table
+Creates and appends a new
+Table
+.
+append
+Table(cells)
+Table
+Appends a new
+Table
+containing the specified cells.
+append
+Table(table)
+Table
+Appends the given
+Table
+.
+clear()
+Table
+Cell
+Clears the contents of the element.
+copy()
+Table
+Cell
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Background
+Color()
+String
+Retrieves the background color.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Col
+Span()
+Integer
+Retrieves the column span, which is the number of columns of table cells this cell spans.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Padding
+Bottom()
+Number
+Retrieves the bottom padding, in points.
+get
+Padding
+Left()
+Number
+Retrieves the left padding, in points.
+get
+Padding
+Right()
+Number
+Retrieves the right padding, in points.
+get
+Padding
+Top()
+Number
+Retrieves the top padding, in points.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Parent
+Row()
+Table
+Row
+Retrieves the
+Table
+Row
+containing the current
+Table
+Cell
+.
+get
+Parent
+Table()
+Table
+Retrieves the
+Table
+containing the current
+Table
+Cell
+.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Row
+Span()
+Integer
+Retrieves the row span, which is the number of rows of table cells this cell spans.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+get
+Vertical
+Alignment()
+Vertical
+Alignment
+Retrieves the
+Vertical
+Alignment
+.
+get
+Width()
+Number
+Retrieves the width of the column containing the cell, in points.
+insert
+Horizontal
+Rule(childIndex)
+Horizontal
+Rule
+Creates and inserts a new
+Horizontal
+Rule
+at the specified index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Creates and inserts an
+Inline
+Image
+from the specified image blob, at the specified
+index.
+insert
+Image(childIndex, image)
+Inline
+Image
+Inserts the given
+Inline
+Image
+at the specified index.
+insert
+List
+Item(childIndex, listItem)
+List
+Item
+Inserts the given
+List
+Item
+at the specified index.
+insert
+List
+Item(childIndex, text)
+List
+Item
+Creates and inserts a new
+List
+Item
+at the specified index.
+insert
+Paragraph(childIndex, paragraph)
+Paragraph
+Inserts the given
+Paragraph
+at the specified index.
+insert
+Paragraph(childIndex, text)
+Paragraph
+Creates and inserts a new
+Paragraph
+at the specified index.
+insert
+Table(childIndex)
+Table
+Creates and inserts a new
+Table
+at the specified index.
+insert
+Table(childIndex, cells)
+Table
+Creates and inserts a new
+Table
+containing the specified cells, at the specified index.
+insert
+Table(childIndex, table)
+Table
+Inserts the given
+Table
+at the specified index.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Table
+Cell
+Merges the element with the preceding sibling of the same type.
+remove
+Child(child)
+Table
+Cell
+Removes the specified child element.
+remove
+From
+Parent()
+Table
+Cell
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Table
+Cell
+Sets the element's attributes.
+set
+Background
+Color(color)
+Table
+Cell
+Sets the background color.
+set
+Link
+Url(url)
+Table
+Cell
+Sets the link url.
+set
+Padding
+Bottom(paddingBottom)
+Table
+Cell
+Sets the bottom padding, in points.
+set
+Padding
+Left(paddingLeft)
+Table
+Cell
+Sets the left padding, in points.
+set
+Padding
+Right(paddingRight)
+Table
+Cell
+Sets the right padding, in points.
+set
+Padding
+Top(paddingTop)
+Table
+Cell
+Sets the top padding, in points.
+set
+Text(text)
+Table
+Cell
+Sets the contents as plain text.
+set
+Text
+Alignment(textAlignment)
+Table
+Cell
+Sets the text alignment.
+set
+Vertical
+Alignment(alignment)
+Table
+Cell
+Sets the vertical alignment.
+set
+Width(width)
+Table
+Cell
+Sets the width of the column containing the current cell, in points.
+Table
+Of
+Contents
+Methods
+Method
+Return type
+Brief description
+clear()
+Table
+Of
+Contents
+Clears the contents of the element.
+copy()
+Table
+Of
+Contents
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+remove
+From
+Parent()
+Table
+Of
+Contents
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Table
+Of
+Contents
+Sets the element's attributes.
+set
+Link
+Url(url)
+Table
+Of
+Contents
+Sets the link url.
+set
+Text
+Alignment(textAlignment)
+Table
+Of
+Contents
+Sets the text alignment.
+Table
+Row
+Methods
+Method
+Return type
+Brief description
+append
+Table
+Cell()
+Table
+Cell
+Creates and appends a new
+Table
+Cell
+.
+append
+Table
+Cell(textContents)
+Table
+Cell
+Appends the given
+Table
+Cell
+containing the specified text.
+append
+Table
+Cell(tableCell)
+Table
+Cell
+Appends the given
+Table
+Cell
+.
+clear()
+Table
+Row
+Clears the contents of the element.
+copy()
+Table
+Row
+Returns a detached, deep copy of the current element.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Element(elementType)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type.
+find
+Element(elementType, from)
+Range
+Element
+Searches the contents of the element for a descendant of the specified type, starting from the
+specified
+Range
+Element
+.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Cell(cellIndex)
+Table
+Cell
+Retrieves the
+Table
+Cell
+at the specified cell index.
+get
+Child(childIndex)
+Element
+Retrieves the child element at the specified child index.
+get
+Child
+Index(child)
+Integer
+Retrieves the child index for the specified child element.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Minimum
+Height()
+Number
+Retrieves the minimum height, in points.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Num
+Cells()
+Integer
+Retrieves the number of cells in the row.
+get
+Num
+Children()
+Integer
+Retrieves the number of children.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Parent
+Table()
+Table
+Retrieves the
+Table
+containing the current row.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Table
+Cell(childIndex)
+Table
+Cell
+Creates and inserts a new
+Table
+Cell
+at the specified index.
+insert
+Table
+Cell(childIndex, textContents)
+Table
+Cell
+Inserts the given
+Table
+Cell
+at the specified index, containing the given text.
+insert
+Table
+Cell(childIndex, tableCell)
+Table
+Cell
+Inserts the given
+Table
+Cell
+at the specified index.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Table
+Row
+Merges the element with the preceding sibling of the same type.
+remove
+Cell(cellIndex)
+Table
+Cell
+Removes the
+Table
+Cell
+at the specified cell index.
+remove
+Child(child)
+Table
+Row
+Removes the specified child element.
+remove
+From
+Parent()
+Table
+Row
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(attributes)
+Table
+Row
+Sets the element's attributes.
+set
+Link
+Url(url)
+Table
+Row
+Sets the link url.
+set
+Minimum
+Height(minHeight)
+Table
+Row
+Sets the minimum height, in points.
+set
+Text
+Alignment(textAlignment)
+Table
+Row
+Sets the text alignment.
+Text
+Methods
+Method
+Return type
+Brief description
+append
+Text(text)
+Text
+Adds the specified text to the end of this text region.
+copy()
+Text
+Returns a detached, deep copy of the current element.
+delete
+Text(startOffset, endOffsetInclusive)
+Text
+Deletes a range of text.
+edit
+As
+Text()
+Text
+Obtains a
+Text
+version of the current element, for editing.
+find
+Text(searchPattern)
+Range
+Element
+Searches the contents of the element for the specified text pattern using regular expressions.
+find
+Text(searchPattern, from)
+Range
+Element
+Searches the contents of the element for the specified text pattern, starting from a given
+search result.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Attributes(offset)
+Object
+Retrieves the attributes at the specified character offset.
+get
+Background
+Color()
+String
+Retrieves the background color setting.
+get
+Background
+Color(offset)
+String
+Retrieves the background color at the specified character offset.
+get
+Font
+Family()
+String
+Retrieves the font family setting.
+get
+Font
+Family(offset)
+String
+Retrieves the font family at the specified character offset.
+get
+Font
+Size()
+Number
+Retrieves the font size setting.
+get
+Font
+Size(offset)
+Number
+Retrieves the font size at the specified character offset.
+get
+Foreground
+Color()
+String
+Retrieves the foreground color setting.
+get
+Foreground
+Color(offset)
+String
+Retrieves the foreground color at the specified character offset.
+get
+Link
+Url()
+String
+Retrieves the link url.
+get
+Link
+Url(offset)
+String
+Retrieves the link URL at the specified character offset.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Text()
+String
+Retrieves the contents of the element as a text string.
+get
+Text
+Alignment()
+Text
+Alignment
+Gets the text alignment.
+get
+Text
+Alignment(offset)
+Text
+Alignment
+Gets the text alignment for a single character.
+get
+Text
+Attribute
+Indices()
+Integer[]
+Retrieves the set of text indices that correspond to the start of distinct text formatting
+runs.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+insert
+Text(offset, text)
+Text
+Inserts the specified text at the given character offset.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+is
+Bold()
+Boolean
+Retrieves the bold setting.
+is
+Bold(offset)
+Boolean
+Retrieves the bold setting at the specified character offset.
+is
+Italic()
+Boolean
+Retrieves the italic setting.
+is
+Italic(offset)
+Boolean
+Retrieves the italic setting at the specified character offset.
+is
+Strikethrough()
+Boolean
+Retrieves the strikethrough setting.
+is
+Strikethrough(offset)
+Boolean
+Retrieves the strikethrough setting at the specified character offset.
+is
+Underline()
+Boolean
+Retrieves the underline setting.
+is
+Underline(offset)
+Boolean
+Retrieves the underline setting at the specified character offset.
+merge()
+Text
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Text
+Removes the element from its parent.
+replace
+Text(searchPattern, replacement)
+Element
+Replaces all occurrences of a given text pattern with a given replacement string, using regular
+expressions.
+set
+Attributes(startOffset, endOffsetInclusive, attributes)
+Text
+Applies the specified attributes to the given character range.
+set
+Attributes(attributes)
+Text
+Sets the element's attributes.
+set
+Background
+Color(startOffset, endOffsetInclusive, color)
+Text
+Sets the background color for the specified character range.
+set
+Background
+Color(color)
+Text
+Sets the background color.
+set
+Bold(bold)
+Text
+Sets the bold setting.
+set
+Bold(startOffset, endOffsetInclusive, bold)
+Text
+Sets the bold setting for the specified character range.
+set
+Font
+Family(startOffset, endOffsetInclusive, fontFamilyName)
+Text
+Sets the font family for the specified character range.
+set
+Font
+Family(fontFamilyName)
+Text
+Sets the font family.
+set
+Font
+Size(startOffset, endOffsetInclusive, size)
+Text
+Sets the font size for the specified character range.
+set
+Font
+Size(size)
+Text
+Sets the font size.
+set
+Foreground
+Color(startOffset, endOffsetInclusive, color)
+Text
+Sets the foreground color for the specified character range.
+set
+Foreground
+Color(color)
+Text
+Sets the foreground color.
+set
+Italic(italic)
+Text
+Sets the italic setting.
+set
+Italic(startOffset, endOffsetInclusive, italic)
+Text
+Sets the italic setting for the specified character range.
+set
+Link
+Url(startOffset, endOffsetInclusive, url)
+Text
+Sets the link URL for the specified character range.
+set
+Link
+Url(url)
+Text
+Sets the link url.
+set
+Strikethrough(strikethrough)
+Text
+Sets the strikethrough setting.
+set
+Strikethrough(startOffset, endOffsetInclusive, strikethrough)
+Text
+Sets the strikethrough setting for the specified character range.
+set
+Text(text)
+Text
+Sets the text contents.
+set
+Text
+Alignment(startOffset, endOffsetInclusive, textAlignment)
+Text
+Sets the text alignment for a given character range.
+set
+Text
+Alignment(textAlignment)
+Text
+Sets the text alignment.
+set
+Underline(underline)
+Text
+Sets the underline setting.
+set
+Underline(startOffset, endOffsetInclusive, underline)
+Text
+Sets the underline setting for the specified character range.
+Text
+Alignment
+Properties
+Property
+Type
+Description
+NORMAL
+Enum
+The normal text alignment.
+SUPERSCRIPT
+Enum
+The superscript text alignment.
+SUBSCRIPT
+Enum
+The subscript text alignment.
+Unsupported
+Element
+Methods
+Method
+Return type
+Brief description
+copy()
+Unsupported
+Element
+Returns a detached, deep copy of the current element.
+get
+Attributes()
+Object
+Retrieves the element's attributes.
+get
+Next
+Sibling()
+Element
+Retrieves the element's next sibling element.
+get
+Parent()
+Container
+Element
+Retrieves the element's parent element.
+get
+Previous
+Sibling()
+Element
+Retrieves the element's previous sibling element.
+get
+Type()
+Element
+Type
+Retrieves the element's
+Element
+Type
+.
+is
+At
+Document
+End()
+Boolean
+Determines whether the element is at the end of the
+Document
+.
+merge()
+Unsupported
+Element
+Merges the element with the preceding sibling of the same type.
+remove
+From
+Parent()
+Unsupported
+Element
+Removes the element from its parent.
+set
+Attributes(attributes)
+Unsupported
+Element
+Sets the element's attributes.
+Vertical
+Alignment
+Properties
+Property
+Type
+Description
+BOTTOM
+Enum
+The bottom-alignment option.
+CENTER
+Enum
+The center-alignment option.
+TOP
+Enum
+The top-alignment option.

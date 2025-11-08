@@ -1,0 +1,100 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/universal-action-response-builder/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+UniversalActionResponseBuilder is used to build UniversalActionResponse objects.
+The
+build()
+method validates and creates the UniversalActionResponse.
+The
+displayAddOnCards()
+method allows you to show the add-on with specified cards.
+The
+setOpenLink()
+method sets the URL that opens when a universal action is chosen.
+Universal
+Action
+Response
+Builder
+A builder for the
+Universal
+Action
+Response
+objects.
+Methods
+Method
+Return type
+Brief description
+build()
+Universal
+Action
+Response
+Builds the current universal action response and validates it.
+display
+Add
+On
+Cards(cardObjects)
+Universal
+Action
+Response
+Builder
+Displays the add-on with the specified cards.
+set
+Open
+Link(openLink)
+Universal
+Action
+Response
+Builder
+Sets the URL to open when the universal action is selected.
+Detailed documentation
+build()
+Builds the current universal action response and validates it.
+Return
+Universal
+Action
+Response
+— A validated UniversalActionResponse.
+Throws
+Error
+— if the constructed universal action response isn't valid.
+display
+Add
+On
+Cards(cardObjects)
+Displays the add-on with the specified cards.
+Parameters
+Name
+Type
+Description
+card
+Objects
+Object[]
+An array of
+Card
+s to display.
+Return
+Universal
+Action
+Response
+Builder
+— This object, for chaining.
+set
+Open
+Link(openLink)
+Sets the URL to open when the universal action is selected.
+Parameters
+Name
+Type
+Description
+open
+Link
+Open
+Link
+The link object to use.
+Return
+Universal
+Action
+Response
+Builder
+— This object, for chaining.

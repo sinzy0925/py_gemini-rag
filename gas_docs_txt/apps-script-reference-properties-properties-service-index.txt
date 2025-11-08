@@ -1,0 +1,124 @@
+Source Path: gas_docs_html/apps-script/reference/properties/properties-service/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+PropertiesService allows scripts to store simple data in key-value pairs with different scopes.
+Properties can be scoped to one script, one user of a script, or one document in which an add-on is used, but cannot be shared between scripts.
+There are three types of property stores: document properties (accessible by all users within a document/spreadsheet/form), script properties (accessible by all users within a script), and user properties (accessible only by the current user within a script).
+The methods
+getDocumentProperties()
+,
+getScriptProperties()
+, and
+getUserProperties()
+are used to access these different property stores.
+Document properties are only available for scripts published as add-ons or bound to a Google file type.
+Properties
+Service
+Allows scripts to store simple data in key-value pairs scoped to one script, one user of a
+script, or one document in which an add-on is used. Properties cannot be shared between scripts.
+For more information about when to use each type of property, see the
+guide to the Properties service
+.
+// Sets three properties of different types.
+const
+documentProperties
+=
+PropertiesService
+.
+getDocumentProperties
+();
+const
+scriptProperties
+=
+PropertiesService
+.
+getScriptProperties
+();
+const
+userProperties
+=
+PropertiesService
+.
+getUserProperties
+();
+documentProperties
+.
+setProperty
+(
+'DAYS_TO_FETCH'
+,
+'5'
+);
+scriptProperties
+.
+setProperty
+(
+'SERVER_URL'
+,
+'http://www.example.com/MyWeatherService/'
+,
+);
+userProperties
+.
+setProperty
+(
+'DISPLAY_UNITS'
+,
+'metric'
+);
+Methods
+Method
+Return type
+Brief description
+get
+Document
+Properties()
+Properties
+Gets a property store (for this script only) that all users can access within the open
+document, spreadsheet, or form.
+get
+Script
+Properties()
+Properties
+Gets a property store that all users can access, but only within this script.
+get
+User
+Properties()
+Properties
+Gets a property store that only the current user can access, and only within this script.
+Detailed documentation
+get
+Document
+Properties()
+Gets a property store (for this script only) that all users can access within the open
+document, spreadsheet, or form. It is only available if the script is published and executing
+as an add-on or if it is
+bound
+to a Google file
+type. When document properties are not available this method returns
+null
+. Document
+properties created by a script are not accessible outside that script, even by other scripts
+accessing the same document.
+Return
+Properties
+— a property store for this script only that all users of the current document can
+    access, or
+null
+if the script is not either an add-on or bound to a Google
+    Workspace file
+get
+Script
+Properties()
+Gets a property store that all users can access, but only within this script.
+Return
+Properties
+— a property store that all users of the script can access
+get
+User
+Properties()
+Gets a property store that only the current user can access, and only within this script.
+Return
+Properties
+— a property store that only the current user of the script can access

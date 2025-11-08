@@ -1,0 +1,37 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/update-draft-subject-action/index.html
+
+Update
+Draft
+Subject
+Action
+Updates the subject line of an email draft.
+Methods
+Method
+Return type
+Brief description
+add
+Update
+Subject(subject)
+Update
+Draft
+Subject
+Action
+Updates the subject line of an email draft.
+Detailed documentation
+add
+Update
+Subject(subject)
+Updates the subject line of an email draft.
+Parameters
+Name
+Type
+Description
+subject
+String
+The subject line to insert to the email draft.
+Return
+Update
+Draft
+Subject
+Action
+— This object, for chaining.

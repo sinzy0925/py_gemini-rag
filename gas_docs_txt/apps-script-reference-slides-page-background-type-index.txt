@@ -1,0 +1,25 @@
+Source Path: gas_docs_html/apps-script/reference/slides/page-background-type/index.html
+
+Page
+Background
+Type
+The kinds of page backgrounds.
+To call an enum, you call its parent class, name, and property. For example,
+SlidesApp.PageBackgroundType.SOLID
+.
+Properties
+Property
+Type
+Description
+UNSUPPORTED
+Enum
+A page background type that is not supported.
+NONE
+Enum
+No fill, so the background is rendered white.
+SOLID
+Enum
+A solid color fill.
+PICTURE
+Enum
+A picture that is stretched to fill the page.

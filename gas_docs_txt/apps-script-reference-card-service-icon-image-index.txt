@@ -1,0 +1,162 @@
+Source Path: gas_docs_html/apps-script/reference/card-service/icon-image/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+IconImage allows you to use a predefined icon, a material design icon, or an icon from a URL with customizable crop style.
+You can set alternative text for accessibility, choose from predefined icons, specify an icon URL, set the image crop type, and set a material design icon.
+Methods like
+setAltText
+,
+setIcon
+,
+setIconUrl
+,
+setImageCropType
+, and
+setMaterialIcon
+are available to configure the IconImage.
+Icon
+Image
+A predefined icon, a material design icon, or an icon from a URL with a customizable crop style.
+Methods
+Method
+Return type
+Brief description
+set
+Alt
+Text(altText)
+Icon
+Image
+Sets the alternative text of the URL which is used for accessibility.
+set
+Icon(icon)
+Icon
+Image
+Sets the predefined icon if the URL is not set.
+set
+Icon
+Url(url)
+Icon
+Image
+Sets the URL of the icon if the icon is not set.
+set
+Image
+Crop
+Type(imageCropType)
+Icon
+Image
+Sets the crop style for the image.
+set
+Material
+Icon(icon)
+Icon
+Image
+Sets the material design icon.
+Detailed documentation
+set
+Alt
+Text(altText)
+Sets the alternative text of the URL which is used for accessibility.
+Parameters
+Name
+Type
+Description
+alt
+Text
+String
+The alternative text.
+Return
+Icon
+Image
+— This object, for chaining.
+set
+Icon(icon)
+Sets the predefined icon if the URL is not set. Default is NONE.
+Parameters
+Name
+Type
+Description
+icon
+Icon
+One of the predefined
+Icon
+values.
+Return
+Icon
+Image
+— This object, for chaining.
+set
+Icon
+Url(url)
+Sets the URL of the icon if the icon is not set.
+Parameters
+Name
+Type
+Description
+url
+String
+The URL address of a hosted image to use as an icon.
+Return
+Icon
+Image
+— This object, for chaining.
+set
+Image
+Crop
+Type(imageCropType)
+Sets the crop style for the image. The crop type options you can use for icons are
+SQUARE
+and
+CIRCLE
+. Default is
+SQUARE
+.
+Parameters
+Name
+Type
+Description
+image
+Crop
+Type
+Image
+Crop
+Type
+The ImageCropType option to apply.
+Return
+Icon
+Image
+— This object, for chaining.
+set
+Material
+Icon(icon)
+Sets the material design icon.
+const
+iconImage
+=
+CardService
+.
+newIconImage
+().
+setMaterialIcon
+(
+CardService
+.
+newMaterialIcon
+().
+setName
+(
+'search'
+),
+);
+Parameters
+Name
+Type
+Description
+icon
+Material
+Icon
+The material icon.
+Return
+Icon
+Image
+— This object, for chaining.

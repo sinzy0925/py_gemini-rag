@@ -1,0 +1,17 @@
+Source Path: gas_docs_html/apps-script/reference/maps/direction-finder-enums/index.html
+
+Direction
+Finder
+Enums
+A collection of enums used by
+Direction
+Finder
+.
+Properties
+Property
+Type
+Description
+Avoid
+Avoid
+Mode
+Mode

@@ -1,0 +1,105 @@
+Source Path: gas_docs_html/apps-script/reference/xml-service/comment/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+Comment is a representation of an XML
+Comment
+node.
+Methods are available to detach the Comment node, get its parent element, and get or set its text value.
+The
+getValue()
+method retrieves the text value of all direct or indirect children of the node.
+Comment
+A representation of an XML
+Comment
+node.
+Methods
+Method
+Return type
+Brief description
+detach()
+Content
+Detaches the node from its parent
+Element
+node.
+get
+Parent
+Element()
+Element
+Gets the node's parent
+Element
+node.
+get
+Text()
+String
+Gets the text value of the
+Comment
+node.
+get
+Value()
+String
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+set
+Text(text)
+Comment
+Sets the text value of the
+Comment
+node.
+Detailed documentation
+detach()
+Detaches the node from its parent
+Element
+node. If the node does not have a parent,
+this method has no effect.
+Return
+Content
+— the detached node
+get
+Parent
+Element()
+Gets the node's parent
+Element
+node. If the node does not have a parent, this method
+returns
+null
+.
+Return
+Element
+— the parent
+Element
+node
+get
+Text()
+Gets the text value of the
+Comment
+node.
+Return
+String
+— the text value of the
+Comment
+node
+get
+Value()
+Gets the text value of all nodes that are direct or indirect children of the node, in the order
+they appear in the document.
+Return
+String
+— the text value of all nodes that are direct or indirect children of the node
+set
+Text(text)
+Sets the text value of the
+Comment
+node.
+Parameters
+Name
+Type
+Description
+text
+String
+the text value to set
+Return
+Comment
+— the
+Comment
+node, for chaining
