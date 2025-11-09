@@ -12,7 +12,7 @@ if not api_key:
 client = genai.Client(api_key=api_key) 
 
 # --- ストア名を設定 ---
-FILE_SEARCH_STORE_NAME = "fileSearchStores/gas-documentation-rag-store-4lyayroy5my3" # あなたのストア名に設定済み
+FILE_SEARCH_STORE_NAME = "fileSearchStores/gas-documentation-rag-store-eh3fonwv95f9" # あなたのストア名に設定済み
 
 # ▼▼▼【ここからが新しい関数】▼▼▼
 def is_question_about_gas(question: str) -> bool:
@@ -23,7 +23,7 @@ def is_question_about_gas(question: str) -> bool:
     try:
         # 判定用のシンプルなプロンプト
         prompt = f"""
-        以下のユーザーからの質問は、プログラミング言語の「Google Apps Script (GAS)」に関連する内容ですか？
+        以下のユーザーからの質問は、プログラミング言語の「Google Apps Script (GAS)または、Gemini-api」に関連する内容ですか？
         関連している場合は "Yes"、関連していない場合は "No" とだけ答えてください。
 
         質問: "{question}"
@@ -47,11 +47,18 @@ def is_question_about_gas(question: str) -> bool:
 if FILE_SEARCH_STORE_NAME == "ここにストア名を貼り付け":
     print("エラー: `FILE_SEARCH_STORE_NAME`に変数を設定してください。")
 else:
-    question = input("GASに関する質問を入力してください (終了するには Enter のみ): ")
-    
+    question = input("GASまたはgemini-apiに関する質問を入力してください。＝＞ # ")
+
+    instractions="""
+# 指示
+考えるのは英語で考えること
+出力は日本語で出力すること  
+
+"""
+
     while question:
         # ▼▼▼【ここからが新しいロジック】▼▼▼
-        if is_question_about_gas(question):
+        if is_question_about_gas(instractions + question):
             # 質問がGASに関連している場合のみ、RAGを実行
             print("\n🤖 AIが回答を生成中...")
             response = client.models.generate_content(
